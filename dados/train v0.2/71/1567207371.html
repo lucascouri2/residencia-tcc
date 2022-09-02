@@ -1,0 +1,1677 @@
+
+<!DOCTYPE html>
+
+
+
+<!-- fi:/csp/mediapool/sites/ElHeraldo/assets/cspV2/Utilitarios/getAmp.csp -->
+
+<!--/fi:/csp/mediapool/sites/ElHeraldo/assets/cspV2/Utilitarios/getAmp.csp, e:.00016 -->
+
+<html  lang="es-HN">
+	
+	
+	
+	
+<!-- fi:/csp/mediapool/sites/ElHeraldo/assets/cspv2/StoryDefault.csp -->
+
+
+
+
+
+<!-- fi:/csp/mediapool/sites/ElHeraldo/assets/cspV2/helper/versiones.csp -->
+
+<!--/fi:/csp/mediapool/sites/ElHeraldo/assets/cspV2/helper/versiones.csp, e:.000071 -->
+
+
+<!-- fi:/csp/mediapool/sites/ElHeraldo/assets/cspV2/helper/detectMobileDevice.csp -->
+
+
+<!--/fi:/csp/mediapool/sites/ElHeraldo/assets/cspV2/helper/detectMobileDevice.csp, e:.00006 -->
+
+
+
+<!-- fi:/csp/mediapool/sites/ElHeraldo/assets/csp/helper/getCustomFields.csp -->
+
+
+<!--/fi:/csp/mediapool/sites/ElHeraldo/assets/csp/helper/getCustomFields.csp, e:.000144 -->
+
+
+	
+
+
+	<head>
+		
+<!-- fi:/csp/mediapool/sites/ElHeraldo/assets/cspV2/headfiles/head.csp -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<link type="image/x-icon" href="https://www.elheraldo.hn/csp/mediapool/sites/ElHeraldo/assets/img/favicon.ico" rel="shortcut icon">
+<link rel="stylesheet" type="text/css" href="https://www.elheraldo.hn/csp/mediapool/sites/ElHeraldo/assets/css/v5/buscador_desktop.css?v=14.5.2021"/>
+
+<!-- fi:/csp/mediapool/sites/ElHeraldo/assets/cspV2/headfiles/fundingchoices.csp -->
+<script>(function(){/*
+Copyright The Closure Library Authors.
+SPDX-License-Identifier: Apache-2.0
+*/
+'use strict';var g=function(a){var b=0;return function(){return b<a.length?{done:!1,value:a[b++]}:{done:!0}}},l=this||self,m=/^[\w+/_-]+[=]{0,2}$/,p=null,q=function(){},r=function(a){var b=typeof a;if("object"==b)if(a){if(a instanceof Array)return"array";if(a instanceof Object)return b;var c=Object.prototype.toString.call(a);if("[object Window]"==c)return"object";if("[object Array]"==c||"number"==typeof a.length&&"undefined"!=typeof a.splice&&"undefined"!=typeof a.propertyIsEnumerable&&!a.propertyIsEnumerable("splice"))return"array";
+if("[object Function]"==c||"undefined"!=typeof a.call&&"undefined"!=typeof a.propertyIsEnumerable&&!a.propertyIsEnumerable("call"))return"function"}else return"null";else if("function"==b&&"undefined"==typeof a.call)return"object";return b},u=function(a,b){function c(){}c.prototype=b.prototype;a.prototype=new c;a.prototype.constructor=a};var v=function(a,b){Object.defineProperty(l,a,{configurable:!1,get:function(){return b},set:q})};var y=function(a,b){this.b=a===w&&b||"";this.a=x},x={},w={};var aa=function(a,b){a.src=b instanceof y&&b.constructor===y&&b.a===x?b.b:"type_error:TrustedResourceUrl";if(null===p)b:{b=l.document;if((b=b.querySelector&&b.querySelector("script[nonce]"))&&(b=b.nonce||b.getAttribute("nonce"))&&m.test(b)){p=b;break b}p=""}b=p;b&&a.setAttribute("nonce",b)};var z=function(){return Math.floor(2147483648*Math.random()).toString(36)+Math.abs(Math.floor(2147483648*Math.random())^+new Date).toString(36)};var A=function(a,b){b=String(b);"application/xhtml+xml"===a.contentType&&(b=b.toLowerCase());return a.createElement(b)},B=function(a){this.a=a||l.document||document};B.prototype.appendChild=function(a,b){a.appendChild(b)};var C=function(a,b,c,d,e,f){try{var k=a.a,h=A(a.a,"SCRIPT");h.async=!0;aa(h,b);k.head.appendChild(h);h.addEventListener("load",function(){e();d&&k.head.removeChild(h)});h.addEventListener("error",function(){0<c?C(a,b,c-1,d,e,f):(d&&k.head.removeChild(h),f())})}catch(n){f()}};var ba=l.atob("aHR0cHM6Ly93d3cuZ3N0YXRpYy5jb20vaW1hZ2VzL2ljb25zL21hdGVyaWFsL3N5c3RlbS8xeC93YXJuaW5nX2FtYmVyXzI0ZHAucG5n"),ca=l.atob("WW91IGFyZSBzZWVpbmcgdGhpcyBtZXNzYWdlIGJlY2F1c2UgYWQgb3Igc2NyaXB0IGJsb2NraW5nIHNvZnR3YXJlIGlzIGludGVyZmVyaW5nIHdpdGggdGhpcyBwYWdlLg=="),da=l.atob("RGlzYWJsZSBhbnkgYWQgb3Igc2NyaXB0IGJsb2NraW5nIHNvZnR3YXJlLCB0aGVuIHJlbG9hZCB0aGlzIHBhZ2Uu"),ea=function(a,b,c){this.b=a;this.f=new B(this.b);this.a=null;this.c=[];this.g=!1;this.i=b;this.h=c},F=function(a){if(a.b.body&&!a.g){var b=
+function(){D(a);l.setTimeout(function(){return E(a,3)},50)};C(a.f,a.i,2,!0,function(){l[a.h]||b()},b);a.g=!0}},D=function(a){for(var b=G(1,5),c=0;c<b;c++){var d=H(a);a.b.body.appendChild(d);a.c.push(d)}b=H(a);b.style.bottom="0";b.style.left="0";b.style.position="fixed";b.style.width=G(100,110).toString()+"%";b.style.zIndex=G(2147483544,2147483644).toString();b.style["background-color"]=I(249,259,242,252,219,229);b.style["box-shadow"]="0 0 12px #888";b.style.color=I(0,10,0,10,0,10);b.style.display=
+"flex";b.style["justify-content"]="center";b.style["font-family"]="Roboto, Arial";c=H(a);c.style.width=G(80,85).toString()+"%";c.style.maxWidth=G(750,775).toString()+"px";c.style.margin="24px";c.style.display="flex";c.style["align-items"]="flex-start";c.style["justify-content"]="center";d=A(a.f.a,"IMG");d.className=z();d.src=ba;d.style.height="24px";d.style.width="24px";d.style["padding-right"]="16px";var e=H(a),f=H(a);f.style["font-weight"]="bold";f.textContent=ca;var k=H(a);k.textContent=da;J(a,
+e,f);J(a,e,k);J(a,c,d);J(a,c,e);J(a,b,c);a.a=b;a.b.body.appendChild(a.a);b=G(1,5);for(c=0;c<b;c++)d=H(a),a.b.body.appendChild(d),a.c.push(d)},J=function(a,b,c){for(var d=G(1,5),e=0;e<d;e++){var f=H(a);b.appendChild(f)}b.appendChild(c);c=G(1,5);for(d=0;d<c;d++)e=H(a),b.appendChild(e)},G=function(a,b){return Math.floor(a+Math.random()*(b-a))},I=function(a,b,c,d,e,f){return"rgb("+G(Math.max(a,0),Math.min(b,255)).toString()+","+G(Math.max(c,0),Math.min(d,255)).toString()+","+G(Math.max(e,0),Math.min(f,
+255)).toString()+")"},H=function(a){a=A(a.f.a,"DIV");a.className=z();return a},E=function(a,b){0>=b||null!=a.a&&0!=a.a.offsetHeight&&0!=a.a.offsetWidth||(fa(a),D(a),l.setTimeout(function(){return E(a,b-1)},50))},fa=function(a){var b=a.c;var c="undefined"!=typeof Symbol&&Symbol.iterator&&b[Symbol.iterator];b=c?c.call(b):{next:g(b)};for(c=b.next();!c.done;c=b.next())(c=c.value)&&c.parentNode&&c.parentNode.removeChild(c);a.c=[];(b=a.a)&&b.parentNode&&b.parentNode.removeChild(b);a.a=null};var ia=function(a,b,c,d,e){var f=ha(c),k=function(n){n.appendChild(f);l.setTimeout(function(){f?(0!==f.offsetHeight&&0!==f.offsetWidth?b():a(),f.parentNode&&f.parentNode.removeChild(f)):a()},d)},h=function(n){document.body?k(document.body):0<n?l.setTimeout(function(){h(n-1)},e):b()};h(3)},ha=function(a){var b=document.createElement("div");b.className=a;b.style.width="1px";b.style.height="1px";b.style.position="absolute";b.style.left="-10000px";b.style.top="-10000px";b.style.zIndex="-10000";return b};var K={},L=null;var M=function(){},N="function"==typeof Uint8Array,O=function(a,b){a.b=null;b||(b=[]);a.j=void 0;a.f=-1;a.a=b;a:{if(b=a.a.length){--b;var c=a.a[b];if(!(null===c||"object"!=typeof c||Array.isArray(c)||N&&c instanceof Uint8Array)){a.g=b-a.f;a.c=c;break a}}a.g=Number.MAX_VALUE}a.i={}},P=[],Q=function(a,b){if(b<a.g){b+=a.f;var c=a.a[b];return c===P?a.a[b]=[]:c}if(a.c)return c=a.c[b],c===P?a.c[b]=[]:c},R=function(a,b,c){a.b||(a.b={});if(!a.b[c]){var d=Q(a,c);d&&(a.b[c]=new b(d))}return a.b[c]};
+M.prototype.h=N?function(){var a=Uint8Array.prototype.toJSON;Uint8Array.prototype.toJSON=function(){var b;void 0===b&&(b=0);if(!L){L={};for(var c="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789".split(""),d=["+/=","+/","-_=","-_.","-_"],e=0;5>e;e++){var f=c.concat(d[e].split(""));K[e]=f;for(var k=0;k<f.length;k++){var h=f[k];void 0===L[h]&&(L[h]=k)}}}b=K[b];c=[];for(d=0;d<this.length;d+=3){var n=this[d],t=(e=d+1<this.length)?this[d+1]:0;h=(f=d+2<this.length)?this[d+2]:0;k=n>>2;n=(n&
+3)<<4|t>>4;t=(t&15)<<2|h>>6;h&=63;f||(h=64,e||(t=64));c.push(b[k],b[n],b[t]||"",b[h]||"")}return c.join("")};try{return JSON.stringify(this.a&&this.a,S)}finally{Uint8Array.prototype.toJSON=a}}:function(){return JSON.stringify(this.a&&this.a,S)};var S=function(a,b){return"number"!==typeof b||!isNaN(b)&&Infinity!==b&&-Infinity!==b?b:String(b)};M.prototype.toString=function(){return this.a.toString()};var T=function(a){O(this,a)};u(T,M);var U=function(a){O(this,a)};u(U,M);var ja=function(a,b){this.c=new B(a);var c=R(b,T,5);c=new y(w,Q(c,4)||"");this.b=new ea(a,c,Q(b,4));this.a=b},ka=function(a,b,c,d){b=new T(b?JSON.parse(b):null);b=new y(w,Q(b,4)||"");C(a.c,b,3,!1,c,function(){ia(function(){F(a.b);d(!1)},function(){d(!0)},Q(a.a,2),Q(a.a,3),Q(a.a,1))})};var la=function(a,b){V(a,"internal_api_load_with_sb",function(c,d,e){ka(b,c,d,e)});V(a,"internal_api_sb",function(){F(b.b)})},V=function(a,b,c){a=l.btoa(a+b);v(a,c)},W=function(a,b,c){for(var d=[],e=2;e<arguments.length;++e)d[e-2]=arguments[e];e=l.btoa(a+b);e=l[e];if("function"==r(e))e.apply(null,d);else throw Error("API not exported.");};var X=function(a){O(this,a)};u(X,M);var Y=function(a){this.h=window;this.a=a;this.b=Q(this.a,1);this.f=R(this.a,T,2);this.g=R(this.a,U,3);this.c=!1};Y.prototype.start=function(){ma();var a=new ja(this.h.document,this.g);la(this.b,a);na(this)};
+var ma=function(){var a=function(){if(!l.frames.googlefcPresent)if(document.body){var b=document.createElement("iframe");b.style.display="none";b.style.width="0px";b.style.height="0px";b.style.border="none";b.style.zIndex="-1000";b.style.left="-1000px";b.style.top="-1000px";b.name="googlefcPresent";document.body.appendChild(b)}else l.setTimeout(a,5)};a()},na=function(a){var b=Date.now();W(a.b,"internal_api_load_with_sb",a.f.h(),function(){var c;var d=a.b,e=l[l.btoa(d+"loader_js")];if(e){e=l.atob(e);
+e=parseInt(e,10);d=l.btoa(d+"loader_js").split(".");var f=l;d[0]in f||"undefined"==typeof f.execScript||f.execScript("var "+d[0]);for(;d.length&&(c=d.shift());)d.length?f[c]&&f[c]!==Object.prototype[c]?f=f[c]:f=f[c]={}:f[c]=null;c=Math.abs(b-e);c=1728E5>c?0:c}else c=-1;0!=c&&(W(a.b,"internal_api_sb"),Z(a,Q(a.a,6)))},function(c){Z(a,c?Q(a.a,4):Q(a.a,5))})},Z=function(a,b){a.c||(a.c=!0,a=new l.XMLHttpRequest,a.open("GET",b,!0),a.send())};(function(a,b){l[a]=function(c){for(var d=[],e=0;e<arguments.length;++e)d[e-0]=arguments[e];l[a]=q;b.apply(null,d)}})("__d3lUW8vwsKlB__",function(a){"function"==typeof window.atob&&(a=window.atob(a),a=new X(a?JSON.parse(a):null),(new Y(a)).start())});}).call(this);
+
+window.__d3lUW8vwsKlB__("WyIxY2I1M2YzMWEzNjM5OTExIixbbnVsbCxudWxsLG51bGwsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2YvQUdTS1d4VVhiemVpcGZnbTJjZHhEZkh6dFVSc29SWUxkSlJVZV9ETlJRdFlEYXpBdGlFWU1xSGFDSExLX2NHYmRWUWxONEw5TUcyaUxMc09fY0ZXT0ZGamJDa1x1MDAzZCJdCixbMjAsImRpdi1ncHQtYWQiLDEwMCwiTVdOaU5UTm1NekZoTXpZek9Ua3hNUVx1MDAzZFx1MDAzZCIsW251bGwsbnVsbCxudWxsLCJodHRwczovL3d3dy5nc3RhdGljLmNvbS8wZW1uL2YvcC8xY2I1M2YzMWEzNjM5OTExLmpzP3VzcXBcdTAwM2RDQkEiXQpdCiwiaHR0cHM6Ly9mdW5kaW5nY2hvaWNlc21lc3NhZ2VzLmdvb2dsZS5jb20vbC9BR1NLV3hYRkh3LUlJOGcyTmloTGoyMmlWeDhRWExnWEZha1Y5WDVyRW5MdlludVZ0S3hMLWdDUXFOSjVqQzJjSlhzOVIyMUVEMW5CTFBGVE5WalJfYTlGP2FiXHUwMDNkMSIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2wvQUdTS1d4VVEyOXZ3cFNmWDdabFdZOHFVWnJKai03R201elMtZmNCdTZYenRKVS1URmxmUW55YzFReHBGRWJKTWxQN2pLdE95b1hUMVFzVENXclMyTlQ3eT9hYlx1MDAzZDJcdTAwMjZzYmZcdTAwM2QxIiwiaHR0cHM6Ly9mdW5kaW5nY2hvaWNlc21lc3NhZ2VzLmdvb2dsZS5jb20vbC9BR1NLV3hWTUNlbVNlSXIyVUE5NFNSZWNTc25jcTdLbU0xUTNEMVNYN1hjWDgtWWEwYUVYNktqMHFjdW85NUZlTU1JZEpydTV4aUNtYzdBUzQ1M3BpSHYzP3NiZlx1MDAzZDIiXQo=");</script>
+<!--/fi:/csp/mediapool/sites/ElHeraldo/assets/cspV2/headfiles/fundingchoices.csp, e:.000128 -->
+
+
+	
+		<link type="text/css" href="https://www.elheraldo.hn/csp/mediapool/sites/ElHeraldo/assets/css/v5/eh_nota.css?v=1.07.21" rel="stylesheet">
+		<link type="text/css" href="https://www.elheraldo.hn/csp/mediapool/sites/ElHeraldo/assets/css/v5/botonessocialesdesktop.css?v=1" rel="stylesheet">
+		
+			<script async src="https://cdn.ampproject.org/v0.js"></script>
+			<script async custom-element="amp-facebook" src="https://cdn.ampproject.org/v0/amp-facebook-0.1.js"></script>
+			<script async custom-element="amp-instagram" src="https://cdn.ampproject.org/v0/amp-instagram-0.1.js"></script>
+			<script async custom-element="amp-twitter" src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"></script>
+			<script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+			<script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
+			
+			<link rel="amphtml" href="https://www.elheraldo.hn/mundo/1369523-466/muere-médico-en-méxico-por-coronavirus-y-21-trabajadores-resultan-infectados?amp=1"/>
+		
+	
+
+
+		
+
+		
+	
+	
+	
+	
+    
+    	
+
+		
+	
+
+		
+    		
+		
+	
+		
+		
+
+	
+	
+		
+<!-- fi:/csp/mediapool/sites/ElHeraldo/assets/cspV2/headfiles/metaTagHistoria.csp -->
+
+<!-- fi:/csp/mediapool/sites/ElHeraldo/assets/cspV2/Utilitarios/VariablesDeNota.csp -->
+
+
+
+
+
+	
+	
+
+	
+	
+
+	
+	
+
+
+
+
+				
+ 
+
+
+
+
+
+				
+ 
+
+
+
+	
+
+
+
+
+<!--/fi:/csp/mediapool/sites/ElHeraldo/assets/cspV2/Utilitarios/VariablesDeNota.csp, e:.012807 -->
+
+
+
+
+<title>Muere médico en México por coronavirus y 21 trabajadores resultan infectados   - Diario El Heraldo</title>
+<meta name="title" content="Muere médico en México por coronavirus y 21 trabajadores resultan infectados   - Diario El Heraldo"/>
+<meta name="description" content="El IMSS hab&iacute;a informado que 21 trabajadores del hospital hab&iacute;an resultado positivos al virus y que daba seguimiento al caso"/>
+<meta name="keywords" content="Pandemia,Covid-19,Coronavirus Mexico,"/>
+<meta name="news_keywords" content="Pandemia,Covid-19,Coronavirus Mexico,">
+<link rel="canonical" href="https://www.elheraldo.hn/mundo/1369523-466/muere-médico-en-méxico-por-coronavirus-y-21-trabajadores-resultan-infectados"/>
+<meta property="fb:app_id" content="442343702768512"/>
+<meta property="og:title" content="Muere médico en México por coronavirus y 21 trabajadores resultan infectados   - Diario El Heraldo"/>
+<meta property="og:description" content="El IMSS hab&iacute;a informado que 21 trabajadores del hospital hab&iacute;an resultado positivos al virus y que daba seguimiento al caso"/>
+<meta property="og:image" content="https://www.elheraldo.hn/csp/mediapool/sites/dt.common.streams.StreamServer.cls?STREAMOID=mpMGifrdORNgKXuv$520M8$daE2N3K4ZzOUsqbU5sYt6ImKgL7Ghp7RUZtiwRQuv6FB40xiOfUoExWL3M40tfzssyZqpeG_J0TFo7ZhRaDiHC9oxmioMlYVJD0A$3RbIiibgT65kY_CSDiCiUzvHvODrHApbd6ry6YGl5GGOZrs-&CONTENTTYPE=image/jpeg"/>
+<meta property="og:type" content="article"/>                
+<meta property="og:url" content="https://www.elheraldo.hn/mundo/1369523-466/muere-médico-en-méxico-por-coronavirus-y-21-trabajadores-resultan-infectados"/>
+<meta property="og:site_name" content="Diario El Heraldo"/>
+<meta property="og:locale" content="es_LA">
+<meta property="article:publisher" content="https://www.facebook.com/diarioelheraldo"/>
+<meta property="article:section" itemprop="articleSection" content="Mundo"/>
+<meta property='article:tag' content='Pandemia'><meta property='article:tag' content='Covid-19'><meta property='article:tag' content='Coronavirus Mexico'><meta property='article:tag' content=''>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:site" content="@diarioelheraldo"/>
+<meta name="twitter:title" content="Muere médico en México por coronavirus y 21 trabajadores resultan infectados  "/>
+<meta name="twitter:description" content="El IMSS hab&iacute;a informado que 21 trabajadores del hospital hab&iacute;an resultado positivos al virus y que daba seguimiento al caso"/>
+<meta name="twitter:image" content="https://www.elheraldo.hn/csp/mediapool/sites/dt.common.streams.StreamServer.cls?STREAMOID=mpMGifrdORNgKXuv$520M8$daE2N3K4ZzOUsqbU5sYt6ImKgL7Ghp7RUZtiwRQuv6FB40xiOfUoExWL3M40tfzssyZqpeG_J0TFo7ZhRaDiHC9oxmioMlYVJD0A$3RbIiibgT65kY_CSDiCiUzvHvODrHApbd6ry6YGl5GGOZrs-&CONTENTTYPE=image/jpeg"/>
+<meta name="twitter:url" content="https://www.elheraldo.hn/mundo/1369523-466/muere-médico-en-méxico-por-coronavirus-y-21-trabajadores-resultan-infectados"/>
+
+
+<script type="application/ld+json">
+{
+	"@context": "https://schema.org",
+	"@type": "NewsArticle",
+	"mainEntityOfPage": "https://www.elheraldo.hn/mundo/1369523-466/muere-médico-en-méxico-por-coronavirus-y-21-trabajadores-resultan-infectados",
+	"name": "Muere médico en México por coronavirus y 21 trabajadores resultan infectados  ",
+	"headline": "Muere médico en México por coronavirus y 21 trabajadores resultan infectados  ",
+	"description": "El IMSS hab&iacute;a informado que 21 trabajadores del hospital hab&iacute;an resultado positivos al virus y que daba seguimiento al caso",
+	"url": "https://www.elheraldo.hn/mundo/1369523-466/muere-médico-en-méxico-por-coronavirus-y-21-trabajadores-resultan-infectados",
+	"thumbnailUrl": "https://www.elheraldo.hn/csp/mediapool/sites/dt.common.streams.StreamServer.cls?STREAMOID=UuCOMVdwMBKS5jdl3kDlns$daE2N3K4ZzOUsqbU5sYvf7lmO_4$wrPMOsEZJym2I6FB40xiOfUoExWL3M40tfzssyZqpeG_J0TFo7ZhRaDiHC9oxmioMlYVJD0A$3RbIiibgT65kY_CSDiCiUzvHvODrHApbd6ry6YGl5GGOZrs-&CONTENTTYPE=image/jpeg",
+	"datePublished": "2020-04-02T19:08:04Z",
+	"dateCreated": "2020-04-02T19:08:04Z",
+	"dateModified": "2020-04-02T19:22:37Z",
+	"articleSection": "Mundo",
+	"creator": ["PPINO"],
+	"keywords": ["Pandemia","Covid-19","Coronavirus Mexico","TipoPeriodismo:Estandar","Clasificacion:0"],
+	"author": "PPINO",
+	"image": {
+	  "@type": "ImageObject",
+	  "url": "https://www.elheraldo.hn/csp/mediapool/sites/dt.common.streams.StreamServer.cls?STREAMOID=mpMGifrdORNgKXuv$520M8$daE2N3K4ZzOUsqbU5sYt6ImKgL7Ghp7RUZtiwRQuv6FB40xiOfUoExWL3M40tfzssyZqpeG_J0TFo7ZhRaDiHC9oxmioMlYVJD0A$3RbIiibgT65kY_CSDiCiUzvHvODrHApbd6ry6YGl5GGOZrs-&CONTENTTYPE=image/jpeg",
+	  "width": 930,
+	  "height": 530
+	},
+	"publisher": {
+	  "@type": "Organization",
+	  "name": "El Heraldo",
+	  "logo": {
+		"@type": "ImageObject",
+		"url": "data:image/png;base64,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"
+	  }
+	},
+	"sameAs" : [
+		"https://www.facebook.com/diarioelheraldo",
+		"https://twitter.com/diarioelheraldo",
+		"https://instagram.com/diarioelheraldo/"
+	],
+	"articleBody": "CIUDAD DE MÉXICO, MÉXICO.-Un médico falleció por coronavirus y otros 21 trabajadores de salud resultaron contagiados en un hospital de Monclova, en el norteño estado mexicano de Coahuila, informaron este miércoles autoridades.  'Nos unimos a la pena que embarga a familiares, amigos y compañeros de este profesional de la salud de Monclova', dijo el Instituto Mexicano del Seguro Social (IMSS) en un comunicado.  La institución agregó que el médico de 45 años, especialista en urgencias médicas, falleció la noche del martes.  'En seguimiento a los protocolos establecidos para la atención del Covid-19, sus contactos directos se encuentran en observación domiciliaria', dijo. LEA: Abuelas españolas bailan o hacen jardinería confinadas en sus casas  'Además, se han reforzado las medidas de prevención para evitar la propagación de contagios entre el personal de salud', agregó.  El IMSS había informado que 21 trabajadores del hospital habían resultado positivos al virus y que daba seguimiento al caso.  Las autoridades dijeron que se va a sanitizar la totalidad del hospital en las próximas horas.  Hasta el momento, México registra 1.378 casos confirmados de coronavirus y 37 fallecimientos. VEA: Cruceros con pacientes de coronavirus llegan al puerto de Fort Lauderdale"
+}
+</script>
+
+
+  
+  
+<!-- fi:/csp/mediapool/sites/ElHeraldo/assets/cspV2/headfiles/chartbeat2020.csp -->
+
+<script type="text/javascript">
+(function() {
+  /** CONFIGURATION START **/
+  var _sf_async_config = window._sf_async_config = (window._sf_async_config || {});
+  _sf_async_config.uid = 21622;
+  _sf_async_config.domain = 'elheraldo.hn';
+  _sf_async_config.flickerControl = false;
+  _sf_async_config.useCanonical = true;
+  _sf_async_config.useCanonicalDomain = true;
+  _sf_async_config.sections = "Mundo,Clasificacion:0,TipoPeriodismo:Estandar";
+  _sf_async_config.authors = "PPINO";
+  _sf_async_config.title = "Muere médico en México por coronavirus y 21 trabajadores resultan infectados  ";
+  _sf_async_config.type = "Nota";
+  /** CONFIGURATION END **/
+  function loadChartbeat() {
+	  var e = document.createElement('script');
+	  var n = document.getElementsByTagName('script')[0];
+	  e.type = 'text/javascript';
+	  e.async = true;
+	  e.src = '//static.chartbeat.com/js/chartbeat.js';;
+	  n.parentNode.insertBefore(e, n);
+  }
+  loadChartbeat();
+})();
+</script>
+<script async src="//static.chartbeat.com/js/chartbeat_mab.js"></script>
+<!--/fi:/csp/mediapool/sites/ElHeraldo/assets/cspV2/headfiles/chartbeat2020.csp, e:.000098 -->
+
+
+
+<!--/fi:/csp/mediapool/sites/ElHeraldo/assets/cspV2/headfiles/metaTagHistoria.csp, e:.013285 -->
+
+		<script src="https://content.jwplatform.com/libraries/ZYmgflL3.js"> </script>
+		<!--<script src="https://content.jwplatform.com/libraries/cnRcQmZ8.js"> </script>-->
+		
+
+
+
+
+
+
+
+
+<script type="text/javascript" defer>
+  WebFontConfig = {
+    google: { families: [ 'Noto+Sans:400,700', 'Noto+Serif:400,700' ] }
+  };
+  (function() {
+    var wf = document.createElement('script');
+    wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+      '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+    wf.type = 'text/javascript';
+    wf.async = 'true';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(wf, s);
+  })(); </script>
+  <!-- Script MW -->
+  
+<!--/fi:/csp/mediapool/sites/ElHeraldo/assets/cspV2/headfiles/head.csp, e:.013931 -->
+
+	
+		  
+		<script>
+		window.dataLayer = window.dataLayer || [];
+		window.dataLayer.push({
+		'event' : 'pageview',
+		'gtm_type' : 'articulo',
+		'gtm_seccion' : '/Mundo/',
+		'gtm_device' : 'desktop',
+		'gtm_version' : 0
+		});
+		</script>
+		
+<!-- fi:/csp/mediapool/sites/ElHeraldo/assets/cspV2/headfiles/googleAnalyticsGTM.csp -->
+<script>
+window.dataLayer.push({
+'event' : 'pageview',
+'dimension1' : 'PPINO',
+'dimension2' : '2020-04-02',
+'dimension3' : 'Estandar',
+'dimension4' : 'Mundo',
+'dimension5' : '0',
+'dimension6' : 'Estandar'
+});
+</script>
+
+<!--/fi:/csp/mediapool/sites/ElHeraldo/assets/cspV2/headfiles/googleAnalyticsGTM.csp, e:.00032 -->
+
+		
+<!-- fi:/csp/mediapool/sites/ElHeraldo/assets/cspV2/headfiles/permutive.csp -->
+
+
+<!-- fi:/csp/mediapool/sites/ElHeraldo/assets/cspV2/Utilitarios/VariablesDeNota.csp -->
+
+
+
+
+
+	
+	
+
+	
+	
+
+	
+	
+
+
+
+
+				
+ 
+
+
+
+
+
+				
+ 
+
+
+
+	
+
+
+
+
+<!--/fi:/csp/mediapool/sites/ElHeraldo/assets/cspV2/Utilitarios/VariablesDeNota.csp, e:.004338 -->
+
+
+
+<script>
+  !function(n,e,i){if(!n){n=n||{},window.permutive=n,n.q=[],n.config=i||{},n.config.apiKey=e,n.config.environment=n.config.environment||"production";for(var o=["addon","identify","track","trigger","query","segment","segments","ready","on","once","user","consent"],r=0;r<o.length;r++){var t=o[r];n[t]=function(e){return function(){var i=Array.prototype.slice.call(arguments,0);n.q.push({functionName:e,arguments:i})}}(t)}}}(window.permutive,"5d9fb012-e2e4-4871-9f9a-c52b753087dd",{});
+  window.googletag=window.googletag||{},window.googletag.cmd=window.googletag.cmd||[],window.googletag.cmd.push(function(){if(0===window.googletag.pubads().getTargeting("permutive").length){var g=window.localStorage.getItem("_pdfps");window.googletag.pubads().setTargeting("permutive",g?JSON.parse(g):[])}});
+  permutive.addon('web',{
+    page: {
+      article: {
+        datePublished: "2020-04-02T19:08:04Z",
+        headline: "Muere médico en México por coronavirus y 21 trabajadores resultan infectados  ",
+        byline: "El IMSS había informado que 21 trabajadores del hospital habían resultado positivos al virus y que daba seguimiento al caso",
+        section: "Mundo",
+        authors: ["PPINO"],
+        type: "Articulo",
+        keywords: ["Pandemia","Covid-19","Coronavirus Mexico",]
+      },
+		classifications_watson: {
+            keywords: "$alchemy_keywords",
+            categories: "$alchemy_taxonomy",
+            sentiment: "$alchemy_document_sentiment"
+        }
+    }
+  });
+  </script>
+
+  <script async src="https://592d55dc-b875-4064-be1b-c660712b24d7.edge.permutive.app/592d55dc-b875-4064-be1b-c660712b24d7-web.js"></script>
+<!--/fi:/csp/mediapool/sites/ElHeraldo/assets/cspV2/headfiles/permutive.csp, e:.00452 -->
+
+		
+<!-- fi:/csp/mediapool/sites/ElHeraldo/assets/cspV2/headfiles/kwTargeting.csp -->
+
+<!--/fi:/csp/mediapool/sites/ElHeraldo/assets/cspV2/headfiles/kwTargeting.csp, e:.000093 -->
+
+		
+<!-- fi:/csp/mediapool/sites/ElHeraldo/assets/cspV2/headfiles/gtmHead.csp -->
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-P5SBBD3');</script>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PTW4J9K');</script>
+<!-- End Google Tag Manager -->
+<!--/fi:/csp/mediapool/sites/ElHeraldo/assets/cspV2/headfiles/gtmHead.csp, e:.000072 -->
+		
+		
+<!-- fi:/csp/mediapool/sites/ElHeraldo/assets/cspV2/headfiles/taboola.csp -->
+<script type="text/javascript">
+  window._taboola = window._taboola || [];
+  _taboola.push({article:'auto'});
+  !function (e, f, u, i) {
+    if (!document.getElementById(i)){
+      e.async = 1;
+      e.src = u;
+      e.id = i;
+      f.parentNode.insertBefore(e, f);
+    }
+  }(document.createElement('script'),
+  document.getElementsByTagName('script')[0],
+  '//cdn.taboola.com/libtrc/grupoopsa-elheraldohn/loader.js',
+  'tb_loader_script');
+  if(window.performance && typeof window.performance.mark == 'function')
+    {window.performance.mark('tbl_ic');}
+</script>
+<!--/fi:/csp/mediapool/sites/ElHeraldo/assets/cspV2/headfiles/taboola.csp, e:.000051 -->
+
+		
+<!-- fi:/csp/mediapool/sites/ElHeraldo/assets/cspV2/Utilitarios/dfpAds.csp -->
+
+
+<script async='async' src='https://securepubads.g.doubleclick.net/tag/js/gpt.js'></script>
+<script>
+  var googletag = googletag || {};
+  googletag.cmd = googletag.cmd || [];
+</script>
+
+
+<script>
+googletag.cmd.push(function() {
+googletag.defineSlot('/3383164/EH_D_Section_160x600_la', [160, 600],'div-gpt-ad-1518619853506-0').addService(googletag.pubads());
+googletag.defineSlot('/3383164/EH_D_Section_160x600_lb', [160, 600],'div-gpt-ad-1518619853506-1').addService(googletag.pubads());
+googletag.defineSlot('/3383164/EH_D_Section_300x250_a', [300, 250],'div-gpt-ad-1518619853506-2').addService(googletag.pubads());
+googletag.defineSlot('/3383164/EH_D_Section_300x250_b', [300, 250],'div-gpt-ad-1518619853506-3').addService(googletag.pubads());
+googletag.defineSlot('/3383164/EH_D_Section_300x250_c', [300, 250],'div-gpt-ad-1518619853506-4').addService(googletag.pubads());
+googletag.defineSlot('/3383164/EH_D_Section_300x250_d', [300, 250],'div-gpt-ad-1518619853506-5').addService(googletag.pubads());
+googletag.defineSlot('/3383164/EH_D_Section_728x90_a', [728, 90],'div-gpt-ad-1518619853506-6').addService(googletag.pubads());
+googletag.defineSlot('/3383164/EH_D_Section_728x90_b', [728, 90],'div-gpt-ad-1518619853506-7').addService(googletag.pubads());
+googletag.defineSlot('/3383164/EH_D_Section_728x90_c', [728, 90],'div-gpt-ad-1518619853506-8').addService(googletag.pubads());
+googletag.defineSlot('/3383164/EH_D_ROS_1x1', [1, 1],'div-gpt-ad-1518619853506-9').addService(googletag.pubads());
+googletag.defineSlot('/3383164/EH_D_Section_Adhesion_728x90', [728, 90],'adslot-footer').addService(googletag.pubads());
+googletag.defineSlot('/3383164/EH_D_Section_Interstitials_800x600', [800, 600],'div-gpt-ad-1518619853506-200').addService(googletag.pubads());
+googletag.defineSlot('/3383164/EH_D_ROS_1x1_Personalizado', [1, 1],'div-gpt-ad-1518619853506-201').addService(googletag.pubads());
+googletag.pubads().enableSingleRequest();
+googletag.pubads().collapseEmptyDivs();
+googletag.pubads().setTargeting('Section_EH','Mundo');
+googletag.pubads().setTargeting('Clasificacion','0');
+googletag.pubads().setTargeting('adcase', ads.logData);
+googletag.pubads().disableInitialLoad();
+!function(o){try{var t,g,e=JSON.parse(window.localStorage.getItem('nvgpersona23910'));for(g in e)t=(t='nvg_'+g).substring(0,10),'object'==typeof googletag&&googletag.pubads().setTargeting(t,e[g]),'function'==typeof GA_googleAddAttr&&GA_googleAddAttr(t,e[g])}catch(o){}}(window);
+window.googletag.pubads().setTargeting("ttLS", getTailTargetParam('LS'));
+window.googletag.pubads().setTargeting("ttS", getTailTargetParam('S'));
+window.googletag.pubads().setTargeting("ttT", getTailTargetParam('T'));
+window.googletag.pubads().setTargeting("ttC", getTailTargetParam('C'));
+window.googletag.pubads().setTargeting("ttU", getTailTargetParam('U'));
+window.googletag.pubads().setTargeting("ttCA", getTailTargetParam('CA'));
+window.googletag.pubads().setTargeting("ttE", getTailTargetParam('E'));
+window.googletag.pubads().setTargeting("ttA", getTailTargetParam('A'));
+window.googletag.pubads().setTargeting("ttG", getTailTargetParam('G'));
+googletag.enableServices();
+ });
+</script>
+
+
+
+<script>
+var ads = { styles: {}, light: true };
+ads.styles.push = {
+	iconsStyle: "width:54px;position:absolute;left:900px;top:0;"
+	  + "font-family:Gotham, Helvetica, Arial, sans-serif;font-size:11px;font-weight: bold;padding:3px;background-color:#FF0004;color: white;"
+	  + "text-align:center;",
+	openIconHTML: "Expandir",
+	closeIconHTML: "Cerrar"
+};
+var googletag = googletag || { cmd: [] };
+</script>
+
+
+<script async='async' src="https://www.laprensa.hn/csp/mediapool/sites/LaPrensa/assets/js/v5/adcase.js"></script>
+
+<!-- fi:/csp/mediapool/sites/ElHeraldo/assets/cspV2/Utilitarios/adzone.csp -->
+
+<script>
+  var adzone = adzone||{}; 
+  window.googletag = window.googletag || {cmd: []};
+  (function(adzone) { 
+    adzone.c=[]; adzone.m=function(e) { if(e.data && e.data.m =="adzone") { adzone.c.push({ m: e }); adzone.r && adzone.r(); } }; 
+    window.addEventListener ? window.addEventListener("message", adzone.m, !1) : window.attachEvent && window.attachEvent("message", adzone.m); 
+    googletag.cmd.push(function() { googletag.pubads().addEventListener("slotRenderEnded", function(e) { adzone.c.push({r: e}); adzone.r && adzone.r() } ) }); 
+  })(adzone);
+</script>
+<script async src="https://s-adzone.com/c/30_elheraldo.js"></script>
+<style>adzone_float {display:none!important}</style>
+<!--/fi:/csp/mediapool/sites/ElHeraldo/assets/cspV2/Utilitarios/adzone.csp, e:.000054 -->
+
+
+
+<script>
+//load the apstag.js library
+!function(a9,a,p,s,t,A,g){if(a[a9])return;function q(c,r){a[a9]._Q.push([c,r])}a[a9]={init:function(){q("i",arguments)},fetchBids:function(){q("f",arguments)},setDisplayBids:function(){},targetingKeys:function(){return[]},_Q:[]};A=p.createElement(s);A.async=!0;A.src=t;g=p.getElementsByTagName(s)[0];g.parentNode.insertBefore(A,g)}("apstag",window,document,"script","//c.amazon-adsystem.com/aax2/apstag.js");
+
+//initialize the apstag.js library on the page to allow bidding
+apstag.init({
+     pubID:  '03c4db9e-bacf-4a4a-a134-7a5f911c7cee',
+     adServer: 'googletag'
+});
+</script><script>
+apstag.fetchBids({ slots: [
+ {slotID: 'div-gpt-ad-1518619853506-0', slotName: '3383164/EH_D_Section_160x600_la', sizes: [[160,600]]},
+ {slotID: 'div-gpt-ad-1518619853506-1', slotName: '3383164/EH_D_Section_160x600_lb', sizes: [[160,600]]},
+ {slotID: 'div-gpt-ad-1518619853506-6', slotName: '3383164/EH_D_Section_728x90_a', sizes: [[728,90]]},
+ {slotID: 'div-gpt-ad-1518619853506-7', slotName: '3383164/EH_D_Section_728x90_b', sizes: [[728,90]]},
+ {slotID: 'div-gpt-ad-1518619853506-8', slotName: '3383164/EH_D_Section_728x90_c', sizes: [[728,90]]},
+ {slotID: 'div-gpt-ad-1518619853506-2', slotName: '3383164/EH_D_Section_300x250_a', sizes: [[300,250]]},
+ {slotID: 'div-gpt-ad-1518619853506-3', slotName: '3383164/EH_D_Section_300x250_b', sizes: [[300,250]]},
+ {slotID: 'div-gpt-ad-1518619853506-4', slotName: '3383164/EH_D_Section_300x250_c', sizes: [[300,250]]},
+ {slotID: 'div-gpt-ad-1518619853506-5', slotName: '3383164/EH_D_Section_300x250_d', sizes: [[300,250]]},
+ {slotID: 'div-gpt-ad-1518619853506-9', slotName: '3383164/EH_D_ROS_1x1', sizes: [[1,1]]}
+],
+timeout: 2e3
+}, function(bids) { googletag.cmd.push(function(){ apstag.setDisplayBids(); googletag.pubads().refresh(); }); }); 
+</script>
+
+
+<style>.ad728x90>div,#ad728x90>aside>div,.adleft>div,.adright>div,.ad300x250>div{visibility:inherit!important}</style>
+<!--/fi:/csp/mediapool/sites/ElHeraldo/assets/cspV2/Utilitarios/dfpAds.csp, e:.000257 -->
+
+		
+<!-- fi:/csp/mediapool/sites/ElHeraldo/assets/cspV2/Utilitarios/tailTarget.csp -->
+<!-- TailTarget Tag Manager TT-13297-7/CT-1143 --> <script>     (function(i) {     var ts = document.createElement('script');     ts.type = 'text/javascript';     ts.async = true;     ts.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'tags.t.tailtarget.com/t3m.js?i=' + i;     var s = document.getElementsByTagName('script')[0];     s.parentNode.insertBefore(ts, s);     })('TT-13297-7/CT-1143'); </script> <!-- End TailTarget Tag Manager -->
+
+<script>
+var getTailTargetParam = function(a) {
+	var ttCookieName = "_ttdmp";
+	if (!window._ttprofilescache) {
+		window._ttprofilescache = {};
+		try {
+			var c = document.cookie.match('(^|;)\\s*' + ttCookieName + '\\s*=\\s*([^;]+)');
+			var d = c ? c.pop().split('|') : [];
+			for (var i = 0; i < d.length; i++) {
+                var kv = d[i].split(":");
+                if (kv[1] && kv[1].indexOf(",") > 0) {
+                  window._ttprofilescache[kv[0]] = kv[1].split(",");
+                } else {
+                  window._ttprofilescache[kv[0]] = kv[1];
+                }
+			}
+        } catch (e) {
+        }
+    }
+  return window._ttprofilescache[a] ? window._ttprofilescache[a] : 'na';
+};
+</script>
+<!--/fi:/csp/mediapool/sites/ElHeraldo/assets/cspV2/Utilitarios/tailTarget.csp, e:.000054 -->
+
+		
+<!-- fi:/csp/mediapool/sites/ElHeraldo/assets/cspV2/Utilitarios/admiral.csp -->
+<!-- TAG ADMIRAL -->
+<script type="text/javascript">!(function(o,n,t){t=o.createElement(n),o=o.getElementsByTagName(n)[0],t.async=1,t.src="https://hocgeese.com/v2/0/rbbh9uBcC90E4HDNLYcQwUXZTBYX-kIgZEQSy64uVaE0YLCb_GsCvc",o.parentNode.insertBefore(t,o)})(document,"script"),(function(o,n){o[n]=o[n]||function(){(o[n].q=o[n].q||[]).push(arguments)}})(window,"admiral");!(function(n,e,r,t){function o(){if((function o(t){try{return(t=localStorage.getItem("v4ac1eiZr0"))&&0<t.split(",")[4]}catch(n){}return!1})()){var t=n[e].pubads();typeof t.setTargeting===r&&t.setTargeting("admiral-engaged","true")}}(t=n[e]=n[e]||{}).cmd=t.cmd||[],typeof t.pubads===r?o():typeof t.cmd.unshift===r?t.cmd.unshift(o):t.cmd.push(o)})(window,"googletag","function");</script>
+<!--/fi:/csp/mediapool/sites/ElHeraldo/assets/cspV2/Utilitarios/admiral.csp, e:.000065 -->
+
+	
+                              <script>!function(e){var n="https://s.go-mpulse.net/boomerang/";if("False"=="True")e.BOOMR_config=e.BOOMR_config||{},e.BOOMR_config.PageParams=e.BOOMR_config.PageParams||{},e.BOOMR_config.PageParams.pci=!0,n="https://s2.go-mpulse.net/boomerang/";if(window.BOOMR_API_key="JBHS6-M9U2E-TDKCT-6DFBM-LTJA7",function(){function e(){if(!o){var e=document.createElement("script");e.id="boomr-scr-as",e.src=window.BOOMR.url,e.async=!0,i.parentNode.appendChild(e),o=!0}}function t(e){o=!0;var n,t,a,r,d=document,O=window;if(window.BOOMR.snippetMethod=e?"if":"i",t=function(e,n){var t=d.createElement("script");t.id=n||"boomr-if-as",t.src=window.BOOMR.url,BOOMR_lstart=(new Date).getTime(),e=e||d.body,e.appendChild(t)},!window.addEventListener&&window.attachEvent&&navigator.userAgent.match(/MSIE [67]\./))return window.BOOMR.snippetMethod="s",void t(i.parentNode,"boomr-async");a=document.createElement("IFRAME"),a.src="about:blank",a.title="",a.role="presentation",a.loading="eager",r=(a.frameElement||a).style,r.width=0,r.height=0,r.border=0,r.display="none",i.parentNode.appendChild(a);try{O=a.contentWindow,d=O.document.open()}catch(_){n=document.domain,a.src="javascript:var d=document.open();d.domain='"+n+"';void(0);",O=a.contentWindow,d=O.document.open()}if(n)d._boomrl=function(){this.domain=n,t()},d.write("<bo"+"dy onload='document._boomrl();'>");else if(O._boomrl=function(){t()},O.addEventListener)O.addEventListener("load",O._boomrl,!1);else if(O.attachEvent)O.attachEvent("onload",O._boomrl);d.close()}function a(e){window.BOOMR_onload=e&&e.timeStamp||(new Date).getTime()}if(!window.BOOMR||!window.BOOMR.version&&!window.BOOMR.snippetExecuted){window.BOOMR=window.BOOMR||{},window.BOOMR.snippetStart=(new Date).getTime(),window.BOOMR.snippetExecuted=!0,window.BOOMR.snippetVersion=12,window.BOOMR.url=n+"JBHS6-M9U2E-TDKCT-6DFBM-LTJA7";var i=document.currentScript||document.getElementsByTagName("script")[0],o=!1,r=document.createElement("link");if(r.relList&&"function"==typeof r.relList.supports&&r.relList.supports("preload")&&"as"in r)window.BOOMR.snippetMethod="p",r.href=window.BOOMR.url,r.rel="preload",r.as="script",r.addEventListener("load",e),r.addEventListener("error",function(){t(!0)}),setTimeout(function(){if(!o)t(!0)},3e3),BOOMR_lstart=(new Date).getTime(),i.parentNode.appendChild(r);else t(!1);if(window.addEventListener)window.addEventListener("load",a,!1);else if(window.attachEvent)window.attachEvent("onload",a)}}(),"".length>0)if(e&&"performance"in e&&e.performance&&"function"==typeof e.performance.setResourceTimingBufferSize)e.performance.setResourceTimingBufferSize();!function(){if(BOOMR=e.BOOMR||{},BOOMR.plugins=BOOMR.plugins||{},!BOOMR.plugins.AK){var n=""=="true"?1:0,t="",a="facap563qdnh2jqacqmuaaaaabq4fgmy-f-2f8733e03-clienttons-s.akamaihd.net",i="false"=="true"?2:1,o={"ak.v":"32","ak.cp":"1262380","ak.ai":parseInt("758534",10),"ak.ol":"0","ak.cr":41,"ak.ipv":6,"ak.proto":"http/1.1","ak.rid":"28cf7953","ak.r":30074,"ak.a2":n,"ak.m":"dscb","ak.n":"essl","ak.bpcip":"2804:7f7:db80:da7d::","ak.cport":56819,"ak.gh":"179.185.57.92","ak.quicv":"","ak.tlsv":"tls1.3","ak.0rtt":"","ak.csrc":"-","ak.acc":"reno","ak.t":"1640143256","ak.ak":"hOBiQwZUYzCg5VSAfCLimQ==OosIKoCwwT/YSOTc1rrq1lo0icimhWrhb40P0VQbtUCvSS1sZwipc6pYnhwOg8qkZOJ2zxLbF1SGEb7IfHuGZk3k/ttutKrzM93fuXNqppJ3bYpQZlkSa9I/UkHszT4miGfjtPbso2rgAqv9V8JDCY1Nbk3/KeIo6aVtQU9B2hWL4uuGXyWK+ZHylaQa5X9pBkayiUKiM6yttB+O5vyVIIvn+c/U5MKElpVAQLPLzWwhEKtgao4wUQSaGjYWVFYQ3rCHF7tk8IU1u0Q+IEDXLppAtiPCNiw/EpO0jd6x2NmN7YJRUZ0J0KWIsznQfsURzKsdV8VGqu3SoknN0M/g3me8BkWMH2r0wFJYgB+v7onkI5s/QtTSQ6fgLJh7rIEbgzHpDGe10m9e698bAGUEnY6tXwiz+u6kTwxvnEtvF6c=","ak.pv":"10","ak.dpoabenc":"","ak.tf":i};if(""!==t)o["ak.ruds"]=t;var r={i:!1,av:function(n){var t="http.initiator";if(n&&(!n[t]||"spa_hard"===n[t]))o["ak.feo"]=void 0!==e.aFeoApplied?1:0,BOOMR.addVar(o)},rv:function(){var e=["ak.bpcip","ak.cport","ak.cr","ak.csrc","ak.gh","ak.ipv","ak.m","ak.n","ak.ol","ak.proto","ak.quicv","ak.tlsv","ak.0rtt","ak.r","ak.acc","ak.t","ak.tf"];BOOMR.removeVar(e)}};BOOMR.plugins.AK={akVars:o,akDNSPreFetchDomain:a,init:function(){if(!r.i){var e=BOOMR.subscribe;e("before_beacon",r.av,null,null),e("onbeacon",r.rv,null,null),r.i=!0}return this},is_complete:function(){return!0}}}}()}(window);</script></head>
+	
+	<body>
+		<script type='text/javascript'>
+		// TERCEPT
+		googletag.cmd.push(function() {
+			googletag.pubads().addEventListener('slotRenderEnded', function(event) {
+				window && window.tercept && window.tercept.logRenderEvent && window.tercept.logRenderEvent(event);
+			});
+		});
+		googletag.cmd.push(function() {
+			googletag.pubads().addEventListener('impressionViewable', function(event) {
+				window && window.tercept && window.tercept.logImpEvent && window.tercept.logImpEvent(event);
+			});
+		});
+		</script>
+		
+<!-- fi:/csp/mediapool/sites/ElHeraldo/assets/cspV2/headfiles/Parsely.csp -->
+
+<!--/fi:/csp/mediapool/sites/ElHeraldo/assets/cspV2/headfiles/Parsely.csp, cache(120), e:.000346 -->
+	
+		
+<!-- fi:/csp/mediapool/sites/ElHeraldo/assets/cspV2/headfiles/gtmBody.csp -->
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P5SBBD3" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PTW4J9K" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<!--/fi:/csp/mediapool/sites/ElHeraldo/assets/cspV2/headfiles/gtmBody.csp, e:.000062 -->
+
+		
+<!-- fi:/csp/mediapool/sites/ElHeraldo/templates/sections/v2/SectionWebEH.csp?sid=295&cid=1369523&fid=466&fullstory=1 -->
+ 
+ 
+	
+	
+<!-- fi:/csp/mediapool/sites/ElHeraldo/assets/cspV2/adFiles/dfp/banner1x1Intertisial.csp -->
+<div id='div-gpt-ad-1518619853506-200'>
+<script>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1518619853506-200'); });
+</script>
+</div>
+<!--/fi:/csp/mediapool/sites/ElHeraldo/assets/cspV2/adFiles/dfp/banner1x1Intertisial.csp, e:.000054 -->
+
+	
+	
+<!-- fi:/csp/mediapool/sites/ElHeraldo/assets/cspV2/adFiles/dfp/banner1x1Personalizado.csp -->
+<div id='div-gpt-ad-1518619853506-201'>
+<script>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1518619853506-201'); });
+</script>
+</div>
+<!--/fi:/csp/mediapool/sites/ElHeraldo/assets/cspV2/adFiles/dfp/banner1x1Personalizado.csp, e:.000049 -->
+
+	
+		<div id="oreja_div" style="right:0 !important"></div>
+	
+	
+		
+<!-- fi:/csp/mediapool/sites/ElHeraldo/assets/cspv2/sectionfiles/header.csp -->
+
+<!-- fi:/csp/mediapool/sites/ElHeraldo/assets/cspv2/sectionfiles/menuMarcas.csp -->
+<div id="top_links">
+    <h5>GRUPO OPSA:</h5>	
+    <a href="http://laprensa.hn/" target="_blank" rel="noopener noreferrer">LAPRENSA</a>
+    <span>+</span>
+    <a href="http://diez.hn/" target="_blank" rel="noopener noreferrer">DIEZ</a>
+    <span>+</span>
+    <a href="https://www.revistaestilo.net/" target="_blank" rel="noopener noreferrer">REVISTA ESTILO</a>
+    <span>+</span>
+    <a href="http://hondurastips.hn/" target="_blank" rel="noopener noreferrer">HONDURAS TIPS</a>
+    <span>+</span>
+    <a href="http://estrategiaynegocios.net/" target="_blank" rel="noopener noreferrer">ESTRATEGIA Y NEGOCIOS</a>
+    <span>+</span>
+    <a href="https://www.superclasificados.hn/" target="_blank" rel="noopener noreferrer">SUPERCLASIFICADOS</a>
+	<span>+</span>
+    <a href="http://www.gotv.hn/?utm_source=ElHeraldo&utm_medium=Link&utm_campaign=GoTVReferido" target="_blank" rel="noopener noreferrer">GOTV</a>
+	<span>+</span>
+	<a href="http://empleo.go.com.hn/" target="_blank" rel="noopener noreferrer">EMPLEOS GO</a>
+</div>
+<!--/fi:/csp/mediapool/sites/ElHeraldo/assets/cspv2/sectionfiles/menuMarcas.csp, cache(60), e:.000139 -->
+
+
+
+<!-- fi:/csp/mediapool/sites/ElHeraldo/assets/cspV2/sectionfiles/BannerAdsDFP.csp -->
+<div id="top_ads">
+	<div class="box">
+			
+<!-- fi:/csp/mediapool/sites/ElHeraldo/assets/cspv2/adfiles/dfp/megabannerSuperior.csp -->
+<aside class="ad728x90">
+	<div id='div-gpt-ad-1518619853506-6'>
+		<script>
+		googletag.cmd.push(function() { googletag.display('div-gpt-ad-1518619853506-6'); });
+		</script>
+	</div>
+</aside>
+<!--/fi:/csp/mediapool/sites/ElHeraldo/assets/cspv2/adfiles/dfp/megabannerSuperior.csp, e:.000058 -->
+
+    </div>	
+</div>			
+<!--/fi:/csp/mediapool/sites/ElHeraldo/assets/cspV2/sectionfiles/BannerAdsDFP.csp, e:.000167 -->
+
+
+<div id="header">
+	
+		
+<!-- fi:/csp/mediapool/sites/ElHeraldo/assets/cspv2/sectionfiles/menuSeccion.csp -->
+<nav>
+    <ul id="menu">
+    	<li>
+            <a class="icon" href="http://www.elheraldo.hn/"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAoCAYAAADpE0oSAAAARklEQVRYhe3RsQkAMAhFQfef1g3MBiliYYQrfikHvqiqmNgICgaDwWDwHc7M1jpwPW4vPPZqjTXWeHnj18PuwGAwGPw/fADK0zSvgQgSFwAAAABJRU5ErkJggg==" alt="MenÃº Diario El Heraldo"/></a>
+			<ul class="sub-menu">
+				<li><a href="http://www.elheraldo.hn/tegucigalpa/" >Tegucigalpa</a></li>
+				<li><a href="http://www.elheraldo.hn/economia/" class="parent" >Econom&iacute;a</a>
+					<ul class="sub-menu economia">
+					   <li><a href="http://www.elheraldo.hn/economia/dineroynegocios/" >Dinero &amp; Negocios</a></li>
+					   <li><a href="http://www.elheraldo.hn/economia/tasavehicular/" >Tasa Vehicular</a></li>
+					   <li><a href="http://www.elheraldo.hn/otrassecciones/acontecerempresarial/" >Acontecer empresarial</a></li>
+					</ul>
+				</li>	
+				<li><a href="http://www.elheraldo.hn/mundo/" >Mundo</a></li>
+                <li><a href="http://www.elheraldo.hn/factchecking/" >Fact Checking</a></li>
+                <li><a href="http://www.elheraldo.hn/investigaciones/" >Investigaciones</a></li>		
+				<li><a href="http://www.elheraldo.hn/fotogalerias/" class="parent" >Fotogaler&iacute;as</a>
+					<ul class="sub-menu fotogalerias">
+					   <li><a href="http://www.elheraldo.hn/fotogalerias/" >Lo m&aacute;s reciente</a></li>
+					   <li><a href="http://www.elheraldo.hn/fotogalerias/deportes/" >Deportes</a></li>
+					   <li><a href="http://www.elheraldo.hn/fotogalerias/entretenimiento/" >Entretenimiento</a></li>
+					</ul>
+				</li>
+				<li><a href="http://www.elheraldo.hn/videos/" class="parent" >Videos</a>
+					<ul class="sub-menu videos">
+						<li><a href="http://www.elheraldo.hn/videos/" >Lo m&aacute;s reciente</a></li>
+						<li><a href="http://www.elheraldo.hn/videos/videosdeportes/" >Deportes</a></li>
+						<li><a href="http://www.elheraldo.hn/videos/videosentretenimiento/" >Entretenimiento</a></li>
+						<li><a href="http://www.elheraldo.hn/videos/videosmundo/" >Mundo</a></li>
+						<li><a href="http://www.elheraldo.hn/videos/videospais/" >Pa&iacute;s</a></li>
+					</ul>
+				</li>
+                <li><a href="http://www.elheraldo.hn/especiales/comerciales/" >Ediciones Comerciales</a></li>
+				<li><a href="http://www.elheraldo.hn/opinion/" >Opini&oacute;n</a></li>
+				<li><a href="http://www.elheraldo.hn/inspectoreh/" >Inspector EH</a></li>	
+				
+				<li><a href="http://www.elheraldo.hn/seccionessecundarias/apuntes/" >Apuntes</a></li>
+				<li><a href="http://www.elheraldo.hn/minisitios/hondurenosenelmundo/" >Hondure&ntilde;os en el mundo</a></li>	
+				
+				<li><a href="http://www.elheraldo.hn/queondaconesto/" >&iquest;Qu&eacute; onda con esto?</a></li>
+				<li><a href="http://www.elheraldo.hn/otrassecciones/sexoypareja/" >Sexo y Pareja</a></li>
+				<li><a href="http://www.elheraldo.hn/otrassecciones/saludybelleza/" >Salud y Belleza</a></li>
+				
+				<li><a href="http://www.elheraldo.hn/tierraadentro/" >Tierra adentro</a></li>
+				<li><a href="http://www.elheraldo.hn/revistas/siempre/" >Siempre</a></li>
+				<li><a href="http://www.elheraldo.hn/revistas/crimenes/" >Cr&iacute;menes</a></li>
+				<li><a href="http://www.elheraldo.hn/revistas/tic-tac/" >Tic-Tac</a></li>
+				<li><a href="http://www.elheraldo.hn/seccionessecundarias/documentos/" >Documentos</a></li>
+				<li><a href="http://www.elheraldo.hn/especiales/" >Especiales</a></li>
+				<li><a href="http://www.elheraldo.hn/blogs">Blogs</a></li>	
+
+			</ul>
+        </li>
+        <li>
+        	
+             	<a id="logo_menu" href="http://www.elheraldo.hn"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKMAAAAaCAYAAADbqew9AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAABTFJREFUeNrsW01ymzAUljPZo57A6glCTwA5QbiB6QlKT1B6gtITBJ+gzrabkl1n2pniRdchN8C77lyYeWo06ntCgDC2x2/mjROQnv4+vT+JxX6/Zw5JNOwDc+X3Bt7fNlywC01Bct6Fxkt4v+ghS65dCP/L3wB+Pzacuh7AtWN5baezhr0LNg5OccPvHCqVXAHyQWjRaEYXmqpsOFH+bweyQsr10YwxsA0l0AeVioF9P3WqCBAtBsiKGv6CPJ9EM7IGjFELyP04auszhUOiXKiVM7FoOG247mg3Iuq3beUd/c6gHXZGnBJjHSoPo3SKvrdmegNcE+b1PaJ1pOZaTbzDU+jXJ+T9DnZuTdQvgH3FZ1VpfWYa8eTpWjNXAWHGCsNi30/cx9LwvLaovyHAWF2W/7joamT9zWUKL3Qs0XQ90DE+dhJgwkNNqz6CRs4IzcqR9IosL12bCORW0EaBpGhiRc4S2q01l2oKCh3I4ND/ENjT5q+CALfAAhjJhYOgw2UA0yWrGOnQY044h6Cmi9qgKlbqJR1BFifmt9ACNptAsmrYdxjACItAzzaASbSAszaMqdCDx7FmWu7ecyAOu1Xm6h4gFXULqQyVPPCVY8VdeQtBFSU3IPxupmhQWWYLWmSL1FlCPRfz3vb/CQlEtwNk5RBoeooMAdrxNSIzgDH7rnzGokcu8NgpV0zyI5hTGaSlkFXQKQOwSdOTI2VuiABKDc5SZRHX7OX0w4fNsEM2Q+oAiPdI5mQB7b6CvthQhgBazXRUBE482Mh8LBhTdj4nLe3C32mTi004BorYIqD73PAbWOCPWnmhLWSFbPiMSEiPsWj3SKor0+KB2FKWfvLziIyjJMC9lCm2a0vU14iDv5wZQK2ad3WwnhLmE9NkAQKKzCLroGpBIbUBzO3WoD1l/Q/IRhADU1SZ5TMTACUlBvcDG8eK0NKpDRhvzjyjIBCA+USUKToWpo+JVDVQqMgpDeYc63vlYLymNij/WlKfgw/KcrSKzbcB45oYcDyzdnwmfDTMBAc90xnfevTDhatSG7QJHwj4PuPdOpTVRZQVEDZgzImJalH+a0YwVpZOfNoBRkFMWD3j2CIlT+faMvnEZnAly2bdsDH5Y5LepUFrnjol7PD3LgVsnEjTts/Ql9WEYAwGyuIDcXOHvRib2oktTeWpUTQD+GW+z1Mi0lsAaXyAPvCZZdVX7EI1scn4AYGo30p6ABN9SO081OS6klVewIgvuNcz1TFGg6SEnzsVlQ6twVGCsTzQ4k21ONgx3srSBRmjQX0iGi9nAOMQa1AQc+f1BOSDKzMdQXTE2ekStZFW7OUoS2jBRgyLMQVwpvRZKdPv9fD//yh/bwzgxiik5v/KcvfamJljjaq5JRifiXdtLvUeAow98BM8CyYyqRksmryO5fLeaMXoM+c7aCuEDUG1+13zeXeWmpYjkfv63wZRrk51fSuSIqxeF1KvVMUGOX2vkJmudHGL+hVRd6OV8zu+t8EoRq5Q9blyxQe0aWqfwbi6ru+Jke1WWpsRUS7XyulX1Up1DeX9t2o/nkIQbPqIqoYO2XwE5RsmVp2UlABlAoPt+pAs0tqsLO8z6oubdYx7A+DR+xpbtJcRm7KG59ziA7QK5oT32HyloX9ftTkIibmrCIxl+ly4+lRV+jnCMpDJLfyTmM33qWoMz/STgi2YLv3yyNi+RmDu1fZ20FYOY4kY/QFZwl5uh/dpXzA80b6FMeZQ5gf7/1LN74Z/an3iylxgpyxyTCnm1v0VYACiv/7qSTPY5gAAAABJRU5ErkJggg==" alt="Diario El Heraldo"/></a>
+             
+     	</li>
+		<li class="efecto3d"><a class="inicio" href="http://www.elheraldo.hn"><span data-hover="INICIO">INICIO</span></a></li>
+        <li class="efecto3d"><a href="http://www.elheraldo.hn/pais/" class="pais" ><span data-hover="PAIS">PAIS</span></a></li>
+		<li class="efecto3d"><a href="http://www.elheraldo.hn/sucesos/" class="pais" ><span data-hover="SUCESOS">SUCESOS</span></a></li>			
+        <li class="efecto3d"><a href="http://www.elheraldo.hn/deportes/" class="zonadeportiva" ><span data-hover="DEPORTES">DEPORTES</span></a></li>
+        <li class="efecto3d"><a href="http://www.elheraldo.hn/entretenimiento/" class="vida" ><span data-hover="ENTRETENIMIENTO">ENTRETENIMIENTO</span></a></li>
+		<li class="efecto3d"><a href="http://www.elheraldo.hn/mundo/" class="pais" ><span data-hover="MUNDO">MUNDO</span></a></li>
+		
+		<li class="efecto3d"><a href="http://www.elheraldo.hn/videos/" class="pais" ><span data-hover="VIDEOS">VIDEOS</span></a></li>		
+        <aside id="redes">               	
+		   <a itemprop="sameAs" class="socialbutton" href="https://www.facebook.com/diarioelheraldo"><img alt="Facebook Diario El Heraldo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAARlJREFUeNrslrEKglAUhv+iUShwFhpEx0J8gMAXcHBy9G0cfAGnepPb5KY9gpuTQyiut3siBAvqFvdGQz/8cL3I+TiH4/GAcw7hlfCeqxXFW1P8GQEAMOEN1OssvIWGDO7FKBMOzVq88/IwDCiKAlVVjXdhGMK2bTWQrusQxzGappncu677EjKXhWRZ9gBQXi7G2OTZMAw4jgPLstRB+r6fAPI8v0JkNP8kfQouCyA9beG6rhFF0dMAaZoiCILPM2nbVqqttZRLaXeZpgnP867nsiwfOosk013SY8X3/fFMYOouWX2lXH/I70GkZ1eSJOOHR+P9HX3lz0jlOmhmHCmTtTichJeatpUdbnsX7UdM9ZYivKX4FwEGAG/6ctanjhKqAAAAAElFTkSuQmCC"/></a> 
+			<a itemprop="sameAs" class="socialbutton" href="https://twitter.com/diarioelheraldo"><img alt="Twitter @diarioelheraldo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAZNJREFUeNrUVjFug0AQ3EQpQUkLlSvaWDI9fIAHQJMOP8A8AD/AD7Arp4EHmAeQ3pbSwgOgjqAnN6fYIoYDk0CkjLQSgrudYfZu76iqKmLxxGJfjQvkmyH/HQiIKGbxTOPjg8UcJHv28ELT4Q0kFU2Me/oDPPx0YhAEdDqdSJZlWiwWZFkWfx/HMZmm+W1sw640TXkC3/dbkxdFQcvlko+rQ9M0yrKMVqvVhVBoF5REUcRJkPAaYRg2CM7iyrKkw+HQ+C6sCYgcx+GT6jgej0ILJUkiz/P4X3XWBP6ekec5rddr2u123GdMhloRIOqaoJUEvkJRPRnIYNNoSxh16FLbBYi7iQS2iAb34XrpCklUVeU1UBRlEAFqgbmDdjzqMASu6w5rK1Bl2/bNBIZhCK1q3fF1oG1sNpvWzVcXtN1ueXsZ1LuwjM/t5bcEDRIsXyjHbu9bqth4XXXotQtk6GH4iyRJLu91Xefqu/wfXJN/dWiB5HViDn7Gz9jDO4vHiW4rJn3du3A/ike+dyHfHPk/BRgAKiZxLbRAUpQAAAAASUVORK5CYII="/></a>
+			<a itemprop="sameAs" class="socialbutton" href="https://instagram.com/diarioelheraldo/"><img alt="Instagram Diario El Heraldo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAZBJREFUeNq8Vu2RgjAQ3bu5/9IBUIFQAXQgHWgJlGAJlkAJUgGhAigBKgAqiPsyJ8dHPAmiO7ODGnbf5u3bRJJSErvFnshtDfkc5P8CABEJ9j1tbx27R2/YwdQEdiLp3TaFbZpGHo9HABs74hA/tRnI4XBYBXD3IAhmICO6qqoi13WNmDifz/3nJElUjqIoyPM8PV1ZlhlXPrQwDNVvyDO0b/qA/Zi8HEWRogGUgBpYnuf9etu2y0Ecx1EOK8tSBeO53//NaxzHxPT0wP+BaHvCzRzxzIm0U3Y6nSQX039H3KqeCCHGSpnQB+qe2VMQy7Ierj2kxxQE1aLJXdfN1i6Xi1p/GQSJUDGanKapUhOevu8rqrD+soR3u51SFjd5VDVA0S/btreZEyRixVBd16p6yHtJcq2E+cxREmQ1SabI6NLA+4jTSXh2n6BKVAzZLuF7OJygFfTOVDetCLvhF1cd84ib7kK7k7v+r9frokEbMgBhaOfqU3c8TsISan3Tv5WQfq9gnHJi6x2we8h/E2AAMMiOwgps0McAAAAASUVORK5CYII="/></a>
+			<form method="get" action="https://www.elheraldo.hn/buscador/" role="search">
+
+<input type="text" name="q" class="search" placeholder="Buscar"></form>
+        </aside>
+    </ul>
+</nav>
+<!--/fi:/csp/mediapool/sites/ElHeraldo/assets/cspv2/sectionfiles/menuSeccion.csp, cache(10), e:.000185 -->
+
+	
+</div>
+<!--/fi:/csp/mediapool/sites/ElHeraldo/assets/cspv2/sectionfiles/header.csp, e:.000765 -->
+
+	
+	
+<!-- fi:/csp/mediapool/sites/ElHeraldo/assets/cspV2/adFiles/dfp/banner1x1.csp -->
+	<div id='div-gpt-ad-1518619853506-9'>
+	<script>
+	googletag.cmd.push(function() { googletag.display('div-gpt-ad-1518619853506-9'); });
+	</script>
+	</div>
+<!-- /3383164/EH_D_Inicio_1x1 -->
+<!--/fi:/csp/mediapool/sites/ElHeraldo/assets/cspV2/adFiles/dfp/banner1x1.csp, cache(1), e:.000255 -->
+
+	
+<!-- fi:/csp/mediapool/sites/ElHeraldo/templates/stories/full/v2/EHNoticiaFullWeb.csp -->
+ 
+
+
+
+<!-- fi:/csp/mediapool/sites/ElHeraldo/assets/cspV2/Utilitarios/VariablesDeNota.csp -->
+
+
+
+
+
+	
+	
+
+	
+	
+
+	
+	
+
+
+
+
+				
+ 
+
+
+
+
+
+				
+ 
+
+
+
+	
+
+
+
+
+<!--/fi:/csp/mediapool/sites/ElHeraldo/assets/cspV2/Utilitarios/VariablesDeNota.csp, e:.004819 -->
+
+
+<section id="keycontent">
+		<div class="container" id="article">
+			
+<!-- fi:/csp/mediapool/sites/ElHeraldo/assets/cspV2/adFiles/dfp/adLateralIzquierdo.csp -->
+<aside class="adleft">
+	<div id='div-gpt-ad-1518619853506-0' style='height:600px; width:160px;'>
+		<script>
+		googletag.cmd.push(function() { googletag.display('div-gpt-ad-1518619853506-0'); });
+		</script>
+	</div>
+</aside>
+<!--/fi:/csp/mediapool/sites/ElHeraldo/assets/cspV2/adFiles/dfp/adLateralIzquierdo.csp, cache(1), e:.00022 -->
+				
+			 	
+			 <article id="nota">
+                <span class="seccion"><a href="http://www.elheraldo.hn/mundo/" > 			
+				
+                
+                	Mundo
+                	
+				</a></span><!--seccion-->
+                <h1 class="titulo">Muere médico en México por coronavirus y 21 trabajadores resultan infectados  </h1><!--titulo de la nota-->
+                <p class="entrada">El IMSS hab&iacute;a informado que 21 trabajadores del hospital hab&iacute;an resultado positivos al virus y que daba seguimiento al caso</p><!--entrada de la nota-->
+                <section class="cuerpo">
+                	<aside class="contenido">
+                    	
+						<aside class="share2">
+<!-- fi:/csp/mediapool/sites/ElHeraldo/assets/cspV2/sectionfiles/iconosociales.csp -->
+
+<a class="resp-sharing-button__link" href="whatsapp://send?text=Muere médico en México por coronavirus y 21 trabajadores resultan infectados  %20https://www.elheraldo.hn/mundo/1369523-466/muere-médico-en-méxico-por-coronavirus-y-21-trabajadores-resultan-infectados" target="_blank" rel="noopener" aria-label="">
+  <div class="resp-sharing-button resp-sharing-button--whatsapp resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.1 3.9C17.9 1.7 15 .5 12 .5 5.8.5.7 5.6.7 11.9c0 2 .5 3.9 1.5 5.6L.6 23.4l6-1.6c1.6.9 3.5 1.3 5.4 1.3 6.3 0 11.4-5.1 11.4-11.4-.1-2.8-1.2-5.7-3.3-7.8zM12 21.4c-1.7 0-3.3-.5-4.8-1.3l-.4-.2-3.5 1 1-3.4L4 17c-1-1.5-1.4-3.2-1.4-5.1 0-5.2 4.2-9.4 9.4-9.4 2.5 0 4.9 1 6.7 2.8 1.8 1.8 2.8 4.2 2.8 6.7-.1 5.2-4.3 9.4-9.5 9.4zm5.1-7.1c-.3-.1-1.7-.9-1.9-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.1-.2.2-.3.2-.6.1s-1.2-.5-2.3-1.4c-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6s.3-.3.4-.5c.2-.1.3-.3.4-.5.1-.2 0-.4 0-.5C10 9 9.3 7.6 9 7c-.1-.4-.4-.3-.5-.3h-.6s-.4.1-.7.3c-.3.3-1 1-1 2.4s1 2.8 1.1 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.3.2-.7.2-1.2.2-1.3-.1-.3-.3-.4-.6-.5z"/></svg>
+    </div>
+  </div>
+</a>
+<a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=https://www.elheraldo.hn/mundo/1369523-466/muere-médico-en-méxico-por-coronavirus-y-21-trabajadores-resultan-infectados" target="_blank" rel="noopener" aria-label="">
+  <div class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.77 7.46H14.5v-1.9c0-.9.6-1.1 1-1.1h3V.5h-4.33C10.24.5 9.5 3.44 9.5 5.32v2.15h-3v4h3v12h5v-12h3.85l.42-4z"/></svg>
+    </div>
+  </div>
+</a>
+<a class="resp-sharing-button__link" href="https://twitter.com/intent/tweet/?text=Muere médico en México por coronavirus y 21 trabajadores resultan infectados  &amp;url=https://www.elheraldo.hn/mundo/1369523-466/muere-médico-en-méxico-por-coronavirus-y-21-trabajadores-resultan-infectados" target="_blank" rel="noopener" aria-label="">
+  <div class="resp-sharing-button resp-sharing-button--twitter resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M23.44 4.83c-.8.37-1.5.38-2.22.02.93-.56.98-.96 1.32-2.02-.88.52-1.86.9-2.9 1.1-.82-.88-2-1.43-3.3-1.43-2.5 0-4.55 2.04-4.55 4.54 0 .36.03.7.1 1.04-3.77-.2-7.12-2-9.36-4.75-.4.67-.6 1.45-.6 2.3 0 1.56.8 2.95 2 3.77-.74-.03-1.44-.23-2.05-.57v.06c0 2.2 1.56 4.03 3.64 4.44-.67.2-1.37.2-2.06.08.58 1.8 2.26 3.12 4.25 3.16C5.78 18.1 3.37 18.74 1 18.46c2 1.3 4.4 2.04 6.97 2.04 8.35 0 12.92-6.92 12.92-12.93 0-.2 0-.4-.02-.6.9-.63 1.96-1.22 2.56-2.14z"/></svg>
+    </div>
+  </div>
+</a>
+<a class="resp-sharing-button__link" href="mailto:?subject=Muere médico en México por coronavirus y 21 trabajadores resultan infectados  &amp;body=https://www.elheraldo.hn/mundo/1369523-466/muere-médico-en-méxico-por-coronavirus-y-21-trabajadores-resultan-infectados" target="_self" rel="noopener" aria-label="">
+  <div class="resp-sharing-button resp-sharing-button--email resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22 4H2C.9 4 0 4.9 0 6v12c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zM7.25 14.43l-3.5 2c-.08.05-.17.07-.25.07-.17 0-.34-.1-.43-.25-.14-.24-.06-.55.18-.68l3.5-2c.24-.14.55-.06.68.18.14.24.06.55-.18.68zm4.75.07c-.1 0-.2-.03-.27-.08l-8.5-5.5c-.23-.15-.3-.46-.15-.7.15-.22.46-.3.7-.14L12 13.4l8.23-5.32c.23-.15.54-.08.7.15.14.23.07.54-.16.7l-8.5 5.5c-.08.04-.17.07-.27.07zm8.93 1.75c-.1.16-.26.25-.43.25-.08 0-.17-.02-.25-.07l-3.5-2c-.24-.13-.32-.44-.18-.68s.44-.32.68-.18l3.5 2c.24.13.32.44.18.68z"/></svg>
+    </div>
+  </div>
+</a>
+<!--/fi:/csp/mediapool/sites/ElHeraldo/assets/cspV2/sectionfiles/iconosociales.csp, e:.00009 -->
+</aside>
+						<aside class="share3">
+<!-- fi:/csp/mediapool/sites/ElHeraldo/assets/cspV2/sectionfiles/iconosociales.csp -->
+
+<a class="resp-sharing-button__link" href="whatsapp://send?text=Muere médico en México por coronavirus y 21 trabajadores resultan infectados  %20https://www.elheraldo.hn/mundo/1369523-466/muere-médico-en-méxico-por-coronavirus-y-21-trabajadores-resultan-infectados" target="_blank" rel="noopener" aria-label="">
+  <div class="resp-sharing-button resp-sharing-button--whatsapp resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.1 3.9C17.9 1.7 15 .5 12 .5 5.8.5.7 5.6.7 11.9c0 2 .5 3.9 1.5 5.6L.6 23.4l6-1.6c1.6.9 3.5 1.3 5.4 1.3 6.3 0 11.4-5.1 11.4-11.4-.1-2.8-1.2-5.7-3.3-7.8zM12 21.4c-1.7 0-3.3-.5-4.8-1.3l-.4-.2-3.5 1 1-3.4L4 17c-1-1.5-1.4-3.2-1.4-5.1 0-5.2 4.2-9.4 9.4-9.4 2.5 0 4.9 1 6.7 2.8 1.8 1.8 2.8 4.2 2.8 6.7-.1 5.2-4.3 9.4-9.5 9.4zm5.1-7.1c-.3-.1-1.7-.9-1.9-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.1-.2.2-.3.2-.6.1s-1.2-.5-2.3-1.4c-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6s.3-.3.4-.5c.2-.1.3-.3.4-.5.1-.2 0-.4 0-.5C10 9 9.3 7.6 9 7c-.1-.4-.4-.3-.5-.3h-.6s-.4.1-.7.3c-.3.3-1 1-1 2.4s1 2.8 1.1 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.3.2-.7.2-1.2.2-1.3-.1-.3-.3-.4-.6-.5z"/></svg>
+    </div>
+  </div>
+</a>
+<a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=https://www.elheraldo.hn/mundo/1369523-466/muere-médico-en-méxico-por-coronavirus-y-21-trabajadores-resultan-infectados" target="_blank" rel="noopener" aria-label="">
+  <div class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.77 7.46H14.5v-1.9c0-.9.6-1.1 1-1.1h3V.5h-4.33C10.24.5 9.5 3.44 9.5 5.32v2.15h-3v4h3v12h5v-12h3.85l.42-4z"/></svg>
+    </div>
+  </div>
+</a>
+<a class="resp-sharing-button__link" href="https://twitter.com/intent/tweet/?text=Muere médico en México por coronavirus y 21 trabajadores resultan infectados  &amp;url=https://www.elheraldo.hn/mundo/1369523-466/muere-médico-en-méxico-por-coronavirus-y-21-trabajadores-resultan-infectados" target="_blank" rel="noopener" aria-label="">
+  <div class="resp-sharing-button resp-sharing-button--twitter resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M23.44 4.83c-.8.37-1.5.38-2.22.02.93-.56.98-.96 1.32-2.02-.88.52-1.86.9-2.9 1.1-.82-.88-2-1.43-3.3-1.43-2.5 0-4.55 2.04-4.55 4.54 0 .36.03.7.1 1.04-3.77-.2-7.12-2-9.36-4.75-.4.67-.6 1.45-.6 2.3 0 1.56.8 2.95 2 3.77-.74-.03-1.44-.23-2.05-.57v.06c0 2.2 1.56 4.03 3.64 4.44-.67.2-1.37.2-2.06.08.58 1.8 2.26 3.12 4.25 3.16C5.78 18.1 3.37 18.74 1 18.46c2 1.3 4.4 2.04 6.97 2.04 8.35 0 12.92-6.92 12.92-12.93 0-.2 0-.4-.02-.6.9-.63 1.96-1.22 2.56-2.14z"/></svg>
+    </div>
+  </div>
+</a>
+<a class="resp-sharing-button__link" href="mailto:?subject=Muere médico en México por coronavirus y 21 trabajadores resultan infectados  &amp;body=https://www.elheraldo.hn/mundo/1369523-466/muere-médico-en-méxico-por-coronavirus-y-21-trabajadores-resultan-infectados" target="_self" rel="noopener" aria-label="">
+  <div class="resp-sharing-button resp-sharing-button--email resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22 4H2C.9 4 0 4.9 0 6v12c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zM7.25 14.43l-3.5 2c-.08.05-.17.07-.25.07-.17 0-.34-.1-.43-.25-.14-.24-.06-.55.18-.68l3.5-2c.24-.14.55-.06.68.18.14.24.06.55-.18.68zm4.75.07c-.1 0-.2-.03-.27-.08l-8.5-5.5c-.23-.15-.3-.46-.15-.7.15-.22.46-.3.7-.14L12 13.4l8.23-5.32c.23-.15.54-.08.7.15.14.23.07.54-.16.7l-8.5 5.5c-.08.04-.17.07-.27.07zm8.93 1.75c-.1.16-.26.25-.43.25-.08 0-.17-.02-.25-.07l-3.5-2c-.24-.13-.32-.44-.18-.68s.44-.32.68-.18l3.5 2c.24.13.32.44.18.68z"/></svg>
+    </div>
+  </div>
+</a>
+<!--/fi:/csp/mediapool/sites/ElHeraldo/assets/cspV2/sectionfiles/iconosociales.csp, e:.000079 -->
+</aside>
+                        <figure class="destacada">
+						
+							<img width="100%" alt="Las autoridades dijeron que se va a sanitizar la totalidad del hospital en las próximas horas." src="/csp/mediapool/sites/dt.common.streams.StreamServer.cls?STREAMOID=mpMGifrdORNgKXuv$520M8$daE2N3K4ZzOUsqbU5sYt6ImKgL7Ghp7RUZtiwRQuv6FB40xiOfUoExWL3M40tfzssyZqpeG_J0TFo7ZhRaDiHC9oxmioMlYVJD0A$3RbIiibgT65kY_CSDiCiUzvHvODrHApbd6ry6YGl5GGOZrs-&amp;CONTENTTYPE=image/jpeg">
+							<span class="piedefoto">Las autoridades dijeron que se va a sanitizar la totalidad del hospital en las próximas horas.</span>
+						
+						
+                        </figure>
+						<style>figcaption.pie-imagen-amp{color: #3e3e3e; font: 14px/1.2em 'Noto Sans',sans-serif; height: auto; margin:-15px 0 0;width: 100%;}.i-amphtml-element img, .i-amphtml-element {overflow: hidden!important;}</style>
+                        <span class="autor">Agencia AFP
+							
+						
+							<div id="DTElementID-21751221" class="zBanner"></div>
+						</span><!--autor-->
+                        <time>02.04.2020</time><!--fecha y hora-->
+                        
+<!-- fi:/csp/mediapool/sites/ElHeraldo/assets/csp/helper/getTextFull.csp -->
+
+
+
+  
+	<div id="DTElementID-21751219" class="WebText"><p><strong>CIUDAD DE MÉXICO, MÉXICO.-</strong>Un médico falleció por coronavirus y otros 21 trabajadores de salud resultaron contagiados en un hospital de Monclova, en el norteño estado mexicano de Coahuila, informaron este miércoles autoridades.<br /><br />"Nos unimos a la pena que embarga a familiares, amigos y compañeros de este profesional de la salud de Monclova", dijo el Instituto Mexicano del Seguro Social (IMSS) en un comunicado.<br /><br />La institución agregó que el médico de 45 años, especialista en urgencias médicas, falleció la noche del martes.<br /><br />"En seguimiento a los protocolos establecidos para la atención del Covid-19, sus contactos directos se encuentran en observación domiciliaria", dijo.</p>
+<p><strong>LEA: <a href="https://www.elheraldo.hn/mundo/1369504-466/abuelas-espa%C3%B1olas-bailan-o-hacen-jardiner%C3%ADa-confinadas-en-sus-casas" target="_blank">Abuelas españolas bailan o hacen jardinería confinadas en sus casas</a></strong><br /><br />"Además, se han reforzado las medidas de prevención para evitar la propagación de contagios entre el personal de salud", agregó.<br /><br />El IMSS había informado que 21 trabajadores del hospital habían resultado positivos al virus y que daba seguimiento al caso.<br /><br />Las autoridades dijeron que se va a sanitizar la totalidad del hospital en las próximas horas.<br /><br />Hasta el momento, México registra 1.378 casos confirmados de coronavirus y 37 fallecimientos.</p>
+<p><strong>VEA: <a href="https://www.elheraldo.hn/mundo/1369490-466/cruceros-con-pacientes-de-coronavirus-llegan-al-puerto-de-fort-lauderdale" target="_blank">Cruceros con pacientes de coronavirus llegan al puerto de Fort Lauderdale</a></strong></p></div>
+
+<!--/fi:/csp/mediapool/sites/ElHeraldo/assets/csp/helper/getTextFull.csp, e:.000226 -->
+ 
+						<!-- MINUTO A MINUTO -->
+						
+							
+						<!--ENCUESTA-->
+						
+						
+						
+						
+						<!-- FOLLOW DE TWITTER -->
+							
+						
+						<aside class="share2">
+<!-- fi:/csp/mediapool/sites/ElHeraldo/assets/cspV2/sectionfiles/iconosociales.csp -->
+
+<a class="resp-sharing-button__link" href="whatsapp://send?text=Muere médico en México por coronavirus y 21 trabajadores resultan infectados  %20https://www.elheraldo.hn/mundo/1369523-466/muere-médico-en-méxico-por-coronavirus-y-21-trabajadores-resultan-infectados" target="_blank" rel="noopener" aria-label="">
+  <div class="resp-sharing-button resp-sharing-button--whatsapp resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.1 3.9C17.9 1.7 15 .5 12 .5 5.8.5.7 5.6.7 11.9c0 2 .5 3.9 1.5 5.6L.6 23.4l6-1.6c1.6.9 3.5 1.3 5.4 1.3 6.3 0 11.4-5.1 11.4-11.4-.1-2.8-1.2-5.7-3.3-7.8zM12 21.4c-1.7 0-3.3-.5-4.8-1.3l-.4-.2-3.5 1 1-3.4L4 17c-1-1.5-1.4-3.2-1.4-5.1 0-5.2 4.2-9.4 9.4-9.4 2.5 0 4.9 1 6.7 2.8 1.8 1.8 2.8 4.2 2.8 6.7-.1 5.2-4.3 9.4-9.5 9.4zm5.1-7.1c-.3-.1-1.7-.9-1.9-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.1-.2.2-.3.2-.6.1s-1.2-.5-2.3-1.4c-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6s.3-.3.4-.5c.2-.1.3-.3.4-.5.1-.2 0-.4 0-.5C10 9 9.3 7.6 9 7c-.1-.4-.4-.3-.5-.3h-.6s-.4.1-.7.3c-.3.3-1 1-1 2.4s1 2.8 1.1 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.3.2-.7.2-1.2.2-1.3-.1-.3-.3-.4-.6-.5z"/></svg>
+    </div>
+  </div>
+</a>
+<a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=https://www.elheraldo.hn/mundo/1369523-466/muere-médico-en-méxico-por-coronavirus-y-21-trabajadores-resultan-infectados" target="_blank" rel="noopener" aria-label="">
+  <div class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.77 7.46H14.5v-1.9c0-.9.6-1.1 1-1.1h3V.5h-4.33C10.24.5 9.5 3.44 9.5 5.32v2.15h-3v4h3v12h5v-12h3.85l.42-4z"/></svg>
+    </div>
+  </div>
+</a>
+<a class="resp-sharing-button__link" href="https://twitter.com/intent/tweet/?text=Muere médico en México por coronavirus y 21 trabajadores resultan infectados  &amp;url=https://www.elheraldo.hn/mundo/1369523-466/muere-médico-en-méxico-por-coronavirus-y-21-trabajadores-resultan-infectados" target="_blank" rel="noopener" aria-label="">
+  <div class="resp-sharing-button resp-sharing-button--twitter resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M23.44 4.83c-.8.37-1.5.38-2.22.02.93-.56.98-.96 1.32-2.02-.88.52-1.86.9-2.9 1.1-.82-.88-2-1.43-3.3-1.43-2.5 0-4.55 2.04-4.55 4.54 0 .36.03.7.1 1.04-3.77-.2-7.12-2-9.36-4.75-.4.67-.6 1.45-.6 2.3 0 1.56.8 2.95 2 3.77-.74-.03-1.44-.23-2.05-.57v.06c0 2.2 1.56 4.03 3.64 4.44-.67.2-1.37.2-2.06.08.58 1.8 2.26 3.12 4.25 3.16C5.78 18.1 3.37 18.74 1 18.46c2 1.3 4.4 2.04 6.97 2.04 8.35 0 12.92-6.92 12.92-12.93 0-.2 0-.4-.02-.6.9-.63 1.96-1.22 2.56-2.14z"/></svg>
+    </div>
+  </div>
+</a>
+<a class="resp-sharing-button__link" href="mailto:?subject=Muere médico en México por coronavirus y 21 trabajadores resultan infectados  &amp;body=https://www.elheraldo.hn/mundo/1369523-466/muere-médico-en-méxico-por-coronavirus-y-21-trabajadores-resultan-infectados" target="_self" rel="noopener" aria-label="">
+  <div class="resp-sharing-button resp-sharing-button--email resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22 4H2C.9 4 0 4.9 0 6v12c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zM7.25 14.43l-3.5 2c-.08.05-.17.07-.25.07-.17 0-.34-.1-.43-.25-.14-.24-.06-.55.18-.68l3.5-2c.24-.14.55-.06.68.18.14.24.06.55-.18.68zm4.75.07c-.1 0-.2-.03-.27-.08l-8.5-5.5c-.23-.15-.3-.46-.15-.7.15-.22.46-.3.7-.14L12 13.4l8.23-5.32c.23-.15.54-.08.7.15.14.23.07.54-.16.7l-8.5 5.5c-.08.04-.17.07-.27.07zm8.93 1.75c-.1.16-.26.25-.43.25-.08 0-.17-.02-.25-.07l-3.5-2c-.24-.13-.32-.44-.18-.68s.44-.32.68-.18l3.5 2c.24.13.32.44.18.68z"/></svg>
+    </div>
+  </div>
+</a>
+<!--/fi:/csp/mediapool/sites/ElHeraldo/assets/cspV2/sectionfiles/iconosociales.csp, e:.000095 -->
+</aside>
+						
+                        	
+							
+							
+								
+								<aside id="relacionadas">
+									<span class="titulo">Relacionadas:</span>
+								
+								
+									
+									<a href="http://www.elheraldo.hn/mundo/1369232-466/méxico-muere-guatemalteco-en-protesta-en-centro-migratorio" ><h3><span>&gt;</span>México: Muere guatemalteco en protesta en centro migratorio</h3></a>
+								
+								
+								
+							
+								
+								
+									
+									<a href="http://www.elheraldo.hn/mundo/1368516-466/gobierno-mexico-decreta-estado-emergencia-nacional-covid-19" ><h3><span>&gt;</span>Gobierno de México decreta estado de emergencia nacional por Covid-19</h3></a>
+								
+								
+								
+							
+								
+								
+									
+									<a href="http://www.elheraldo.hn/mundo/1368164-466/méxico-endurece-el-mensaje-contra-el-coronavirus" ><h3><span>&gt;</span>México endurece el mensaje contra el coronavirus </h3></a>
+								
+								
+								
+								</aside>
+								
+							
+						
+                        <aside id="tags">
+                        	<span class="titulo">Tags:</span>
+							
+							
+                            <a href="/buscador?q=Pandemia" rel="nofollow">Pandemia</a>
+							
+                            <a href="/buscador?q=Covid-19" rel="nofollow">Covid-19</a>
+							
+                            <a href="/buscador?q=Coronavirus Mexico" rel="nofollow">Coronavirus Mexico</a>
+							 
+														                     
+                        </aside>
+						<aside id="interesar">
+						
+<!-- fi:/csp/mediapool/sites/ElHeraldo/assets/cspV2/sectionfiles/TePuedeInteresar.csp -->
+
+
+<span class="titulo">Te puede interesar:</span>
+    <div class="contenedor">
+    
+	
+		
+		
+		  	
+		 
+			<article>
+               <figure>
+                  <a href="http://www.elheraldo.hn/mundo/1507109-466/repatriacion-migrantes-fallecidos-accidente-mexico-guatemala" ><img alt="Repatrian restos de 6 migrantes que murieron en accidente en México" src="/csp/mediapool/sites/dt.common.streams.StreamServer.cls?STREAMOID=y6ddPxv$VWK5eyLAwSe4HM$daE2N3K4ZzOUsqbU5sYsFNfNGsLIt9TR_AwDWWyMv6FB40xiOfUoExWL3M40tfzssyZqpeG_J0TFo7ZhRaDiHC9oxmioMlYVJD0A$3RbIiibgT65kY_CSDiCiUzvHvODrHApbd6ry6YGl5GGOZrs-&amp;CONTENTTYPE=image/jpeg"></a>
+               </figure>
+               <span class="indicador_rojo"></span>
+               <a href="http://www.elheraldo.hn/mundo/1507109-466/repatriacion-migrantes-fallecidos-accidente-mexico-guatemala" class="categoria">Mundo</a>
+               <a href="http://www.elheraldo.hn/mundo/1507109-466/repatriacion-migrantes-fallecidos-accidente-mexico-guatemala" ><h2>Repatrian restos de 6 migrantes que murieron en accidente en México</h2></a>
+            </article>	
+		  		  
+		  
+		
+	
+		
+		
+		  	
+		 	
+			<article class="nobordes">
+               <div class="arriba">
+                  <span class="indicador_blanco"></span>
+                     <a href="http://www.elheraldo.hn/mundo/1507083-466/eeuu-entregara-test-covid-omicron" class="categoria">Mundo</a>
+                     <a href="http://www.elheraldo.hn/mundo/1507083-466/eeuu-entregara-test-covid-omicron" ><h2>EEUU entregará test gratis de covid mientras ómicron se extiende por el mundo  </h2></a>
+               </div>	
+		  		  
+		  
+		
+	
+		
+		
+		  	
+		 
+               <div class="abajo">
+                  <span class="indicador_rojo"></span>
+                     <a href="http://www.elheraldo.hn/mundo/1507081-466/mexico-23-casos-variante-omicron" class="categoria">Mundo</a>
+                     <a href="http://www.elheraldo.hn/mundo/1507081-466/mexico-23-casos-variante-omicron" ><h2>México confirma que hay 23 casos de la variante ómicron en el país  </h2></a>
+               </div>
+           </article>	
+		   
+          		  
+		  
+		
+	
+		
+		
+		  	
+		                       
+			<article>
+               <figure>
+                  <a href="http://www.elheraldo.hn/mundo/1507065-466/fiscalia-cita-presidente-peru-caso-ascensos-militares" ><img alt="Fiscalía cita a presidente de Perú en caso de ascensos militares  " src="/csp/mediapool/sites/dt.common.streams.StreamServer.cls?STREAMOID=S5prfy4zW1vDM2hSGRdduM$daE2N3K4ZzOUsqbU5sYuP_UKdFG13IACepjT6xHND6FB40xiOfUoExWL3M40tfzssyZqpeG_J0TFo7ZhRaDiHC9oxmioMlYVJD0A$3RbIiibgT65kY_CSDiCiUzvHvODrHApbd6ry6YGl5GGOZrs-&amp;CONTENTTYPE=image/jpeg"></a>
+               </figure>
+               <span class="indicador_rojo"></span>
+               <a href="http://www.elheraldo.hn/mundo/1507065-466/fiscalia-cita-presidente-peru-caso-ascensos-militares" class="categoria">Mundo</a>
+               <a href="http://www.elheraldo.hn/mundo/1507065-466/fiscalia-cita-presidente-peru-caso-ascensos-militares" ><h2>Fiscalía cita a presidente de Perú en caso de ascensos militares  </h2></a>
+            </article>	   
+		   	  			
+		  		  
+		  
+		
+		
+     
+	</div><!--end contenedor-->
+
+
+<!--/fi:/csp/mediapool/sites/ElHeraldo/assets/cspV2/sectionfiles/TePuedeInteresar.csp, cache(10), e:.000553 -->
+
+						 </aside>
+                        
+<!-- fi:/csp/mediapool/sites/ElHeraldo/assets/cspV2/Utilitarios/mgidregular.csp -->
+<!-- Composite Start -->
+<div id="M737130ScriptRootC1178933"></div>
+<script src="https://jsc.mgid.com/e/l/elheraldo.hn.1178933.js" async></script>
+<!-- Composite End -->
+<!--/fi:/csp/mediapool/sites/ElHeraldo/assets/cspV2/Utilitarios/mgidregular.csp, cache(10), e:.000152 -->
+ 
+						
+						<aside id="taboola_nota">
+						
+						
+<!-- fi:/csp/mediapool/sites/ElHeraldo/assets/cspV2/helper/getCountryCodeEUA.csp -->
+
+<!--/fi:/csp/mediapool/sites/ElHeraldo/assets/cspV2/helper/getCountryCodeEUA.csp, e:.000065 -->
+
+						
+                        
+                        <div class="_form_73"></div><script src="https://grupoopsa.activehosted.com/f/embed.php?id=73" type="text/javascript" charset="utf-8"></script>
+                        
+						
+						</aside>
+                        <aside id="disqus">
+                        	<span class="titulo">Comentarios:</span>
+							<div class="fb-comments" data-href="http://www.elheraldo.hn/mundo/1369523-466/muere-médico-en-méxico-por-coronavirus-y-21-trabajadores-resultan-infectados" data-width="600" data-numposts="10"></div>
+                        </aside>
+						<aside id="taboola_nota">
+						
+<!-- fi:/csp/mediapool/sites/ElHeraldo/assets/cspV2/sectionfiles/taboolaBelowArticleThumbnails.csp -->
+<div id="taboola-below-article-thumbnails1"></div>
+<script type="text/javascript">
+  window._taboola = window._taboola || [];
+  _taboola.push({
+    mode: 'thumbnails-e',
+    container: 'taboola-below-article-thumbnails1',
+    placement: 'Below Article Thumbnails1',
+    target_type: 'mix'
+  });
+</script>
+<!--/fi:/csp/mediapool/sites/ElHeraldo/assets/cspV2/sectionfiles/taboolaBelowArticleThumbnails.csp, cache(10), e:.000135 -->
+
+						</aside>
+                    </aside>
+                    <div id="sidebar">
+						
+<!-- fi:/csp/mediapool/sites/ElHeraldo/assets/cspV2/adFiles/dfp/BigBannerA.csp -->
+
+	<aside class="ad300x250">
+        <div id='div-gpt-ad-1518619853506-2'>
+        <script>
+        googletag.cmd.push(function() { googletag.display('div-gpt-ad-1518619853506-2'); });
+        </script>
+        </div>
+    </aside><!--big_banner_a-->
+
+<!--/fi:/csp/mediapool/sites/ElHeraldo/assets/cspV2/adFiles/dfp/BigBannerA.csp, cache(1), e:.000166 -->
+		
+                        <aside id="enportada">
+                        	
+<!-- fi:/csp/mediapool/sites/ElHeraldo/templates/stories/summary/v2/Widgets/ModEnPortada.csp -->
+<aside id="enportada"><!--widget en portada-->
+<div class="titulo">EN PORTADA</div>
+   <div class="borde">
+     <div class="flechita"></div>
+
+
+	
+
+		
+ 		<article>
+           <aside>
+		      <a href="http://www.elheraldo.hn/pais/" class="categoria" >Pais</a>
+              <a href="http://www.elheraldo.hn/pais/1507077-466/variante-omicron-honduras-casos-covid-roberto-cosenza-pandemia-2021-navidad" ><h3><span>&gt;</span>Variante &oacute;micron ya circula en Honduras, asegura Cosenza</h3></a>
+           </aside>
+           <figure>
+              <a href="http://www.elheraldo.hn/pais/1507077-466/variante-omicron-honduras-casos-covid-roberto-cosenza-pandemia-2021-navidad" ><img alt="El subsecretario de Salud, Roberto Cosenza. Foto archivo EL HERALDO" src="/csp/mediapool/sites/dt.common.streams.StreamServer.cls?STREAMOID=yGJstYNYw8370HVawLRTA8$daE2N3K4ZzOUsqbU5sYsFcjNNfpruVoxj6tC08dci6FB40xiOfUoExWL3M40tfzssyZqpeG_J0TFo7ZhRaDiHC9oxmioMlYVJD0A$3RbIiibgT65kY_CSDiCiUzvHvODrHApbd6ry6YGl5GGOZrs-&amp;CONTENTTYPE=image/jpeg"></a>
+           </figure>
+        </article>		
+		
+		
+<!-- fi:/csp/mediapool/sites/ElHeraldo/assets/cspV2/Utilitarios/KillVariablesHistoria.csp -->
+
+<!--/fi:/csp/mediapool/sites/ElHeraldo/assets/cspV2/Utilitarios/KillVariablesHistoria.csp, e:.000099 -->
+
+		
+	
+
+	
+
+		
+ 		<article>
+           <aside>
+		      <a href="http://www.elheraldo.hn/eleccioneshonduras2021/" class="categoria" >Elecciones Honduras 2021</a>
+              <a href="http://www.elheraldo.hn/eleccioneshonduras2021/1507078-508/comision-traspaso-xiomara-castro-toma-posesion-estadio-nacional-invitados-presidentes-honduras" ><h3><span>&gt;</span>&iquest;Qu&eacute; l&iacute;deres mundiales han sido invitados a la investidura?</h3></a>
+           </aside>
+           <figure>
+              <a href="http://www.elheraldo.hn/eleccioneshonduras2021/1507078-508/comision-traspaso-xiomara-castro-toma-posesion-estadio-nacional-invitados-presidentes-honduras" ><img alt="Cristina Fernández de Kirchner, Evo Morales, Barack Obama y Nayib Bukele formarían parte de los invitados de Castro. Fotos: AFP" src="/csp/mediapool/sites/dt.common.streams.StreamServer.cls?STREAMOID=oED$V3GwFJ5JncLpQFnlnM$daE2N3K4ZzOUsqbU5sYt2oyT$Z34fkiSjJXaAwShV6FB40xiOfUoExWL3M40tfzssyZqpeG_J0TFo7ZhRaDiHC9oxmioMlYVJD0A$3RbIiibgT65kY_CSDiCiUzvHvODrHApbd6ry6YGl5GGOZrs-&amp;CONTENTTYPE=image/jpeg"></a>
+           </figure>
+        </article>		
+		
+		
+<!-- fi:/csp/mediapool/sites/ElHeraldo/assets/cspV2/Utilitarios/KillVariablesHistoria.csp -->
+
+<!--/fi:/csp/mediapool/sites/ElHeraldo/assets/cspV2/Utilitarios/KillVariablesHistoria.csp, e:.000115 -->
+
+		
+	
+
+	
+
+		
+ 		<article>
+           <aside>
+		      <a href="http://www.elheraldo.hn/factchecking/" class="categoria" >Fact checking</a>
+              <a href="http://www.elheraldo.hn/factchecking/1507080-504/salvador-nasralla-puede-ser-presidente-del-congreso-nacional" ><h3><span>&gt;</span>&iquest;Salvador Nasralla puede ser presidente del Congreso Nacional?</h3></a>
+           </aside>
+           <figure>
+              <a href="http://www.elheraldo.hn/factchecking/1507080-504/salvador-nasralla-puede-ser-presidente-del-congreso-nacional" ><img alt="Salvador Nasralla será uno de los tres designados presidenciales de Xiomara Castro a partir del 27 de enero de 2022. Foto: EL HERALDO. " src="/csp/mediapool/sites/dt.common.streams.StreamServer.cls?STREAMOID=BKg2L$z08$i1CZV_aHBaz8$daE2N3K4ZzOUsqbU5sYt4uv3jIm3WdUL1$sITsIT66FB40xiOfUoExWL3M40tfzssyZqpeG_J0TFo7ZhRaDiHC9oxmioMlYVJD0A$3RbIiibgT65kY_CSDiCiUzvHvODrHApbd6ry6YGl5GGOZrs-&amp;CONTENTTYPE=image/jpeg"></a>
+           </figure>
+        </article>		
+		
+		
+<!-- fi:/csp/mediapool/sites/ElHeraldo/assets/cspV2/Utilitarios/KillVariablesHistoria.csp -->
+
+<!--/fi:/csp/mediapool/sites/ElHeraldo/assets/cspV2/Utilitarios/KillVariablesHistoria.csp, e:.000091 -->
+
+		
+	
+
+	
+
+		
+ 		<article>
+           <aside>
+		      <a href="http://www.elheraldo.hn/pais/" class="categoria" >Pais</a>
+              <a href="http://www.elheraldo.hn/pais/1507073-466/ceremonia-traspaso-ascenso-fuerzas-armadas-estado-mayor-conjunto-tito-livio-jose-jorge-fortin" ><h3><span>&gt;</span>Realizan ceremonia de traspaso de mando del Estado Mayor Conjunto</h3></a>
+           </aside>
+           <figure>
+              <a href="http://www.elheraldo.hn/pais/1507073-466/ceremonia-traspaso-ascenso-fuerzas-armadas-estado-mayor-conjunto-tito-livio-jose-jorge-fortin" ><img alt="El presidente de la República, Juan Orlando Hernández, el presidente del Congreso Nacional, Mauricio Oliva y el presidente del Poder Judicial, Rolando Argueta, participaron de la ceremonia. Foto: David Romero/ EL HERALDO" src="/csp/mediapool/sites/dt.common.streams.StreamServer.cls?STREAMOID=ZTFyd41DBZhU6ICv15OybM$daE2N3K4ZzOUsqbU5sYvH8JUgsE2YROeVn4MHRa5_6FB40xiOfUoExWL3M40tfzssyZqpeG_J0TFo7ZhRaDiHC9oxmioMlYVJD0A$3RbIiibgT65kY_CSDiCiUzvHvODrHApbd6ry6YGl5GGOZrs-&amp;CONTENTTYPE=image/jpeg"></a>
+           </figure>
+        </article>		
+		
+		
+<!-- fi:/csp/mediapool/sites/ElHeraldo/assets/cspV2/Utilitarios/KillVariablesHistoria.csp -->
+
+<!--/fi:/csp/mediapool/sites/ElHeraldo/assets/cspV2/Utilitarios/KillVariablesHistoria.csp, e:.000097 -->
+
+		
+	
+
+	
+
+		
+ 		<article>
+           <aside>
+		      <a href="http://www.elheraldo.hn/pais/" class="categoria" >Pais</a>
+              <a href="http://www.elheraldo.hn/pais/1507090-466/palmerola-cobros-pasajeros-tasa-aeroportuaria" ><h3><span>&gt;</span>Cobros indebidos a los pasajeros de Palmerola por la Tasa Aeroportuaria</h3></a>
+           </aside>
+           <figure>
+              <a href="http://www.elheraldo.hn/pais/1507090-466/palmerola-cobros-pasajeros-tasa-aeroportuaria" ><img alt="Las aerolíneas que viajan por Palmerola hicieron cobros indebidos a los pasajeros. Foto: EL HERALDO." src="/csp/mediapool/sites/dt.common.streams.StreamServer.cls?STREAMOID=0EP8$z7Hbx4EHogcfboBZc$daE2N3K4ZzOUsqbU5sYtWyxTvRSZLdwVzQ$lKeVQm6FB40xiOfUoExWL3M40tfzssyZqpeG_J0TFo7ZhRaDiHC9oxmioMlYVJD0A$3RbIiibgT65kY_CSDiCiUzvHvODrHApbd6ry6YGl5GGOZrs-&amp;CONTENTTYPE=image/jpeg"></a>
+           </figure>
+        </article>		
+		
+		
+<!-- fi:/csp/mediapool/sites/ElHeraldo/assets/cspV2/Utilitarios/KillVariablesHistoria.csp -->
+
+<!--/fi:/csp/mediapool/sites/ElHeraldo/assets/cspV2/Utilitarios/KillVariablesHistoria.csp, e:.00009 -->
+
+		
+	
+                          
+</div>          
+</aside>
+<!--/fi:/csp/mediapool/sites/ElHeraldo/templates/stories/summary/v2/Widgets/ModEnPortada.csp, cache(10), e:.000199 -->
+                        
+                        </aside>
+						
+<!-- fi:/csp/mediapool/sites/ElHeraldo/assets/cspV2/adFiles/dfp/BigBannerB.csp -->
+<aside class="ad300x250">
+	<div id='div-gpt-ad-1518619853506-3'>
+	<script>
+	googletag.cmd.push(function() { googletag.display('div-gpt-ad-1518619853506-3'); });
+	</script>
+	</div>
+</aside><!--big_banner_b-->
+<!--/fi:/csp/mediapool/sites/ElHeraldo/assets/cspV2/adFiles/dfp/BigBannerB.csp, cache(1), e:.000125 -->
+	
+                        <aside id="lomasvisto">
+                        	
+<!-- fi:/csp/mediapool/sites/ElHeraldo/templates/stories/summary/v2/Widgets/ModLoMasVisto.csp -->
+<style>#lomasvisto article h3{height:auto!important}</style>
+<aside id="lomasvisto">
+	<div class="titulo">LO M&Aacute;S VISTO</div>
+	<div class="borde">
+		<div class="flechita"></div>
+		
+					<article><span class="numero">1 </span><aside><a href="https://www.elheraldo.hn/pais/1507084-466/salvador-nasralla-familia-iroshka-elvir-hija-toman-vuelo-palmerola-aeropuerto-vacaciones"><h3><span>&gt;</span>Nasralla parte de Palmerola para irse de vacaciones junto a Iroshka y su hija</h3></a></aside></article>
+		
+					<article><span class="numero">2 </span><aside><a href="https://www.elheraldo.hn/entretenimiento/1507102-466/predicciones-mhoni-vidente-astrologa-mexicana-2022"><h3><span>&gt;</span>¿Cuáles son las predicciones de Mhoni Vidente para el 2022?</h3></a></aside></article>
+		
+					<article><span class="numero">3 </span><aside><a href="https://www.elheraldo.hn/eleccioneshonduras2021/1507078-508/comision-traspaso-xiomara-castro-toma-posesion-estadio-nacional-invitados-presidentes-honduras"><h3><span>&gt;</span>¿Quiénes son los líderes mundiales invitados a la toma de posesión de Xiomara Castro?</h3></a></aside></article>
+		
+					<article><span class="numero">4 </span><aside><a href="https://www.elheraldo.hn/fotogalerias/entretenimiento/1507091-468/famosas-honduras-presentadoras-vestidos-ropa-looks-milagro-loren-carolina-tv-hch"><h3><span>&gt;</span>Los mejores looks de las presentadoras hondureñas en 2021</h3></a></aside></article>
+		
+					<article><span class="numero">5 </span><aside><a href="https://www.elheraldo.hn/sucesos/1507076-466/matan-joven-herido-barrio-las-crucitas-tegucigalpa-honduras-jose-adair-flores"><h3><span>&gt;</span>Un muerto y un herido tras balacera en el barrio Las Crucitas de la capital</h3></a></aside></article>
+		
+		
+	</div> 
+</aside>
+<!--/fi:/csp/mediapool/sites/ElHeraldo/templates/stories/summary/v2/Widgets/ModLoMasVisto.csp, cache(10), e:.00021 -->
+
+                        </aside>
+					   <aside>
+					   <!-- FOLLOW DE FACEBOOK DEPORTES-->
+					   
+						</aside>
+                    </div>
+                </section>         
+            </article>
+			
+<!-- fi:/csp/mediapool/sites/ElHeraldo/assets/cspV2/adFiles/dfp/adLateralDerecho.csp -->
+<aside class="adright">
+	<div id='div-gpt-ad-1518619853506-1' style='height:600px; width:160px;'>
+		<script>
+		googletag.cmd.push(function() { googletag.display('div-gpt-ad-1518619853506-1'); });
+		</script>
+	</div>
+</aside>
+<!--/fi:/csp/mediapool/sites/ElHeraldo/assets/cspV2/adFiles/dfp/adLateralDerecho.csp, cache(10), e:.000537 -->
+	
+        </div>
+</section>
+
+<section id="suplementos">
+	
+<!-- fi:/csp/mediapool/sites/ElHeraldo/assets/cspv2/sectionfiles/ademashoy.csp -->
+<aside id="revistas" class="ademas">
+    <a href="http://www.elheraldo.hn/queondaconesto/" ><div class="titulo">&iquest;QU&Eacute; ONDA CON ESTO?</div></a>
+    <div class="borde">
+    <div class="flechita"></div>
+
+
+	
+		
+	<article style="min-height:150px;">
+       <figure>
+          <a href="http://www.elheraldo.hn/queondaconesto/1507128-466/policia-espanola-frustra-rifa-narcocestas-navidenas-murcia" ><img alt="Polic&iacute;a espa&ntilde;ola frustra rifa de "narcocestas" navide&ntilde;as" src="/csp/mediapool/sites/dt.common.streams.StreamServer.cls?STREAMOID=q_fB_zb2yOY$7AF25ujeds$daE2N3K4ZzOUsqbU5sYuwOo0ZWQxtxZIdLZabu2gn6FB40xiOfUoExWL3M40tfzssyZqpeG_J0TFo7ZhRaDiHC9oxmioMlYVJD0A$3RbIiibgT65kY_CSDiCiUzvHvODrHApbd6ry6YGl5GGOZrs-&amp;CONTENTTYPE=image/jpeg"></a>
+       </figure>
+       <a href="http://www.elheraldo.hn/queondaconesto/1507128-466/policia-espanola-frustra-rifa-narcocestas-navidenas-murcia" class="categoria">Viral</a>
+       <a href="http://www.elheraldo.hn/queondaconesto/1507128-466/policia-espanola-frustra-rifa-narcocestas-navidenas-murcia" ><h2>Polic&iacute;a espa&ntilde;ola frustra rifa de "narcocestas" navide&ntilde;as</h2></a>
+   </article>				
+				
+	
+
+	
+		
+	<article style="min-height:150px;">
+       <figure>
+          <a href="http://www.elheraldo.hn/queondaconesto/1507082-466/hallan-embrion-dinosaurio-preparaba-nacer-china-ganzhou-baby-yingliang" ><img alt="Hallan embri&oacute;n de dinosaurio perfectamente preservado que se preparaba para nacer" src="/csp/mediapool/sites/dt.common.streams.StreamServer.cls?STREAMOID=GNC3FkS1nYoW571cggOsac$daE2N3K4ZzOUsqbU5sYtmbbcle0k6BlDrwxdsfsm$6FB40xiOfUoExWL3M40tfzssyZqpeG_J0TFo7ZhRaDiHC9oxmioMlYVJD0A$3RbIiibgT65kY_CSDiCiUzvHvODrHApbd6ry6YGl5GGOZrs-&amp;CONTENTTYPE=image/jpeg"></a>
+       </figure>
+       <a href="http://www.elheraldo.hn/queondaconesto/1507082-466/hallan-embrion-dinosaurio-preparaba-nacer-china-ganzhou-baby-yingliang" class="categoria">China</a>
+       <a href="http://www.elheraldo.hn/queondaconesto/1507082-466/hallan-embrion-dinosaurio-preparaba-nacer-china-ganzhou-baby-yingliang" ><h2>Hallan embri&oacute;n de dinosaurio perfectamente preservado que se preparaba para nacer</h2></a>
+   </article>				
+				
+	
+
+	
+		
+	<article style="min-height:150px;">
+       <figure>
+          <a href="http://www.elheraldo.hn/queondaconesto/1506889-466/mujer-enveneno-novio-por-hablar-mucho" ><img alt="Mujer envenen&oacute; a su novio porque hablaba mucho" src="/csp/mediapool/sites/dt.common.streams.StreamServer.cls?STREAMOID=n8PXqQb0eZ3LGCUVqrrjCM$daE2N3K4ZzOUsqbU5sYuwWhvfuVW30GmfBXlJybsA6FB40xiOfUoExWL3M40tfzssyZqpeG_J0TFo7ZhRaDiHC9oxmioMlYVJD0A$3RbIiibgT65kY_CSDiCiUzvHvODrHApbd6ry6YGl5GGOZrs-&amp;CONTENTTYPE=image/jpeg"></a>
+       </figure>
+       <a href="http://www.elheraldo.hn/queondaconesto/1506889-466/mujer-enveneno-novio-por-hablar-mucho" class="categoria">EEUU</a>
+       <a href="http://www.elheraldo.hn/queondaconesto/1506889-466/mujer-enveneno-novio-por-hablar-mucho" ><h2>Mujer envenen&oacute; a su novio porque hablaba mucho</h2></a>
+   </article>				
+				
+	
+
+	
+		
+	<article style="min-height:150px;">
+       <figure>
+          <a href="http://www.elheraldo.hn/queondaconesto/1506811-466/monos-matan-perros-india-venganza-viral" ><img alt="Monos matan a 250 perros para vengar la muerte de una de sus cr&iacute;as" src="/csp/mediapool/sites/dt.common.streams.StreamServer.cls?STREAMOID=USsAUyokrrVU7SBsdJE_48$daE2N3K4ZzOUsqbU5sYucsoXJ7cbLYL3vWfv9q7aX6FB40xiOfUoExWL3M40tfzssyZqpeG_J0TFo7ZhRaDiHC9oxmioMlYVJD0A$3RbIiibgT65kY_CSDiCiUzvHvODrHApbd6ry6YGl5GGOZrs-&amp;CONTENTTYPE=image/jpeg"></a>
+       </figure>
+       <a href="http://www.elheraldo.hn/queondaconesto/1506811-466/monos-matan-perros-india-venganza-viral" class="categoria">India</a>
+       <a href="http://www.elheraldo.hn/queondaconesto/1506811-466/monos-matan-perros-india-venganza-viral" ><h2>Monos matan a 250 perros para vengar la muerte de una de sus cr&iacute;as</h2></a>
+   </article>				
+				
+	
+
+
+<!-- fi:/csp/mediapool/sites/ElHeraldo/assets/cspV2/Utilitarios/KillVariablesHistoria.csp -->
+
+<!--/fi:/csp/mediapool/sites/ElHeraldo/assets/cspV2/Utilitarios/KillVariablesHistoria.csp, e:.000229 -->
+			
+
+		
+	</div>       
+</aside>
+<!--/fi:/csp/mediapool/sites/ElHeraldo/assets/cspv2/sectionfiles/ademashoy.csp, cache(10), e:.000159 -->
+
+				
+<!-- fi:/csp/mediapool/sites/ElHeraldo/assets/cspV2/adFiles/dfp/BigBannerC.csp -->
+<aside class="ad300x250">
+	<div id='div-gpt-ad-1518619853506-4'>
+	<script>
+	googletag.cmd.push(function() { googletag.display('div-gpt-ad-1518619853506-4'); });
+	</script>
+	</div>
+</aside><!--big_banner_c-->
+<!--/fi:/csp/mediapool/sites/ElHeraldo/assets/cspV2/adFiles/dfp/BigBannerC.csp, cache(1), e:.000261 -->
+	
+</section>
+
+<!-- fi:/csp/mediapool/sites/ElHeraldo/assets/cspv2/sectionfiles/multimedia.csp -->
+
+<section id="multimedia">
+	<a href="http://www.elheraldo.hn/videos/" ><div class="widget_title">VIDEOS</div></a>
+	<aside class="content-videos">
+		 
+				 <div class="pequeno item">
+						<figure>		
+						   <a href="http://www.elheraldo.hn/videos/?mId=NZiauBH4" title="Roberto Cosenza: "Es evidente que ómicron está en Honduras"" onclick="ga('send', 'event', 'Modulos', 'desktop-home', '/videos/?mId=NZiauBH4');" >
+							   <img src="https://cdn.jwplayer.com/v2/media/NZiauBH4/poster.jpg?width=320" alt="Roberto Cosenza: "Es evidente que ómicron está en Honduras"" onClick="ga('send', 'event', 'Modulos', 'desktop-home', '/videos/?mId=NZiauBH4');">
+							   <span class="i_play"></span> 
+						   </a>
+						</figure>  
+						 <a href="http://www.elheraldo.hn/videos/?mId=NZiauBH4" title="Roberto Cosenza: "Es evidente que ómicron está en Honduras"" onclick="ga('send', 'event', 'Modulos', 'desktop-home', '/videos/?mId=NZiauBH4');" >
+							<h2>Roberto Cosenza: "Es evidente que ómicron está en Honduras"</h2>
+						</a>
+				</div>
+		 
+				 <div class="pequeno item">
+						<figure>		
+						   <a href="http://www.elheraldo.hn/videos/?mId=UKFcLvYu" title="Fuerte accidente vial entre rapidito y vehículo turismo en salida a Danlí" onclick="ga('send', 'event', 'Modulos', 'desktop-home', '/videos/?mId=UKFcLvYu');" >
+							   <img src="https://cdn.jwplayer.com/v2/media/UKFcLvYu/poster.jpg?width=320" alt="Fuerte accidente vial entre rapidito y vehículo turismo en salida a Danlí" onClick="ga('send', 'event', 'Modulos', 'desktop-home', '/videos/?mId=UKFcLvYu');">
+							   <span class="i_play"></span> 
+						   </a>
+						</figure>  
+						 <a href="http://www.elheraldo.hn/videos/?mId=UKFcLvYu" title="Fuerte accidente vial entre rapidito y vehículo turismo en salida a Danlí" onclick="ga('send', 'event', 'Modulos', 'desktop-home', '/videos/?mId=UKFcLvYu');" >
+							<h2>Fuerte accidente vial entre rapidito y vehículo turismo en salida a Danlí</h2>
+						</a>
+				</div>
+		 
+				 <div class="pequeno item">
+						<figure>		
+						   <a href="http://www.elheraldo.hn/videos/?mId=A4WCSUZf" title="Cuesta El Chile: Tres personas heridas tras aparatoso accidente de tránsito" onclick="ga('send', 'event', 'Modulos', 'desktop-home', '/videos/?mId=A4WCSUZf');" >
+							   <img src="https://cdn.jwplayer.com/v2/media/A4WCSUZf/poster.jpg?width=320" alt="Cuesta El Chile: Tres personas heridas tras aparatoso accidente de tránsito" onClick="ga('send', 'event', 'Modulos', 'desktop-home', '/videos/?mId=A4WCSUZf');">
+							   <span class="i_play"></span> 
+						   </a>
+						</figure>  
+						 <a href="http://www.elheraldo.hn/videos/?mId=A4WCSUZf" title="Cuesta El Chile: Tres personas heridas tras aparatoso accidente de tránsito" onclick="ga('send', 'event', 'Modulos', 'desktop-home', '/videos/?mId=A4WCSUZf');" >
+							<h2>Cuesta El Chile: Tres personas heridas tras aparatoso accidente de tránsito</h2>
+						</a>
+				</div>
+		 
+				 <div class="pequeno item">
+						<figure>		
+						   <a href="http://www.elheraldo.hn/videos/?mId=qCSdDfk6" title="Tres personas heridas deja accidente en la Cuesta El Chile" onclick="ga('send', 'event', 'Modulos', 'desktop-home', '/videos/?mId=qCSdDfk6');" >
+							   <img src="https://cdn.jwplayer.com/v2/media/qCSdDfk6/poster.jpg?width=320" alt="Tres personas heridas deja accidente en la Cuesta El Chile" onClick="ga('send', 'event', 'Modulos', 'desktop-home', '/videos/?mId=qCSdDfk6');">
+							   <span class="i_play"></span> 
+						   </a>
+						</figure>  
+						 <a href="http://www.elheraldo.hn/videos/?mId=qCSdDfk6" title="Tres personas heridas deja accidente en la Cuesta El Chile" onclick="ga('send', 'event', 'Modulos', 'desktop-home', '/videos/?mId=qCSdDfk6');" >
+							<h2>Tres personas heridas deja accidente en la Cuesta El Chile</h2>
+						</a>
+				</div>
+		 
+				 <div class="pequeno item">
+						<figure>		
+						   <a href="http://www.elheraldo.hn/videos/?mId=BAa3HWQh" title="Así se divierten tres niños capitalinos en "la máquina del destino"" onclick="ga('send', 'event', 'Modulos', 'desktop-home', '/videos/?mId=BAa3HWQh');" >
+							   <img src="https://cdn.jwplayer.com/v2/media/BAa3HWQh/poster.jpg?width=320" alt="Así se divierten tres niños capitalinos en "la máquina del destino"" onClick="ga('send', 'event', 'Modulos', 'desktop-home', '/videos/?mId=BAa3HWQh');">
+							   <span class="i_play"></span> 
+						   </a>
+						</figure>  
+						 <a href="http://www.elheraldo.hn/videos/?mId=BAa3HWQh" title="Así se divierten tres niños capitalinos en "la máquina del destino"" onclick="ga('send', 'event', 'Modulos', 'desktop-home', '/videos/?mId=BAa3HWQh');" >
+							<h2>Así se divierten tres niños capitalinos en "la máquina del destino"</h2>
+						</a>
+				</div>
+		 
+				 <div class="pequeno item">
+						<figure>		
+						   <a href="http://www.elheraldo.hn/videos/?mId=zpEUMx2n" title="Transmisión en VIVO 2021-12-20 at 23:03" onclick="ga('send', 'event', 'Modulos', 'desktop-home', '/videos/?mId=zpEUMx2n');" >
+							   <img src="https://cdn.jwplayer.com/v2/media/zpEUMx2n/poster.jpg?width=320" alt="Transmisión en VIVO 2021-12-20 at 23:03" onClick="ga('send', 'event', 'Modulos', 'desktop-home', '/videos/?mId=zpEUMx2n');">
+							   <span class="i_play"></span> 
+						   </a>
+						</figure>  
+						 <a href="http://www.elheraldo.hn/videos/?mId=zpEUMx2n" title="Transmisión en VIVO 2021-12-20 at 23:03" onclick="ga('send', 'event', 'Modulos', 'desktop-home', '/videos/?mId=zpEUMx2n');" >
+							<h2>Transmisión en VIVO 2021-12-20 at 23:03</h2>
+						</a>
+				</div>
+		 
+				 <div class="pequeno item">
+						<figure>		
+						   <a href="http://www.elheraldo.hn/videos/?mId=T8omDhAP" title="Movimiento cristiano protesta en las afueras Instituto Nacional Penitenciario" onclick="ga('send', 'event', 'Modulos', 'desktop-home', '/videos/?mId=T8omDhAP');" >
+							   <img src="https://cdn.jwplayer.com/v2/media/T8omDhAP/poster.jpg?width=320" alt="Movimiento cristiano protesta en las afueras Instituto Nacional Penitenciario" onClick="ga('send', 'event', 'Modulos', 'desktop-home', '/videos/?mId=T8omDhAP');">
+							   <span class="i_play"></span> 
+						   </a>
+						</figure>  
+						 <a href="http://www.elheraldo.hn/videos/?mId=T8omDhAP" title="Movimiento cristiano protesta en las afueras Instituto Nacional Penitenciario" onclick="ga('send', 'event', 'Modulos', 'desktop-home', '/videos/?mId=T8omDhAP');" >
+							<h2>Movimiento cristiano protesta en las afueras Instituto Nacional Penitenciario</h2>
+						</a>
+				</div>
+		 
+				 <div class="pequeno item">
+						<figure>		
+						   <a href="http://www.elheraldo.hn/videos/?mId=t2rDaBwq" title="Vendedores ambulantes de la peatonal solicitan ampliar horarios de ventas" onclick="ga('send', 'event', 'Modulos', 'desktop-home', '/videos/?mId=t2rDaBwq');" >
+							   <img src="https://cdn.jwplayer.com/v2/media/t2rDaBwq/poster.jpg?width=320" alt="Vendedores ambulantes de la peatonal solicitan ampliar horarios de ventas" onClick="ga('send', 'event', 'Modulos', 'desktop-home', '/videos/?mId=t2rDaBwq');">
+							   <span class="i_play"></span> 
+						   </a>
+						</figure>  
+						 <a href="http://www.elheraldo.hn/videos/?mId=t2rDaBwq" title="Vendedores ambulantes de la peatonal solicitan ampliar horarios de ventas" onclick="ga('send', 'event', 'Modulos', 'desktop-home', '/videos/?mId=t2rDaBwq');" >
+							<h2>Vendedores ambulantes de la peatonal solicitan ampliar horarios de ventas</h2>
+						</a>
+				</div>
+		 
+				 <div class="pequeno item">
+						<figure>		
+						   <a href="http://www.elheraldo.hn/videos/?mId=IqAabTz0" title="Con un verdadero golazo de Jorge Álvarez, Olimpia vence 2-0 a Real España" onclick="ga('send', 'event', 'Modulos', 'desktop-home', '/videos/?mId=IqAabTz0');" >
+							   <img src="https://cdn.jwplayer.com/v2/media/IqAabTz0/poster.jpg?width=320" alt="Con un verdadero golazo de Jorge Álvarez, Olimpia vence 2-0 a Real España" onClick="ga('send', 'event', 'Modulos', 'desktop-home', '/videos/?mId=IqAabTz0');">
+							   <span class="i_play"></span> 
+						   </a>
+						</figure>  
+						 <a href="http://www.elheraldo.hn/videos/?mId=IqAabTz0" title="Con un verdadero golazo de Jorge Álvarez, Olimpia vence 2-0 a Real España" onclick="ga('send', 'event', 'Modulos', 'desktop-home', '/videos/?mId=IqAabTz0');" >
+							<h2>Con un verdadero golazo de Jorge Álvarez, Olimpia vence 2-0 a Real España</h2>
+						</a>
+				</div>
+		 
+				 <div class="pequeno item">
+						<figure>		
+						   <a href="http://www.elheraldo.hn/videos/?mId=bxcRT6QT" title="Con golazo de Jorge Álvarez, Olimpia vence 1-0 a Real España" onclick="ga('send', 'event', 'Modulos', 'desktop-home', '/videos/?mId=bxcRT6QT');" >
+							   <img src="https://cdn.jwplayer.com/v2/media/bxcRT6QT/poster.jpg?width=320" alt="Con golazo de Jorge Álvarez, Olimpia vence 1-0 a Real España" onClick="ga('send', 'event', 'Modulos', 'desktop-home', '/videos/?mId=bxcRT6QT');">
+							   <span class="i_play"></span> 
+						   </a>
+						</figure>  
+						 <a href="http://www.elheraldo.hn/videos/?mId=bxcRT6QT" title="Con golazo de Jorge Álvarez, Olimpia vence 1-0 a Real España" onclick="ga('send', 'event', 'Modulos', 'desktop-home', '/videos/?mId=bxcRT6QT');" >
+							<h2>Con golazo de Jorge Álvarez, Olimpia vence 1-0 a Real España</h2>
+						</a>
+				</div>
+		
+	</aside>
+</section>
+
+<!--/fi:/csp/mediapool/sites/ElHeraldo/assets/cspv2/sectionfiles/multimedia.csp, cache(10), e:.000594 -->
+
+<script type="text/javascript">
+	function addLink() {
+	var body_element = document.getElementById('nota');
+	var selection;
+	selection = window.getSelection();
+	var pagelink = "El periodismo necesita inversi\u00F3n. Para compartir esta nota utiliza los \u00edconos que aparecen en la p\u00e1gina.<br /><br /> Leer esta nota: <a href='"+document.location.href+"'>"+document.location.href+"</a><br />Copyright &copy; www.elheraldo.hn"; 
+	var copytext =  pagelink;
+	var newdiv = document.createElement('div');
+	newdiv.style.position='absolute';
+	newdiv.style.left='-99999px';
+	body_element.appendChild(newdiv);
+	newdiv.innerHTML = copytext;
+	selection.selectAllChildren(newdiv);
+	window.setTimeout(function() {
+	body_element.removeChild(newdiv);
+	},0);
+	}
+	document.oncopy = addLink;
+</script>
+	<!--CIMACAST JS-->
+	
+
+<!--/fi:/csp/mediapool/sites/ElHeraldo/templates/stories/full/v2/EHNoticiaFullWeb.csp, e:.020855 -->
+
+	
+	
+<!-- fi:/csp/mediapool/sites/ElHeraldo/assets/cspV2/adFiles/dfp/megabannerInferior.csp -->
+
+    <section id="ad728x90">
+        <aside>
+        <div id='div-gpt-ad-1518619853506-7'>
+            <script>
+            googletag.cmd.push(function() { googletag.display('div-gpt-ad-1518619853506-7'); });
+            </script>
+        </div>
+        </aside>
+    </section>
+
+<!--/fi:/csp/mediapool/sites/ElHeraldo/assets/cspV2/adFiles/dfp/megabannerInferior.csp, cache(5), e:.000145 -->
+
+    
+<!-- fi:/csp/mediapool/sites/ElHeraldo/assets/cspV2/adFiles/dfp/adHesion.csp -->
+<div style='display:none;'>
+	<div id='adslot-footer' data-format='footerFixed'>
+	  <script>googletag.cmd.push(function () {
+		  googletag.display('adslot-footer');
+		});</script>
+	</div>
+</div>
+<!--/fi:/csp/mediapool/sites/ElHeraldo/assets/cspV2/adFiles/dfp/adHesion.csp, e:.000063 -->
+  
+
+<!--/fi:/csp/mediapool/sites/ElHeraldo/templates/sections/v2/SectionWebEH.csp?sid=295&cid=1369523&fid=466&fullstory=1, e:.02265 -->
+
+		
+<!-- fi:/csp/mediapool/sites/ElHeraldo/assets/cspv2/sectionfiles/footer.csp -->
+<section id="footer">
+	<aside class="logo" style="width:210px!important">
+		<a href="#"><img src="data:image/png;base64,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" alt="Diario El Heraldo" width="130px"/></a><br />
+		<div style="color:#666;font:700 10px/10px 'Noto Sans',sans-serif;text-transform:uppercase;margin-top:5px;">TODOS LOS DERECHOS RESERVADOS 2021</div>
+	</aside>
+	<aside class="links">
+    	<a href="http://www.elheraldo.hn/institucionales/quienessomos/" class="inst" >Qui&eacute;nes somos</a>
+        <a href="http://www.elheraldo.hn/institucionales/politicadeprivacidad/" class="inst" >Pol&iacute;ticas de privacidad</a>
+		<a href="http://www.go.com.hn/politica-de-cookies/" class="inst">Pol&iacute;ticas de Cookies</a>
+        <a href="http://www.elheraldo.hn/institucionales/mapadelsitio/" class="inst" >Mapa del sitio</a>
+        <a href="http://www.elheraldo.hn/institucionales/anuncieseconnosotros/" class="inst" >An&uacute;nciese con nosotros</a>
+        <a href="http://www.elheraldo.hn/otrassecciones/servicios/boletindenoticias/" class="inst" >Newsletter</a>
+		<a href="http://www.elheraldo.hn/otrassecciones/servicios/rss/" class="inst" >RSS</a>
+    </aside>
+</section>
+
+<!--/fi:/csp/mediapool/sites/ElHeraldo/assets/cspv2/sectionfiles/footer.csp, cache(10), e:.000209 -->
+
+		
+		
+<!-- fi:/csp/mediapool/sites/ElHeraldo/assets/cspV2/sectionfiles/scriptsFooter.csp -->
+
+<script>
+// FUNCIONES
+$(document).ready(function() {
+	var e = $("#keycontent").position();
+	$(window).width(), $(window).scroll(function() {
+		if ($(window).scrollTop() >= e.top) {
+			if ($("#keycontent").css({
+					marginTop: "40px"
+				}), !$("#header.notemovas, #logo_menu.aquiestoy").length) var t = setTimeout(function() {
+				$("#header.notemovas").stop().animate({
+					top: 0
+				}, 600);
+			}, 100);
+			$("#header").addClass("notemovas"), $("#logo_menu").addClass("aquiestoy");
+		} else clearTimeout(t), $("#header").removeClass("notemovas"), $("#logo_menu").removeClass("aquiestoy"), $("#keycontent").css({
+			marginTop: 0
+		}), $("#header").css({
+			top: -40
+		});
+	});
+}), $(document).ready(function() {
+	$("#menu > li:has(ul.sub-menu)").addClass("parent"), $("ul.sub-menu > li:has(ul.sub-menu) > a").addClass("parent"), $("#menu-toggle").click(function() {
+		return $("#menu").slideToggle(300), !1;
+	}), $(document).ready(function() {
+		$(".etabs a:first").addClass("active"), $(".etabs a:first").show(), $(".etabcontent").not(":first").hide(), $(document).on("click", ".etabs a", function() {
+			return $(this).addClass("active").siblings().removeClass("active"), $(".etabcontent").hide(), $($(this).attr("href")).show(), !1;
+		});
+	});
+});
+</script>
+<script type="text/javascript" id="cookieinfo" src="//cookieinfoscript.com/js/cookieinfo.min.js" data-bg="#ecebeb" data-fg="#222" data-link="#C1272D" data-divlinkbg="#47a447" data-cookie="CookieInfoScript" data-text-align="left" data-divlink="#FFF" data-moreinfo="http://www.go.com.hn/politica-de-cookies/" data-close-text="Aceptar" data-linkmsg="pol&iacute;tica de uso de cookies" data-message="</iframe>Si continuas utilizando este sitio, aceptas nuestra" data-accept-on-scroll="true"></script>
+
+
+
+	<style>#multimedia .slick-dots,#polideportivo .slick-dots,#ca .slick-dots{position:unset}#multimedia .slick-dots li,#polideportivo .slick-dots li,#ca .slick-dots li{position:relative;display:inline-block;width:20px;height:20px;margin:0;padding:0;cursor:pointer}#multimedia .slick-dots li button,#polideportivo .slick-dots li button,#ca .slick-dots li button{font-size:0;line-height:0;display:block;width:20px;height:20px;padding:5px;cursor:pointer;color:transparent;border:0;outline:0;background:0 0}#multimedia .slick-dots li button:before,#polideportivo .slick-dots li button:before,#ca .slick-dots li button:before{font-family:slick;font-size:12px;line-height:24px;position:absolute;top:0;left:0;width:20px;height:20px;text-align:center;opacity:.8;color:#fff;-webkit-font-smoothing:antialiased}#polideportivo .slick-dots li button:before{color:#3a75af}#ca .slick-dots li button:before{color:#900}</style>
+	<script type='text/javascript' src='https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js'></script>
+	<link rel="stylesheet" type="text/css" href="https://www.elheraldo.hn/csp/mediapool/sites/ElHeraldo/assets/css/v5/autolote-desktop-eh.min.css?v=20.5.21">
+	<script type="text/javascript">
+	$(document).ready(function() { $(".content-videos").not('.slick-initialized').slick({dots:true,infinite:true,slidesToShow:5,slidesToScroll:5,autoplay:true,autoplaySpeed:6e3,fade:!1,arrows:false});});
+	</script>
+
+
+
+
+	<script type="text/javascript">
+	$(document).ready(function() { $(".content-mundo").not('.slick-initialized').slick({dots:true,infinite:true,slidesToShow:3,slidesToScroll:3,autoplay:true,autoplaySpeed:6e3,fade:!1,arrows:false});});
+	</script>
+
+
+<!--/fi:/csp/mediapool/sites/ElHeraldo/assets/cspV2/sectionfiles/scriptsFooter.csp, cache(15), e:.00014 -->
+
+		
+<!-- fi:/csp/mediapool/sites/ElHeraldo/assets/cspV2/headfiles/taboolaFooter.csp -->
+<script type="text/javascript">
+  window._taboola = window._taboola || [];
+  _taboola.push({flush: true});
+</script>
+<!--/fi:/csp/mediapool/sites/ElHeraldo/assets/cspV2/headfiles/taboolaFooter.csp, cache(15), e:.000126 -->
+	
+		
+	</body>	
+		
+
+
+<!--/fi:/csp/mediapool/sites/ElHeraldo/assets/cspv2/StoryDefault.csp, e:.048117 -->
+
+</html><!--
+Elapsed:.054517
+Globals:4919
+Lines:97410
+-->

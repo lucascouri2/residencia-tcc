@@ -1,0 +1,1925 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+  <head>
+    <script src="/_sess/script.js?xns=1" async></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="WcL3xqX8SIWy2nLyCBjViAbQOyDm0EDhn6HBSGWEHv0">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <link href="https://s-nsk.ppstatic.pl" rel="preconnect" crossorigin>
+
+<link href="https://sdk.privacy-center.org" rel="preconnect" crossorigin>
+
+<link href="https://ajax.googleapis.com" rel="preconnect" crossorigin>
+<link href="https://jscdn.yieldbird.com" rel="preconnect" crossorigin>
+
+<link href="https://tpc.googlesyndication.com" rel="preconnect" crossorigin>
+<link href="https://pagead2.googlesyndication.com" rel="preconnect" crossorigin>
+<link href="https://securepubads.g.doubleclick.net" rel="preconnect" crossorigin>
+<link href="https://pubads.g.doubleclick.net" rel="preconnect" crossorigin>
+<link href="https://adservice.google.pl" rel="preconnect" crossorigin>
+<link href="https://adservice.google.com" rel="preconnect" crossorigin>
+<link href="https://stats.g.doubleclick.net" rel="preconnect" crossorigin>
+<link href="https://www.googletagservices.com" rel="preconnect" crossorigin>
+
+<link href="https://ls.hit.gemius.pl" rel="preconnect" crossorigin>
+<link href="https://mreg.hit.gemius.pl" rel="preconnect" crossorigin>
+<link href="https://api.spoldzielnia.nsaudience.pl" rel="preconnect" crossorigin>
+<link href="https://www.google-analytics.com" rel="preconnect" crossorigin>
+          <link rel="preconnect" href="https://fonts.gstatic.com">
+        <script type="text/javascript">
+      window.PPEvents = window.PPEvents || {};
+      window.PPEvents.queue = window.PPEvents.queue || [];
+      window.didomiEventListeners = window.didomiEventListeners || [];
+      [{ didomi: 'notice.shown', name: 'notice_shown' }, 
+        { didomi: 'notice.clickagree', name: 'notice_agree_all' },
+        { didomi: 'notice.clickmoreinfo', name: 'notice_more' },
+        { didomi: 'preferences.clicksavechoices', name: 'notice_more_agree_partial' },
+        { didomi: 'preferences.clickagreetoall', name: 'notice_more_agree_all' } 
+      ].forEach((event) => window.didomiEventListeners.push({
+        event: event.didomi,
+        listener: () => window.PPEvents.queue.push(() => {
+          window.PPEvents.getEvent(event.name).setAction(window.PPEvents.actionType.ACTION);
+          window.PPEvents.listen(event.name);
+        })
+      }));
+
+      window.dataLayer = window.dataLayer || [];
+      window.gdprAppliesGlobally=true;
+      (function(){function a(e){if(!window.frames[e]){if(document.body&&document.body.firstChild){var t=document.body;var n=document.createElement("iframe");n.style.display="none";n.name=e;n.title=e;t.insertBefore(n,t.firstChild)}
+      else{setTimeout(function(){a(e)},5)}}}function e(n,r,o,c,s){function e(e,t,n,a){if(typeof n!=="function"){return}if(!window[r]){window[r]=[]}var i=false;if(s){i=s(e,t,n)}if(!i){window[r].push({command:e,parameter:t,callback:n,version:a})}}e.stub=true;function t(a){if(!window[n]||window[n].stub!==true){return}if(!a.data){return}
+      var i=typeof a.data==="string";var e;try{e=i?JSON.parse(a.data):a.data}catch(t){return}if(e[o]){var r=e[o];window[n](r.command,r.parameter,function(e,t){var n={};n[c]={returnValue:e,success:t,callId:r.callId};a.source.postMessage(i?JSON.stringify(n):n,"*")},r.version)}}
+      if(typeof window[n]!=="function"){window[n]=e;if(window.addEventListener){window.addEventListener("message",t,false)}else{window.attachEvent("onmessage",t)}}}e("__tcfapi","__tcfapiBuffer","__tcfapiCall","__tcfapiReturn");a("__tcfapiLocator");(function(e){
+      var t=document.createElement("script");t.id="spcloader";t.type="text/javascript";t.async=true;t.src="https://sdk.privacy-center.org/"+e+"/loader.js?target="+document.location.hostname;t.charset="utf-8";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n)})("d715c6cc-9594-4f76-b845-2556d88dfee3")})();
+
+      __tcfapi('addEventListener', 2, (tcData, success) => {
+        try {
+          if (success && (tcData.eventStatus === 'useractioncomplete' || tcData.eventStatus === 'tcloaded')) {
+            let consentStatus = null;
+            let consentMsg = null;
+            if (tcData.purpose) {
+              consentMsg = 'ConsentObject_Exist';
+              consentStatus = tcData.purpose.consents[1] === true;
+            } else {
+              if (tcData.gdprApplies) {
+                consentMsg = 'ConsentObject_Not_Exist';
+              } else {
+                consentMsg = 'Bot';
+              }
+            }
+            window.PPEvents.queue.push(() => {
+              var event = window.PPEvents.getEvent('PurposesConsents');
+              event.setAction(PPEvents.actionType.ACTION);
+              event.appendParam('consent1', consentStatus);
+              event.appendParam('consentMsg', consentMsg);
+              window.PPEvents.listen('PurposesConsents', [PPEvents.providerType.GP]);
+            });
+            __tcfapi('removeEventListener', 2, null, tcData.listenerId);
+          }
+        } catch (error) {
+          console.error('TCF API Error', error);
+          consentMsg = 'TCF_API_Error';
+          window.PPEvents.queue.push(() => {
+            var event = window.PPEvents.getEvent('PurposesConsents');
+            event.setAction(PPEvents.actionType.ACTION);
+            event.appendParam('consent1', consentStatus);
+            event.appendParam('consentMsg', consentMsg);
+            window.PPEvents.listen('PurposesConsents', [PPEvents.providerType.GP]);
+          });
+        }
+      });
+    </script>
+
+              <link rel="preload" as="image" href="https://d-art.ppstatic.pl/kadry/k/r/1/6e/da/5e0b0a337b8da_o_small.jpg"  media="(max-width: 420px) and (-webkit-max-device-pixel-ratio: 1.9999)" />
+    <link rel="preload" as="image" href="https://d-art.ppstatic.pl/kadry/k/r/1/6e/da/5e0b0a337b8da_o_medium.jpg"  media="(max-width: 420px) and (-webkit-min-device-pixel-ratio: 2)" />
+    <link rel="preload" as="image" href="https://d-art.ppstatic.pl/kadry/k/r/1/6e/da/5e0b0a337b8da_o_medium.jpg"  media="(min-width: 421px) and (max-width: 600px) and (-webkit-max-device-pixel-ratio: 1.9999)" />
+    <link rel="preload" as="image" href="https://d-art.ppstatic.pl/kadry/k/r/1/6e/da/5e0b0a337b8da_o_medium.jpg"  media="(min-width: 768px) and (max-width: 980px) and (-webkit-max-device-pixel-ratio: 1.9999)" />
+    <link rel="preload" as="image" href="https://d-art.ppstatic.pl/kadry/k/r/1/6e/da/5e0b0a337b8da_o_large.jpg"  media="(min-width: 421px) and (max-width: 600px) and (-webkit-min-device-pixel-ratio: 2)" />
+    <link rel="preload" as="image" href="https://d-art.ppstatic.pl/kadry/k/r/1/6e/da/5e0b0a337b8da_o_large.jpg"  media="(min-width: 601px) and (max-width: 767px) and (-webkit-max-device-pixel-ratio: 1.9999)" />
+    <link rel="preload" as="image" href="https://d-art.ppstatic.pl/kadry/k/r/1/6e/da/5e0b0a337b8da_o_large.jpg"  media="(min-width: 768px) and (max-width: 980px) and (-webkit-min-device-pixel-ratio: 2)" />
+    <link rel="preload" as="image" href="https://d-art.ppstatic.pl/kadry/k/r/1/6e/da/5e0b0a337b8da_o_large.jpg"  media="(min-width: 981px) and (-webkit-max-device-pixel-ratio: 1.9999)" />
+    <link rel="preload" as="image" href="https://d-art.ppstatic.pl/kadry/k/r/1/6e/da/5e0b0a337b8da_o_xlarge.jpg"  media="(min-width: 601px) and (max-width: 767px) and (-webkit-min-device-pixel-ratio: 2)" />
+    <link rel="preload" as="image" href="https://d-art.ppstatic.pl/kadry/k/r/1/6e/da/5e0b0a337b8da_o_xlarge.jpg"  media="(min-width: 981px) and (-webkit-min-device-pixel-ratio: 2)" />
+    
+          <meta property="site.name" content="Express Bydgoski" >
+        <meta property="fb:pages" content="167268429986650" >
+        <meta name="description" content="Samorządy narzekają na brak pieniędzy na inwestycje, ale i z tego co w budżetach zostało można zbudować sporo. Czego możemy się spodziewać?..." >
+        <meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1" >
+        <meta name="thumbnail" content="https://d-art.ppstatic.pl/kadry/k/r/1/6e/da/5e0b0a337b8da_o_small.jpg" >
+        <title>To zbudujemy w Bydgoszczy w 2020 roku. Zobacz listę inwestycji | Express Bydgoski</title>
+        <link rel="canonical" href="https://expressbydgoski.pl/to-zbudujemy-w-bydgoszczy-w-2020-roku-zobacz-liste-inwestycji-zdjecia/ga/c9-14687459/zd/40980737" >
+        <meta name="keywords" content="budowle w Bydgoszczy, Bydgoszcz" >
+        <meta property="og:title" content="To zbudujemy w Bydgoszczy w 2020 roku. Zobacz listę inwestycji | Express Bydgoski" >
+        <meta property="og:description" content="Samorządy narzekają na brak pieniędzy na inwestycje, ale i z tego co w budżetach zostało można zbudować sporo. Czego możemy się spodziewać?..." >
+        <meta property="og:type" content="website" >
+        <meta property="og:locale" content="pl_PL" >
+        <meta property="og:site_name" content="Express Bydgoski" >
+        <meta property="og:image" content="https://d-art.ppstatic.pl/kadry/k/r/1/6e/da/5e0b0a337b8da_o_original.jpg" >
+        <meta property="og:image:height" content="1067" >
+        <meta property="og:image:width" content="1600" >
+        <meta property="og:url" content="https://expressbydgoski.pl/to-zbudujemy-w-bydgoszczy-w-2020-roku-zobacz-liste-inwestycji-zdjecia/ga/c9-14687459/zd/40980737" >
+        <meta property="og:image:type" content="image/jpeg" >
+        <meta name="twitter:description" content="Samorządy narzekają na brak pieniędzy na inwestycje, ale i z tego co w budżetach zostało można zbudować sporo. Czego możemy się spodziewać?..." >
+        <meta name="twitter:card" content="summary_large_image" >
+        <meta name="twitter:title" content="To zbudujemy w Bydgoszczy w 2020 roku. Zobacz listę inwestycji | Express Bydgoski" >
+        <meta name="twitter:image" content="https://d-art.ppstatic.pl/kadry/k/r/1/6e/da/5e0b0a337b8da_o_full.jpg" >
+      <script src="https://s-nsk.ppstatic.pl/lib/adbnsk/v1.3.1/js/ads/gemius/g.ad.adserver.adsrv/reklama.js"></script>
+    <script src="https://s-nsk.ppstatic.pl/lib/detectors/v1.3.1/js/eyeo.js"></script>
+    <script>
+  var adblockDetect = function() {
+  window.PPAdsConfig = window.PPAdsConfig || {adStandard: '', adRecover: ''};
+  Object.assign(window.PPAdsConfig, {
+    BETTER_ADS: 'better_ads',
+    ACCEPTABLE_ADS: 'acceptable_ads',
+    BLOCKED: 'blocked',
+    NONE: 'none'
+  });
+
+  var ad_standard = window.PPAdsConfig.BETTER_ADS;
+  var ad_recover = window.PPAdsConfig.NONE;
+
+  if (typeof window.pp_adblock_is_off === 'undefined') {
+    ad_standard = window.PPAdsConfig.BLOCKED;
+    if (typeof window.acceptable_ads_disallowed === 'undefined') {
+      ad_standard = window.PPAdsConfig.ACCEPTABLE_ADS;
+      ad_recover = '';
+    }
+  }
+
+  window.PPAdsConfig.adStandard = ad_standard;
+  window.PPAdsConfig.adRecover = ad_recover;
+};
+adblockDetect();</script>
+
+          <script type="application/ld+json">{"@context":"https:\/\/schema.org","@type":"WebSite","name":"Express Bydgoski","url":"https:\/\/expressbydgoski.pl","publisher":{"@type":"Organization","name":"Express Bydgoski","logo":{"@type":"ImageObject","url":"https:\/\/s-nsk.ppstatic.pl\/assets\/nsk\/v1.111.8\/images\/_sites\/logo\/png\/og_image\/expressbydgoski.png","height":{"@type":"QuantitativeValue","value":630},"width":{"@type":"QuantitativeValue","value":1200}}},"description":"Wiadomości z Bydgoszczy. Zobacz najciekawsze aktualności z Kujaw i Pomorza w Expressie Bydgoskim. Sport, biznes, kultura i wiele innych informacji."}</script><script type="application/ld+json">{"@context":"https:\/\/schema.org","@type":"ImageObject","url":"https:\/\/d-art.ppstatic.pl\/kadry\/k\/r\/1\/6e\/da\/5e0b0a337b8da_o_original.jpg","height":1067,"width":1600,"description":"Samorządy narzekają na brak pieniędzy na inwestycje, ale i z tego co w budżetach zostało można zbudować sporo. Czego możemy się spodziewać?\n\nTen rok ma przynieść zakończenie wielu miejskich inwestycji. Na część czekają wszyscy bydgoszczanie, na inne uwagę zwrócą mieszkańcy osiedli, których budowy dotyczą. Jest też perełka, na którą zwrócone będą oczy wszystkich mieszkańców. Oto przegląd inwestycji, które powinny zakończyć się w 2020 roku.\n\nZobacz listę inwestycji w dalszej części galerii >>>"}</script>
+    
+          <script>
+  window.yb_configuration = window.yb_configuration || {};
+  window.yb_configuration.externalPrebidBidderParams = {"adform":{"mkv":"serwis:expressbydgoski,region:kujawskopomorskie,typstr:gallery,kat:dom,kat:wiadomosci"},"yieldbirdadf":{"mkv":"serwis:expressbydgoski,region:kujawskopomorskie,typstr:gallery,kat:dom,kat:wiadomosci"}};
+</script>
+
+
+<script>
+  var PPAdsConfig = PPAdsConfig || {};
+  PPAdsConfig.loadAdsSetup = false;
+</script>
+<script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+<script async src="https://s-nsk.ppstatic.pl/lib/ppa/v2.54.2/js/main.js"></script>
+
+<script>
+  var PPAds = PPAds || {queue: []};
+  var adblockDetect = function() {
+  window.PPAdsConfig = window.PPAdsConfig || {adStandard: '', adRecover: ''};
+  Object.assign(window.PPAdsConfig, {
+    BETTER_ADS: 'better_ads',
+    ACCEPTABLE_ADS: 'acceptable_ads',
+    BLOCKED: 'blocked',
+    NONE: 'none'
+  });
+
+  var ad_standard = window.PPAdsConfig.BETTER_ADS;
+  var ad_recover = window.PPAdsConfig.NONE;
+
+  if (typeof window.pp_adblock_is_off === 'undefined') {
+    ad_standard = window.PPAdsConfig.BLOCKED;
+    if (typeof window.acceptable_ads_disallowed === 'undefined') {
+      ad_standard = window.PPAdsConfig.ACCEPTABLE_ADS;
+      ad_recover = 'eyeo';
+    }
+  }
+
+  window.PPAdsConfig.adStandard = ad_standard;
+  window.PPAdsConfig.adRecover = ad_recover;
+};
+adblockDetect();
+  (function() {
+    PPAds.queue.push(() => {
+      PPAds.setClientId('134579212');
+      PPAds.app.getSlotTemplate().setAdUnitParts({"siteName":"expressbydgoski","categoryName":"dominieruchomosci","pageType":"galeria"});
+
+            PPAds.app.getSlotTemplate().setDefaultTargeting('typstr', 'galeria');
+                  PPAds.app.getSlotTemplate().appendTargeting('c_theme', 'owl');
+            PPAds.app.getSlotTemplate().appendTargeting('c_assets', 'v1.111.8');
+      
+      if (PPAdsConfig.adStandard === PPAdsConfig.ACCEPTABLE_ADS) {
+    PPAds.setAllowedGroups([PPAdsConfig.ACCEPTABLE_ADS]);
+
+    var PPPrebidScriptElement = document.createElement('script');
+    PPPrebidScriptElement.src = 'https://s-nsk.ppstatic.pl/lib/ppa/v2.54.2/libs/prebid.js';
+    (document.head || document.body).appendChild(PPPrebidScriptElement);
+
+    var prebidAdUnits = PPAds.prebid.generateAdUnits('{"gora1":{"750x100":{"criteo":{"zoneId":1464159}},"750x200":{"criteo":{"zoneId":1464160}}},"prawa2":{"300x250":{"criteo":{"zoneId":1464161}}}}');
+    if (typeof PPAds.prebid !== 'undefined') {
+        PPAds.prebid.disableClientInitialLoad();
+        PPAds.prebid.addAdUnits(prebidAdUnits);
+        PPAds.prebid.run();
+        PPAds.prebid.refresh();
+    }
+}
+      PPAds.app.getSlotTemplate().appendTargeting('ads.standard', PPAdsConfig.adStandard);
+      PPAds.app.getSlotTemplate().appendTargeting('ads.recover', PPAdsConfig.adRecover);
+
+      var device = ((current_device, desktop_threshold) => {
+        if (current_device === 'desktop' && window.innerWidth < desktop_threshold) {
+          return 'tablet';
+        }
+        return current_device;
+      })('desktop', 1024);
+      PPAds.app.getSlotTemplate().appendTargeting('c_device', device);
+
+      
+            PPAds.app.passVariants({"native":{"replicasOnGallery":{"params":{"loadType":"lazy","loadTypeParam":0.5}}},"nativeprawa":{"firstReplica":{"params":{"loadType":"standard"},"conditions":{"replicaPosition":1}}},"nativesrodek":{"firstReplicaOnGallery":{"params":{"loadType":"lazy","loadTypeParam":0.75},"conditions":{"replicaPosition":1}},"replicasOnGallery":{"params":{"loadType":"lazy","loadTypeParam":0.5},"conditions":{"replicaPositionMoreThan":1}}}});
+          });
+  })();
+
+  __tcfapi('addEventListener', 2, (tcData, success) => {
+    try {
+      if (success
+              && (tcData.eventStatus === 'useractioncomplete' || tcData.eventStatus === 'tcloaded')
+              && (tcData.gdprApplies === false || (tcData.vendor.consents[755]
+                      && tcData.purpose.consents[1]))
+      ) {
+        PPAds.queue.push(() => PPAds.app.finish());
+        __tcfapi('removeEventListener', 2, null, tcData.listenerId);
+      }
+    } catch (error) {
+      console.error('TCF API Error', error);
+    }
+  });
+</script>
+
+
+  <script>
+ var PPAds = PPAds || {};
+ PPAds.queue = PPAds.queue || [];
+ PPAds.queue.push(function () {
+                PPAds.app.getSlotTemplate().appendTargeting('typstr', ["gallery"]);
+             PPAds.app.getSlotTemplate().appendTargeting('serwis', "expressbydgoski");
+             PPAds.app.getSlotTemplate().appendTargeting('region', "kujawskopomorskie");
+             PPAds.app.getSlotTemplate().appendTargeting('c_tech', "nsk");
+             PPAds.app.getSlotTemplate().appendTargeting('category.subject', "dominieruchomosci");
+             PPAds.app.getSlotTemplate().appendTargeting('photonumber', "1");
+             PPAds.app.getSlotTemplate().appendTargeting('tagi', ["budowle-w-bydgoszczy","bydgoszcz"]);
+             PPAds.app.getSlotTemplate().appendTargeting('kat', ["dom","wiadomosci"]);
+             PPAds.app.getSlotTemplate().appendTargeting('idzas', "14687459");
+             PPAds.app.getSlotTemplate().appendTargeting('typart', "art");
+             PPAds.app.getSlotTemplate().appendTargeting('isoteryt', ["POL0461011"]);
+             PPAds.app.getSlotTemplate().appendTargeting('simc', ["0928363"]);
+             PPAds.app.getSlotTemplate().appendTargeting('red', "0");
+             PPAds.app.getSlotTemplate().appendTargeting('ing', "0");
+             PPAds.app.getSlotTemplate().appendTargeting('een', "0");
+             PPAds.app.getSlotTemplate().appendTargeting('ted', "0");
+             PPAds.app.getSlotTemplate().appendTargeting('ion', "0");
+             PPAds.app.getSlotTemplate().appendTargeting('av_src', "promotion");
+         });
+</script>
+    
+                            <style>body{--primary:0,118,220;--primary-dark:0,98,200;--primary-light:41,156,255;--secondary:0,118,220;--secondary-dark:0,98,200;--secondary-light:41,156,255;--_fail:235,0,0;--_success:20,138,0;--_warning:237,119,0;--_black:0,0,0;--_white:255,255,255;--happening-primary:233,0,100;--_plus:0,134,116;--_yellow1:255,230,0;--_red1:235,0,0}</style>
+                                    <link rel="stylesheet" href="https://s-nsk.ppstatic.pl/assets/nsk/v1.111.8/bundles/b8708cb83fa2ac4ac1f0aa5f00114fdd.css">
+<noscript><link rel="stylesheet" href="https://s-nsk.ppstatic.pl/assets/nsk/v1.111.8/bundles/b8708cb83fa2ac4ac1f0aa5f00114fdd.css"></noscript>                
+      
+                
+          <link rel="apple-touch-icon" sizes="180x180" href="https://s-nsk.ppstatic.pl/assets/nsk/v1.111.8/images/_sites/favicon/png/180/expressbydgoski.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://s-nsk.ppstatic.pl/assets/nsk/v1.111.8/images/_sites/favicon/png/32/expressbydgoski.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://s-nsk.ppstatic.pl/assets/nsk/v1.111.8/images/_sites/favicon/png/16/expressbydgoski.png">
+<link rel="icon" type="image/x-icon" href="https://s-nsk.ppstatic.pl/assets/nsk/v1.111.8/images/_sites/favicon/ico/expressbydgoski.ico">
+<link rel="shortcut icon" type="image/x-icon" href="https://s-nsk.ppstatic.pl/assets/nsk/v1.111.8/images/_sites/favicon/ico/expressbydgoski.ico">
+<meta name="msapplication-TileColor" content="#2196F3">
+<meta name="theme-color" content="#2196F3">
+
+
+
+
+
+
+    <script>window.onerror=function(e,r,n,o,t){if(Math.random()<0.1){if(["Script error.","Script error","Błąd składni",""].includes(e))return!1;var i={line:n,column:o,app:"projekt_nsk",subname:"",domain:window.location.hostname,request_id:""};"object"==typeof t&&null!=t&&(i.stack=t.stack);var a={msg:e,url:window.location.href,data:JSON.stringify(i)};r!==window.location.href&&(a.file=r);var s=[];for(var d in a)a.hasOwnProperty(d)&&s.push(encodeURI(d+"="+a[d]));var c=new XMLHttpRequest;c.open("POST","/_event/jserror/",!0),c.setRequestHeader("Content-Type","application/x-www-form-urlencoded"),c.send(s.join("&"))}return!1};</script>
+
+
+    <script src="https://atm.api.dmp.nsaudience.pl/atm.js?sourceId=pp_expressbydgoski.pl" async></script><script>
+    (function(w,a,c) {
+      if (w[a]) { return }
+      var s = function() {
+        s[c].push(Array.prototype.slice.call(arguments))
+      }
+      s[c] = []
+      w[a] = s
+    })(window, "__atm", "_calls")
+  </script>
+
+        <script>
+  var PPEvents = PPEvents || {};
+  PPEvents.queue = PPEvents.queue || [];
+
+  PPEvents.queue.push(function () {
+    PPEvents.setProvider(PPEvents.providerType.UA);
+  });
+</script>
+
+<script>
+  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer', 'GTM-M639SD');
+</script>
+<script>
+  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer', 'GTM-NP2BMFJ');
+</script>
+
+  <noscript>
+  <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M639SD"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+<noscript>
+  <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NP2BMFJ"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+
+  <script>
+  <!--//--><![CDATA[//><!--
+  var PPEvents = PPEvents || {};
+  PPEvents.queue = PPEvents.queue || [];
+
+  PPEvents.queue.push(function () {
+    PPEvents.setProvider(PPEvents.providerType.GP);
+  });
+
+  window.addEventListener('DOMContentLoaded', function () {
+    window.gemius_identifier = 'nLs7YAgdFK0ONgkS.rrFftU6.F3BSn.4zEbpmy2niC7.z7';
+    window.gemius_extraparameters = window.gemius_extraparameters || [];
+    window.gemius_extraparameters.push("hitflag=1");
+    function gemius_pending(i) { window[i] = window[i] || function() {var x = window[i+'_pdata'] = window[i+'_pdata'] || []; x[x.length]=arguments;};};
+  gemius_pending('gemius_hit'); gemius_pending('gemius_event'); gemius_pending('pp_gemius_hit'); gemius_pending('pp_gemius_event');
+  (function(d,t) {try{ var s=d.getElementsByTagName(t)[0],l='http'+((location.protocol=='https:')?'s':'');
+    var add=function(ohost, clb){ var gt=d.createElement(t),h=(ohost?"daib.pl/sweqevub.js":"mreg.hit.gemius.pl/xgemius.js");
+      gt.setAttribute('async','async'); gt.src=l+'://'+h; s.parentNode.insertBefore(gt,s);
+      if (clb && gt.addEventListener) gt.addEventListener('error', clb, false); else if (clb && gt.attachEvent) gt.attachEvent('onerror', clb); };
+    add(0, function(){gemius_extraparameters.forEach(function(param,i){if(param.indexOf('hitflag=')==0){
+      gemius_extraparameters[i]='hitflag=2'}});add(1);});} catch (e) {}})(document,'script');
+  });
+  //--><!]]>
+</script>
+
+  <script>
+  /* Deep Tracker (c) v3.0.6 */
+  !function(){for(var t,e;!(t=window.document.getElementsByTagName("head")[0]);)window.document.getElementsByTagName("html")[0].appendChild(window.document.createElement("head"));"function"!=typeof window.document.querySelectorAll&&((e=window.document.createElement("script")).type="text/javascript",e.charset="utf-8",e.setAttribute("crossorigin","anonymous"),e.async=!0,e.src="https://s-nsk.ppstatic.pl/lib/events/v0.16.0/deep/v3/sizzle.js",t.appendChild(e)),(e=window.document.createElement("script")).type="text/javascript",e.charset="utf-8",e.setAttribute("crossorigin","anonymous"),e.async=!0,e.src="https://s-nsk.ppstatic.pl/lib/events/v0.16.0/deep/v3/init.js",t.appendChild(e)}();
+
+  var PPEvents = PPEvents || {};
+  PPEvents.queue = PPEvents.queue || [];
+  var retries = 0;
+  var deepInitializerListenerId = setInterval(function () {
+    if (window.hasOwnProperty("deepTracker") && window.deepTracker && window.deepTracker.isInitialized()) {
+      clearInterval(deepInitializerListenerId);
+      window.deep = window.deepTracker.track("nWtM4NQ4cgHZ", "o8qhHcJaM2plYsOVTEQsWuqL");
+      window.deep.options.trackconsent = true;
+      window.deep.options.dntignore = true;
+      window.deep.options.media = true;
+      window.deep.addElements([{"selector":"body","type":"body"}]);
+      window.deep.options.scrolldepth = {
+        marks: ["25%","50%","75%","100%"],
+        elements: [{"selector":"body","type":"body"}],
+      };
+      window.deep();
+      PPEvents.queue.push(function () {
+        PPEvents.setProvider(PPEvents.providerType.DB);
+      })
+    } else if (retries++ > 100) {
+      clearInterval(deepInitializerListenerId);
+    }
+  }, 30);
+</script>
+
+    
+                  
+        <link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Roboto:400,700,900%7CRoboto+Condensed:700&subset=latin,latin-ext&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700,900%7CRoboto+Condensed:700&subset=latin,latin-ext&display=swap" media="print" onload="this.media='all'" crossorigin>
+
+
+  <link rel="preload" href="https://s-nsk.ppstatic.pl/assets/nsk/v1.111.8/css/modifiers/color-set-concat.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://s-nsk.ppstatic.pl/assets/nsk/v1.111.8/css/modifiers/color-set-concat.css"></noscript>
+
+
+
+<script src="https://s-nsk.ppstatic.pl/assets/nsk/v1.111.8/js/libs/require.js"></script>
+<script src="https://s-nsk.ppstatic.pl/assets/nsk/v1.111.8/js/compiled/PPG_lazyload.min.js" data-images-sizes="{&quot;articles&quot;:{&quot;160&quot;:&quot;xsmall&quot;,&quot;270&quot;:&quot;small&quot;,&quot;412&quot;:&quot;mini&quot;,&quot;640&quot;:&quot;medium&quot;,&quot;852&quot;:&quot;large&quot;,&quot;1280&quot;:&quot;xlarge&quot;},&quot;custom&quot;:{&quot;100&quot;:&quot;xsmall&quot;,&quot;500&quot;:&quot;small&quot;},&quot;offers&quot;:{&quot;160&quot;:&quot;xsmall&quot;,&quot;320&quot;:&quot;small&quot;,&quot;480&quot;:&quot;medium&quot;,&quot;640&quot;:&quot;large&quot;,&quot;960&quot;:&quot;xlarge&quot;},&quot;companies&quot;:{&quot;320&quot;:&quot;small&quot;,&quot;480&quot;:&quot;mini&quot;,&quot;640&quot;:&quot;medium&quot;,&quot;852&quot;:&quot;large&quot;,&quot;1280&quot;:&quot;xlarge&quot;}}"></script>
+<script src="https://s-nsk.ppstatic.pl/assets/nsk/v1.111.8/js/compiled/AdsHelper.min.js"></script>
+<script src="https://s-nsk.ppstatic.pl/assets/nsk/v1.111.8/js/compiled/apps/jsLazyLoad.js"></script>
+
+
+<script>
+  document.notSupportedRedirectPage = 'https://expressbydgoski.pl/niewspierana-przegladarka';
+</script>
+
+
+    
+  </head>
+
+  <body class="nsk">
+          
+
+  <div class="atomsAdsCellModel atomsAdsCellModel--top component" data-event-position-context="atomsAdsCellModel" id="atomsAdsCellModel2084766332"><div class="adsSlotContainer adsSlotContainer--initialHeight"
+      style="min-height: 211px"
+  ><div id="dfp-gora1"
+          data-collapse-initial-height="true"
+        
+      ></div></div><script>
+        var PPAds = PPAds || {};
+PPAds.queue = PPAds.queue || [];
+PPAds.queue.push(() => {
+PPAds.slotClientDefiner.defineByParams(PPAds, {"n":"gora1","lt":"standard","rn":"","ltp":0,"ltg":"","ltx":"Reklama","gn":"standard","s":"abp","ct":"after","aar":[[750,100],[750,200]],"r":[[728,90],[750,100],[750,200],[750,300],[980,200],[980,300],[1,1]],"cct":true,"ht":0,"ifsie":true,"icl":true,"t":[],"esra":false,"iaaa":true,"cf":"static"});
+});
+
+    PPAds.queue.push(() => {
+      let count = 0;
+      PPAds.app.getSlot('gora1').listenTo(PPAds.event.SLOT_REQUESTED, () => {
+        count++;
+        window.PPEvents = window.PPEvents || {queue: []};
+
+        if (count == 1) {
+          const currentCount = count;
+          PPEvents.queue.push(() => {
+            var event = PPEvents.getEvent('SlotRequest');
+            event.setAction(PPEvents.actionType.ACTION);
+            event.appendParam('slotName', 'gora1');
+            event.appendParam('slotRequestCount', currentCount);
+            PPEvents.listen('SlotRequest', [PPEvents.providerType.GP]);
+          });
+        }
+      });
+    });
+    </script><script>
+  if (typeof require !== "undefined") {
+    require.config({
+      context: 'atoms/ads/plug',
+      baseUrl: "https://s-nsk.ppstatic.pl/assets/nsk/v1.111.8/js/compiled/",
+      waitSeconds: 60
+    })(['atoms/ads/plug'], function (Component) {
+      if (Component || Component.default) {
+        (new Component.default('atomsAdsPlug1888111037', 'atomsAdsPlug'))
+          .init({"parentId":"atomsAdsCellModel2084766332","slotName":"gora1","slotReplica":""});
+      }
+    });
+  }
+</script></div>
+
+
+
+<main class="layoutsContainer layoutsContainer--article"><link href="https://s-nsk.ppstatic.pl/assets/nsk/v1.111.8/css/owl/layouts/grid.css" type="text/css" rel="stylesheet"><div class="layoutsGrid"><div class="layoutsGrid__left  medium-narrow large-wide" data-event-position-index="layoutsGrid__left"><section class="atomsGalleryImage component" data-event-position-context="atomsGalleryImage" data-event-name="atomsGalleryImage" data-event-type="click"><div class="atomsGalleryImage__keyboardInfo" data-event-position-attr="atomsGalleryImage__keyboardInfo"><div class="atomsGalleryPageCounter component" data-event-position-context="atomsGalleryPageCounter"><span class="atomsGalleryPageCounter__label" data-event-position-attr="atomsGalleryPageCounter__label"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M17,8 C17.5522847,8 18,8.44771525 18,9 L18,19 C18,19.5522847 17.5522847,20 17,20 L3,20 C2.44771525,20 2,19.5522847 2,19 L2,9 C2,8.44771525 2.44771525,8 3,8 L17,8 Z M16,10 L4,10 L4,18 L16,18 L16,10 Z M21,4 C21.5522847,4 22,4.44771525 22,5 L22,15 C22,15.5522847 21.5522847,16 21,16 C20.4871642,16 20.0644928,15.6139598 20.0067277,15.1166211 L20,15 L20,6 L7,6 L6.88337887,5.99327227 C6.38604019,5.93550716 6,5.51283584 6,5 C6,4.48716416 6.38604019,4.06449284 6.88337887,4.00672773 L7,4 L21,4 Z"/></svg>
+    1/12
+  </span></div><div class="atomsGalleryKeyboardNavigation component" data-event-position-context="atomsGalleryKeyboardNavigation"><div class="atomsGalleryKeyboardNavigation__keyboardText" data-event-position-attr="atomsGalleryKeyboardNavigation__keyboardText">
+      Przeglądaj galerię za pomocą strzałek
+      <span class="atomsGalleryKeyboardNavigation__keyboardArrowLeft" data-event-position-attr="atomsGalleryKeyboardNavigation__keyboardArrowLeft"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M19,3 C20.1045695,3 21,3.8954305 21,5 L21,19 C21,20.1045695 20.1045695,21 19,21 L5,21 C3.8954305,21 3,20.1045695 3,19 L3,5 C3,3.8954305 3.8954305,3 5,3 L19,3 Z M19,5 L5,5 L5,19 L19,19 L19,5 Z M12,8 L12,11 L17,11 L17,13 L12,13 L12,16 L7,12 L12,8 Z"/></svg></span><span class="atomsGalleryKeyboardNavigation__keyboardArrowRight" data-event-position-attr="atomsGalleryKeyboardNavigation__keyboardArrowRight"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M19,3 C20.1045695,3 21,3.8954305 21,5 L21,19 C21,20.1045695 20.1045695,21 19,21 L5,21 C3.8954305,21 3,20.1045695 3,19 L3,5 C3,3.8954305 3.8954305,3 5,3 L19,3 Z M19,5 L5,5 L5,19 L19,19 L19,5 Z M12,8 L17,12 L12,16 L12,13 L7,13 L7,11 L12,11 L12,8 Z"/></svg></span>
+      na klawiaturze
+    </div></div><script>
+  if (typeof require !== "undefined") {
+    require.config({
+      context: 'atoms/gallery/keyboard-navigation',
+      baseUrl: "https://s-nsk.ppstatic.pl/assets/nsk/v1.111.8/js/compiled/",
+      waitSeconds: 60
+    })(['atoms/gallery/keyboard-navigation'], function (Component) {
+      if (Component || Component.default) {
+        (new Component.default('atomsGalleryKeyboardNavigation1159726692', 'atomsGalleryKeyboardNavigation'))
+          .init({"prevPageUrl":"","nextPageUrl":"\/to-zbudujemy-w-bydgoszczy-w-2020-roku-zobacz-liste-inwestycji-zdjecia\/ga\/c9-14687459\/zd\/40980743"});
+      }
+    });
+  }
+</script></div><div class="atomsGalleryInformationArrows component" data-event-position-context="atomsGalleryInformationArrows"><div id="atomsGalleryImage236675968ArrowsWrapper" class="atomsGalleryInformationArrows__arrowsWrapper" data-event-position-attr="atomsGalleryInformationArrows__arrowsWrapper"><div class="atomsGalleryInformationArrows__arrowRight" data-event-position-attr="atomsGalleryInformationArrows__arrowRight"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M9.29289322,6 C8.90236893,6.39052429 8.90236893,7.02368927 9.29289322,7.41421356 L13.8788932,11.9991068 L9.29289322,16.5857864 C8.90236893,16.9763107 8.90236893,17.6094757 9.29289322,18 C9.68341751,18.3905243 10.3165825,18.3905243 10.7071068,18 L16,12.7071068 C16.3905243,12.3165825 16.3905243,11.6834175 16,11.2928932 L10.7071068,6 C10.3165825,5.60947571 9.68341751,5.60947571 9.29289322,6 Z"/></svg><span class="atomsGalleryInformationArrows__arrowText" data-event-position-attr="atomsGalleryInformationArrows__arrowText">Następne</span></div></div></div><script>
+  if (typeof require !== "undefined") {
+    require.config({
+      context: 'atoms/gallery/swipe',
+      baseUrl: "https://s-nsk.ppstatic.pl/assets/nsk/v1.111.8/js/compiled/",
+      waitSeconds: 60
+    })(['atoms/gallery/swipe'], function (Component) {
+      if (Component || Component.default) {
+        (new Component.default('atomsGallerySwipe357505836', 'atomsGallerySwipe'))
+          .init({"prevPageUrl":"","nextPageUrl":"\/to-zbudujemy-w-bydgoszczy-w-2020-roku-zobacz-liste-inwestycji-zdjecia\/ga\/c9-14687459\/zd\/40980743","page":1,"sectionId":"atomsGalleryImage236675968"});
+      }
+    });
+  }
+</script><div class="atomsGalleryImage__container" data-event-position-attr="atomsGalleryImage__container"><figure class="atomsGalleryImage__pictureWrapper" data-event-position-attr="atomsGalleryImage__pictureWrapper" id="atomsGalleryImage236675968PictureWrapper"><div class="atomsGallerySwipeInfo component" data-event-position-context="atomsGallerySwipeInfo"><div class="atomsGallerySwipeInfo__swipeInfo" data-event-position-attr="atomsGallerySwipeInfo__swipeInfo"><span class="atomsGallerySwipeInfo__swipeText" data-event-position-attr="atomsGallerySwipeInfo__swipeText">
+        Przesuń zdjęcie palcem
+      </span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M11.5665539,5.00085353 L11.73,5.01 C12.9854167,5.125 13.9193924,6.21350694 13.9950441,7.46579572 L14,7.63 L14,12 L14.65,12 C14.77,12 14.884375,12.0225 14.9889062,12.0590625 L15.09,12.1 L18.89,13.77 C19.630625,14.145 20.0636328,14.9242969 19.9912695,15.7288623 L19.97,15.89 L19.05,21.33 C18.8988889,22.2461111 18.1501543,22.9213889 17.2418553,22.9935922 L17.08,23 L10.53,23 C10.0588889,23 9.60358025,22.8340741 9.24835391,22.5303155 L9.12,22.41 L5.39543739,18.6345156 C4.62243378,17.8509436 4.62446892,16.5910706 5.4,15.81 C5.98470588,15.2252941 6.65079585,15.2034948 6.97379605,15.2307653 L7.13,15.25 L9,15.65 L9,7.5 C9,6.1037037 10.1591221,4.96705075 11.5665539,5.00085353 Z M11.5,7 C11.2511111,7 11.0496296,7.17382716 11.0079287,7.40910837 L11,7.5 L11,18.11 L6.83,17.22 L10.53,21 L17.08,21 L18,15.56 L13.76,13.68 L12,13.68 L12,7.5 C12,7.22 11.78,7 11.5,7 Z M12,1 C15.0858333,1 17.9328819,2.03779514 20.2066942,3.7877351 L20.5,4.02 L20.5,2 L22,2 L22,7 L17,7 L17,5.5 L19.91,5.5 C17.79,3.64 15.03,2.5 12,2.5 C9.09625,2.5 6.43128472,3.54697917 4.35715856,5.27128038 L4.09,5.5 L7,5.5 L7,7 L2,7 L2,2 L3.5,2 L3.5,4.02 C5.82,2.13 8.78,1 12,1 Z"/></svg></div></div><picture><source srcset="https://d-art.ppstatic.pl/kadry/k/r/1/6e/da/5e0b0a337b8da_o_small.jpg" media="(max-width: 420px) and (-webkit-max-device-pixel-ratio: 1.9999)"><source srcset="https://d-art.ppstatic.pl/kadry/k/r/1/6e/da/5e0b0a337b8da_o_medium.jpg" media="(max-width: 420px) and (-webkit-min-device-pixel-ratio: 2)"><source srcset="https://d-art.ppstatic.pl/kadry/k/r/1/6e/da/5e0b0a337b8da_o_medium.jpg" media="(min-width: 421px) and (max-width: 600px) and (-webkit-max-device-pixel-ratio: 1.9999)"><source srcset="https://d-art.ppstatic.pl/kadry/k/r/1/6e/da/5e0b0a337b8da_o_medium.jpg" media="(min-width: 768px) and (max-width: 980px) and (-webkit-max-device-pixel-ratio: 1.9999)"><source srcset="https://d-art.ppstatic.pl/kadry/k/r/1/6e/da/5e0b0a337b8da_o_large.jpg" media="(min-width: 421px) and (max-width: 600px) and (-webkit-min-device-pixel-ratio: 2)"><source srcset="https://d-art.ppstatic.pl/kadry/k/r/1/6e/da/5e0b0a337b8da_o_large.jpg" media="(min-width: 601px) and (max-width: 767px) and (-webkit-max-device-pixel-ratio: 1.9999)"><source srcset="https://d-art.ppstatic.pl/kadry/k/r/1/6e/da/5e0b0a337b8da_o_large.jpg" media="(min-width: 768px) and (max-width: 980px) and (-webkit-min-device-pixel-ratio: 2)"><source srcset="https://d-art.ppstatic.pl/kadry/k/r/1/6e/da/5e0b0a337b8da_o_large.jpg" media="(min-width: 981px) and (-webkit-max-device-pixel-ratio: 1.9999)"><source srcset="https://d-art.ppstatic.pl/kadry/k/r/1/6e/da/5e0b0a337b8da_o_xlarge.jpg" media="(min-width: 601px) and (max-width: 767px) and (-webkit-min-device-pixel-ratio: 2)"><source srcset="https://d-art.ppstatic.pl/kadry/k/r/1/6e/da/5e0b0a337b8da_o_xlarge.jpg" media="(min-width: 981px) and (-webkit-min-device-pixel-ratio: 2)"><img class="atomsGalleryImage__img" data-event-position-attr="atomsGalleryImage__img"
+            id="atomsGalleryImage236675968Image"
+            src="https://d-art.ppstatic.pl/kadry/k/r/1/6e/da/5e0b0a337b8da_o_large.jpg"
+            width="1600"
+            height="1067"
+            alt="Samorządy narzekają na brak pieniędzy na inwestycje, ale i z..." /></picture><div class="atomsGalleryImage__imageAuthor" data-event-position-attr="atomsGalleryImage__imageAuthor">fot. archiwum Polska Press</div></figure></div><div class="atomsGalleryButtonsNavigation component" data-event-position-context="atomsGalleryButtonsNavigation"><a href=/to-zbudujemy-w-bydgoszczy-w-2020-roku-zobacz-liste-inwestycji-zdjecia/ga/c9-14687459/zd/40980743
+        id="atomsGalleryButtonsNavigation485196590Next"
+        class="atomsGalleryButtonsNavigation__right"
+        title="Następne"
+        data-event-position-el="rightNavigation"><span class="atomsGalleryButtonsNavigation__rightText" data-event-position-attr="atomsGalleryButtonsNavigation__rightText">Następne</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M15,6 C15.3905243,6.39052429 15.3905243,7.02368927 15,7.41421356 L10.414,11.9991068 L15,16.5857864 C15.3905243,16.9763107 15.3905243,17.6094757 15,18 C14.6094757,18.3905243 13.9763107,18.3905243 13.5857864,18 L8.29289322,12.7071068 C7.90236893,12.3165825 7.90236893,11.6834175 8.29289322,11.2928932 L13.5857864,6 C13.9763107,5.60947571 14.6094757,5.60947571 15,6 Z"/></svg></a></div></section><section class="atomsGalleryDescription component" data-event-position-context="atomsGalleryDescription"><div class="atomsGalleryDescription__wrapper" data-event-position-attr="atomsGalleryDescription__wrapper"><h2 class="atomsGalleryDescription__title" data-event-position-attr="atomsGalleryDescription__title">
+          To zbudujemy w Bydgoszczy w 2020 roku. Zobacz listę inwestycji
+        </h2><p class="atomsGalleryDescription__description" data-event-position-attr="atomsGalleryDescription__description">
+          Samorządy narzekają na brak pieniędzy na inwestycje, ale i z tego co w budżetach zostało można zbudować sporo. Czego możemy się spodziewać?<br><br>Ten rok ma przynieść zakończenie wielu miejskich inwestycji. Na część czekają wszyscy bydgoszczanie, na inne uwagę zwrócą mieszkańcy osiedli, których budowy dotyczą. Jest też perełka, na którą zwrócone będą oczy wszystkich mieszkańców. Oto przegląd inwestycji, które powinny zakończyć się w 2020 roku.<br><br><strong>Zobacz listę inwestycji w dalszej części galerii >>></strong></p></div></section><div class="atomsGalleryBackToArticle component" data-event-position-context="atomsGalleryBackToArticle"><a class="atomsGalleryBackToArticle__back_link" data-event-position-attr="atomsGalleryBackToArticle__back_link" href="/to-zbudujemy-w-bydgoszczy-w-2020-roku-zobacz-liste-inwestycji-zdjecia/ar/c9-14687459" aria-label="Wróć do artykułu"><span class="atomsGalleryBackToArticle__arrow_left" data-event-position-attr="atomsGalleryBackToArticle__arrow_left"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M15,6 C15.3905243,6.39052429 15.3905243,7.02368927 15,7.41421356 L10.414,11.9991068 L15,16.5857864 C15.3905243,16.9763107 15.3905243,17.6094757 15,18 C14.6094757,18.3905243 13.9763107,18.3905243 13.5857864,18 L8.29289322,12.7071068 C7.90236893,12.3165825 7.90236893,11.6834175 8.29289322,11.2928932 L13.5857864,6 C13.9763107,5.60947571 14.6094757,5.60947571 15,6 Z"/></svg></span><span class="atomsGalleryBackToArticle__label" data-event-position-attr="atomsGalleryBackToArticle__label">Wróć do artykułu</span></a></div><section class="componentsListingWithGrid componentsListingWithGrid--withGrid3N component" data-event-position-context="componentsListingWithGrid"  id="componentsListingWithGrid22731985"><div id="atomsHeader23634520" class="atomsHeader component" data-event-position-context="atomsHeader"  data-event-name="atomsHeader" data-event-type="click" ><h2 id="atomsHeader23634520title"  class="atomsHeader__title  "><p class="atomsHeader__titleContainer"><span class="atomsHeader__sygnet  atomsHeader__sygnet--withmargin"><svg height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><path d="M10 0c5.523 0 10 4.477 10 10s-4.477 10-10 10S0 15.523 0 10 4.477 0 10 0zm0 1.333a8.667 8.667 0 100 17.334 8.667 8.667 0 000-17.334zm0 1.334a7.333 7.333 0 110 14.666 7.333 7.333 0 010-14.666zM10 4a6 6 0 100 12 6 6 0 000-12zm0 1.333a4.667 4.667 0 11-2 8.884v-1.55a3.333 3.333 0 10-1.327-2.85L6.666 10v3.265A4.667 4.667 0 0110 5.333zM10 8a2 2 0 110 4 2 2 0 010-4z" id="ababababc"/></defs><use xlink:href="#ababababc" fill-rule="evenodd"/></svg></span><span>Zobacz również</span></p></h2></div><div class="componentsListingWithGrid__content" id="componentsListingWithGrid22731985ArticlesContainer"><div data-event-position-index="1" class="atomsListingArticleTile atomsListingArticleTile--withGrid component" data-event-position-context="atomsListingArticleTile" data-event-name="atomsListingArticleTile" data-event-type="click" data-event-params="url=%2Ftaki-jest-ranking-najmadrzejszych-znakow-zodiaku-osoby-o-takich-znakach-i-imionach-dobrze-sie-ucza-lista-22122021%2Far%2Fc11-15951209" id="atomsListingArticleTile210378537" data-admin="art:22311479" data-article-id="22311479"><a
+    class="atomsListingArticleTile__img atomsListingArticleTile__img--withGallery" data-event-position-attr="atomsListingArticleTile__img"
+    href="/taki-jest-ranking-najmadrzejszych-znakow-zodiaku-osoby-o-takich-znakach-i-imionach-dobrze-sie-ucza-lista-22122021/ar/c11-15951209" title="Taki jest ranking najmądrzejszych znaków zodiaku. Zobacz listę!"
+    data-icon-variant=withGallery
+    
+    
+  ><div class="atomsListingArticleTile__imageWrapper " ><img
+            class="atomsListingArticleTile__tileImg lazyload" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAApJREFUCNdjYAAAAAIAAeIhvDMAAAAASUVORK5CYII=" data-src="https://d-art.ppstatic.pl/kadry/k/r/1/5e/d8/61b768a71cba1_o_xsmall.jpg" data-image-type="articles"
+            alt="Taki jest ranking najmądrzejszych znaków zodiaku. Zobacz listę!"
+            
+          /></div></a><a class="atomsListingArticleTile__info" data-event-position-attr="atomsListingArticleTile__info" href="/taki-jest-ranking-najmadrzejszych-znakow-zodiaku-osoby-o-takich-znakach-i-imionach-dobrze-sie-ucza-lista-22122021/ar/c11-15951209" title="Taki jest ranking najmądrzejszych znaków zodiaku. Zobacz listę!" ><h3
+        class="atomsListingArticleTile__title atomsTileTitle__title"
+        class="atomsTileTitle__title" data-event-position-attr="atomsTileTitle__title"
+        
+    >
+               Taki jest ranking najmądrzejszych znaków zodiaku. Zobacz listę!
+            </h3></a></div><div data-event-position-index="2" class="atomsListingArticleTile atomsListingArticleTile--withGrid component" data-event-position-context="atomsListingArticleTile" data-event-name="atomsListingArticleTile" data-event-type="click" data-event-params="url=%2Fto-wydarzy-sie-przed-swietami-w-serialu-elif-wszystko-sie-wyda-kiymet-w-opalach%2Far%2Fc11-15953361" id="atomsListingArticleTile1399411022" data-admin="art:22315557" data-article-id="22315557"><a
+    class="atomsListingArticleTile__img atomsListingArticleTile__img--withGallery" data-event-position-attr="atomsListingArticleTile__img"
+    href="/to-wydarzy-sie-przed-swietami-w-serialu-elif-wszystko-sie-wyda-kiymet-w-opalach/ar/c11-15953361" title="Elif. To wydarzy się do świąt w serialu. Będzie kara? Kiymet w opałach"
+    data-icon-variant=withGallery
+    
+    
+  ><div class="atomsListingArticleTile__imageWrapper " ><img
+            class="atomsListingArticleTile__tileImg lazyload" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAApJREFUCNdjYAAAAAIAAeIhvDMAAAAASUVORK5CYII=" data-src="https://d-art.ppstatic.pl/kadry/k/r/1/f6/1a/61b8c61bd3682_o_xsmall.jpg" data-image-type="articles"
+            alt="Elif. To wydarzy się do świąt w serialu. Będzie kara? Kiymet w opałach"
+            
+          /></div></a><a class="atomsListingArticleTile__info" data-event-position-attr="atomsListingArticleTile__info" href="/to-wydarzy-sie-przed-swietami-w-serialu-elif-wszystko-sie-wyda-kiymet-w-opalach/ar/c11-15953361" title="Elif. To wydarzy się do świąt w serialu. Będzie kara? Kiymet w opałach" ><h3
+        class="atomsListingArticleTile__title atomsTileTitle__title"
+        class="atomsTileTitle__title" data-event-position-attr="atomsTileTitle__title"
+        
+    >
+               Elif. To wydarzy się do świąt w serialu. Będzie kara? Kiymet w opałach
+            </h3></a></div><div data-event-position-index="3" class="atomsListingArticleTile atomsListingArticleTile--withGrid component" data-event-position-context="atomsListingArticleTile" data-event-name="atomsListingArticleTile" data-event-type="click" data-event-params="url=%2Fte-ziola-pomoga-uniknac-wirusa-sprawdz-ktore-ziola-maja-wlasciwosci-antywirusowe-lista-22122021%2Far%2Fc14-15954071" id="atomsListingArticleTile1463488708" data-admin="art:22316963" data-article-id="22316963"><a
+    class="atomsListingArticleTile__img atomsListingArticleTile__img--withGallery" data-event-position-attr="atomsListingArticleTile__img"
+    href="/te-ziola-pomoga-uniknac-wirusa-sprawdz-ktore-ziola-maja-wlasciwosci-antywirusowe-lista-22122021/ar/c14-15954071" title="Te zioła pomogą uniknąć wirusa. Sprawdź, które zioła mają właściwości antywirusowe"
+    data-icon-variant=withGallery
+    
+    
+  ><div class="atomsListingArticleTile__imageWrapper " ><img
+            class="atomsListingArticleTile__tileImg lazyload" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAApJREFUCNdjYAAAAAIAAeIhvDMAAAAASUVORK5CYII=" data-src="https://d-art.ppstatic.pl/kadry/k/r/1/87/52/61b9bee924b2e_o_xsmall.jpg" data-image-type="articles"
+            alt="Te zioła pomogą uniknąć wirusa. Sprawdź, które zioła mają właściwości antywirusowe"
+            
+          /></div></a><a class="atomsListingArticleTile__info" data-event-position-attr="atomsListingArticleTile__info" href="/te-ziola-pomoga-uniknac-wirusa-sprawdz-ktore-ziola-maja-wlasciwosci-antywirusowe-lista-22122021/ar/c14-15954071" title="Te zioła pomogą uniknąć wirusa. Sprawdź, które zioła mają właściwości antywirusowe" ><h3
+        class="atomsListingArticleTile__title atomsTileTitle__title"
+        class="atomsTileTitle__title" data-event-position-attr="atomsTileTitle__title"
+        
+    >
+               Te zioła pomogą uniknąć wirusa. Sprawdź, które zioła mają właściwości antywirusowe
+            </h3></a></div><div data-event-position-index="4" class="atomsListingArticleTile atomsListingArticleTile--withGrid component" data-event-position-context="atomsListingArticleTile" data-event-name="atomsListingArticleTile" data-event-type="click" data-event-params="url=%2Fto-wydarzy-sie-po-swietach-w-serialu-milosc-i-przeznaczenie-wiele-zaskakujacych-momentow-22122021%2Far%2Fc11-15961749" id="atomsListingArticleTile1064737896" data-admin="art:22333457" data-article-id="22333457"><a
+    class="atomsListingArticleTile__img atomsListingArticleTile__img--withGallery" data-event-position-attr="atomsListingArticleTile__img"
+    href="/to-wydarzy-sie-po-swietach-w-serialu-milosc-i-przeznaczenie-wiele-zaskakujacych-momentow-22122021/ar/c11-15961749" title="To wydarzy się po świętach w serialu Miłość i Przeznaczenie. Zaskakujące momenty"
+    data-icon-variant=withGallery
+    
+    
+  ><div class="atomsListingArticleTile__imageWrapper " ><img
+            class="atomsListingArticleTile__tileImg lazyload" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAApJREFUCNdjYAAAAAIAAeIhvDMAAAAASUVORK5CYII=" data-src="https://d-art.ppstatic.pl/kadry/k/r/1/e4/83/61c045245cd26_o_xsmall.jpg" data-image-type="articles"
+            alt="To wydarzy się po świętach w serialu Miłość i Przeznaczenie. Zaskakujące momenty"
+            
+          /></div></a><a class="atomsListingArticleTile__info" data-event-position-attr="atomsListingArticleTile__info" href="/to-wydarzy-sie-po-swietach-w-serialu-milosc-i-przeznaczenie-wiele-zaskakujacych-momentow-22122021/ar/c11-15961749" title="To wydarzy się po świętach w serialu Miłość i Przeznaczenie. Zaskakujące momenty" ><h3
+        class="atomsListingArticleTile__title atomsTileTitle__title"
+        class="atomsTileTitle__title" data-event-position-attr="atomsTileTitle__title"
+        
+    >
+               To wydarzy się po świętach w serialu Miłość i Przeznaczenie. Zaskakujące momenty
+            </h3></a></div><div data-event-position-index="5" class="atomsListingArticleTile atomsListingArticleTile--withGrid component" data-event-position-context="atomsListingArticleTile" data-event-name="atomsListingArticleTile" data-event-type="click" data-event-params="url=%2Fto-wydarzy-sie-po-swietach-w-serialu-przysiega-wiele-zaskakujacych-momentow-22122021%2Far%2Fc11-15963645" id="atomsListingArticleTile341522620" data-admin="art:22337191" data-article-id="22337191"><a
+    class="atomsListingArticleTile__img atomsListingArticleTile__img--withGallery" data-event-position-attr="atomsListingArticleTile__img"
+    href="/to-wydarzy-sie-po-swietach-w-serialu-przysiega-wiele-zaskakujacych-momentow-22122021/ar/c11-15963645" title="To wydarzy się po świętach w serialu Przysięga. Wiele zaskakujących momentów"
+    data-icon-variant=withGallery
+    data-native-image-link
+    data-native-class-with-variant="atomsListingArticleTile__img--withGallery"
+  ><div class="atomsListingArticleTile__imageWrapper " data-native-image-wrapper><img
+            class="atomsListingArticleTile__tileImg lazyload" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAApJREFUCNdjYAAAAAIAAeIhvDMAAAAASUVORK5CYII=" data-src="https://d-art.ppstatic.pl/kadry/k/r/1/0a/52/61c1b8865ee9f_o_xsmall.jpg" data-image-type="articles"
+            alt="To wydarzy się po świętach w serialu Przysięga. Wiele zaskakujących momentów"
+            data-native-image
+          /></div></a><a class="atomsListingArticleTile__info" data-event-position-attr="atomsListingArticleTile__info" href="/to-wydarzy-sie-po-swietach-w-serialu-przysiega-wiele-zaskakujacych-momentow-22122021/ar/c11-15963645" title="To wydarzy się po świętach w serialu Przysięga. Wiele zaskakujących momentów" data-native-info><h3
+        class="atomsListingArticleTile__title atomsTileTitle__title"
+        class="atomsTileTitle__title" data-event-position-attr="atomsTileTitle__title"
+        data-native-title
+    >
+               To wydarzy się po świętach w serialu Przysięga. Wiele zaskakujących momentów
+            </h3></a><div class="adsSlotContainer "
+  ><div id="dfp-nativesrodekf5415ff15822"
+        class="nativeDescription"
+      ></div></div><script>
+        var PPAds = PPAds || {};
+PPAds.queue = PPAds.queue || [];
+PPAds.queue.push(() => {
+PPAds.slotClientDefiner.defineByParams(PPAds, {"n":"nativesrodek","lt":"lazy","rn":"f5415ff15822","ltp":1.3,"ltg":"listingLeft","ltx":"","gn":"standard","s":"","ct":"after","aar":[["fluid","auto"]],"r":[["fluid","auto"]],"cct":true,"ht":2,"ifsie":true,"icl":false,"t":[{"key":"div_id","value":"atomsListingArticleTile341522620"},{"key":"mod","value":"powiazane"}],"esra":false,"iaaa":true,"cf":"static"});
+});
+
+  </script><script>PPAds.queue.push(() => PPAds.native.cleanAfterRender('nativesrodek', 'f5415ff15822', 'atomsListingArticleTile341522620'));</script></div><div data-event-position-index="6" class="atomsListingArticleTile atomsListingArticleTile--withGrid component" data-event-position-context="atomsListingArticleTile" data-event-name="atomsListingArticleTile" data-event-type="click" data-event-params="url=%2Ftak-mieszka-daria-zawialow-minimalistycznie-estetycznie-i-nadzwyczaj-elegancko-zdjecia-22122021%2Far%2Fc9-15961201" id="atomsListingArticleTile1061229651" data-admin="art:22332305" data-article-id="22332305"><a
+    class="atomsListingArticleTile__img atomsListingArticleTile__img--withGallery" data-event-position-attr="atomsListingArticleTile__img"
+    href="/tak-mieszka-daria-zawialow-minimalistycznie-estetycznie-i-nadzwyczaj-elegancko-zdjecia-22122021/ar/c9-15961201" title="Tak mieszka Daria Zawiałow. Minimalistycznie, estetycznie i nadzwyczaj elegancko"
+    data-icon-variant=withGallery
+    
+    
+  ><div class="atomsListingArticleTile__imageWrapper " ><img
+            class="atomsListingArticleTile__tileImg lazyload" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAApJREFUCNdjYAAAAAIAAeIhvDMAAAAASUVORK5CYII=" data-src="https://d-art.ppstatic.pl/kadry/k/r/1/cc/d6/61bf63ff4b746_o_xsmall.jpg" data-image-type="articles"
+            alt="Tak mieszka Daria Zawiałow. Minimalistycznie, estetycznie i nadzwyczaj elegancko"
+            
+          /></div></a><a class="atomsListingArticleTile__info" data-event-position-attr="atomsListingArticleTile__info" href="/tak-mieszka-daria-zawialow-minimalistycznie-estetycznie-i-nadzwyczaj-elegancko-zdjecia-22122021/ar/c9-15961201" title="Tak mieszka Daria Zawiałow. Minimalistycznie, estetycznie i nadzwyczaj elegancko" ><h3
+        class="atomsListingArticleTile__title atomsTileTitle__title"
+        class="atomsTileTitle__title" data-event-position-attr="atomsTileTitle__title"
+        
+    >
+               Tak mieszka Daria Zawiałow. Minimalistycznie, estetycznie i nadzwyczaj elegancko
+            </h3></a></div><div data-event-position-index="7" class="atomsListingArticleTile atomsListingArticleTile--withGrid component" data-event-position-context="atomsListingArticleTile" data-event-name="atomsListingArticleTile" data-event-type="click" data-event-params="url=%2Fto-wydarzy-sie-po-swietach-w-serialu-kozacka-milosc-wiele-zaskakujacych-momentow-21212021%2Far%2Fc11-15963423" id="atomsListingArticleTile953313269" data-admin="art:22336727" data-article-id="22336727"><a
+    class="atomsListingArticleTile__img atomsListingArticleTile__img--withGallery" data-event-position-attr="atomsListingArticleTile__img"
+    href="/to-wydarzy-sie-po-swietach-w-serialu-kozacka-milosc-wiele-zaskakujacych-momentow-21212021/ar/c11-15963423" title="To wydarzy się po świętach w serialu Kozacka Miłość. Wiele zaskakujących momentów "
+    data-icon-variant=withGallery
+    
+    
+  ><div class="atomsListingArticleTile__imageWrapper " ><img
+            class="atomsListingArticleTile__tileImg lazyload" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAApJREFUCNdjYAAAAAIAAeIhvDMAAAAASUVORK5CYII=" data-src="https://d-art.ppstatic.pl/kadry/k/r/1/c8/37/61c1816a3341c_o_xsmall.jpg" data-image-type="articles"
+            alt="To wydarzy się po świętach w serialu Kozacka Miłość. Wiele zaskakujących momentów "
+            
+          /></div></a><a class="atomsListingArticleTile__info" data-event-position-attr="atomsListingArticleTile__info" href="/to-wydarzy-sie-po-swietach-w-serialu-kozacka-milosc-wiele-zaskakujacych-momentow-21212021/ar/c11-15963423" title="To wydarzy się po świętach w serialu Kozacka Miłość. Wiele zaskakujących momentów " ><h3
+        class="atomsListingArticleTile__title atomsTileTitle__title"
+        class="atomsTileTitle__title" data-event-position-attr="atomsTileTitle__title"
+        
+    >
+               To wydarzy się po świętach w serialu Kozacka Miłość. Wiele zaskakujących momentów 
+            </h3></a></div><div data-event-position-index="8" class="atomsListingArticleTile atomsListingArticleTile--withGrid component" data-event-position-context="atomsListingArticleTile" data-event-name="atomsListingArticleTile" data-event-type="click" data-event-params="url=%2Fpensja-minimalna-2022-wyliczenia-netto-podwojna-podwyzka-od-stycznia-po-zmianach-podatkowych-22122021%2Far%2Fc3-15944141" id="atomsListingArticleTile1014197106" data-admin="art:22297053" data-article-id="22297053"><a
+    class="atomsListingArticleTile__img atomsListingArticleTile__img--withGallery" data-event-position-attr="atomsListingArticleTile__img"
+    href="/pensja-minimalna-2022-wyliczenia-netto-podwojna-podwyzka-od-stycznia-po-zmianach-podatkowych-22122021/ar/c3-15944141" title="Pensja minimalna 2022. &quot;Podwójna podwyżka&quot; od stycznia"
+    data-icon-variant=withGallery
+    
+    
+  ><div class="atomsListingArticleTile__imageWrapper " ><img
+            class="atomsListingArticleTile__tileImg lazyload" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAApJREFUCNdjYAAAAAIAAeIhvDMAAAAASUVORK5CYII=" data-src="https://d-art.ppstatic.pl/kadry/k/r/1/48/30/61b1de3694a5a_o_xsmall.jpg" data-image-type="articles"
+            alt="Pensja minimalna 2022. &quot;Podwójna podwyżka&quot; od stycznia"
+            
+          /></div></a><a class="atomsListingArticleTile__info" data-event-position-attr="atomsListingArticleTile__info" href="/pensja-minimalna-2022-wyliczenia-netto-podwojna-podwyzka-od-stycznia-po-zmianach-podatkowych-22122021/ar/c3-15944141" title="Pensja minimalna 2022. &quot;Podwójna podwyżka&quot; od stycznia" ><h3
+        class="atomsListingArticleTile__title atomsTileTitle__title"
+        class="atomsTileTitle__title" data-event-position-attr="atomsTileTitle__title"
+        
+    >
+               Pensja minimalna 2022. "Podwójna podwyżka" od stycznia
+            </h3></a></div><div data-event-position-index="9" class="atomsListingArticleTile atomsListingArticleTile--withGrid component" data-event-position-context="atomsListingArticleTile" data-event-name="atomsListingArticleTile" data-event-type="click" data-event-params="url=%2Ftakie-beda-styczniowe-emerytury-wyliczenia-tyle-zus-wyplaci-w-ramach-tego-swiadczenia-22122021%2Far%2Fc3-15944067" id="atomsListingArticleTile431637606" data-admin="art:22296897" data-article-id="22296897"><a
+    class="atomsListingArticleTile__img atomsListingArticleTile__img--withGallery" data-event-position-attr="atomsListingArticleTile__img"
+    href="/takie-beda-styczniowe-emerytury-wyliczenia-tyle-zus-wyplaci-w-ramach-tego-swiadczenia-22122021/ar/c3-15944067" title="Takie będą styczniowe emerytury - wyliczenia. Tyle ZUS wypłaci w ramach świadczenia"
+    data-icon-variant=withGallery
+    data-native-image-link
+    data-native-class-with-variant="atomsListingArticleTile__img--withGallery"
+  ><div class="atomsListingArticleTile__imageWrapper " data-native-image-wrapper><img
+            class="atomsListingArticleTile__tileImg lazyload" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAApJREFUCNdjYAAAAAIAAeIhvDMAAAAASUVORK5CYII=" data-src="https://d-art.ppstatic.pl/kadry/k/r/1/de/be/61b1d03f4d9ba_o_xsmall.jpg" data-image-type="articles"
+            alt="Takie będą styczniowe emerytury - wyliczenia. Tyle ZUS wypłaci w ramach świadczenia"
+            data-native-image
+          /></div></a><a class="atomsListingArticleTile__info" data-event-position-attr="atomsListingArticleTile__info" href="/takie-beda-styczniowe-emerytury-wyliczenia-tyle-zus-wyplaci-w-ramach-tego-swiadczenia-22122021/ar/c3-15944067" title="Takie będą styczniowe emerytury - wyliczenia. Tyle ZUS wypłaci w ramach świadczenia" data-native-info><h3
+        class="atomsListingArticleTile__title atomsTileTitle__title"
+        class="atomsTileTitle__title" data-event-position-attr="atomsTileTitle__title"
+        data-native-title
+    >
+               Takie będą styczniowe emerytury - wyliczenia. Tyle ZUS wypłaci w ramach świadczenia
+            </h3></a><div class="adsSlotContainer "
+  ><div id="dfp-nativesrodekb4a7119b8c8e"
+        class="nativeDescription"
+      ></div></div><script>
+        var PPAds = PPAds || {};
+PPAds.queue = PPAds.queue || [];
+PPAds.queue.push(() => {
+PPAds.slotClientDefiner.defineByParams(PPAds, {"n":"nativesrodek","lt":"lazy","rn":"b4a7119b8c8e","ltp":1.3,"ltg":"listingLeft","ltx":"","gn":"standard","s":"","ct":"after","aar":[["fluid","auto"]],"r":[["fluid","auto"]],"cct":true,"ht":2,"ifsie":true,"icl":false,"t":[{"key":"div_id","value":"atomsListingArticleTile431637606"},{"key":"mod","value":"powiazane"}],"esra":false,"iaaa":true,"cf":"static"});
+});
+
+  </script><script>PPAds.queue.push(() => PPAds.native.cleanAfterRender('nativesrodek', 'b4a7119b8c8e', 'atomsListingArticleTile431637606'));</script></div></div></section></div><div class="layoutsGrid__right medium-narrow large-narrow" data-event-position-index="layoutsGrid__right"><div style="height: 640px; padding-bottom: 20px;"><div class="sticky stickySlotDistance"><div class="atomsAdsCellModel component" data-event-position-context="atomsAdsCellModel" id="atomsAdsCellModel2104959018"><div class="adsSlotContainer adsSlotContainer--initialHeight"
+      style="min-height: 611px"
+  ><div id="dfp-prawa1"
+          data-collapse-initial-height="true"
+        
+      ></div></div><script>
+        var PPAds = PPAds || {};
+PPAds.queue = PPAds.queue || [];
+PPAds.queue.push(() => {
+PPAds.slotClientDefiner.defineByParams(PPAds, {"n":"prawa1","lt":"standard","rn":"","ltp":0,"ltg":"","ltx":"Reklama","gn":"standard","s":"","ct":"after","aar":[],"r":[[300,250],[300,600],[1,1]],"cct":true,"ht":0,"ifsie":true,"icl":true,"t":[],"esra":false,"iaaa":false,"cf":"static"});
+});
+
+  </script><script>
+  if (typeof require !== "undefined") {
+    require.config({
+      context: 'atoms/ads/plug',
+      baseUrl: "https://s-nsk.ppstatic.pl/assets/nsk/v1.111.8/js/compiled/",
+      waitSeconds: 60
+    })(['atoms/ads/plug'], function (Component) {
+      if (Component || Component.default) {
+        (new Component.default('atomsAdsPlug628502682', 'atomsAdsPlug'))
+          .init({"parentId":"atomsAdsCellModel2104959018","slotName":"prawa1","slotReplica":""});
+      }
+    });
+  }
+</script></div></div></div><section class="componentsListingWithGrid componentsListingWithGrid--withGridColumn component" data-event-position-context="componentsListingWithGrid"  id="componentsListingWithGrid1520959301"><div id="atomsHeader1493449815" class="atomsHeader component" data-event-position-context="atomsHeader"  data-event-name="atomsHeader" data-event-type="click" ><h2 id="atomsHeader1493449815title"  class="atomsHeader__title  "><p class="atomsHeader__titleContainer"><span class="atomsHeader__sygnet  atomsHeader__sygnet--withmargin"><svg height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><path d="M10 0c5.523 0 10 4.477 10 10s-4.477 10-10 10S0 15.523 0 10 4.477 0 10 0zm0 1.333a8.667 8.667 0 100 17.334 8.667 8.667 0 000-17.334zm0 1.334a7.333 7.333 0 110 14.666 7.333 7.333 0 010-14.666zM10 4a6 6 0 100 12 6 6 0 000-12zm0 1.333a4.667 4.667 0 11-2 8.884v-1.55a3.333 3.333 0 10-1.327-2.85L6.666 10v3.265A4.667 4.667 0 0110 5.333zM10 8a2 2 0 110 4 2 2 0 010-4z" id="ababababc"/></defs><use xlink:href="#ababababc" fill-rule="evenodd"/></svg></span><span>Polecamy</span></p></h2></div><div class="componentsListingWithGrid__content" id="componentsListingWithGrid1520959301ArticlesContainer"><div data-event-position-index="1" class="atomsListingArticleTile atomsListingArticleTile--withGrid component" data-event-position-context="atomsListingArticleTile" data-event-name="atomsListingArticleTile" data-event-type="click" data-event-params="url=%2Flotto-polski-cukier-gwiazda-z-wygrana-na-koniec-rundy-zasadniczej-lotto-superliga%2Far%2Fc2-15965075" id="atomsListingArticleTile778741393" data-admin="art:22339839" data-article-id="22339839"><a
+    class="atomsListingArticleTile__img" data-event-position-attr="atomsListingArticleTile__img"
+    href="/lotto-polski-cukier-gwiazda-z-wygrana-na-koniec-rundy-zasadniczej-lotto-superliga/ar/c2-15965075" title="LOTTO Polski Cukier Gwiazda z wygraną na koniec rundy zasadniczej LOTTO Superligi "
+    
+    
+    
+  ><div class="atomsListingArticleTile__imageWrapper " ><img
+            class="atomsListingArticleTile__tileImg lazyload" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAApJREFUCNdjYAAAAAIAAeIhvDMAAAAASUVORK5CYII=" data-src="https://d-art.ppstatic.pl/kadry/k/r/1/57/a0/61c23ba1e9f3c_o_xsmall.jpg" data-image-type="articles"
+            alt="LOTTO Polski Cukier Gwiazda z wygraną na koniec rundy zasadniczej LOTTO Superligi "
+            
+          /></div></a><a class="atomsListingArticleTile__info" data-event-position-attr="atomsListingArticleTile__info" href="/lotto-polski-cukier-gwiazda-z-wygrana-na-koniec-rundy-zasadniczej-lotto-superliga/ar/c2-15965075" title="LOTTO Polski Cukier Gwiazda z wygraną na koniec rundy zasadniczej LOTTO Superligi " ><h3
+        class="atomsListingArticleTile__title atomsTileTitle__title"
+        class="atomsTileTitle__title" data-event-position-attr="atomsTileTitle__title"
+        
+    >
+               LOTTO Polski Cukier Gwiazda z wygraną na koniec rundy zasadniczej LOTTO Superligi 
+            </h3></a></div><div data-event-position-index="2" class="atomsListingArticleTile atomsListingArticleTile--withGrid component" data-event-position-context="atomsListingArticleTile" data-event-name="atomsListingArticleTile" data-event-type="click" data-event-params="url=%2Fkoszykarze-enea-abramczyk-astorii-bydgoszcz-bili-sie-do-ostatnich-sekund%2Far%2Fc2-15965033" id="atomsListingArticleTile957487234" data-admin="art:22339761" data-article-id="22339761"><a
+    class="atomsListingArticleTile__img" data-event-position-attr="atomsListingArticleTile__img"
+    href="/koszykarze-enea-abramczyk-astorii-bydgoszcz-bili-sie-do-ostatnich-sekund/ar/c2-15965033" title="Koszykarze Enea Abramczyk Astorii bili się do ostatnich sekund"
+    
+    data-native-image-link
+    data-native-class-with-variant
+  ><div class="atomsListingArticleTile__imageWrapper " data-native-image-wrapper><img
+            class="atomsListingArticleTile__tileImg lazyload" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAApJREFUCNdjYAAAAAIAAeIhvDMAAAAASUVORK5CYII=" data-src="https://d-art.ppstatic.pl/kadry/k/r/1/88/f4/61c2283220d53_o_xsmall.jpg" data-image-type="articles"
+            alt="Koszykarze Enea Abramczyk Astorii bili się do ostatnich sekund"
+            data-native-image
+          /></div></a><a class="atomsListingArticleTile__info" data-event-position-attr="atomsListingArticleTile__info" href="/koszykarze-enea-abramczyk-astorii-bydgoszcz-bili-sie-do-ostatnich-sekund/ar/c2-15965033" title="Koszykarze Enea Abramczyk Astorii bili się do ostatnich sekund" data-native-info><h3
+        class="atomsListingArticleTile__title atomsTileTitle__title"
+        class="atomsTileTitle__title" data-event-position-attr="atomsTileTitle__title"
+        data-native-title
+    ><label class="atomsPartialLabelLabelFill atomsPartialLabelLabelFill--default atomsPartialLabelLabelFill--last component" data-event-position-context="atomsPartialLabelLabelFill" >
+            NASZ PATRONAT
+    </label>
+                Koszykarze Enea Abramczyk Astorii bili się do ostatnich sekund
+            </h3></a><div class="adsSlotContainer "
+  ><div id="dfp-native46c9e45aeb0b"
+        class="nativeDescription"
+      ></div></div><script>
+        var PPAds = PPAds || {};
+PPAds.queue = PPAds.queue || [];
+PPAds.queue.push(() => {
+PPAds.slotClientDefiner.defineByParams(PPAds, {"n":"native","lt":"lazy","rn":"46c9e45aeb0b","ltp":0.5,"ltg":"listingRight","ltx":"","gn":"standard","s":"","ct":"after","aar":[["fluid","auto"]],"r":[["fluid","auto"]],"cct":true,"ht":2,"ifsie":true,"icl":false,"t":[{"key":"div_id","value":"atomsListingArticleTile957487234"},{"key":"mod","value":"rekomendowane"}],"esra":false,"iaaa":true,"cf":"static"});
+});
+
+  </script><script>PPAds.queue.push(() => PPAds.native.cleanAfterRender('native', '46c9e45aeb0b', 'atomsListingArticleTile957487234'));</script></div><div data-event-position-index="3" class="atomsListingArticleTile atomsListingArticleTile--withGrid component" data-event-position-context="atomsListingArticleTile" data-event-name="atomsListingArticleTile" data-event-type="click" data-event-params="url=%2Fpandemia-terroryzuje-nba-i-rozdaje-szanse-wrocil-maly-ulubieniec-kibicow%2Far%2Fc2-15964987" id="atomsListingArticleTile124402979" data-admin="art:22339677" data-article-id="22339677"><a
+    class="atomsListingArticleTile__img" data-event-position-attr="atomsListingArticleTile__img"
+    href="/pandemia-terroryzuje-nba-i-rozdaje-szanse-wrocil-maly-ulubieniec-kibicow/ar/c2-15964987" title="Pandemia terroryzuje NBA i... rozdaje szanse. Wrócił mały ulubieniec kibiców"
+    
+    
+    
+  ><div class="atomsListingArticleTile__imageWrapper " ><img
+            class="atomsListingArticleTile__tileImg lazyload" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAApJREFUCNdjYAAAAAIAAeIhvDMAAAAASUVORK5CYII=" data-src="https://d-art.ppstatic.pl/kadry/k/r/1/7d/46/61c2169e9eeb2_o_xsmall.jpg" data-image-type="articles"
+            alt="Pandemia terroryzuje NBA i... rozdaje szanse. Wrócił mały ulubieniec kibiców"
+            
+          /></div></a><a class="atomsListingArticleTile__info" data-event-position-attr="atomsListingArticleTile__info" href="/pandemia-terroryzuje-nba-i-rozdaje-szanse-wrocil-maly-ulubieniec-kibicow/ar/c2-15964987" title="Pandemia terroryzuje NBA i... rozdaje szanse. Wrócił mały ulubieniec kibiców" ><h3
+        class="atomsListingArticleTile__title atomsTileTitle__title"
+        class="atomsTileTitle__title" data-event-position-attr="atomsTileTitle__title"
+        
+    >
+               Pandemia terroryzuje NBA i... rozdaje szanse. Wrócił mały ulubieniec kibiców
+            </h3></a></div><div data-event-position-index="4" class="atomsListingArticleTile atomsListingArticleTile--withGrid component" data-event-position-context="atomsListingArticleTile" data-event-name="atomsListingArticleTile" data-event-type="click" data-event-params="url=%2Fkolejny-ekstraligowiec-przetestuje-forme-zuzlowcow-abramczyk-polonia-bydgoszcz-w-srode-terminarz-i-ligi%2Far%2Fc2-15964961" id="atomsListingArticleTile622460513" data-admin="art:22339637" data-article-id="22339637"><a
+    class="atomsListingArticleTile__img" data-event-position-attr="atomsListingArticleTile__img"
+    href="/kolejny-ekstraligowiec-przetestuje-forme-zuzlowcow-abramczyk-polonia-bydgoszcz-w-srode-terminarz-i-ligi/ar/c2-15964961" title="Kolejny ekstraligowiec przetestuje formę żużlowców Polonii. W środę terminarz I ligi"
+    
+    
+    
+  ><div class="atomsListingArticleTile__imageWrapper " ><img
+            class="atomsListingArticleTile__tileImg lazyload" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAApJREFUCNdjYAAAAAIAAeIhvDMAAAAASUVORK5CYII=" data-src="https://d-art.ppstatic.pl/kadry/k/r/1/47/df/61c211f3327d9_o_xsmall.jpg" data-image-type="articles"
+            alt="Kolejny ekstraligowiec przetestuje formę żużlowców Polonii. W środę terminarz I ligi"
+            
+          /></div></a><a class="atomsListingArticleTile__info" data-event-position-attr="atomsListingArticleTile__info" href="/kolejny-ekstraligowiec-przetestuje-forme-zuzlowcow-abramczyk-polonia-bydgoszcz-w-srode-terminarz-i-ligi/ar/c2-15964961" title="Kolejny ekstraligowiec przetestuje formę żużlowców Polonii. W środę terminarz I ligi" ><h3
+        class="atomsListingArticleTile__title atomsTileTitle__title"
+        class="atomsTileTitle__title" data-event-position-attr="atomsTileTitle__title"
+        
+    >
+               Kolejny ekstraligowiec przetestuje formę żużlowców Polonii. W środę terminarz I ligi
+            </h3></a></div><div data-event-position-index="5" class="atomsListingArticleTile atomsListingArticleTile--withGrid component" data-event-position-context="atomsListingArticleTile" data-event-name="atomsListingArticleTile" data-event-type="click" data-event-params="url=%2Fradoslaw-kawecki-mistrzem-swiata-w-plywaniu-katarzyna-wasick-z-brazem%2Far%2Fc2-15964845" id="atomsListingArticleTile1801720199" data-admin="art:22339425" data-article-id="22339425"><a
+    class="atomsListingArticleTile__img" data-event-position-attr="atomsListingArticleTile__img"
+    href="/radoslaw-kawecki-mistrzem-swiata-w-plywaniu-katarzyna-wasick-z-brazem/ar/c2-15964845" title="Radosław Kawęcki mistrzem świata w pływaniu! Katarzyna Wasick z brązem"
+    
+    data-native-image-link
+    data-native-class-with-variant
+  ><div class="atomsListingArticleTile__imageWrapper " data-native-image-wrapper><img
+            class="atomsListingArticleTile__tileImg lazyload" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAApJREFUCNdjYAAAAAIAAeIhvDMAAAAASUVORK5CYII=" data-src="https://d-art.ppstatic.pl/kadry/k/r/1/47/b6/61c1fe22d716e_o_xsmall.jpg" data-image-type="articles"
+            alt="Radosław Kawęcki mistrzem świata w pływaniu! Katarzyna Wasick z brązem"
+            data-native-image
+          /></div></a><a class="atomsListingArticleTile__info" data-event-position-attr="atomsListingArticleTile__info" href="/radoslaw-kawecki-mistrzem-swiata-w-plywaniu-katarzyna-wasick-z-brazem/ar/c2-15964845" title="Radosław Kawęcki mistrzem świata w pływaniu! Katarzyna Wasick z brązem" data-native-info><h3
+        class="atomsListingArticleTile__title atomsTileTitle__title"
+        class="atomsTileTitle__title" data-event-position-attr="atomsTileTitle__title"
+        data-native-title
+    >
+               Radosław Kawęcki mistrzem świata w pływaniu! Katarzyna Wasick z brązem
+            </h3></a><div class="adsSlotContainer "
+  ><div id="dfp-native35276cab340c"
+        class="nativeDescription"
+      ></div></div><script>
+        var PPAds = PPAds || {};
+PPAds.queue = PPAds.queue || [];
+PPAds.queue.push(() => {
+PPAds.slotClientDefiner.defineByParams(PPAds, {"n":"native","lt":"lazy","rn":"35276cab340c","ltp":0.5,"ltg":"listingRight","ltx":"","gn":"standard","s":"","ct":"after","aar":[["fluid","auto"]],"r":[["fluid","auto"]],"cct":true,"ht":2,"ifsie":true,"icl":false,"t":[{"key":"div_id","value":"atomsListingArticleTile1801720199"},{"key":"mod","value":"rekomendowane"}],"esra":false,"iaaa":true,"cf":"static"});
+});
+
+  </script><script>PPAds.queue.push(() => PPAds.native.cleanAfterRender('native', '35276cab340c', 'atomsListingArticleTile1801720199'));</script></div><div data-event-position-index="6" class="atomsListingArticleTile atomsListingArticleTile--withGrid component" data-event-position-context="atomsListingArticleTile" data-event-name="atomsListingArticleTile" data-event-type="click" data-event-params="url=%2Fkolejna-darmowa-gra-od-epic-games-store-co-to-za-produkcja-sprawdzcie%2Far%2Fc12-15964827" id="atomsListingArticleTile1984930091" data-admin="art:22339403" data-article-id="22339403"><a
+    class="atomsListingArticleTile__img" data-event-position-attr="atomsListingArticleTile__img"
+    href="/kolejna-darmowa-gra-od-epic-games-store-co-to-za-produkcja-sprawdzcie/ar/c12-15964827" title="Kolejna darmowa gra od Epic Games Store – co to za produkcja? Sprawdźcie"
+    
+    
+    
+  ><div class="atomsListingArticleTile__imageWrapper " ><img
+            class="atomsListingArticleTile__tileImg lazyload" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAApJREFUCNdjYAAAAAIAAeIhvDMAAAAASUVORK5CYII=" data-src="https://d-art.ppstatic.pl/kadry/k/r/1/37/bc/61c200a845231_o_xsmall.jpg" data-image-type="articles"
+            alt="Kolejna darmowa gra od Epic Games Store – co to za produkcja? Sprawdźcie"
+            
+          /></div></a><a class="atomsListingArticleTile__info" data-event-position-attr="atomsListingArticleTile__info" href="/kolejna-darmowa-gra-od-epic-games-store-co-to-za-produkcja-sprawdzcie/ar/c12-15964827" title="Kolejna darmowa gra od Epic Games Store – co to za produkcja? Sprawdźcie" ><h3
+        class="atomsListingArticleTile__title atomsTileTitle__title"
+        class="atomsTileTitle__title" data-event-position-attr="atomsTileTitle__title"
+        
+    >
+               Kolejna darmowa gra od Epic Games Store – co to za produkcja? Sprawdźcie
+            </h3></a></div><div data-event-position-index="7" class="atomsListingArticleTile atomsListingArticleTile--withGrid component" data-event-position-context="atomsListingArticleTile" data-event-name="atomsListingArticleTile" data-event-type="click" data-event-params="url=%2Fleakster-co-to-znaczy-co-kryje-sie-pod-popularnym-terminem-i-jaki-ma-to-zwiazek-z-grami-sprawdzcie%2Far%2Fc12-15964799" id="atomsListingArticleTile976669644" data-admin="art:22339349" data-article-id="22339349"><a
+    class="atomsListingArticleTile__img atomsListingArticleTile__img--withGallery" data-event-position-attr="atomsListingArticleTile__img"
+    href="/leakster-co-to-znaczy-co-kryje-sie-pod-popularnym-terminem-i-jaki-ma-to-zwiazek-z-grami-sprawdzcie/ar/c12-15964799" title="Leakster – co to znaczy? Sprawdź, czy wiesz"
+    data-icon-variant=withGallery
+    
+    
+  ><div class="atomsListingArticleTile__imageWrapper " ><img
+            class="atomsListingArticleTile__tileImg lazyload" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAApJREFUCNdjYAAAAAIAAeIhvDMAAAAASUVORK5CYII=" data-src="https://d-art.ppstatic.pl/kadry/k/r/1/e4/7b/61c1f85a0dc85_o_xsmall.jpg" data-image-type="articles"
+            alt="Leakster – co to znaczy? Sprawdź, czy wiesz"
+            
+          /></div></a><a class="atomsListingArticleTile__info" data-event-position-attr="atomsListingArticleTile__info" href="/leakster-co-to-znaczy-co-kryje-sie-pod-popularnym-terminem-i-jaki-ma-to-zwiazek-z-grami-sprawdzcie/ar/c12-15964799" title="Leakster – co to znaczy? Sprawdź, czy wiesz" ><h3
+        class="atomsListingArticleTile__title atomsTileTitle__title"
+        class="atomsTileTitle__title" data-event-position-attr="atomsTileTitle__title"
+        
+    >
+               Leakster – co to znaczy? Sprawdź, czy wiesz
+            </h3></a></div><div data-event-position-index="8" class="atomsListingArticleTile atomsListingArticleTile--withGrid component" data-event-position-context="atomsListingArticleTile" data-event-name="atomsListingArticleTile" data-event-type="click" data-event-params="url=%2Fkonflikt-ukrainskorosyjski-delegacja-pentagonu-odwiedzila-ukraine-amerykanskie-media-pisza-o-scenariuszu-na-wypadek-rosyjskiej%2Far%2Fc1-15964699" id="atomsListingArticleTile448919838" data-admin="art:22339157" data-article-id="22339157"><a
+    class="atomsListingArticleTile__img" data-event-position-attr="atomsListingArticleTile__img"
+    href="/konflikt-ukrainskorosyjski-delegacja-pentagonu-odwiedzila-ukraine-amerykanskie-media-pisza-o-scenariuszu-na-wypadek-rosyjskiej/ar/c1-15964699" title="Konflikt ukraińsko-rosyjski. Delegacja Pentagonu odwiedziła Ukrainę"
+    
+    
+    
+  ><div class="atomsListingArticleTile__imageWrapper " ><img
+            class="atomsListingArticleTile__tileImg lazyload" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAApJREFUCNdjYAAAAAIAAeIhvDMAAAAASUVORK5CYII=" data-src="https://d-art.ppstatic.pl/kadry/k/r/1/01/a7/61c1ed449d31f_o_xsmall.jpg" data-image-type="articles"
+            alt="Konflikt ukraińsko-rosyjski. Delegacja Pentagonu odwiedziła Ukrainę"
+            
+          /></div></a><a class="atomsListingArticleTile__info" data-event-position-attr="atomsListingArticleTile__info" href="/konflikt-ukrainskorosyjski-delegacja-pentagonu-odwiedzila-ukraine-amerykanskie-media-pisza-o-scenariuszu-na-wypadek-rosyjskiej/ar/c1-15964699" title="Konflikt ukraińsko-rosyjski. Delegacja Pentagonu odwiedziła Ukrainę" ><h3
+        class="atomsListingArticleTile__title atomsTileTitle__title"
+        class="atomsTileTitle__title" data-event-position-attr="atomsTileTitle__title"
+        
+    >
+               Konflikt ukraińsko-rosyjski. Delegacja Pentagonu odwiedziła Ukrainę
+            </h3></a></div><div data-event-position-index="9" class="atomsListingArticleTile atomsListingArticleTile--withGrid component" data-event-position-context="atomsListingArticleTile" data-event-name="atomsListingArticleTile" data-event-type="click" data-event-params="url=%2Fjulianna-mierzwicka-z-wonorza-skonczyla-100-lat%2Far%2Fc1-15964693" id="atomsListingArticleTile205986474" data-admin="art:22339147" data-article-id="22339147"><a
+    class="atomsListingArticleTile__img" data-event-position-attr="atomsListingArticleTile__img"
+    href="/julianna-mierzwicka-z-wonorza-skonczyla-100-lat/ar/c1-15964693" title="Julianna Mierzwicka z Wonorza w powiecie inowrocławskim skończyła 100 lat!"
+    
+    data-native-image-link
+    data-native-class-with-variant
+  ><div class="atomsListingArticleTile__imageWrapper " data-native-image-wrapper><img
+            class="atomsListingArticleTile__tileImg lazyload" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAApJREFUCNdjYAAAAAIAAeIhvDMAAAAASUVORK5CYII=" data-src="https://d-art.ppstatic.pl/kadry/k/r/1/dd/d4/61c1ec92aabba_o_xsmall.jpg" data-image-type="articles"
+            alt="Julianna Mierzwicka z Wonorza w powiecie inowrocławskim skończyła 100 lat!"
+            data-native-image
+          /></div></a><a class="atomsListingArticleTile__info" data-event-position-attr="atomsListingArticleTile__info" href="/julianna-mierzwicka-z-wonorza-skonczyla-100-lat/ar/c1-15964693" title="Julianna Mierzwicka z Wonorza w powiecie inowrocławskim skończyła 100 lat!" data-native-info><h3
+        class="atomsListingArticleTile__title atomsTileTitle__title"
+        class="atomsTileTitle__title" data-event-position-attr="atomsTileTitle__title"
+        data-native-title
+    >
+               Julianna Mierzwicka z Wonorza w powiecie inowrocławskim skończyła 100 lat!
+            </h3></a><div class="adsSlotContainer "
+  ><div id="dfp-native11c8fa3eda73"
+        class="nativeDescription"
+      ></div></div><script>
+        var PPAds = PPAds || {};
+PPAds.queue = PPAds.queue || [];
+PPAds.queue.push(() => {
+PPAds.slotClientDefiner.defineByParams(PPAds, {"n":"native","lt":"lazy","rn":"11c8fa3eda73","ltp":0.5,"ltg":"listingRight","ltx":"","gn":"standard","s":"","ct":"after","aar":[["fluid","auto"]],"r":[["fluid","auto"]],"cct":true,"ht":2,"ifsie":true,"icl":false,"t":[{"key":"div_id","value":"atomsListingArticleTile205986474"},{"key":"mod","value":"rekomendowane"}],"esra":false,"iaaa":true,"cf":"static"});
+});
+
+  </script><script>PPAds.queue.push(() => PPAds.native.cleanAfterRender('native', '11c8fa3eda73', 'atomsListingArticleTile205986474'));</script></div></div></section></div></div><div class="layoutsGrid layoutsGrid--last"></div></main>
+                <footer class="componentsNavigationFooterExpanded component" data-event-position-context="componentsNavigationFooterExpanded" style="background-color: #fff"><div class="atomsNavigationFooterScroller component" data-event-position-context="atomsNavigationFooterScroller" data-event-name="atomsNavigationFooterScroller" data-event-type="click"><div class="atomsNavigationFooterScroller__wrapper"><a href="#top"
+      class="atomsNavigationFooterScroller__link"
+      aria-label="Przewiń stronę do góry"
+      data-event-position-el="link"
+    >Powrót do góry <i class="atomsNavigationFooterScroller__icon"></i></a></div></div><hr class="componentsNavigationFooterExpanded__divider"><div class="componentsNavigationFooterExpanded__wrapper"><div class="atomsNavigationFooterAccordion atomsNavigationFooterAccordion--horizontal component" data-event-position-context="atomsNavigationFooterAccordion" id="atomsNavigationFooterAccordion506149211"><p
+    class="atomsNavigationFooterAccordion__headline"
+    id="atomsNavigationFooterAccordion506149211MainToggle"
+    
+  >Tematy na czasie</p><ul class="atomsNavigationFooterAccordion__list"><li class="atomsNavigationFooterAccordion__element"
+         ><a
+          class="atomsNavigationFooterAccordion__link"
+                    href="https://expressbydgoski.pl/okazje/oferty/prezent-dla-dziewczyny"
+          data-event-position-el="link" data-event-params="link_url=https://expressbydgoski.pl/okazje/oferty/prezent-dla-dziewczyny"
+        >Prezenty dla Dziewczyny</a></li><li class="atomsNavigationFooterAccordion__element"
+         ><a
+          class="atomsNavigationFooterAccordion__link"
+                    href="https://expressbydgoski.pl/okazje/oferty/prezent-dla-chlopaka"
+          data-event-position-el="link" data-event-params="link_url=https://expressbydgoski.pl/okazje/oferty/prezent-dla-chlopaka"
+        >Prezenty dla Chłopaka</a></li><li class="atomsNavigationFooterAccordion__element"
+         ><a
+          class="atomsNavigationFooterAccordion__link"
+                    href="https://expressbydgoski.pl/msze-swiete"
+          data-event-position-el="link" data-event-params="link_url=https://expressbydgoski.pl/msze-swiete"
+        >Msze Święte online</a></li><li class="atomsNavigationFooterAccordion__element"
+         ><a
+          class="atomsNavigationFooterAccordion__link"
+                    href="https://expressbydgoski.pl/koronawirus"
+          data-event-position-el="link" data-event-params="link_url=https://expressbydgoski.pl/koronawirus"
+        >Koronawirus</a></li><li class="atomsNavigationFooterAccordion__element"
+         ><a
+          class="atomsNavigationFooterAccordion__link"
+                      target="_blank"
+            rel="noopener"
+                    href="https://stronazdrowia.pl/koronawirus-w-polsce-i-na-swiecie-raport-minuta-po-minucie-o-najnowszych-informacjach-dotyczacych-epidemii-wirusa-covid19/ar/c1-14823840"
+          data-event-position-el="link" data-event-params="link_url=https://stronazdrowia.pl/koronawirus-w-polsce-i-na-swiecie-raport-minuta-po-minucie-o-najnowszych-informacjach-dotyczacych-epidemii-wirusa-covid19/ar/c1-14823840"
+        >Koronawirus w Polsce</a></li></ul></div><script>
+window.jsLazyLoad.register(
+    'atomsNavigationFooterAccordion506149211',
+    'atomsNavigationFooterAccordion',
+    'https://s-nsk.ppstatic.pl/assets/nsk/v1.111.8/js/compiled/',
+    'atoms/navigation/footer/accordion', 
+    {"show_more_text":"Poka\u017c wi\u0119cej","show_less_text":"Poka\u017c mniej"}
+)
+</script></div><hr class="componentsNavigationFooterExpanded__divider"><div class="componentsNavigationFooterExpanded__grid" ><div class="atomsNavigationFooterAccordion atomsNavigationFooterAccordion--mobileWrapped component" data-event-position-context="atomsNavigationFooterAccordion" id="atomsNavigationFooterAccordion416708730"><p
+    class="atomsNavigationFooterAccordion__headline"
+    id="atomsNavigationFooterAccordion416708730MainToggle"
+    
+  >Aktualności</p><ul class="atomsNavigationFooterAccordion__list"><li class="atomsNavigationFooterAccordion__element"
+         ><a
+          class="atomsNavigationFooterAccordion__link"
+                    href="https://expressbydgoski.pl/wiadomosci/"
+          data-event-position-el="link" data-event-params="link_url=https://expressbydgoski.pl/wiadomosci/"
+        >Wiadomości</a></li><li class="atomsNavigationFooterAccordion__element"
+         ><a
+          class="atomsNavigationFooterAccordion__link"
+                    href="https://expressbydgoski.pl/bydgoszcz/bydgoszcz-112/"
+          data-event-position-el="link" data-event-params="link_url=https://expressbydgoski.pl/bydgoszcz/bydgoszcz-112/"
+        >Bydgoszcz 112</a></li><li class="atomsNavigationFooterAccordion__element"
+         ><a
+          class="atomsNavigationFooterAccordion__link"
+                    href="https://expressbydgoski.pl/sport/"
+          data-event-position-el="link" data-event-params="link_url=https://expressbydgoski.pl/sport/"
+        >Sport Bydgoszcz</a></li><li class="atomsNavigationFooterAccordion__element"
+         ><a
+          class="atomsNavigationFooterAccordion__link"
+                    href="https://expressbydgoski.pl/strefa-biznesu/"
+          data-event-position-el="link" data-event-params="link_url=https://expressbydgoski.pl/strefa-biznesu/"
+        >Strefa Biznesu Bydgoszcz</a></li><li class="atomsNavigationFooterAccordion__element"
+         ><a
+          class="atomsNavigationFooterAccordion__link"
+                    href="https://plus.expressbydgoski.pl"
+          data-event-position-el="link" data-event-params="link_url=https://plus.expressbydgoski.pl"
+        >Express Bydgoski Plus</a></li></ul></div><script>
+window.jsLazyLoad.register(
+    'atomsNavigationFooterAccordion416708730',
+    'atomsNavigationFooterAccordion',
+    'https://s-nsk.ppstatic.pl/assets/nsk/v1.111.8/js/compiled/',
+    'atoms/navigation/footer/accordion', 
+    {"show_more_text":"Poka\u017c wi\u0119cej","show_less_text":"Poka\u017c mniej"}
+)
+</script><div class="atomsNavigationFooterAccordion atomsNavigationFooterAccordion--mobileWrapped component" data-event-position-context="atomsNavigationFooterAccordion" id="atomsNavigationFooterAccordion1136014002"><p
+    class="atomsNavigationFooterAccordion__headline"
+    id="atomsNavigationFooterAccordion1136014002MainToggle"
+    
+  >Wiadomości lokalne</p><ul class="atomsNavigationFooterAccordion__list"><li class="atomsNavigationFooterAccordion__element"
+         ><a
+          class="atomsNavigationFooterAccordion__link"
+                      target="_blank"
+            rel="noopener"
+                    href="https://bydgoszcz.naszemiasto.pl"
+          data-event-position-el="link" data-event-params="link_url=https://bydgoszcz.naszemiasto.pl"
+        >Wiadomości Bydgoszcz</a></li><li class="atomsNavigationFooterAccordion__element"
+         ><a
+          class="atomsNavigationFooterAccordion__link"
+                      target="_blank"
+            rel="noopener"
+                    href="https://torun.naszemiasto.pl"
+          data-event-position-el="link" data-event-params="link_url=https://torun.naszemiasto.pl"
+        >Wiadomości Toruń</a></li><li class="atomsNavigationFooterAccordion__element"
+         ><a
+          class="atomsNavigationFooterAccordion__link"
+                      target="_blank"
+            rel="noopener"
+                    href="https://znin.naszemiasto.pl"
+          data-event-position-el="link" data-event-params="link_url=https://znin.naszemiasto.pl"
+        >Wiadomości Żnin</a></li><li class="atomsNavigationFooterAccordion__element"
+         ><a
+          class="atomsNavigationFooterAccordion__link"
+                      target="_blank"
+            rel="noopener"
+                    href="https://inowroclaw.naszemiasto.pl"
+          data-event-position-el="link" data-event-params="link_url=https://inowroclaw.naszemiasto.pl"
+        >Wiadomości Inowrocław</a></li><li class="atomsNavigationFooterAccordion__element"
+         ><a
+          class="atomsNavigationFooterAccordion__link"
+                      target="_blank"
+            rel="noopener"
+                    href="https://swiecie.naszemiasto.pl"
+          data-event-position-el="link" data-event-params="link_url=https://swiecie.naszemiasto.pl"
+        >Wiadomości Świecie</a></li></ul></div><script>
+window.jsLazyLoad.register(
+    'atomsNavigationFooterAccordion1136014002',
+    'atomsNavigationFooterAccordion',
+    'https://s-nsk.ppstatic.pl/assets/nsk/v1.111.8/js/compiled/',
+    'atoms/navigation/footer/accordion', 
+    {"show_more_text":"Poka\u017c wi\u0119cej","show_less_text":"Poka\u017c mniej"}
+)
+</script><div class="atomsNavigationFooterAccordion atomsNavigationFooterAccordion--mobileWrapped component" data-event-position-context="atomsNavigationFooterAccordion" id="atomsNavigationFooterAccordion1521208053"><p
+    class="atomsNavigationFooterAccordion__headline"
+    id="atomsNavigationFooterAccordion1521208053MainToggle"
+    
+  >Ogłoszenia</p><ul class="atomsNavigationFooterAccordion__list"><li class="atomsNavigationFooterAccordion__element"
+         ><a
+          class="atomsNavigationFooterAccordion__link"
+                      target="_blank"
+            rel="noopener"
+                    href="https://gratka.pl/motoryzacja/osobowe/bydgoszcz"
+          data-event-position-el="link" data-event-params="link_url=https://gratka.pl/motoryzacja/osobowe/bydgoszcz"
+        >Samochody Bydgoszcz</a></li><li class="atomsNavigationFooterAccordion__element"
+         ><a
+          class="atomsNavigationFooterAccordion__link"
+                      target="_blank"
+            rel="noopener"
+                    href="https://gratka.pl/nieruchomosci/domy/bydgoszcz"
+          data-event-position-el="link" data-event-params="link_url=https://gratka.pl/nieruchomosci/domy/bydgoszcz"
+        >Domy Bydgoszcz</a></li><li class="atomsNavigationFooterAccordion__element"
+         ><a
+          class="atomsNavigationFooterAccordion__link"
+                      target="_blank"
+            rel="noopener"
+                    href="https://gratka.pl/nieruchomosci/mieszkania/bydgoszcz"
+          data-event-position-el="link" data-event-params="link_url=https://gratka.pl/nieruchomosci/mieszkania/bydgoszcz"
+        >Mieszkania Bydgoszcz</a></li></ul></div><script>
+window.jsLazyLoad.register(
+    'atomsNavigationFooterAccordion1521208053',
+    'atomsNavigationFooterAccordion',
+    'https://s-nsk.ppstatic.pl/assets/nsk/v1.111.8/js/compiled/',
+    'atoms/navigation/footer/accordion', 
+    {"show_more_text":"Poka\u017c wi\u0119cej","show_less_text":"Poka\u017c mniej"}
+)
+</script><div class="atomsNavigationFooterAccordion atomsNavigationFooterAccordion--mobileWrapped component" data-event-position-context="atomsNavigationFooterAccordion" id="atomsNavigationFooterAccordion821504845"><p
+    class="atomsNavigationFooterAccordion__headline"
+    id="atomsNavigationFooterAccordion821504845MainToggle"
+    
+  >Serwisy regionalne</p><ul class="atomsNavigationFooterAccordion__list"><li class="atomsNavigationFooterAccordion__element"
+         ><a
+          class="atomsNavigationFooterAccordion__link"
+                      target="_blank"
+            rel="noopener"
+                    href="https://echodnia.eu"
+          data-event-position-el="link" data-event-params="link_url=https://echodnia.eu"
+        >Echo Dnia</a></li><li class="atomsNavigationFooterAccordion__element"
+         ><a
+          class="atomsNavigationFooterAccordion__link"
+                      target="_blank"
+            rel="noopener"
+                    href="https://polskatimes.pl"
+          data-event-position-el="link" data-event-params="link_url=https://polskatimes.pl"
+        >Polska Times</a></li><li class="atomsNavigationFooterAccordion__element"
+         ><a
+          class="atomsNavigationFooterAccordion__link"
+                      target="_blank"
+            rel="noopener"
+                    href="https://gazetakrakowska.pl"
+          data-event-position-el="link" data-event-params="link_url=https://gazetakrakowska.pl"
+        >Gazeta Krakowska</a></li><li class="atomsNavigationFooterAccordion__element"
+         ><a
+          class="atomsNavigationFooterAccordion__link"
+                      target="_blank"
+            rel="noopener"
+                    href="https://gazetalubuska.pl"
+          data-event-position-el="link" data-event-params="link_url=https://gazetalubuska.pl"
+        >Gazeta Lubuska</a></li><li class="atomsNavigationFooterAccordion__element"
+         ><a
+          class="atomsNavigationFooterAccordion__link"
+                      target="_blank"
+            rel="noopener"
+                    href="https://gazetawroclawska.pl"
+          data-event-position-el="link" data-event-params="link_url=https://gazetawroclawska.pl"
+        >Gazeta Wrocławska</a></li><li class="atomsNavigationFooterAccordion__element"
+         ><a
+          class="atomsNavigationFooterAccordion__link"
+                      target="_blank"
+            rel="noopener"
+                    href="https://gloswielkopolski.pl"
+          data-event-position-el="link" data-event-params="link_url=https://gloswielkopolski.pl"
+        >Głos Wielkopolski</a></li><li class="atomsNavigationFooterAccordion__element"
+        hidden="true" ><a
+          class="atomsNavigationFooterAccordion__link"
+                      target="_blank"
+            rel="noopener"
+                    href="https://gk24.pl"
+          data-event-position-el="link" data-event-params="link_url=https://gk24.pl"
+        >Głos Koszaliński</a></li><li class="atomsNavigationFooterAccordion__element"
+        hidden="true" ><a
+          class="atomsNavigationFooterAccordion__link"
+                      target="_blank"
+            rel="noopener"
+                    href="https://gs24.pl"
+          data-event-position-el="link" data-event-params="link_url=https://gs24.pl"
+        >Głos Szczeciński</a></li><li class="atomsNavigationFooterAccordion__element"
+        hidden="true" ><a
+          class="atomsNavigationFooterAccordion__link"
+                      target="_blank"
+            rel="noopener"
+                    href="https://gp24.pl"
+          data-event-position-el="link" data-event-params="link_url=https://gp24.pl"
+        >Głos Pomorza</a></li><li class="atomsNavigationFooterAccordion__element"
+        hidden="true" ><a
+          class="atomsNavigationFooterAccordion__link"
+                      target="_blank"
+            rel="noopener"
+                    href="https://dziennikbaltycki.pl"
+          data-event-position-el="link" data-event-params="link_url=https://dziennikbaltycki.pl"
+        >Dziennik Bałtycki</a></li><li class="atomsNavigationFooterAccordion__element"
+        hidden="true" ><a
+          class="atomsNavigationFooterAccordion__link"
+                      target="_blank"
+            rel="noopener"
+                    href="https://dzienniklodzki.pl"
+          data-event-position-el="link" data-event-params="link_url=https://dzienniklodzki.pl"
+        >Dziennik Łódzki</a></li><li class="atomsNavigationFooterAccordion__element"
+        hidden="true" ><a
+          class="atomsNavigationFooterAccordion__link"
+                      target="_blank"
+            rel="noopener"
+                    href="https://pomorska.pl"
+          data-event-position-el="link" data-event-params="link_url=https://pomorska.pl"
+        >Gazeta Pomorska</a></li><li class="atomsNavigationFooterAccordion__element"
+        hidden="true" ><a
+          class="atomsNavigationFooterAccordion__link"
+                      target="_blank"
+            rel="noopener"
+                    href="https://kurierlubelski.pl"
+          data-event-position-el="link" data-event-params="link_url=https://kurierlubelski.pl"
+        >Kurier Lubelski</a></li><li class="atomsNavigationFooterAccordion__element"
+        hidden="true" ><a
+          class="atomsNavigationFooterAccordion__link"
+                      target="_blank"
+            rel="noopener"
+                    href="https://dziennikpolski24.pl"
+          data-event-position-el="link" data-event-params="link_url=https://dziennikpolski24.pl"
+        >Dziennik Polski</a></li><li class="atomsNavigationFooterAccordion__element"
+        hidden="true" ><a
+          class="atomsNavigationFooterAccordion__link"
+                      target="_blank"
+            rel="noopener"
+                    href="https://dziennikzachodni.pl"
+          data-event-position-el="link" data-event-params="link_url=https://dziennikzachodni.pl"
+        >Dziennik Zachodni</a></li><li class="atomsNavigationFooterAccordion__element"
+        hidden="true" ><a
+          class="atomsNavigationFooterAccordion__link"
+                      target="_blank"
+            rel="noopener"
+                    href="https://poranny.pl"
+          data-event-position-el="link" data-event-params="link_url=https://poranny.pl"
+        >Poranny</a></li><li class="atomsNavigationFooterAccordion__element"
+        hidden="true" ><a
+          class="atomsNavigationFooterAccordion__link"
+                      target="_blank"
+            rel="noopener"
+                    href="https://wspolczesna.pl"
+          data-event-position-el="link" data-event-params="link_url=https://wspolczesna.pl"
+        >Gazeta Współczesna</a></li><li class="atomsNavigationFooterAccordion__element"
+        hidden="true" ><a
+          class="atomsNavigationFooterAccordion__link"
+                      target="_blank"
+            rel="noopener"
+                    href="https://expressilustrowany.pl"
+          data-event-position-el="link" data-event-params="link_url=https://expressilustrowany.pl"
+        >Express Ilustrowany</a></li><li class="atomsNavigationFooterAccordion__element"
+        hidden="true" ><a
+          class="atomsNavigationFooterAccordion__link"
+                      target="_blank"
+            rel="noopener"
+                    href="https://nowiny24.pl"
+          data-event-position-el="link" data-event-params="link_url=https://nowiny24.pl"
+        >Nowiny</a></li><li class="atomsNavigationFooterAccordion__element"
+        hidden="true" ><a
+          class="atomsNavigationFooterAccordion__link"
+                      target="_blank"
+            rel="noopener"
+                    href="https://nto.pl"
+          data-event-position-el="link" data-event-params="link_url=https://nto.pl"
+        >Nowa Trybuna Opolska</a></li><li class="atomsNavigationFooterAccordion__element atomsNavigationFooterAccordion__element--more"><span
+          class="atomsNavigationFooterAccordion__link atomsNavigationFooterAccordion__link--more"
+          target="_blank"
+          rel="noopener"
+          id="atomsNavigationFooterAccordion821504845Toggle"
+        >Pokaż więcej</a></span></ul></div><script>
+window.jsLazyLoad.register(
+    'atomsNavigationFooterAccordion821504845',
+    'atomsNavigationFooterAccordion',
+    'https://s-nsk.ppstatic.pl/assets/nsk/v1.111.8/js/compiled/',
+    'atoms/navigation/footer/accordion', 
+    {"show_more_text":"Poka\u017c wi\u0119cej","show_less_text":"Poka\u017c mniej"}
+)
+</script><div class="atomsNavigationFooterAccordion atomsNavigationFooterAccordion--mobileWrapped component" data-event-position-context="atomsNavigationFooterAccordion" id="atomsNavigationFooterAccordion1651493024"><p
+    class="atomsNavigationFooterAccordion__headline"
+    id="atomsNavigationFooterAccordion1651493024MainToggle"
+    
+  >Serwisy partnerskie</p><ul class="atomsNavigationFooterAccordion__list"><li class="atomsNavigationFooterAccordion__element"
+         ><a
+          class="atomsNavigationFooterAccordion__link"
+                      target="_blank"
+            rel="noopener"
+                    href="https://gratka.pl"
+          data-event-position-el="link" data-event-params="link_url=https://gratka.pl"
+        >Ogłoszenia</a></li><li class="atomsNavigationFooterAccordion__element"
+         ><a
+          class="atomsNavigationFooterAccordion__link"
+                      target="_blank"
+            rel="noopener"
+                    href="https://www.telemagazyn.pl"
+          data-event-position-el="link" data-event-params="link_url=https://www.telemagazyn.pl"
+        >Program TV</a></li><li class="atomsNavigationFooterAccordion__element"
+         ><a
+          class="atomsNavigationFooterAccordion__link"
+                      target="_blank"
+            rel="noopener"
+                    href="https://sportowy24.pl"
+          data-event-position-el="link" data-event-params="link_url=https://sportowy24.pl"
+        >Sport</a></li><li class="atomsNavigationFooterAccordion__element"
+         ><a
+          class="atomsNavigationFooterAccordion__link"
+                      target="_blank"
+            rel="noopener"
+                    href="https://gol24.pl"
+          data-event-position-el="link" data-event-params="link_url=https://gol24.pl"
+        >Piłka nożna</a></li><li class="atomsNavigationFooterAccordion__element"
+         ><a
+          class="atomsNavigationFooterAccordion__link"
+                      target="_blank"
+            rel="noopener"
+                    href="https://www.motofakty.pl"
+          data-event-position-el="link" data-event-params="link_url=https://www.motofakty.pl"
+        >Motoryzacja</a></li><li class="atomsNavigationFooterAccordion__element"
+         ><a
+          class="atomsNavigationFooterAccordion__link"
+                      target="_blank"
+            rel="noopener"
+                    href="https://strefaagro.pl"
+          data-event-position-el="link" data-event-params="link_url=https://strefaagro.pl"
+        >Strefa Agro</a></li><li class="atomsNavigationFooterAccordion__element"
+        hidden="true" ><a
+          class="atomsNavigationFooterAccordion__link"
+                      target="_blank"
+            rel="noopener"
+                    href="https://strefabiznesu.pl"
+          data-event-position-el="link" data-event-params="link_url=https://strefabiznesu.pl"
+        >Strefa Biznesu</a></li><li class="atomsNavigationFooterAccordion__element"
+        hidden="true" ><a
+          class="atomsNavigationFooterAccordion__link"
+                      target="_blank"
+            rel="noopener"
+                    href="https://stronakobiet.pl"
+          data-event-position-el="link" data-event-params="link_url=https://stronakobiet.pl"
+        >Strona Kobiet</a></li><li class="atomsNavigationFooterAccordion__element"
+        hidden="true" ><a
+          class="atomsNavigationFooterAccordion__link"
+                      target="_blank"
+            rel="noopener"
+                    href="https://www.nekrologi.net"
+          data-event-position-el="link" data-event-params="link_url=https://www.nekrologi.net"
+        >Nekrologi</a></li><li class="atomsNavigationFooterAccordion__element atomsNavigationFooterAccordion__element--more"><span
+          class="atomsNavigationFooterAccordion__link atomsNavigationFooterAccordion__link--more"
+          target="_blank"
+          rel="noopener"
+          id="atomsNavigationFooterAccordion1651493024Toggle"
+        >Pokaż więcej</a></span></ul></div><script>
+window.jsLazyLoad.register(
+    'atomsNavigationFooterAccordion1651493024',
+    'atomsNavigationFooterAccordion',
+    'https://s-nsk.ppstatic.pl/assets/nsk/v1.111.8/js/compiled/',
+    'atoms/navigation/footer/accordion', 
+    {"show_more_text":"Poka\u017c wi\u0119cej","show_less_text":"Poka\u017c mniej"}
+)
+</script><div class="atomsNavigationFooterSocialmedia component" data-event-position-context="atomsNavigationFooterSocialmedia" data-event-name="atomsNavigationFooterSocialmedia" data-event-type="click"><a
+      class="atomsNavigationFooterSocialmedia__button"
+      title="Obserwuj na Facebooku"
+      href="https://www.facebook.com/ExpressBydgoski/"
+      aria-label="Obserwuj na Facebooku"
+      data-event-position-el="button" data-event-params="link_img=facebook"
+    ><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20,3 L4,3 C3.44771525,3 3,3.44771525 3,4 L3,20 C3,20.5522847 3.44771525,21 4,21 L12.615,21 L12.615,14.04 L10.277,14.04 L10.277,11.315 L12.615,11.315 L12.615,9.315 C12.615,6.99 14.035,5.723 16.115,5.723 C16.814,5.721 17.514,5.757 18.21,5.83 L18.21,8.25 L16.775,8.25 C15.647,8.25 15.427,8.788 15.427,9.575 L15.427,11.31 L18.124,11.31 L17.774,14.035 L15.426,14.035 L15.426,21 L20,21 C20.5522847,21 21,20.5522847 21,20 L21,4 C21,3.44771525 20.5522847,3 20,3 Z"/></svg></a><ul class="atomsNavigationFooterSocialmedia__list"><li class="atomsNavigationFooterSocialmedia__element"><a
+          class="atomsNavigationFooterSocialmedia__link"
+                    href="https://expressbydgoski.pl/newsletter"
+          data-event-position-el="link" data-event-params="link_url=https://expressbydgoski.pl/newsletter"
+        >Newsletter</a></li><li class="atomsNavigationFooterSocialmedia__element"><a
+          class="atomsNavigationFooterSocialmedia__link"
+                    href="https://expressbydgoski.pl/rss/expressbydgoski.xml"
+          data-event-position-el="link" data-event-params="link_url=https://expressbydgoski.pl/rss/expressbydgoski.xml"
+        >RSS</a></li><li class="atomsNavigationFooterSocialmedia__element"><a
+          class="atomsNavigationFooterSocialmedia__link"
+                    href="https://plus.expressbydgoski.pl/wykup-dostep"
+          data-event-position-el="link" data-event-params="link_url=https://plus.expressbydgoski.pl/wykup-dostep"
+        >Prenumerata</a></li><li class="atomsNavigationFooterSocialmedia__element"><a
+          class="atomsNavigationFooterSocialmedia__link"
+                      target="_blank"
+            rel="noopener"
+                    href="https://www.webankieta.pl/ankieta/531770/wniosek-o-patronat.html"
+          data-event-position-el="link" data-event-params="link_url=https://www.webankieta.pl/ankieta/531770/wniosek-o-patronat.html"
+        >Patronaty</a></li></ul></div></div><section class="atomsNavigationFooterLinks component" data-event-position-context="atomsNavigationFooterLinks" data-event-name="atomsNavigationFooterLinks" data-event-type="click"><a
+      href="https://gratka.pl/"
+      class="atomsNavigationFooterLinks__logo"
+      aria-label="gratka"
+      target="_blank"
+      rel="noopener"
+    ><img
+        class="atomsNavigationFooterLinks__logoImg lazyload" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAApJREFUCNdjYAAAAAIAAeIhvDMAAAAASUVORK5CYII=" data-src="https://s-nsk.ppstatic.pl/assets/nsk/v1.111.8/images/_sites/logo/svg/gratka.svg"
+        alt="gratka"
+        data-event-position-el="gratka"
+      ></a><a
+      href="https://www.telemagazyn.pl/"
+      class="atomsNavigationFooterLinks__logo"
+      aria-label="telemagazyn"
+      target="_blank"
+      rel="noopener"
+    ><img
+        class="atomsNavigationFooterLinks__logoImg lazyload" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAApJREFUCNdjYAAAAAIAAeIhvDMAAAAASUVORK5CYII=" data-src="https://s-nsk.ppstatic.pl/assets/nsk/v1.111.8/images/_sites/logo/svg/telemagazyn.svg"
+        alt="telemagazyn"
+        data-event-position-el="telemagazyn"
+      ></a><a
+      href="https://sportowy24.pl/"
+      class="atomsNavigationFooterLinks__logo"
+      aria-label="sportowy24"
+      target="_blank"
+      rel="noopener"
+    ><img
+        class="atomsNavigationFooterLinks__logoImg lazyload" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAApJREFUCNdjYAAAAAIAAeIhvDMAAAAASUVORK5CYII=" data-src="https://s-nsk.ppstatic.pl/assets/nsk/v1.111.8/images/_sites/logo/svg/sportowy24.svg"
+        alt="sportowy24"
+        data-event-position-el="sportowy24"
+      ></a><a
+      href="https://gol24.pl/"
+      class="atomsNavigationFooterLinks__logo"
+      aria-label="gol24"
+      target="_blank"
+      rel="noopener"
+    ><img
+        class="atomsNavigationFooterLinks__logoImg lazyload" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAApJREFUCNdjYAAAAAIAAeIhvDMAAAAASUVORK5CYII=" data-src="https://s-nsk.ppstatic.pl/assets/nsk/v1.111.8/images/_sites/logo/svg/gol24.svg"
+        alt="gol24"
+        data-event-position-el="gol24"
+      ></a><a
+      href="https://www.motofakty.pl/"
+      class="atomsNavigationFooterLinks__logo"
+      aria-label="motofakty"
+      target="_blank"
+      rel="noopener"
+    ><img
+        class="atomsNavigationFooterLinks__logoImg lazyload" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAApJREFUCNdjYAAAAAIAAeIhvDMAAAAASUVORK5CYII=" data-src="https://s-nsk.ppstatic.pl/assets/nsk/v1.111.8/images/_sites/logo/svg/motofakty.svg"
+        alt="motofakty"
+        data-event-position-el="motofakty"
+      ></a><a
+      href="https://stronakobiet.pl/"
+      class="atomsNavigationFooterLinks__logo"
+      aria-label="stronakobiet"
+      target="_blank"
+      rel="noopener"
+    ><img
+        class="atomsNavigationFooterLinks__logoImg lazyload" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAApJREFUCNdjYAAAAAIAAeIhvDMAAAAASUVORK5CYII=" data-src="https://s-nsk.ppstatic.pl/assets/nsk/v1.111.8/images/_sites/logo/svg/stronakobiet.svg"
+        alt="stronakobiet"
+        data-event-position-el="stronakobiet"
+      ></a><a
+      href="https://strefaagro.pl/"
+      class="atomsNavigationFooterLinks__logo"
+      aria-label="strefaagro"
+      target="_blank"
+      rel="noopener"
+    ><img
+        class="atomsNavigationFooterLinks__logoImg lazyload" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAApJREFUCNdjYAAAAAIAAeIhvDMAAAAASUVORK5CYII=" data-src="https://s-nsk.ppstatic.pl/assets/nsk/v1.111.8/images/_sites/logo/svg/strefaagro.svg"
+        alt="strefaagro"
+        data-event-position-el="strefaagro"
+      ></a><a
+      href="https://strefabiznesu.pl/"
+      class="atomsNavigationFooterLinks__logo"
+      aria-label="strefabiznesu"
+      target="_blank"
+      rel="noopener"
+    ><img
+        class="atomsNavigationFooterLinks__logoImg lazyload" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAApJREFUCNdjYAAAAAIAAeIhvDMAAAAASUVORK5CYII=" data-src="https://s-nsk.ppstatic.pl/assets/nsk/v1.111.8/images/_sites/logo/svg/strefabiznesu.svg"
+        alt="strefabiznesu"
+        data-event-position-el="strefabiznesu"
+      ></a><a
+      href="http://polskapress.pl"
+      class="atomsNavigationFooterLinks__logo"
+      aria-label="polskapress"
+      target="_blank"
+      rel="noopener"
+    ><img
+        class="atomsNavigationFooterLinks__logoImg lazyload" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAApJREFUCNdjYAAAAAIAAeIhvDMAAAAASUVORK5CYII=" data-src="https://s-nsk.ppstatic.pl/assets/nsk/v1.111.8/images/_sites/logo/svg/polskapress.svg"
+        alt="polskapress"
+        data-event-position-el="polskapress"
+      ></a></section><section class="atomsNavigationFooterLegal component" data-event-position-context="atomsNavigationFooterLegal" data-event-name="atomsNavigationFooterLegal" data-event-type="click"><div class="atomsNavigationFooterLegal__links"><a
+          class="atomsNavigationFooterLegal__link"
+          target="_blank"
+          rel="noopener"
+          href="/o-nas"
+          data-event-position-el="link" data-event-params="link_url=/o-nas"
+        >O nas</a><a
+          class="atomsNavigationFooterLegal__link"
+          target="_blank"
+          rel="noopener"
+          href="/marketing"
+          data-event-position-el="link" data-event-params="link_url=/marketing"
+        >Marketing</a><a
+          class="atomsNavigationFooterLegal__link"
+          target="_blank"
+          rel="noopener"
+          href="https://polskapress.pl/pl/biuro-prasowe"
+          data-event-position-el="link" data-event-params="link_url=https://polskapress.pl/pl/biuro-prasowe"
+        >Dla prasy</a><a
+          class="atomsNavigationFooterLegal__link"
+          target="_blank"
+          rel="noopener"
+          href="https://prywatnosc.polskapress.pl/nowa-polityka-prywatnosci"
+          data-event-position-el="link" data-event-params="link_url=https://prywatnosc.polskapress.pl/nowa-polityka-prywatnosci"
+        >Prywatność</a><a
+          class="atomsNavigationFooterLegal__link"
+          target="_blank"
+          rel="noopener"
+          href="/reklama"
+          data-event-position-el="link" data-event-params="link_url=/reklama"
+        >Reklama</a><a
+          class="atomsNavigationFooterLegal__link"
+          target="_blank"
+          rel="noopener"
+          href="/regulamin"
+          data-event-position-el="link" data-event-params="link_url=/regulamin"
+        >Regulamin</a><a
+          class="atomsNavigationFooterLegal__link"
+          target="_blank"
+          rel="noopener"
+          href="/mapa-serwisu"
+          data-event-position-el="link" data-event-params="link_url=/mapa-serwisu"
+        >Mapa serwisu</a><a
+          class="atomsNavigationFooterLegal__link"
+          target="_blank"
+          rel="noopener"
+          href="/kontakt"
+          data-event-position-el="link" data-event-params="link_url=/kontakt"
+        >Kontakt</a></div><hr class="atomsNavigationFooterLegal__divider" /><div class="atomsNavigationFooterLegal__wrapper"><p class="atomsNavigationFooterLegal__description">
+      Polska Press Sp. z o. o. informuje, że wszystkie treści ukazujące się w serwisie Express Bydgoski
+      <a
+        class="atomsNavigationFooterLegal__descriptionLink"
+        target="_blank"
+        rel="noopener"
+        href="/regulamin-artykuly"
+        data-event-position-el="descriptionLink" data-event-params="link_url=/regulamin-artykuly"
+      >podlegają ochronie</a>.
+    </p><p class="atomsNavigationFooterLegal__description">Jesteś zainteresowany kupnem treści?
+      <a
+        class="atomsNavigationFooterLegal__descriptionLink"
+        target="_blank"
+        rel="noopener"
+        href="/licencja-na-artykuly"
+        data-event-position-el="descriptionLink" data-event-params="link_url=/licencja-na-artykuly"
+      >Dowiedz się więcej</a>.
+    </p><p class="atomsNavigationFooterLegal__description">
+      © 2000-2021 Polska Press Sp. z o. o.
+    </p></div></section></footer>
+
+
+
+
+
+                     <link href="https://s-gr.cdngr.pl/assets/gratka/v0.58.3/dist/css/pages/promoButton.css" rel="stylesheet" type="text/css">
+
+<div id="graton-main-container" class="promoContainer promoContainer--hide">
+  <span id="graton-close"
+    class="promoContainer__close"
+    onclick="pushGemius('graton-zamknij')"
+    data-gtm="graton-zamknij"
+    data-event-name="graton-zamknij"
+    data-event-type="click"
+  ></span>
+  <a onclick="pushGemius('graton-oferty')"
+    data-gtm="graton-oferty"
+    data-event-name="graton-oferty"
+    data-event-type="click"
+    rel="nofollow noopener noreferrer"
+    target="_blank"
+    title="Ogłoszenia"
+    href="https://gratka.pl/?utm_source=polskapress&amp;utm_medium=gratkakampania&amp;utm_campaign=graton_x_&amp;utm_content=link-logo" class="promoContainer__button">
+    <span id="graton-circle" class="promoContainer__circle"
+      data-gtm="graton-rozwin"
+      data-event-name="graton-rozwin"
+      data-event-type="click"
+    ></span>
+  </a>
+  <div id="graton-url-container" class="promoContainer__urlContainer">
+    <a id="graton-url-element" href="https://gratka.pl/dodaj-ogloszenie?utm_source=polskapress&amp;utm_medium=gratkakampania&amp;utm_campaign=graton_x_&amp;utm_content=link-dodaj-ogloszenie"
+      class="promoContainer__url promoContainer__url--addOffer"
+      rel="nofollow noopener noreferrer"
+      target="_blank" title="Dodaj ogłoszenie"
+    >Dodaj ogłoszenie</a>
+  </div>
+</div>
+
+<script>
+    var mainContainer = document.getElementById('graton-main-container');
+    var circle = document.getElementById('graton-circle');
+    var urlContainer = document.getElementById('graton-url-container');
+    var urlElement = document.getElementById('graton-url-element');
+
+    var gratonCloseButton = document.getElementById('graton-close');
+    var nowTime = new Date().getTime();
+    var gratonHiddenHours = 0.5;
+    var gratonHiddenState = {
+      show: false,
+      showTime: nowTime + gratonHiddenHours * 60 * 60 * 1000,
+    };
+    var gratonState = sessionStorage && sessionStorage.getItem('graton')
+      ? JSON.parse(sessionStorage.getItem('graton'))
+      : { show: true, showTime: 0 };
+
+    var setLocalData = function (object) {
+      if (sessionStorage) {
+        sessionStorage.setItem('graton', JSON.stringify(object));
+      }
+    }
+
+    if (gratonState.showTime > 0 && gratonState.showTime < nowTime) {
+      gratonState.show = true;
+      setLocalData(gratonState);
+    }
+
+    if (gratonState.show) {
+      mainContainer.classList.remove('promoContainer--hide');
+    }
+
+    gratonCloseButton.addEventListener('click', function () {
+      setLocalData(gratonHiddenState);
+      mainContainer.classList.add('promoContainer--hide');
+    });
+
+    circle.addEventListener('click', function (event) {
+      event.preventDefault();
+
+      if (!mainContainer.classList.contains('promoContainer--open')) {
+        toggleTracker('graton-zwin');
+        pushGemius('graton-rozwin');
+        mainContainer.classList.toggle('promoContainer--open');
+        urlContainer.style.height = urlElement.scrollHeight + 'px';
+      } else {
+        toggleTracker('graton-rozwin');
+        pushGemius('graton-zwin');
+        mainContainer.classList.toggle('promoContainer--open');
+        urlContainer.style.height = '0px';
+      }
+    });
+
+    var toggleTracker = function (event) {
+      circle.dataset.gtm = event;
+      circle.dataset.tracker = event;
+      circle.dataset.eventName = event;
+    }
+
+    var pushGemius = function (value) {
+      var _gemiusParams = window.gemius_extraparameters || [];
+
+      if (typeof window.gemius_event !== 'undefined') {
+        var actionParams = _gemiusParams.slice();
+        actionParams.push('akcja=' + value);
+        actionParams.push('akcja_typ=klikniecie');
+        window.gemius_event.apply(this, ['_action_', ''].concat(actionParams));
+      }
+    }
+</script>
+
+
+
+
+
+            
+          <link rel="preload" href="https://s-nsk.ppstatic.pl/assets/nsk/v1.111.8/bundles/e9d17a526e1e083d5b4037256489bee5.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://s-nsk.ppstatic.pl/assets/nsk/v1.111.8/bundles/e9d17a526e1e083d5b4037256489bee5.css"></noscript>    
+    
+    
+        
+<script async src="https://s-nsk.ppstatic.pl/lib/events/v0.16.0/js/main.js"></script>
+<script>
+  window.PPEvents = window.PPEvents || {};
+  window.PPEvents.queue = window.PPEvents.queue || [];
+
+  PPEvents.queue.push(function () {
+    var event = PPEvents.getEvent('adblock');
+
+    event.setAction(PPEvents.actionType.VIEW);
+
+    if (typeof window.pp_adblock_is_off === 'undefined') {
+      event.appendParam('status', 'on');
+    } else {
+      event.appendParam('status', 'off');
+    }
+
+    PPEvents.listen('adblock');
+  });
+
+  PPEvents.queue.push(function () {
+    var adblockDetect = function() {
+  window.PPAdsConfig = window.PPAdsConfig || {adStandard: '', adRecover: ''};
+  Object.assign(window.PPAdsConfig, {
+    BETTER_ADS: 'better_ads',
+    ACCEPTABLE_ADS: 'acceptable_ads',
+    BLOCKED: 'blocked',
+    NONE: 'none'
+  });
+
+  var ad_standard = window.PPAdsConfig.BETTER_ADS;
+  var ad_recover = window.PPAdsConfig.NONE;
+
+  if (typeof window.pp_adblock_is_off === 'undefined') {
+    ad_standard = window.PPAdsConfig.BLOCKED;
+    if (typeof window.acceptable_ads_disallowed === 'undefined') {
+      ad_standard = window.PPAdsConfig.ACCEPTABLE_ADS;
+      ad_recover = 'eyeo';
+    }
+  }
+
+  window.PPAdsConfig.adStandard = ad_standard;
+  window.PPAdsConfig.adRecover = ad_recover;
+};
+adblockDetect();
+    var event = PPEvents.getEvent('ads');
+    event.setAction(PPEvents.actionType.VIEW);
+    event.appendParam('standard', window.PPAdsConfig.adStandard || '');
+    event.appendParam('recover', window.PPAdsConfig.adRecover || '');
+    PPEvents.listen('ads');
+  });
+
+</script>
+
+<script>
+  var PPEvents = PPEvents || {};
+  PPEvents.queue = PPEvents.queue || [];
+
+  PPEvents.queue.push(function () {
+    var event = PPEvents.getEvent('ads');
+    event.setAction(PPEvents.actionType.VIEW);
+
+    
+          event.appendParam('status', 'on');
+    
+    PPEvents.listen('ads');
+  });
+</script>
+
+<script>
+  var PPEvents = PPEvents || {};
+  PPEvents.queue = PPEvents.queue || [];
+
+  PPEvents.queue.push(function () {
+    var event = PPEvents.getEvent('user');
+    event.setAction(PPEvents.actionType.VIEW);
+
+    
+          event.appendParam('is_logged', '0');
+          event.appendParam('id_pp', '0');
+          event.appendParam('is_editor', '0');
+    
+    PPEvents.listen('user');
+  });
+</script>
+
+<script>
+  var PPEvents = PPEvents || {};
+  PPEvents.queue = PPEvents.queue || [];
+
+  PPEvents.queue.push(function () {
+    var event = PPEvents.getEvent('access');
+    event.setAction(PPEvents.actionType.VIEW);
+
+    
+          event.appendParam('is_paid', '0');
+    
+    PPEvents.listen('access');
+  });
+</script>
+
+<script>
+  var PPEvents = PPEvents || {};
+  PPEvents.queue = PPEvents.queue || [];
+
+  PPEvents.queue.push(function () {
+    var event = PPEvents.getEvent('site');
+    event.setAction(PPEvents.actionType.VIEW);
+
+    
+          event.appendParam('type', 'gallery');
+    
+    PPEvents.listen('site');
+  });
+</script>
+
+<script>
+  var PPEvents = PPEvents || {};
+  PPEvents.queue = PPEvents.queue || [];
+
+  PPEvents.queue.push(function () {
+    var event = PPEvents.getEvent('location');
+    event.setAction(PPEvents.actionType.VIEW);
+
+    
+          event.appendParam('city', '');
+          event.appendParam('province', '');
+    
+    PPEvents.listen('location');
+  });
+</script>
+
+<script>
+  var PPEvents = PPEvents || {};
+  PPEvents.queue = PPEvents.queue || [];
+
+  PPEvents.queue.push(function () {
+    var event = PPEvents.getEvent('subscription');
+    event.setAction(PPEvents.actionType.VIEW);
+
+    
+          event.appendParam('period', '0');
+    
+    PPEvents.listen('subscription');
+  });
+</script>
+
+  <script>
+  var PPEvents = PPEvents || {};
+  PPEvents.queue = PPEvents.queue || [];
+
+  PPEvents.queue.push(function () {
+    var event = PPEvents.getEvent('article');
+    event.setAction(PPEvents.actionType.VIEW);
+
+    
+          event.appendParam('title', 'To zbudujemy w Bydgoszczy w 2020 roku. Zobacz listę inwestycji [zdjęcia]');
+          event.appendParam('api_id', '19598041');
+          event.appendParam('id', '14687459');
+          event.appendParam('created_at', '2020-03-01T07:00:00.000000+01:00');
+          event.appendParam('edited_at', '2020-03-01T11:13:01.000000+01:00');
+          event.appendParam('photo_count', '11');
+          event.appendParam('author_id', '11653639');
+          event.appendParam('author_name', 'bydgoszcz.zewnetrzny');
+          event.appendParam('tags', 'budowle w Bydgoszczy, Bydgoszcz');
+          event.appendParam('prefered_journals', 'expressbydgoski.pl');
+          event.appendParam('is_sponsored', '0');
+          event.appendParam('isoteryt', 'POL0461011');
+          event.appendParam('simc', '0928363');
+          event.appendParam('red', '0');
+          event.appendParam('ing', '0');
+          event.appendParam('een', '0');
+          event.appendParam('ted', '0');
+          event.appendParam('ion', '0');
+          event.appendParam('is_paid', '0');
+          event.appendParam('has_video', '0');
+    
+    PPEvents.listen('article');
+  });
+</script>
+
+  <script>
+  var PPEvents = PPEvents || {};
+  PPEvents.queue = PPEvents.queue || [];
+
+  PPEvents.queue.push(function () {
+    var event = PPEvents.getEvent('category');
+    event.setAction(PPEvents.actionType.VIEW);
+
+    
+          event.appendParam('main', 'dom');
+          event.appendParam('path', '/dom/wiadomosci/');
+          event.appendParam('subject', 'dom i nieruchomości');
+          event.appendParam('special', '');
+    
+    PPEvents.listen('category');
+  });
+</script>
+
+  <script>
+  var PPEvents = PPEvents || {};
+  PPEvents.queue = PPEvents.queue || [];
+
+  PPEvents.queue.push(function () {
+    var event = PPEvents.getEvent('content');
+    event.setAction(PPEvents.actionType.VIEW);
+
+    
+          event.appendParam('photo_number', '1');
+          event.appendParam('element_type', 'photo');
+    
+    PPEvents.listen('content');
+  });
+</script>
+
+
+    <script>
+  var PPEvents = PPEvents || {};
+  PPEvents.queue = PPEvents.queue || [];
+
+  PPEvents.queue.push(function () {
+    var event = PPEvents.getEvent('components');
+    event.setAction(PPEvents.actionType.VIEW);
+
+    
+          event.appendParam('all', '/assets/favicon,gora1,/gallery/image,,,/gallery/description,/gallery/back_to_article,,Zobacz również,prawa1,Polecamy,/navigation/footer/expanded,/navigation/gratka/promo_box');
+    
+    PPEvents.listen('components');
+  });
+</script>
+
+
+
+        <script src="https://s-nsk.ppstatic.pl/assets/nsk/v1.111.8/js/compiled/ResponsiveLinks.min.js"></script>
+
+
+          <div id="siteHeader" class="componentsSiteHeader medium-full large-full">
+                              <nav class="componentsGalleryNavbar component" data-event-position-context="componentsGalleryNavbar" data-event-name="componentsGalleryNavbar" data-event-type="click"><div class="componentsGalleryNavbar__wrapper" data-event-position-attr="componentsGalleryNavbar__wrapper"><div class="componentsGalleryNavbar__logo" data-event-position-attr="componentsGalleryNavbar__logo" data-event-position-el="logo"><a class="componentsGalleryNavbar__href" data-event-position-attr="componentsGalleryNavbar__href" href="https://expressbydgoski.pl" aria-label="Logo"><svg xmlns="http://www.w3.org/2000/svg" width="184" height="64" viewBox="0 0 184 64"><defs/><g fill="none" fill-rule="nonzero"><path fill="#000" d="M41.1586207,0 L39.3931034,10.0413793 L19.9724138,10.0413793 L18.9793103,17.8758621 L37.6275862,17.8758621 L36.0827586,26.9241379 L17.5448276,26.9241379 L15.4482759,38.2896552 L64.1103448,38.2896552 L62.2344828,48 L1.43448276,48 L9.37931034,0 L41.1586207,0 Z M85.1862069,6.51034483 C95.2275862,6.84137931 103.062069,15.4482759 101.627586,24.3862069 C100.193103,32 93.7931034,37.6275862 85.2965517,37.2965517 C82.4275862,36.8551724 80.662069,36.5241379 78.1241379,35.0896552 L78.1241379,35.0896552 L79.8896552,24.7172414 C81.3241379,26.5931034 83.0896552,27.2551724 85.6275862,26.9241379 C87.7241379,26.5931034 89.6,25.1586207 89.9310345,22.9517241 C90.3724138,20.0827586 87.9448276,17.2137931 84.6344828,17.2137931 C81.7655172,16.8827586 79.2275862,18.9793103 78.8965517,21.5172414 L78.8965517,21.5172414 L74.5931034,48 L63.7793103,48 L68.7448276,16.8827586 C71.2827586,10.4827586 77.3517241,6.51034483 85.1862069,6.51034483 Z M182.17931,38.2896552 L180.744828,48 L75.8068966,48 L77.3517241,38.2896552 L182.17931,38.2896552 Z M124.57931,8.27586207 C128.551724,5.73793103 132.413793,4.96551724 136.386207,6.06896552 C140.8,6.84137931 143.889655,9.26896552 146.096552,12.9103448 C146.427586,13.2413793 146.758621,13.9034483 146.97931,15.1172414 L146.97931,15.1172414 L132.303448,24.0551724 C131.972414,23.3931034 131.2,23.062069 130.868966,22.2896552 C130.537931,21.1862069 130.096552,20.5241379 129.765517,19.4206897 L129.765517,19.4206897 L134.731034,16.1103448 C133.406897,14.5655172 131.531034,14.2344828 129.765517,15.337931 C128.331034,16.1103448 127.558621,17.2137931 127.558621,18.6482759 C127.558621,19.9724138 127.889655,21.8482759 128.993103,23.2827586 C129.765517,24.3862069 130.427586,25.0482759 131.2,25.8206897 C131.773793,26.0855172 133.265655,26.1914483 134.849324,26.2232276 L135.379481,26.2311906 C137.593189,26.2538953 139.806897,26.1517241 139.806897,26.1517241 L139.806897,26.1517241 L137.6,37.6275862 L137.6,37.6275862 L132.664328,37.6273375 C131.658706,37.6248504 130.628213,37.5974922 129.324138,37.2965517 C125.351724,36.1931034 122.151724,34.0965517 119.613793,30.1241379 C117.075862,26.5931034 116.303448,22.6206897 117.406897,18.3172414 C118.510345,14.0137931 120.606897,10.8137931 124.57931,8.27586207 Z M117.406897,5.51724138 C118.510345,5.51724138 119.282759,5.51724138 120.717241,5.84827586 L120.717241,5.84827586 L119.613793,11.1448276 C118.510345,12.4689655 117.406897,14.3448276 117.406897,15.8896552 C115.641379,16.662069 113.875862,18.3172414 113.103448,21.9586207 L113.103448,21.9586207 L110.565517,36.9655172 L99.0896552,36.9655172 L100.193103,30.5655172 C101.296552,28.8 102.4,26.7034483 102.731034,24.4965517 C103.172414,22.4 103.172414,20.3034483 102.4,18.0965517 C103.393103,14.4551724 104.827586,11.6965517 107.365517,9.48965517 C109.903448,6.95172414 113.434483,5.51724138 117.406897,5.51724138 Z M163.972414,7.17241379 L162.206897,17.9862069 C160.772414,17.9862069 160.441379,18.3172414 159.668966,19.0896552 C159.337931,19.862069 158.896552,20.9655172 158.565517,22.7310345 C157.793103,28.8 155.365517,32.662069 151.393103,35.2 C149.296552,36.1931034 146.427586,36.9655172 142.455172,36.9655172 L142.455172,36.9655172 L139.144828,36.9655172 L140.910345,25.8206897 L141.682759,25.8206897 C143.448276,25.8206897 144.882759,25.4896552 145.655172,24.7172414 C146.317241,24.0551724 147.089655,21.5172414 147.089655,19.7517241 C147.42069,16.9931034 147.862069,15.8896552 148.193103,14.4551724 C148.524138,13.3517241 149.296552,11.9172414 150.731034,10.8137931 C152.827586,8.60689655 156.027586,7.50344828 160,7.50344828 L160,7.50344828 L163.972414,7.17241379 Z M182.17931,7.17241379 L180.413793,17.9862069 C178.97931,17.9862069 178.648276,18.3172414 177.875862,19.0896552 C177.544828,19.862069 177.103448,20.9655172 176.772414,22.7310345 C176,28.8 173.572414,32.662069 169.6,35.2 C167.503448,36.1931034 164.634483,36.9655172 160.662069,36.9655172 L160.662069,36.9655172 L157.793103,36.9655172 L159.558621,25.8206897 L159.866679,25.8172309 C161.49061,25.7802172 162.804057,25.4442191 163.531034,24.7172414 C164.193103,24.0551724 164.965517,21.5172414 164.965517,19.7517241 C165.224588,17.5928036 165.551242,16.4476371 165.839696,15.3641773 L165.934288,15.0040035 C165.980731,14.8237533 166.025787,14.6422789 166.068966,14.4551724 C166.4,13.3517241 167.172414,11.9172414 168.606897,10.8137931 C170.703448,8.60689655 173.903448,7.50344828 177.875862,7.50344828 L177.875862,7.50344828 L182.17931,7.17241379 Z"/><path fill="#2962AC" d="M32.9931034,36.8551724 C34.4275862,27.5862069 42.262069,19.4206897 45.1310345,16.8827586 C42.5931034,14.0137931 40.1655172,10.8137931 37.9586207,7.94482759 L37.6275862,7.17241379 L37.9586207,7.17241379 L48.3310345,3.2 L48.662069,3.2 L48.9931034,3.64137931 C50.7586207,5.40689655 52.6344828,7.6137931 54.2896552,9.37931034 C56.0551724,7.94482759 57.9310345,6.84137931 59.5862069,5.40689655 L59.9172414,5.40689655 L60.2482759,5.40689655 L70.6206897,9.37931034 L71.3931034,9.71034483 L70.6206897,10.0413793 C67.3103448,12.9103448 64.2206897,15.337931 60.5793103,18.3172414 C63.8896552,22.6206897 67.4206897,27.2551724 70.6206897,31.5586207 L70.9517241,31.8896552 L70.1793103,32.2206897 L59.8068966,37.1862069 L59.4758621,37.1862069 L59.1448276,36.8551724 C56.6068966,33.2137931 54.5103448,29.6827586 51.9724138,26.0413793 C51.6413793,26.8137931 50.8689655,27.4758621 50.2068966,28.2482759 C48,30.7862069 45.5724138,33.5448276 45.5724138,37.1862069 L45.5724138,37.5172414 L45.2413793,37.5172414 L33.1034483,37.5172414 L32.7724138,37.5172414 L32.9931034,36.8551724 L32.9931034,36.8551724 Z"/><path fill="#FFF" d="M46.8965517,37.9586207 L32.2206897,37.9586207 L32.2206897,36.8551724 C33.6551724,27.9172414 40.8275862,19.9724138 44.3586207,16.8827586 L36.8551724,7.17241379 L48.662069,2.53793103 L54.4,8.60689655 L59.6965517,4.63448276 L71.8344828,9.26896552 L61.0206897,18.2068966 L71.3931034,32.1103448 L59.5862069,37.8482759 L52.4137931,27.0344828 C52.0827586,27.3655172 51.6413793,28.137931 50.9793103,28.4689655 C48.7724138,30.6758621 46.6758621,33.4344828 46.6758621,37.0758621 C46.8965517,37.1862069 46.8965517,37.9586207 46.8965517,37.9586207 Z M33.3241379,36.8551724 L45.7931034,36.8551724 C45.7931034,32.8827586 48.3310345,30.0137931 50.4275862,27.5862069 C51.2,26.8137931 51.5310345,26.1517241 52.1931034,25.3793103 L52.5241379,24.6068966 L60.0275862,36.0827586 L70.4,31.1172414 L70.4,31.1172414 L60.0275862,17.8758621 L70.4,9.26896552 L60.0275862,5.29655172 L60.0275862,5.29655172 L54.2896552,9.26896552 L48.662069,3.31034483 L38.2896552,7.17241379 L45.7931034,16.4413793 L45.462069,16.7724138 C43.0344828,19.4206897 34.7586207,27.5862069 33.3241379,36.8551724 L33.3241379,36.8551724 Z"/><path fill="#2962AC" d="M69.9586207,53.0758621 C70.2896552,53.4068966 70.7310345,54.1793103 70.7310345,54.8413793 C70.7310345,56.2106583 69.7256198,57.2783129 68.6745045,57.6604575 L68.5241379,57.7103448 C69.6275862,58.0413793 69.9586207,59.1448276 69.9586207,59.9172414 C69.9586207,61.0206897 69.6275862,61.6827586 68.8551724,62.4551724 C68.0827586,63.2275862 67.0896552,63.5586207 65.5448276,63.5586207 L63.337931,63.5586207 L63.337931,63.5586207 L65.2137931,52.6344828 C65.9862069,52.6344828 66.6482759,52.3034483 67.4206897,52.3034483 C68.1931034,52.3034483 69.1862069,52.3034483 69.9586207,53.0758621 Z M80.9931034,52.3034483 C82.4275862,52.3034483 83.2,52.6344828 83.5310345,53.4068966 C84.3034483,54.1793103 84.3034483,55.1724138 84.3034483,56.2758621 C84.3034483,59.1448276 83.2,61.2413793 82.0965517,62.3448276 C81.3241379,63.1172414 80.3310345,63.4482759 78.7862069,63.4482759 C78.0137931,63.4482759 77.3517241,63.4482759 77.0206897,63.1172414 L78.7862069,52.6344828 C79.5586207,52.6344828 80.2206897,52.3034483 80.9931034,52.3034483 Z M116.634483,52.6344828 L114.537931,63.4482759 L112.331034,63.4482759 L114.537931,52.6344828 L116.634483,52.6344828 Z M92.6896552,52.5241379 L91.9172414,54.2896552 C91.5862069,54.2896552 91.1448276,53.9586207 90.8137931,53.9586207 C90.0413793,53.9586207 89.3793103,54.2896552 89.0482759,54.7310345 C88.2758621,55.5034483 87.6137931,57.2689655 87.6137931,59.3655172 C87.6137931,60.8 87.9448276,61.5724138 89.0482759,61.5724138 L89.8206897,61.5724138 L89.8206897,61.5724138 L90.1517241,59.0344828 L89.0482759,59.0344828 L89.3793103,57.2689655 L92.2482759,57.2689655 L90.5931034,63.0068966 C89.8206897,63.337931 89.1586207,63.337931 88.3862069,63.337931 C86.9517241,63.337931 86.1793103,63.0068966 85.8482759,62.2344828 C85.0758621,61.462069 85.0758621,60.4689655 85.0758621,59.3655172 C85.0758621,57.1586207 85.8482759,55.062069 87.2827586,53.6275862 C88.3862069,52.5241379 89.4896552,52.1931034 90.9241379,52.1931034 L91.3032328,52.19375 C92.1103448,52.1982759 92.4,52.2344828 92.6896552,52.5241379 Z M96.8827586,52.1931034 C99.0896552,52.1931034 99.4206897,54.4 99.4206897,55.8344828 C99.4206897,58.0413793 98.6482759,60.8 97.2137931,62.2344828 C96.4413793,63.0068966 95.7793103,63.337931 94.6758621,63.337931 C92.137931,63.337931 92.137931,60.8 92.137931,59.6965517 C92.137931,57.4896552 92.9103448,54.7310345 94.3448276,53.2965517 C95.1172414,52.5241379 95.7793103,52.1931034 96.8827586,52.1931034 Z M113.875862,52.1931034 L110.565517,57.1586207 L111.668966,63.2275862 L109.462069,63.2275862 L108.689655,58.5931034 L107.917241,59.6965517 L107.144828,63.337931 L105.37931,63.337931 L107.696552,52.6344828 L109.462069,52.6344828 L108.358621,57.6 C108.689655,56.8275862 109.131034,56.4965517 109.462069,55.8344828 L111.668966,52.1931034 L113.875862,52.1931034 Z M105.6,52.4137931 L104.827586,54.1793103 C104.496552,54.1793103 104.055172,53.8482759 103.724138,53.8482759 C102.951724,53.8482759 102.289655,54.6206897 102.289655,55.2827586 C102.289655,55.6137931 102.62069,56.3862069 103.393103,57.0482759 C104.165517,57.7103448 104.827586,58.8137931 104.827586,59.5862069 C104.827586,61.7931034 103.393103,63.2275862 101.186207,63.2275862 C100.082759,63.2275862 99.4206897,62.8965517 98.9793103,62.8965517 L99.862069,61.1310345 C100.193103,61.462069 100.965517,61.462069 101.296552,61.462069 C102.4,61.462069 102.731034,61.1310345 102.731034,60.0275862 C102.731034,59.2551724 102.4,58.9241379 101.627586,58.262069 C100.855172,57.4896552 100.193103,56.4965517 100.193103,55.7241379 C100.193103,53.5172414 101.627586,52.0827586 103.834483,52.0827586 C104.606897,52.0827586 105.268966,52.0827586 105.6,52.4137931 Z M78.5655172,52.3034483 L74.9241379,59.1448276 L74.1517241,63.1172414 L71.984,63.1167586 L72.7172414,59.0344828 L71.6137931,52.6344828 L73.8206897,52.6344828 L74.1517241,55.1724138 L74.1517241,57.3793103 C74.4827586,56.6068966 74.4827586,55.9448276 74.9241379,55.1724138 L76.3586207,52.3034483 L78.5655172,52.3034483 Z M66.2068966,58.3724138 L65.8758621,58.3724138 L65.5448276,61.5724138 L65.8758621,61.5724138 C66.9793103,61.5724138 67.6413793,60.8 67.6413793,59.8068966 C67.6413793,58.7034483 67.3103448,58.3724138 66.2068966,58.3724138 Z M80.5517241,53.9586207 L80.2206897,53.9586207 L80.2206897,53.9586207 L79.1172414,61.5724138 L79.4482759,61.5724138 C80.2206897,61.5724138 80.8827586,61.2413793 81.2137931,60.137931 C81.5448276,59.0344828 81.9862069,57.6 81.9862069,56.1655172 C81.9862069,55.062069 81.6551724,53.9586207 80.5517241,53.9586207 Z M96.9931034,54.0689655 C96.3310345,54.0689655 96.3310345,54.0689655 95.8896552,54.4 C94.7862069,55.5034483 94.4551724,58.3724138 94.4551724,60.137931 C94.4551724,60.9103448 94.4551724,61.5724138 95.5586207,61.5724138 C95.8896552,61.5724138 95.8896552,61.5724138 96.3310345,61.2413793 C97.4344828,60.137931 97.7655172,56.6068966 97.7655172,55.5034483 C97.7655172,54.7310345 97.7655172,54.0689655 96.9931034,54.0689655 Z M54.7310345,52.9655172 L54.0689655,58.3724138 L0,58.3724138 L0.772413793,52.9655172 L54.7310345,52.9655172 Z M180.413793,52.9655172 L179.641379,58.3724138 L125.572414,58.3724138 L126.344828,52.9655172 L180.413793,52.9655172 Z M67.3103448,54.0689655 L66.537931,54.0689655 L66.537931,54.0689655 L66.2068966,56.937931 C67.6413793,56.937931 68.4137931,56.1655172 68.4137931,55.1724138 C68.4137931,54.4 68.0827586,54.0689655 67.3103448,54.0689655 Z"/></g></svg></a></div><div class="componentsGalleryNavbar__back_wrapper" data-event-position-attr="componentsGalleryNavbar__back_wrapper"><div class="atomsGalleryBackToArticle atomsGalleryBackToArticle--wide component" data-event-position-context="atomsGalleryBackToArticle"><a class="atomsGalleryBackToArticle__back_link" data-event-position-attr="atomsGalleryBackToArticle__back_link" href="/to-zbudujemy-w-bydgoszczy-w-2020-roku-zobacz-liste-inwestycji-zdjecia/ar/c9-14687459" aria-label="Wróć do artykułu:"><span class="atomsGalleryBackToArticle__arrow_left" data-event-position-attr="atomsGalleryBackToArticle__arrow_left"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M15,6 C15.3905243,6.39052429 15.3905243,7.02368927 15,7.41421356 L10.414,11.9991068 L15,16.5857864 C15.3905243,16.9763107 15.3905243,17.6094757 15,18 C14.6094757,18.3905243 13.9763107,18.3905243 13.5857864,18 L8.29289322,12.7071068 C7.90236893,12.3165825 7.90236893,11.6834175 8.29289322,11.2928932 L13.5857864,6 C13.9763107,5.60947571 14.6094757,5.60947571 15,6 Z"/></svg></span><span class="atomsGalleryBackToArticle__label" data-event-position-attr="atomsGalleryBackToArticle__label">Wróć do artykułu:</span></a></div><h1 class="atomsGalleryTitle atomsGalleryTitle--wide component" data-event-position-context="atomsGalleryTitle">To zbudujemy w Bydgoszczy w 2020 roku. Zobacz listę...</h1></div><div class="componentsGalleryNavbar__page_counter" data-event-position-attr="componentsGalleryNavbar__page_counter"><div class="atomsGalleryPageCounter component" data-event-position-context="atomsGalleryPageCounter"><span class="atomsGalleryPageCounter__label" data-event-position-attr="atomsGalleryPageCounter__label"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M17,8 C17.5522847,8 18,8.44771525 18,9 L18,19 C18,19.5522847 17.5522847,20 17,20 L3,20 C2.44771525,20 2,19.5522847 2,19 L2,9 C2,8.44771525 2.44771525,8 3,8 L17,8 Z M16,10 L4,10 L4,18 L16,18 L16,10 Z M21,4 C21.5522847,4 22,4.44771525 22,5 L22,15 C22,15.5522847 21.5522847,16 21,16 C20.4871642,16 20.0644928,15.6139598 20.0067277,15.1166211 L20,15 L20,6 L7,6 L6.88337887,5.99327227 C6.38604019,5.93550716 6,5.51283584 6,5 C6,4.48716416 6.38604019,4.06449284 6.88337887,4.00672773 L7,4 L21,4 Z"/></svg>
+    1/12
+  </span></div></div><span class="componentsGalleryNavbar__btn_facebook" data-event-position-attr="componentsGalleryNavbar__btn_facebook" id="componentsGalleryNavbar1178211550Facebook" ><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20,3 L4,3 C3.44771525,3 3,3.44771525 3,4 L3,20 C3,20.5522847 3.44771525,21 4,21 L12.615,21 L12.615,14.04 L10.277,14.04 L10.277,11.315 L12.615,11.315 L12.615,9.315 C12.615,6.99 14.035,5.723 16.115,5.723 C16.814,5.721 17.514,5.757 18.21,5.83 L18.21,8.25 L16.775,8.25 C15.647,8.25 15.427,8.788 15.427,9.575 L15.427,11.31 L18.124,11.31 L17.774,14.035 L15.426,14.035 L15.426,21 L20,21 C20.5522847,21 21,20.5522847 21,20 L21,4 C21,3.44771525 20.5522847,3 20,3 Z"/></svg></span><a class="componentsGalleryNavbar__btn_close" data-event-position-attr="componentsGalleryNavbar__btn_close" href="/to-zbudujemy-w-bydgoszczy-w-2020-roku-zobacz-liste-inwestycji-zdjecia/ar/c9-14687459" aria-label="Powrót do artykułu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M7.41421356,6 L11.9991068,10.5851068 L16.5857864,6 C16.9763107,5.60947571 17.6094757,5.60947571 18,6 C18.3905243,6.39052429 18.3905243,7.02368927 18,7.41421356 L13.4141068,11.9991068 L18,16.5857864 C18.3905243,16.9763107 18.3905243,17.6094757 18,18 C17.6094757,18.3905243 16.9763107,18.3905243 16.5857864,18 L11.9991068,13.4141068 L7.41421356,18 C7.02368927,18.3905243 6.39052429,18.3905243 6,18 C5.60947571,17.6094757 5.60947571,16.9763107 6,16.5857864 L10.5851068,11.9991068 L6,7.41421356 C5.60947571,7.02368927 5.60947571,6.39052429 6,6 C6.39052429,5.60947571 7.02368927,5.60947571 7.41421356,6 Z"/></svg></a></div></nav>
+<script>
+  if (typeof require !== "undefined") {
+    require.config({
+      context: 'components/gallery/navbar',
+      baseUrl: "https://s-nsk.ppstatic.pl/assets/nsk/v1.111.8/js/compiled/",
+      waitSeconds: 60
+    })(['components/gallery/navbar'], function (Component) {
+      if (Component || Component.default) {
+        (new Component.default('componentsGalleryNavbar1178211550', 'componentsGalleryNavbar'))
+          .init([]);
+      }
+    });
+  }
+</script>
+
+
+
+
+
+                                  <div class="componentsSlotsWelcomeScreen component" data-event-position-context="componentsSlotsWelcomeScreen" id="componentsSlotsWelcomeScreen2040618918">
+  <div class="componentsSlotsWelcomeScreen__nav" id='js-nav'>
+          <a class="componentsSlotsWelcomeScreen__href" href="https://expressbydgoski.pl">
+        <svg xmlns="http://www.w3.org/2000/svg" width="184" height="64" viewBox="0 0 184 64"><defs/><g fill="none" fill-rule="nonzero"><path fill="#000" d="M41.1586207,0 L39.3931034,10.0413793 L19.9724138,10.0413793 L18.9793103,17.8758621 L37.6275862,17.8758621 L36.0827586,26.9241379 L17.5448276,26.9241379 L15.4482759,38.2896552 L64.1103448,38.2896552 L62.2344828,48 L1.43448276,48 L9.37931034,0 L41.1586207,0 Z M85.1862069,6.51034483 C95.2275862,6.84137931 103.062069,15.4482759 101.627586,24.3862069 C100.193103,32 93.7931034,37.6275862 85.2965517,37.2965517 C82.4275862,36.8551724 80.662069,36.5241379 78.1241379,35.0896552 L78.1241379,35.0896552 L79.8896552,24.7172414 C81.3241379,26.5931034 83.0896552,27.2551724 85.6275862,26.9241379 C87.7241379,26.5931034 89.6,25.1586207 89.9310345,22.9517241 C90.3724138,20.0827586 87.9448276,17.2137931 84.6344828,17.2137931 C81.7655172,16.8827586 79.2275862,18.9793103 78.8965517,21.5172414 L78.8965517,21.5172414 L74.5931034,48 L63.7793103,48 L68.7448276,16.8827586 C71.2827586,10.4827586 77.3517241,6.51034483 85.1862069,6.51034483 Z M182.17931,38.2896552 L180.744828,48 L75.8068966,48 L77.3517241,38.2896552 L182.17931,38.2896552 Z M124.57931,8.27586207 C128.551724,5.73793103 132.413793,4.96551724 136.386207,6.06896552 C140.8,6.84137931 143.889655,9.26896552 146.096552,12.9103448 C146.427586,13.2413793 146.758621,13.9034483 146.97931,15.1172414 L146.97931,15.1172414 L132.303448,24.0551724 C131.972414,23.3931034 131.2,23.062069 130.868966,22.2896552 C130.537931,21.1862069 130.096552,20.5241379 129.765517,19.4206897 L129.765517,19.4206897 L134.731034,16.1103448 C133.406897,14.5655172 131.531034,14.2344828 129.765517,15.337931 C128.331034,16.1103448 127.558621,17.2137931 127.558621,18.6482759 C127.558621,19.9724138 127.889655,21.8482759 128.993103,23.2827586 C129.765517,24.3862069 130.427586,25.0482759 131.2,25.8206897 C131.773793,26.0855172 133.265655,26.1914483 134.849324,26.2232276 L135.379481,26.2311906 C137.593189,26.2538953 139.806897,26.1517241 139.806897,26.1517241 L139.806897,26.1517241 L137.6,37.6275862 L137.6,37.6275862 L132.664328,37.6273375 C131.658706,37.6248504 130.628213,37.5974922 129.324138,37.2965517 C125.351724,36.1931034 122.151724,34.0965517 119.613793,30.1241379 C117.075862,26.5931034 116.303448,22.6206897 117.406897,18.3172414 C118.510345,14.0137931 120.606897,10.8137931 124.57931,8.27586207 Z M117.406897,5.51724138 C118.510345,5.51724138 119.282759,5.51724138 120.717241,5.84827586 L120.717241,5.84827586 L119.613793,11.1448276 C118.510345,12.4689655 117.406897,14.3448276 117.406897,15.8896552 C115.641379,16.662069 113.875862,18.3172414 113.103448,21.9586207 L113.103448,21.9586207 L110.565517,36.9655172 L99.0896552,36.9655172 L100.193103,30.5655172 C101.296552,28.8 102.4,26.7034483 102.731034,24.4965517 C103.172414,22.4 103.172414,20.3034483 102.4,18.0965517 C103.393103,14.4551724 104.827586,11.6965517 107.365517,9.48965517 C109.903448,6.95172414 113.434483,5.51724138 117.406897,5.51724138 Z M163.972414,7.17241379 L162.206897,17.9862069 C160.772414,17.9862069 160.441379,18.3172414 159.668966,19.0896552 C159.337931,19.862069 158.896552,20.9655172 158.565517,22.7310345 C157.793103,28.8 155.365517,32.662069 151.393103,35.2 C149.296552,36.1931034 146.427586,36.9655172 142.455172,36.9655172 L142.455172,36.9655172 L139.144828,36.9655172 L140.910345,25.8206897 L141.682759,25.8206897 C143.448276,25.8206897 144.882759,25.4896552 145.655172,24.7172414 C146.317241,24.0551724 147.089655,21.5172414 147.089655,19.7517241 C147.42069,16.9931034 147.862069,15.8896552 148.193103,14.4551724 C148.524138,13.3517241 149.296552,11.9172414 150.731034,10.8137931 C152.827586,8.60689655 156.027586,7.50344828 160,7.50344828 L160,7.50344828 L163.972414,7.17241379 Z M182.17931,7.17241379 L180.413793,17.9862069 C178.97931,17.9862069 178.648276,18.3172414 177.875862,19.0896552 C177.544828,19.862069 177.103448,20.9655172 176.772414,22.7310345 C176,28.8 173.572414,32.662069 169.6,35.2 C167.503448,36.1931034 164.634483,36.9655172 160.662069,36.9655172 L160.662069,36.9655172 L157.793103,36.9655172 L159.558621,25.8206897 L159.866679,25.8172309 C161.49061,25.7802172 162.804057,25.4442191 163.531034,24.7172414 C164.193103,24.0551724 164.965517,21.5172414 164.965517,19.7517241 C165.224588,17.5928036 165.551242,16.4476371 165.839696,15.3641773 L165.934288,15.0040035 C165.980731,14.8237533 166.025787,14.6422789 166.068966,14.4551724 C166.4,13.3517241 167.172414,11.9172414 168.606897,10.8137931 C170.703448,8.60689655 173.903448,7.50344828 177.875862,7.50344828 L177.875862,7.50344828 L182.17931,7.17241379 Z"/><path fill="#2962AC" d="M32.9931034,36.8551724 C34.4275862,27.5862069 42.262069,19.4206897 45.1310345,16.8827586 C42.5931034,14.0137931 40.1655172,10.8137931 37.9586207,7.94482759 L37.6275862,7.17241379 L37.9586207,7.17241379 L48.3310345,3.2 L48.662069,3.2 L48.9931034,3.64137931 C50.7586207,5.40689655 52.6344828,7.6137931 54.2896552,9.37931034 C56.0551724,7.94482759 57.9310345,6.84137931 59.5862069,5.40689655 L59.9172414,5.40689655 L60.2482759,5.40689655 L70.6206897,9.37931034 L71.3931034,9.71034483 L70.6206897,10.0413793 C67.3103448,12.9103448 64.2206897,15.337931 60.5793103,18.3172414 C63.8896552,22.6206897 67.4206897,27.2551724 70.6206897,31.5586207 L70.9517241,31.8896552 L70.1793103,32.2206897 L59.8068966,37.1862069 L59.4758621,37.1862069 L59.1448276,36.8551724 C56.6068966,33.2137931 54.5103448,29.6827586 51.9724138,26.0413793 C51.6413793,26.8137931 50.8689655,27.4758621 50.2068966,28.2482759 C48,30.7862069 45.5724138,33.5448276 45.5724138,37.1862069 L45.5724138,37.5172414 L45.2413793,37.5172414 L33.1034483,37.5172414 L32.7724138,37.5172414 L32.9931034,36.8551724 L32.9931034,36.8551724 Z"/><path fill="#FFF" d="M46.8965517,37.9586207 L32.2206897,37.9586207 L32.2206897,36.8551724 C33.6551724,27.9172414 40.8275862,19.9724138 44.3586207,16.8827586 L36.8551724,7.17241379 L48.662069,2.53793103 L54.4,8.60689655 L59.6965517,4.63448276 L71.8344828,9.26896552 L61.0206897,18.2068966 L71.3931034,32.1103448 L59.5862069,37.8482759 L52.4137931,27.0344828 C52.0827586,27.3655172 51.6413793,28.137931 50.9793103,28.4689655 C48.7724138,30.6758621 46.6758621,33.4344828 46.6758621,37.0758621 C46.8965517,37.1862069 46.8965517,37.9586207 46.8965517,37.9586207 Z M33.3241379,36.8551724 L45.7931034,36.8551724 C45.7931034,32.8827586 48.3310345,30.0137931 50.4275862,27.5862069 C51.2,26.8137931 51.5310345,26.1517241 52.1931034,25.3793103 L52.5241379,24.6068966 L60.0275862,36.0827586 L70.4,31.1172414 L70.4,31.1172414 L60.0275862,17.8758621 L70.4,9.26896552 L60.0275862,5.29655172 L60.0275862,5.29655172 L54.2896552,9.26896552 L48.662069,3.31034483 L38.2896552,7.17241379 L45.7931034,16.4413793 L45.462069,16.7724138 C43.0344828,19.4206897 34.7586207,27.5862069 33.3241379,36.8551724 L33.3241379,36.8551724 Z"/><path fill="#2962AC" d="M69.9586207,53.0758621 C70.2896552,53.4068966 70.7310345,54.1793103 70.7310345,54.8413793 C70.7310345,56.2106583 69.7256198,57.2783129 68.6745045,57.6604575 L68.5241379,57.7103448 C69.6275862,58.0413793 69.9586207,59.1448276 69.9586207,59.9172414 C69.9586207,61.0206897 69.6275862,61.6827586 68.8551724,62.4551724 C68.0827586,63.2275862 67.0896552,63.5586207 65.5448276,63.5586207 L63.337931,63.5586207 L63.337931,63.5586207 L65.2137931,52.6344828 C65.9862069,52.6344828 66.6482759,52.3034483 67.4206897,52.3034483 C68.1931034,52.3034483 69.1862069,52.3034483 69.9586207,53.0758621 Z M80.9931034,52.3034483 C82.4275862,52.3034483 83.2,52.6344828 83.5310345,53.4068966 C84.3034483,54.1793103 84.3034483,55.1724138 84.3034483,56.2758621 C84.3034483,59.1448276 83.2,61.2413793 82.0965517,62.3448276 C81.3241379,63.1172414 80.3310345,63.4482759 78.7862069,63.4482759 C78.0137931,63.4482759 77.3517241,63.4482759 77.0206897,63.1172414 L78.7862069,52.6344828 C79.5586207,52.6344828 80.2206897,52.3034483 80.9931034,52.3034483 Z M116.634483,52.6344828 L114.537931,63.4482759 L112.331034,63.4482759 L114.537931,52.6344828 L116.634483,52.6344828 Z M92.6896552,52.5241379 L91.9172414,54.2896552 C91.5862069,54.2896552 91.1448276,53.9586207 90.8137931,53.9586207 C90.0413793,53.9586207 89.3793103,54.2896552 89.0482759,54.7310345 C88.2758621,55.5034483 87.6137931,57.2689655 87.6137931,59.3655172 C87.6137931,60.8 87.9448276,61.5724138 89.0482759,61.5724138 L89.8206897,61.5724138 L89.8206897,61.5724138 L90.1517241,59.0344828 L89.0482759,59.0344828 L89.3793103,57.2689655 L92.2482759,57.2689655 L90.5931034,63.0068966 C89.8206897,63.337931 89.1586207,63.337931 88.3862069,63.337931 C86.9517241,63.337931 86.1793103,63.0068966 85.8482759,62.2344828 C85.0758621,61.462069 85.0758621,60.4689655 85.0758621,59.3655172 C85.0758621,57.1586207 85.8482759,55.062069 87.2827586,53.6275862 C88.3862069,52.5241379 89.4896552,52.1931034 90.9241379,52.1931034 L91.3032328,52.19375 C92.1103448,52.1982759 92.4,52.2344828 92.6896552,52.5241379 Z M96.8827586,52.1931034 C99.0896552,52.1931034 99.4206897,54.4 99.4206897,55.8344828 C99.4206897,58.0413793 98.6482759,60.8 97.2137931,62.2344828 C96.4413793,63.0068966 95.7793103,63.337931 94.6758621,63.337931 C92.137931,63.337931 92.137931,60.8 92.137931,59.6965517 C92.137931,57.4896552 92.9103448,54.7310345 94.3448276,53.2965517 C95.1172414,52.5241379 95.7793103,52.1931034 96.8827586,52.1931034 Z M113.875862,52.1931034 L110.565517,57.1586207 L111.668966,63.2275862 L109.462069,63.2275862 L108.689655,58.5931034 L107.917241,59.6965517 L107.144828,63.337931 L105.37931,63.337931 L107.696552,52.6344828 L109.462069,52.6344828 L108.358621,57.6 C108.689655,56.8275862 109.131034,56.4965517 109.462069,55.8344828 L111.668966,52.1931034 L113.875862,52.1931034 Z M105.6,52.4137931 L104.827586,54.1793103 C104.496552,54.1793103 104.055172,53.8482759 103.724138,53.8482759 C102.951724,53.8482759 102.289655,54.6206897 102.289655,55.2827586 C102.289655,55.6137931 102.62069,56.3862069 103.393103,57.0482759 C104.165517,57.7103448 104.827586,58.8137931 104.827586,59.5862069 C104.827586,61.7931034 103.393103,63.2275862 101.186207,63.2275862 C100.082759,63.2275862 99.4206897,62.8965517 98.9793103,62.8965517 L99.862069,61.1310345 C100.193103,61.462069 100.965517,61.462069 101.296552,61.462069 C102.4,61.462069 102.731034,61.1310345 102.731034,60.0275862 C102.731034,59.2551724 102.4,58.9241379 101.627586,58.262069 C100.855172,57.4896552 100.193103,56.4965517 100.193103,55.7241379 C100.193103,53.5172414 101.627586,52.0827586 103.834483,52.0827586 C104.606897,52.0827586 105.268966,52.0827586 105.6,52.4137931 Z M78.5655172,52.3034483 L74.9241379,59.1448276 L74.1517241,63.1172414 L71.984,63.1167586 L72.7172414,59.0344828 L71.6137931,52.6344828 L73.8206897,52.6344828 L74.1517241,55.1724138 L74.1517241,57.3793103 C74.4827586,56.6068966 74.4827586,55.9448276 74.9241379,55.1724138 L76.3586207,52.3034483 L78.5655172,52.3034483 Z M66.2068966,58.3724138 L65.8758621,58.3724138 L65.5448276,61.5724138 L65.8758621,61.5724138 C66.9793103,61.5724138 67.6413793,60.8 67.6413793,59.8068966 C67.6413793,58.7034483 67.3103448,58.3724138 66.2068966,58.3724138 Z M80.5517241,53.9586207 L80.2206897,53.9586207 L80.2206897,53.9586207 L79.1172414,61.5724138 L79.4482759,61.5724138 C80.2206897,61.5724138 80.8827586,61.2413793 81.2137931,60.137931 C81.5448276,59.0344828 81.9862069,57.6 81.9862069,56.1655172 C81.9862069,55.062069 81.6551724,53.9586207 80.5517241,53.9586207 Z M96.9931034,54.0689655 C96.3310345,54.0689655 96.3310345,54.0689655 95.8896552,54.4 C94.7862069,55.5034483 94.4551724,58.3724138 94.4551724,60.137931 C94.4551724,60.9103448 94.4551724,61.5724138 95.5586207,61.5724138 C95.8896552,61.5724138 95.8896552,61.5724138 96.3310345,61.2413793 C97.4344828,60.137931 97.7655172,56.6068966 97.7655172,55.5034483 C97.7655172,54.7310345 97.7655172,54.0689655 96.9931034,54.0689655 Z M54.7310345,52.9655172 L54.0689655,58.3724138 L0,58.3724138 L0.772413793,52.9655172 L54.7310345,52.9655172 Z M180.413793,52.9655172 L179.641379,58.3724138 L125.572414,58.3724138 L126.344828,52.9655172 L180.413793,52.9655172 Z M67.3103448,54.0689655 L66.537931,54.0689655 L66.537931,54.0689655 L66.2068966,56.937931 C67.6413793,56.937931 68.4137931,56.1655172 68.4137931,55.1724138 C68.4137931,54.4 68.0827586,54.0689655 67.3103448,54.0689655 Z"/></g></svg>
+              </a>
+        <div class="componentsSlotsWelcomeScreen__actions">
+      <span class="componentsSlotsWelcomeScreen__counter">reklama</span>
+      <button class="componentsSlotsWelcomeScreen__closeBtn" id="componentsSlotsWelcomeScreen2040618918CloseBtn">Przejdź do strony <svg version="1.1" width='12' height='12' viewBox="0 0 10 11" xmlns="http://www.w3.org/2000/svg">
+<g fill="none" fill-rule="evenodd">
+<g transform="translate(-1581 -34)" fill="#070707" fill-rule="nonzero">
+<polygon points="1584.9 43.239 1586 44.293 1591 39.293 1586 34.293 1584.9 35.347 1588.1 38.548 1581 38.548 1581 40.038 1588.1 40.038"/>
+</g>
+</g>
+</svg>
+</button>
+    </div>
+  </div>
+  <div class="componentsSlotsWelcomeScreen__adContainer" id="componentsSlotsWelcomeScreen2040618918AdContainer">
+    
+<div class="adsSlotContainer "
+  >
+  <div id="dfp-layer"
+        
+      >
+  </div>
+</div>
+
+    <script>
+      var currentDate = new Date();
+    var nextDay = new Date();
+    nextDay.setTime(currentDate.getTime() + (24 * 3600 * 1000));
+    nextDay.setHours(0,0,0,0);
+    document.cookie = 'ppa_preload_layer=1; expires=' + nextDay.toUTCString() + '; path=/; domain=.' + window.location.host;
+  
+  var PPAds = window.PPAds || {};
+  PPAds.queue = PPAds.queue || [];
+
+  PPAds.queue.push(function () {
+    var slot = PPAds.app.getSlot('layer');
+          slot.appendResolution('1600', '800');
+          slot.appendResolution('1', '1');
+        slot.setAdUnitParts({"siteName":"expressbydgoski","categoryName":"dominieruchomosci","pageType":"galeria"});
+    slot.setTargetings(PPAds.app.getGlobalTargetings());
+  });
+
+  PPAds.queue.push(function () {
+    var slot = PPAds.app.getSlot('layer');
+    PPAds.preloadSlot(slot);
+  });
+</script>
+
+  </div>
+</div>
+
+
+<script>
+  if (typeof require !== "undefined") {
+    require.config({
+      context: 'components/slots/welcome-screen',
+      baseUrl: "https://s-nsk.ppstatic.pl/assets/nsk/v1.111.8/js/compiled/",
+      waitSeconds: 60
+    })(['components/slots/welcome-screen'], function (Component) {
+      if (Component || Component.default) {
+        (new Component.default('componentsSlotsWelcomeScreen2040618918', 'componentsSlotsWelcomeScreen'))
+          .init({"slot_name":"layer","site_id":"expressbydgoski"});
+      }
+    });
+  }
+</script>
+
+
+
+
+
+              </div>
+    
+          <script type="didomi/javascript" data-vendor="c:pushpushgo">
+  if ("Notification" in window && window.Notification.permission !== 'denied') {
+    let script = document.createElement('script');
+    script.setAttribute('src', 'https://s-eu-1.pushpushgo.com/js/5e149e54c662a5569bc56024.js');
+    script.setAttribute('charset', 'UTF-8');
+    script.setAttribute('async', '');
+    document.body.appendChild(script);
+  }
+</script>
+    
+    <script async  src="https://cdn.insurads.com/bootstrap/WXTVZL5P.js"></script>
+  </body>
+</html>

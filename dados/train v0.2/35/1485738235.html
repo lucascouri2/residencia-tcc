@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam-cell.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"e7d2fb793a",applicationID:"1320884"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(10),c=t(11),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(12);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],7:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?p("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&p("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(f&&f<r.startTime)return;p("lcp",[r])}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||p("cls",[t])})}function a(t){if(t instanceof g&&!y){var e=Math.round(t.timeStamp),n={type:t.type};e<=l.now()?n.fid=l.now()-e:e>l.offset&&e<=Date.now()?(e-=l.offset,n.fid=l.now()-e):e=l.now(),y=!0,p("timing",["fi",e,n])}}function c(t){"hidden"===t&&(f=l.now(),p("pageHide",[f]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var f,u,s,d,p=t("handle"),l=t("loader"),v=t(9),m=t(3),g=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){u=new PerformanceObserver(r);try{u.observe({entryTypes:["paint"]})}catch(h){}s=new PerformanceObserver(i);try{s.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}d=new PerformanceObserver(o);try{d.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var y=!1,w=["click","keydown","mousedown","pointerdown","touchstart"];w.forEach(function(t){document.addEventListener(t,a,m(!1))})}v(c)}},{}],8:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],9:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],10:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],11:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],12:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){y[t]=m(t).concat(e)}function v(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:h,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(10),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!T++){var t=P.info=NREUM.info,e=g.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(O,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+P.offset],null,"api"),c("timing",["load",n]);var r=g.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=v+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===g.readyState&&o()}function o(){c("mark",["domContent",a()+P.offset],null,"api")}var a=t(5),c=t("handle"),f=t(10),u=t("ee"),s=t(8),d=t(6),p=t(2),l=t(3),v=p.getConfiguration("ssl")===!1?"http":"https",m=window,g=m.document,h="addEventListener",y="attachEvent",w=m.XMLHttpRequest,b=w&&w.prototype,E=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:w,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,O={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1212.min.js"},M=w&&b&&b[h]&&!/CriOS/.test(navigator.userAgent),P=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:M,userAgent:s,disabled:E};if(!E){t(1),t(7),g[h]?(g[h]("DOMContentLoaded",o,l(!1)),m[h]("load",r,l(!1))):(g[y]("onreadystatechange",i),m[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var T=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(11),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+  <script type="text/javascript">function setMobileCookie(name,value,exdays){var exdate=new Date();exdate.setDate(exdate.getDate()+exdays);var expire=((exdays==null)?"":"; expires="+exdate.toUTCString()),path='; path=/';document.cookie=name+"="+escape(value)+expire+path}
+function getMobileCookie(name){var c_value=document.cookie,c_start=c_value.indexOf(" "+name+"=");if(c_start==-1)c_start=c_value.indexOf(name+"=");if(c_start==-1){c_value=null}else{c_start=c_value.indexOf("=",c_start)+1;var c_end=c_value.indexOf(";",c_start);if(c_end==-1)c_end=c_value.length;c_value=unescape(c_value.substring(c_start,c_end))};return c_value}
+function getMobileParameter(paramName){var searchString=window.location.search.substring(1),i,val,params=searchString.split("&");for(i=0;i<params.length;i++){val=params[i].split("=");if(val[0]==paramName)return unescape(val[1])};return null}
+function get_utm_query_values(){var i,param,params=window.location.search.substring(1).split('&'),referrerSet=false,sourceSet=false,vars={};for(i=0;i<params.length;i++){param=params[i].split('=');if(param[0].match(/^utm_/)){vars[param[0]]=param[1];if(param[0]=='utm_referrer')referrerSet=true;if(param[0]=='utm_source')sourceSet=true}};if(document.referrer&&!referrerSet)vars.utm_referrer=encodeURIComponent(document.referrer);if(document.referrer&&!sourceSet)vars.utm_source=encodeURIComponent(document.referrer);return vars}
+function update_query_string_parameter(uri,key,value){var re=new RegExp("([?|&])"+key+"=.*?(&|#|$)","i");if(uri.match(re)){return uri.replace(re,'$1'+key+"="+value+'$2')}else{var hash='',separator=uri.indexOf('?')!==-1?"&":"?";if(uri.indexOf('#')!==-1){hash=uri.replace(/.*#/,'#');uri=uri.replace(/#.*/,'')};return uri+separator+key+"="+value+hash}}
+function update_utm_params_from_current_url(uri){var utm_params=get_utm_query_values();for(var key in utm_params)uri=update_query_string_parameter(uri,key,utm_params[key]);return uri};var viewDesktop=getMobileParameter('viewDesktop'),enableDesktop=getMobileParameter('enableDesktop'),benzingaMobile=getMobileCookie('benzingaMobile'),benzingaMobileUA=getMobileCookie('benzingaMobileUA');if(benzingaMobileUA!=navigator.userAgent)setMobileCookie('benzingaMobileUA',navigator.userAgent,1);if(enableDesktop==1){setMobileCookie('benzingaMobile',0,1);benzingaMobile=0};if(benzingaMobile===0||benzingaMobile==='0'||viewDesktop==1);else if(benzingaMobile==1||navigator.userAgent.match(/(iPad)|(iPhone)|(iPod)|(opera mini)|(android)|(palm os)|(palm)|(hiptop)|(avantgo)|(plucker)|(xiino)|(blazer)|(elaine)|(iris)|(3g_t)|(windows ce)|(opera mobi)|(windows ce; smartphone;)|(windows ce; iemobile)|(windows phone)|(smartphone)|(kindle)|(psp)/i)){if(!benzingaMobile)setMobileCookie('benzingaMobile',1,2);document.location.href=update_utm_params_from_current_url('https://m.benzinga.com/article/15068365')}</script>
+  <!--[if IE]>
+  <script type="text/javascript">document.createElement("header");document.createElement("footer");</script>
+  <script type="text/javascript" src="/sites/all/themes/bz2/js/excanvas.js"></script>
+  <![endif]-->
+  <script type="text/javascript">var ord = Math.random() * 10000000000000000</script>  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link type="text/css" rel="stylesheet" media="all" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" />
+<script>InvestingChannelQueue = window.InvestingChannelQueue || [];</script>
+      <script defer src="https://u5.investingchannel.com/static/uat.js"></script>
+      <script>
+        var ic_page;
+        InvestingChannelQueue.push(function() { ic_page = InvestingChannel.UAT.Run("856729bc-429d-4b8d-8d68-ced83505ab1e"); });
+        var div1Tag;
+  InvestingChannelQueue.push(function() {
+    div1Tag = ic_page.defineTag("benzinga/equities","300x250,300x600,300x1050","ic_300x250_1");
+  });
+  
+      </script>
+<link rel="manifest" href="/manifest.json" />
+<script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+<script type="text/javascript" src="https://accounts.google.com/gsi/client" async defer></script>
+<meta http-equiv="x-dns-prefetch-control" content="on" />
+<link rel="dns-prefetch" href="//cdn.benzinga.com" />
+<script type="text/javascript">
+        window._taboola = window._taboola || [];
+        _taboola.push({article:'auto'});
+        !function (e, f, u, i) {
+          if (!document.getElementById(i)){
+            e.async = 1;
+            e.src = u;
+            e.id = i;
+            f.parentNode.insertBefore(e, f);
+          }
+        }(document.createElement('script'),
+        document.getElementsByTagName('script')[0],
+        '//cdn.taboola.com/libtrc/benzinga-network/loader.js',
+        'tb_loader_script');
+        if(window.performance && typeof window.performance.mark == 'function')
+          {window.performance.mark('tbl_ic');}
+        </script>
+<link rel="shortcut icon" href="https://cdn.benzinga.com/files/bz2_favicon_3.ico" type="image/x-icon" />
+<script type="text/javascript">
+    function setUserSessionCountCookie(name, value) {
+      var expire = "; expires=";
+      var path = "; path=/";
+      document.cookie=name + "=" + escape(value) + expire + path;
+    }
+    function getUserSessionCountCookie(name) {
+      var c_value = document.cookie;
+      var c_start = c_value.indexOf(" " + name + "=");
+      if (c_start == -1) {
+        c_start = c_value.indexOf(name + "=");
+      }
+      if (c_start == -1) {
+        setUserSessionCountCookie(name, 1);
+        return 1;
+      }
+      else {
+        c_start = c_value.indexOf("=", c_start) + 1;
+        var c_end = c_value.indexOf(";", c_start);
+        if (c_end == -1) {
+          c_end = c_value.length;
+        }
+        c_value = unescape(c_value.substring(c_start,c_end));
+        c_value = parseInt(c_value)+1;
+        setUserSessionCountCookie(name, c_value);
+        return c_value;
+      }
+    }
+    var BZ_USERSESSION_COUNT = getUserSessionCountCookie("BZ_USERSESSION_COUNT");
+  </script>
+<script type="application/ld+json">{"@context":"http:\/\/schema.org","headline":"Think Well, Think Different: 4 Things To Think About When Creating A Company Culture","url":"https:\/\/www.benzinga.com\/fintech\/20\/01\/15068365\/think-well-think-different-4-things-to-think-about-when-creating-a-company-culture","thumbnailUrl":"https:\/\/cdn.benzinga.com\/files\/imagecache\/bz2_opengraph_meta_image_400x300\/images\/story\/2012\/startup-594090_1920_1.jpg","dateCreated":"2010-01-01T00:00:00Z","datePublished":"2020-01-03T17:38:39Z","dateModified":"2020-01-03T17:53:49Z","creator":"Jeremy Potter","author":"Jeremy Potter","@type":"NewsArticle","keywords":["pageType: NewsArticle","PageIsBzPro: BZ+PRO","tag: contributors","category: Fintech","category: Opinion"],"articleSection":"Fintech","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/www.benzinga.com\/fintech\/20\/01\/15068365\/think-well-think-different-4-things-to-think-about-when-creating-a-company-culture"},"publisher":{"@type":"Organization","name":"Benzinga","logo":{"@type":"ImageObject","url":"https:\/\/cdn.benzinga.com\/sites\/all\/themes\/bz2\/images\/Benzinga_Logo_web-01.png"}},"image":["https:\/\/cdn.benzinga.com\/files\/imagecache\/bz2_opengraph_meta_image_400x300\/images\/story\/2012\/startup-594090_1920_1.jpg"],"description":"Think Well, Think Different is a series of columns devoted to discussing trends in fintech, both from the consumer and founder points of view. Click here ..."}</script>
+<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"NewsMediaOrganization","name":"Benzinga","email":"info@benzinga.com","legalName":"Benzinga","telephone":"877-440-9464","url":"https:\/\/www.benzinga.com\/","logo":"https:\/\/cdn.benzinga.com\/sites\/all\/themes\/bz2\/images\/Benzinga-logo-navy.svg","address":{"@type":"PostalAddress","addressLocality":"Detroit","addressRegion":"MI","postalCode":"48226","streetAddress":"1 Campus Martius Suite 200","addressCountry":"USA"},"sameAs":["https:\/\/www.facebook.com\/pages\/Benzingacom\/159483118580?v=app_7146470109","https:\/\/twitter.com\/benzinga","https:\/\/www.linkedin.com\/company\/benzinga","https:\/\/www.youtube.com\/user\/BenzingaTV"],"brand":[{"@type":"Brand","name":"Benzinga PreMarket Prep","url":"https:\/\/www.benzinga.com\/premarket-prep\/"},{"@type":"Brand","name":"Benzinga Markets","url":"https:\/\/www.benzinga.com\/markets\/"},{"@type":"Brand","name":"Benzinga Pro","url":"https:\/\/pro.benzinga.com\/"},{"@type":"Brand","name":"Benzinga Cloud","url":"https:\/\/cloud.benzinga.com\/"},{"@type":"Brand","name":"Benzinga Events","url":"https:\/\/benzingaevents.com\/"},{"@type":"Brand","name":"Benzinga Money","url":"https:\/\/www.benzinga.com\/money\/"},{"@type":"Brand","name":"Benzinga Marketfy","url":"https:\/\/marketfy.com\/"}]}</script>
+<meta name="description" content="Think Well, Think Different is a series of columns devoted to discussing trends in fintech, both from the consumer and founder points of view. Click here ..." />
+<meta name="language" content="English" />
+<meta name="copyright" content="Copyright 2014 Benzinga. All rights reserved." />
+<meta name="fo-verify" content="101a0095-334d-4935-b87e-0e8fc771214e" />
+<meta name="robots" content="max-image-preview:large">
+<meta property="Benzinga for iOS" content="app-id=688949481, app-argument=https://itunes.apple.com/us/app/id688949481">
+<meta property="fb:pages" content="159483118580" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@benzinga" />
+<meta property="og:site_name" content="Benzinga" />
+<link rel="amphtml" href="https://www.benzinga.com/amp/content/15068365">
+<meta property="og:url" content="https://www.benzinga.com/fintech/20/01/15068365/think-well-think-different-4-things-to-think-about-when-creating-a-company-culture" />
+<meta property="og:title" content="Think Well, Think Different: 4 Things To Think About When Creating A Company Culture" />
+<meta name="twitter:title" content="Think Well, Think Different: 4 Things To Think About When Creating A Company Culture" />
+<meta property="og:type" content="article" />
+<meta property="og:description" content="Think Well, Think Different is a series of columns devoted to discussing trends in fintech, both from the consumer and founder points of view. Click here for previous columns...." />
+<meta name="twitter:description" content="Think Well, Think Different is a series of columns devoted to discussing trends in fintech, both from the consumer and founder points of view. Click here for previous columns...." />
+<meta name="twitter:image:src" content="https://cdn.benzinga.com/files/imagecache/600x400xUP/images/story/2012/startup-594090_1920_1.jpg" />
+<meta property="og:image" content="https://cdn.benzinga.com/files/imagecache/og_image_social_share_1200x630/images/story/2012/startup-594090_1920_1.jpg" />
+<link rel="image_src" href="https://cdn.benzinga.com/files/imagecache/og_image_social_share_1200x630/images/story/2012/startup-594090_1920_1.jpg" />
+<link rel="shorturl" id="shorturl" type="text/html" href="https://benzinga.com/z/15068365" />
+<link rel="canonical" href="https://www.benzinga.com/fintech/20/01/15068365/think-well-think-different-4-things-to-think-about-when-creating-a-company-culture" />
+<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" />
+<link rel="schema.DCTERMS" href="http://purl.org/dc/terms/" />
+<meta name="DC.Date" scheme="ISO8601" content="2020-01-03" />
+<meta name="DC.Creator" content="Jeremy Potter" />
+<meta name="DC.Subject" xml:lang="EN" content="Think Well, Think Different: 4 Things To Think About When Creating A Company Culture" />
+<meta name="DC.Publisher" content="Benzinga" />
+<meta name="DC.Rights" content="Copyright 2021 Benzinga. All rights reserved." />
+<script>
+      InvestingChannelQueue.push(function() {
+            ic_page.renderTags();
+      });
+    </script>
+<meta property="fb:admins" content="648186192" />
+  <title>Think Well, Think Different: 4 Things To Think About When Creating A Company Culture | Benzinga</title>
+  <link href='//fonts.googleapis.com/css?family=Open+Sans:400,700italic,400italic,700|Open+Sans+Condensed:700,300' rel='stylesheet' type='text/css'>
+  <link type="text/css" rel="stylesheet" media="all" href="https://cdn.benzinga.com/files/advagg_css/css_130fa70da39de25dfb002f2238ff4bb3_231.css" />
+<link type="text/css" rel="stylesheet" media="all" href="https://cdn.benzinga.com/files/advagg_css/css_ba7a3b5fd7710105bcdb0439d1e9b539_228.css" />
+<link type="text/css" rel="stylesheet" media="all" href="https://cdn.benzinga.com/files/advagg_css/css_d4783e881b5b24af62a636b6d0c69d6a_594.css" />
+  <!--[if lte IE 8]>
+	  <link rel="stylesheet" type="text/css" href="/sites/all/themes/bz2/css/ie.css" />
+  <![endif]-->
+  <script type="text/javascript" src="https://cdn.benzinga.com/files/advagg_js/js_b0a147a3dbb311ae1f164f4adf10f723_1557.js"></script>
+<script type="text/javascript" src="https://cdn.benzinga.com/files/advagg_js/js_26bf7f54862cd92e258d9b1491649e9f_876.js"></script>
+<script type="text/javascript" src="https://cdn.benzinga.com/files/advagg_js/js_71981a984496046df33624784bf1d252_80.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","bzads":{"enable_ads":1},"bz2_site":{"base_url":"https:\/\/www.benzinga.com","base_url_protless":"\/\/www.benzinga.com","base_path":"\/","current_nid":"15068365","is_front":false,"is_bz_post":"1","is_bzpro_post":"1","marketDataSection":""},"bzApp":{"basePath":"\/sites\/all\/modules\/custom\/bz_watchlist\/","dataAPI":"\/\/data-api.benzinga.com"},"bz_js":{"analytics_properties":{"authorId":"164026","authorName":"Jeremy Potter","channels":"Fintech:Opinion","contentType":"story","authorType":"Contributor","isBZisBZPRO":"BZ|PRO","campaignSponsorshipIsExternal":true,"pageType":"story"},"nodeCreated":"1578073119"},"drupal":{"arg":["node","15068365"]},"bz_social":{"fbChannelURL":"https:\/\/www.benzinga.com\/sites\/all\/modules\/custom\/bz_social\/misc\/fb-channel.html"},"bzcustom":{"bzcustom_dest":"node\/15068365","ga_authorname":"164026:Jeremy Potter","autorefresh_node_page":true,"signup_popup":true},"disqus":{"url":"https:\/\/www.benzinga.com\/fintech\/20\/01\/15068365\/think-well-think-different-4-things-to-think-about-when-creating-a-company-culture","title":"Think Well, Think Different: 4 Things To Think About When Creating A Company Culture","identifier":"node\/15068365","shortname":"bzdisqus"},"CToolsUrlIsAjaxTrusted":{"\/search\/fast":true},"baseUrl":"https:\/\/www.benzinga.com"});
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+!function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked){window.console&&console.error&&console.error("Segment snippet included twice.")}else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)};analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="4.0.0";analytics.load("wtomjaowem")}}();
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+var googletag=googletag||{};googletag.cmd=googletag.cmd||[];(function(){var gads=document.createElement('script');gads.async=true;gads.type='text/javascript';var useSSL='https:'==document.location.protocol;gads.src=(useSSL?'https:':'http:')+'//www.googletagservices.com/tag/js/gpt.js';var node=document.getElementsByTagName('script')[0];node.parentNode.insertBefore(gads,node)})();
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+googletag.cmd.push(function(){googletag.defineSlot('/4107070/fintechawardwinners-728x90',[[728,90],[970,90],[970,250]],'div-gpt-ad-1573601442124-0').addService(googletag.pubads());googletag.defineSlot('/4107070/Benzinga:Right-Sidebar:300x250-600:Middle',[[300,600],[300,1050],[300,250]],'div-gpt-ad-1584418576061-0').addService(googletag.pubads());googletag.defineSlot('/4107070/DotCom_OutOfPage_1x1',[1,1],'div-gpt-ad-1600833337481-0').addService(googletag.pubads());googletag.pubads().setTargeting("BZ_NID","15068365");googletag.pubads().setTargeting("BZ_AUTHOR","Jeremy Potter");googletag.pubads().setTargeting("BZ_CHANNEL",["Fintech","144421","Opinion","146540"]);googletag.pubads().setTargeting("BZ_TAG",["contributors"]);googletag.pubads().setTargeting("BZ_PTYPE","story");googletag.pubads().setTargeting("BZ_USERSESSION_COUNT",BZ_USERSESSION_COUNT);googletag.pubads().collapseEmptyDivs();googletag.enableServices()});
+//--><!]]>
+</script>
+    <link rel="apple-touch-icon" sizes="180x180" href="/sites/all/themes/bz2/images/favicon-package/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/sites/all/themes/bz2/images/favicon-package/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/sites/all/themes/bz2/images/favicon-package/favicon-16x16.png">
+  <link rel="manifest" href="/sites/all/themes/bz2/images/favicon-package/site.webmanifest">
+  <link rel="mask-icon" href="/sites/all/themes/bz2/images/favicon-package/safari-pinned-tab-new.svg" color="#1177BA">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <script type="text/javascript"> </script>
+
+  <!-- Proxima Nova Font -->
+  <link rel="stylesheet" href="https://use.typekit.net/eul5jzm.css">
+  <!-- end -->
+</head>
+<body 
+  class="not-front not-logged-in page-node node-type-story no-sidebars"
+  data-ng-app="bzApp">
+  <a class="skip-main" href="#benzinga-main" target="_self">Skip to main content</a>
+    <div class="panel-pane pane-panels-mini pane-bz2-header" >
+  
+  
+  
+  <div class="pane-content">
+    <div id="bz3-top-banner-header"></div>
+<div id="bz3-header">	
+	<div id="bz3-header-top-wrapper">
+		<div id="bz3-header-top">
+		  <div id="bz3-header-top-links">
+		    <ul>
+		      <li class="benzingapro">
+		        <a href="https://benzinga.grsm.io/benzingacomhomepage9510" target="_blank"><img src="/sites/all/modules/bzads/images/benzinga_logo-new-arrow.png" alt="Benzinga Pro Logo"></a>
+		      </li>
+		      <li class="bz-cloud-link">
+            <a href="http://cloud.benzinga.com" target="_blank" title="Benzinga Cloud Financial Data and API Services">Data &amp; APIs</a>
+          </li>
+          <li class="bz-events red-hover">
+            <a href="https://www.benzingaevents.com" target="_blank" title="Events">Events</a>
+          </li>
+          <li class="marketfy">
+		        <a href="http://marketfy.com" target="_blank">Marketfy</a>
+		      </li>
+          <li class="premarket-prep">
+            <a href="https://www.benzinga.com/premarket-prep/" target="_blank" title="Premarket Prep">Premarket Prep</a>
+          </li>
+		    </ul>
+		  </div>
+	  	<div id="bz3-header-top-content">
+                  <div class="panel-pane pane-block pane-bz-user-bz-user-login-header" >
+  
+  
+  
+  <div class="pane-content">
+    <div id="login-header-items">  <ul>    <li class="second"><a href="/contribute">Contribute</a></li>    <li class="hide"><a href="/profile/portfolio/?action=login" id="user-login">Login</a></li>    <li  class="hide"><a href="/profile/portfolio/?action=register" id="user-register">Join</a></li>  </ul></div>  </div>
+
+  
+  </div>
+              </div> <!-- /bz3-header-top-content -->
+    </div> <!-- /bz3-header-top -->
+  </div> <!-- /bz3-header-top-wrapper -->
+  <div id="bz3-header-menu-wrapper">
+    <div id="bz3-header-menu">
+      <div id="bz-logo"><a href="/"><img src='/sites/all/themes/bz2/images/Benzinga-logo-navy.svg' alt='Benzinga Logo'></img></a></div>
+		          <div class="panel-pane pane-block pane-menu-block-3" >
+  
+  
+  
+  <div class="pane-content">
+    <div class="menu-block-3 menu-name-menu-v3-main parent-mlid-0 menu-level-1">
+  <ul class="menu"><li class="expanded first menu-mlid-878822 news"><a href="/news" title="All corporate News" aria-label="News" tabindex="1"><span>News</span></a><ul class="menu"><li class="leaf first menu-mlid-878845 earnings"><a href="/news/earnings" title="" aria-label="Earnings" tabindex="1"><span>Earnings</span></a></li>
+<li class="leaf menu-mlid-878846 guidance"><a href="/news/guidance" title="" aria-label="Guidance" tabindex="1"><span>Guidance</span></a></li>
+<li class="leaf menu-mlid-878848 dividends"><a href="/news/dividends" title="" aria-label="Dividends" tabindex="1"><span>Dividends</span></a></li>
+<li class="leaf menu-mlid-878868 ma"><a href="/m-a" title="" aria-label="M&amp;A" tabindex="1"><span>M&A</span></a></li>
+<li class="leaf menu-mlid-878862 buybacks"><a href="/news/buybacks" title="" aria-label="Buybacks" tabindex="1"><span>Buybacks</span></a></li>
+<li class="leaf menu-mlid-878836 legal"><a href="/news/legal" title="" aria-label="Legal" tabindex="1"><span>Legal</span></a></li>
+<li class="leaf menu-mlid-1056501 interviews"><a href="/interview" title="" aria-label="Interviews" tabindex="1"><span>Interviews</span></a></li>
+<li class="leaf menu-mlid-878860 management"><a href="/news/management" title="" aria-label="Management" tabindex="1"><span>Management</span></a></li>
+<li class="leaf menu-mlid-878838 retailsales"><a href="/news/retail-sales" title="" aria-label="Retail Sales" tabindex="1"><span>Retail Sales</span></a></li>
+<li class="leaf menu-mlid-878844 offerings"><a href="/news/offerings" title="" aria-label="Offerings" tabindex="1"><span>Offerings</span></a></li>
+<li class="leaf menu-mlid-878839 ipos"><a href="/news/ipos" title="" aria-label="IPOs" tabindex="1"><span>IPOs</span></a></li>
+<li class="leaf menu-mlid-878861 insidertrades"><a href="/news/insider-trades" title="" aria-label="Insider Trades" tabindex="1"><span>Insider Trades</span></a></li>
+<li class="leaf menu-mlid-878863 biotechfda"><a href="/news/fda" title="" aria-label="Biotech/FDA" tabindex="1"><span>Biotech/FDA</span></a></li>
+<li class="leaf menu-mlid-1335263 freight"><a href="/topic/freight" title="" class="freight-menu" aria-label="Freight&lt;span class=&quot;freight-menu-logo&quot;&gt;&lt;/span&gt;" tabindex="1"><span>Freight<span class="freight-menu-logo"></span></span></a></li>
+<li class="leaf last menu-mlid-878821 tech"><a href="/tech" title="" aria-label="Tech" tabindex="1"><span>Tech</span></a></li>
+</ul></li>
+<li class="expanded menu-mlid-878820 markets"><a href="/markets" title="" aria-label="Markets" tabindex="1"><span>Markets</span></a><ul class="menu"><li class="leaf first menu-mlid-878853 premarket"><a href="/pre-market-outlook" title="" aria-label="Pre-Market" tabindex="1"><span>Pre-Market</span></a></li>
+<li class="leaf menu-mlid-878850 afterhours"><a href="/after-hours-center" title="" aria-label="After Hours" tabindex="1"><span>After Hours</span></a></li>
+<li class="leaf menu-mlid-878849 movers"><a href="/movers" title="" aria-label="Movers" tabindex="1"><span>Movers</span></a></li>
+<li class="leaf menu-mlid-878867 etfs"><a href="/etfs" title="" aria-label="ETFs" tabindex="1"><span>ETFs</span></a></li>
+<li class="leaf menu-mlid-878851 forex"><a href="/markets/forex" title="" aria-label="Forex" tabindex="1"><span>Forex</span></a></li>
+<li class="leaf menu-mlid-1529644 cannabis"><a href="https://www.benzinga.com/cannabis/" title="" aria-label="Cannabis" tabindex="1"><span>Cannabis</span></a></li>
+<li class="leaf menu-mlid-878858 commodities"><a href="/markets/commodities" title="" aria-label="Commodities" tabindex="1"><span>Commodities</span></a></li>
+<li class="leaf menu-mlid-878835 options"><a href="/markets/options" title="" aria-label="Options" tabindex="1"><span>Options</span></a></li>
+<li class="leaf menu-mlid-1034073 binaryoptions"><a href="/markets/binary-options" title="" aria-label="Binary Options" tabindex="1"><span>Binary Options</span></a></li>
+<li class="leaf menu-mlid-878829 bonds"><a href="/markets/bonds" title="" aria-label="Bonds" tabindex="1"><span>Bonds</span></a></li>
+<li class="leaf menu-mlid-878832 futures"><a href="/markets/futures" title="" aria-label="Futures" tabindex="1"><span>Futures</span></a></li>
+<li class="leaf menu-mlid-1536614 cmegroup"><a href="https://www.benzinga.com/author/cme-group" title="" aria-label="CME Group" tabindex="1"><span>CME Group</span></a></li>
+<li class="leaf menu-mlid-878837 globaleconomics"><a href="/economics" title="" aria-label="Global Economics" tabindex="1"><span>Global Economics</span></a></li>
+<li class="leaf menu-mlid-878866 previews"><a href="/trading-ideas/previews" title="" aria-label="Previews" tabindex="1"><span>Previews</span></a></li>
+<li class="leaf menu-mlid-878852 reviews"><a href="/reviews" title="" aria-label="Reviews" tabindex="1"><span>Reviews</span></a></li>
+<li class="leaf menu-mlid-878823 smallcap"><a href="/news/small-cap" title="" aria-label="Small-Cap" tabindex="1"><span>Small-Cap</span></a></li>
+<li class="leaf menu-mlid-1268115 cryptocurrency"><a href="/markets/cryptocurrency" title="" aria-label="Cryptocurrency" tabindex="1"><span>Cryptocurrency</span></a></li>
+<li class="leaf last menu-mlid-1366417 pennystocks"><a href="/topic/penny-stocks" title="" aria-label="Penny Stocks" tabindex="1"><span>Penny Stocks</span></a></li>
+</ul></li>
+<li class="expanded menu-mlid-878827 ratings"><a href="/analyst-ratings" title="" aria-label="Ratings" tabindex="1"><span>Ratings</span></a><ul class="menu"><li class="leaf first menu-mlid-878830 analystcolor"><a href="/analyst-ratings/analyst-color" title="" aria-label="Analyst Color" tabindex="1"><span>Analyst Color</span></a></li>
+<li class="leaf menu-mlid-878833 downgrades"><a href="/analyst-ratings/downgrades" title="" aria-label="Downgrades" tabindex="1"><span>Downgrades</span></a></li>
+<li class="leaf menu-mlid-878834 upgrades"><a href="/analyst-ratings/upgrades" title="" aria-label="Upgrades" tabindex="1"><span>Upgrades</span></a></li>
+<li class="leaf menu-mlid-878831 initiations"><a href="/analyst-ratings/initiation" title="" aria-label="Initiations" tabindex="1"><span>Initiations</span></a></li>
+<li class="leaf last menu-mlid-878828 pricetarget"><a href="/analyst-ratings/price-target" title="" aria-label="Price Target" tabindex="1"><span>Price Target</span></a></li>
+</ul></li>
+<li class="expanded menu-mlid-878825 ideas"><a href="/trading-ideas" title="Trading-Ideas" aria-label="Ideas" tabindex="1"><span>Ideas</span></a><ul class="menu"><li class="leaf first menu-mlid-878859 longideas"><a href="/trading-ideas/long-ideas" title="" aria-label="Long Ideas" tabindex="1"><span>Long Ideas</span></a></li>
+<li class="leaf menu-mlid-878865 shortideas"><a href="/trading-ideas/short-ideas" title="" aria-label="Short Ideas" tabindex="1"><span>Short Ideas</span></a></li>
+<li class="leaf menu-mlid-878842 technicals"><a href="/trading-ideas/technicals" title="" aria-label="Technicals" tabindex="1"><span>Technicals</span></a></li>
+<li class="leaf menu-mlid-878864 fromthepress"><a href="/media" title="" aria-label="From The Press" tabindex="1"><span>From The Press</span></a></li>
+<li class="leaf menu-mlid-878843 jimcramer"><a href="/media/jim-cramer" title="" aria-label="Jim Cramer" tabindex="1"><span>Jim Cramer</span></a></li>
+<li class="leaf menu-mlid-878841 rumors"><a href="/news/rumors" title="" aria-label="Rumors" tabindex="1"><span>Rumors</span></a></li>
+<li class="leaf menu-mlid-1481547 bestpennystocks"><a href="https://www.benzinga.com/money/best-penny-stocks/" title="Best Penny Stocks" aria-label="Best Penny Stocks" tabindex="1"><span>Best Penny Stocks</span></a></li>
+<li class="leaf menu-mlid-1522831 bestbluechipstocks"><a href="https://www.benzinga.com/money/top-10-blue-chip-stocks/" title="Best Blue Chip Stocks" aria-label="Best Blue Chip Stocks" tabindex="1"><span>Best Blue Chip Stocks</span></a></li>
+<li class="leaf menu-mlid-1522829 besthighvolumepennystocks"><a href="https://www.benzinga.com/money/best-high-volume-penny-stocks/" title="Best High-Volume Penny Stocks" aria-label="Best High-Volume Penny Stocks" tabindex="1"><span>Best High-Volume Penny Stocks</span></a></li>
+<li class="leaf menu-mlid-1522828 bestsp500etfs"><a href="https://www.benzinga.com/money/best-sp-500-etfs/" title="Best S&amp;P 500 ETFs" aria-label="Best S&amp;P 500 ETFs" tabindex="1"><span>Best S&P 500 ETFs</span></a></li>
+<li class="leaf menu-mlid-1522830 bestsmallcapetfs"><a href="https://www.benzinga.com/money/best-small-cap-etfs/" title="Best Small Cap ETFs" aria-label="Best Small Cap ETFs" tabindex="1"><span>Best Small Cap ETFs</span></a></li>
+<li class="leaf last menu-mlid-1522832 bestswingtradestocks"><a href="https://www.benzinga.com/money/best-swing-trade-stocks/" title="Best Swing Trade Stocks" aria-label="Best Swing Trade Stocks" tabindex="1"><span>Best Swing Trade Stocks</span></a></li>
+</ul></li>
+<li class="leaf menu-mlid-1120140 active-trail fintech"><a href="/fintech" title="" class="active-trail" aria-label="Fintech" tabindex="1"><span>Fintech</span></a></li>
+<li class="expanded menu-mlid-1369730 personalfinance"><a href="http://www.benzinga.com/money/" title="" aria-label="Personal Finance" tabindex="1"><span>Personal Finance</span></a><ul class="menu"><li class="leaf first menu-mlid-1522835 stockbrokers"><a href="https://www.benzinga.com/money/online-stock-trading/" title="Stock Brokers" aria-label="Stock Brokers" tabindex="1"><span>Stock Brokers</span></a></li>
+<li class="leaf menu-mlid-1403007 forexbrokers"><a href="https://www.benzinga.com/money/best-forex-broker/" title="Forex Brokers" aria-label="Forex Brokers" tabindex="1"><span>Forex Brokers</span></a></li>
+<li class="leaf menu-mlid-1060619 personalfinance"><a href="/personal-finance" title="" aria-label="Personal Finance" tabindex="1"><span>Personal Finance</span></a></li>
+<li class="leaf menu-mlid-1522838 futuresbrokers"><a href="https://www.benzinga.com/money/best-brokers-futures-traders/" title="Futures Brokers" aria-label="Futures Brokers" tabindex="1"><span>Futures Brokers</span></a></li>
+<li class="leaf menu-mlid-1522840 cryptocurrencybrokers"><a href="https://www.benzinga.com/money/best-brokers-cryptocurrencies/" title="Cryptocurrency Brokers" aria-label="Cryptocurrency Brokers" tabindex="1"><span>Cryptocurrency Brokers</span></a></li>
+<li class="leaf menu-mlid-1487868 webull"><a href="https://www.benzinga.com/money/webull-review" title="" aria-label="Webull" tabindex="1"><span>Webull</span></a></li>
+<li class="leaf menu-mlid-1522841 binaryoptionbrokers"><a href="https://www.benzinga.com/money/best-binary-options-brokers/" title="Binary Option Brokers" aria-label="Binary Option Brokers" tabindex="1"><span>Binary Option Brokers</span></a></li>
+<li class="leaf menu-mlid-1522839 optionsbrokers"><a href="https://www.benzinga.com/money/best-brokers-for-options-traders/" title="Options Brokers" aria-label="Options Brokers" tabindex="1"><span>Options Brokers</span></a></li>
+<li class="leaf menu-mlid-1487867 etoro"><a href="https://www.benzinga.com/money/etoro-review" title="" aria-label="eToro" tabindex="1"><span>eToro</span></a></li>
+<li class="leaf menu-mlid-1522837 altcoinexchanges"><a href="https://www.benzinga.com/money/best-altcoin-exchanges/" title="Altcoin Exchanges" aria-label="Altcoin Exchanges" tabindex="1"><span>Altcoin Exchanges</span></a></li>
+<li class="leaf menu-mlid-1522836 allyinvestreview"><a href="https://www.benzinga.com/money/ally-invest-review/" title="Ally Invest Review" aria-label="Ally Invest Review" tabindex="1"><span>Ally Invest Review</span></a></li>
+<li class="leaf menu-mlid-1403005 binaryoptionsreview"><a href="https://www.benzinga.com/money/nadex-review/" title="" aria-label="Binary Options Review" tabindex="1"><span>Binary Options Review</span></a></li>
+<li class="leaf menu-mlid-1403012 eoptionreview"><a href="https://www.benzinga.com/money/eoption-review/" title="eOption Review" aria-label="eOption Review" tabindex="1"><span>eOption Review</span></a></li>
+<li class="leaf menu-mlid-1522833 etradereview"><a href="https://www.benzinga.com/money/etrade-review/" title="Etrade Review" aria-label="Etrade Review" tabindex="1"><span>Etrade Review</span></a></li>
+<li class="leaf menu-mlid-1403006 interactivebrokersreview"><a href="https://www.benzinga.com/money/interactive-brokers-review/" title="Interactive Brokers Review" aria-label="Interactive Brokers Review" tabindex="1"><span>Interactive Brokers Review</span></a></li>
+<li class="leaf menu-mlid-1403001 personalcapitalreview"><a href="https://www.benzinga.com/money/personal-capital-review/" title="" aria-label="Personal Capital Review" tabindex="1"><span>Personal Capital Review</span></a></li>
+<li class="leaf menu-mlid-1403000 suretraderreview"><a href="https://www.benzinga.com/money/suretrader-review/" title="Suretrader Review" aria-label="Suretrader Review" tabindex="1"><span>Suretrader Review</span></a></li>
+<li class="leaf menu-mlid-1403002 tdameritradereview"><a href="https://www.benzinga.com/money/td-ameritrade-review/" title="" aria-label="TD Ameritrade Review" tabindex="1"><span>TD Ameritrade Review</span></a></li>
+<li class="leaf menu-mlid-1403003 tradestationreview"><a href="https://www.benzinga.com/money/tradestation-review/" title="Tradestation Review" aria-label="Tradestation Review" tabindex="1"><span>Tradestation Review</span></a></li>
+<li class="leaf menu-mlid-1403004 yewnoedgereview"><a href="https://www.benzinga.com/money/yewno-edge-review/" title="Yewno|Edge Review" aria-label="Yewno|Edge Review" tabindex="1"><span>Yewno|Edge Review</span></a></li>
+<li class="leaf menu-mlid-1522834 cobratradingreview"><a href="https://www.benzinga.com/money/cobra-trading-review/" title="Cobra Trading Review" aria-label="Cobra Trading Review" tabindex="1"><span>Cobra Trading Review</span></a></li>
+<li class="leaf menu-mlid-1532024 etfbrokers"><a href="https://www.benzinga.com/money/best-brokers-for-etfs/" title="ETF Brokers" aria-label="ETF Brokers" tabindex="1"><span>ETF Brokers</span></a></li>
+<li class="leaf menu-mlid-1532026 mutualfundbrokers"><a href="https://www.benzinga.com/money/best-brokers-for-mutual-funds/" title="Mutual Fund Brokers" aria-label="Mutual Fund Brokers" tabindex="1"><span>Mutual Fund Brokers</span></a></li>
+<li class="leaf menu-mlid-1532014 indexfundbrokers"><a href="https://www.benzinga.com/money/best-online-brokers-for-index-funds/" title="Index Fund Brokers" aria-label="Index Fund Brokers" tabindex="1"><span>Index Fund Brokers</span></a></li>
+<li class="leaf menu-mlid-1532013 bondbrokers"><a href="https://www.benzinga.com/money/best-online-brokers-for-bonds/" title="Bond Brokers" aria-label="Bond Brokers" tabindex="1"><span>Bond Brokers</span></a></li>
+<li class="leaf menu-mlid-1532022 shortsellingbrokers"><a href="https://www.benzinga.com/money/best-broker-for-short-selling/" title="Short Selling Brokers" aria-label="Short Selling Brokers" tabindex="1"><span>Short Selling Brokers</span></a></li>
+<li class="leaf menu-mlid-1532015 stockapps"><a href="https://www.benzinga.com/money/best-stock-market-apps/" title="Stock Apps" aria-label="Stock Apps" tabindex="1"><span>Stock Apps</span></a></li>
+<li class="leaf menu-mlid-1532010 pennystocks"><a href="https://www.benzinga.com/money/best-penny-stocks/?stocks" title="Penny Stocks" aria-label="Penny Stocks" tabindex="1"><span>Penny Stocks</span></a></li>
+<li class="leaf menu-mlid-1532029 stocksunder5"><a href="https://www.benzinga.com/money/top-stocks-under-5/" title="Stocks Under $5" aria-label="Stocks Under $5" tabindex="1"><span>Stocks Under $5</span></a></li>
+<li class="leaf menu-mlid-1532032 stocksunder10"><a href="https://www.benzinga.com/money/stocks-under-10/" title="Stocks Under $10" aria-label="Stocks Under $10" tabindex="1"><span>Stocks Under $10</span></a></li>
+<li class="leaf menu-mlid-1532031 stocksunder20"><a href="https://www.benzinga.com/money/stocks-under-20/" title="Stocks Under $20" aria-label="Stocks Under $20" tabindex="1"><span>Stocks Under $20</span></a></li>
+<li class="leaf menu-mlid-1532020 stocksunder50"><a href="https://www.benzinga.com/money/best-stocks-under-50/" title="Stocks Under $50" aria-label="Stocks Under $50" tabindex="1"><span>Stocks Under $50</span></a></li>
+<li class="leaf menu-mlid-1532016 stocksunder100"><a href="https://www.benzinga.com/money/best-stocks-under-100/" title="Stocks Under $100" aria-label="Stocks Under $100" tabindex="1"><span>Stocks Under $100</span></a></li>
+<li class="leaf menu-mlid-1532027 investinart"><a href="https://www.benzinga.com/money/how-to-invest-in-artwork/" title="Invest in ArtInvest in Art" aria-label="Invest in Art" tabindex="1"><span>Invest in Art</span></a></li>
+<li class="leaf menu-mlid-1532035 investinland"><a href="https://www.benzinga.com/money/how-to-invest-in-farmland/" title="Invest in Land" aria-label="Invest in Land" tabindex="1"><span>Invest in Land</span></a></li>
+<li class="leaf menu-mlid-1532039 investinrealestate"><a href="https://www.benzinga.com/money/real-estate-investment/" title="Invest in Real Estate" aria-label="Invest in Real Estate" tabindex="1"><span>Invest in Real Estate</span></a></li>
+<li class="leaf menu-mlid-1532021 investinwine"><a href="https://www.benzinga.com/money/best-wine-investments/" title="Invest in Wine" aria-label="Invest in Wine" tabindex="1"><span>Invest in Wine</span></a></li>
+<li class="leaf menu-mlid-1532036 investingold"><a href="https://www.benzinga.com/money/how-to-invest-in-gold/" title="Invest in Gold" aria-label="Invest in Gold" tabindex="1"><span>Invest in Gold</span></a></li>
+<li class="leaf menu-mlid-1532023 auto"><a href="https://www.benzinga.com/money/auto-insurance/" title="Auto" aria-label="Auto" tabindex="1"><span>Auto</span></a></li>
+<li class="leaf menu-mlid-1532018 home"><a href="https://www.benzinga.com/money/home-insurance/" title="Home" aria-label="Home" tabindex="1"><span>Home</span></a></li>
+<li class="leaf menu-mlid-1532034 medicare"><a href="https://www.benzinga.com/money/medicare/" title="Medicare" aria-label="Medicare" tabindex="1"><span>Medicare</span></a></li>
+<li class="leaf menu-mlid-1532033 life"><a href="https://www.benzinga.com/money/life-insurance/" title="Life" aria-label="Life" tabindex="1"><span>Life</span></a></li>
+<li class="leaf menu-mlid-1532030 vision"><a href="https://www.benzinga.com/money/vision-insurance/" title="Vision" aria-label="Vision" tabindex="1"><span>Vision</span></a></li>
+<li class="leaf menu-mlid-1532019 dental"><a href="https://www.benzinga.com/money/dental-insurance/" title="Dental" aria-label="Dental" tabindex="1"><span>Dental</span></a></li>
+<li class="leaf menu-mlid-1532025 business"><a href="https://www.benzinga.com/money/best-business-insurance/" title="Business" aria-label="Business" tabindex="1"><span>Business</span></a></li>
+<li class="leaf menu-mlid-1532041 pet"><a href="https://www.benzinga.com/money/pet-insurance/" title="Pet" aria-label="Pet" tabindex="1"><span>Pet</span></a></li>
+<li class="leaf menu-mlid-1532017 health"><a href="https://www.benzinga.com/money/health-insurance/" title="Health" aria-label="Health" tabindex="1"><span>Health</span></a></li>
+<li class="leaf menu-mlid-1481618 masterworksreview"><a href="https://www.benzinga.com/money/masterworks-review/" title="Masterworks Review" aria-label="Masterworks Review" tabindex="1"><span>Masterworks Review</span></a></li>
+<li class="leaf menu-mlid-1532038 motorcycle"><a href="https://www.benzinga.com/money/motorcycle-insurance/" title="Motorcycle" aria-label="Motorcycle" tabindex="1"><span>Motorcycle</span></a></li>
+<li class="leaf menu-mlid-1532040 renters"><a href="https://www.benzinga.com/money/renters-insurance/" title="Renters" aria-label="Renters" tabindex="1"><span>Renters</span></a></li>
+<li class="leaf menu-mlid-1532028 workerscomp"><a href="https://www.benzinga.com/money/workers-compensation-insurance/" title="Workers Comp" aria-label="Workers Comp" tabindex="1"><span>Workers Comp</span></a></li>
+<li class="leaf menu-mlid-1532011 refinance"><a href="https://www.benzinga.com/money/best-refinance-mortgage/" title="Refinance" aria-label="Refinance" tabindex="1"><span>Refinance</span></a></li>
+<li class="leaf menu-mlid-1532012 purchase"><a href="https://www.benzinga.com/money/best-online-mortgage-lenders/" title="Purchase" aria-label="Purchase" tabindex="1"><span>Purchase</span></a></li>
+<li class="leaf last menu-mlid-1532037 findamortgagebroker"><a href="https://www.benzinga.com/money/mortgages/find/" title="Find a Mortgage Broker" aria-label="Find a Mortgage Broker" tabindex="1"><span>Find a Mortgage Broker</span></a></li>
+</ul></li>
+<li class="expanded menu-mlid-1507913 crypto"><a href="https://www.benzinga.com/markets/cryptocurrency" title="" aria-label="Crypto" tabindex="1"><span>Crypto</span></a><ul class="menu"><li class="leaf first menu-mlid-1507927 cryptonews"><a href="https://www.benzinga.com/cryptocurrency" title="Crypto News" aria-label="Crypto News" tabindex="1"><span>Crypto News</span></a></li>
+<li class="leaf menu-mlid-1507928 bitcoin"><a href="https://www.benzinga.com/money/is-bitcoin-a-good-investment/" title="Bitcoin" aria-label="Bitcoin" tabindex="1"><span>Bitcoin</span></a></li>
+<li class="leaf menu-mlid-1507930 ethereum"><a href="https://www.benzinga.com/money/is-ethereum-a-good-investment/" title="Ethereum" aria-label="Ethereum" tabindex="1"><span>Ethereum</span></a></li>
+<li class="leaf menu-mlid-1507932 blockchain"><a href="https://www.benzinga.com/money/what-is-blockchain/" title="Blockchain" aria-label="Blockchain" tabindex="1"><span>Blockchain</span></a></li>
+<li class="leaf menu-mlid-1507931 bestaltcoins"><a href="https://www.benzinga.com/money/best-alt-coins/" title="Best Alt Coins" aria-label="Best Alt Coins" tabindex="1"><span>Best Alt Coins</span></a></li>
+<li class="leaf last menu-mlid-1507929 howtobuycrypto"><a href="https://www.benzinga.com/money/how-to-buy-cryptocurrencies/" title="How to buy Crypto" aria-label="How to buy Crypto" tabindex="1"><span>How to buy Crypto</span></a></li>
+</ul></li>
+<li class="expanded menu-mlid-1517083 tv"><a href="https://www.benzinga.com/video" title="Tv" aria-label="TV" tabindex="1"><span>TV</span></a><ul class="menu"><li class="leaf first menu-mlid-1517082 youtube"><a href="https://www.youtube.com/benzinga" title="YouTube" aria-label="YouTube" tabindex="1"><span>YouTube</span></a></li>
+<li class="leaf menu-mlid-1522816 video"><a href="https://www.benzinga.com/video?sub" title="Video" aria-label="Video" tabindex="1"><span>Video</span></a></li>
+<li class="leaf last menu-mlid-1517084 podcasts"><a href="https://www.benzinga.com/podcasts" title="Podcasts" aria-label="Podcasts" tabindex="1"><span>Podcasts</span></a></li>
+</ul></li>
+<li class="expanded menu-mlid-1517081 tools"><a href="https://www.benzinga.com/calendars" title="Tools" class="tools-button" aria-label="Tools" tabindex="1"><span>Tools</span></a><ul class="menu"><li class="leaf first menu-mlid-1517092 earningscalendar"><a href="https://www.benzinga.com/news/earnings" title="Earnings Calendar" aria-label="Earnings Calendar" tabindex="1"><span>Earnings Calendar</span></a></li>
+<li class="leaf menu-mlid-1517093 ipocalendar"><a href="https://www.benzinga.com/news/ipos" title="IPO Calendar" aria-label="IPO Calendar" tabindex="1"><span>IPO Calendar</span></a></li>
+<li class="leaf menu-mlid-1517085 guidancecalendar"><a href="https://www.benzinga.com/calendar/guidance" title="Guidance Calendar" aria-label="Guidance Calendar" tabindex="1"><span>Guidance Calendar</span></a></li>
+<li class="leaf menu-mlid-1517089 fdacalendar"><a href="https://www.benzinga.com/calendars/fda" title="FDA Calendar" aria-label="FDA Calendar" tabindex="1"><span>FDA Calendar</span></a></li>
+<li class="leaf menu-mlid-1517091 dividendcalendar"><a href="https://www.benzinga.com/news/dividends" title="Dividend Calendar" aria-label="Dividend Calendar" tabindex="1"><span>Dividend Calendar</span></a></li>
+<li class="leaf menu-mlid-1517094 stocksplitcalendar"><a href="https://www.benzinga.com/stock-splits" title="Stock Split Calendar" aria-label="Stock Split Calendar" tabindex="1"><span>Stock Split Calendar</span></a></li>
+<li class="leaf menu-mlid-1517088 conferencecallcalendar"><a href="https://www.benzinga.com/conference-calls" title="Conference Call Calendar" aria-label="Conference Call Calendar" tabindex="1"><span>Conference Call Calendar</span></a></li>
+<li class="leaf menu-mlid-1517087 economiccalendar"><a href="https://www.benzinga.com/economics" title="Economic Calendar" aria-label="Economic Calendar" tabindex="1"><span>Economic Calendar</span></a></li>
+<li class="leaf menu-mlid-1517095 insidertrades"><a href="https://www.benzinga.com/sec/insider-trades/" title="Insider Trades" aria-label="Insider Trades" tabindex="1"><span>Insider Trades</span></a></li>
+<li class="leaf menu-mlid-1517090 tradeideafeed"><a href="https://www.benzinga.com/trade-ideas" title="Trade Idea Feed" aria-label="Trade Idea Feed" tabindex="1"><span>Trade Idea Feed</span></a></li>
+<li class="leaf menu-mlid-1517086 analystratings"><a href="https://www.benzinga.com/analyst-ratings" title="Analyst Ratings" aria-label="Analyst Ratings" tabindex="1"><span>Analyst Ratings</span></a></li>
+<li class="leaf last menu-mlid-1517096 unusualoptionsactivity"><a href="https://www.benzinga.com/options" title="Unusual Options Activity" aria-label="Unusual Options Activity" tabindex="1"><span>Unusual Options Activity</span></a></li>
+</ul></li>
+<li class="leaf last menu-mlid-1328712 premium"><a href="https://www.benzinga.com/premium-products" title="All premium products" class="premium-product-button" aria-label="Premium" tabindex="1"><span>Premium</span></a></li>
+</ul></div>
+  </div>
+
+  
+  </div>
+            <br style="clear: both;" />
+    </div>
+  </div>
+      <div id="bz3-header-messages-wrapper">
+          </div>
+  </div>
+  </div>
+
+  
+  </div>
+<div class="panel-region-separator"></div><div class="panel-pane pane-panels-mini pane-bz2-site-header" >
+  
+  
+  
+  <div class="pane-content">
+    <div id="bz3-tickerheader-wrapper">
+  <div id="bz3-tickerheader">
+          <div class="market-overview">
+        <div class="panel-pane pane-block pane-bz-custom-bz-custom-market-overview" >
+  
+      <h2 class="pane-title">Market Overview</h2>
+  
+  
+  <div class="pane-content">
+    
+  <div id="market-overview-block">
+  </div>
+    </div>
+
+  
+  </div>
+      </div>
+            <div class="block-head-items">
+      <div class="panel-pane pane-bz2-site-search-new" >
+  
+  
+  
+  <div class="pane-content">
+    <div class="block-ticker-search"><form action="/search/fast"  accept-charset="UTF-8" method="get" id="bz-custom-search-form">
+<div><input type="hidden" name="cx" id="edit-cx" value="005794925877256802002:ckazbf3vrxs"  />
+<input type="hidden" name="cof" id="edit-cof" value="FORID:11"  />
+<div class="hide-label"><div class="form-item" id="edit-query-wrapper">
+ <label for="edit-query">Tickers, Articles and Keywords: </label>
+ <input type="text" maxlength="128" name="query" id="edit-query" size="20" value="" placeholder="Tickers, Articles &amp; Keywords" tabindex="0" class="form-text" />
+</div>
+</div><div id="custom-search-results"><div class="seperator"><h2>Tickers</h2></div><div class="tickers"></div><div class="seperator"><h2>Articles</h2></div><div class="stories"></div><div class="seperator"><h2>Keywords</h2></div><div class="keywords"><div class="item"><div class="title">Search by keyword...</div><span class="link">googlecse</span></div></div></div><button type="submit" style="font-family:iconic">&#xe810;</button><input type="hidden" name="form_build_id" id="form-WZyZqfHVGfPnOop1htgZIUO80ao7BFrWLOM-Dv2vR_w" value="form-WZyZqfHVGfPnOop1htgZIUO80ao7BFrWLOM-Dv2vR_w"  />
+<input type="hidden" name="form_id" id="edit-bz-custom-search-form" value="bz_custom_search_form"  />
+
+</div></form>
+</div>  </div>
+
+  
+  </div>
+    </div>
+        <div class="enddiv"></div>
+  </div> <!-- bz3-tickerheader -->
+</div> <!-- bz3-tickerheader-wrapper -->
+
+  <div id="bz-campaign-text-header" class="bz-campaign-text-header"></div>
+  </div>
+
+  
+  </div>
+<div class="panel-region-separator"></div><div class="panel-pane pane-bz2-header-unit" >
+  
+  
+  
+  <div class="pane-content">
+          <div class="google_ad">
+        <!-- fintechawardwinners-728x90 -->
+        <div id='div-gpt-ad-1573601442124-0'></div>
+      </div><div id="benzinga-fintech-focus-header-wrapper">
+          <div class="benzinga-fintech-focus-hero-banner-wrapper">
+            <a href="https://www.benzinga.com/money/podcast-show/fintech-focus/">
+              <img class="fintech-focus-header-logo" src="/sites/all/modules/bzads/images/fintech-focus-logo.png">
+            </a>
+          </div>
+          <div class="fintech-menu">
+            <ul>
+              <li><a title="Fintech Focus: News about the fintech space" href="https://www.benzinga.com/topic/fintech">News</a></li>
+              <li><a title="Fintech Focus Podcast" href="https://www.benzinga.com/fintech-focus/podcast/">Podcast</a></li>
+              <li><a title="Fintech Events" href="https://www.benzinga.com/fintech-focus/events/">Events</a></li>
+              <li><a title="Fintech Focus Newsletter" href="https://www.benzinga.com/fintech-focus/newsletter/">Newsletter</a></li>
+            </ul>
+          </div>
+        </div>  </div>
+
+  
+  </div>
+<div id="benzinga-main-wrapper">
+  <div id="benzinga-main" name="benzinga-main">
+    <div class="benzinga-content">
+      <div id="benzinga-article-area-wrapper" >
+          
+          <div class="benzinga-content">
+            <div class="panel-pane pane-page-content" >
+  
+  
+  
+  <div class="pane-content">
+    
+
+
+<div class="article-content">
+    <h1 id="title">Think Well, Think Different: 4 Things To Think About When Creating A Company Culture</h1>
+  <div id="node-15068365" class="node full">
+          <div class='tabs'></div>
+              <div class="article-submitted">
+
+        
+        <div class="article-submitted-content">
+          <div class="article-author-wrap" data-ng-controller="articleDetail">
+  <span class="author">
+    <a href="/users/jeremy-potter" class="author-name">Jeremy Potter</a> , <a href="http://www.stavvy.com">Vice President at Stavvy</a>, Benzinga Contributor  </span>
+
+  
+  <span class="separator">&nbsp;</span>
+  <!--googleoff: index-->
+  <span data-nosnippet>
+    <button
+     title="Subscribe to Jeremy Potter"
+     class="follow-author"
+     data-ng-class="{following: following}"
+     data-ng-click="follow('Jeremy Potter')"
+     data-ng-init="authorName = 'Jeremy Potter'"
+     data-ng-cloak>
+      {{following ? "Following" : "Follow"}}
+    </button>
+  </span>
+  <!--googleon: index-->
+  </div>
+          <div class="article-date-wrap">
+            <span class="date">
+              January 03, 2020 12:38pm            </span>
+                                        <span class="hidden">
+                <span class="separator">&nbsp;</span>
+                <span class="wcount">844</span>
+              </span>
+                        <span class="separator">&nbsp;</span>
+            <a class="bz-comments" data-bz-coments="">Comments</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="article-buttons-container">
+        <div class="article-buttons article-buttons-top article-share-buttons">
+          <div class="article-share-buttons-title">Share:</div>
+          <!-- Go to www.addthis.com/dashboard to customize your tools -->
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5c5a5d5e9ee2e573"></script><div id="inline-addthis-share" class="addthis_toolbox addthis_default_style addthis_32x32_style"><a class="addthis_button_linkedin"></a><a class="addthis_button_twitter"></a><a class="addthis_button_facebook"></a><a class="addthis_button_mailto"></a><a class="addthis_button_compact"></a></div>        </div>
+      </div>
+
+            <div class="content clear-block">
+      <div class="article-content-body">
+        <div id="bz-campaign-text-top" class="bz-campaign-text-top"></div>
+                <div class="node-left-corner">
+          <div>
+            <a rel="lightbox" class="colorbox" alt=" " title=" " href="https://cdn.benzinga.com/files/imagecache/1024x768xUP/images/story/2012/startup-594090_1920_1.jpg"><img src="https://cdn.benzinga.com/files/imagecache/story_image_685x375C/images/story/2012/startup-594090_1920_1.jpg" alt="Think Well, Think Different: 4 Things To Think About When Creating A Company Culture" title="Think Well, Think Different: 4 Things To Think About When Creating A Company Culture" width="685" height="375" class="imagecache imagecache-story_image_685x375C"/></a>                                  </div>
+        </div>
+        
+        
+        
+        
+        <div class="article-content-body-only">
+          <div id="daily-report-subscription-link"></div><p><em>Think Well, Think Different is a series of columns devoted to discussing trends in fintech, both from the consumer and founder points of view. <a href="https://www.benzinga.com/author/daniel-wright">Click here</a> for previous columns.&nbsp;</em></p>
+<p>What we value is hard to achieve. Things like physical fitness require discipline. Spirituality requires practice. Education takes years of incremental challenges. Marriage requires patience and understanding. Creating a successful business is no different&mdash;it requires courage and determination.&nbsp;</p>
+<p>In my experience, one of the hardest parts of building a business is creating a company culture. Building a company culture that reflects the mission and vision of the founder is as hard as starting the business in the first place. Well, almost.</p>
+<p>Everyone talks about company culture because it is hard to build and difficult to maintain. It is the reason you read so much about company culture in CEO interviews, entrepreneur blog posts, and motivational Instagram feeds.&nbsp;</p><div class='in-article-placement-container' id='om-yh3hujuixx8n23gqkat0-holder'></div><div id="bz-campaign-text-middle" class="bz-campaign-text-middle"></div><div id="inline-container" class="in-article-placement-container"></div>
+<p>One of the tensions in creating a company culture is something each of us faces in our careers: idealism versus practicality. Idealism is the pursuit of the pure form of values, even unrealistically. Practicality is the exceptions and rationalizations we make to our ideals to be able to function in a complex world. In other words, the way we wish the world was versus the way it is.&nbsp;</p>
+<p>Ideally, we are able to harness this tension to form the right mixture of the two. Inspiration in ideals is necessary to give the company purpose, whereas the values must be realistic and helpful enough to support the decisions facing your team each and every day.&nbsp;&nbsp;</p>
+<p>Here are four considerations when approaching the battle between idealism and practicality within the culture of your company.&nbsp;</p>
+<p><strong>Leaders bring the weather.</strong> Organizations tend to take on the personality of the leader. Your team looks up to your team leader the same way an entire company of people looks up to the CEO. How you approach culture will dictate how serious it is treated by your team. The best cultures and the best leaders provide the values in a way that supports day-to-day decisions.</p>
+<p><strong>Understand the tradeoffs.</strong> Allowing practical concessions to your company culture is an example of a tradeoff. Bad company cultures are either nonexistent or asking team members to fight against their own human nature (and sometimes common sense) in order to maintain the company culture. An example of a conflicted company culture is the large bank that claims to value its people but enforces a strict travel policy where the cheapest flight must be booked even if it is three stops and 12 hours of travel. Here, the tradeoff may mean spending a little more on travel expenses to value your peoples&rsquo; time and energy.</p>
+<p>Another example of a tradeoff could mean sacrificing revenue or market share to honor a core value of the company. A digital, financial services lead aggregator can maximize profitability by selling a lead as fast as possible and as many times as possible.&nbsp; A lead generator that decides to curate the lead and offer a more human experience &ndash; collecting information, vetting providers and placing the lead with the right match &ndash; is sacrificing volume and (likely) revenue based on ideals to benefit the consumer.&nbsp;&nbsp;&nbsp;</p>
+<p>Both models can operate as a successful business, just not at the same time, which is why the company must be aware and honest about the tension between the ideal and the practical.&nbsp;</p>
+<p><strong>Release control.</strong> The hardest part of the tension in building a consistent company culture is knowing what you can control and what you cannot.&nbsp; You are in control of your message but not in control of how it is received. You are in control of your policies and procedures but not in control of how your clients or customers will behave. Recognizing that people are not going to buy your product simply because of the goodness of the employees is helpful in remembering the realities of your business.</p>
+<p><strong>It will be hard. </strong>In business, being first and being wrong feel the same. When defining your company culture, you have defined the company. There will be uncertainty, second-guessing, and the temptation to change course all the time. Fight that urge with the discipline of a marathon runner or surgeon.&nbsp; Do not enforce discipline, however, to such a degree that you squeeze the flexibility right out of your people.&nbsp;</p>
+<p>Whether you are thinking about starting a company, just started a company, or leading a company or a large group of people, you know there is a lot to balance. That balance between values and practice can determine a company&rsquo;s potential. Too idealistic, and the company cannot be taken seriously. Too practical, and the company will not motivate or retain employees or customers.&nbsp;</p>
+<p>The hard thing for any company is striking the proper mix of purpose and execution. That&rsquo;s why we place such a high premium on culture; it&rsquo;s the company equivalent of diet and exercise.</p>
+<p>
+&nbsp;</p>
+<div id="benzinga-pro-awareness-link"></div>        </div>
+        
+        
+        
+      <p class="bz-contrib-notice">
+      The preceding article is from one of our external contributors.
+      It does not represent the opinion of Benzinga and has not been edited.
+      </p>
+      
+        
+        <div id="bz-campaign-text-bottom" class="bz-campaign-text-bottom"></div>        
+                  <p class="copyright"><i>&copy; 2021 Benzinga.com. Benzinga does not provide investment advice. All rights reserved.</i></p>              </div>
+
+      
+      <div style="clear: both;font-size:1px;line-height:1px;" class="article-content-end">&nbsp;</div>
+    </div>
+
+    
+    
+    <div class="article-more-stories">
+            <div class="article-more-stories related-articles">
+        <h4>Related Articles</h4>
+              </div>
+          </div>
+
+    <a id="show-comments-button">View Comments and Join the Discussion!</a>
+    <div id="disqus_thread"></div><noscript><div class="disqus-noscript"><a href="http://bzdisqus.disqus.com/?url=https%3A%2F%2Fwww.benzinga.com%2Ffintech%2F20%2F01%2F15068365%2Fthink-well-think-different-4-things-to-think-about-when-creating-a-company-culture">View the discussion thread.</a></div></noscript>
+          <p class="article-taxonomy-bottom"><strong>Posted-In:</strong> <a href="/topic/contributors">contributors</a><a href="/fintech">Fintech</a> <a href="/opinion">Opinion</a> <a href="/best-of-benzinga">Best of Benzinga</a></p>
+    
+    <div id="primisVideoDiv"></div><div id="taboola-below-article-thumbnails"></div>
+        <script type="text/javascript">
+          window._taboola = window._taboola || [];
+          _taboola.push({
+            mode: 'thumbnails-a',
+            container: 'taboola-below-article-thumbnails',
+            placement: 'Below Article Thumbnails',
+            target_type: 'mix'
+          });
+        </script>  </div>
+</div>
+  </div>
+
+  
+  </div>
+          </div>
+              </div>
+    </div>
+          <div class="benzinga-blocks">
+        <div class="panel-pane pane-bz2-right-sidebar-unit" >
+  
+  
+  
+  <div class="pane-content">
+    <div id='ic_300x250_1'></div><div class="panel-region-separator"></div><iframe width="300" height="200" src="https://www.youtube.com/embed/ogH7p_a37dc?autoplay=1&mute=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe><div class="panel-region-separator"></div><div id="top-stories-block" class="block">
+    <div class="block-tabs">
+      <ul>
+        <li><a href="javascript:void(0)" class="orange">Trending</a></li>
+        <li><a href="javascript:void(0)" class="blue">Recent</a></li>
+      </ul>
+    </div>
+    <div class="block-shadow block-border">
+      <div class="block-themes-content">
+        <div class="content">
+          <div class="item-list">
+            <table>
+          <tr>
+            <td class='most-count'><a href='/general/education/21/12/10939891/this-day-in-market-history-nyse-gets-computerized'>1</a></td>
+            <td><a href='/general/education/21/12/10939891/this-day-in-market-history-nyse-gets-computerized'><strong>SPY, DIA</strong>: This Day In Market History: NYSE Gets Computerized</a></td>
+          </tr>
+        
+          <tr>
+            <td class='most-count'><a href='/news/21/12/24694049/25-stocks-moving-in-mondays-pre-market-session'>2</a></td>
+            <td><a href='/news/21/12/24694049/25-stocks-moving-in-mondays-pre-market-session'><strong>BLPH, VRS</strong>: 25 Stocks Moving in Monday&#039;s Pre-Market Session</a></td>
+          </tr>
+        
+          <tr>
+            <td class='most-count'><a href='/m-a/21/12/24691877/oracle-expected-to-announce-purchase-of-cerner-today-around-this-price-level'>3</a></td>
+            <td><a href='/m-a/21/12/24691877/oracle-expected-to-announce-purchase-of-cerner-today-around-this-price-level'><strong>ORCL, CERN</strong>: Oracle Expected To Announce Purchase Of Cerner Today...</a></td>
+          </tr>
+        
+          <tr>
+            <td class='most-count'><a href='/markets/options/21/12/24707769/novavax-shares-fall-on-heavy-options-volume-following-covid-vaccine-approval-by-eu'>4</a></td>
+            <td><a href='/markets/options/21/12/24707769/novavax-shares-fall-on-heavy-options-volume-following-covid-vaccine-approval-by-eu'><strong>NVAX</strong>: Novavax Shares Fall On Heavy Options Volume Follo...</a></td>
+          </tr>
+        
+          <tr>
+            <td class='most-count'><a href='/news/21/12/24715253/26-stocks-moving-in-tuesdays-pre-market-session'>5</a></td>
+            <td><a href='/news/21/12/24715253/26-stocks-moving-in-tuesdays-pre-market-session'><strong>CTK, BFRI</strong>: 26 Stocks Moving in Tuesday&#039;s Pre-M...</a></td>
+          </tr>
+        
+          <tr>
+            <td class='most-count'><a href='/news/21/12/24713381/ford-mustang-mach-e-joins-tesla-model-3-in-ranks-of-new-yorks-yellow-taxis'>6</a></td>
+            <td><a href='/news/21/12/24713381/ford-mustang-mach-e-joins-tesla-model-3-in-ranks-of-new-yorks-yellow-taxis'><strong>TSLA, HTZWW</strong>: Ford Mustang Mach-E Joins Tes...</a></td>
+          </tr>
+        
+          <tr>
+            <td class='most-count'><a href='/news/21/12/24701636/tom-brady-launches-brady-brand-can-it-compete-with-nike-and-under-armour'>7</a></td>
+            <td><a href='/news/21/12/24701636/tom-brady-launches-brady-brand-can-it-compete-with-nike-and-under-armour'><strong>JWN, UA</strong>: Tom Brady Launches Bra...</a></td>
+          </tr>
+        </table>          </div>
+        </div>
+        <div class="content tab-content-hide">
+          <div class="item-list">
+            <table>
+          <tr>
+            <td class='most-count'><a href='/trading-ideas/long-ideas/21/12/24729018/ocugen-shares-move-higher-try-to-recover-a-key-technical-level'>1</a></td>
+            <td><a href='/trading-ideas/long-ideas/21/12/24729018/ocugen-shares-move-higher-try-to-recover-a-key-technical-level'><strong>OCGN</strong>: Ocugen Shares Move Higher, Try To Recover A Key Technical Level</a></td>
+          </tr>
+        
+          <tr>
+            <td class='most-count'><a href='/news/21/12/24729471/did-gm-poke-fun-at-tesla-with-new-hummer-ev-image-will-elon-musk-respond'>2</a></td>
+            <td><a href='/news/21/12/24729471/did-gm-poke-fun-at-tesla-with-new-hummer-ev-image-will-elon-musk-respond'><strong>RIVN, GM</strong>: Did GM Poke Fun At Tesla With New Hummer EV Image? Will Elon Musk Re...</a></td>
+          </tr>
+        
+          <tr>
+            <td class='most-count'><a href='/news/earnings/21/12/24729014/aar-q2-earnings-insights'>3</a></td>
+            <td><a href='/news/earnings/21/12/24729014/aar-q2-earnings-insights'><strong>AIR</strong>: AAR: Q2 Earnings Insights</a></td>
+          </tr>
+        
+          <tr>
+            <td class='most-count'><a href='/markets/cryptocurrency/21/12/24728073/tuesdays-afternoon-update-on-crypto-gainers-and-losers'>4</a></td>
+            <td><a href='/markets/cryptocurrency/21/12/24728073/tuesdays-afternoon-update-on-crypto-gainers-and-losers'><strong>$LUNA, $ATOM</strong>: Tuesday&#039;s Afternoon Update On Crypto Gainers and...</a></td>
+          </tr>
+        
+          <tr>
+            <td class='most-count'><a href='/markets/cryptocurrency/21/12/24729187/demand-for-shiba-inu-may-grow-thanks-to-nicehashs-expected-adoption-following-twitter-poll'>5</a></td>
+            <td><a href='/markets/cryptocurrency/21/12/24729187/demand-for-shiba-inu-may-grow-thanks-to-nicehashs-expected-adoption-following-twitter-poll'><strong>TWTR, $SHIB</strong>: Demand For Shiba Inu May Grow Thanks To Ni...</a></td>
+          </tr>
+        
+          <tr>
+            <td class='most-count'><a href='/node/24730773'>6</a></td>
+            <td><a href='/node/24730773'>6,098 ETH Worth $24,584,103 Was Burned Yes...</a></td>
+          </tr>
+        
+          <tr>
+            <td class='most-count'><a href='/government/21/12/24729799/covid-testing-kit-makers-respond-to-bidens-call-for-500-million-free-at-home-tests'>7</a></td>
+            <td><a href='/government/21/12/24729799/covid-testing-kit-makers-respond-to-bidens-call-for-500-million-free-at-home-tests'><strong>QDEL, ABT</strong>: COVID Testing Kit Makers Respond...</a></td>
+          </tr>
+        </table>          </div>
+        </div>
+      </div>
+    </div>
+</div>
+<div class="panel-region-separator"></div><div id ="monster_email_wrapper"><div id="om-dlelp6g42eaexxoap59c-holder"></div></div><div class="panel-region-separator"></div>      <div class="google_ad">
+        <!-- Benzinga:Right-Sidebar:300x250-600:Middle -->
+        <div id='div-gpt-ad-1584418576061-0'></div>
+      </div><div class="panel-region-separator"></div>  </div>
+
+  
+  </div>
+      </div>
+        <div class="enddiv"></div>
+  </div> <!-- benzinga main -->
+</div>
+<div class="panel-pane pane-panels-mini pane-bz2-footer" >
+  
+  
+  
+  <div class="pane-content">
+    <div id="benzinga-footer">
+  <div class="section-footer">
+    <div class="container w-container">
+      <div class="branding-and-socials">
+        <a href="https://www.benzinga.com/" tabindex="1"><img src="/sites/all/themes/bz2/images/footer/Benzinga_Logo_web-03.png" alt="Benzinga Logo Footer" class="benzinga-logo"></a>
+        <div class="social-media-wrapper">
+          <div class="icon-wrapper">
+            <a href="https://www.facebook.com/Benzinga/" tabindex="1"><div class="facebook-icon"></div></a>
+          </div>
+          <div class="icon-wrapper">
+            <a href="https://twitter.com/benzinga" tabindex="1"><div class="twitter-icon"></div></a>
+          </div>
+          <div class="icon-wrapper">
+            <a href="https://www.instagram.com/benzinga/?hl=en" tabindex="1"><div class="instagram-icon"></div></a>
+          </div>
+          <div class="icon-wrapper">
+            <a href="https://www.youtube.com/benzinga" tabindex="1"><div class="youtube-icon"></div></a>
+          </div>
+          <div class="icon-wrapper">
+            <a href="https://soundcloud.com/bztv" tabindex="1"><div class="soundcloud-icon"></div></a>
+          </div>
+        </div>
+        <div class="app-store-wrapper">
+          <a href="https://apps.apple.com/us/app/benzinga-stock-news-tracker/id688949481" tabindex="1" aria-label="App Store"><div class="app-store-button-wrapper"></div></a>
+        </div>
+      </div>
+      <div class="divider-footer"></div>
+      <div class="links-container">
+        <div class="popular-channels-div">
+          <div class="link-title">Popular Channels</div>
+          <ul class="list w-list-unstyled">
+            <li class="footer-link"><a href="https://www.benzinga.com/premarket-prep/" tabindex="1" aria-label="PreMarket Prep" class="footer-link">PreMarket Prep</a></li>
+            <li class="footer-link"><a href="https://www.benzinga.com/pressreleases" class="footer-link" tabindex="1" aria-label="Press Releases">Press Releases</a></li>
+            <li class="footer-link"><a href="https://www.benzinga.com/analyst-ratings" class="footer-link" tabindex="1" aria-label="Analyst Ratings">Analyst Ratings</a></li>
+            <li class="footer-link"><a href="https://www.benzinga.com/news" class="footer-link" tabindex="1" aria-label="News">News</a></li>
+            <li class="footer-link"><a href="https://www.benzinga.com/markets/options" class="footer-link" tabindex="1" aria-label="Options">Options</a></li>
+            <li class="footer-link"><a href="https://www.benzinga.com/etfs" class="footer-link" tabindex="1" aria-label="ETFs">ETFs</a></li>
+          </ul>
+        </div>
+        <div class="tools-and-features-div">
+          <div class="link-title">Tools &amp; Features</div>
+          <ul class="list w-list-unstyled">
+            <li class="footer-link"><a href="https://pro.benzinga.com/" class="footer-link" tabindex="1" aria-label="Real Time Feed">Real Time Feed</a></li>
+            <li class="footer-link"><a href="https://www.benzinga.com/feeds/list" class="footer-link" tabindex="1" aria-label="Public RSS Feeds">Public RSS Feeds</a></li>
+            <li class="footer-link"><a href="https://www.benzinga.com/contact" class="footer-link" tabindex="1" aria-label="Submit News Tips">Submit News Tips</a></li>
+            <li class="footer-link"><a href="https://pro.benzinga.com/blog/" class="footer-link" tabindex="1" aria-label="Blog">Blog</a></li>
+            <li class="footer-link"><a href="https://www.benzinga.com/catalyst" class="footer-link" tabindex="1" aria-label="Benzinga Catalyst">Benzinga Catalyst</a></li>
+          </ul>
+        </div>
+        <div class="partner-footer-links-div">
+          <div class="link-title">Partners &amp; Contributors</div>
+          <ul class="list w-list-unstyled">
+            <li class="footer-link"><a href="https://benzinga.partnerstack.com/" class="footer-link" tabindex="1" aria-label="Affiliate Program">Affiliate Program</a></li>
+            <li class="footer-link"><a href="https://www.benzinga.com/contribute" class="footer-link" tabindex="1" aria-label="Contributor Portal">Contributor Portal</a></li>
+            <li class="footer-link"><a href="https://www.benzinga.com/apis/" class="footer-link" tabindex="1" aria-label="Licensing &amp; Syndication">Licensing &amp; Syndication</a></li>
+            <li class="footer-link"><a href="https://www.benzinga.com/apis/advertising/" class="footer-link" tabindex="1" aria-label="Sponsored Content">Sponsored Content</a></li>
+            <li class="footer-link"><a href="https://www.benzinga.com/contact/" class="footer-link" tabindex="1" aria-label="Advertise With Us">Advertise With Us</a></li>
+            <li class="footer-link"><a href="https://www.benzinga.com/contact/" class="footer-link" tabindex="1" aria-label="Lead Generation &amp; SEO">Lead Generation &amp; SEO</a></li>
+          </ul>
+        </div>
+        <div class="about-benzinga-div">
+          <div class="link-title">About Benzinga</div>
+          <ul class="list w-list-unstyled">
+            <li class="footer-link"><a href="https://www.benzinga.com/about" class="footer-link" tabindex="1" aria-label="About Us">About Us</a></li>
+            <li class="footer-link"><a href="https://jobs.benzinga.com/" class="footer-link" tabindex="1" aria-label="Careers">Careers</a></li>
+            <li class="footer-link"><a href="https://www.benzinga.com/inthenews" class="footer-link" tabindex="1" aria-label="In The News">In The News</a></li>
+            <li class="footer-link"><a href="https://www.benzinga.com/events/" class="footer-link" tabindex="1" aria-label="Events">Events</a></li>
+            <li class="footer-link"><a href="https://www.benzinga.com/contact" class="footer-link" tabindex="1" aria-label="Contact Us">Contact Us</a></li>
+            <li class="footer-link">&nbsp;</li>
+          </ul>
+        </div>
+        <div class="international-sites-div">
+          <div class="link-title">International Sites</div>
+          <ul class="list w-list-unstyled">
+            <li class="footer-link"><a href="https://it.benzinga.com/" class="footer-link" tabindex="1" aria-label="Benzinga Italia">Benzinga Italia</a></li>
+            <li class="footer-link"><a href="https://es.benzinga.com/" class="footer-link" tabindex="1" aria-label="Benzinga España">Benzinga España</a></li>
+            <li class="footer-link"><a href="https://fr.benzinga.com/" class="footer-link" tabindex="1" aria-label="Benzinga France">Benzinga France</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="copyright-section">
+    <div class="copyright-container w-container">
+      <div class="terms-and-conditions">
+        <ul class="terms-and-conditions-footerl-links w-list-unstyled">
+          <li class="copyright-section-link"><a href="https://www.benzinga.com/terms-and-conditions" class="copyright-section-link" tabindex="1" aria-label="Terms &amp; Conditions">Terms &amp; Conditions </a></li>
+          <li class="copyright-section-link"><a href="https://www.benzinga.com/page/privacy" class="copyright-section-link" tabindex="1" aria-label="Privacy Policy / Do Not Sell My Personal Data">Privacy Policy / Do Not Sell My Personal Data</a></li>
+          <li class="copyright-section-link"><a href="https://www.benzinga.com/disclaimer" class="copyright-section-link" tabindex="1" aria-label="Disclaimer">Disclaimer </a></li>
+          <li class="copyright-section-link"><a href="http://www.benzingastatus.com/" class="copyright-section-link" tabindex="1" aria-label="Service Status">Service Status</a></li>
+          <li class="copyright-section-link"><a href="https://www.benzinga.com/sitemap" class="copyright-section-link" tabindex="1" aria-label="Sitemap">Sitemap</a></li>
+        </ul>
+      </div>
+      <div class="copyright-div">
+        <div class="copyright-block">&copy; 2021 Benzinga | All Rights Reserved</div>
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+
+  
+  </div>
+  
+  <div id="closure"><script src="https://www.benzinga.com/sites/all/libraries/benzinga-ticker-widget/js/highcharts.js"></script>        <script type="text/javascript">
+        var omLoader = setInterval(function() {
+          if ($('#om-yh3hujuixx8n23gqkat0-holder').length) {
+            clearInterval(omLoader);
+            var yh3hujuixx8n23gqkat0,yh3hujuixx8n23gqkat0_poll=function(){var r=0;return function(n,l){clearInterval(r),r=setInterval(n,l)}}();!function(e,t,n){if(e.getElementById(n)){yh3hujuixx8n23gqkat0_poll(function(){if(window['om_loaded']){if(!yh3hujuixx8n23gqkat0){yh3hujuixx8n23gqkat0=new OptinMonsterApp();return yh3hujuixx8n23gqkat0.init({"u":"40812.793848","staging":0,"dev":0,"beta":0});}}},25);return;}var d=false,o=e.createElement(t);o.id=n,o.src="https://a.optmstr.com/app/js/api.min.js",o.async=true,o.onload=o.onreadystatechange=function(){if(!d){if(!this.readyState||this.readyState==="loaded"||this.readyState==="complete"){try{d=om_loaded=true;yh3hujuixx8n23gqkat0=new OptinMonsterApp();yh3hujuixx8n23gqkat0.init({"u":"40812.793848","staging":0,"dev":0,"beta":0});o.onload=o.onreadystatechange=null;}catch(t){}}}};(document.getElementsByTagName("head")[0]||document.documentElement).appendChild(o)}(document,"script","omapi-script");
+          }
+        }, 1000);
+        </script>
+<script type="text/javascript" src="https://cdn.benzinga.com/files/advagg_js/js_57cf0754eb44342d62d6ed0f3b03ed4e_21.js"></script>
+<script type="text/javascript" src="https://cdn.benzinga.com/files/advagg_js/js_c4315e986d5131835777df5a49758374_1261.js"></script>
+<script type="text/javascript" src="https://cdn.benzinga.com/files/advagg_js/js_7abdd190a1477f54df210889d2559218_987.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"googleCSE":{"language":"en"}});
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+$(function(){setTimeout(function(){googletag.cmd.push(function(){googletag.display('div-gpt-ad-1573601442124-0')})},100)});
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+var om46623_40812,om46623_40812_poll=function(){var r=0;return function(n,l){clearInterval(r),r=setInterval(n,l)}}();!function(e,t,n){if(e.getElementById){om46623_40812_poll(function(){if(window.om_loaded)if(!om46623_40812){om46623_40812=new OptinMonsterApp();return om46623_40812.init({a:40812,staging:0,dev:0,beta:0})}},25);return};var d=false,o=e.createElement(t);o.id=n,o.src="https://a.optmstr.com/app/js/api.min.js",o.async=true,o.onload=o.onreadystatechange=function(){if(!d)if(!this.readyState||this.readyState==="loaded"||this.readyState==="complete")try{d=om_loaded=true;om46623_40812=new OptinMonsterApp();om46623_40812.init({a:40812,staging:0,dev:0,beta:0});o.onload=o.onreadystatechange=null}catch(t){}};(document.getElementsByTagName("head")[0]||document.documentElement).appendChild(o)}(document,"script","omapi-script");
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+$(function(){setTimeout(function(){googletag.cmd.push(function(){googletag.display('div-gpt-ad-1584418576061-0')})},100)});
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+$(function(){setTimeout(function(){googletag.cmd.push(function(){googletag.display('div-gpt-ad-1600833337481-0')})},100)});
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+var analyticsProperties={};if(typeof Drupal.settings.bz_js!=='undefined'&&typeof Drupal.settings.bz_js.analytics_properties!=='undefined'){analyticsProperties=Drupal.settings.bz_js.analytics_properties;if(typeof Drupal.settings.bz_js.nodeCreated!=='undefined'){var nodeCreated=Drupal.settings.bz_js.nodeCreated,today=Date.now()/1e3,numberOfDays=(today-nodeCreated)/(60*60*24);if(numberOfDays>2e3){ageOfArticle=1e4}else{var rangeArray=[0,1,2,3,5,7,10,15,20,30,60,90,180,365,730,1e3,2e3];for(var i in rangeArray)if(numberOfDays<=rangeArray[i]&&numberOfDays>rangeArray[i-1]){ageOfArticle=rangeArray[i];break}};analyticsProperties.ageOfArticle=ageOfArticle}};analytics.page(analyticsProperties);
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+var OneSignal=window.OneSignal||[];OneSignal.push(function(){OneSignal.init({appId:"6af422c5-5278-4b15-964b-4c66dc3ce247",welcomeNotification:{disable:true}});var notificationPromptDelay=2e4,navigationStart=window.performance.timing.navigationStart,timeNow=Date.now();setTimeout(promptAndSubscribeUser,Math.max(notificationPromptDelay-(timeNow-navigationStart),0))})
+function promptAndSubscribeUser(){window.OneSignal.isPushNotificationsEnabled(function(isEnabled){if(!isEnabled)window.OneSignal.showSlidedownPrompt()})}
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+
+      function insertAfter(el, referenceNode) {
+        referenceNode.parentNode.insertBefore(el, referenceNode.nextSibling);
+      }
+      // Add an event listener on delay of 5 sec
+      document.addEventListener("article-adv-inserted", function(e) {
+        setTimeout(() => {
+           var script = document.createElement("script");
+           script.src = "https://live.primis.tech/live/liveView.php?s=108449";
+           if (document.getElementById("bz-campaign-text-middle") !== null){
+             var ref = document.getElementById("bz-campaign-text-middle");
+           } else {
+             var ref = document.getElementById("primisVideoDiv");
+           }
+           insertAfter(script, ref);
+          }, 5000)
+      });
+      // Dispatch/Trigger/Fire the event after 1 sec after loading tooltipwidget
+      setTimeout(() => {
+        document.dispatchEvent(event);
+      }, 1000)
+      
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+$(function(){$('.article-content-body-only').bztooltipwidget({inlineQuoteDisplay:true,debug:false})});
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+window._taboola=window._taboola||[];_taboola.push({flush:true});
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+var addthis_share=addthis_share||{};addthis_share={url:"https://benzinga.com/z/15068365",passthrough:{twitter:{text:"Think Well, Think Different: 4 Things To Think About When Creating A Company Culture ",hashtags:"",via:"benzinga"}}}
+//--><!]]>
+</script>
+</div>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","licenseKey":"e7d2fb793a","applicationID":"1320884","transactionName":"YgRWZkIDWRZXW0EKWVtOdVFEC1gLGVZaB1NqEVVVVT1BDFNP","queueTime":0,"applicationTime":1371,"atts":"TkNVEAoZShg=","errorBeacon":"bam-cell.nr-data.net","agent":""}</script></body>
+</html>

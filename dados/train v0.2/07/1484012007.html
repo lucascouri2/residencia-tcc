@@ -1,0 +1,3861 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <!--[if IEMobile]>
+    <meta http-equiv="cleartype" content="on"/>
+    <![endif]-->
+
+    
+<style>
+  /*
+  * Forma DJR Deck
+  */
+
+  @font-face {
+    font-family: 'Forma DJR Deck';
+    font-weight: normal;
+    font-style: normal;
+    src: url('/etc.clientlibs/vrtnieuws/clientlibs/clientlib-v2-site/resources/fonts/FormaDJRDeck-Regular.woff2') format('woff2'),
+    url('/etc.clientlibs/vrtnieuws/clientlibs/clientlib-v2-site/resources/fonts/FormaDJRDeck-Regular.woff') format('woff'),
+    url('/etc.clientlibs/vrtnieuws/clientlibs/clientlib-v2-site/resources/fonts/FormaDJRDeck-Regular.eot') format('embedded-opentype'),
+    url('/etc.clientlibs/vrtnieuws/clientlibs/clientlib-v2-site/resources/fonts/FormaDJRDeck-Regular.ttf') format('truetype');
+  }
+
+  @font-face {
+    font-family: 'Forma DJR Deck';
+    font-weight: 700;
+    font-style: normal;
+    src: url('/etc.clientlibs/vrtnieuws/clientlibs/clientlib-v2-site/resources/fonts/FormaDJRDeck-Bold.woff2') format('woff2'),
+    url('/etc.clientlibs/vrtnieuws/clientlibs/clientlib-v2-site/resources/fonts/FormaDJRDeck-Bold.woff') format('woff'),
+    url('/etc.clientlibs/vrtnieuws/clientlibs/clientlib-v2-site/resources/fonts/FormaDJRDeck-Bold.eot') format('embedded-opentype'),
+    url('/etc.clientlibs/vrtnieuws/clientlibs/clientlib-v2-site/resources/fonts/FormaDJRDeck-Bold.ttf') format('truetype');
+  }
+
+  /*
+  * Forma DJR Micro
+  */
+  @font-face {
+    font-family: 'Forma DJR Micro';
+    font-weight: 200;
+    font-style: normal;
+    src: url('/etc.clientlibs/vrtnieuws/clientlibs/clientlib-v2-site/resources/fonts/FormaDJRMicro-ExtraLight.woff2') format('woff2'),
+    url('/etc.clientlibs/vrtnieuws/clientlibs/clientlib-v2-site/resources/fonts/FormaDJRMicro-ExtraLight.woff') format('woff'),
+    url('/etc.clientlibs/vrtnieuws/clientlibs/clientlib-v2-site/resources/fonts/FormaDJRMicro-ExtraLight.eot') format('embedded-opentype'),
+    url('/etc.clientlibs/vrtnieuws/clientlibs/clientlib-v2-site/resources/fonts/FormaDJRMicro-ExtraLight.ttf') format('truetype');
+  }
+
+  @font-face {
+    font-family: 'Forma DJR Micro';
+    font-weight: 200;
+    font-style: italic;
+    src: url('/etc.clientlibs/vrtnieuws/clientlibs/clientlib-v2-site/resources/fonts/FormaDJRMicro-ExtraLightItalic.woff2') format('woff2'),
+    url('/etc.clientlibs/vrtnieuws/clientlibs/clientlib-v2-site/resources/fonts/FormaDJRMicro-ExtraLightItalic.woff') format('woff'),
+    url('/etc.clientlibs/vrtnieuws/clientlibs/clientlib-v2-site/resources/fonts/FormaDJRMicro-ExtraLightItalic.eot') format('embedded-opentype'),
+    url('/etc.clientlibs/vrtnieuws/clientlibs/clientlib-v2-site/resources/fonts/FormaDJRMicro-ExtraLightItalic.ttf') format('truetype');
+  }
+
+  @font-face {
+    font-family: 'Forma DJR Micro';
+    font-weight: 300;
+    font-style: normal;
+    src: url('/etc.clientlibs/vrtnieuws/clientlibs/clientlib-v2-site/resources/fonts/FormaDJRMicro-Light.woff2') format('woff2'),
+    url('/etc.clientlibs/vrtnieuws/clientlibs/clientlib-v2-site/resources/fonts/FormaDJRMicro-Light.woff') format('woff'),
+    url('/etc.clientlibs/vrtnieuws/clientlibs/clientlib-v2-site/resources/fonts/FormaDJRMicro-Light.eot') format('embedded-opentype'),
+    url('/etc.clientlibs/vrtnieuws/clientlibs/clientlib-v2-site/resources/fonts/FormaDJRMicro-Light.ttf') format('truetype');
+  }
+
+  @font-face {
+    font-family: 'Forma DJR Micro';
+    font-weight: 300;
+    font-style: italic;
+    src: url('/etc.clientlibs/vrtnieuws/clientlibs/clientlib-v2-site/resources/fonts/FormaDJRMicro-LightItalic.woff2') format('woff2'),
+    url('/etc.clientlibs/vrtnieuws/clientlibs/clientlib-v2-site/resources/fonts/FormaDJRMicro-LightItalic.woff') format('woff'),
+    url('/etc.clientlibs/vrtnieuws/clientlibs/clientlib-v2-site/resources/fonts/FormaDJRMicro-LightItalic.eot') format('embedded-opentype'),
+    url('/etc.clientlibs/vrtnieuws/clientlibs/clientlib-v2-site/resources/fonts/FormaDJRMicro-LightItalic.ttf') format('truetype');
+  }
+
+  @font-face {
+    font-family: 'Forma DJR Micro';
+    font-weight: normal;
+    font-style: normal;
+    src: url('/etc.clientlibs/vrtnieuws/clientlibs/clientlib-v2-site/resources/fonts/FormaDJRMicro-Regular.woff2') format('woff2'),
+    url('/etc.clientlibs/vrtnieuws/clientlibs/clientlib-v2-site/resources/fonts/FormaDJRMicro-Regular.woff') format('woff'),
+    url('/etc.clientlibs/vrtnieuws/clientlibs/clientlib-v2-site/resources/fonts/FormaDJRMicro-Regular.eot') format('embedded-opentype'),
+    url('/etc.clientlibs/vrtnieuws/clientlibs/clientlib-v2-site/resources/fonts/FormaDJRMicro-Regular.ttf') format('truetype');
+  }
+
+  @font-face {
+    font-family: 'Forma DJR Micro';
+    font-weight: normal;
+    font-style: italic;
+    src: url('/etc.clientlibs/vrtnieuws/clientlibs/clientlib-v2-site/resources/fonts/FormaDJRMicro-Italic.woff2') format('woff2'),
+    url('/etc.clientlibs/vrtnieuws/clientlibs/clientlib-v2-site/resources/fonts/FormaDJRMicro-Italic.woff') format('woff'),
+    url('/etc.clientlibs/vrtnieuws/clientlibs/clientlib-v2-site/resources/fonts/FormaDJRMicro-Italic.eot') format('embedded-opentype'),
+    url('/etc.clientlibs/vrtnieuws/clientlibs/clientlib-v2-site/resources/fonts/FormaDJRMicro-Italic.ttf') format('truetype');
+  }
+
+  @font-face {
+    font-family: 'Forma DJR Micro';
+    font-weight: 500;
+    font-style: normal;
+    src: url('/etc.clientlibs/vrtnieuws/clientlibs/clientlib-v2-site/resources/fonts/FormaDJRMicro-Medium.woff2') format('woff2'),
+    url('/etc.clientlibs/vrtnieuws/clientlibs/clientlib-v2-site/resources/fonts/FormaDJRMicro-Medium.woff') format('woff'),
+    url('/etc.clientlibs/vrtnieuws/clientlibs/clientlib-v2-site/resources/fonts/FormaDJRMicro-Medium.eot') format('embedded-opentype'),
+    url('/etc.clientlibs/vrtnieuws/clientlibs/clientlib-v2-site/resources/fonts/FormaDJRMicro-Medium.ttf') format('truetype');
+  }
+
+  @font-face {
+    font-family: 'Forma DJR Micro';
+    font-weight: 500;
+    font-style: italic;
+    src: url('/etc.clientlibs/vrtnieuws/clientlibs/clientlib-v2-site/resources/fonts/FormaDJRMicro-MediumItalic.woff2') format('woff2'),
+    url('/etc.clientlibs/vrtnieuws/clientlibs/clientlib-v2-site/resources/fonts/FormaDJRMicro-MediumItalic.woff') format('woff'),
+    url('/etc.clientlibs/vrtnieuws/clientlibs/clientlib-v2-site/resources/fonts/FormaDJRMicro-MediumItalic.eot') format('embedded-opentype'),
+    url('/etc.clientlibs/vrtnieuws/clientlibs/clientlib-v2-site/resources/fonts/FormaDJRMicro-MediumItalic.ttf') format('truetype');
+  }
+
+  @font-face {
+    font-family: 'Forma DJR Micro';
+    font-weight: 700;
+    font-style: normal;
+    src: url('/etc.clientlibs/vrtnieuws/clientlibs/clientlib-v2-site/resources/fonts/FormaDJRMicro-Bold.woff2') format('woff2'),
+    url('/etc.clientlibs/vrtnieuws/clientlibs/clientlib-v2-site/resources/fonts/FormaDJRMicro-Bold.woff') format('woff'),
+    url('/etc.clientlibs/vrtnieuws/clientlibs/clientlib-v2-site/resources/fonts/FormaDJRMicro-Bold.eot') format('embedded-opentype'),
+    url('/etc.clientlibs/vrtnieuws/clientlibs/clientlib-v2-site/resources/fonts/FormaDJRMicro-Bold.ttf') format('truetype');
+  }
+
+  @font-face {
+    font-family: 'Forma DJR Micro';
+    font-weight: 700;
+    font-style: italic;
+    src: url('/etc.clientlibs/vrtnieuws/clientlibs/clientlib-v2-site/resources/fonts/FormaDJRMicro-BoldItalic.woff2') format('woff2'),
+    url('/etc.clientlibs/vrtnieuws/clientlibs/clientlib-v2-site/resources/fonts/FormaDJRMicro-BoldItalic.woff') format('woff'),
+    url('/etc.clientlibs/vrtnieuws/clientlibs/clientlib-v2-site/resources/fonts/FormaDJRMicro-BoldItalic.eot') format('embedded-opentype'),
+    url('/etc.clientlibs/vrtnieuws/clientlibs/clientlib-v2-site/resources/fonts/FormaDJRMicro-BoldItalic.ttf') format('truetype');
+  }
+
+  @font-face {
+    font-family: 'Forma DJR Micro';
+    font-weight: 900;
+    font-style: normal;
+    src: url('/etc.clientlibs/vrtnieuws/clientlibs/clientlib-v2-site/resources/fonts/FormaDJRMicro-Black.woff2') format('woff2'),
+    url('/etc.clientlibs/vrtnieuws/clientlibs/clientlib-v2-site/resources/fonts/FormaDJRMicro-Black.woff') format('woff'),
+    url('/etc.clientlibs/vrtnieuws/clientlibs/clientlib-v2-site/resources/fonts/FormaDJRMicro-Black.eot') format('embedded-opentype'),
+    url('/etc.clientlibs/vrtnieuws/clientlibs/clientlib-v2-site/resources/fonts/FormaDJRMicro-Black.ttf') format('truetype');
+  }
+
+  @font-face {
+    font-family: 'Forma DJR Micro';
+    font-weight: 900;
+    font-style: italic;
+    src: url('/etc.clientlibs/vrtnieuws/clientlibs/clientlib-v2-site/resources/fonts/FormaDJRMicro-BlackItalic.woff2') format('woff2'),
+    url('/etc.clientlibs/vrtnieuws/clientlibs/clientlib-v2-site/resources/fonts/FormaDJRMicro-BlackItalic.woff') format('woff'),
+    url('/etc.clientlibs/vrtnieuws/clientlibs/clientlib-v2-site/resources/fonts/FormaDJRMicro-BlackItalic.eot') format('embedded-opentype'),
+    url('/etc.clientlibs/vrtnieuws/clientlibs/clientlib-v2-site/resources/fonts/FormaDJRMicro-BlackItalic.ttf') format('truetype');
+  }
+</style>
+
+    
+
+
+
+
+<title>More than 200 people detained as New Year’s celebrations in Brussels get out of hand | VRT NWS: news</title>
+
+<!-- canonical -->
+<link rel="canonical" href="https://www.vrt.be/vrtnws/en/2020/01/01/more-than-200-people-detained-as-new-years-celebrations-in-bruss/"/>
+<link rel="shortlink" type="text/html" href="https://vrtnws.be/p.oEPYNlnoa"/>
+
+<link rel="dns-prefetch" href="https://images.vrt.be"/>
+<link rel="dns-prefetch" href="https://search.vrt.be"/>
+
+<!-- default meta -->
+<meta name="description" content="Police in Brussels detained a total of 211 during the night. "/>
+<meta name="author" content="Flanders News"/>
+<meta name="language" content="en"/>
+<meta name="robots" content="index,follow"/>
+<meta name="google-site-verification" content="a67Wt5P3ORx6l8VVg1BKg6NRAs_HPHgPMP1hLk4KWGc"/>
+
+<!-- meta tags for mobile -->
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+<meta name="apple-mobile-web-app-title" content="VRT NWS: news"/>
+
+
+
+<link rel="apple-touch-icon" href="https://www.vrt.be/etc.clientlibs/vrtnieuws/clientlibs/clientlib-v2-site/resources/images/touch-icon-180.png"/>
+
+<!-- meta tags for icons -->
+<link rel="shortcut icon" href="https://www.vrt.be/etc.clientlibs/vrtnieuws/clientlibs/clientlib-v2-site/resources/images/favicon.ico"/>
+
+<link rel="icon" href="https://www.vrt.be/etc.clientlibs/vrtnieuws/clientlibs/clientlib-v2-site/resources/images/favicon-16.png" sizes="16x16" type="image/png"/>
+<link rel="icon" href="https://www.vrt.be/etc.clientlibs/vrtnieuws/clientlibs/clientlib-v2-site/resources/images/favicon-32.png" sizes="32x32" type="image/png"/>
+<link rel="icon" href="https://www.vrt.be/etc.clientlibs/vrtnieuws/clientlibs/clientlib-v2-site/resources/images/favicon-48.png" sizes="48x48" type="image/png"/>
+<link rel="icon" href="https://www.vrt.be/etc.clientlibs/vrtnieuws/clientlibs/clientlib-v2-site/resources/images/favicon-62.png" sizes="62x62" type="image/png"/>
+<link rel="icon" href="https://www.vrt.be/etc.clientlibs/vrtnieuws/clientlibs/clientlib-v2-site/resources/images/favicon-192.png" sizes="192x192" type="image/png"/>
+
+
+
+
+
+
+
+<!-- applinks -->
+<meta property="al:ios:url" content="vrtnws://WEB_DETAIL/aHR0cHM6Ly93d3cudnJ0LmJlL3ZydG53cy9lbi8yMDIwLzAxLzAxL21vcmUtdGhhbi0yMDAtcGVvcGxlLWRldGFpbmVkLWFzLW5ldy15ZWFycy1jZWxlYnJhdGlvbnMtaW4tYnJ1c3MuYXBwLw=="/>
+<meta property="al:ios:app_store_id" content="952769219"/>
+<meta property="al:ios:app_name" content="VRT NWS"/>
+
+<meta property="al:android:url" content="vrtnws://WEB_DETAIL/aHR0cHM6Ly93d3cudnJ0LmJlL3ZydG53cy9lbi8yMDIwLzAxLzAxL21vcmUtdGhhbi0yMDAtcGVvcGxlLWRldGFpbmVkLWFzLW5ldy15ZWFycy1jZWxlYnJhdGlvbnMtaW4tYnJ1c3MuYXBwLw=="/>
+<meta property="al:android:package" content="be.vrt.mobile.android.deredactie"/>
+<meta property="al:android:app_name" content="VRT NWS"/>
+
+
+<!-- og tags -->
+<meta property="fb:app_id" content="115011355200869"/>
+<meta property="fb:page_id" content="270994524621"/>
+<meta property="og:url" content="https://www.vrt.be/vrtnws/en/2020/01/01/more-than-200-people-detained-as-new-years-celebrations-in-bruss/"/>
+<meta property="og:type" content="article"/>
+<meta property="og:title" content="More than 200 people detained as New Year’s celebrations in Brussels get out of hand"/>
+<meta property="og:description" content="Police in Brussels detained a total of 211 during the night. "/>
+<meta property="og:site_name" content="vrtnws.be"/>
+<meta property="article:author" content="https://www.facebook.com/vrtnws/"/>
+<meta property="article:published_time" content="2020-01-01 11:43+01:00"/>
+
+<meta property="og:image" content="https://images.vrt.be/vrtnws_share/2020/01/01/fe551ea6-2c6d-11ea-abcc-02b7b76bf47f.jpg"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+
+<meta name="twitter:widgets:csp" content="on"/>
+
+<!-- twitter cards -->
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:site" content="@vrtnws"/>
+<meta name="twitter:creator" content="@vrtnws"/>
+<meta name="twitter:title" content="More than 200 people detained as New Year’s celebrations in Brussels get out of hand"/>
+<meta name="twitter:description" content="Police in Brussels detained a total of 211 during the night. "/>
+<meta property="twitter:image" content="https://images.vrt.be/vrtnws_share/2020/01/01/fe551ea6-2c6d-11ea-abcc-02b7b76bf47f.jpg"/>
+
+<!-- schema.org markup for Google+ -->
+<meta itemprop="name" content="More than 200 people detained as New Year’s celebrations in Brussels get out of hand"/>
+<meta itemprop="description" content="Police in Brussels detained a total of 211 during the night. "/>
+<meta itemprop="image" content="https://images.vrt.be/vrtnws_share/2020/01/01/fe551ea6-2c6d-11ea-abcc-02b7b76bf47f.jpg"/>
+
+
+  <script type="application/ld+json">
+      {"@context":"http://schema.org","@type":"NewsArticle","mainEntityOfPage":{"@type":"WebPage","@id":"https://vrtnws.be/p.oEPYNlnoa"},"headline":"More than 200 people detained as New Year’s celebrations in Brussels get out of hand","image":{"@type":"ImageObject","url":"//images.vrt.be/vrtnws_share/2020/01/01/fe551ea6-2c6d-11ea-abcc-02b7b76bf47f.jpg"},"datePublished":"2020-01-01 11:43+01:00","authors":[],"publisher":{"@type":"Organisation","name":"VRT NWS: news","logo":{"@type":"ImageObject","url":"https://www.vrt.be/etc.clientlibs/vrtnieuws/clientlibs/clientlib-v2-site/resources/images/logo-amp.png","width":600,"height":60}},"description":"Police in Brussels detained a total of 211 during the night. ","keywords":["Home News","Brussels"]}
+  </script>
+
+
+    <script>
+  digitalData = {"session":{},"page":{"page_url":"https://www.vrt.be/vrtnws/en/2020/01/01/more-than-200-people-detained-as-new-years-celebrations-in-bruss/","siteSection_1":"article","updateDate":"2020-01-01","page_uri":"/vrtnws/en/2020/01/01/more-than-200-people-detained-as-new-years-celebrations-in-bruss/","publishHour":"11","page_title":"More than 200 people detained as New Year’s celebrations in Brussels get out of hand","page_technology":"multiple page","brand_media":"vrt nws","channel":"web","brand_technology":"vrt nws","publishDate":"2020-01-01","article_video":"text","label":"home-news,brussels","page_id":"1577875246795","page_domain":"www.vrt.be","environment":"prod","article_wordCount":"291","category_primary":"binnenland","updateHour":"11","article_region":"brussel","page_language":"en"},"event":{},"user":{}};
+</script>
+
+    
+
+<script>
+  var vrtGlobals = {"vualto_version_script":"1.0.63","search_gateway_host_url":"https://search.vrt.be","token_gateway_url":"https://token.vrt.be","peach_key":"bevrt00000000034","profile_gateway_url":"https://profiel.vrt.be","peach_gateway_url":"https://peach.ebu.io/api/v1/bevrt/cfv004","vualto_url":"cdn.vuplay.co.uk/vrt/vuplay","login_gateway_url":"https://login.vrt.be","userdata_gateway_url":"https://video-user-data.vrt.be"}
+</script>
+
+<script>
+  var vrtnieuwsGlobals = {"vrtnieuws_search_minimum_query_length":"2","siteLanguage":"en","vrtnieuws_search_suggest_gateway_url":"https://search.vrt.be/suggest","vrtnieuws_search_gateway_url":"https://search.vrt.be/advancedSearch","vrtnieuws_search_delay":"1000","vrtnieuws_search_tags_gateway_url":"https://search.vrt.be/tagSearch","vrtnieuws_search_id_gateway_url":"https://search.vrt.be/idSearch","vrtnieuws_media_player_js":"https://player.vrt.be/vrtnws/js/main.js","vrtnws_api_endpoint":"https://vrtnws-api.vrt.be","notifications":{"firebaseConfig":{"storageBucket":"vrt-nieuws-app-prod.appspot.com","apiKey":"AIzaSyBg3uBEEnJs2UYxKXIlfvxEQ7YK_pATUxY","messagingSenderId":"563646386239","appId":"1:563646386239:web:c301038d84f4ca1893e88a","projectId":"vrt-nieuws-app-prod","databaseUrl":"https://vrt-nieuws-app-prod.firebaseio.com","authDomain":"vrt-nieuws-app-prod.firebaseapp.com"},"bffUrl":"https://bff-aem-vrtnieuws-app.vrtnieuws.be/bff"}}
+</script>
+
+
+
+
+  
+    
+<script type="text/javascript" src="/etc.clientlibs/vrtnieuws/clientlibs/clientlib-head.min.74f0c4df6d8992eb2b437513bc78816d.js"></script>
+
+
+
+
+  
+    
+<link rel="stylesheet" href="/etc.clientlibs/vrtnieuws/clientlibs/clientlib-vendor.min.d41d8cd98f00b204e9800998ecf8427e.css" type="text/css">
+<link rel="stylesheet" href="/etc.clientlibs/vrtnieuws/clientlibs/clientlib-all.min.bd14018183edb4cc9cc1edb07ec045c2.css" type="text/css">
+
+
+
+
+  
+
+
+
+
+
+
+
+  <script type="text/javascript" src="https://assets.adobedtm.com/launch-EN7e1ba6190f45421f81025c684b630cc1.min.js"></script>
+
+
+
+
+
+
+</head>
+
+
+
+<body class="page-article" data-skin="vrt_nieuws">
+    
+<ul class="js-a11y-skiplinks">
+    <li>
+        <button data-url="#main-content" class="hidden-shortcut">
+            Skip to content
+        </button>
+    </li>
+    
+    
+    
+</ul>
+
+
+    
+
+
+
+     
+    <input id="header-vrt-nav-toggle" class="vrt-nav-toggle" type="checkbox"/>
+    <header class="vrt-header js-site-header">
+        <div class="vrt-header__top">
+            <div class="container">
+                
+    <nav class="vrt-header__brands vrt-nav-brands vrt-nav">
+        <ul class="vrt-nav__items">
+            <li class="vrt-nav__item">
+                <a class="vrt-nav__link vrt-brand vrt-brand-sporza" id="vrt-brand-sporza" href="https://sporza.be/nl/?linkId=sporza%7Cvrtnws%7C%2Fen%2F2020%2F01%2F01%2Fmore-than-200-people-detained-as-new-years-celebrations-in-bruss%7Cheader" target="_blank" rel="noopener" title="Visit the Sporza website">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 104 26" focusable="false">
+    <path class="sporza__dot" d="M98.585 14.765c0 .732.251 1.349.754 1.851.502.503 1.125.754 1.868.754.73 0 1.343-.251 1.834-.754.491-.491.737-1.108.737-1.85 0-.743-.246-1.36-.737-1.852-.491-.491-1.103-.737-1.834-.737-.732 0-1.355.246-1.868.737-.503.503-.754 1.12-.754 1.851"/>
+    <path d="M15.555 1.202v24.424h4.129v-9.518c1.212.983 2.686 1.475 4.422 1.475 1.55 0 2.97-.377 4.26-1.13a8.24 8.24 0 0 0 3.08-3.048 8.222 8.222 0 0 0 1.113-4.177c0-2.315-.819-4.28-2.457-5.897-1.65-1.616-3.648-2.424-5.996-2.424-1.736 0-3.21.491-4.422 1.474v-1.18h-4.129zm4.129 8.223v-.377c.054-1.136.513-2.118 1.375-2.948.841-.83 1.857-1.245 3.047-1.245 1.202 0 2.234.431 3.096 1.294.863.863 1.295 1.89 1.295 3.08 0 1.19-.432 2.217-1.295 3.079-.873.874-1.905 1.31-3.096 1.31-1.19 0-2.206-.414-3.047-1.244-.873-.82-1.332-1.802-1.375-2.949zm14.636-.197c0 1.507.377 2.9 1.13 4.177a7.967 7.967 0 0 0 3.064 3.047 8.34 8.34 0 0 0 4.26 1.13 8.46 8.46 0 0 0 4.29-1.13 8.246 8.246 0 0 0 3.08-3.047 8.226 8.226 0 0 0 1.114-4.177 8.258 8.258 0 0 0-1.113-4.193 8.29 8.29 0 0 0-3.08-3.03c-1.3-.732-2.73-1.098-4.292-1.098-2.359 0-4.352.808-5.98 2.424-1.648 1.616-2.473 3.582-2.473 5.897zm4.046 0c0-1.18.437-2.205 1.31-3.08.863-.862 1.896-1.293 3.097-1.293 1.223 0 2.266.431 3.129 1.294.862.863 1.294 1.89 1.294 3.08 0 1.19-.432 2.217-1.294 3.079-.874.874-1.917 1.31-3.129 1.31-1.19 0-2.222-.436-3.096-1.31-.874-.874-1.31-1.9-1.31-3.08zm14.818-8.026V17.14h4.128V9.08c0-.568.043-1.07.13-1.507.077-.371.246-.759.508-1.163.24-.371.59-.666 1.049-.885.436-.207 1.032-.37 1.785-.491.776-.12 1.66-.18 2.654-.18V.907c-1.594 0-2.812.104-3.653.311a6.865 6.865 0 0 0-2.473 1.163v-1.18h-4.128zm12.425 12.04v3.899h12.794v-3.965h-7.356l7.356-8.207V1.202H65.609v3.964h7.388l-7.388 8.076zm13.966-4.014c0 1.507.377 2.9 1.131 4.177a7.965 7.965 0 0 0 3.063 3.047 8.34 8.34 0 0 0 4.26 1.13c1.736 0 3.21-.49 4.422-1.474v1.033h4.128V1.2H92.45v1.18C91.206 1.398 89.73.907 88.028.907c-2.359 0-4.352.808-5.979 2.424-1.65 1.616-2.474 3.582-2.474 5.897zm4.047 0c0-1.18.436-2.205 1.31-3.08.863-.862 1.895-1.293 3.096-1.293 1.223 0 2.266.431 3.129 1.294s1.294 1.89 1.294 3.08c0 1.19-.431 2.217-1.294 3.079-.874.874-1.917 1.31-3.129 1.31-1.19 0-2.222-.436-3.096-1.31-.874-.874-1.31-1.9-1.31-3.08zM2.209 12.091L0 15.168c1.98 1.701 4.19 2.422 6.89 2.422 3.977 0 6.677-1.768 6.677-5.074 0-2.733-1.653-4.386-6.088-5.171-2.504-.442-3.028-.802-3.028-1.62 0-.573.655-1.048 2.308-1.048 1.358 0 2.652.458 3.912 1.342l2.11-2.962C11.097 1.682 9.052.929 6.71.929 2.995.93.425 2.861.425 6.02c0 2.848 1.8 4.255 5.548 4.844 2.717.426 3.552.884 3.552 1.719 0 .9-.965 1.243-2.537 1.243-1.686 0-3.387-.654-4.779-1.734"/>
+</svg>
+
+                </a>
+            </li>
+            <li class="vrt-nav__item">
+                <a class="vrt-nav__link vrt-brand vrt-brand-vrtnu" id="vrt-brand-vrtnu" href="https://www.vrt.be/vrtnu/?linkId=vrtnu%7Cvrtnws%7C%2Fen%2F2020%2F01%2F01%2Fmore-than-200-people-detained-as-new-years-celebrations-in-bruss%7Cheader" target="_blank" rel="noopener" title="Visit the VRT NU website">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 213.4 76" focusable="false">
+    <path class="vrt-nu__letter" d="M152.4,45.5c0,16.9,13.7,30.5,30.5,30.5c16.9,0,30.5-13.7,30.5-30.5V2h-16.8v43.5c0,7.6-6.2,13.7-13.7,13.7
+    c-7.6,0-13.7-6.2-13.7-13.7V2h-16.8V45.5z"></path>
+
+    <path d="M191.3,67.6c0,4.6-3.8,8.4-8.4,8.4c-4.6,0-8.4-3.8-8.4-8.4s3.8-8.4,8.4-8.4C187.5,59.2,191.3,63,191.3,67.6
+     M37,76C16.6,76,0,59.4,0,39S16.6,2,37,2h37v37C74,59.4,57.4,76,37,76"></path>
+
+    <g class="vrt-nu__vrt">
+        <path d="M55.7,49c4,0,7.1-3.3,7.1-7.3v-0.1c0-0.2-0.2-0.4-0.5-0.4h-3.6c-0.3,0-0.6,0.2-0.7,0.6c-0.1,1.5-1,2.4-2.3,2.4
+      c-1.4,0-2.3-1-2.3-2.7v-7.9h6.4c0.3,0,0.5-0.2,0.5-0.5v-3.4c0-0.3-0.2-0.5-0.5-0.5h-6.4v-4.9c0-0.3-0.2-0.5-0.5-0.5h-4.2
+      c-0.3,0-0.5,0.2-0.5,0.5v16.8C48.4,45.9,51.4,49,55.7,49"></path>
+        <path d="M38.3,46.9v-6.4c0.1-4,2.9-7.1,6.9-7h0.2c0.3,0,0.5-0.2,0.5-0.5v-3.4c0-0.3-0.2-0.5-0.5-0.5
+      c-2.5-0.2-5.2,0.2-7.3,2.8v-2.2c0-0.3-0.2-0.5-0.5-0.5h-3.9c-0.3,0-0.5,0.2-0.5,0.5v18.5c0,0.3,0.2,0.5,0.5,0.5h4.1
+      c0.3,0,0.5-0.2,0.5-0.5C38.3,48.2,38.3,46.9,38.3,46.9z"></path>
+        <path d="M30.2,29.3H26c-0.2,0-0.4,0.1-0.5,0.4l-4,12.7h-0.1l-4.1-12.7c-0.1-0.2-0.3-0.4-0.5-0.4h-4.2
+      c-0.3,0-0.6,0.3-0.5,0.7l6.3,18.5c0.1,0.2,0.3,0.4,0.5,0.4h4.9c0.2,0,0.4-0.1,0.5-0.4L30.6,30C30.8,29.6,30.5,29.3,30.2,29.3"></path>
+    </g>
+
+    <path class="vrt-nu__letter" d="M146,30.5C146,13.7,132.3,0,115.5,0S85,13.7,85,30.5V74h16.8V30.5c0-7.6,6.2-13.7,13.7-13.7
+    c7.6,0,13.7,6.2,13.7,13.7V74H146V30.5z"></path>
+</svg>
+
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+
+                
+    <nav class="vrt-header__widgets vrt-nav-widgets vrt-nav">
+        <ul class="vrt-nav__items">
+            <li class="vrt-nav__item">
+                <span class="vrt-nav__link-icon vrt-nav__link vrt-widget-weather vrt-widget-weather--night js-weather-widget" id="vrt-widget-weather">
+                    <span class="vrt-nav__icon js-weather-widget-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" focusable="false">
+    <g class="helder">
+        <path d="M30 16c0 7.732-6.268 14-14 14S2 23.732 2 16 8.268 2 16 2s14 6.268 14 14z" fill="#ffe240"/>
+    </g>
+    <g class="helder_wolk">
+        <path d="M17.326 10.663a8.663 8.663 0 11-17.326 0 8.663 8.663 0 0117.326 0z" fill="#ffe240"/>
+        <path d="M25.333 16.667a6.667 6.667 0 10-13.333 0A6.667 6.667 0 0012 30h13.333a6.667 6.667 0 000-13.333z" fill="#f1f2f4"/>
+    </g>
+    <g class="helder_wolk_grijs">
+        <path d="M17.326 10.663a8.663 8.663 0 11-17.326 0 8.663 8.663 0 0117.326 0z" fill="#ffe240"/>
+        <path d="M25.333 16.667a6.667 6.667 0 10-13.333 0A6.667 6.667 0 0012 30h13.333a6.667 6.667 0 000-13.333z" fill="#9da5b3"/>
+    </g>
+    <g class="onweer">
+        <path d="M26 7.222C26 3.786 23.314 1 20 1s-6 2.786-6 6.222c-3.314 0-6 2.786-6 6.222 0 3.437 2.686 6.223 6 6.223h12c3.314 0 6-2.786 6-6.223 0-3.436-2.686-6.222-6-6.222z" fill="#f1f2f4"/>
+        <path d="M18 9.889c0-3.437-2.686-6.222-6-6.222S6 6.452 6 9.889c-3.314 0-6 2.786-6 6.222 0 3.437 2.686 6.222 6 6.222h12c3.314 0 6-2.785 6-6.222 0-3.436-2.686-6.222-6-6.222z" fill="#9da5b3"/>
+        <path d="M5.523 25.964l.4-2.4H4.13l-.4 2.4h1.793zm13.282-2.4h1.793l-.4 2.4h-1.793l.4-2.4zm-12.583 3.32h1.794l-.4 2.4H5.822l.4-2.4z" fill="#2396cd"/>
+        <path d="M13.833 24.652l1.5-2.319H10l.167 4H11l.167 4L15 24.667z" fill="#ffe232"/>
+    </g>
+    <g class="mist_slip">
+        <path d="M16 3.7L2 28.753h28L16 3.7zm-2.1 15.774v-6.495c0-1.155.94-2.088 2.1-2.088 1.16 0 2.1.933 2.1 2.088v6.495h-4.2zm4.2 2.32v4.175h-4.2v-4.175h4.2z" fill="#ff4060"/>
+    </g>
+    <g class="mist">
+        <path d="M2 12.975h25.937v-2.767H2v2.767zm0 8.417h25.937v-2.767H2v2.767z" fill="#9da5b3"/>
+        <path d="M4.063 8.767H30V6H4.063v2.767zm0 8.416H30v-2.766H4.063v2.766zM30 25.6H4.063v-2.767H30V25.6z" fill="#e3e5e9"/>
+    </g>
+    <g class="wolk">
+        <path d="M26.333 8.778C26.333 5.587 23.796 3 20.667 3 17.537 3 15 5.587 15 8.778c-3.13 0-5.667 2.587-5.667 5.777 0 3.192 2.537 5.778 5.667 5.778h11.333c3.13 0 5.667-2.586 5.667-5.778 0-3.19-2.537-5.777-5.667-5.777z" fill="#f1f2f4"/>
+        <path d="M20 16.333a6.667 6.667 0 10-13.333 0 6.667 6.667 0 000 13.334H20a6.667 6.667 0 000-13.334z" fill="#9da5b3"/>
+    </g>
+    <g class="regen">
+        <path d="M26 7.222C26 3.786 23.314 1 20 1s-6 2.786-6 6.222c-3.314 0-6 2.786-6 6.222 0 3.437 2.686 6.223 6 6.223h12c3.314 0 6-2.786 6-6.223 0-3.436-2.686-6.222-6-6.222z" fill="#f1f2f4"/>
+        <path d="M18 9.889c0-3.437-2.686-6.222-6-6.222S6 6.452 6 9.889c-3.314 0-6 2.786-6 6.222 0 3.437 2.686 6.222 6 6.222h12c3.314 0 6-2.785 6-6.222 0-3.436-2.686-6.222-6-6.222z" fill="#9da5b3"/>
+        <path d="M2.919 25.964h1.809l.403-2.42h-1.81l-.402 2.42zm18.704-2.42h-1.809l-.403 2.42h1.81l.402-2.42zM4.87 26.893h1.809l-.403 2.42h-1.81l.404-2.42zm12.932 0h1.81l-.404 2.42h-1.81l.404-2.42zm-2.314 0h-1.81l-.402 2.42h1.809l.403-2.42zm-6.495 0h1.809l-.403 2.42h-1.81l.404-2.42zm8.507-3.35l-.403 2.421h-1.809l.403-2.42h1.81zm-4.526 2.421l.403-2.42h-1.809l-.403 2.42h1.809zm-4.123 0H7.04l.404-2.42h1.81l-.404 2.42z" fill="#2396cd"/>
+    </g>
+    <g class="helder_nacht">
+        <path d="M14.846 20.172l-1.333-2.702-1.334 2.702-2.982.433 2.158 2.104-.51 2.97 2.668-1.402 2.667 1.402-.51-2.97 2.159-2.104-2.983-.433zm-3.977-9.7l-3.755-.545-1.68-3.402-1.679 3.402L0 10.473l2.717 2.649-.641 3.74 3.359-1.766 3.359 1.766-.642-3.74 2.717-2.65zm17.517 4.303l.853 4.975-4.468-2.349-4.468 2.35.854-4.976-3.615-3.523 4.995-.726L24.771 6l2.234 4.526 4.995.726-3.614 3.523z" fill="#ffe232"/>
+    </g>
+    <g class="helder_wolk_nacht">
+        <path d="M32 8.179l-3.021-.44-1.351-2.737-1.351 2.738-3.021.439 2.186 2.13-.516 3.01 2.702-1.42 2.702 1.42-.516-3.01L32 8.18zM2.474 15.32l.765-4.458L0 7.706l4.476-.65L6.477 3 8.48 7.056l4.476.65-3.239 3.157.765 4.458-4.004-2.105-4.003 2.105z" fill="#ffe232"/>
+        <path d="M24.333 17.222C24.333 13.786 21.498 11 18 11s-6.333 2.786-6.333 6.222c-3.498 0-6.334 2.786-6.334 6.222 0 3.437 2.836 6.223 6.334 6.223h12.666c3.498 0 6.334-2.786 6.334-6.223 0-3.436-2.836-6.222-6.334-6.222z" fill="#f1f2f4"/>
+    </g>
+
+    <g class="helder_wolk_grijs_nacht">
+        <path d="M32 8.179l-3.021-.44-1.351-2.737-1.351 2.738-3.021.439 2.186 2.13-.516 3.01 2.702-1.42 2.702 1.42-.516-3.01L32 8.18zM2.474 15.32l.765-4.458L0 7.706l4.476-.65L6.477 3 8.48 7.056l4.476.65-3.239 3.157.765 4.458-4.004-2.105-4.003 2.105z" fill="#ffe232"/>
+        <path d="M24.333 17.222C24.333 13.786 21.498 11 18 11s-6.333 2.786-6.333 6.222c-3.498 0-6.334 2.786-6.334 6.222 0 3.437 2.836 6.223 6.334 6.223h12.666c3.498 0 6.334-2.786 6.334-6.223 0-3.436-2.836-6.222-6.334-6.222z" fill="#9da5b3"/>
+    </g>
+    <g class="sneeuw">
+        <path d="M26 8.222C26 4.786 23.314 2 20 2s-6 2.786-6 6.222c-3.314 0-6 2.786-6 6.222 0 3.437 2.686 6.223 6 6.223h12c3.314 0 6-2.786 6-6.223 0-3.436-2.686-6.222-6-6.222z" fill="#f1f2f4"/>
+        <path d="M18 10.889c0-3.437-2.686-6.222-6-6.222s-6 2.785-6 6.222c-3.314 0-6 2.786-6 6.222 0 3.437 2.686 6.222 6 6.222h12c3.314 0 6-2.785 6-6.222 0-3.436-2.686-6.222-6-6.222zM6.39 25.2l-1.135.655v-1.311H3.763v1.311L2.627 25.2l-.746 1.292 1.136.656-1.136.656.746 1.291 1.136-.655v1.311h1.492V28.44l1.135.655.746-1.291L6 27.147l1.136-.656L6.39 25.2zm15.677 0l-1.136.655v-1.311h-1.492v1.311l-1.136-.656-.746 1.292 1.136.656-1.136.656.746 1.291 1.136-.655v1.311h1.492V28.44l1.136.655.746-1.291-1.136-.656 1.136-.656-.746-1.292zm-8.226 1.947l1.136-.656-.746-1.292-1.135.656v-1.311h-1.492v1.311l-1.136-.656-.746 1.292 1.136.656-1.136.656.746 1.291 1.136-.655v1.311h1.492V28.44l1.135.655.746-1.291-1.136-.656z" fill="#9da5b3"/>
+    </g>
+    <g class="hagel">
+        <path d="M26 6.222C26 2.786 23.314 0 20 0s-6 2.786-6 6.222c-3.314 0-6 2.786-6 6.222 0 3.437 2.686 6.223 6 6.223h12c3.314 0 6-2.786 6-6.223 0-3.436-2.686-6.222-6-6.222z" fill="#f1f2f4"/>
+        <path d="M18 8.889c0-3.437-2.686-6.222-6-6.222S6 5.452 6 8.889c-3.314 0-6 2.786-6 6.222 0 3.437 2.686 6.222 6 6.222h12c3.314 0 6-2.785 6-6.222 0-3.436-2.686-6.222-6-6.222zM6.67 24.035c0 .838-.681 1.52-1.52 1.52-.837 0-1.52-.682-1.52-1.52s.683-1.52 1.52-1.52c.839 0 1.52.682 1.52 1.52zm5.108 3.349c0 .838-.681 1.52-1.52 1.52-.837 0-1.52-.682-1.52-1.52 0-.839.683-1.52 1.52-1.52.839 0 1.52.681 1.52 1.52zm7.613-1.83c.838 0 1.52-.681 1.52-1.52 0-.837-.682-1.52-1.52-1.52s-1.52.683-1.52 1.52c0 .839.682 1.52 1.52 1.52z" fill="#9da5b3"/>
+    </g>
+</svg>
+</span>
+                    <span class="vrt-nav__label js-weather-widget-label">&hellip; &deg;C</span>
+                    <span class="offscreen js-weather-widget-a11y"></span>
+                </span>
+            </li>
+            <li class="vrt-nav__item">
+                <span class="vrt-nav__link-icon vrt-nav__link vrt-widget-traffic js-traffic-widget" id="vrt-widget-traffic">
+                    <span class="vrt-nav__icon js-traffic-widget-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" focusable="false" class="icon icon-car">
+    <path class="fill-element" d="M26.57 20.82a2.22 2.22 0 01-2.24-2.2c0-1.2 1-2.19 2.24-2.19 1.24 0 2.25.99 2.25 2.2 0 1.21-1 2.2-2.25 2.2M8.42 13.25L9.8 7.73h12.3l1.38 5.53H8.42zM5.5 20.82c-.9 0-1.73-.53-2.08-1.35a2.16 2.16 0 01.49-2.4c.64-.62 1.6-.81 2.45-.47a2.2 2.2 0 011.38 2.03c0 1.21-1 2.2-2.24 2.2m22.13-7.46l-1.49-6.15A4.6 4.6 0 0021.71 4H10.2a4.6 4.6 0 00-4.42 3.22L4.27 13.4A5.38 5.38 0 000 18.6v5.37h2.74v1.8a2.72 2.72 0 002.75 2.6c1.48 0 2.7-1.16 2.74-2.6v-1.79h15.54v1.8a2.72 2.72 0 002.74 2.6c1.49 0 2.7-1.16 2.75-2.6v-1.8H32v-5.37a5.39 5.39 0 00-4.37-5.26"/>
+</svg>
+</span>
+                    <span class="vrt-nav__label js-traffic-widget-label">
+                        &hellip; km
+                        <span class="hide-for-small-only">traffic jam</span>
+                    </span>
+                    <span class="offscreen js-traffic-widget-a11y"></span>
+                </span>
+            </li>
+            
+            <li class="vrt-nav__item">
+                <div class="vrt-listbox vrt-listbox--icon js-listbox">
+                    <input type="checkbox" class="vrt-listbox__checkbox js-listbox-input" id="vrt-language-toggle"/>
+                    <span class="vrt-nav__icon"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-language" viewBox="0 0 32 32">
+    <path fill-rule="evenodd" d="M0 16C0 7.18 7.18 0 16 0s16 7.18 16 16-7.18 16-16 16S0 24.82 0 16zm20.12-9.88c-.87-1.74-1.88-2.85-2.89-3.35v4.61h3.42c-.17-.44-.34-.87-.53-1.26zm6.34 1.26c-1.32-1.6-3-2.87-4.92-3.73a14.19 14.19 0 011.73 3.73h3.2zM3.92 9.85h4.12c-.34 1.53-.54 3.19-.62 4.92H2.5c.15-1.76.66-3.42 1.42-4.92zm24.16 0h-4.12c.34 1.53.54 3.19.62 4.92h4.92a13.38 13.38 0 00-1.42-4.92zM2.54 17.23h4.88c.07 1.74.28 3.39.62 4.92H3.92a13.34 13.34 0 01-1.38-4.92zm26.92 0h-4.88a28.16 28.16 0 01-.62 4.92h4.12c.77-1.5 1.22-3.15 1.38-4.92zM5.54 24.62h3.2a14.07 14.07 0 001.73 3.73 13.61 13.61 0 01-4.93-3.73zm9.23 0h-3.42c.17.44.34.87.53 1.26.87 1.75 1.88 2.85 2.89 3.35v-4.61zm2.46 0h3.42c-.17.44-.34.87-.53 1.26-.87 1.75-1.88 2.85-2.89 3.35v-4.61zm6.04 0h3.2c-1.33 1.59-3.02 2.87-4.93 3.73.27-.43.53-.87.77-1.35.36-.74.67-1.54.96-2.38zm-6.04-7.39h4.89a25.6 25.6 0 01-.7 4.92h-4.19v-4.92zm-2.46 0H9.88c.08 1.77.33 3.42.7 4.92h4.19v-4.92zm2.46-7.38h4.2a26 26 0 01.69 4.92h-4.89V9.85zm-2.46 0h-4.2c-.36 1.5-.6 3.16-.69 4.92h4.89V9.85zm-4.3-6.2c-.28.43-.54.87-.78 1.35a19.6 19.6 0 00-.96 2.38h-3.2c1.33-1.6 3.02-2.87 4.93-3.73zm4.3-.88v4.61h-3.42c.17-.44.34-.87.53-1.26.87-1.74 1.88-2.85 2.89-3.35z"/>
+</svg>
+</span>
+                    <label class="vrt-listbox__label vrt-nav__label js-listbox-label" for="vrt-language-toggle" id="vrt-widget-language-switch" tabindex="0">
+                        English
+                        <span class="vrt-listbox__icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" focusable="false">
+    <path d="M28.267 6L16 18.267 3.733 6 0 9.733l16 16 16-16z"/>
+</svg>
+</span>
+                    </label>
+                    <ul class="vrt-listbox__list vrt-listbox__list--align-right js-listbox-list" id="vrt-language-toggle-list">
+                        <li class="vrt-listbox__item">
+                            <a class="vrt-listbox__link js-listbox-item" href="/vrtnws/nl/">
+                                <span aria-hidden="true">Nederlands</span>
+                                <span class="offscreen">
+                                    Naar de Nederlandstalige site
+                                </span>
+                            </a>
+                        </li>
+                        <li class="vrt-listbox__item">
+                            <a class="vrt-listbox__link js-listbox-item vrt-listbox__link--active" href="/vrtnws/en/">
+                                <span aria-hidden="true">English</span>
+                                <span class="offscreen">
+                                    Visit flandersnews.be, the English news website of VRT News
+                                </span>
+                            </a>
+                        </li>
+                        <li class="vrt-listbox__item">
+                            <a class="vrt-listbox__link js-listbox-item" href="/vrtnws/fr/">
+                                <span aria-hidden="true">Français</span>
+                                <span class="offscreen">
+                                    Allez à Flandreinfo.be
+                                </span>
+                            </a>
+                        </li>
+                        <li class="vrt-listbox__item">
+                            <a class="vrt-listbox__link js-listbox-item" href="/vrtnws/de/">
+                                <span aria-hidden="true">Deutsch</span>
+                                <span class="offscreen">
+                                    Zur deutschsprachigen Webseite
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            
+        </ul>
+    </nav>
+
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="vrt-header__wrapper">
+                <a class="vrt-header__brand js-site-header-home-link" href="/vrtnws/en/" title="Visit the flandersnews.be homepage">
+                    <span class="vrt-header__logo">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 26" focusable="false">
+    <title>VRT NWS: news</title>
+    <path class="logo-badge" fill="#5dfc71" d="M12.292 25.25C5.503 25.25 0 19.745 0 12.956 0 6.167 5.503.664 12.292.664h12.293v12.293a12.292 12.292 0 01-12.293 12.292"/>
+    <path class="logo-badge-text" fill="#16284a" d="M18.508 16.306a2.372 2.372 0 002.362-2.432v-.033a.15.15 0 00-.152-.147h-1.193a.216.216 0 00-.223.21.774.774 0 01-.767.807c-.455 0-.77-.332-.77-.904v-.063-2.575h2.125a.15.15 0 00.15-.15V9.89a.15.15 0 00-.15-.15h-2.126V8.124a.15.15 0 00-.156-.15h-1.379a.153.153 0 00-.153.153v5.572c0 1.561.997 2.608 2.429 2.608M12.72 15.615v-2.127c.047-1.329.964-2.375 2.28-2.325h.066a.166.166 0 00.173-.166V9.864a.166.166 0 00-.156-.166c-.82-.057-1.714.063-2.425.933v-.724a.166.166 0 00-.166-.17h-1.286a.166.166 0 00-.166.17v6.133c0 .092.074.166.166.166h1.349a.166.166 0 00.166-.166v-.425zM10.03 9.74H8.62a.166.166 0 00-.16.12l-1.328 4.226h-.027L5.757 9.86a.17.17 0 00-.159-.12H4.186a.166.166 0 00-.16.22l2.11 6.133c.022.07.087.117.16.116h1.62a.166.166 0 00.16-.116l2.113-6.126a.17.17 0 00-.16-.22"/>
+    <path class="logo-text" fill="#16284a" d="M94.585 7.412a.332.332 0 01-.333-.309c-.239-2.056-2.235-3.176-5.132-3.176-2.356 0-4.612.887-4.612 2.904 0 6.182 15.3-.718 15.3 10.93 0 0 0 7.515-10.453 7.515-9.348 0-10.083-6.123-10.166-8.126 0-.184.15-.333.333-.333h4.299c.183 0 .332.149.332.333.249 3.322 2.9 4.225 5.515 4.225 2.614 0 5.192-.996 5.192-3.485 0-6.312-15.299.31-15.299-10.893 0-3.416 3.21-6.977 9.904-6.977 6.432 0 9.515 3.216 9.724 7.06a.332.332 0 01-.332.352l-4.272-.02zM79.648.684h-4.02a.332.332 0 00-.332.263l-4 18.143L67.64.95a.332.332 0 00-.332-.27h-5.884a.332.332 0 00-.332.27l-3.654 18.14L53.422.944A.332.332 0 0053.09.68h-4.014a.333.333 0 00-.332.412l5.512 23.24c.036.152.175.26.332.255h5.748c.16.003.3-.109.332-.266l3.7-18.073 3.702 18.073a.332.332 0 00.332.266h5.748a.332.332 0 00.332-.256l5.491-23.239a.332.332 0 00-.325-.409zM32.532 7.787h-.067v16.465a.332.332 0 01-.332.333h-3.947a.332.332 0 01-.332-.333V1.017c0-.184.149-.333.332-.333h5.243c.12 0 .23.065.289.17l9.365 16.395h.067V1.017c0-.184.148-.333.332-.333h3.943c.184 0 .332.15.332.333v23.235a.332.332 0 01-.332.333h-5.153a.332.332 0 01-.292-.17L32.532 7.787z"/>
+</svg>
+
+                    </span>
+                    <span class="vrt-header__brand-name">
+                        <strong>flandersnews</strong>.be
+                    </span>
+                </a>
+
+                
+    <nav class="vrt-nav vrt-nav-primary">
+        <ul class="vrt-nav__items">
+            
+    <li class="vrt-nav__item">
+        <input id="headlines-sub-nav-toggle" class="vrt-sub-nav-toggle" type="checkbox"/>
+
+        <div class="vrt-nav__item-inner">
+            <a id="vrt-nav-link-headlines" class="vrt-nav__link vrt-nav__link-icon" href="https://www.vrt.be/vrtnws/en/">
+                <span class="vrt-nav__icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" focusable="false">
+    <path class="fill-element" fill-rule="evenodd" clip-rule="evenodd" d="M4.00024 4.00004H28.0002V11H4.00024V4.00004ZM4.00024 13H15.0002V28H4.00024V13ZM28.0002 13H17.0002V18H28.0002V13ZM17.0002 20H28.0002V23H17.0002V20ZM28.0002 25H17.0002V28H28.0002V25Z"/>
+</svg>
+</span>
+                <span class="vrt-nav__label">Headlines</span>
+            </a>
+            <label class="vrt-sub-nav-toggle-btn" for="headlines-sub-nav-toggle">
+                <span class="vrt-sub-nav-toggle-btn__chevron"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" focusable="false">
+    <path d="M28.267 6L16 18.267 3.733 6 0 9.733l16 16 16-16z"/>
+</svg>
+</span>
+            </label>
+        </div>
+
+        
+    <ul class="vrt-nav__items vrt-sub-nav js-vrt-sub-nav">
+        <li class="vrt-nav__item">
+            <a class="vrt-nav__link" href="https://www.vrt.be/vrtnws/en/categories/home-news/">
+                Home News
+            </a>
+        </li>
+
+        
+    
+        <li class="vrt-nav__item">
+            <a class="vrt-nav__link" href="https://www.vrt.be/vrtnws/en/categories/politics/">
+                Politics
+            </a>
+        </li>
+
+        
+    
+        <li class="vrt-nav__item">
+            <a class="vrt-nav__link" href="https://www.vrt.be/vrtnws/en/categories/culture/">
+                Culture
+            </a>
+        </li>
+
+        
+    
+        <li class="vrt-nav__item">
+            <a class="vrt-nav__link" href="https://www.vrt.be/vrtnws/en/categories/economics/">
+                Economics
+            </a>
+        </li>
+
+        
+    
+        <li class="vrt-nav__item">
+            <a class="vrt-nav__link" href="https://www.vrt.be/vrtnws/en/categories/sport/">
+                Sport
+            </a>
+        </li>
+
+        
+    
+        <li class="vrt-nav__item">
+            <a class="vrt-nav__link" href="https://www.vrt.be/vrtnws/en/categories/brussels/">
+                Brussels
+            </a>
+        </li>
+
+        
+    
+        <li class="vrt-nav__item">
+            <a class="vrt-nav__link" href="https://www.vrt.be/vrtnws/en/categories/antwerp/">
+                Antwerp
+            </a>
+        </li>
+
+        
+    
+        <li class="vrt-nav__item">
+            <a class="vrt-nav__link" href="https://www.vrt.be/vrtnws/en/categories/ghent/">
+                Ghent
+            </a>
+        </li>
+
+        
+    <li class="vrt-nav__item vrt-nav__item--more hide">
+        <div class="vrt-nav-more js-listbox">
+            <input class="vrt-nav-more__toggle js-listbox-input" id="show-more-toggle" type="checkbox"/>
+            <label class="vrt-nav-more__label js-listbox-label" for="show-more-toggle" tabindex="0">
+                <span>More</span>
+                <span class="vrt-nav-more__icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" focusable="false">
+    <path d="M28.267 6L16 18.267 3.733 6 0 9.733l16 16 16-16z"/>
+</svg>
+</span>
+            </label>
+            <ul class="vrt-nav__items vrt-sub-nav-more js-vrt-sub-nav-more js-listbox-list"></ul>
+        </div>
+    </li>
+
+    </ul>
+
+    </li>
+
+
+            
+    
+
+
+            
+    <li class="vrt-nav__item">
+        
+
+        <div class="vrt-nav__item-inner">
+            <a id="vrt-nav-link-video" class="vrt-nav__link vrt-nav__link-icon" href="https://www.vrt.be/vrtnws/en/categories/video/">
+                <span class="vrt-nav__icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" focusable="false">
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M30 5.99995H2V26H30V5.99995ZM13.6668 20.0415L20.6668 16.0001L13.6668 11.9586V20.0415Z"/>
+</svg>
+</span>
+                <span class="vrt-nav__label">Watch</span>
+            </a>
+            
+        </div>
+
+        
+    </li>
+
+
+            
+    
+
+
+            
+    
+
+        </ul>
+
+        
+    <nav class="vrt-header__widgets vrt-nav-widgets vrt-nav">
+        <ul class="vrt-nav__items">
+            <li class="vrt-nav__item">
+                <span class="vrt-nav__link-icon vrt-nav__link vrt-widget-weather vrt-widget-weather--night js-weather-widget" id="vrt-widget-weather">
+                    <span class="vrt-nav__icon js-weather-widget-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" focusable="false">
+    <g class="helder">
+        <path d="M30 16c0 7.732-6.268 14-14 14S2 23.732 2 16 8.268 2 16 2s14 6.268 14 14z" fill="#ffe240"/>
+    </g>
+    <g class="helder_wolk">
+        <path d="M17.326 10.663a8.663 8.663 0 11-17.326 0 8.663 8.663 0 0117.326 0z" fill="#ffe240"/>
+        <path d="M25.333 16.667a6.667 6.667 0 10-13.333 0A6.667 6.667 0 0012 30h13.333a6.667 6.667 0 000-13.333z" fill="#f1f2f4"/>
+    </g>
+    <g class="helder_wolk_grijs">
+        <path d="M17.326 10.663a8.663 8.663 0 11-17.326 0 8.663 8.663 0 0117.326 0z" fill="#ffe240"/>
+        <path d="M25.333 16.667a6.667 6.667 0 10-13.333 0A6.667 6.667 0 0012 30h13.333a6.667 6.667 0 000-13.333z" fill="#9da5b3"/>
+    </g>
+    <g class="onweer">
+        <path d="M26 7.222C26 3.786 23.314 1 20 1s-6 2.786-6 6.222c-3.314 0-6 2.786-6 6.222 0 3.437 2.686 6.223 6 6.223h12c3.314 0 6-2.786 6-6.223 0-3.436-2.686-6.222-6-6.222z" fill="#f1f2f4"/>
+        <path d="M18 9.889c0-3.437-2.686-6.222-6-6.222S6 6.452 6 9.889c-3.314 0-6 2.786-6 6.222 0 3.437 2.686 6.222 6 6.222h12c3.314 0 6-2.785 6-6.222 0-3.436-2.686-6.222-6-6.222z" fill="#9da5b3"/>
+        <path d="M5.523 25.964l.4-2.4H4.13l-.4 2.4h1.793zm13.282-2.4h1.793l-.4 2.4h-1.793l.4-2.4zm-12.583 3.32h1.794l-.4 2.4H5.822l.4-2.4z" fill="#2396cd"/>
+        <path d="M13.833 24.652l1.5-2.319H10l.167 4H11l.167 4L15 24.667z" fill="#ffe232"/>
+    </g>
+    <g class="mist_slip">
+        <path d="M16 3.7L2 28.753h28L16 3.7zm-2.1 15.774v-6.495c0-1.155.94-2.088 2.1-2.088 1.16 0 2.1.933 2.1 2.088v6.495h-4.2zm4.2 2.32v4.175h-4.2v-4.175h4.2z" fill="#ff4060"/>
+    </g>
+    <g class="mist">
+        <path d="M2 12.975h25.937v-2.767H2v2.767zm0 8.417h25.937v-2.767H2v2.767z" fill="#9da5b3"/>
+        <path d="M4.063 8.767H30V6H4.063v2.767zm0 8.416H30v-2.766H4.063v2.766zM30 25.6H4.063v-2.767H30V25.6z" fill="#e3e5e9"/>
+    </g>
+    <g class="wolk">
+        <path d="M26.333 8.778C26.333 5.587 23.796 3 20.667 3 17.537 3 15 5.587 15 8.778c-3.13 0-5.667 2.587-5.667 5.777 0 3.192 2.537 5.778 5.667 5.778h11.333c3.13 0 5.667-2.586 5.667-5.778 0-3.19-2.537-5.777-5.667-5.777z" fill="#f1f2f4"/>
+        <path d="M20 16.333a6.667 6.667 0 10-13.333 0 6.667 6.667 0 000 13.334H20a6.667 6.667 0 000-13.334z" fill="#9da5b3"/>
+    </g>
+    <g class="regen">
+        <path d="M26 7.222C26 3.786 23.314 1 20 1s-6 2.786-6 6.222c-3.314 0-6 2.786-6 6.222 0 3.437 2.686 6.223 6 6.223h12c3.314 0 6-2.786 6-6.223 0-3.436-2.686-6.222-6-6.222z" fill="#f1f2f4"/>
+        <path d="M18 9.889c0-3.437-2.686-6.222-6-6.222S6 6.452 6 9.889c-3.314 0-6 2.786-6 6.222 0 3.437 2.686 6.222 6 6.222h12c3.314 0 6-2.785 6-6.222 0-3.436-2.686-6.222-6-6.222z" fill="#9da5b3"/>
+        <path d="M2.919 25.964h1.809l.403-2.42h-1.81l-.402 2.42zm18.704-2.42h-1.809l-.403 2.42h1.81l.402-2.42zM4.87 26.893h1.809l-.403 2.42h-1.81l.404-2.42zm12.932 0h1.81l-.404 2.42h-1.81l.404-2.42zm-2.314 0h-1.81l-.402 2.42h1.809l.403-2.42zm-6.495 0h1.809l-.403 2.42h-1.81l.404-2.42zm8.507-3.35l-.403 2.421h-1.809l.403-2.42h1.81zm-4.526 2.421l.403-2.42h-1.809l-.403 2.42h1.809zm-4.123 0H7.04l.404-2.42h1.81l-.404 2.42z" fill="#2396cd"/>
+    </g>
+    <g class="helder_nacht">
+        <path d="M14.846 20.172l-1.333-2.702-1.334 2.702-2.982.433 2.158 2.104-.51 2.97 2.668-1.402 2.667 1.402-.51-2.97 2.159-2.104-2.983-.433zm-3.977-9.7l-3.755-.545-1.68-3.402-1.679 3.402L0 10.473l2.717 2.649-.641 3.74 3.359-1.766 3.359 1.766-.642-3.74 2.717-2.65zm17.517 4.303l.853 4.975-4.468-2.349-4.468 2.35.854-4.976-3.615-3.523 4.995-.726L24.771 6l2.234 4.526 4.995.726-3.614 3.523z" fill="#ffe232"/>
+    </g>
+    <g class="helder_wolk_nacht">
+        <path d="M32 8.179l-3.021-.44-1.351-2.737-1.351 2.738-3.021.439 2.186 2.13-.516 3.01 2.702-1.42 2.702 1.42-.516-3.01L32 8.18zM2.474 15.32l.765-4.458L0 7.706l4.476-.65L6.477 3 8.48 7.056l4.476.65-3.239 3.157.765 4.458-4.004-2.105-4.003 2.105z" fill="#ffe232"/>
+        <path d="M24.333 17.222C24.333 13.786 21.498 11 18 11s-6.333 2.786-6.333 6.222c-3.498 0-6.334 2.786-6.334 6.222 0 3.437 2.836 6.223 6.334 6.223h12.666c3.498 0 6.334-2.786 6.334-6.223 0-3.436-2.836-6.222-6.334-6.222z" fill="#f1f2f4"/>
+    </g>
+
+    <g class="helder_wolk_grijs_nacht">
+        <path d="M32 8.179l-3.021-.44-1.351-2.737-1.351 2.738-3.021.439 2.186 2.13-.516 3.01 2.702-1.42 2.702 1.42-.516-3.01L32 8.18zM2.474 15.32l.765-4.458L0 7.706l4.476-.65L6.477 3 8.48 7.056l4.476.65-3.239 3.157.765 4.458-4.004-2.105-4.003 2.105z" fill="#ffe232"/>
+        <path d="M24.333 17.222C24.333 13.786 21.498 11 18 11s-6.333 2.786-6.333 6.222c-3.498 0-6.334 2.786-6.334 6.222 0 3.437 2.836 6.223 6.334 6.223h12.666c3.498 0 6.334-2.786 6.334-6.223 0-3.436-2.836-6.222-6.334-6.222z" fill="#9da5b3"/>
+    </g>
+    <g class="sneeuw">
+        <path d="M26 8.222C26 4.786 23.314 2 20 2s-6 2.786-6 6.222c-3.314 0-6 2.786-6 6.222 0 3.437 2.686 6.223 6 6.223h12c3.314 0 6-2.786 6-6.223 0-3.436-2.686-6.222-6-6.222z" fill="#f1f2f4"/>
+        <path d="M18 10.889c0-3.437-2.686-6.222-6-6.222s-6 2.785-6 6.222c-3.314 0-6 2.786-6 6.222 0 3.437 2.686 6.222 6 6.222h12c3.314 0 6-2.785 6-6.222 0-3.436-2.686-6.222-6-6.222zM6.39 25.2l-1.135.655v-1.311H3.763v1.311L2.627 25.2l-.746 1.292 1.136.656-1.136.656.746 1.291 1.136-.655v1.311h1.492V28.44l1.135.655.746-1.291L6 27.147l1.136-.656L6.39 25.2zm15.677 0l-1.136.655v-1.311h-1.492v1.311l-1.136-.656-.746 1.292 1.136.656-1.136.656.746 1.291 1.136-.655v1.311h1.492V28.44l1.136.655.746-1.291-1.136-.656 1.136-.656-.746-1.292zm-8.226 1.947l1.136-.656-.746-1.292-1.135.656v-1.311h-1.492v1.311l-1.136-.656-.746 1.292 1.136.656-1.136.656.746 1.291 1.136-.655v1.311h1.492V28.44l1.135.655.746-1.291-1.136-.656z" fill="#9da5b3"/>
+    </g>
+    <g class="hagel">
+        <path d="M26 6.222C26 2.786 23.314 0 20 0s-6 2.786-6 6.222c-3.314 0-6 2.786-6 6.222 0 3.437 2.686 6.223 6 6.223h12c3.314 0 6-2.786 6-6.223 0-3.436-2.686-6.222-6-6.222z" fill="#f1f2f4"/>
+        <path d="M18 8.889c0-3.437-2.686-6.222-6-6.222S6 5.452 6 8.889c-3.314 0-6 2.786-6 6.222 0 3.437 2.686 6.222 6 6.222h12c3.314 0 6-2.785 6-6.222 0-3.436-2.686-6.222-6-6.222zM6.67 24.035c0 .838-.681 1.52-1.52 1.52-.837 0-1.52-.682-1.52-1.52s.683-1.52 1.52-1.52c.839 0 1.52.682 1.52 1.52zm5.108 3.349c0 .838-.681 1.52-1.52 1.52-.837 0-1.52-.682-1.52-1.52 0-.839.683-1.52 1.52-1.52.839 0 1.52.681 1.52 1.52zm7.613-1.83c.838 0 1.52-.681 1.52-1.52 0-.837-.682-1.52-1.52-1.52s-1.52.683-1.52 1.52c0 .839.682 1.52 1.52 1.52z" fill="#9da5b3"/>
+    </g>
+</svg>
+</span>
+                    <span class="vrt-nav__label js-weather-widget-label">&hellip; &deg;C</span>
+                    <span class="offscreen js-weather-widget-a11y"></span>
+                </span>
+            </li>
+            <li class="vrt-nav__item">
+                <span class="vrt-nav__link-icon vrt-nav__link vrt-widget-traffic js-traffic-widget" id="vrt-widget-traffic">
+                    <span class="vrt-nav__icon js-traffic-widget-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" focusable="false" class="icon icon-car">
+    <path class="fill-element" d="M26.57 20.82a2.22 2.22 0 01-2.24-2.2c0-1.2 1-2.19 2.24-2.19 1.24 0 2.25.99 2.25 2.2 0 1.21-1 2.2-2.25 2.2M8.42 13.25L9.8 7.73h12.3l1.38 5.53H8.42zM5.5 20.82c-.9 0-1.73-.53-2.08-1.35a2.16 2.16 0 01.49-2.4c.64-.62 1.6-.81 2.45-.47a2.2 2.2 0 011.38 2.03c0 1.21-1 2.2-2.24 2.2m22.13-7.46l-1.49-6.15A4.6 4.6 0 0021.71 4H10.2a4.6 4.6 0 00-4.42 3.22L4.27 13.4A5.38 5.38 0 000 18.6v5.37h2.74v1.8a2.72 2.72 0 002.75 2.6c1.48 0 2.7-1.16 2.74-2.6v-1.79h15.54v1.8a2.72 2.72 0 002.74 2.6c1.49 0 2.7-1.16 2.75-2.6v-1.8H32v-5.37a5.39 5.39 0 00-4.37-5.26"/>
+</svg>
+</span>
+                    <span class="vrt-nav__label js-traffic-widget-label">
+                        &hellip; km
+                        <span class="hide-for-small-only">traffic jam</span>
+                    </span>
+                    <span class="offscreen js-traffic-widget-a11y"></span>
+                </span>
+            </li>
+            
+            <li class="vrt-nav__item">
+                <div class="vrt-listbox vrt-listbox--icon js-listbox">
+                    <input type="checkbox" class="vrt-listbox__checkbox js-listbox-input" id="vrt-language-toggle"/>
+                    <span class="vrt-nav__icon"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-language" viewBox="0 0 32 32">
+    <path fill-rule="evenodd" d="M0 16C0 7.18 7.18 0 16 0s16 7.18 16 16-7.18 16-16 16S0 24.82 0 16zm20.12-9.88c-.87-1.74-1.88-2.85-2.89-3.35v4.61h3.42c-.17-.44-.34-.87-.53-1.26zm6.34 1.26c-1.32-1.6-3-2.87-4.92-3.73a14.19 14.19 0 011.73 3.73h3.2zM3.92 9.85h4.12c-.34 1.53-.54 3.19-.62 4.92H2.5c.15-1.76.66-3.42 1.42-4.92zm24.16 0h-4.12c.34 1.53.54 3.19.62 4.92h4.92a13.38 13.38 0 00-1.42-4.92zM2.54 17.23h4.88c.07 1.74.28 3.39.62 4.92H3.92a13.34 13.34 0 01-1.38-4.92zm26.92 0h-4.88a28.16 28.16 0 01-.62 4.92h4.12c.77-1.5 1.22-3.15 1.38-4.92zM5.54 24.62h3.2a14.07 14.07 0 001.73 3.73 13.61 13.61 0 01-4.93-3.73zm9.23 0h-3.42c.17.44.34.87.53 1.26.87 1.75 1.88 2.85 2.89 3.35v-4.61zm2.46 0h3.42c-.17.44-.34.87-.53 1.26-.87 1.75-1.88 2.85-2.89 3.35v-4.61zm6.04 0h3.2c-1.33 1.59-3.02 2.87-4.93 3.73.27-.43.53-.87.77-1.35.36-.74.67-1.54.96-2.38zm-6.04-7.39h4.89a25.6 25.6 0 01-.7 4.92h-4.19v-4.92zm-2.46 0H9.88c.08 1.77.33 3.42.7 4.92h4.19v-4.92zm2.46-7.38h4.2a26 26 0 01.69 4.92h-4.89V9.85zm-2.46 0h-4.2c-.36 1.5-.6 3.16-.69 4.92h4.89V9.85zm-4.3-6.2c-.28.43-.54.87-.78 1.35a19.6 19.6 0 00-.96 2.38h-3.2c1.33-1.6 3.02-2.87 4.93-3.73zm4.3-.88v4.61h-3.42c.17-.44.34-.87.53-1.26.87-1.74 1.88-2.85 2.89-3.35z"/>
+</svg>
+</span>
+                    <label class="vrt-listbox__label vrt-nav__label js-listbox-label" for="vrt-language-toggle" id="vrt-widget-language-switch" tabindex="0">
+                        English
+                        <span class="vrt-listbox__icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" focusable="false">
+    <path d="M28.267 6L16 18.267 3.733 6 0 9.733l16 16 16-16z"/>
+</svg>
+</span>
+                    </label>
+                    <ul class="vrt-listbox__list vrt-listbox__list--align-right js-listbox-list" id="vrt-language-toggle-list">
+                        <li class="vrt-listbox__item">
+                            <a class="vrt-listbox__link js-listbox-item" href="/vrtnws/nl/">
+                                <span aria-hidden="true">Nederlands</span>
+                                <span class="offscreen">
+                                    Naar de Nederlandstalige site
+                                </span>
+                            </a>
+                        </li>
+                        <li class="vrt-listbox__item">
+                            <a class="vrt-listbox__link js-listbox-item vrt-listbox__link--active" href="/vrtnws/en/">
+                                <span aria-hidden="true">English</span>
+                                <span class="offscreen">
+                                    Visit flandersnews.be, the English news website of VRT News
+                                </span>
+                            </a>
+                        </li>
+                        <li class="vrt-listbox__item">
+                            <a class="vrt-listbox__link js-listbox-item" href="/vrtnws/fr/">
+                                <span aria-hidden="true">Français</span>
+                                <span class="offscreen">
+                                    Allez à Flandreinfo.be
+                                </span>
+                            </a>
+                        </li>
+                        <li class="vrt-listbox__item">
+                            <a class="vrt-listbox__link js-listbox-item" href="/vrtnws/de/">
+                                <span aria-hidden="true">Deutsch</span>
+                                <span class="offscreen">
+                                    Zur deutschsprachigen Webseite
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            
+        </ul>
+    </nav>
+
+    </nav>
+
+
+                <a class="vrt-header__search-btn" id="vrt-nav-link-search" href="https://www.vrt.be/vrtnws/en/search/">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-search" viewBox="0 0 32 32" focusable="false">
+  <path class="fill-element" d="M32 28.232l-7.558-7.559a13.325 13.325 0 10-3.769 3.769L28.232 32 32 28.232zm-18.674-6.644a8.262 8.262 0 110-16.524 8.262 8.262 0 010 16.524z"/>
+</svg>
+
+                    <span>Search</span>
+                </a>
+
+                
+                
+
+                <label class="vrt-nav-toggle-btn js-vrt-nav-toggle-btn" for="header-vrt-nav-toggle">
+                    <span class="vrt-nav-toggle-btn__inner"></span>
+                </label>
+            </div>
+        </div>
+    </header>
+
+
+
+
+
+
+
+    <div class="vrt-page" role="document">
+        
+    
+
+
+        
+
+
+
+
+
+
+
+
+<main role="main" class="main" id="main-content">
+  
+
+  <section class="row page page--page-article">
+    <article class="article">
+      
+    <div class="article__media-wrapper">
+        <div class="article__story-tag-wrapper article__story-tag-wrapper--media">
+            
+
+            <a class="article__story-tag" href="/vrtnws/en/categories/home-news/">
+                <span class="article__story-tag-prefix">Home News</span>
+                <span class="article__story-tag-title"></span>
+            </a>
+        </div>
+
+        <figure class="article__header-image">
+            
+
+
+
+
+    
+    
+    <div class="responsive-image">
+
+  
+  
+  
+  
+    
+    <img sizes="100vw" srcset="//images.vrt.be/width1280/2020/01/01/fe551ea6-2c6d-11ea-abcc-02b7b76bf47f.jpg 1280w,//images.vrt.be/width960/2020/01/01/fe551ea6-2c6d-11ea-abcc-02b7b76bf47f.jpg 960w,//images.vrt.be/width640/2020/01/01/fe551ea6-2c6d-11ea-abcc-02b7b76bf47f.jpg 640w,//images.vrt.be/width320/2020/01/01/fe551ea6-2c6d-11ea-abcc-02b7b76bf47f.jpg 320w,//images.vrt.be/width160/2020/01/01/fe551ea6-2c6d-11ea-abcc-02b7b76bf47f.jpg 160w" alt="" class=" image  image--focal-mm  " onerror="if(this.parentNode) { this.parentNode.classList.add('image--error');this.parentNode.classList.remove('image--loading'); }" onload="if(this.parentNode) { this.parentNode.classList.remove('image--loading'); }"/>
+	
+    
+    
+
+
+  
+  
+  
+
+</div>
+
+
+
+
+        </figure>
+    </div>
+
+      
+      <div class="article__content-wrapper article__content-wrapper--media">
+        <header class="article__header" aria-label="Article header">
+          <div class="article__titles">
+            <div class="article__title">
+              <div class="dummy">
+                
+  
+
+
+                <h1 class="vrt-title">More than 200 people detained as New Year’s celebrations in Brussels get out of hand</h1>
+
+    
+
+
+              </div>
+            </div>
+          </div>
+          <div class="article__intro">
+            <div class="text">
+<div class="cmp-text">
+    <p><b>Police in Brussels detained a total of 211 during the night. The lion’s share were detained for a few hours in order to allow public order situations to defuse. However, 26 people were detained for criminal offences. According to figures from the 6 Brussels local police services, 75 rubbish bins were set on fire and the police received 16 reports of cars that had been set on fire.      </b></p>
+
+</div>
+
+    
+
+</div>
+          </div>
+
+          <div class="dummy">
+            
+  
+
+
+          </div>
+
+          <div class="article__meta">
+            <div class="article__author-info">
+              
+
+              
+            </div>
+
+            <div class="article__update-date">
+              <div class="dummy">
+                
+
+
+              </div>
+            </div>
+
+            <div class="article__publication-date">
+              <div class="dummy">
+                
+  
+    <time datetime="2020-01-01 11:43+01:00" aria-label=" Published on Wednesday 01 January 2020 at 11:43" data-fullrelevantdate="Wed 01 Jan 2020" data-fullrelevanttime="11:43">
+      
+         Wed 01 Jan 2020 <span class="icon clock">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" focusable="false">
+  <path d="M60,0a60,60,0,1,0,60,60A60,60,0,0,0,60,0Zm0,102a42,42,0,1,1,42-42A42,42,0,0,1,60,102ZM74.46,81.54,55,62.07V27H65V57.93L81.54,74.46Z"/>
+</svg>
+
+    </span> 11:43
+    </time>
+  
+
+
+
+              </div>
+            </div>
+
+            
+              
+              
+  <ul class="vrt-social-links vrt-social-links--article">
+    <li class="vrt-social-links__item vrt-social-links__item--twitter">
+      <a href="https://twitter.com/intent/tweet?text=More%20than%20200%20people%20detained%20as%20New%20Year%E2%80%99s%20celebrations%20in%20Brussels%20get%20out%20of%20hand&url=https://vrtnws.be/p.oEPYNlnoa" aria-label="Share on Twitter" class="vrt-social-links__link" target="_blank" rel="noopener noreferrer">
+        <span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" focusable="false">
+  <path class="fill-element" d="M21.533 7.453c.0152.1954.0152.3908.0152.5863C21.5482 14 16.599 20.868 7.5534 20.868c-2.7868 0-5.3756-.7399-7.5534-2.0241.3958.042.7768.056 1.1878.056 2.2994 0 4.4162-.712 6.1066-1.9264-2.1626-.042-3.9746-1.3402-4.599-3.127.3046.0418.609.0697.9288.0697.4416 0 .8834-.0557 1.2946-.1534C2.6648 13.344.9746 11.529.9746 9.3375v-.0556c.6548.3348 1.4162.5441 2.2232.5722-1.3246-.8096-2.1928-2.1916-2.1928-3.755 0-.8377.2436-1.6055.67-2.2754 2.4214 2.7359 6.061 4.5227 10.1424 4.7181-.0764-.335-.122-.684-.122-1.0327C11.6954 5.024 13.8884 3 16.614 3c1.4164 0 2.6958.5445 3.5942 1.424 1.1118-.1955 2.1776-.5726 3.1216-1.0889-.3652 1.0469-1.142 1.9263-2.1624 2.4847.99-.0975 1.9494-.349 2.8326-.6979-.6702.8934-1.5076 1.689-2.467 2.331"/>
+</svg>
+</span>
+      </a>
+    </li>
+    <li class="vrt-social-links__item vrt-social-links__item--facebook">
+      <a href="https://www.facebook.com/sharer/sharer.php?u=https://vrtnws.be/p.oEPYNlnoa" aria-label="Share on Facebook" class="vrt-social-links__link" target="_blank" rel="noopener noreferrer">
+        <span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 16" focusable="false">
+    <path class="fill-element" d="M8.71875 9L9.15625 6.125H6.375V4.25C6.375 3.4375 6.75 2.6875 8 2.6875H9.28125V0.21875C9.28125 0.21875 8.125 0 7.03125 0C4.75 0 3.25 1.40625 3.25 3.90625V6.125H0.6875V9H3.25V16H6.375V9H8.71875Z"/>
+</svg>
+</span>
+      </a>
+    </li>
+    <li class="vrt-social-links__item vrt-social-links__item--whatsapp">
+      <a href="whatsapp://send?text=More%20than%20200%20people%20detained%20as%20New%20Year%E2%80%99s%20celebrations%20in%20Brussels%20get%20out%20of%20hand%20-%20https://vrtnws.be/p.oEPYNlnoa" aria-label="Share via WhatsApp" class="vrt-social-links__link">
+        <span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" focusable="false">
+  <path class="fill-element" d="M17.6978 16.3642c-.3566.8682-1.7984 1.4264-2.682 1.4264-.7444 0-2.2794-.651-2.9458-.9612-2.2172-1.0078-3.5972-2.7284-4.9304-4.6978-.589-.868-1.116-1.938-1.1008-3.0078V9c.031-1.0232.4032-1.7518 1.1474-2.4496.2324-.217.4806-.341.8062-.341.186 0 .3722.0464.5736.0464.4188 0 .4962.124.6512.527.1086.2638.8992 2.3722.8992 2.5272 0 .5892-1.0698 1.2558-1.0698 1.6124 0 .0776.031.155.0776.2326.341.7288.9922 1.5658 1.5814 2.124.7132.6822 1.4726 1.1318 2.341 1.5658.1086.062.217.1086.341.1086.4652 0 1.2404-1.504 1.6436-1.504.2634 0 2.7906 1.318 2.8992 1.504.0308.0776.0308.1706.0308.2328 0 .3874-.1238.8214-.2634 1.178M12 0C5.3724 0 0 5.3726 0 12c0 2.1956.5924 4.2516 1.622 6.022L1.6 18 0 24l6-1.6-.0222-.0222C7.7482 23.4074 9.8042 24 12 24c6.6272 0 12-5.3726 12-12S18.6272 0 12 0"/>
+</svg>
+</span>
+      </a>
+    </li>
+    <li class="vrt-social-links__item vrt-social-links__item--email">
+      <a href="mailto:?&subject=More%20than%20200%20people%20detained%20as%20New%20Year%E2%80%99s%20celebrations%20in%20Brussels%20get%20out%20of%20hand&body=More%20than%20200%20people%20detained%20as%20New%20Year%E2%80%99s%20celebrations%20in%20Brussels%20get%20out%20of%20hand%20-%20https://vrtnws.be/p.oEPYNlnoa" aria-label="Share via email" class="vrt-social-links__link">
+        <span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 12" focusable="false">
+    <path fill-rule="nonzero" d="M15.6875 3.96875C14.9688 4.53125 14.0625 5.21875 10.875 7.53125C10.25 8 9.09375 9.03125 8 9.03125C6.875 9.03125 5.75 8 5.09375 7.53125C1.90625 5.21875 1 4.53125 0.28125 3.96875C0.15625 3.875 0 3.96875 0 4.125V10.5C0 11.3438 0.65625 12 1.5 12H14.5C15.3125 12 16 11.3438 16 10.5V4.125C16 3.96875 15.8125 3.875 15.6875 3.96875ZM8 8C8.71875 8.03125 9.75 7.09375 10.2812 6.71875C14.4375 3.71875 14.75 3.4375 15.6875 2.6875C15.875 2.5625 16 2.34375 16 2.09375V1.5C16 0.6875 15.3125 0 14.5 0H1.5C0.65625 0 0 0.6875 0 1.5V2.09375C0 2.34375 0.09375 2.5625 0.28125 2.6875C1.21875 3.4375 1.53125 3.71875 5.6875 6.71875C6.21875 7.09375 7.25 8.03125 8 8Z"/>
+</svg>
+</span>
+      </a>
+    </li>
+    <li class="vrt-social-links__item vrt-social-links__item--permalink">
+      <a href="#" aria-label="Share via permalink" class="vrt-social-links__link" data-clipboard-text="https://vrtnws.be/p.oEPYNlnoa" data-clipboard-success="Permalink copied!" data-clipboard-error="Oops, something has gone wrong.">
+        <span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 17" focusable="false">
+  <path d="M11.1875 5.8125C11.0312 5.65625 10.75 5.40625 10.5625 5.28125C10.3438 5.125 10.0938 5.15625 9.90625 5.3125L9.25 5.96875C9 6.25 8.875 6.59375 8.875 6.90625C8.875 7.0625 9 7.21875 9.09375 7.3125C9.1875 7.375 9.3125 7.46875 9.4375 7.5625C10.3125 8.46875 10.3125 9.875 9.4375 10.75L7.3125 12.8438C6.4375 13.75 5 13.75 4.125 12.8438C3.25 11.9688 3.28125 10.5312 4.15625 9.65625L4.5625 9.25C4.71875 9.125 4.75 8.90625 4.6875 8.71875C4.5 8.1875 4.40625 7.625 4.375 7.09375C4.375 6.65625 3.84375 6.4375 3.53125 6.75L2.375 7.90625C0.53125 9.75 0.53125 12.7812 2.375 14.625C4.21875 16.4688 7.25 16.4688 9.09375 14.625L11.1875 12.5312C11.1875 12.5312 11.1875 12.5312 11.1875 12.5C13.0312 10.6875 13.0625 7.6875 11.1875 5.8125ZM15.5938 1.40625C13.75 -0.4375 10.7188 -0.4375 8.875 1.40625L6.78125 3.5C6.78125 3.5 6.78125 3.5 6.78125 3.53125C4.9375 5.34375 4.90625 8.34375 6.78125 10.2188C6.9375 10.375 7.21875 10.625 7.40625 10.75C7.625 10.9062 7.875 10.875 8.0625 10.7188L8.71875 10.0625C8.96875 9.78125 9.09375 9.4375 9.09375 9.125C9.09375 8.96875 8.96875 8.8125 8.875 8.71875C8.78125 8.65625 8.65625 8.5625 8.53125 8.46875C7.65625 7.5625 7.65625 6.15625 8.53125 5.28125L10.6562 3.1875C11.5312 2.28125 12.9688 2.28125 13.8438 3.1875C14.7188 4.0625 14.6875 5.5 13.8125 6.375L13.4062 6.78125C13.25 6.90625 13.2188 7.125 13.2812 7.3125C13.4688 7.84375 13.5625 8.40625 13.5938 8.9375C13.5938 9.375 14.125 9.59375 14.4375 9.28125L15.5938 8.125C17.4375 6.28125 17.4375 3.25 15.5938 1.40625Z"/>
+</svg>
+</span>
+      </a>
+    </li>
+    <li class="vrt-social-links__item vrt-social-links__item--print">
+      <a href="javascript:window.print()" aria-label="Print article." class="vrt-social-links__link">
+        <span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" focusable="false">
+  <path d="M24,0V24H96V0ZM96,30H24A24.08,24.08,0,0,0,0,54V90H24v30H96V90h24V54A24.08,24.08,0,0,0,96,30ZM84,108H36V78H84Zm18-54a5.66,5.66,0,0,1-6-6,6,6,0,0,1,12,0A5.66,5.66,0,0,1,102,54Z"/>
+</svg>
+</span>
+      </a>
+    </li>
+  </ul>
+
+            
+
+            
+          </div>
+        </header>
+
+        <section class="article__body">
+          <div class="article__par">
+
+
+
+
+    
+    
+    <div class="text">
+<div class="cmp-text">
+    <p>A number of those detained are suspected of having set rubbish bins alight.  Others are suspected of having thrown objects at cars, busses and police vehicles. The arrests were mainly in the Brussels West, Brussels-Elsene and Brussels South policing areas and to a lesser extent in the Brussel-North policing zone.   </p>
+<p>The police report that the situation was tense in a number of areas of the city, including the area around the Lemonnierlaan in the city centre, Kuregem in Anderlecht and Zwarte Vijvers in Sint-Jans-Molenbeek.</p>
+<p>There were reports of a ca rand a scooter being torched in Molenbeek. A car was also set alight in Vorst. </p>
+
+</div>
+
+    
+
+</div>
+
+
+    
+    
+    <div class="paragraph-title title">
+
+
+
+
+<h2 class="vrt-title ">
+    Incidents on public transport
+</h2>
+</div>
+
+
+    
+    
+    <div class="text">
+<div class="cmp-text">
+    <p>The Brussels public transport company MIVB reported a number of incidents across the capital. A bus was pelted with missiles and some of its windows broken at the Ieper bus stop in Brussels city centre. </p>
+<p>Two metro carriages were vandalised at the Erasmus metro station in Anderlecht. A number of bus shelters were damaged and a police vehicle got stuck on the tram rails near to Anderlecht Town Hall. By far the most serious incident was at the Beekkant metro station in Molenbeek. There one person was seriously injured in a stabbing. The stabbing took place at around 2am.   </p>
+
+</div>
+
+    
+
+</div>
+
+
+</div>
+
+          
+
+
+
+          
+          
+    <div data-emptytext="Disclaimer" class="cq-placeholder"></div>
+    
+
+
+
+          <footer class="article__footer">
+              
+    <div class="vrt-tag-links">
+        <h2 class="vrt-tag-links__title">More about</h2>
+        <ul class="vrt-tag-links__list">
+            <li class="vrt-tag-links__item">
+                <a class="vrt-tag-links__link" href="https://www.vrt.be/vrtnws/en/tag/binnenland/">Home News</a>
+            </li>
+        
+            <li class="vrt-tag-links__item">
+                <a class="vrt-tag-links__link" href="https://www.vrt.be/vrtnws/en/tag/brussel/">Brussels</a>
+            </li>
+        </ul>
+    </div>
+
+
+              
+    
+
+
+              
+
+
+
+<div class="article__related-article-list">
+    <div class="vrtlist vrtlist--related-article">
+        <h2 class="vrtlist__title related-article__title">
+            <span class="icon" aria-hidden="true"></span>
+            Related content
+            
+            
+        </h2>
+        <ul class="vrtlist__list vrtlist__list--related-article" aria-label="Related articles">
+    <li class="vrtlist__list-item">
+        
+        <div class="page-article page basicpage">
+    
+
+    <a href="/vrtnws/en/2021/12/21/molecatcher-kurt-catches-his-first-white-mole-in-23-decades/" class="vrt-teaser vrt-teaser--marge vrt-teaser--image vrt-teaser--default">
+        <article role="presentation" class="vrt-teaser__article">
+            
+                
+                
+  <figure class="vrt-teaser__image">
+    
+      
+      
+        
+
+  
+  
+  
+  
+    
+    <img data-sizes="auto" data-parent-fit="width" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-srcset="//images.vrt.be/width1280/2021/12/21/45e08507-626a-11ec-b07d-02b7b76bf47f.jpg 1280w,//images.vrt.be/width960/2021/12/21/45e08507-626a-11ec-b07d-02b7b76bf47f.jpg 960w,//images.vrt.be/width640/2021/12/21/45e08507-626a-11ec-b07d-02b7b76bf47f.jpg 640w,//images.vrt.be/width320/2021/12/21/45e08507-626a-11ec-b07d-02b7b76bf47f.jpg 320w,//images.vrt.be/width160/2021/12/21/45e08507-626a-11ec-b07d-02b7b76bf47f.jpg 160w" data-src="//images.vrt.be/width960/2021/12/21/45e08507-626a-11ec-b07d-02b7b76bf47f.jpg" alt="" class="image  image--focal-mm image--with-copyright  lazyload" onerror="if(this.parentNode) { this.parentNode.classList.add('image--error');this.parentNode.classList.remove('image--loading'); }" onload="if(this.parentNode) { this.parentNode.classList.remove('image--loading'); }"/>
+  
+
+  <div class="vrt-image__caption">
+    
+    <small class="vrt-image__copyright">Copyright Kurt Bellon</small>
+  </div>
+
+
+  
+  
+  
+
+
+      
+    
+    
+  
+
+  </figure>
+
+            
+
+            
+  
+
+
+            <div class="vrt-teaser__content-wrapper">
+                <div class="vrt-teaser__title-wrapper">
+                    
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <span class="vrt-teaser__tag vrt-teaser__tag--default vrt-tag vrt-tag--default
+              
+              
+              ">
+    <span class="vrt-teaser__tag-main vrt-tag-main">East Flanders</span>
+    
+  </span>
+
+
+  <h2 class="vrt-teaser__title ">
+    
+  
+  
+
+    <span class="vrt-teaser__title-text">Molecatcher Kurt catches his first white mole in 3 decades</span>
+  </h2>
+
+                </div>
+
+                
+
+                
+  <div class="vrt-teaser__date-wrapper">
+    
+    
+  
+    <time class="vrt-teaser__date" datetime="2021-12-21 16:41+01:00" aria-label=" Published on Tuesday 21 December 2021 at 16:41" data-fullrelevantdate="Tue 21 Dec 2021" data-fullrelevanttime="16:41">
+      
+         Tue 21 Dec <span class="icon clock">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" focusable="false">
+  <path d="M60,0a60,60,0,1,0,60,60A60,60,0,0,0,60,0Zm0,102a42,42,0,1,1,42-42A42,42,0,0,1,60,102ZM74.46,81.54,55,62.07V27H65V57.93L81.54,74.46Z"/>
+</svg>
+
+    </span> 16:41
+    </time>
+  
+
+  </div>
+
+            </div>
+
+            
+        </article>
+    </a>
+
+
+
+</div>
+
+    </li>
+    
+
+    <li class="vrtlist__list-item">
+        
+        <div class="page-article page basicpage">
+    
+
+    <a href="/vrtnws/en/2021/12/21/city-authorities-reject-plans-for-chip-museum-in-brussels/" class="vrt-teaser vrt-teaser--marge vrt-teaser--image vrt-teaser--default">
+        <article role="presentation" class="vrt-teaser__article">
+            
+                
+                
+  <figure class="vrt-teaser__image">
+    
+      
+      
+        
+
+  
+  
+  
+  
+    
+    <img data-sizes="auto" data-parent-fit="width" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-srcset="//images.vrt.be/width1280/2020/01/23/9fd4775c-3dc3-11ea-aae0-02b7b76bf47f.jpg 1280w,//images.vrt.be/width960/2020/01/23/9fd4775c-3dc3-11ea-aae0-02b7b76bf47f.jpg 960w,//images.vrt.be/width640/2020/01/23/9fd4775c-3dc3-11ea-aae0-02b7b76bf47f.jpg 640w,//images.vrt.be/width320/2020/01/23/9fd4775c-3dc3-11ea-aae0-02b7b76bf47f.jpg 320w,//images.vrt.be/width160/2020/01/23/9fd4775c-3dc3-11ea-aae0-02b7b76bf47f.jpg 160w" data-src="//images.vrt.be/width960/2020/01/23/9fd4775c-3dc3-11ea-aae0-02b7b76bf47f.jpg" alt="" class="image  image--focal-mm   lazyload" onerror="if(this.parentNode) { this.parentNode.classList.add('image--error');this.parentNode.classList.remove('image--loading'); }" onload="if(this.parentNode) { this.parentNode.classList.remove('image--loading'); }"/>
+  
+
+  
+
+
+  
+  
+  
+
+
+      
+    
+    
+  
+
+  </figure>
+
+            
+
+            
+  
+
+
+            <div class="vrt-teaser__content-wrapper">
+                <div class="vrt-teaser__title-wrapper">
+                    
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <span class="vrt-teaser__tag vrt-teaser__tag--default vrt-tag vrt-tag--default
+              
+              
+              ">
+    <span class="vrt-teaser__tag-main vrt-tag-main">Brussels</span>
+    
+  </span>
+
+
+  <h2 class="vrt-teaser__title ">
+    
+  
+  
+
+    <span class="vrt-teaser__title-text">City authorities reject plans for chip museum in Brussels</span>
+  </h2>
+
+                </div>
+
+                
+
+                
+  <div class="vrt-teaser__date-wrapper">
+    
+    
+  
+    <time class="vrt-teaser__date" datetime="2021-12-21 15:44+01:00" aria-label=" Published on Tuesday 21 December 2021 at 15:44" data-fullrelevantdate="Tue 21 Dec 2021" data-fullrelevanttime="15:44">
+      
+         Tue 21 Dec <span class="icon clock">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" focusable="false">
+  <path d="M60,0a60,60,0,1,0,60,60A60,60,0,0,0,60,0Zm0,102a42,42,0,1,1,42-42A42,42,0,0,1,60,102ZM74.46,81.54,55,62.07V27H65V57.93L81.54,74.46Z"/>
+</svg>
+
+    </span> 15:44
+    </time>
+  
+
+  </div>
+
+            </div>
+
+            
+        </article>
+    </a>
+
+
+
+</div>
+
+    </li>
+    
+
+    <li class="vrtlist__list-item">
+        
+        <div class="page-article page basicpage">
+    
+
+    <a href="/vrtnws/en/2021/12/21/big-demand-for-accommodation-at-holiday-villages/" class="vrt-teaser vrt-teaser--marge vrt-teaser--image vrt-teaser--is-video vrt-teaser--default">
+        <article role="presentation" class="vrt-teaser__article">
+            
+                
+                
+  <figure class="vrt-teaser__image">
+    
+      
+      
+        
+
+  
+  
+  <div class="vrtvideo--posterimage">
+
+    
+  
+  <picture class="vrtvideo--preview__image image--loading  ">
+    <source data-srcset="//images.vrt.be/width1280/2021/12/21/8905ddbd-6263-11ec-b07d-02b7b76bf47f.jpg 1280w,//images.vrt.be/width960/2021/12/21/8905ddbd-6263-11ec-b07d-02b7b76bf47f.jpg 960w,//images.vrt.be/width640/2021/12/21/8905ddbd-6263-11ec-b07d-02b7b76bf47f.jpg 640w,//images.vrt.be/width320/2021/12/21/8905ddbd-6263-11ec-b07d-02b7b76bf47f.jpg 320w,//images.vrt.be/width160/2021/12/21/8905ddbd-6263-11ec-b07d-02b7b76bf47f.jpg 160w"/>
+    
+    <img data-sizes="auto" data-parent-fit="width" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="//images.vrt.be/width320/2021/12/21/8905ddbd-6263-11ec-b07d-02b7b76bf47f.jpg" alt="" class="image    lazyload" onerror="if(this.parentNode) { this.parentNode.classList.add('image--error');this.parentNode.classList.remove('image--loading'); }" onload="if(this.parentNode) { this.parentNode.classList.remove('image--loading'); }"/>
+  </picture>
+
+  
+
+  </div>
+
+      
+    
+    
+  
+    
+    <div class="vrt-teaser__video-indicator  duration--small">
+      <span class="icon is-img-video">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <polygon class="fill-element" points="0,0 28,16 0,32" fill-rule="nonzero"/>
+</svg>
+
+        
+    
+
+      </span>
+    </div>
+  
+
+  </figure>
+
+            
+
+            
+  
+
+
+            <div class="vrt-teaser__content-wrapper">
+                <div class="vrt-teaser__title-wrapper">
+                    
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <span class="vrt-teaser__tag vrt-teaser__tag--default vrt-tag vrt-tag--default
+              
+              
+              ">
+    <span class="vrt-teaser__tag-main vrt-tag-main">Home News</span>
+    
+  </span>
+
+
+  <h2 class="vrt-teaser__title ">
+    
+  <span class="icon is-video"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <polygon class="fill-element" points="0,0 28,16 0,32" fill-rule="nonzero"/>
+</svg>
+</span>
+  
+
+    <span class="vrt-teaser__title-text">Big demand for accommodation at holiday villages</span>
+  </h2>
+
+                </div>
+
+                
+
+                
+  <div class="vrt-teaser__date-wrapper">
+    
+    
+  
+    <time class="vrt-teaser__date" datetime="2021-12-21 14:40+01:00" aria-label=" Published on Tuesday 21 December 2021 at 14:40" data-fullrelevantdate="Tue 21 Dec 2021" data-fullrelevanttime="14:40">
+      
+         Tue 21 Dec <span class="icon clock">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" focusable="false">
+  <path d="M60,0a60,60,0,1,0,60,60A60,60,0,0,0,60,0Zm0,102a42,42,0,1,1,42-42A42,42,0,0,1,60,102ZM74.46,81.54,55,62.07V27H65V57.93L81.54,74.46Z"/>
+</svg>
+
+    </span> 14:40
+    </time>
+  
+
+  </div>
+
+            </div>
+
+            
+        </article>
+    </a>
+
+
+
+</div>
+
+    </li>
+    
+
+    <li class="vrtlist__list-item">
+        
+        <div class="page-article page basicpage">
+    
+
+    <a href="/vrtnws/en/2021/12/21/experts_-advice-to-consultative-committee-leaked/" class="vrt-teaser vrt-teaser--marge vrt-teaser--image vrt-teaser--default">
+        <article role="presentation" class="vrt-teaser__article">
+            
+                
+                
+  <figure class="vrt-teaser__image">
+    
+      
+      
+        
+
+  
+  
+  
+  
+    
+    <img data-sizes="auto" data-parent-fit="width" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-srcset="//images.vrt.be/width1280/2021/12/15/1e6ce1df-5d7d-11ec-b07d-02b7b76bf47f.jpg 1280w,//images.vrt.be/width960/2021/12/15/1e6ce1df-5d7d-11ec-b07d-02b7b76bf47f.jpg 960w,//images.vrt.be/width640/2021/12/15/1e6ce1df-5d7d-11ec-b07d-02b7b76bf47f.jpg 640w,//images.vrt.be/width320/2021/12/15/1e6ce1df-5d7d-11ec-b07d-02b7b76bf47f.jpg 320w,//images.vrt.be/width160/2021/12/15/1e6ce1df-5d7d-11ec-b07d-02b7b76bf47f.jpg 160w" data-src="//images.vrt.be/width960/2021/12/15/1e6ce1df-5d7d-11ec-b07d-02b7b76bf47f.jpg" alt="" class="image  image--focal-mm   lazyload" onerror="if(this.parentNode) { this.parentNode.classList.add('image--error');this.parentNode.classList.remove('image--loading'); }" onload="if(this.parentNode) { this.parentNode.classList.remove('image--loading'); }"/>
+  
+
+  
+
+
+  
+  
+  
+
+
+      
+    
+    
+  
+
+  </figure>
+
+            
+
+            
+  
+
+
+            <div class="vrt-teaser__content-wrapper">
+                <div class="vrt-teaser__title-wrapper">
+                    
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <span class="vrt-teaser__tag vrt-teaser__tag--default vrt-tag vrt-tag--default
+              
+              
+              ">
+    <span class="vrt-teaser__tag-main vrt-tag-main">Home News</span>
+    
+  </span>
+
+
+  <h2 class="vrt-teaser__title ">
+    
+  
+  
+
+    <span class="vrt-teaser__title-text">Experts’ advice to Consultative Committee leaked</span>
+  </h2>
+
+                </div>
+
+                
+
+                
+  <div class="vrt-teaser__date-wrapper">
+    
+    
+  
+    <time class="vrt-teaser__date" datetime="2021-12-21 14:00+01:00" aria-label=" Published on Tuesday 21 December 2021 at 14:00" data-fullrelevantdate="Tue 21 Dec 2021" data-fullrelevanttime="14:00">
+      
+         Tue 21 Dec <span class="icon clock">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" focusable="false">
+  <path d="M60,0a60,60,0,1,0,60,60A60,60,0,0,0,60,0Zm0,102a42,42,0,1,1,42-42A42,42,0,0,1,60,102ZM74.46,81.54,55,62.07V27H65V57.93L81.54,74.46Z"/>
+</svg>
+
+    </span> 14:00
+    </time>
+  
+
+  </div>
+
+            </div>
+
+            
+        </article>
+    </a>
+
+
+
+</div>
+
+    </li>
+    
+</ul>
+    </div>
+</div>
+
+              <div class="article__footer-banner article__footer-banner--promo">
+
+
+
+
+
+
+  
+  
+
+</div>
+          </footer>
+        </section>
+      </div>
+
+      
+    </article>
+
+  </section>
+
+  <section class="vrt-mosttrending hide-for-xxlarge">
+    
+    
+
+    <header class="vrt-mosttrending__header">
+        <h1 class="vrt-mosttrending__title">
+            Top stories
+        </h1>
+        <button type="button" class="vrt-mosttrending__btn vrt-mosttrending__btn--prev js-mosttrending-btn-prev">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" focusable="false">
+  <polygon points="40 0 20 20 60 60 20 100 40 120 100 60 40 0"/>
+</svg>
+
+        </button>
+
+        <button type="button" class="vrt-mosttrending__btn vrt-mosttrending__btn--next js-mosttrending-btn-next">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" focusable="false">
+  <polygon points="40 0 20 20 60 60 20 100 40 120 100 60 40 0"/>
+</svg>
+
+        </button>
+    </header>
+
+    <div class="vrt-mosttrending__inner">
+        
+        
+
+        
+        
+    
+        <div class="vrt-mosttrending__wrapper js-mosttrending">
+            <ol class="vrt-mosttrending__items">
+    
+    <li class="vrt-mosttrending__item"><div class="page-article page basicpage">
+
+    
+    
+    <a href="/vrtnws/en/2021/12/21/flemish-house-prices-skyrocket/" class="vrt-teaser vrt-teaser--lisa vrt-teaser--default">
+        <article role="presentation" class="vrt-teaser__article">
+            
+  
+
+
+            <div class="vrt-teaser__content-wrapper">
+                <div class="vrt-teaser__title-wrapper">
+                    
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <span class="vrt-teaser__tag vrt-teaser__tag--default vrt-tag vrt-tag--default
+              
+              
+              ">
+    <span class="vrt-teaser__tag-main vrt-tag-main">Economy</span>
+    
+  </span>
+
+
+  <h2 class="vrt-teaser__title ">
+    
+  
+  
+
+    <span class="vrt-teaser__title-text">Flemish house prices skyrocket</span>
+  </h2>
+
+                </div>
+            </div>
+
+            
+  <div class="vrt-teaser__date-wrapper">
+    
+    
+  
+    <time class="vrt-teaser__date" datetime="2021-12-21 10:08+01:00" aria-label=" Published on Tuesday 21 December 2021 at 10:08" data-fullrelevantdate="Tue 21 Dec 2021" data-fullrelevanttime="10:08">
+      
+         Tue 21 Dec <span class="icon clock">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" focusable="false">
+  <path d="M60,0a60,60,0,1,0,60,60A60,60,0,0,0,60,0Zm0,102a42,42,0,1,1,42-42A42,42,0,0,1,60,102ZM74.46,81.54,55,62.07V27H65V57.93L81.54,74.46Z"/>
+</svg>
+
+    </span> 10:08
+    </time>
+  
+
+  </div>
+
+
+            
+  
+  
+  
+
+        </article>
+    </a>
+
+
+
+</div>
+</li>
+    
+
+    
+    <li class="vrt-mosttrending__item"><div class="page-article page basicpage">
+
+    
+    
+    <a href="/vrtnws/en/2021/12/21/new-parking-rules-in-the-city-of-brussels/" class="vrt-teaser vrt-teaser--lisa vrt-teaser--default">
+        <article role="presentation" class="vrt-teaser__article">
+            
+  
+
+
+            <div class="vrt-teaser__content-wrapper">
+                <div class="vrt-teaser__title-wrapper">
+                    
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <span class="vrt-teaser__tag vrt-teaser__tag--default vrt-tag vrt-tag--default
+              
+              
+              ">
+    <span class="vrt-teaser__tag-main vrt-tag-main">Brussels</span>
+    
+  </span>
+
+
+  <h2 class="vrt-teaser__title ">
+    
+  
+  
+
+    <span class="vrt-teaser__title-text">New parking rules in the City of Brussels</span>
+  </h2>
+
+                </div>
+            </div>
+
+            
+  <div class="vrt-teaser__date-wrapper">
+    
+    
+  
+    <time class="vrt-teaser__date" datetime="2021-12-21 10:56+01:00" aria-label=" Published on Tuesday 21 December 2021 at 10:56" data-fullrelevantdate="Tue 21 Dec 2021" data-fullrelevanttime="10:56">
+      
+         Tue 21 Dec <span class="icon clock">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" focusable="false">
+  <path d="M60,0a60,60,0,1,0,60,60A60,60,0,0,0,60,0Zm0,102a42,42,0,1,1,42-42A42,42,0,0,1,60,102ZM74.46,81.54,55,62.07V27H65V57.93L81.54,74.46Z"/>
+</svg>
+
+    </span> 10:56
+    </time>
+  
+
+  </div>
+
+
+            
+  
+  
+  
+
+        </article>
+    </a>
+
+
+
+</div>
+</li>
+    
+
+    
+    <li class="vrt-mosttrending__item"><div class="page-article page basicpage">
+
+    
+    
+    <a href="/vrtnws/en/2021/12/21/experts_-advice-to-consultative-committee-leaked/" class="vrt-teaser vrt-teaser--lisa vrt-teaser--default">
+        <article role="presentation" class="vrt-teaser__article">
+            
+  
+
+
+            <div class="vrt-teaser__content-wrapper">
+                <div class="vrt-teaser__title-wrapper">
+                    
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <span class="vrt-teaser__tag vrt-teaser__tag--default vrt-tag vrt-tag--default
+              
+              
+              ">
+    <span class="vrt-teaser__tag-main vrt-tag-main">Home News</span>
+    
+  </span>
+
+
+  <h2 class="vrt-teaser__title ">
+    
+  
+  
+
+    <span class="vrt-teaser__title-text">Experts’ advice to Consultative Committee leaked</span>
+  </h2>
+
+                </div>
+            </div>
+
+            
+  <div class="vrt-teaser__date-wrapper">
+    
+    
+  
+    <time class="vrt-teaser__date" datetime="2021-12-21 14:00+01:00" aria-label=" Published on Tuesday 21 December 2021 at 14:00" data-fullrelevantdate="Tue 21 Dec 2021" data-fullrelevanttime="14:00">
+      
+         Tue 21 Dec <span class="icon clock">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" focusable="false">
+  <path d="M60,0a60,60,0,1,0,60,60A60,60,0,0,0,60,0Zm0,102a42,42,0,1,1,42-42A42,42,0,0,1,60,102ZM74.46,81.54,55,62.07V27H65V57.93L81.54,74.46Z"/>
+</svg>
+
+    </span> 14:00
+    </time>
+  
+
+  </div>
+
+
+            
+  
+  
+  
+
+        </article>
+    </a>
+
+
+
+</div>
+</li>
+    
+
+    
+    <li class="vrt-mosttrending__item"><div class="page-article page basicpage">
+
+    
+    
+    <a href="/vrtnws/en/2021/12/21/more-take-home-pay-for-those-in-work/" class="vrt-teaser vrt-teaser--lisa vrt-teaser--is-video vrt-teaser--default">
+        <article role="presentation" class="vrt-teaser__article">
+            
+  
+
+
+            <div class="vrt-teaser__content-wrapper">
+                <div class="vrt-teaser__title-wrapper">
+                    
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <span class="vrt-teaser__tag vrt-teaser__tag--default vrt-tag vrt-tag--default
+              
+              
+              ">
+    <span class="vrt-teaser__tag-main vrt-tag-main">Economy</span>
+    
+  </span>
+
+
+  <h2 class="vrt-teaser__title ">
+    
+  <span class="icon is-video"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <polygon class="fill-element" points="0,0 28,16 0,32" fill-rule="nonzero"/>
+</svg>
+</span>
+  
+
+    <span class="vrt-teaser__title-text">More take-home pay for those in work</span>
+  </h2>
+
+                </div>
+            </div>
+
+            
+  <div class="vrt-teaser__date-wrapper">
+    
+    
+  
+    <time class="vrt-teaser__date" datetime="2021-12-21 12:03+01:00" aria-label=" Published on Tuesday 21 December 2021 at 12:03" data-fullrelevantdate="Tue 21 Dec 2021" data-fullrelevanttime="12:03">
+      
+         Tue 21 Dec <span class="icon clock">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" focusable="false">
+  <path d="M60,0a60,60,0,1,0,60,60A60,60,0,0,0,60,0Zm0,102a42,42,0,1,1,42-42A42,42,0,0,1,60,102ZM74.46,81.54,55,62.07V27H65V57.93L81.54,74.46Z"/>
+</svg>
+
+    </span> 12:03
+    </time>
+  
+
+  </div>
+
+
+            
+  
+  
+  
+
+        </article>
+    </a>
+
+
+
+</div>
+</li>
+    
+
+    
+    <li class="vrt-mosttrending__item"><div class="page-article page basicpage">
+
+    
+    
+    <a href="/vrtnws/en/2021/12/21/coronavirus-infections-down-by-more-than-a-third/" class="vrt-teaser vrt-teaser--lisa vrt-teaser--default">
+        <article role="presentation" class="vrt-teaser__article">
+            
+  
+
+
+            <div class="vrt-teaser__content-wrapper">
+                <div class="vrt-teaser__title-wrapper">
+                    
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <span class="vrt-teaser__tag vrt-teaser__tag--default vrt-tag vrt-tag--default
+              
+              
+              ">
+    <span class="vrt-teaser__tag-main vrt-tag-main">Health</span>
+    
+  </span>
+
+
+  <h2 class="vrt-teaser__title ">
+    
+  
+  
+
+    <span class="vrt-teaser__title-text">Coronavirus infections down by more than a third</span>
+  </h2>
+
+                </div>
+            </div>
+
+            
+  <div class="vrt-teaser__date-wrapper">
+    
+    
+  
+    <time class="vrt-teaser__date" datetime="2021-12-21 09:48+01:00" aria-label=" Published on Tuesday 21 December 2021 at 09:48" data-fullrelevantdate="Tue 21 Dec 2021" data-fullrelevanttime="09:48">
+      
+         Tue 21 Dec <span class="icon clock">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" focusable="false">
+  <path d="M60,0a60,60,0,1,0,60,60A60,60,0,0,0,60,0Zm0,102a42,42,0,1,1,42-42A42,42,0,0,1,60,102ZM74.46,81.54,55,62.07V27H65V57.93L81.54,74.46Z"/>
+</svg>
+
+    </span> 09:48
+    </time>
+  
+
+  </div>
+
+
+            
+  
+  
+  
+
+        </article>
+    </a>
+
+
+
+</div>
+</li>
+    
+
+    
+    <li class="vrt-mosttrending__item"><div class="page-article page basicpage">
+
+    
+    
+    <a href="/vrtnws/en/2021/12/21/molecatcher-kurt-catches-his-first-white-mole-in-23-decades/" class="vrt-teaser vrt-teaser--lisa vrt-teaser--default">
+        <article role="presentation" class="vrt-teaser__article">
+            
+  
+
+
+            <div class="vrt-teaser__content-wrapper">
+                <div class="vrt-teaser__title-wrapper">
+                    
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <span class="vrt-teaser__tag vrt-teaser__tag--default vrt-tag vrt-tag--default
+              
+              
+              ">
+    <span class="vrt-teaser__tag-main vrt-tag-main">East Flanders</span>
+    
+  </span>
+
+
+  <h2 class="vrt-teaser__title ">
+    
+  
+  
+
+    <span class="vrt-teaser__title-text">Molecatcher Kurt catches his first white mole in 3 decades</span>
+  </h2>
+
+                </div>
+            </div>
+
+            
+  <div class="vrt-teaser__date-wrapper">
+    
+    
+  
+    <time class="vrt-teaser__date" datetime="2021-12-21 16:41+01:00" aria-label=" Published on Tuesday 21 December 2021 at 16:41" data-fullrelevantdate="Tue 21 Dec 2021" data-fullrelevanttime="16:41">
+      
+         Tue 21 Dec <span class="icon clock">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" focusable="false">
+  <path d="M60,0a60,60,0,1,0,60,60A60,60,0,0,0,60,0Zm0,102a42,42,0,1,1,42-42A42,42,0,0,1,60,102ZM74.46,81.54,55,62.07V27H65V57.93L81.54,74.46Z"/>
+</svg>
+
+    </span> 16:41
+    </time>
+  
+
+  </div>
+
+
+            
+  
+  
+  
+
+        </article>
+    </a>
+
+
+
+</div>
+</li>
+    
+
+    
+    <li class="vrt-mosttrending__item"><div class="page-article page basicpage">
+
+    
+    
+    <a href="/vrtnws/en/2021/12/20/another-energy-supply-company-in-financial-difficulty/" class="vrt-teaser vrt-teaser--lisa vrt-teaser--is-video vrt-teaser--default">
+        <article role="presentation" class="vrt-teaser__article">
+            
+  
+
+
+            <div class="vrt-teaser__content-wrapper">
+                <div class="vrt-teaser__title-wrapper">
+                    
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <span class="vrt-teaser__tag vrt-teaser__tag--default vrt-tag vrt-tag--default
+              
+              
+              ">
+    <span class="vrt-teaser__tag-main vrt-tag-main">Economy</span>
+    
+  </span>
+
+
+  <h2 class="vrt-teaser__title ">
+    
+  <span class="icon is-video"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <polygon class="fill-element" points="0,0 28,16 0,32" fill-rule="nonzero"/>
+</svg>
+</span>
+  
+
+    <span class="vrt-teaser__title-text">Another energy supply company in financial difficulty</span>
+  </h2>
+
+                </div>
+            </div>
+
+            
+  <div class="vrt-teaser__date-wrapper">
+    
+    
+  
+    <time class="vrt-teaser__date" datetime="2021-12-20 16:07+01:00" aria-label=" Published on Monday 20 December 2021 at 16:07" data-fullrelevantdate="Mon 20 Dec 2021" data-fullrelevanttime="16:07">
+      
+         Mon 20 Dec <span class="icon clock">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" focusable="false">
+  <path d="M60,0a60,60,0,1,0,60,60A60,60,0,0,0,60,0Zm0,102a42,42,0,1,1,42-42A42,42,0,0,1,60,102ZM74.46,81.54,55,62.07V27H65V57.93L81.54,74.46Z"/>
+</svg>
+
+    </span> 16:07
+    </time>
+  
+
+  </div>
+
+
+            
+  
+  
+  
+
+        </article>
+    </a>
+
+
+
+</div>
+</li>
+    
+
+    
+    <li class="vrt-mosttrending__item"><div class="page-article page basicpage">
+
+    
+    
+    <a href="/vrtnws/en/2021/12/21/big-demand-for-accommodation-at-holiday-villages/" class="vrt-teaser vrt-teaser--lisa vrt-teaser--is-video vrt-teaser--default">
+        <article role="presentation" class="vrt-teaser__article">
+            
+  
+
+
+            <div class="vrt-teaser__content-wrapper">
+                <div class="vrt-teaser__title-wrapper">
+                    
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <span class="vrt-teaser__tag vrt-teaser__tag--default vrt-tag vrt-tag--default
+              
+              
+              ">
+    <span class="vrt-teaser__tag-main vrt-tag-main">Home News</span>
+    
+  </span>
+
+
+  <h2 class="vrt-teaser__title ">
+    
+  <span class="icon is-video"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <polygon class="fill-element" points="0,0 28,16 0,32" fill-rule="nonzero"/>
+</svg>
+</span>
+  
+
+    <span class="vrt-teaser__title-text">Big demand for accommodation at holiday villages</span>
+  </h2>
+
+                </div>
+            </div>
+
+            
+  <div class="vrt-teaser__date-wrapper">
+    
+    
+  
+    <time class="vrt-teaser__date" datetime="2021-12-21 14:40+01:00" aria-label=" Published on Tuesday 21 December 2021 at 14:40" data-fullrelevantdate="Tue 21 Dec 2021" data-fullrelevanttime="14:40">
+      
+         Tue 21 Dec <span class="icon clock">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" focusable="false">
+  <path d="M60,0a60,60,0,1,0,60,60A60,60,0,0,0,60,0Zm0,102a42,42,0,1,1,42-42A42,42,0,0,1,60,102ZM74.46,81.54,55,62.07V27H65V57.93L81.54,74.46Z"/>
+</svg>
+
+    </span> 14:40
+    </time>
+  
+
+  </div>
+
+
+            
+  
+  
+  
+
+        </article>
+    </a>
+
+
+
+</div>
+</li>
+    
+
+    
+    <li class="vrt-mosttrending__item"><div class="page-article page basicpage">
+
+    
+    
+    <a href="/vrtnws/en/2021/12/20/night-trains-from-brussels-to-berlin-and-prague-from-next-summer/" class="vrt-teaser vrt-teaser--lisa vrt-teaser--default">
+        <article role="presentation" class="vrt-teaser__article">
+            
+  
+
+
+            <div class="vrt-teaser__content-wrapper">
+                <div class="vrt-teaser__title-wrapper">
+                    
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <span class="vrt-teaser__tag vrt-teaser__tag--default vrt-tag vrt-tag--default
+              
+              
+              ">
+    <span class="vrt-teaser__tag-main vrt-tag-main">Home News</span>
+    
+  </span>
+
+
+  <h2 class="vrt-teaser__title ">
+    
+  
+  
+
+    <span class="vrt-teaser__title-text">Night trains from Brussels to Berlin and Prague from next summer</span>
+  </h2>
+
+                </div>
+            </div>
+
+            
+  <div class="vrt-teaser__date-wrapper">
+    
+    
+  
+    <time class="vrt-teaser__date" datetime="2021-12-20 14:20+01:00" aria-label=" Published on Monday 20 December 2021 at 14:20" data-fullrelevantdate="Mon 20 Dec 2021" data-fullrelevanttime="14:20">
+      
+         Mon 20 Dec <span class="icon clock">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" focusable="false">
+  <path d="M60,0a60,60,0,1,0,60,60A60,60,0,0,0,60,0Zm0,102a42,42,0,1,1,42-42A42,42,0,0,1,60,102ZM74.46,81.54,55,62.07V27H65V57.93L81.54,74.46Z"/>
+</svg>
+
+    </span> 14:20
+    </time>
+  
+
+  </div>
+
+
+            
+  
+  
+  
+
+        </article>
+    </a>
+
+
+
+</div>
+</li>
+    
+
+    
+    <li class="vrt-mosttrending__item"><div class="page-article page basicpage">
+
+    
+    
+    <a href="/vrtnws/en/2021/12/21/city-authorities-reject-plans-for-chip-museum-in-brussels/" class="vrt-teaser vrt-teaser--lisa vrt-teaser--default">
+        <article role="presentation" class="vrt-teaser__article">
+            
+  
+
+
+            <div class="vrt-teaser__content-wrapper">
+                <div class="vrt-teaser__title-wrapper">
+                    
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <span class="vrt-teaser__tag vrt-teaser__tag--default vrt-tag vrt-tag--default
+              
+              
+              ">
+    <span class="vrt-teaser__tag-main vrt-tag-main">Brussels</span>
+    
+  </span>
+
+
+  <h2 class="vrt-teaser__title ">
+    
+  
+  
+
+    <span class="vrt-teaser__title-text">City authorities reject plans for chip museum in Brussels</span>
+  </h2>
+
+                </div>
+            </div>
+
+            
+  <div class="vrt-teaser__date-wrapper">
+    
+    
+  
+    <time class="vrt-teaser__date" datetime="2021-12-21 15:44+01:00" aria-label=" Published on Tuesday 21 December 2021 at 15:44" data-fullrelevantdate="Tue 21 Dec 2021" data-fullrelevanttime="15:44">
+      
+         Tue 21 Dec <span class="icon clock">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" focusable="false">
+  <path d="M60,0a60,60,0,1,0,60,60A60,60,0,0,0,60,0Zm0,102a42,42,0,1,1,42-42A42,42,0,0,1,60,102ZM74.46,81.54,55,62.07V27H65V57.93L81.54,74.46Z"/>
+</svg>
+
+    </span> 15:44
+    </time>
+  
+
+  </div>
+
+
+            
+  
+  
+  
+
+        </article>
+    </a>
+
+
+
+</div>
+</li>
+    
+
+    
+    <li class="vrt-mosttrending__item"><div class="page-article page basicpage">
+
+    
+    
+    <a href="/vrtnws/en/2021/12/21/cyberattack-partly-downs-defence-department-network/" class="vrt-teaser vrt-teaser--lisa vrt-teaser--default">
+        <article role="presentation" class="vrt-teaser__article">
+            
+  
+
+
+            <div class="vrt-teaser__content-wrapper">
+                <div class="vrt-teaser__title-wrapper">
+                    
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <span class="vrt-teaser__tag vrt-teaser__tag--default vrt-tag vrt-tag--default
+              
+              
+              ">
+    <span class="vrt-teaser__tag-main vrt-tag-main">Home News</span>
+    
+  </span>
+
+
+  <h2 class="vrt-teaser__title ">
+    
+  
+  
+
+    <span class="vrt-teaser__title-text">Cyberattack partly downs defence department network</span>
+  </h2>
+
+                </div>
+            </div>
+
+            
+  <div class="vrt-teaser__date-wrapper">
+    
+    
+  
+    <time class="vrt-teaser__date" datetime="2021-12-21 11:29+01:00" aria-label=" Published on Tuesday 21 December 2021 at 11:29" data-fullrelevantdate="Tue 21 Dec 2021" data-fullrelevanttime="11:29">
+      
+         Tue 21 Dec <span class="icon clock">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" focusable="false">
+  <path d="M60,0a60,60,0,1,0,60,60A60,60,0,0,0,60,0Zm0,102a42,42,0,1,1,42-42A42,42,0,0,1,60,102ZM74.46,81.54,55,62.07V27H65V57.93L81.54,74.46Z"/>
+</svg>
+
+    </span> 11:29
+    </time>
+  
+
+  </div>
+
+
+            
+  
+  
+  
+
+        </article>
+    </a>
+
+
+
+</div>
+</li>
+    
+
+    
+    <li class="vrt-mosttrending__item"><div class="page-article page basicpage">
+
+    
+    
+    <a href="/vrtnws/en/2021/10/30/70-of-hospitalised-covid-patients-are-vaccinated-but-the-vacci/" class="vrt-teaser vrt-teaser--lisa vrt-teaser--default">
+        <article role="presentation" class="vrt-teaser__article">
+            
+  
+
+
+            <div class="vrt-teaser__content-wrapper">
+                <div class="vrt-teaser__title-wrapper">
+                    
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <span class="vrt-teaser__tag vrt-teaser__tag--default vrt-tag vrt-tag--default
+              
+              
+              ">
+    <span class="vrt-teaser__tag-main vrt-tag-main">Health</span>
+    
+  </span>
+
+
+  <h2 class="vrt-teaser__title ">
+    
+  
+  
+
+    <span class="vrt-teaser__title-text">70% of hospitalised Covid patients are vaccinated, but the vaccines are working</span>
+  </h2>
+
+                </div>
+            </div>
+
+            
+  <div class="vrt-teaser__date-wrapper">
+    
+    
+  
+    <time class="vrt-teaser__date" datetime="2021-10-30 10:00+02:00" aria-label=" Published on Saturday 30 October 2021 at 10:00" data-fullrelevantdate="Sat 30 Oct 2021" data-fullrelevanttime="10:00">
+      
+         Sat 30 Oct <span class="icon clock">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" focusable="false">
+  <path d="M60,0a60,60,0,1,0,60,60A60,60,0,0,0,60,0Zm0,102a42,42,0,1,1,42-42A42,42,0,0,1,60,102ZM74.46,81.54,55,62.07V27H65V57.93L81.54,74.46Z"/>
+</svg>
+
+    </span> 10:00
+    </time>
+  
+
+  </div>
+
+
+            
+  
+  
+  
+
+        </article>
+    </a>
+
+
+
+</div>
+</li>
+    
+</ol>
+        </div>
+    
+
+
+        <footer class="vrt-mosttrending__footer">
+            <div class="vrt-mosttrending__pagination js-mosttrending-pagination"></div>
+        </footer>
+    </div>
+
+</section>
+</main>
+
+<aside class="vrt-mosttrending--sidebar js-mosttrending-sidebar">
+  <div class="vrt-mosttrending--sidebar__title-wrapper">
+    <h1 class="vrtlist__title vrt-mosttrending--sidebar__title">
+      Top stories
+    </h1>
+  </div>
+
+  
+  
+
+  <ul class="vrtlist__list vrtlist__list--mosttrending--sidebar">
+  
+  <li class="vrt-mosttrending--sidebar__article"><div class="page-article page basicpage">
+
+    
+    
+    <a href="/vrtnws/en/2021/12/21/flemish-house-prices-skyrocket/" class="vrt-teaser vrt-teaser--lisa vrt-teaser--default">
+        <article role="presentation" class="vrt-teaser__article">
+            
+  
+
+
+            <div class="vrt-teaser__content-wrapper">
+                <div class="vrt-teaser__title-wrapper">
+                    
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <span class="vrt-teaser__tag vrt-teaser__tag--default vrt-tag vrt-tag--default
+              
+              
+              ">
+    <span class="vrt-teaser__tag-main vrt-tag-main">Economy</span>
+    
+  </span>
+
+
+  <h2 class="vrt-teaser__title ">
+    
+  
+  
+
+    <span class="vrt-teaser__title-text">Flemish house prices skyrocket</span>
+  </h2>
+
+                </div>
+            </div>
+
+            
+  <div class="vrt-teaser__date-wrapper">
+    
+    
+  
+    <time class="vrt-teaser__date" datetime="2021-12-21 10:08+01:00" aria-label=" Published on Tuesday 21 December 2021 at 10:08" data-fullrelevantdate="Tue 21 Dec 2021" data-fullrelevanttime="10:08">
+      
+         Tue 21 Dec <span class="icon clock">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" focusable="false">
+  <path d="M60,0a60,60,0,1,0,60,60A60,60,0,0,0,60,0Zm0,102a42,42,0,1,1,42-42A42,42,0,0,1,60,102ZM74.46,81.54,55,62.07V27H65V57.93L81.54,74.46Z"/>
+</svg>
+
+    </span> 10:08
+    </time>
+  
+
+  </div>
+
+
+            
+  
+  
+  
+
+        </article>
+    </a>
+
+
+
+</div>
+</li>
+  
+
+  
+  <li class="vrt-mosttrending--sidebar__article"><div class="page-article page basicpage">
+
+    
+    
+    <a href="/vrtnws/en/2021/12/21/new-parking-rules-in-the-city-of-brussels/" class="vrt-teaser vrt-teaser--lisa vrt-teaser--default">
+        <article role="presentation" class="vrt-teaser__article">
+            
+  
+
+
+            <div class="vrt-teaser__content-wrapper">
+                <div class="vrt-teaser__title-wrapper">
+                    
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <span class="vrt-teaser__tag vrt-teaser__tag--default vrt-tag vrt-tag--default
+              
+              
+              ">
+    <span class="vrt-teaser__tag-main vrt-tag-main">Brussels</span>
+    
+  </span>
+
+
+  <h2 class="vrt-teaser__title ">
+    
+  
+  
+
+    <span class="vrt-teaser__title-text">New parking rules in the City of Brussels</span>
+  </h2>
+
+                </div>
+            </div>
+
+            
+  <div class="vrt-teaser__date-wrapper">
+    
+    
+  
+    <time class="vrt-teaser__date" datetime="2021-12-21 10:56+01:00" aria-label=" Published on Tuesday 21 December 2021 at 10:56" data-fullrelevantdate="Tue 21 Dec 2021" data-fullrelevanttime="10:56">
+      
+         Tue 21 Dec <span class="icon clock">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" focusable="false">
+  <path d="M60,0a60,60,0,1,0,60,60A60,60,0,0,0,60,0Zm0,102a42,42,0,1,1,42-42A42,42,0,0,1,60,102ZM74.46,81.54,55,62.07V27H65V57.93L81.54,74.46Z"/>
+</svg>
+
+    </span> 10:56
+    </time>
+  
+
+  </div>
+
+
+            
+  
+  
+  
+
+        </article>
+    </a>
+
+
+
+</div>
+</li>
+  
+
+  
+  <li class="vrt-mosttrending--sidebar__article"><div class="page-article page basicpage">
+
+    
+    
+    <a href="/vrtnws/en/2021/12/21/experts_-advice-to-consultative-committee-leaked/" class="vrt-teaser vrt-teaser--lisa vrt-teaser--default">
+        <article role="presentation" class="vrt-teaser__article">
+            
+  
+
+
+            <div class="vrt-teaser__content-wrapper">
+                <div class="vrt-teaser__title-wrapper">
+                    
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <span class="vrt-teaser__tag vrt-teaser__tag--default vrt-tag vrt-tag--default
+              
+              
+              ">
+    <span class="vrt-teaser__tag-main vrt-tag-main">Home News</span>
+    
+  </span>
+
+
+  <h2 class="vrt-teaser__title ">
+    
+  
+  
+
+    <span class="vrt-teaser__title-text">Experts’ advice to Consultative Committee leaked</span>
+  </h2>
+
+                </div>
+            </div>
+
+            
+  <div class="vrt-teaser__date-wrapper">
+    
+    
+  
+    <time class="vrt-teaser__date" datetime="2021-12-21 14:00+01:00" aria-label=" Published on Tuesday 21 December 2021 at 14:00" data-fullrelevantdate="Tue 21 Dec 2021" data-fullrelevanttime="14:00">
+      
+         Tue 21 Dec <span class="icon clock">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" focusable="false">
+  <path d="M60,0a60,60,0,1,0,60,60A60,60,0,0,0,60,0Zm0,102a42,42,0,1,1,42-42A42,42,0,0,1,60,102ZM74.46,81.54,55,62.07V27H65V57.93L81.54,74.46Z"/>
+</svg>
+
+    </span> 14:00
+    </time>
+  
+
+  </div>
+
+
+            
+  
+  
+  
+
+        </article>
+    </a>
+
+
+
+</div>
+</li>
+  
+
+  
+  <li class="vrt-mosttrending--sidebar__article"><div class="page-article page basicpage">
+
+    
+    
+    <a href="/vrtnws/en/2021/12/21/more-take-home-pay-for-those-in-work/" class="vrt-teaser vrt-teaser--lisa vrt-teaser--is-video vrt-teaser--default">
+        <article role="presentation" class="vrt-teaser__article">
+            
+  
+
+
+            <div class="vrt-teaser__content-wrapper">
+                <div class="vrt-teaser__title-wrapper">
+                    
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <span class="vrt-teaser__tag vrt-teaser__tag--default vrt-tag vrt-tag--default
+              
+              
+              ">
+    <span class="vrt-teaser__tag-main vrt-tag-main">Economy</span>
+    
+  </span>
+
+
+  <h2 class="vrt-teaser__title ">
+    
+  <span class="icon is-video"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <polygon class="fill-element" points="0,0 28,16 0,32" fill-rule="nonzero"/>
+</svg>
+</span>
+  
+
+    <span class="vrt-teaser__title-text">More take-home pay for those in work</span>
+  </h2>
+
+                </div>
+            </div>
+
+            
+  <div class="vrt-teaser__date-wrapper">
+    
+    
+  
+    <time class="vrt-teaser__date" datetime="2021-12-21 12:03+01:00" aria-label=" Published on Tuesday 21 December 2021 at 12:03" data-fullrelevantdate="Tue 21 Dec 2021" data-fullrelevanttime="12:03">
+      
+         Tue 21 Dec <span class="icon clock">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" focusable="false">
+  <path d="M60,0a60,60,0,1,0,60,60A60,60,0,0,0,60,0Zm0,102a42,42,0,1,1,42-42A42,42,0,0,1,60,102ZM74.46,81.54,55,62.07V27H65V57.93L81.54,74.46Z"/>
+</svg>
+
+    </span> 12:03
+    </time>
+  
+
+  </div>
+
+
+            
+  
+  
+  
+
+        </article>
+    </a>
+
+
+
+</div>
+</li>
+  
+
+  
+  <li class="vrt-mosttrending--sidebar__article"><div class="page-article page basicpage">
+
+    
+    
+    <a href="/vrtnws/en/2021/12/21/coronavirus-infections-down-by-more-than-a-third/" class="vrt-teaser vrt-teaser--lisa vrt-teaser--default">
+        <article role="presentation" class="vrt-teaser__article">
+            
+  
+
+
+            <div class="vrt-teaser__content-wrapper">
+                <div class="vrt-teaser__title-wrapper">
+                    
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <span class="vrt-teaser__tag vrt-teaser__tag--default vrt-tag vrt-tag--default
+              
+              
+              ">
+    <span class="vrt-teaser__tag-main vrt-tag-main">Health</span>
+    
+  </span>
+
+
+  <h2 class="vrt-teaser__title ">
+    
+  
+  
+
+    <span class="vrt-teaser__title-text">Coronavirus infections down by more than a third</span>
+  </h2>
+
+                </div>
+            </div>
+
+            
+  <div class="vrt-teaser__date-wrapper">
+    
+    
+  
+    <time class="vrt-teaser__date" datetime="2021-12-21 09:48+01:00" aria-label=" Published on Tuesday 21 December 2021 at 09:48" data-fullrelevantdate="Tue 21 Dec 2021" data-fullrelevanttime="09:48">
+      
+         Tue 21 Dec <span class="icon clock">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" focusable="false">
+  <path d="M60,0a60,60,0,1,0,60,60A60,60,0,0,0,60,0Zm0,102a42,42,0,1,1,42-42A42,42,0,0,1,60,102ZM74.46,81.54,55,62.07V27H65V57.93L81.54,74.46Z"/>
+</svg>
+
+    </span> 09:48
+    </time>
+  
+
+  </div>
+
+
+            
+  
+  
+  
+
+        </article>
+    </a>
+
+
+
+</div>
+</li>
+  
+
+  
+  <li class="vrt-mosttrending--sidebar__article"><div class="page-article page basicpage">
+
+    
+    
+    <a href="/vrtnws/en/2021/12/21/molecatcher-kurt-catches-his-first-white-mole-in-23-decades/" class="vrt-teaser vrt-teaser--lisa vrt-teaser--default">
+        <article role="presentation" class="vrt-teaser__article">
+            
+  
+
+
+            <div class="vrt-teaser__content-wrapper">
+                <div class="vrt-teaser__title-wrapper">
+                    
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <span class="vrt-teaser__tag vrt-teaser__tag--default vrt-tag vrt-tag--default
+              
+              
+              ">
+    <span class="vrt-teaser__tag-main vrt-tag-main">East Flanders</span>
+    
+  </span>
+
+
+  <h2 class="vrt-teaser__title ">
+    
+  
+  
+
+    <span class="vrt-teaser__title-text">Molecatcher Kurt catches his first white mole in 3 decades</span>
+  </h2>
+
+                </div>
+            </div>
+
+            
+  <div class="vrt-teaser__date-wrapper">
+    
+    
+  
+    <time class="vrt-teaser__date" datetime="2021-12-21 16:41+01:00" aria-label=" Published on Tuesday 21 December 2021 at 16:41" data-fullrelevantdate="Tue 21 Dec 2021" data-fullrelevanttime="16:41">
+      
+         Tue 21 Dec <span class="icon clock">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" focusable="false">
+  <path d="M60,0a60,60,0,1,0,60,60A60,60,0,0,0,60,0Zm0,102a42,42,0,1,1,42-42A42,42,0,0,1,60,102ZM74.46,81.54,55,62.07V27H65V57.93L81.54,74.46Z"/>
+</svg>
+
+    </span> 16:41
+    </time>
+  
+
+  </div>
+
+
+            
+  
+  
+  
+
+        </article>
+    </a>
+
+
+
+</div>
+</li>
+  
+
+  
+  <li class="vrt-mosttrending--sidebar__article"><div class="page-article page basicpage">
+
+    
+    
+    <a href="/vrtnws/en/2021/12/20/another-energy-supply-company-in-financial-difficulty/" class="vrt-teaser vrt-teaser--lisa vrt-teaser--is-video vrt-teaser--default">
+        <article role="presentation" class="vrt-teaser__article">
+            
+  
+
+
+            <div class="vrt-teaser__content-wrapper">
+                <div class="vrt-teaser__title-wrapper">
+                    
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <span class="vrt-teaser__tag vrt-teaser__tag--default vrt-tag vrt-tag--default
+              
+              
+              ">
+    <span class="vrt-teaser__tag-main vrt-tag-main">Economy</span>
+    
+  </span>
+
+
+  <h2 class="vrt-teaser__title ">
+    
+  <span class="icon is-video"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <polygon class="fill-element" points="0,0 28,16 0,32" fill-rule="nonzero"/>
+</svg>
+</span>
+  
+
+    <span class="vrt-teaser__title-text">Another energy supply company in financial difficulty</span>
+  </h2>
+
+                </div>
+            </div>
+
+            
+  <div class="vrt-teaser__date-wrapper">
+    
+    
+  
+    <time class="vrt-teaser__date" datetime="2021-12-20 16:07+01:00" aria-label=" Published on Monday 20 December 2021 at 16:07" data-fullrelevantdate="Mon 20 Dec 2021" data-fullrelevanttime="16:07">
+      
+         Mon 20 Dec <span class="icon clock">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" focusable="false">
+  <path d="M60,0a60,60,0,1,0,60,60A60,60,0,0,0,60,0Zm0,102a42,42,0,1,1,42-42A42,42,0,0,1,60,102ZM74.46,81.54,55,62.07V27H65V57.93L81.54,74.46Z"/>
+</svg>
+
+    </span> 16:07
+    </time>
+  
+
+  </div>
+
+
+            
+  
+  
+  
+
+        </article>
+    </a>
+
+
+
+</div>
+</li>
+  
+
+  
+  <li class="vrt-mosttrending--sidebar__article"><div class="page-article page basicpage">
+
+    
+    
+    <a href="/vrtnws/en/2021/12/21/big-demand-for-accommodation-at-holiday-villages/" class="vrt-teaser vrt-teaser--lisa vrt-teaser--is-video vrt-teaser--default">
+        <article role="presentation" class="vrt-teaser__article">
+            
+  
+
+
+            <div class="vrt-teaser__content-wrapper">
+                <div class="vrt-teaser__title-wrapper">
+                    
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <span class="vrt-teaser__tag vrt-teaser__tag--default vrt-tag vrt-tag--default
+              
+              
+              ">
+    <span class="vrt-teaser__tag-main vrt-tag-main">Home News</span>
+    
+  </span>
+
+
+  <h2 class="vrt-teaser__title ">
+    
+  <span class="icon is-video"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <polygon class="fill-element" points="0,0 28,16 0,32" fill-rule="nonzero"/>
+</svg>
+</span>
+  
+
+    <span class="vrt-teaser__title-text">Big demand for accommodation at holiday villages</span>
+  </h2>
+
+                </div>
+            </div>
+
+            
+  <div class="vrt-teaser__date-wrapper">
+    
+    
+  
+    <time class="vrt-teaser__date" datetime="2021-12-21 14:40+01:00" aria-label=" Published on Tuesday 21 December 2021 at 14:40" data-fullrelevantdate="Tue 21 Dec 2021" data-fullrelevanttime="14:40">
+      
+         Tue 21 Dec <span class="icon clock">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" focusable="false">
+  <path d="M60,0a60,60,0,1,0,60,60A60,60,0,0,0,60,0Zm0,102a42,42,0,1,1,42-42A42,42,0,0,1,60,102ZM74.46,81.54,55,62.07V27H65V57.93L81.54,74.46Z"/>
+</svg>
+
+    </span> 14:40
+    </time>
+  
+
+  </div>
+
+
+            
+  
+  
+  
+
+        </article>
+    </a>
+
+
+
+</div>
+</li>
+  
+
+  
+  <li class="vrt-mosttrending--sidebar__article"><div class="page-article page basicpage">
+
+    
+    
+    <a href="/vrtnws/en/2021/12/20/night-trains-from-brussels-to-berlin-and-prague-from-next-summer/" class="vrt-teaser vrt-teaser--lisa vrt-teaser--default">
+        <article role="presentation" class="vrt-teaser__article">
+            
+  
+
+
+            <div class="vrt-teaser__content-wrapper">
+                <div class="vrt-teaser__title-wrapper">
+                    
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <span class="vrt-teaser__tag vrt-teaser__tag--default vrt-tag vrt-tag--default
+              
+              
+              ">
+    <span class="vrt-teaser__tag-main vrt-tag-main">Home News</span>
+    
+  </span>
+
+
+  <h2 class="vrt-teaser__title ">
+    
+  
+  
+
+    <span class="vrt-teaser__title-text">Night trains from Brussels to Berlin and Prague from next summer</span>
+  </h2>
+
+                </div>
+            </div>
+
+            
+  <div class="vrt-teaser__date-wrapper">
+    
+    
+  
+    <time class="vrt-teaser__date" datetime="2021-12-20 14:20+01:00" aria-label=" Published on Monday 20 December 2021 at 14:20" data-fullrelevantdate="Mon 20 Dec 2021" data-fullrelevanttime="14:20">
+      
+         Mon 20 Dec <span class="icon clock">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" focusable="false">
+  <path d="M60,0a60,60,0,1,0,60,60A60,60,0,0,0,60,0Zm0,102a42,42,0,1,1,42-42A42,42,0,0,1,60,102ZM74.46,81.54,55,62.07V27H65V57.93L81.54,74.46Z"/>
+</svg>
+
+    </span> 14:20
+    </time>
+  
+
+  </div>
+
+
+            
+  
+  
+  
+
+        </article>
+    </a>
+
+
+
+</div>
+</li>
+  
+
+  
+  <li class="vrt-mosttrending--sidebar__article"><div class="page-article page basicpage">
+
+    
+    
+    <a href="/vrtnws/en/2021/12/21/city-authorities-reject-plans-for-chip-museum-in-brussels/" class="vrt-teaser vrt-teaser--lisa vrt-teaser--default">
+        <article role="presentation" class="vrt-teaser__article">
+            
+  
+
+
+            <div class="vrt-teaser__content-wrapper">
+                <div class="vrt-teaser__title-wrapper">
+                    
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <span class="vrt-teaser__tag vrt-teaser__tag--default vrt-tag vrt-tag--default
+              
+              
+              ">
+    <span class="vrt-teaser__tag-main vrt-tag-main">Brussels</span>
+    
+  </span>
+
+
+  <h2 class="vrt-teaser__title ">
+    
+  
+  
+
+    <span class="vrt-teaser__title-text">City authorities reject plans for chip museum in Brussels</span>
+  </h2>
+
+                </div>
+            </div>
+
+            
+  <div class="vrt-teaser__date-wrapper">
+    
+    
+  
+    <time class="vrt-teaser__date" datetime="2021-12-21 15:44+01:00" aria-label=" Published on Tuesday 21 December 2021 at 15:44" data-fullrelevantdate="Tue 21 Dec 2021" data-fullrelevanttime="15:44">
+      
+         Tue 21 Dec <span class="icon clock">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" focusable="false">
+  <path d="M60,0a60,60,0,1,0,60,60A60,60,0,0,0,60,0Zm0,102a42,42,0,1,1,42-42A42,42,0,0,1,60,102ZM74.46,81.54,55,62.07V27H65V57.93L81.54,74.46Z"/>
+</svg>
+
+    </span> 15:44
+    </time>
+  
+
+  </div>
+
+
+            
+  
+  
+  
+
+        </article>
+    </a>
+
+
+
+</div>
+</li>
+  
+
+  
+  <li class="vrt-mosttrending--sidebar__article"><div class="page-article page basicpage">
+
+    
+    
+    <a href="/vrtnws/en/2021/12/21/cyberattack-partly-downs-defence-department-network/" class="vrt-teaser vrt-teaser--lisa vrt-teaser--default">
+        <article role="presentation" class="vrt-teaser__article">
+            
+  
+
+
+            <div class="vrt-teaser__content-wrapper">
+                <div class="vrt-teaser__title-wrapper">
+                    
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <span class="vrt-teaser__tag vrt-teaser__tag--default vrt-tag vrt-tag--default
+              
+              
+              ">
+    <span class="vrt-teaser__tag-main vrt-tag-main">Home News</span>
+    
+  </span>
+
+
+  <h2 class="vrt-teaser__title ">
+    
+  
+  
+
+    <span class="vrt-teaser__title-text">Cyberattack partly downs defence department network</span>
+  </h2>
+
+                </div>
+            </div>
+
+            
+  <div class="vrt-teaser__date-wrapper">
+    
+    
+  
+    <time class="vrt-teaser__date" datetime="2021-12-21 11:29+01:00" aria-label=" Published on Tuesday 21 December 2021 at 11:29" data-fullrelevantdate="Tue 21 Dec 2021" data-fullrelevanttime="11:29">
+      
+         Tue 21 Dec <span class="icon clock">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" focusable="false">
+  <path d="M60,0a60,60,0,1,0,60,60A60,60,0,0,0,60,0Zm0,102a42,42,0,1,1,42-42A42,42,0,0,1,60,102ZM74.46,81.54,55,62.07V27H65V57.93L81.54,74.46Z"/>
+</svg>
+
+    </span> 11:29
+    </time>
+  
+
+  </div>
+
+
+            
+  
+  
+  
+
+        </article>
+    </a>
+
+
+
+</div>
+</li>
+  
+
+  
+  <li class="vrt-mosttrending--sidebar__article"><div class="page-article page basicpage">
+
+    
+    
+    <a href="/vrtnws/en/2021/10/30/70-of-hospitalised-covid-patients-are-vaccinated-but-the-vacci/" class="vrt-teaser vrt-teaser--lisa vrt-teaser--default">
+        <article role="presentation" class="vrt-teaser__article">
+            
+  
+
+
+            <div class="vrt-teaser__content-wrapper">
+                <div class="vrt-teaser__title-wrapper">
+                    
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <span class="vrt-teaser__tag vrt-teaser__tag--default vrt-tag vrt-tag--default
+              
+              
+              ">
+    <span class="vrt-teaser__tag-main vrt-tag-main">Health</span>
+    
+  </span>
+
+
+  <h2 class="vrt-teaser__title ">
+    
+  
+  
+
+    <span class="vrt-teaser__title-text">70% of hospitalised Covid patients are vaccinated, but the vaccines are working</span>
+  </h2>
+
+                </div>
+            </div>
+
+            
+  <div class="vrt-teaser__date-wrapper">
+    
+    
+  
+    <time class="vrt-teaser__date" datetime="2021-10-30 10:00+02:00" aria-label=" Published on Saturday 30 October 2021 at 10:00" data-fullrelevantdate="Sat 30 Oct 2021" data-fullrelevanttime="10:00">
+      
+         Sat 30 Oct <span class="icon clock">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" focusable="false">
+  <path d="M60,0a60,60,0,1,0,60,60A60,60,0,0,0,60,0Zm0,102a42,42,0,1,1,42-42A42,42,0,0,1,60,102ZM74.46,81.54,55,62.07V27H65V57.93L81.54,74.46Z"/>
+</svg>
+
+    </span> 10:00
+    </time>
+  
+
+  </div>
+
+
+            
+  
+  
+  
+
+        </article>
+    </a>
+
+
+
+</div>
+</li>
+  
+</ul>
+
+
+</aside>
+
+
+    </div>
+
+    
+
+
+
+
+<footer class="vrt-site-footer">
+  <div class="row">
+    <div class="columns medium-24">
+      <div class="vrt-site-footer__container vrt-site-footer__container--social">
+        
+
+<div class="vrt-newsletter">
+    
+
+    
+        <h1 class="vrt-newsletter__title">Follow flandersnews.be</h1>
+        <p class="vrt-newsletter__subtitle">Sign up for our newsletter</p>
+
+        <div class="vrt-newsletter__form-wrapper">
+            <form class="vrt-newsletter__form js-newsletter-form" action="" data-optin-endpoint="https://crm.profiel.vrt.be/api/v2/public/optins" data-optin-id="105" method="post">
+
+                
+
+                <div class="vrt-newsletter__input-control">
+                    <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" focusable="false">
+  <path class="fill-element" d="M1 2h22c0 6.0752-4.925 11-11 11S1 8.0752 1 2zm23 4.9964V22H0V6.9964C1.9624 11.6916 6.6014 15 12 15s10.0376-3.3084 12-8.0036z"/>
+</svg>
+</span>
+
+                    <input class="vrt-newsletter__input-mail js-newsletter-form-email" type="email" name="mail" placeholder="What is your email address?" required/>
+                </div>
+                <input class="vrt-newsletter__input-submit" type="submit" value="Sign up"/>
+            </form>
+
+            <div class="vrt-newsletter__response vrt-newsletter__response--error">
+                <p>Something has gone wrong. Please try again.</p>
+            </div>
+
+            <div class="vrt-newsletter__response vrt-newsletter__response--success">
+                <p>Thank you for signing up.</p>
+            </div>
+        </div>
+    
+
+    <nav class="vrt-newsletter__social-links">
+        
+  
+  
+  
+  
+  
+  
+  
+
+  
+
+
+
+
+    </nav>
+</div>
+
+      </div>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="columns large-6 medium-8 small-24">
+      <div class="vrt-site-footer__container">
+        <div class="vrt-site-footer__content">
+          <a class="vrt-site-footer__logo" href="/vrtnws/en/" title="Visit the flandersnews.be homepage">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 26" focusable="false">
+    <title>VRT NWS: news</title>
+    <path class="logo-badge" fill="#5dfc71" d="M12.292 25.25C5.503 25.25 0 19.745 0 12.956 0 6.167 5.503.664 12.292.664h12.293v12.293a12.292 12.292 0 01-12.293 12.292"/>
+    <path class="logo-badge-text" fill="#16284a" d="M18.508 16.306a2.372 2.372 0 002.362-2.432v-.033a.15.15 0 00-.152-.147h-1.193a.216.216 0 00-.223.21.774.774 0 01-.767.807c-.455 0-.77-.332-.77-.904v-.063-2.575h2.125a.15.15 0 00.15-.15V9.89a.15.15 0 00-.15-.15h-2.126V8.124a.15.15 0 00-.156-.15h-1.379a.153.153 0 00-.153.153v5.572c0 1.561.997 2.608 2.429 2.608M12.72 15.615v-2.127c.047-1.329.964-2.375 2.28-2.325h.066a.166.166 0 00.173-.166V9.864a.166.166 0 00-.156-.166c-.82-.057-1.714.063-2.425.933v-.724a.166.166 0 00-.166-.17h-1.286a.166.166 0 00-.166.17v6.133c0 .092.074.166.166.166h1.349a.166.166 0 00.166-.166v-.425zM10.03 9.74H8.62a.166.166 0 00-.16.12l-1.328 4.226h-.027L5.757 9.86a.17.17 0 00-.159-.12H4.186a.166.166 0 00-.16.22l2.11 6.133c.022.07.087.117.16.116h1.62a.166.166 0 00.16-.116l2.113-6.126a.17.17 0 00-.16-.22"/>
+    <path class="logo-text" fill="#16284a" d="M94.585 7.412a.332.332 0 01-.333-.309c-.239-2.056-2.235-3.176-5.132-3.176-2.356 0-4.612.887-4.612 2.904 0 6.182 15.3-.718 15.3 10.93 0 0 0 7.515-10.453 7.515-9.348 0-10.083-6.123-10.166-8.126 0-.184.15-.333.333-.333h4.299c.183 0 .332.149.332.333.249 3.322 2.9 4.225 5.515 4.225 2.614 0 5.192-.996 5.192-3.485 0-6.312-15.299.31-15.299-10.893 0-3.416 3.21-6.977 9.904-6.977 6.432 0 9.515 3.216 9.724 7.06a.332.332 0 01-.332.352l-4.272-.02zM79.648.684h-4.02a.332.332 0 00-.332.263l-4 18.143L67.64.95a.332.332 0 00-.332-.27h-5.884a.332.332 0 00-.332.27l-3.654 18.14L53.422.944A.332.332 0 0053.09.68h-4.014a.333.333 0 00-.332.412l5.512 23.24c.036.152.175.26.332.255h5.748c.16.003.3-.109.332-.266l3.7-18.073 3.702 18.073a.332.332 0 00.332.266h5.748a.332.332 0 00.332-.256l5.491-23.239a.332.332 0 00-.325-.409zM32.532 7.787h-.067v16.465a.332.332 0 01-.332.333h-3.947a.332.332 0 01-.332-.333V1.017c0-.184.149-.333.332-.333h5.243c.12 0 .23.065.289.17l9.365 16.395h.067V1.017c0-.184.148-.333.332-.333h3.943c.184 0 .332.15.332.333v23.235a.332.332 0 01-.332.333h-5.153a.332.332 0 01-.292-.17L32.532 7.787z"/>
+</svg>
+
+          </a>
+        </div>
+        <div class="vrt-site-footer__content">
+          
+<div class="vrt-language-switch">
+  <input type="checkbox" class="vrt-language-switch__check" id="languageSwitchLabel"/>
+  <label class="vrt-language-switch__label vrt-language-switch__option" for="languageSwitchLabel" aria-expanded="false" aria-controls="languageSwitchLabelContent">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 42.67" focusable="false">
+  <path d="M5.33,6.61V41.78a.91.91,0,0,1-.89.89H2.67a.91.91,0,0,1-.89-.89V6.61a3.56,3.56,0,1,1,3.56,0ZM48,26.53c0,1-.64,1.42-1.44,1.83-3.14,1.69-6.61,3.22-10.25,3.22-5.11,0-7.56-3.89-13.61-3.89-4.42,0-9.06,2-12.89,4.06a1.82,1.82,0,0,1-.92.25,1.79,1.79,0,0,1-1.78-1.78V9.61A1.83,1.83,0,0,1,8,8.08a20.77,20.77,0,0,1,2.19-1.19c3.5-1.78,7.75-3.33,11.69-3.33,4.36,0,7.78,1.44,11.64,3.25a5.32,5.32,0,0,0,2.44.53c4.36,0,9.06-3.78,10.28-3.78A1.79,1.79,0,0,1,48,5.33Z"/>
+</svg>
+
+    <span>en</span>
+    flandersnews.be
+    <div class="more-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" focusable="false">
+  <polygon class="fill-element" points="0 30 60 90 120 30 0 30"/>
+</svg>
+</div>
+  </label>
+
+  <div id="languageSwitchLabelContent" class="vrt-language-switch__innerbox">
+    
+  
+  
+  <a class="vrt-language-switch__option" href="/vrtnws/nl/">
+    <span aria-hidden="true">nl</span>
+    <span class="offscreen">Nederlands</span>
+    vrtnws.be
+  </a>
+
+  
+  <a class="vrt-language-switch__option" href="/vrtnws/fr/">
+    <span aria-hidden="true">fr</span>
+    <span class="offscreen">Français</span>
+    flandreinfo.be
+  </a>
+
+  
+  
+
+  
+  <a class="vrt-language-switch__option" href="/vrtnws/de/">
+    <span aria-hidden="true">de</span>
+    <span class="offscreen">Deutsch</span>
+    flanderninfo.be
+  </a>
+
+
+  </div>
+</div>
+
+        </div>
+      </div>
+    </div>
+    <div class="columns large-18 medium-16 small-24">
+      <div class="row">
+        <div class="columns large-8 medium-12 small-24">
+          <div class="vrt-site-footer__container">
+            
+  
+    <h1 class="vrt-site-footer__list-title">Information</h1>
+    
+    <ul class="vrt-site-footer__links">
+      <li class="vrt-site-footer__links-item"><a class="vrt-site-footer__links-item-link" href="https://www.vrt.be/nl/over-de-vrt/beleid/beroepsethiek/deontologische-code-en-redactiestatuut/" target="_blank" rel="noopener noreferrer">Ethics</a></li>
+      
+      <li class="vrt-site-footer__links-item"><a class="vrt-site-footer__links-item-link" href="https://www.vrt.be/nl/info/privacy/" target="_blank" rel="noopener noreferrer">Privacy</a>
+      </li>
+      <li class="vrt-site-footer__links-item"><a class="vrt-site-footer__links-item-link" href="https://www.vrt.be/nl/info/gebruiksvoorwaarden/" target="_blank" rel="noopener noreferrer">Terms of use</a></li>
+      
+      <li class="vrt-site-footer__links-item"><a class="vrt-site-footer__links-item-link" href="https://www.vrt.be/en/responsible-disclosure-policy-english-version/" target="_blank" rel="noopener noreferrer">Responsible Disclosure Policy</a></li>
+    </ul>
+  
+
+          </div>
+        </div>
+        <div class="columns large-16 medium-12 small-24">
+          <div class="row">
+            <div class="columns large-12 medium-24 small-24">
+              <div class="vrt-site-footer__container">
+                
+  
+    <h1 class="vrt-site-footer__list-title">Contact us</h1>
+    
+    <ul class="vrt-site-footer__links">
+      <li class="vrt-site-footer__links-item"><a class="vrt-site-footer__links-item-link" href="/vrtnws/nl/services/hoofdredactie/">Chief Editors</a></li>
+      <li class="vrt-site-footer__links-item"><a class="vrt-site-footer__links-item-link" href="https://www.vrt.be/en/contact/">Company information</a></li>
+      
+      <li class="vrt-site-footer__links-item"><a class="vrt-site-footer__links-item-link" href="/vrtnws/nl/services/rss/">RSS</a></li>
+    </ul>
+  
+
+              </div>
+            </div>
+            <div class="columns large-12 medium-24 small-24">
+              <div class="vrt-site-footer__container">
+                <div class="vrt-site-footer__content">
+  <a class="vrt-site-footer__button" href="https://www.cim.be/nl/internet/disclaimer-cim-internet" target="_blank" rel="noopener noreferrer">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 86 20" focusable="false">
+  <g id="cim">
+    <path d="M80.4825434 7.6 C79.6428902 5.2 76.8 4.3 74.7 5.8 C73.640578 6.6 73.1 7.7 72.9 9.1 C72.717341 11.2 73.5 13.9 76.3 14.3 C77.803237 14.5 79.1 14.1 80.3 13.1 C80.6499422 12.8 80.8 12.4 80.5 12 C80.1095954 11.5 79.8 11.9 79.5 12.1 C79.006474 12.3 78.6 12.7 78.1 12.8 C76.1507514 13.5 74.4 12.3 74.5 10.3 L75.1368786 10.3 C76.7545665 10.3 78.4 10.3 80 10.3 C80.6107514 10.3 80.9 10.1 80.8 9.5 C80.7673988 8.9 80.7 8.2 80.5 7.6 L80.4825434 7.6 Z M74.4860116 9.1 C74.6315607 7.2 75.5 6.4 77.1 6.5 C78.3723699 6.6 79.3 7.7 79.3 9.1 L74.4860116 9.1 Z M57.3442775 7.7 C56.8 6.3 55.8 5.3 54.2 5.1 C52.5988439 4.9 51.4 5.6 50.5 7 C49.7004624 8.3 49.5 9.7 49.9 11.1 C50.2538728 12.4 50.8 13.4 52.1 14 C53.3796532 14.5 54.7 14.5 55.9 13.9 C56.4223121 13.6 56.9 13.3 57.3 13 C57.5559538 12.7 57.6 12.3 57.3 11.9 C56.952948 11.6 56.7 11.9 56.4 12 C56.2146821 12.1 56.1 12.3 55.9 12.4 C54.9241618 13 53.9 13.2 52.9 12.8 C51.8095954 12.4 51.4 11.5 51.3 10.4 C51.506474 10.3 51.7 10.3 51.8 10.3 C53.4801156 10.3 55.1 10.3 56.8 10.3 C57.4839306 10.3 57.7 10.1 57.7 9.4 C57.6411561 8.8 57.6 8.2 57.3 7.7 Z M51.3552601 9.1 C51.3450867 7.4 52.2 6.5 53.8 6.5 C55.2189595 6.5 56.1 7.5 56.1 9.1 L51.3552601 9.1 Z M25.7885549 1.5 C25.6163006 0.6 25 0.1 24.2 0.1 C23.3331792 0.1 22.9 0.5 22.7 1.5 C21.8298266 5.8 21 10.2 20.1 14.5 C20.0690173 14.7 20 14.8 20 15.1 C19.8746821 14.8 19.8 14.6 19.8 14.5 C18.9784971 11.6 18.2 8.8 17.4 5.9 C17.2065896 5.3 16.9 4.8 16.2 4.7 C15.2108671 4.6 14.5 5.1 14.3 6.1 C13.8946821 7.9 13.5 9.7 13.1 11.6 C12.770289 12.9 12.5 14.2 12.2 15.6 C12.1078613 16.3 12.5 16.7 13.1 16.8 C13.785896 16.9 14.2 16.6 14.4 15.9 C14.6505202 14.5 14.9 13.2 15.2 11.8 C15.3978035 10.7 15.6 9.5 15.9 8.3 C16.2817341 9.3 16.6 10.4 16.9 11.4 C17.5453179 13.9 18.2 16.4 18.9 19 C19.1364162 19.7 19.4 19.9 20.1 19.9 C20.699422 19.9 21 19.6 21.2 18.8 C21.9569942 15 22.7 11.1 23.5 7.2 C23.6990751 6.1 23.9 5.1 24.1 4 C24.176763 4 24.2 4 24.2 4 C24.4060116 4.9 24.6 5.9 24.7 6.9 C25.0646243 9 25.4 11.2 25.7 13.4 C25.8357225 13.9 26.2 14.2 26.7 14.3 C27.6003468 14.3 28 13.8 27.9 12.7 C27.1868208 9 26.5 5.2 25.8 1.5 Z M34.9309827 5.8 C34.9239306 5.6 34.7 5.3 34.5 5.2 C34.2654335 5.1 33.9 5.2 33.7 5.4 C33.5510983 5.5 33.4 5.8 33.4 6 C33.4151445 8.5 33.4 11 33.4 13.5 C33.4301734 14 33.8 14.4 34.3 14.3 C34.8352601 14.3 35 13.9 35 13.4 C34.9445087 12.2 35 11 35 9.7 C34.9517919 8.4 35 7.1 34.9 5.8 Z M10.1958382 5.4 C9.4899422 5.4 9.1 5.8 9.1 6.7 C9.0982659 8.2 9.1 9.6 9.1 11 C9.1017341 12.5 9.1 14 9.1 15.5 C9.10693642 16.4 9.5 16.8 10.2 16.8 C10.866474 16.8 11.3 16.4 11.3 15.6 C11.2716763 12.6 11.3 9.6 11.3 6.7 C11.2646243 5.8 10.9 5.4 10.2 5.4 Z M34.2410405 2.1 C33.7557225 2.1 33.3 2.5 33.3 3 C33.3109827 3.5 33.7 3.9 34.2 3.9 C34.7787283 3.9 35.2 3.6 35.2 3.1 C35.1731792 2.6 34.7 2.1 34.2 2.1 Z M6.78520231 14.4 C6.58936416 14.5 6.4 14.6 6.2 14.7 C4.84797688 15.2 3.5 14.8 2.8 13.5 C2.16046243 12.3 2.1 11.1 2.4 9.8 C2.93687861 7.6 4.5 6.8 6.6 7.7 C6.75260116 7.8 7 7.9 7.2 7.9 C7.47248555 7.8 7.9 7.7 8 7.4 C8.17976879 7.2 8.2 6.8 8.1 6.5 C7.95549133 6.2 7.6 6 7.4 5.8 C5.23271676 4.7 2.3 5.5 1 7.5 C0.326705202 8.6 0.1 9.8 0.1 11.1 C0.096416185 11.3 0.1 11.5 0.1 11.8 C0.251676301 15.1 2.7 17.2 6 16.8 C6.60578035 16.7 7.3 16.3 7.8 15.9 C8.24254335 15.7 8.3 15 8 14.6 C7.65884393 14.2 7.2 14.2 6.8 14.4 Z M10.1982659 2.2 C9.48751445 2.2 8.9 2.8 8.9 3.5 C8.8817341 4.2 9.5 4.7 10.2 4.8 C10.876763 4.8 11.5 4.2 11.5 3.5 C11.4790751 2.8 10.9 2.2 10.2 2.2 Z M84.194104 5.1 C84.194104 4.6 84.2 4 84.2 3.4 C84.1847399 2.9 83.9 2.5 83.4 2.5 C82.8978035 2.5 82.7 2.8 82.7 3.4 C82.6587283 4 82.7 4.6 82.7 5.2 C82.067052 5.3 81.4 5 81.3 5.8 C81.2753757 6.8 82.1 6.5 82.7 6.6 L82.6589595 7.5 C82.6589595 9.5 82.7 11.5 82.7 13.5 C82.6656647 14.1 83.1 14.5 83.6 14.3 C84.0627746 14.2 84.2 13.8 84.2 13.3 C84.1720231 11.3 84.2 9.3 84.2 7.2 L84.1618497 6.6 C84.7398844 6.5 85.5 6.7 85.5 5.9 C85.5685549 5 84.7 5.3 84.2 5.1 Z M69.523237 5.3 C68.1922543 4.9 67 5.1 66 6.1 C65.8922543 5.8 65.8 5.5 65.6 5.3 C65.4558382 5.2 65 5.1 64.9 5.2 C64.6189595 5.4 64.4 5.8 64.4 6.1 C64.3572254 8.5 64.4 10.9 64.4 13.3 C64.3759538 14 64.7 14.4 65.2 14.3 C65.6930636 14.3 65.9 14 65.9 13.3 C65.906474 11.8 65.9 10.3 65.9 8.8 C65.9144509 7.6 66.4 6.8 67.3 6.6 C68.8105202 6.1 70 7 70 8.6 C70.0576879 10.2 70 11.8 70 13.4 C70.0489017 14 70.3 14.3 70.8 14.3 C71.2033526 14.4 71.6 14 71.6 13.5 C71.5491329 11.5 71.6 9.6 71.4 7.7 C71.3700578 6.5 70.6 5.7 69.5 5.3 Z M40.6848555 5.1 C39.8211561 5.2 39.1 5.5 38.6 6.2 C38.4157225 5.8 38.4 5.5 38.2 5.3 C37.9868208 5.2 37.5 5.1 37.4 5.2 C37.1482081 5.4 36.9 5.7 36.9 6 C36.8789595 8.5 36.9 11 36.9 13.4 C36.9008092 14 37.3 14.4 37.7 14.3 C38.207052 14.3 38.4 14.1 38.4 13.4 C38.4269364 11.9 38.4 10.3 38.4 8.8 C38.4350289 7.6 39 6.8 39.9 6.6 C41.3804624 6.1 42.6 7.1 42.6 8.7 C42.5975723 10.3 42.6 11.8 42.6 13.4 C42.5893642 14.1 42.8 14.3 43.3 14.3 C43.7974566 14.3 44.1 14 44.1 13.4 C44.1265896 11.7 44.2 10 44.1 8.4 C44.0588439 6.3 42.7 5 40.7 5.1 Z M48.0008092 5.1 C48.0008092 4.5 48 4 48 3.4 C47.9876301 2.8 47.7 2.5 47.2 2.5 C46.7077457 2.5 46.5 2.8 46.5 3.4 C46.4667052 4 46.5 4.6 46.5 5.2 C45.8655491 5.3 45.1 5 45.1 5.9 C45.1245087 6.8 45.9 6.5 46.5 6.6 L46.4739884 9.8 C46.4739884 11 46.5 12.3 46.5 13.5 C46.4719075 14 46.7 14.3 47.2 14.3 C47.6300578 14.4 47.9 14 48 13.5 C47.9964162 13.4 48 13.3 48 13.2 L47.9768786 7.2 L47.9768786 6.6 C48.5549133 6.5 49.3 6.7 49.3 5.9 C49.3386127 5 48.5 5.3 48 5.1 Z M62.812948 5.2 C62.5500578 5.1 62.2 5.2 61.9 5.4 C61.4569942 5.7 61.1 6.1 60.7 6.5 C60.6263584 6.1 60.7 5.7 60.5 5.5 C60.3877457 5.3 59.9 5.1 59.7 5.2 C59.4249711 5.3 59.1 5.7 59.1 6 C59.0766474 8.5 59.1 11 59.1 13.4 C59.102659 14 59.5 14.3 59.9 14.3 C60.4009249 14.3 60.6 14.1 60.6 13.4 C60.6287861 12.1 60.6 10.8 60.6 9.5 C60.6483237 8.5 60.8 7.6 61.7 7.1 C62.1372254 6.9 62.6 6.8 63 6.6 C63.2667052 6.4 63.6 6 63.5 5.8 C63.4727168 5.5 63.1 5.2 62.8 5.2 Z"></path>
+  </g>
+</svg>
+
+  </a>
+</div>
+<div class="vrt-site-footer__content">
+  <a class="vrt-site-footer__button" href="https://www.uitinvlaanderen.be/" target="_blank" rel="noopener noreferrer">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 25" focusable="false">
+  <g>
+    <path d="M10.7744898,17.0658163 C10.7744898,18.275 10.6469388,19.2489796 9.71683673,20.1193878 C8.88571429,20.8954082 7.86989796,21.1673469 6.85459184,21.2540816 C5.96734694,21.3316327 4.81071429,21.197449 4.06377551,20.6739796 C3.03469388,19.9336735 2.83673469,18.8392857 2.83673469,17.4423469 L2.83673469,9.73979592 L5.85510204,9.99081633 L5.85510204,16.9704082 C5.85510204,17.344898 5.83979592,17.8515306 6.0372449,18.1867347 C6.2627551,18.5336735 6.71428571,18.6581633 7.09438776,18.6423469 C7.43367347,18.6265306 7.85612245,18.4969388 8.10969388,18.2316327 C8.49081633,17.8561224 8.44795918,17.2928571 8.44795918,16.7908163 L8.44795918,10.2061224 L10.7744898,10.3994898 L10.7744898,17.0658163 Z M14.4816327,20.4081633 L11.6903061,20.6382653 L11.6903061,13.6709184 L14.4816327,13.7581633 L14.4816327,20.4081633 Z M14.4816327,13.002551 L11.6903061,12.8795918 L11.6903061,10.4760204 L14.4816327,10.7081633 L14.4816327,13.002551 Z M20.05,19.9954082 L17.230102,20.2295918 L17.230102,13.172449 L15.2005102,13.0841837 L15.2005102,10.7673469 L22.0377551,11.3362245 L22.0377551,13.3795918 L20.05,13.2943878 L20.05,19.9954082 Z M0.458163265,6.65255102 L30.2882653,6.65255102 L30.2882653,24.5515306 L0.458163265,24.5515306 L24.322449,21.5678571 L24.322449,9.63571429 L0.458163265,6.65255102 Z M32.4760204,13.5683673 L34.8836735,13.5683673 L34.8836735,19.6989796 L32.4760204,19.6989796 L32.4760204,13.5683673 Z M32.4760204,11.2163265 L34.8836735,11.2163265 L34.8836735,13.1214286 L32.4760204,13.1214286 L32.4760204,11.2163265 Z M42.1306122,19.6984694 L39.7229592,19.6984694 L39.7229592,15.8403061 C39.7229592,15.522449 39.6739796,15.319898 39.5760204,15.2311224 C39.4780612,15.1428571 39.355102,15.0989796 39.2076531,15.0989796 C38.7719388,15.0989796 38.5540816,15.4035714 38.5540816,16.0147959 L38.5540816,19.6984694 L36.1464286,19.6984694 L36.1464286,13.5683673 L38.3785714,13.5683673 L38.3785714,14.4357143 C38.7081633,13.772449 39.2959184,13.4408163 40.1433673,13.4408163 C40.5887755,13.4408163 40.9653061,13.5260204 41.272449,13.6969388 C41.5795918,13.8673469 41.7989796,14.0882653 41.9316327,14.3591837 C42.0642857,14.6316327 42.1306122,15.102551 42.1306122,15.7734694 L42.1306122,19.6984694 Z M50.6061224,11.4714286 L48.0484694,19.6984694 L45.4755102,19.6984694 L42.8056122,11.4714286 L45.4663265,11.4714286 L46.7688776,15.9479592 C46.8571429,16.2117347 46.9362245,16.4729592 47.0045918,16.7295918 L48.530102,11.4714286 L50.6061224,11.4714286 Z M51.2755102,11.4714286 L53.6428571,11.4714286 L53.6428571,19.6984694 L51.2755102,19.6984694 L51.2755102,11.4714286 Z M58.6005102,16.8285714 C57.575,16.9372449 57.0622449,17.2653061 57.0622449,17.8122449 C57.0622449,18.1821429 57.2653061,18.3673469 57.6714286,18.3673469 C57.9290816,18.3673469 58.1479592,18.2908163 58.3290816,18.1382653 C58.5102041,17.9846939 58.6005102,17.6469388 58.6005102,17.1239796 L58.6005102,16.8285714 Z M61.0877551,19.6984694 L58.8081633,19.6984694 C58.7494898,19.4377551 58.7204082,19.152551 58.7204082,18.8438776 C58.2862245,19.4984694 57.6285714,19.8260204 56.7479592,19.8260204 C56.0244898,19.8260204 55.4826531,19.6408163 55.1229592,19.2709184 C54.7627551,18.9005102 54.5826531,18.4760204 54.5826531,17.997449 C54.5826531,17.35 54.877551,16.8255102 55.4663265,16.425 C56.0561224,16.0255102 57.1005102,15.7846939 58.6005102,15.7045918 L58.6005102,15.5663265 C58.6005102,15.2979592 58.5392857,15.119898 58.4163265,15.0316327 C58.2928571,14.9433673 58.1122449,14.8994898 57.8744898,14.8994898 C57.3178571,14.8994898 57.0071429,15.1229592 56.9423469,15.5693878 L54.7505102,15.3617347 C55.0637755,14.0811224 56.1306122,13.4408163 57.9510204,13.4408163 C58.4454082,13.4408163 58.8994898,13.4892857 59.3132653,13.5882653 C59.7270408,13.6867347 60.0545918,13.8403061 60.2959184,14.0494898 C60.5367347,14.2586735 60.6984694,14.4790816 60.7811224,14.7122449 C60.8632653,14.9454082 60.9045918,15.3938776 60.9045918,16.0571429 L60.9045918,18.505102 C60.9045918,18.9714286 60.9658163,19.3688776 61.0877551,19.6984694 Z M65.8392857,16.8285714 C64.8137755,16.9372449 64.3010204,17.2653061 64.3010204,17.8122449 C64.3010204,18.1821429 64.5040816,18.3673469 64.9107143,18.3673469 C65.1678571,18.3673469 65.3867347,18.2908163 65.5683673,18.1382653 C65.7484694,17.9846939 65.8392857,17.6469388 65.8392857,17.1239796 L65.8392857,16.8285714 Z M68.3265306,19.6984694 L66.0464286,19.6984694 C65.9882653,19.4377551 65.9586735,19.152551 65.9586735,18.8438776 C65.525,19.4984694 64.8678571,19.8260204 63.9872449,19.8260204 C63.2632653,19.8260204 62.7214286,19.6408163 62.3612245,19.2709184 C62.0015306,18.9005102 61.8214286,18.4760204 61.8214286,17.997449 C61.8214286,17.35 62.1163265,16.8255102 62.7056122,16.425 C63.2943878,16.0255102 64.3392857,15.7846939 65.8392857,15.7045918 L65.8392857,15.5663265 C65.8392857,15.2979592 65.7780612,15.119898 65.655102,15.0316327 C65.5316327,14.9433673 65.3510204,14.8994898 65.1132653,14.8994898 C64.5566327,14.8994898 64.2459184,15.1229592 64.1811224,15.5693878 L61.9892857,15.3617347 C62.302551,14.0811224 63.3693878,13.4408163 65.1892857,13.4408163 C65.6836735,13.4408163 66.1382653,13.4892857 66.5515306,13.5882653 C66.9663265,13.6867347 67.2933673,13.8403061 67.5341837,14.0494898 C67.7755102,14.2586735 67.9372449,14.4790816 68.0193878,14.7122449 C68.1020408,14.9454082 68.1433673,15.3938776 68.1433673,16.0571429 L68.1433673,18.505102 C68.1433673,18.9714286 68.2045918,19.3688776 68.3265306,19.6984694 Z M75.3719388,19.6984694 L72.9642857,19.6984694 L72.9642857,15.8403061 C72.9642857,15.522449 72.9147959,15.319898 72.8168367,15.2311224 C72.7188776,15.1428571 72.5964286,15.0989796 72.4479592,15.0989796 C72.0127551,15.0989796 71.794898,15.4035714 71.794898,16.0147959 L71.794898,19.6984694 L69.3872449,19.6984694 L69.3872449,13.5683673 L71.6193878,13.5683673 L71.6193878,14.4357143 C71.9489796,13.772449 72.5367347,13.4408163 73.3836735,13.4408163 C73.8295918,13.4408163 74.2056122,13.5260204 74.5127551,13.6969388 C74.8204082,13.8673469 75.0397959,14.0882653 75.172449,14.3591837 C75.305102,14.6316327 75.3719388,15.102551 75.3719388,15.7734694 L75.3719388,19.6984694 Z M80.2576531,15.7576531 C80.2576531,15.2066327 80.030102,14.9316327 79.5770408,14.9316327 C79.2602041,14.9316327 79.052551,15.1056122 78.9540816,15.4561224 C78.8556122,15.8061224 78.8066327,16.2346939 78.8066327,16.7408163 C78.8066327,17.7346939 79.0596939,18.2316327 79.5647959,18.2316327 C79.7576531,18.2316327 79.9214286,18.1530612 80.0561224,17.9964286 C80.1903061,17.8392857 80.2576531,17.6 80.2576531,17.2780612 L80.2576531,15.7576531 Z M82.625,19.6984694 L80.3688776,19.6984694 L80.3688776,18.8877551 C80.0362245,19.5132653 79.4862245,19.8260204 78.719898,19.8260204 C78.0142857,19.8260204 77.4413265,19.55 77.0020408,18.9969388 C76.5627551,18.444898 76.3433673,17.6418367 76.3433673,16.5897959 C76.3433673,15.605102 76.5637755,14.8234694 77.0061224,14.244898 C77.447449,13.6658163 78.0311224,13.3770408 78.7576531,13.3770408 C79.3642857,13.3770408 79.8637755,13.6081633 80.2576531,14.0693878 L80.2576531,11.4714286 L82.625,11.4714286 L82.625,19.6984694 Z M87.7795918,15.9117347 C87.7755102,15.4964286 87.6923469,15.2173469 87.530102,15.0739796 C87.3683673,14.9316327 87.1673469,14.8596939 86.9265306,14.8596939 C86.3581633,14.8596939 86.0734694,15.2102041 86.0734694,15.9117347 L87.7795918,15.9117347 Z M87.9469388,17.4984694 L90.1872449,17.6489796 C90.0545918,18.2515306 89.7163265,18.7658163 89.1714286,19.1892857 C88.6270408,19.6137755 87.8908163,19.8260204 86.9627551,19.8260204 C85.9306122,19.8260204 85.1071429,19.5270408 84.4923469,18.930102 C83.877551,18.3336735 83.5704082,17.5928571 83.5704082,16.7081633 C83.5704082,15.7923469 83.8739796,15.0178571 84.4806122,14.3872449 C85.0867347,13.7561224 85.8964286,13.4408163 86.9091837,13.4408163 C87.8887755,13.4408163 88.6816327,13.7382653 89.2857143,14.3336735 C89.8908163,14.9290816 90.1928571,15.7397959 90.1928571,16.7653061 C90.1928571,16.8494898 90.1908163,16.9663265 90.1872449,17.1158163 L86.0816327,17.1158163 C86.0892857,17.5015306 86.1576531,17.7882653 86.2867347,17.9744898 C86.4158163,18.1622449 86.6607143,18.2556122 87.0234694,18.2556122 C87.5469388,18.2556122 87.8540816,18.0030612 87.9469388,17.4984694 Z M93.4321429,19.6984694 L91.1280612,19.6984694 L91.1280612,13.5683673 L93.1290816,13.5683673 L93.1290816,14.8372449 C93.3571429,13.9168367 93.8892857,13.4566327 94.7244898,13.4566327 C94.8091837,13.4566327 94.9260204,13.4647959 95.0744898,13.4806122 L95.0744898,15.6209184 C94.9061224,15.5811224 94.7556122,15.5612245 94.6229592,15.5612245 C93.8285714,15.5612245 93.4321429,16.0045918 93.4321429,16.8913265 L93.4321429,19.6984694 Z M99.7260204,15.9117347 C99.7219388,15.4964286 99.6382653,15.2173469 99.4770408,15.0739796 C99.3142857,14.9316327 99.1132653,14.8596939 98.8729592,14.8596939 C98.3040816,14.8596939 98.019898,15.2102041 98.019898,15.9117347 L99.7260204,15.9117347 Z M99.8933673,17.4984694 L102.133673,17.6489796 C102.00102,18.2515306 101.662245,18.7658163 101.117857,19.1892857 C100.573469,19.6137755 99.8377551,19.8260204 98.9086735,19.8260204 C97.8765306,19.8260204 97.0535714,19.5270408 96.4387755,18.930102 C95.8234694,18.3336735 95.5168367,17.5928571 95.5168367,16.7081633 C95.5168367,15.7923469 95.819898,15.0178571 96.4265306,14.3872449 C97.0336735,13.7561224 97.8423469,13.4408163 98.855102,13.4408163 C99.8357143,13.4408163 100.627551,13.7382653 101.232653,14.3336735 C101.836735,14.9290816 102.139286,15.7397959 102.139286,16.7653061 C102.139286,16.8494898 102.137245,16.9663265 102.133673,17.1158163 L98.0280612,17.1158163 C98.0357143,17.5015306 98.1040816,17.7882653 98.2331633,17.9744898 C98.3617347,18.1622449 98.6071429,18.2556122 98.9693878,18.2556122 C99.4928571,18.2556122 99.8005102,18.0030612 99.8933673,17.4984694 Z M109.058163,19.6984694 L106.65051,19.6984694 L106.65051,15.8403061 C106.65051,15.522449 106.601531,15.319898 106.504082,15.2311224 C106.406122,15.1428571 106.282653,15.0989796 106.135204,15.0989796 C105.69949,15.0989796 105.481633,15.4035714 105.481633,16.0147959 L105.481633,19.6984694 L103.07398,19.6984694 L103.07398,13.5683673 L105.306122,13.5683673 L105.306122,14.4357143 C105.635204,13.772449 106.22398,13.4408163 107.070918,13.4408163 C107.516327,13.4408163 107.893367,13.5260204 108.2,13.6969388 C108.507143,13.8673469 108.727041,14.0882653 108.859694,14.3591837 C108.992347,14.6316327 109.058163,15.102551 109.058163,15.7734694 L109.058163,19.6984694 Z M110.245408,17.4984694 L112.533163,17.4984694 L112.533163,19.6984694 L110.245408,19.6984694 L110.245408,17.4984694 Z M116.102551,17.4147959 C116.102551,18.0173469 116.333673,18.3193878 116.797959,18.3193878 C117.04898,18.3193878 117.242347,18.2096939 117.37602,17.9908163 C117.509694,17.7714286 117.577041,17.319898 117.577041,16.6362245 C117.577041,15.8918367 117.50102,15.4244898 117.34898,15.2331633 C117.197449,15.0428571 117.009184,14.947449 116.785714,14.947449 C116.609694,14.947449 116.452041,15.0153061 116.311735,15.152551 C116.171939,15.2892857 116.102551,15.4882653 116.102551,15.7494898 L116.102551,17.4147959 Z M115.089796,19.6984694 L113.734694,19.6984694 L113.734694,11.4714286 L116.102551,11.4714286 L116.102551,14.2964286 C116.431122,13.7255102 116.954082,13.4408163 117.672959,13.4408163 C118.178571,13.4408163 118.607653,13.5729592 118.961224,13.8382653 C119.313776,14.1030612 119.577041,14.4831633 119.74949,14.975 C119.921939,15.4673469 120.008673,15.9846939 120.008673,16.527551 C120.008673,17.5163265 119.787245,18.3137755 119.345918,18.9183673 C118.904592,19.5234694 118.246939,19.8260204 117.371939,19.8260204 C116.508673,19.8260204 115.852041,19.502551 115.402551,18.8556122 C115.27449,19.0969388 115.169388,19.377551 115.089796,19.6984694 Z M124.859694,15.9117347 C124.855612,15.4964286 124.772959,15.2173469 124.610204,15.0739796 C124.447959,14.9316327 124.246429,14.8596939 124.006633,14.8596939 C123.437755,14.8596939 123.153571,15.2102041 123.153571,15.9117347 L124.859694,15.9117347 Z M125.027041,17.4984694 L127.266837,17.6489796 C127.134694,18.2515306 126.796429,18.7658163 126.251531,19.1892857 C125.707653,19.6137755 124.970918,19.8260204 124.043367,19.8260204 C123.011224,19.8260204 122.186735,19.5270408 121.572449,18.930102 C120.958163,18.3336735 120.65051,17.5928571 120.65051,16.7081633 C120.65051,15.7923469 120.954082,15.0178571 121.560204,14.3872449 C122.166837,13.7561224 122.976531,13.4408163 123.989286,13.4408163 C124.968878,13.4408163 125.761224,13.7382653 126.366327,14.3336735 C126.970918,14.9290816 127.272959,15.7397959 127.272959,16.7653061 C127.272959,16.8494898 127.270918,16.9663265 127.266837,17.1158163 L123.161224,17.1158163 C123.169388,17.5015306 123.238265,17.7882653 123.366837,17.9744898 C123.495918,18.1622449 123.741327,18.2556122 124.103061,18.2556122 C124.626531,18.2556122 124.934184,18.0030612 125.027041,17.4984694 Z M73.8091837,0.274489796 L73.8091837,4.1877551 C73.8091837,4.62091837 73.8270408,4.97244898 74.0341837,5.25153061 C74.1790816,5.44081633 74.4581633,5.64846939 75.0346939,5.64846939 C75.5668367,5.64846939 75.8377551,5.45 75.972449,5.27908163 C76.2255102,4.97244898 76.2438776,4.55765306 76.2438776,4.1877551 L76.2438776,0.274489796 L77.1811224,0.274489796 L77.1811224,4.20612245 C77.1811224,4.75561224 77.144898,5.39591837 76.6581633,5.91887755 C76.1892857,6.41479592 75.5489796,6.55 74.9632653,6.55 C74.1153061,6.55 73.5744898,6.3244898 73.2321429,5.99132653 C72.6729592,5.45 72.6729592,4.71989796 72.6729592,4.24183673 L72.6729592,0.274489796 L73.8091837,0.274489796 Z M78.4341837,1.86122449 L79.480102,1.86122449 L79.480102,6.45969388 L78.4341837,6.45969388 L78.4341837,1.86122449 Z M78.4163265,0.24744898 L79.4979592,0.24744898 L79.4979592,1.18520408 L78.4163265,1.18520408 L78.4163265,0.24744898 Z M84.4755102,0.274489796 L84.4755102,1.17653061 L82.8704082,1.17653061 L82.8704082,6.46020408 L81.7341837,6.46020408 L81.7341837,1.17653061 L80.1295918,1.17653061 L80.1295918,0.274489796 L84.4755102,0.274489796 Z M87.4872449,4.23265306 C87.2709184,4.23265306 86.8377551,4.26020408 86.5581633,4.35918367 C86.0260204,4.53928571 85.9454082,4.92704082 85.9454082,5.15255102 C85.9454082,5.37806122 86.0622449,5.51326531 86.1346939,5.57653061 C86.2969388,5.72959184 86.5494898,5.79285714 86.7658163,5.79285714 C87.1173469,5.79285714 87.4688776,5.62142857 87.6673469,5.36887755 C87.8566327,5.13469388 87.9647959,4.74693878 87.9647959,4.45816327 L87.9647959,4.22397959 L87.4872449,4.23265306 Z M84.9530612,3.07857143 C85.097449,2.475 85.4852041,2.15918367 85.7653061,2.01479592 C85.9811224,1.89744898 86.3688776,1.77142857 87.0816327,1.77142857 C87.6494898,1.77142857 88.1270408,1.86122449 88.4515306,2.09591837 C88.9658163,2.46530612 89.0107143,3.03367347 89.0107143,3.52959184 L89.0107143,5.47704082 C89.0107143,5.78367347 89.0642857,6.18061224 89.1096939,6.46020408 L88.0637755,6.46020408 C88.0280612,6.27040816 87.9826531,6.00918367 87.9647959,5.6755102 C87.55,6.46887755 86.8102041,6.55 86.4316327,6.55 C85.2239796,6.55 84.8091837,5.79285714 84.8091837,5.16173469 C84.8091837,4.7377551 84.9806122,4.23265306 85.6117347,3.91734694 C86.152551,3.6377551 87.0178571,3.58367347 87.4510204,3.5744898 L87.9647959,3.56581633 L87.9647959,3.4122449 C87.9647959,3.32244898 87.9561224,2.96173469 87.802551,2.76326531 C87.6132653,2.51989796 87.2709184,2.49285714 87.0178571,2.49285714 C86.6841837,2.49285714 86.4770408,2.54693878 86.3331633,2.62806122 C86.1617347,2.72704082 85.9903061,2.91632653 85.9362245,3.20510204 L84.9530612,3.07857143 Z M92.6622449,3.93520408 C92.8061224,3.78214286 92.8969388,3.51173469 92.8969388,3.28622449 C92.8969388,3.0244898 92.797449,2.79897959 92.6530612,2.65510204 C92.527551,2.52857143 92.3285714,2.42959184 92.0489796,2.42959184 C91.8867347,2.42959184 91.7239796,2.45663265 91.5530612,2.56479592 C91.327551,2.70918367 91.1744898,2.94336735 91.1744898,3.29489796 C91.1744898,3.52959184 91.2647959,3.8 91.4270408,3.95306122 C91.5346939,4.05255102 91.7239796,4.16071429 92.0397959,4.16071429 C92.2204082,4.16071429 92.4821429,4.13367347 92.6622449,3.93520408 Z M91.2556122,6.31581633 C90.9760204,6.3877551 90.777551,6.58622449 90.777551,6.80255102 C90.777551,7.14540816 91.102551,7.28979592 91.2377551,7.33469388 C91.3729592,7.37959184 91.6612245,7.46071429 92.1576531,7.46071429 C92.8153061,7.46071429 93.1403061,7.37091837 93.3117347,7.22602041 C93.419898,7.13622449 93.5010204,6.98265306 93.5010204,6.84744898 C93.5010204,6.39693878 92.8331633,6.3877551 92.4096939,6.36989796 L91.2556122,6.31581633 L91.2556122,6.31581633 Z M94.3663265,1.83469388 L94.2494898,1.83469388 L94.0418367,1.83469388 C93.8438776,1.84336735 93.572449,1.87959184 93.4647959,2.2494898 C93.8704082,2.59183673 93.9423469,3.06989796 93.9423469,3.34030612 C93.9423469,4.07959184 93.3382653,4.81887755 92.202551,4.81887755 C92.0760204,4.81887755 91.95,4.81020408 91.8239796,4.79183673 C91.7153061,4.77397959 91.5984694,4.75561224 91.4897959,4.75561224 C91.3454082,4.75561224 91.2290816,4.79183673 91.1561224,4.85510204 C91.102551,4.9 91.0397959,4.98112245 91.0397959,5.11632653 C91.0397959,5.26989796 91.1382653,5.45 91.5443878,5.46836735 L92.6346939,5.51326531 C93.1489796,5.53112245 93.8346939,5.56734694 94.2132653,5.98214286 C94.3938776,6.18061224 94.5015306,6.4872449 94.5015306,6.76683673 C94.5015306,7.15408163 94.3030612,7.59591837 93.8071429,7.85765306 C93.2668367,8.1372449 92.3469388,8.14591837 92.0938776,8.14591837 C91.102551,8.14591837 90.6423469,7.96581633 90.4443878,7.86632653 C90.0744898,7.68622449 89.8127551,7.41581633 89.8127551,6.97397959 C89.8127551,6.49591837 90.1107143,6.18061224 90.4984694,6.05408163 C90.3897959,5.99132653 90.0653061,5.76581633 90.0653061,5.31479592 C90.0653061,5.03520408 90.1734694,4.85510204 90.2729592,4.74693878 C90.4443878,4.54846939 90.6423469,4.47602041 90.777551,4.44030612 L90.777551,4.42193878 C90.1826531,4.07091837 90.1285714,3.55663265 90.1285714,3.28622449 C90.1285714,2.79030612 90.3178571,2.42959184 90.7056122,2.15 C91.0841837,1.87040816 91.5168367,1.77142857 92.0311224,1.77142857 C92.4637755,1.77142857 92.7433673,1.84336735 92.9596939,1.9244898 C93.0045918,1.63622449 93.1489796,1.39234694 93.3204082,1.24846939 C93.5459184,1.05918367 93.780102,1.03214286 93.969898,1.03214286 C94.0867347,1.03214286 94.194898,1.02295918 94.3122449,1.04081633 L94.3841837,1.05 L94.3663265,1.83469388 Z M98.1081633,3.67397959 C98.1081633,3.4122449 98.044898,3.11479592 97.9096939,2.91632653 C97.7382653,2.66428571 97.4321429,2.49285714 97.0984694,2.49285714 C96.7556122,2.49285714 96.4586735,2.66428571 96.2780612,2.88010204 C96.1336735,3.06071429 96.0071429,3.34030612 96.0071429,3.67397959 L98.1081633,3.67397959 Z M99.1719388,5.1255102 C99.0096939,5.66632653 98.6857143,5.98214286 98.4147959,6.17142857 C98.0540816,6.41479592 97.5857143,6.55 97.0892857,6.55 C96.4673469,6.55 95.8357143,6.28877551 95.4571429,5.90102041 C95.1056122,5.54030612 94.8443878,4.91836735 94.8443878,4.17857143 C94.8443878,3.24081633 95.2316327,2.61887755 95.6556122,2.26734694 C95.8994898,2.06020408 96.3586735,1.77142857 97.0535714,1.77142857 C97.927551,1.77142857 98.4867347,2.17704082 98.7841837,2.59183673 C99.1,3.0244898 99.244898,3.62857143 99.244898,4.15153061 L99.244898,4.35918367 L95.980102,4.35918367 C95.980102,4.41326531 95.9714286,4.82806122 96.1336735,5.16173469 C96.3765306,5.66632653 96.8193878,5.79285714 97.125,5.79285714 C97.3688776,5.79285714 97.675,5.72040816 97.927551,5.45918367 C98.0811224,5.29693878 98.1443878,5.14336735 98.1714286,4.9994898 L99.1719388,5.1255102 Z M100.209184,6.46020408 L100.209184,1.86122449 L101.182653,1.86122449 L101.182653,2.64591837 L101.20102,2.64591837 C101.461735,2.15 101.94898,1.77142857 102.652551,1.77142857 C103.022449,1.77142857 103.445918,1.88877551 103.707653,2.15 C103.905612,2.33928571 104.104082,2.70918367 104.104082,3.34030612 L104.104082,6.46020408 L103.058163,6.46020408 L103.058163,3.56581633 C103.058163,3.28622449 103.058163,2.98877551 102.878061,2.77244898 C102.706633,2.57397959 102.472449,2.54693878 102.318878,2.54693878 C101.993878,2.54693878 101.777551,2.68214286 101.633163,2.81734694 C101.308673,3.12346939 101.254592,3.52040816 101.254592,3.89897959 L101.254592,6.46020408 L100.209184,6.46020408 Z M108.196939,3.61989796 C108.196939,3.34030612 108.089286,3.05153061 107.936224,2.85357143 C107.746939,2.61887755 107.521429,2.52857143 107.232653,2.52857143 C106.871939,2.52857143 106.628571,2.68214286 106.439286,2.99744898 C106.222959,3.36734694 106.205102,3.87193878 106.205102,4.13367347 C106.205102,4.85510204 106.394388,5.225 106.430612,5.29693878 C106.610714,5.64846939 106.880612,5.79285714 107.205612,5.79285714 C107.521429,5.79285714 107.791327,5.63061224 107.954082,5.40510204 C108.098469,5.19744898 108.196939,4.84591837 108.196939,4.61122449 L108.196939,3.61989796 Z M109.243367,6.46020408 L108.279082,6.46020408 L108.279082,5.74795918 L108.260714,5.74795918 C107.99898,6.31581633 107.430612,6.55 106.908163,6.55 C106.511224,6.55 105.988265,6.43265306 105.564286,5.87397959 C105.402041,5.65765306 105.068878,5.13469388 105.068878,4.16989796 C105.068878,3.22295918 105.357143,2.66428571 105.645918,2.33928571 C106.015306,1.9244898 106.457143,1.77142857 106.935204,1.77142857 C107.25051,1.77142857 107.539286,1.84336735 107.836224,2.04183673 C107.99898,2.15 108.107653,2.26734694 108.196939,2.39336735 L108.196939,0.274489796 L109.243367,0.274489796 L109.243367,6.46020408 Z M112.886224,4.23265306 C112.669388,4.23265306 112.236735,4.26020408 111.957653,4.35918367 C111.42551,4.53928571 111.343878,4.92704082 111.343878,5.15255102 C111.343878,5.37806122 111.461735,5.51326531 111.533163,5.57653061 C111.695918,5.72959184 111.947959,5.79285714 112.164796,5.79285714 C112.516327,5.79285714 112.867857,5.62142857 113.065816,5.36887755 C113.255102,5.13469388 113.363776,4.74693878 113.363776,4.45816327 L113.363776,4.22397959 L112.886224,4.23265306 Z M110.352551,3.07857143 C110.496429,2.475 110.884694,2.15918367 111.163776,2.01479592 C111.380102,1.89744898 111.767857,1.77142857 112.480102,1.77142857 C113.047959,1.77142857 113.526531,1.86122449 113.85051,2.09591837 C114.364286,2.46530612 114.409694,3.03367347 114.409694,3.52959184 L114.409694,5.47704082 C114.409694,5.78367347 114.464286,6.18061224 114.509184,6.46020408 L113.463265,6.46020408 C113.426531,6.27040816 113.382143,6.00918367 113.363776,5.6755102 C112.94949,6.46887755 112.210204,6.55 111.831122,6.55 C110.622449,6.55 110.208163,5.79285714 110.208163,5.16173469 C110.208163,4.7377551 110.379592,4.23265306 111.010204,3.91734694 C111.551531,3.6377551 112.417347,3.58367347 112.85,3.5744898 L113.363776,3.56581633 L113.363776,3.4122449 C113.363776,3.32244898 113.355102,2.96173469 113.201531,2.76326531 C113.012245,2.51989796 112.669388,2.49285714 112.417347,2.49285714 C112.083673,2.49285714 111.87602,2.54693878 111.731633,2.62806122 C111.560204,2.72704082 111.388776,2.91632653 111.335204,3.20510204 L110.352551,3.07857143 Z M118.917347,5.45918367 C119.016837,5.57653061 119.242347,5.79285714 119.638776,5.79285714 C120.035714,5.79285714 120.261224,5.57653061 120.360204,5.45918367 C120.432143,5.37806122 120.703061,5.01734694 120.703061,4.16071429 C120.703061,3.30408163 120.432143,2.94336735 120.360204,2.8622449 C120.261224,2.74489796 120.035714,2.52857143 119.638776,2.52857143 C119.242347,2.52857143 119.016837,2.74489796 118.917347,2.8622449 C118.845918,2.94336735 118.57449,3.30408163 118.57449,4.16071429 C118.57449,5.01734694 118.845918,5.37806122 118.917347,5.45918367 Z M118.15102,2.33010204 C118.466837,2.03265306 118.935204,1.77142857 119.638776,1.77142857 C120.342347,1.77142857 120.810714,2.03265306 121.126531,2.33010204 C121.595408,2.77244898 121.839286,3.45765306 121.839286,4.16071429 C121.839286,4.86428571 121.595408,5.54897959 121.126531,5.99132653 C120.810714,6.28877551 120.342347,6.55 119.638776,6.55 C118.935204,6.55 118.466837,6.28877551 118.15102,5.99132653 C117.682143,5.54897959 117.438776,4.86428571 117.438776,4.16071429 C117.438776,3.45765306 117.682143,2.77244898 118.15102,2.33010204 Z M123.84949,4.62959184 C123.84949,4.9 123.885714,5.17040816 124.102041,5.45 C124.291327,5.68469388 124.52551,5.79285714 124.823469,5.79285714 C125.147959,5.79285714 125.40051,5.63061224 125.589796,5.29693878 C125.797449,4.93622449 125.833163,4.53928571 125.833163,4.14285714 C125.833163,3.75510204 125.797449,3.32244898 125.589796,2.97959184 C125.418367,2.69081633 125.175,2.52857143 124.823469,2.52857143 C124.507653,2.52857143 124.245918,2.67295918 124.084184,2.88010204 C123.921939,3.0877551 123.84949,3.40306122 123.84949,3.64693878 L123.84949,4.62959184 Z M122.803571,7.93877551 L122.803571,1.86122449 L123.777551,1.86122449 L123.777551,2.65510204 L123.795408,2.64591837 C124.047959,2.07806122 124.643367,1.77142857 125.165816,1.77142857 C125.715816,1.77142857 126.121939,1.9877551 126.418878,2.33928571 C126.888265,2.88010204 126.968878,3.59234694 126.968878,4.1244898 C126.968878,5.00816327 126.716837,5.54897959 126.473469,5.87397959 C126.058163,6.42397959 125.526531,6.55 125.129592,6.55 C124.859694,6.55 124.543367,6.46887755 124.327551,6.33367347 C124.156122,6.2255102 123.984694,6.04540816 123.877041,5.81071429 L123.84949,5.81071429 L123.84949,7.93877551 L122.803571,7.93877551 L122.803571,7.93877551 Z"></path>
+  </g>
+</svg>
+
+  </a>
+</div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    <template id="modal">
+    <div class="modal is-visible js-modal" role="dialog" aria-hidden="true">
+        <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+            <header class="modal__header">
+                <h2 id="modal-title" class="modal__title js-modal-title"></h2>
+                <button class="modal__close js-modal-close" aria-label="Close modal">
+                    <svg viewBox="0 0 23 23" xmlns="http://www.w3.org/2000/svg" class="icon icon-close" focusable="false">
+    <path class="fill-element" d="M7.998 11.18L.22 3.402a.75.75 0 0 1 0-1.061L2.34.22a.75.75 0 0 1 1.06 0l7.779 7.778L18.958.22a.75.75 0 0 1 1.06 0L22.14 2.34a.75.75 0 0 1 0 1.06l-7.778 7.779 7.778 7.778a.75.75 0 0 1 0 1.06l-2.121 2.122a.75.75 0 0 1-1.061 0l-7.778-7.778-7.778 7.778a.75.75 0 0 1-1.061 0L.22 20.019a.75.75 0 0 1 0-1.061l7.778-7.778z"/>
+</svg>
+
+                </button>
+            </header>
+            <div class="modal__content js-modal-content"></div>
+        </div>
+    </div>
+</template>
+    <template id="pswp">
+    <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="pswp__bg"></div>
+
+        <div class="pswp__scroll-wrap">
+            <div class="pswp__container">
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+            </div>
+
+            <div class="pswp__ui pswp__ui--hidden">
+                <div class="pswp__top-bar">
+                    <div class="pswp__counter"></div>
+                    <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                    <button class="pswp__button pswp__button--share" title="Share"></button>
+                    <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                    <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                    <div class="pswp__preloader">
+                        <div class="pswp__preloader__icn">
+                            <div class="pswp__preloader__cut">
+                                <div class="pswp__preloader__donut"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                    <div class="pswp__share-tooltip"></div>
+                </div>
+
+                <button class="pswp__button pswp__button--arrow--left" title="Vorige (pijl links)"></button>
+                <button class="pswp__button pswp__button--arrow--right" title="Volgende (pijl rechts)"></button>
+
+                <div class="pswp__caption">
+                    <div class="pswp__caption__center"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+
+    
+
+
+
+  
+    
+<script type="text/javascript" src="/etc.clientlibs/vrtnieuws/clientlibs/clientlib-vendor.min.72d74494e7878fbb66c24b5cc13abc69.js"></script>
+<script type="text/javascript" src="/etc.clientlibs/components/clientlibs/picturefill.min.577c1ddac608f49b9e0032f9d58936cb.js"></script>
+<script type="text/javascript" src="/etc.clientlibs/components/clientlibs/jquery.min.6bf0e169d42f702ae579c2510d6373df.js"></script>
+<script type="text/javascript" src="/etc.clientlibs/vrtnieuws/clientlibs/clientlib-all.min.f36e66f1f46312995fec97db977e37c2.js"></script>
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">if(window._satellite) { _satellite.pageBottom();}</script>
+
+</body>
+
+
+</html>

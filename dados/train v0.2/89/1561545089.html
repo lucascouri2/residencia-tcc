@@ -1,0 +1,2126 @@
+
+<!DOCTYPE HTML>
+<html lang="tr" class="no-js ts-arial  ts-back " id="htm" prefix="og: http://ogp.me/ns#">
+<head>
+<meta charset="UTF-8" /><script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.eu01.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"2588219186",applicationID:"141047623"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(10),c=t(11),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(12);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],7:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?p("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&p("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(f&&f<r.startTime)return;p("lcp",[r])}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||p("cls",[t])})}function a(t){if(t instanceof g&&!y){var e=Math.round(t.timeStamp),n={type:t.type};e<=l.now()?n.fid=l.now()-e:e>l.offset&&e<=Date.now()?(e-=l.offset,n.fid=l.now()-e):e=l.now(),y=!0,p("timing",["fi",e,n])}}function c(t){"hidden"===t&&(f=l.now(),p("pageHide",[f]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var f,u,s,d,p=t("handle"),l=t("loader"),v=t(9),m=t(3),g=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){u=new PerformanceObserver(r);try{u.observe({entryTypes:["paint"]})}catch(h){}s=new PerformanceObserver(i);try{s.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}d=new PerformanceObserver(o);try{d.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var y=!1,w=["click","keydown","mousedown","pointerdown","touchstart"];w.forEach(function(t){document.addEventListener(t,a,m(!1))})}v(c)}},{}],8:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],9:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],10:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],11:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],12:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){y[t]=m(t).concat(e)}function v(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:h,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(10),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!T++){var t=P.info=NREUM.info,e=g.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(O,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+P.offset],null,"api"),c("timing",["load",n]);var r=g.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=v+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===g.readyState&&o()}function o(){c("mark",["domContent",a()+P.offset],null,"api")}var a=t(5),c=t("handle"),f=t(10),u=t("ee"),s=t(8),d=t(6),p=t(2),l=t(3),v=p.getConfiguration("ssl")===!1?"http":"https",m=window,g=m.document,h="addEventListener",y="attachEvent",w=m.XMLHttpRequest,b=w&&w.prototype,E=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:w,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,O={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1212.min.js"},M=w&&b&&b[h]&&!/CriOS/.test(navigator.userAgent),P=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:M,userAgent:s,disabled:E};if(!E){t(1),t(7),g[h]?(g[h]("DOMContentLoaded",o,l(!1)),m[h]("load",r,l(!1))):(g[y]("onreadystatechange",i),m[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var T=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(11),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+<link rel="dns-prefetch" href="//file.daktilo.com">
+<link rel="dns-prefetch" href="//static.daktilo.com">
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="dns-prefetch" href="//fonts.gstatic.com">
+<link rel="dns-prefetch" href="//onesignal.com">
+<link rel="dns-prefetch" href="//www.facebook.com">
+<link rel="dns-prefetch" href="//staticxx.facebook.com">
+<link rel="dns-prefetch" href="//connect.facebook.net">
+<link rel="dns-prefetch" href="//graph.facebook.net">
+<link rel="dns-prefetch" href="//platform.twitter.com">
+<link rel="dns-prefetch" href="//pagead2.googlesyndication.com">
+<link rel="dns-prefetch" href="//securepubads.g.doubleclick.net">
+<link rel="dns-prefetch" href="//stats.g.doubleclick.net">
+<title>Kredi kartı faizleri düştü - Ekonomi</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" />
+<meta name="description" content="Türkiye Cumhuriyet Merkez Bankası, kredi kartlarındaki azami faiz oranlarında indirime gitti." />
+<meta name="robots" content="max-image-preview:large">
+<meta name="datePublished" content="2020-03-28T09:24:03+03:00">
+<meta name="apple-mobile-web-app-status-bar-style" content="rgb(21, 51, 134)">
+<meta name="msapplication-navbutton-color" content="rgb(21, 51, 134)">
+<meta name="theme-color" content="rgb(21, 51, 134)" />
+<meta name="google-site-verification" content="7D3aTnUHGhbyG0i3-_9iQU80uZ6FSC1q3SmKrpPWrWo" />
+<meta name="yandex-verification" content="37f98b55046224dd" />
+<meta name="msvalidate.01" content="67AA483CB54C83F65650079934433B1F" />
+<link rel="icon" href="https://static.daktilo.com/sites/535/uploads/2020/06/19/favicon.ico" />
+
+<meta property="fb:app_id" content="3060233387347731">
+<meta property="og:site_name" content="Özgür Kocaeli Gazetesi" />
+<meta property="og:title" content="Kredi kartı faizleri düştü" />
+<meta property="og:description" content="Türkiye Cumhuriyet Merkez Bankası, kredi kartlarındaki azami faiz oranlarında indirime gitti." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.ozgurkocaeli.com.tr/haber/4497468/kredi-karti-faizleri-dustu" />
+<meta property="og:image" content="https://static.daktilo.com/sites/535/uploads/2020/03/28/403317-0.jpg" />
+<meta property="og:image:width" content="880" />
+<meta property="og:image:height" content="440" />
+<meta property="og:image:alt" content="Kredi kartı faizleri düştü" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@ozgurkocaeli" />
+<meta name="twitter:creator" content="@ozgurkocaeli" />
+<meta name="twitter:title" content="Kredi kartı faizleri düştü">
+<meta name="twitter:description" content="Türkiye Cumhuriyet Merkez Bankası, kredi kartlarındaki azami faiz oranlarında indirime gitti.">
+<meta name="twitter:image" content="https://static.daktilo.com/sites/535/uploads/2020/03/28/403317-0.jpg">
+<meta name="twitter:url" content="https://www.ozgurkocaeli.com.tr/haber/4497468/kredi-karti-faizleri-dustu">
+
+<link rel="alternate" type="application/rss+xml" title="RSS servisi" href="https://www.ozgurkocaeli.com.tr/rss" />
+<link rel="amphtml" href="https://www.ozgurkocaeli.com.tr/amp/haber/4497468/kredi-karti-faizleri-dustu">
+<link rel="canonical" href="https://www.ozgurkocaeli.com.tr/haber/4497468/kredi-karti-faizleri-dustu" />
+<link rel="stylesheet" href="//file.daktilo.com/themes/enerjik_ozgur/assets/builds/grid/grid.min.css?m=1637067935">
+<link rel="stylesheet" href="//file.daktilo.com/themes/enerjik_ozgur/assets/font/font.min.css?m=1637067930">
+<link rel="stylesheet" href="//file.daktilo.com/themes/default/assets/libs/photoswipe/merge/photoswipe.css?m=1632226142" /> <link rel="stylesheet" href="//file.daktilo.com/themes/default/assets/builds/comment/comment.min.css?m=1632226142" /> <link rel="stylesheet" href="//file.daktilo.com/themes/enerjik_ozgur/assets/builds/comment/comment-theme.min.css?m=1637067930" /> <link rel="stylesheet" href="//file.daktilo.com/themes/default/assets/libs/plyr/dist/plyr.css?m=1632226142" />
+<link rel="stylesheet" href="//file.daktilo.com/themes/enerjik_ozgur/assets/main/main-haber.min.css?m=1637067936">
+<link rel="stylesheet" href="https://file.daktilo.com/themes/enerjik_ozgur/../../sites/535/assets/custom-enerjik_ozgur.1610989076.css">
+<script>var fs={},fn=[],adChannelsUsed=[],adsUsed=[],adStats={'all':{'channels':[],'ads':[]},'desktop':{'channels':[],'ads':[]},'mobile':{'channels':[],'ads':[]}}; 
+function pushfn(key){ if(!fn.indexOf(key) > -1 ) fn.push(key) }</script>
+<script data-name="set">"use strict";var set={theme:"enerjik",display:!0,queryload:!1,lazy:"blazy",defer:!0,media:{lg:1280,md:1024,sm:768,xs:568,ms:416},win:{y:null,x:null},doc:{y:null,x:null},page:{current:null,prev:null,url:null,theme:null,cat:null,sub:null,mod:null},account:{login:!1,avatar:null,nick:null,id:null},user:{media:"lg"},map:{cx:"40.726535",cy:"29.804222",px:"40.726535",py:"29.804222"},TextMaxZoom:9,TextVarZoom:4,bootstrap:!1,stats:!1,stats_url:!1,stats_data:!1,refresh_time:3,OneSignal:{appId:null,subdomainName:null,title:null,site_id:null,homepage:null,menu_back:!1,menu_active:null},ad:{prefix:"rkm",loadchannels:[]}};</script>
+
+<script type="text/javascript">
+_atrk_opts = { atrk_acct:"ImDym1akGFL17i", domain:"ozgurkocaeli.com.tr",dynamic: true};
+(function() { var as = document.createElement('script'); as.type = 'text/javascript'; as.async = true; as.src = "https://certify-js.alexametrics.com/atrk.js"; var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(as, s); })();
+</script>
+<noscript><img src="https://certify.alexametrics.com/atrk.gif?account=ImDym1akGFL17i" style="display:none" height="1" width="1" alt="" /></noscript>
+
+
+<script>
+  var _paq = window._paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(["setCookieDomain", "*.www.ozgurkocaeli.com.tr"]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="https://panel.webanalytic.org/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '13']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+
+<link rel="manifest" href="/manifest.json?data=Bildirt">
+<script>var uygulamaid="7211-3701-3208-4299-2990-7";</script>
+<script src="https://cdn2.bildirt.com/BildirtSDKfiles.js"></script>
+<link rel="stylesheet" href="/style_css">
+<link rel="stylesheet" href="/themes/default/assets/imsakiye.css?r=2">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/videojs-contrib-ads/6.7.0/videojs.ads.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/videojs-contrib-ads/6.7.0/videojs-contrib-ads.min.css">
+<link href="https://vjs.zencdn.net/7.11.4/video-js.css" rel="stylesheet" />
+<link href="/themes/default/assets/videojs.ima.css" rel="stylesheet" />
+<style>
+			.dkt-video { width:100%; height:316px !important; }
+			.dkt-video > div:first-child { position:static !important; }
+			.vjs-icon-placeholder:before { position:static !important; }
+			.ima-ad-container > div:nth-child(1) > div { position:static; }
+		</style>
+<script async src='/cdn-cgi/challenge-platform/h/g/scripts/invisible.js'></script></head>
+<body class="entry haber detay t-post ">
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-68481676-1"></script>
+<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+	  gtag('config', 'UA-68481676-1', {
+			'cookie_domain':'www.ozgurkocaeli.com.tr'
+		});
+	</script>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId            : '3060233387347731',
+      autoLogAppEvents : true,
+      xfbml            : true,
+      version          : 'v3.1'
+    }); 
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/tr_TR/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+<script type="application/ld+json">
+  {
+    "@context": "http:\/\/schema.org",
+    "@type": "NewsArticle",
+    "headline": "Kredi kart\u0131 faizleri d\u00fc\u015ft\u00fc",
+    "articleSection": "Ekonomi",
+    "dateCreated": "2020-03-28 09:24:03",
+    "datePublished": "2020-03-28 09:24:03",
+    "dateModified": "2020-05-19 16:52:48",
+    "wordCount": 124,
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/www.ozgurkocaeli.com.tr\/haber\/4497468\/kredi-karti-faizleri-dustu"
+    },
+    "articleBody": "Kredi kart\u0131\u00a0kullananlar\u0131 ilgilendiren geli\u015fme Resmi Gazete'de yay\u0131mland\u0131. T\u00fcrkiye Cumhuriyet\u00a0Merkez Bankas\u0131'n\u0131n alm\u0131\u015f oldu\u011fu karara g\u00f6re, kredi kartlar\u0131nda azami\u00a0faiz\u00a0oran\u0131 d\u00fc\u015f\u00fcr\u00fcld\u00fc.\n\n\nBuna g\u00f6re,\u00a0\n\n\nT\u00fcrk liras\u0131 cinsinden kredi kart\u0131 i\u015flemlerinde uygulanacak ayl\u0131k azami akdi faiz oran\u0131 y\u00fczde 1,25, (\u00f6nceki y\u00fczde 1.40)\n\n\nYabanc\u0131 para cinsinden kredi kart\u0131 i\u015flemlerinde uygulanacak ayl\u0131k azami akdi faiz oran\u0131 y\u00fczde 1,00 (\u00f6nceki y\u00fczde 1.12)\n\n\nT\u00fcrk liras\u0131 cinsinden kredi kart\u0131 i\u015flemlerinde uygulanacak ayl\u0131k azami gecikme faiz oran\u0131 y\u00fczde 1,55 (\u00f6nceki y\u00fczde 1.70)\n\n\nYabanc\u0131 para cinsinden kredi kart\u0131 i\u015flemlerinde uygulanacak ayl\u0131k azami gecikme faiz oran\u0131 y\u00fczde 1,30 (\u00f6nceki y\u00fczde 1.42) oldu.\n\n\nKarar 1 Nisan 2020 tarihinden itibaren y\u00fcr\u00fcrl\u00fc\u011fe girecek.\n\n\n\n\n\n\t \n\t\t\t\t\t\n\t\t\n\n\t\n\t\n\t\t\t\t\t\t  \n\n\t\n\t\n\t\t\n\t\t\n\n\t\n\t  \n\t\n\t\n\t\t\n\t \n\t\t\n\t\t\t\t\n\t\t\n\t\t\t\t \n\t\t\n\t\t\n\t\t\n\t\t\t\n\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\n\n\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\n\n\t\t\t\t\t\t\t\t\t\n\t\t\t\n\t\t\t\t\t\n\t\t\n\t pushfn('ads'); \n",
+    "description": "T\u00fcrkiye Cumhuriyet Merkez Bankas\u0131, kredi kartlar\u0131ndaki azami faiz oranlar\u0131nda indirime gitti.",
+    "inLanguage": "tr-TR",
+    "speakable": "",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https:\/\/static.daktilo.com\/sites\/535\/uploads\/2020\/03\/28\/403317-0.jpg",
+        "height": {
+            "@type": "Intangible",
+            "name": 440
+        },
+        "width": {
+            "@type": "Intangible",
+            "name": 880
+        }
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "\u00d6zg\u00fcr Kocaeli Gazetesi",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/static.daktilo.com\/sites\/535\/uploads\/2020\/06\/20\/desktop.png",
+            "width": 265,
+            "height": 80
+        }
+    },
+    "author": {
+        "@type": "Organization",
+        "name": "\u00d6zg\u00fcr Kocaeli Gazetesi",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/static.daktilo.com\/sites\/535\/uploads\/2020\/06\/20\/desktop.png",
+            "width": 265,
+            "height": 80
+        }
+    }
+}
+  </script>
+<script type="application/ld+json">
+  {"@context":"https:\/\/schema.org","@graph":[{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","@id":"https:\/\/www.ozgurkocaeli.com.tr\/#navbar-main","name":"Ana Menu","url":"https:\/\/www.ozgurkocaeli.com.tr\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","@id":"https:\/\/www.ozgurkocaeli.com.tr\/kocaeli-kultur-sanat-haberleri#navbar-main","name":"K\u00fclt\u00fcr Sanat","url":"https:\/\/www.ozgurkocaeli.com.tr\/kocaeli-kultur-sanat-haberleri"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","@id":"https:\/\/www.ozgurkocaeli.com.tr\/kocaeli-haberleri#navbar-main","name":"G\u00fcndem","url":"https:\/\/www.ozgurkocaeli.com.tr\/kocaeli-haberleri"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","@id":"https:\/\/www.ozgurkocaeli.com.tr\/roportaj#navbar-main","name":"R\u00f6portaj","url":"https:\/\/www.ozgurkocaeli.com.tr\/roportaj"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","@id":"https:\/\/www.ozgurkocaeli.com.tr\/#navbar-main","name":"Servis \/ Sehir Linkleri","url":"https:\/\/www.ozgurkocaeli.com.tr\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","@id":"https:\/\/www.ozgurkocaeli.com.tr\/rehber#navbar-main","name":"\u015eehir Rehberi","url":"https:\/\/www.ozgurkocaeli.com.tr\/rehber"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","@id":"https:\/\/www.ozgurkocaeli.com.tr\/kocaeli-hava-durumu#navbar-main","name":"Hava Durumu","url":"https:\/\/www.ozgurkocaeli.com.tr\/kocaeli-hava-durumu"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","@id":"https:\/\/www.ozgurkocaeli.com.tr\/kocaeli-namaz-vakitleri#navbar-main","name":"Namaz Vakti","url":"https:\/\/www.ozgurkocaeli.com.tr\/kocaeli-namaz-vakitleri"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","@id":"https:\/\/www.ozgurkocaeli.com.tr\/kocaeli-vefatlar#navbar-main","name":"Vefatlar","url":"https:\/\/www.ozgurkocaeli.com.tr\/kocaeli-vefatlar"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","@id":"https:\/\/www.ozgurkocaeli.com.tr\/kocaeli-nobetci-eczaneler#navbar-main","name":"Eczaneler","url":"https:\/\/www.ozgurkocaeli.com.tr\/kocaeli-nobetci-eczaneler"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","@id":"https:\/\/www.ozgurkocaeli.com.tr\/birinci-lig-fiksturu#navbar-main","name":"Lig Fikst\u00fcr\u00fc","url":"https:\/\/www.ozgurkocaeli.com.tr\/birinci-lig-fiksturu"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","@id":"https:\/\/www.ozgurkocaeli.com.tr\/ilan#navbar-main","name":"Seri \u0130lanlar","url":"https:\/\/www.ozgurkocaeli.com.tr\/ilan"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","@id":"https:\/\/www.ozgurkocaeli.com.tr\/gazete-mansetleri#navbar-main","name":"Gazete Man\u015fetleri","url":"https:\/\/www.ozgurkocaeli.com.tr\/gazete-mansetleri"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","@id":"https:\/\/www.ozgurkocaeli.com.tr\/kocaeli-trafik-durumu#navbar-main","name":"Trafik","url":"https:\/\/www.ozgurkocaeli.com.tr\/kocaeli-trafik-durumu"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","@id":"https:\/\/www.ozgurkocaeli.com.tr\/#navbar-main","name":"Kurumsal Linkler","url":"https:\/\/www.ozgurkocaeli.com.tr\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","@id":"https:\/\/www.ozgurkocaeli.com.tr\/bilgi\/kurulus#navbar-main","name":"Kurulu\u015f Hakk\u0131nda","url":"https:\/\/www.ozgurkocaeli.com.tr\/bilgi\/kurulus"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","@id":"https:\/\/www.ozgurkocaeli.com.tr\/bilgi\/kunye#navbar-main","name":"K\u00fcnye Bilgileri","url":"https:\/\/www.ozgurkocaeli.com.tr\/bilgi\/kunye"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","@id":"https:\/\/www.ozgurkocaeli.com.tr\/bilgi\/yayin-ilkeleri#navbar-main","name":"Yay\u0131n \u0130lkeleri","url":"https:\/\/www.ozgurkocaeli.com.tr\/bilgi\/yayin-ilkeleri"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","@id":"https:\/\/www.ozgurkocaeli.com.tr\/bilgi\/topluluk-kurallari#navbar-main","name":"Topluluk Kurallar\u0131","url":"https:\/\/www.ozgurkocaeli.com.tr\/bilgi\/topluluk-kurallari"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","@id":"https:\/\/www.ozgurkocaeli.com.tr\/haber-ihbar#navbar-main","name":"Haber \u0130hbar","url":"https:\/\/www.ozgurkocaeli.com.tr\/haber-ihbar"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","@id":"https:\/\/www.ozgurkocaeli.com.tr\/iletisim#navbar-main","name":"Adres ve \u0130leti\u015fim","url":"https:\/\/www.ozgurkocaeli.com.tr\/iletisim"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","@id":"https:\/\/www.ozgurkocaeli.com.tr\/bilgi\/hesap-bilgileri#navbar-main","name":"Banka Hesaplar\u0131","url":"https:\/\/www.ozgurkocaeli.com.tr\/bilgi\/hesap-bilgileri"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","@id":"https:\/\/www.ozgurkocaeli.com.tr\/bilgi\/reklam#navbar-main","name":"Reklam Se\u00e7enekleri","url":"https:\/\/www.ozgurkocaeli.com.tr\/bilgi\/reklam"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","@id":"https:\/\/www.ozgurkocaeli.com.tr\/bilgi\/abonelik#navbar-main","name":"Abonelik","url":"https:\/\/www.ozgurkocaeli.com.tr\/bilgi\/abonelik"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","@id":"https:\/\/www.ozgurkocaeli.com.tr\/bilgi\/veri-politikasi#navbar-main","name":"Veri Politikas\u0131","url":"https:\/\/www.ozgurkocaeli.com.tr\/bilgi\/veri-politikasi"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","@id":"https:\/\/www.ozgurkocaeli.com.tr\/bilgi\/uyelik-sozlesmesi#navbar-main","name":"Kullan\u0131m \u015eartlar\u0131","url":"https:\/\/www.ozgurkocaeli.com.tr\/bilgi\/uyelik-sozlesmesi"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","@id":"https:\/\/www.ozgurkocaeli.com.tr\/##navbar-main","name":"Block-Servis   ( Hava Durumu D\u00f6viz de yer alan servis linki  ) ","url":"https:\/\/www.ozgurkocaeli.com.tr\/#"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","@id":"https:\/\/www.ozgurkocaeli.com.tr\/#navbar-main","name":"Header \u00dcst Ba\u011flant\u0131lar","url":"https:\/\/www.ozgurkocaeli.com.tr\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","@id":"https:\/\/www.ozgurkocaeli.com.tr\/sehir#navbar-main","name":"Servisler","url":"https:\/\/www.ozgurkocaeli.com.tr\/sehir"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","@id":"https:\/\/www.ozgurkocaeli.com.tr\/#navbar-main","name":"D\u0131\u015f Ba\u011flant\u0131lar","url":"https:\/\/www.ozgurkocaeli.com.tr\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","@id":"https:\/\/www.ozgurkocaeli.com.tr\/#navbar-main","name":"User Menu","url":"https:\/\/www.ozgurkocaeli.com.tr\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","@id":"https:\/\/www.ozgurkocaeli.com.tr\/yonet#navbar-main","name":"Kontrol Paneli","url":"https:\/\/www.ozgurkocaeli.com.tr\/yonet"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","@id":"https:\/\/www.ozgurkocaeli.com.tr\/yonet#navbar-main","name":"Hata Bildirimi","url":"https:\/\/www.ozgurkocaeli.com.tr\/yonet"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","@id":"https:\/\/www.ozgurkocaeli.com.tr\/user\/profile#navbar-main","name":"Hesab\u0131m","url":"https:\/\/www.ozgurkocaeli.com.tr\/user\/profile"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","@id":"https:\/\/www.ozgurkocaeli.com.tr\/giris#navbar-main","name":"Oturum A\u00e7","url":"https:\/\/www.ozgurkocaeli.com.tr\/giris"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","@id":"https:\/\/www.ozgurkocaeli.com.tr\/user\/register#navbar-main","name":"Kay\u0131t Ol","url":"https:\/\/www.ozgurkocaeli.com.tr\/user\/register"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","@id":"https:\/\/www.ozgurkocaeli.com.tr\/user\/logout#navbar-main","name":"\u00c7\u0131k\u0131\u015f Yap","url":"https:\/\/www.ozgurkocaeli.com.tr\/user\/logout"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","@id":"https:\/\/www.ozgurkocaeli.com.tr\/#navbar-main","name":"B\u00f6l\u00fcm Men\u00fcs\u00fc Linkleri ( Foto Video Anket Yazar vs. )","url":"https:\/\/www.ozgurkocaeli.com.tr\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","@id":"https:\/\/www.ozgurkocaeli.com.tr\/foto#navbar-main","name":"Foto Galeri","url":"https:\/\/www.ozgurkocaeli.com.tr\/foto"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","@id":"https:\/\/www.ozgurkocaeli.com.tr\/video#navbar-main","name":"Video Galeri","url":"https:\/\/www.ozgurkocaeli.com.tr\/video"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","@id":"https:\/\/www.ozgurkocaeli.com.tr\/anket#navbar-main","name":"Anketler","url":"https:\/\/www.ozgurkocaeli.com.tr\/anket"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","@id":"https:\/\/www.ozgurkocaeli.com.tr\/yazarlar#navbar-main","name":"Yazarlar","url":"https:\/\/www.ozgurkocaeli.com.tr\/yazarlar"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","@id":"https:\/\/www.ozgurkocaeli.com.tr\/arsiv#navbar-main","name":"Ar\u015fiv","url":"https:\/\/www.ozgurkocaeli.com.tr\/arsiv"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","@id":"https:\/\/www.ozgurkocaeli.com.tr\/#navbar-main","name":"Kategori \u00d6n Ek Men\u00fcs\u00fc","url":"https:\/\/www.ozgurkocaeli.com.tr\/"}]}
+  </script>
+<script type="application/ld+json">
+  {"@context":"https:\/\/schema.org","@type":"Organization","url":"https:\/\/www.ozgurkocaeli.com.tr\/","logo":"https:\/\/static.daktilo.com\/sites\/535\/uploads\/2020\/06\/20\/desktop.png"}
+  </script>
+<script type="application/ld+json">
+  {"@context":"https:\/\/schema.org","@type":"WebSite","url":"https:\/\/www.ozgurkocaeli.com.tr\/","potentialAction":[{"@type":"SearchAction","target":"https:\/\/www.ozgurkocaeli.com.tr\/ara?key={search_term_string}","query-input":"required name=search_term_string"}]}
+  </script>
+<script type="application/ld+json">
+  {"@context":"http:\/\/schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https:\/\/www.ozgurkocaeli.com.tr\/","name":"Ana Sayfa"}},{"@type":"ListItem","position":2,"item":{"@id":"https:\/\/www.ozgurkocaeli.com.tr\/kocaeli-ekonomi-haberleri","name":"Ekonomi"}},{"@type":"ListItem","position":3,"item":{"@id":"https:\/\/www.ozgurkocaeli.com.tr\/haber\/4497468\/kredi-karti-faizleri-dustu","name":"Kredi kart\u0131 faizleri d\u00fc\u015ft\u00fc"}}]}
+  </script>
+<header class="t-3  is-fix ">
+<div class="header-desktop">
+<div class="in">
+<div class="us static-on b">
+<div class="con h">
+<div class="row logo-row">
+<div class="col-a">
+<a href="https://wa.me/905373814141">
+<img src="https://static.daktilo.com/themes/enerjik_ozgur/assets/img/whatsapp-ozgur.png" alt="Özgür Kocaeli WhatsApp İhbar Hattı">
+<div>
+<span class="a">WhatsApp İhbar</span>
+<span class="b">0 537 381 41 41</span>
+</div>
+</a>
+</div>
+<div class="col-b">
+<a href="/" class="logo"><img src="https://static.daktilo.com/themes/enerjik_ozgur/assets/img/logo-ozgur-desktop.png" alt="Özgür Kocaeli - Türkiye'nin internetteki ilk yerel gazetesi"></a>
+</div>
+<div class="col-c">
+<div class="flex">
+<a href="https://www.facebook.com/ozgurkocaeligazetesi" target="_blank"><img src="https://static.daktilo.com/themes/enerjik_ozgur/assets/img/facebook-ozgur.png" alt="Özgür Kocaeli Facebook Sayfası"></a>
+<a href="https://www.instagram.com/ozgurkocaeli/" target="_blank"><img src="https://static.daktilo.com/themes/enerjik_ozgur/assets/img/instagram-ozgur.png" alt="Özgür Kocaeli Instagram Hesabı"></a>
+<a href="https://twitter.com/ozgurkocaeli" target="_blank"><img src="https://static.daktilo.com/themes/enerjik_ozgur/assets/img/twitter-ozgur.png" alt="Özgür Kocaeli Twitter Hesabı"></a>
+<a href="https://www.youtube.com/channel/UC_21QgQnbxbwYMlPksg-iQw" target="_blank"><img src="https://static.daktilo.com/themes/enerjik_ozgur/assets/img/youtube-ozgur.png" alt="Özgür Kocaeli YouTube Kanalı"></a>
+</div>
+</div>
+</div>
+<div class="row nav-row between center-sm middle c-nb ns h">
+<div class="head-navs-web col hidden-sm mob-remove">
+<div class="pl0-sm">
+<div class="nav row between ns">
+<div class="sol col" style="">
+<ul class="menu menu-haber h row between middle ns" style="" role="menubar">
+<li role="none"><a role="menuitem" href="https://www.ozgurkocaeli.com.tr">Anasayfa</a></li>
+<li role="none" class=" is-fix"><a role="menuitem" href="https://www.ozgurkocaeli.com.tr/yazarlar" class="" target="_self">Yazarlar</a></li>
+<li role="none" class=" is-fix"><a role="menuitem" href="https://www.ozgurkocaeli.com.tr/foto" class="" target="_self">Foto</a></li>
+<li role="none" class=" is-fix"><a role="menuitem" href="https://www.ozgurkocaeli.com.tr/video" class="" target="_self">Video</a></li>
+<li role="none" class=" is-fix"><a role="menuitem" href="https://www.ozgurkocaeli.com.tr/kocaeli-haberleri" class="gundem" target="_self">Gündem</a></li>
+<li role="none" class=" is-fix"><a role="menuitem" href="https://www.ozgurkocaeli.com.tr/kocaeli-siyaset-haberleri" class="" target="_self">Siyaset</a></li>
+<li role="none" class=" is-fix"><a role="menuitem" href="https://www.ozgurkocaeli.com.tr/kocaeli-asayis-haberleri" class="" target="_self">Asayiş</a></li>
+</ul>
+</div>
+<div class="sag ml30 row ns end">
+<div class="casemenu-ivent" id="sub-casemenu">
+<a href="#" class="static-off this">
+<span class="tost t-3" id="tost-1">
+<span></span>
+</span>
+<span class="txt">Menü</span>
+</a>
+<div class="casemenu-t2 hidden-sm import " id="casemenu">
+<div class="con cm static-off h">
+<div class="row ns h">
+<div class="col a">
+<div class="row ns direct-y c-eh h">
+<div class="one">
+<div class="equal">
+<ul role="menubar">
+<li><a href="https://www.ozgurkocaeli.com.tr/user/login"><span><i class="ss-pika ss-login"></i></span>Üye Girişi</a></li>
+ <li class="ara">
+<form class="form" action="https://www.ozgurkocaeli.com.tr/ara">
+<input type="hidden" name="_token" value="gvdzC1zT7PatTG0xOWXjEqFu5JLeYaA5N4QPFd9E">
+<input type="text" name="key" class="key" placeholder="Sitede Ara" />
+<span class="plt">
+<i class="ss-pika ss-search"></i>
+<input type="submit" class="key" value="" />
+</span>
+</form>
+</li>
+<li><a href="https://www.ozgurkocaeli.com.tr/arsiv"><span><i class="ss-standard ss-calendar"></i></span>Haber Arşivi</a></li>
+<li><a href="https://www.ozgurkocaeli.com.tr/haber-ihbar"><span><i class="ss-pika ss-flame"></i></span>Haber İhbar</a></li>
+<li><a href="https://www.ozgurkocaeli.com.tr/bilgi/reklam"><span><i class="ss-standard ss-star"></i></span>Reklam</a></li>
+</ul>
+</div>
+</div>
+<nav class="two col">
+<div class="equal">
+<span>
+<a href="https://facebook.com/ozgurkocaeligazetesi" target="_blank" rel=""><i class="ss-social-circle ss-facebook"></i></a>
+<a href="https://twitter.com/ozgurkocaeli" target="_blank" rel=""><i class="ss-social-circle ss-twitter"></i></a>
+<a href="https://instagram.com/ozgurkocaeli/" target="_blank" rel=""><i class="ss-social-circle ss-instagram"></i></a>
+<a href="https://youtube.com/channel/UC_21QgQnbxbwYMlPksg-iQw" target="_blank" rel=""><i class="ss-social-circle ss-youtube"></i></a>
+</span>
+</div>
+</nav>
+</div>
+</div>
+<div class="col b">
+<div class="row underline c-nb gut-2">
+<div class="col t1">
+<h4>İçerik</h4>
+<div class="b-in">
+<div class="t1-us row">
+<ul class="col">
+<li><a href="https://www.ozgurkocaeli.com.tr/video" rel="">Video Galeri</a></li>
+<li><a href="https://www.ozgurkocaeli.com.tr/foto" rel="">Foto Galeri</a></li>
+<li><a href="https://www.ozgurkocaeli.com.tr/gazete-mansetleri" rel="">Gazete Manşetleri</a></li>
+<li><a href="https://www.ozgurkocaeli.com.tr/yazarlar" rel="">Yazarlar</a></li>
+<li><a href="https://www.ozgurkocaeli.com.tr/roportaj" rel="">Röportaj</a></li>
+<li class="cat-link"><a href="https://www.ozgurkocaeli.com.tr/kocaeli-haberleri" rel="">Gündem</a></li>
+<li class="cat-link"><a href="https://www.ozgurkocaeli.com.tr/kocaeli-siyaset-haberleri" rel="">Siyaset</a></li>
+<li class="cat-link"><a href="https://www.ozgurkocaeli.com.tr/kocaeli-asayis-haberleri" rel="">Asayiş</a></li>
+<li class="cat-link"><a href="https://www.ozgurkocaeli.com.tr/perde-arkasi" rel="">Perde Arkası</a></li>
+<li class="cat-link"><a href="https://www.ozgurkocaeli.com.tr/kocaeli-spor-haberleri" rel="">Spor</a></li>
+</ul>
+<ul class="col">
+<li class="cat-link"><a href="https://www.ozgurkocaeli.com.tr/kocaeli-ekonomi-haberleri" rel="">Ekonomi</a></li>
+<li class="cat-link"><a href="https://www.ozgurkocaeli.com.tr/kocaeli-egitim-haberleri" rel="">Eğitim</a></li>
+<li class="cat-link"><a href="https://www.ozgurkocaeli.com.tr/kocaeli-yasam-haberleri" rel="">Yaşam</a></li>
+<li class="cat-link"><a href="https://www.ozgurkocaeli.com.tr/teknoloji-haberleri" rel="">Teknoloji</a></li>
+<li class="cat-link"><a href="https://www.ozgurkocaeli.com.tr/mektup" rel="">Mektup</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col t2">
+<h4>Servisler</h4>
+<div class="b-in">
+<ul class="col">
+<li><a href="https://www.ozgurkocaeli.com.tr/rehber" rel="">Şehir Rehberi</a></li>
+<li><a href="https://www.ozgurkocaeli.com.tr/kocaeli-hava-durumu" rel="">Hava Durumu</a></li>
+<li><a href="https://www.ozgurkocaeli.com.tr/ilan" rel="">Seri İlanlar</a></li>
+<li><a href="https://www.ozgurkocaeli.com.tr/kocaeli-nobetci-eczaneler" rel="">Eczaneler</a></li>
+<li><a href="https://www.ozgurkocaeli.com.tr/birinci-lig-fiksturu" rel="">Lig Fikstürü</a></li>
+<li><a href="https://www.ozgurkocaeli.com.tr/kocaeli-namaz-vakitleri" rel="">Namaz Vakti</a></li>
+<li><a href="https://www.ozgurkocaeli.com.tr/kocaeli-vefatlar" rel="">Vefatlar</a></li>
+<li><a href="https://www.ozgurkocaeli.com.tr/kocaeli-trafik-durumu" rel="">Trafik Durumu</a></li>
+</ul>
+</div>
+</div>
+<div class="col t3">
+<h4>Kurumsal</h4>
+<div class="b-in">
+<ul class="col">
+<li><a href="https://www.ozgurkocaeli.com.tr/bilgi/kurulus" rel="">Kuruluş Hakkında</a></li>
+<li><a href="https://www.ozgurkocaeli.com.tr/bilgi/kunye" rel="">Künye Bilgileri</a></li>
+<li><a href="https://www.ozgurkocaeli.com.tr/bilgi/yayin-ilkeleri" rel="">Yayın İlkeleri</a></li>
+<li><a href="https://www.ozgurkocaeli.com.tr/bilgi/topluluk-kurallari" rel="">Topluluk Kuralları</a></li>
+<li><a href="https://www.ozgurkocaeli.com.tr/haber-ihbar" rel="">Haber İhbar</a></li>
+<li><a href="https://www.ozgurkocaeli.com.tr/iletisim" rel="">Adres ve İletişim</a></li>
+<li><a href="https://www.ozgurkocaeli.com.tr/bilgi/hesap-bilgileri" rel="">Banka Hesapları</a></li>
+<li><a href="https://www.ozgurkocaeli.com.tr/bilgi/reklam" rel="">Reklam Seçenekleri</a></li>
+<li><a href="https://www.ozgurkocaeli.com.tr/bilgi/abonelik" rel="">Abonelik</a></li>
+<li><a href="https://www.ozgurkocaeli.com.tr/bilgi/veri-politikasi" rel="">Veri Politikası</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>fn.push('sub_case_menu')</script>
+</div>
+</div> </div>
+</div>
+<div class="head-navs-mob visible-sm">
+<span id="item-rows" class="item-rows un-tochstyle ts-sag">
+<a class="tost t-2" id="tost-2">
+<span></span>
+</a>
+</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="header-mobile">
+<div class="inner">
+<div class="flex">
+<div class="col-a">
+<a href="/" class="logo">
+<img src="https://static.daktilo.com/themes/enerjik_ozgur/assets/img/logo-ozgur-desktop.png" alt="Özgür Kocaeli - Türkiye'nin internetteki ilk yerel gazetesi">
+</a>
+</div>
+<div class="col-b">
+<a class="tost t-2" id="tost-1">
+<img src="https://static.daktilo.com/themes/enerjik_ozgur/assets/img/toast-icon-ozgur.png" alt="Özgür Kocaeli - Türkiye'nin internetteki ilk yerel gazetesi">
+</a>
+</div>
+</div>
+</div>
+</div>
+</header>
+<section class="block-bant-haber ">
+<div class="con h row nsc c-nb middle center-ms">
+<span class="bant-title hidden-xs"><i class="ss-pika ss-flame mr5"></i><a href="/arsiv">Özgür Kocaeli Haberleri</a></span>
+<script>fn.push('slide')</script>
+<div class="col col-ms-12 slide" id="slide-bant" data-set='{"has_ctrl":true,"autoplay":true}'>
+<div class="pl60 ml20 pl0-ms ml0-ms">
+<nav class="ctrl plt none-ms import">
+<a class="prev flex-mc" id="s-bant-prev"><i class="ss-standard ss-navigateleft"></i></a>
+<a class="next flex-mc" id="s-bant-next"><i class="ss-standard ss-navigateright"></i></a>
+</nav>
+<div class="list" id="s-bant-list">
+<div class="item">
+<span class="bant-item"><time>00:29</time>
+<a href="https://www.ozgurkocaeli.com.tr/haber/8937170/kuyumculardan-baskan-yeniden-koc">Kuyumcular’dan başkan yeniden Koç</a>
+</span>
+</div>
+<div class="item">
+<span class="bant-item"><time>00:25</time>
+<a href="https://www.ozgurkocaeli.com.tr/haber/8937161/koulu-ogretim-gorevlisi-hayatini-kaybetti">KOÜ&#039;lü öğretim görevlisi hayatını kaybetti</a>
+</span>
+</div>
+<div class="item">
+<span class="bant-item"><time>23:15</time>
+<a href="https://www.ozgurkocaeli.com.tr/haber/8937052/haydi-asiya">Haydi aşıya!</a>
+</span>
+</div>
+<div class="item">
+<span class="bant-item"><time>22:46</time>
+<a href="https://www.ozgurkocaeli.com.tr/haber/8936972/uzerinde-1-tl-yaziyor-kasada-15-tl-aliniyor">Üzerinde 1 TL yazıyor kasada 1.5 TL alınıyor</a>
+</span>
+</div>
+<div class="item">
+<span class="bant-item"><time>22:42</time>
+<a href="https://www.ozgurkocaeli.com.tr/haber/8936954/a-101de-fiyatlar-birbirini-tutmuyor">A-101’de fiyatlar birbirini tutmuyor</a>
+</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<main class="wrap  ts-mob-sag ts-mob-us">
+<div class="rkm-outer f-yan hidden-md mob-remove ">
+<div class="con row nsc between">
+<div class="in sol">
+<ins id="rkm-alt-yan-l" class="rkm c-nrm f-yan f-sol">
+<div class="f ">
+<div class="ad-channel   js" data-set='{"values":{"unit":true}}' data-name="alt-yan-l">
+</div>
+</div>
+</ins>
+<script> pushfn('ads'); </script>
+</div>
+<div class="in sag">
+<ins id="rkm-alt-yan-r" class="rkm c-nrm f-yan f-sag">
+<div class="f ">
+<div class="ad-channel   js" data-set='{"values":{"unit":true}}' data-name="alt-yan-r">
+</div>
+</div>
+</ins>
+<script> pushfn('ads'); </script>
+</div>
+<script>fn.push('ad_yan')</script>
+</div>
+</div>
+<div class="con">
+</div>
+<div class="base con custom pt30 pt20-sm pt20-ms">
+
+<div class="topbox post-head t-dark font-gotham_black">
+<span class="post-info link-8 mb5">
+<span class="tarih" style="padding-left:1px">28 Mar 2020 - 09:24<em>-</em></span>
+<span class="bolum">
+<a href="https://www.ozgurkocaeli.com.tr/kocaeli-ekonomi-haberleri" class="link-5" title="Ekonomi Haberleri">Ekonomi</a>
+</span>
+<span class="update pl10 pl5-ms"><span>G<b class="hidden-sm">üncelleme</b>: </span> 19 May 2020 - 16:52</span>
+</span>
+<h1 itemprop="headline">Kredi kartı faizleri düştü</h1>
+<div class="google-news-button google-news-button-mobile">
+<a href="https://news.google.com/publications/CAAiEIh0CjEATiXCfQQY297kQBUqFAgKIhCIdAoxAE4lwn0EGNve5EAV?hl=tr&amp;gl=TR&amp;ceid=TR%3Atr" target="_blank" style="" rel="external nofollow noopener noreferrer">
+<span>ABONE OL</span>
+<img src="https://static.daktilo.com/images/services/google-news-follow.png" alt="Google News Sayfamız">
+</a>
+</div>
+<p itemprop="description">Türkiye Cumhuriyet Merkez Bankası, kredi kartlarındaki azami faiz oranlarında indirime gitti.</p>
+</div>
+<ins id="rkm-alt-2" class="rkm c-nrm f-blok mb10">
+<div class="f-auto f-min-30">
+<div class="ad-channel   js" data-name="alt-2">
+</div>
+</div>
+</ins>
+<script> pushfn('ads'); </script>
+<div class="manbox mt20 mt15-ms row center">
+<div class="conbox col col-sm-12" style="overflow:hidden;">
+<div class="in pr25 pr0-sm">
+<article class="c on-swipe-content">
+<div class="post-cover f-foto full-width-ms c-mask-ratio crop -sol">
+<div class="first">
+<figure>
+<a href="https://static.daktilo.com/sites/535/uploads/2020/03/28/403317-0.jpg" class="swipe" target="_blank" data-size="880x440" data-itemswipe="1">
+<s class="expand  m-sag w-sag"><i class="ss-pika ss-expand"></i></s>
+<s class="desen f-1"></s>
+<s class="grand"></s>
+<img src="https://static.daktilo.com/sites/535/uploads/2020/03/28/large/403317-0.jpg" class="real yt" alt="Kredi kartı faizleri düştü" />
+<img src="https://file.daktilo.com/themes/enerjik_ozgur/assets/img/mask-16-9.png" alt="mask" class="mask" />
+</a>
+</figure>
+</div>
+</div>
+<div class="post-top row ns between pt10 mb10">
+<div class="l ">
+<div class="post-cover-other other  row ns middle">
+</div>
+<div class="sub-nots">
+</div>
+</div>
+<div class="r  ">
+<div class="row ns hidden-xs">
+<nav class="entry-share row ns c-op start t-5 " id="post-share">
+<span class="s-wspp  order-4  last">
+<a href="https://www.ozgurkocaeli.com.tr/paylas?platform=whatsapp&amp;type=entry&amp;id=4497468" title="WhatsApp'ta Paylaş" rel="nofollow noopener external noreferrer" onclick="return popup('https://www.ozgurkocaeli.com.tr/paylas?platform=whatsapp&amp;type=entry&amp;id=4497468', null, 800, 600)" class="wspp">
+<i class="icon-whatsapp"></i>
+<span class="hidden-ms">WhatsApp</span>
+</a>
+</span>
+<span class="s-twit order-1 first ">
+<a href="https://www.ozgurkocaeli.com.tr/paylas?platform=twitter&amp;text=Kredi+kart%C4%B1+faizleri+d%C3%BC%C5%9Ft%C3%BC&amp;type=entry&amp;id=4497468" rel="nofollow noopener external noreferrer" title="Twitter'da Paylaş" onclick="return popup('https://www.ozgurkocaeli.com.tr/paylas?platform=twitter&amp;text=Kredi+kart%C4%B1+faizleri+d%C3%BC%C5%9Ft%C3%BC&amp;type=entry&amp;id=4497468', null, 800, 600)" class="twit">
+<i class="ss-icon ss-social ss-twitter"></i>
+<span class="hidden-ms">Twitle</span>
+</a>
+</span>
+<span class="s-face order-2  ">
+<a href="https://www.ozgurkocaeli.com.tr/paylas?platform=facebook&amp;type=entry&amp;id=4497468" rel="nofollow noopener external noreferrer" title="Facebook'da Paylaş" onclick="return popup('https://www.ozgurkocaeli.com.tr/paylas?platform=facebook&amp;type=entry&amp;id=4497468', null, 800, 600)" class="face">
+<i class="ss-icon ss-social ss-facebook"></i>
+<span class="hidden-ms">Paylaş</span>
+</a>
+</span>
+</nav>
+<nav class="text-size row ns ">
+<span class="a" title="Yazı büyütüp küçültmek için artı eksiye tıklayın"><i></i></span>
+<span class="b"><a class="eksi" title="Yazıyı Küçült"><i>-</i></a></span>
+<span class="c"><a class="arti" title="Yazıyı Büyüt"><i>+</i></a></span>
+</nav>
+</div>
+<div class="google-news-button google-news-button-desktop">
+<a href="https://news.google.com/publications/CAAiEIh0CjEATiXCfQQY297kQBUqFAgKIhCIdAoxAE4lwn0EGNve5EAV?hl=tr&amp;gl=TR&amp;ceid=TR%3Atr" target="_blank" style="" rel="external nofollow noopener noreferrer">
+<span>ABONE OL</span>
+<img src="https://static.daktilo.com/images/services/google-news-follow.png" alt="Google News Sayfamız">
+</a>
+</div>
+</div>
+</div>
+<div class="post-text mb20 word em dark-1 tleft " id="main-text" data-zoom="4" itemprop="articleBody">
+<p>Kredi kartı kullananları ilgilendiren gelişme Resmi Gazete'de yayımlandı. Türkiye Cumhuriyet Merkez Bankası'nın almış olduğu karara göre, kredi kartlarında azami faiz oranı düşürüldü.</p>
+<p>Buna göre, </p>
+<p>Türk lirası cinsinden kredi kartı işlemlerinde uygulanacak aylık azami akdi faiz oranı yüzde 1,25, (önceki yüzde 1.40)</p>
+<p>Yabancı para cinsinden kredi kartı işlemlerinde uygulanacak aylık azami akdi faiz oranı yüzde 1,00 (önceki yüzde 1.12)</p>
+<p>Türk lirası cinsinden kredi kartı işlemlerinde uygulanacak aylık azami gecikme faiz oranı yüzde 1,55 (önceki yüzde 1.70)</p>
+<p>Yabancı para cinsinden kredi kartı işlemlerinde uygulanacak aylık azami gecikme faiz oranı yüzde 1,30 (önceki yüzde 1.42) oldu.</p>
+<p>Karar 1 Nisan 2020 tarihinden itibaren yürürlüğe girecek.</p>
+<ins id="rkm-par-1" class="rkm c-nrm us as mt40 mb20 f-fluid par-ad f-mobile f-response">
+<div class="f-600 f-no-back mt20 mb20">
+<div class="ad-channel   js" data-name="par-1">
+</div>
+</div>
+</ins>
+<script> pushfn('ads'); </script>
+</div>
+<div class="tag-list">
+<span class="hash">#</span>
+<a href="https://www.ozgurkocaeli.com.tr/haberleri/kredi-karti" target="_blank">Kredi kartı</a>, <a href="https://www.ozgurkocaeli.com.tr/haberleri/faiz-orani" target="_blank"> faiz oranı</a> </div>
+</article>
+<div class="post-kunye link-5 underline row ns middle mt25">
+<div class="two">
+<p class="us">
+<span class="tarih">28 Mar 2020 - 09:24</span>
+<em class="space-c">-</em>
+<span class="bolum">
+<a href="https://www.ozgurkocaeli.com.tr/kocaeli-ekonomi-haberleri" title="Ekonomi Haberleri">Ekonomi</a>
+</span>
+<span class="count ml15 ml10-ms block-ms">
+<i class="ss-pika ss-view top-2"></i><span id="entry-hit-count">---</span> Okunma
+</span>
+<span class="print pl25 hidden-xs import">
+<i class="ss-gizmo ss-print top-2"></i>
+<a href="https://www.ozgurkocaeli.com.tr/yazdir/4497468" rel="nofollow" target="_blank">Yazdır</a>
+</span>
+</p>
+<p class="as mt5">Son bir ayda ozgurkocaeli.com.tr sitesinde <strong>6.979.513 gösterim</strong> gerçekleşti.</p>
+</div>
+</div>
+<nav class="entry-share row ns c-op end mt30 -gut-1 hidden-xs" id="post-share">
+<span class="s-twit  first ">
+<a href="https://www.ozgurkocaeli.com.tr/paylas?platform=twitter&amp;text=Kredi+kart%C4%B1+faizleri+d%C3%BC%C5%9Ft%C3%BC&amp;type=entry&amp;id=4497468" rel="nofollow noopener external noreferrer" title="Twitter'da Paylaş" onclick="return popup('https://www.ozgurkocaeli.com.tr/paylas?platform=twitter&amp;text=Kredi+kart%C4%B1+faizleri+d%C3%BC%C5%9Ft%C3%BC&amp;type=entry&amp;id=4497468', null, 800, 600)" class="twit">
+<i class="ss-icon ss-social ss-twitter"></i>
+<span class="hidden-ms">Twitle</span>
+</a>
+</span>
+<span class="s-face   ">
+<a href="https://www.ozgurkocaeli.com.tr/paylas?platform=facebook&amp;type=entry&amp;id=4497468" rel="nofollow noopener external noreferrer" title="Facebook'da Paylaş" onclick="return popup('https://www.ozgurkocaeli.com.tr/paylas?platform=facebook&amp;type=entry&amp;id=4497468', null, 800, 600)" class="face">
+<i class="ss-icon ss-social ss-facebook"></i>
+<span class="hidden-ms">Paylaş</span>
+</a>
+</span>
+</nav>
+<hr id="top-end-text" class="space mt35 mt30-xs" />
+<div class="comment-win" id="yorum">
+<a class="cw-close">
+<i class="ss-gizmo ss-close"></i>
+</a>
+<div class="cw-in">
+<div class="comment ">
+<div class="c-send-wrap">
+<section class="c-send new fit-con">
+<div class="cs-head cs-mob row ns middle between mb15">
+<div class="csh-sol row ns middle">
+<figure class="no-avatar">
+<i class="ss-standard ss-user"></i>
+</figure>
+<a href="https://www.ozgurkocaeli.com.tr/user/login?prev=https://www.ozgurkocaeli.com.tr/haber/4497468/kredi-karti-faizleri-dustu" class="c-login">
+<i class="ss-pika ss-login"></i>
+<span>GİRİŞ YAP</span>
+</a>
+</div>
+<div class="csh-sag">
+<a class="c-send-close">
+<span><i class="ss-gizmo ss-delete"></i></span>
+</a>
+</div>
+</div>
+<div class="cs-body row ns c-nb">
+<div class="col sol">
+<figure class="no-avatar">
+<i class="ss-gizmo ss-user"></i>
+</figure>
+</div>
+<div class="col sag">
+<form name="new" class="form -gut-1 -f-round-6 -f-border-2 touchs" method="post">
+<script>
+					fn.push('f_uc_first');
+				</script>
+<ul class="f1">
+<li class="f2 field-yorum">
+<div class="f4">
+<textarea tabindex="1" name="yorum" placeholder="Yorum yaz" data-olay="new" maxlength="2000" class="field"></textarea>
+</div>
+</li>
+<li class="f2 f2-user no-mb user row -gut-1 -gut-1-xs c-nb c-ob-xs">
+<div class="col-7 col-xs-12">
+<div class="f4 field-isim">
+<span class="icon crop end"><i class="ss-gizmo ss-user"></i></span>
+<input tabindex="2" type="text" name="isim" class="field type-text uc-first-upper" maxlength="22" placeholder="Ad veya Rumuz" />
+</div>
+</div>
+</li>
+</ul>
+<div class="robot ">
+<div class="robot-in">
+<div class="robot-us">
+<a href="#" class="prt robot-close"><i class="ss-gizmo ss-delete"></i></a>
+<div>
+<div id="captcha-1876717854" class="g-recaptcha" data-sitekey="6LeDfuAUAAAAAKW6XR4dlN4Sx_2kHbYll0wY2bY4" data-callback="new_submit"></div>
+<small>göndermek için kutuyu işaretleyin</small>
+</div>
+</div>
+<script>
+				function new_submit(){ 
+					$("form[name=new]").submit();
+				}
+			</script>
+</div>
+<script>fn.push('f_robot')</script>
+<script>
+	if (typeof grecaptcha !== 'undefined'){
+		grecaptcha.render('captcha-1876717854', {
+			'sitekey' : '6LeDfuAUAAAAAKW6XR4dlN4Sx_2kHbYll0wY2bY4'
+		});
+	}
+	</script>
+</div>
+<nav class="pt15 pt25-sm pt10-xs">
+<div class="row ns middle block-sm">
+<div class="cs-submit-mob visible-sm">
+<div class="btn btn-submit">
+<i class="ss-standard ss-send plt"></i>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40px" height="40px" viewBox="0 0 50 50" style="enable-background:new 0 0 50 50;" xml:space="preserve">
+<path fill="#44a2d8" d="M25.251,6.461c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615V6.461z">
+<animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite" />
+</path>
+</svg>
+<input type="submit" class="submit" value="Yorumu Gönder" />
+</div>
+<div class="btn btn-report more">
+<i class="ss-standard ss-alert plt"></i>
+<input type="button" class="submit" value="Yoruma Devam Et" />
+</div>
+<div class="btn btn-report ok">
+<i class="ss-standard ss-send plt"></i>
+<input type="button" class="ok" value="Yorum Gönderildi" />
+</div>
+<div class="btn btn-report no">
+<i class="ss-standard ss-alert plt"></i>
+<input type="button" class="no" value="Yorum Gönderilemedi" />
+</div>
+</div>
+<div class="cs-submit-web hidden-sm">
+<div class="row ns h">
+<a href="https://www.ozgurkocaeli.com.tr/user/login?prev=https://www.ozgurkocaeli.com.tr/haber/4497468/kredi-karti-faizleri-dustu" class="h no c-login" title="Oturum Aç">
+<figure class="no-avatar">
+<i class="ss-gizmo ss-user"></i>
+</figure>
+</a>
+<input type="submit" class="submit web hidden-sm" value="Gönder" />
+</div>
+</div>
+<div class="report">
+<div class="more">
+<div class="mob visible-sm link-5">
+<p>Yorumunuz yarım kaldı, devam etmek için üstteki yoruma, silmek için <a href="#" class="remove-comment">buraya</a> tıklayın</p>
+</div>
+</div>
+<div class="no">
+<div class="web hidden-sm">
+<i class="ss-pika ss-info"></i>
+<span class="text">Kırmızı alanları dolduralım</span>
+</div>
+<div class="mob visible-sm">
+<p>Kırmızı alanlar eksik veya hatalı girildi. Lütfen bu alanları düzeltip tekrar gönderelim</p>
+</div>
+</div>
+<div class="ok">
+<div class="web hidden-sm">
+<i class="ss-standard ss-like"></i>
+<span class="text">Yorumunuz gözden geçirilip yayınlanacaktır</span>
+</div>
+<div class="mob visible-sm">
+<p>Yorumunuz için teşekkürler, en kısa sürede gözden geçirilip yayınlanacaktır</p>
+</div>
+</div>
+</div>
+
+</div>
+</nav>
+<input type="hidden" name="user_id" value="" />
+<input type="hidden" name="src_type" value="post">
+<input type="hidden" name="src_id" value="4497468">
+</form>
+</div>
+</div>
+<hr class="cs-back cs-mob" />
+<div class="cs-foot mob cs-mob mt30 ">
+<p>Yorum yazarak Özgür Kocaeli Gazetesi <a href="https://www.ozgurkocaeli.com.tr/bilgi/topluluk-kurallari" target="_blank">Topluluk Kuralları’nı</a> kabul etmiş bulunuyor ve yorumunuzla ilgili doğrudan veya dolaylı tüm sorumluluğu tek başınıza üstleniyorsunuz. Yazılan yorumlardan Özgür Kocaeli Gazetesi hiçbir şekilde sorumlu tutulamaz.</p>
+<p>Anadolu Ajansı (AA), İhlas Haber Ajansı (İHA), Demirören Haber Ajansı (DHA) tarafından servis edilen tüm haberler Özgür Kocaeli Gazetesi editörlerinin hiçbir editöryel müdahalesi olmadan, ajans kanallarından geldiği şekliyle yayınlanmaktadır. Sitemize ajanslar üzerinden aktarılan haberlerin hukuki muhatabı Özgür Kocaeli Gazetesi değil haberi geçen ajanstır.</p>
+</div>
+</section>
+</div>
+<div class="c-foot us hidden hidden-xs  mt15 link-5 underline pl0-ms ">
+<p class="on hidden pt5"><i class="ss-gizmo ss-navigatedown plt"></i>Şimdi <a class="c-login" href="https://www.ozgurkocaeli.com.tr/user/login?prev=https://www.ozgurkocaeli.com.tr/haber/4497468/kredi-karti-faizleri-dustu">oturum açın</a>, her yorumda <b>isim</b> ve <b>e.posta</b> yazma zahmetinden kurtulun. Oturum açmak için bir hesabınız yoksa, oluşturmak için <a class="c-login" href="https://www.ozgurkocaeli.com.tr/user/register?prev=https://www.ozgurkocaeli.com.tr/haber/4497468/kredi-karti-faizleri-dustu">buraya</a> tıklayın.
+<p>Yorum yazarak <a href="https://www.ozgurkocaeli.com.tr/bilgi/topluluk-kurallari" target="_blank"> Özgür Kocaeli Gazetesi Topluluk Kuralları’nı</a> kabul etmiş bulunuyor ve yorumunuzla ilgili doğrudan veya dolaylı tüm sorumluluğu tek başınıza üstleniyorsunuz. Yazılan yorumlardan Özgür Kocaeli Gazetesi hiçbir şekilde sorumlu tutulamaz.</p>
+<p>Anadolu Ajansı (AA), İhlas Haber Ajansı (İHA), Demirören Haber Ajansı (DHA) tarafından servis edilen tüm haberler Özgür Kocaeli Gazetesi editörlerinin hiçbir editöryel müdahalesi olmadan, ajans kanallarından geldiği şekliyle yayınlanmaktadır. Sitemize ajanslar üzerinden aktarılan haberlerin hukuki muhatabı Özgür Kocaeli Gazetesi değil haberi geçen ajanstır.</p>
+</div>
+<section class="c-body mt35">
+<div class="cb-head row ns between mb15 mb10-ms">
+<div class="ch-1 row ns middle">
+<h2>Yorumlar</h2>
+<span><s>(</s><span>1</span><s>)</s></span>
+</div>
+<div class="ch-2 link-4 mt15 mt10-ms hidden-xs import">
+<a class="c-sort">
+Sıra <i class="icon-set"></i>
+<div>
+<i class="ok"></i>
+<ol>
+<li data-sort="time-09" onclick="reorderCommentsBy('lasttofirst')">Önce Son Yorumlar</li>
+<li data-sort="time-90" onclick="reorderCommentsBy('firsttolast')">Önce İlk Yorumlar</li>
+<li data-sort="like-90" onclick="reorderCommentsBy('mostlikeds')">Öne Çıkanlar</li>
+</ol>
+</div>
+</a>
+<a class="c-size hidden">
+<i class="ss-pika ss-expand"></i>
+Genişlet
+</a>
+</div>
+</div> <div class="cb-post">
+<div data-order="1" data-likes="0" data-dislikes="0">
+<article id="C797981" data-id="797981">
+<div class="cp-con c-nb row   ">
+<div class="col sol hidden-ms" title="797981">
+<figure class="no-avatar flex-mc">
+<i class="ss-gizmo ss-user"></i>
+</figure>
+<span>01</span>
+</div>
+<div class="col sag">
+<div class="us c-word">
+<figure class="visible-flex-ms import  no-avatar flex-mc">
+<i class="ss-gizmo ss-user"></i>
+</figure>
+<p><span class="c-nick">paşa</span> - bu virüs krizi sürdüğü sürece kredi kartı ve banka kartı faizleri kademeli olarak sıfıra çekilmelidir.</p>
+</div>
+<div class="as row ns mt25 underline">
+<span class="c-cevap"><a data-id="797981">Yanıtla</a></span>
+<b>.</b>
+<span class="c-begen row ns"><i class="ss-gizmo ss-like"></i><em>0</em><a href="#" onclick="c_like_toggle(this, 797981)">Beğen</a></span>
+<b>.</b>
+<span class="c-begenme row ns"><i class="ss-gizmo ss-dislike"></i><em>0</em><a href="#" onclick="c_dislike_toggle(this, 797981)">Beğenme</a></span>
+<span class="time">28 Mart 09:24</span>
+</div>
+</div>
+</div>
+<div class="cp-rep"></div>
+</article>
+</div>
+</div>
+</section>
+<div class="c-foot as mt20 link-5 link-7 ">
+<p>Yazılan yorumlardan Özgür Kocaeli Gazetesi hiçbir şekilde sorumlu tutulamaz. Sitemizin <a href="/bilgi/topluluk-kurallari">Topluluk Kurallarına</a> uymayan yorumlar yayınlanmaz. Yorumunuzla ilgili doğrudan veya dolaylı tüm sorumluluğu tek başınıza üstleniyorsunuz. </p>
+<p>Anadolu Ajansı (AA), İhlas Haber Ajansı (İHA), Demirören Haber Ajansı (DHA) tarafından servis edilen tüm haberler Özgür Kocaeli Gazetesi editörlerinin hiçbir editöryel müdahalesi olmadan, ajans kanallarından geldiği şekliyle yayınlanmaktadır. Sitemize ajanslar üzerinden aktarılan haberlerin hukuki muhatabı Özgür Kocaeli Gazetesi değil haberi geçen ajanstır.</p>
+</div>
+</div>
+</div>
+</div>
+<hr class="space b1 mb20 mt15">
+<!--googleoff: all-->
+<script>fn.push('slide')</script>
+<div class="rkm c-ilan slide slide-height  f-side f-content t-1" data-set='{"vertical":true,"autoplay":true,"has_ctrl":true, "infinite":true}' id="slide-ilan">
+<nav class="ctrl flex prt">
+<a href="#" class="prev" id="s-ilan-prev"><i class="ss-standard ss-navigatedown"></i></a>
+<a href="#" class="next" id="s-ilan-next"><i class="ss-standard ss-navigateup"></i></a>
+</nav>
+<div class="body">
+<div class="list h" id="s-ilan-list">
+<a class="item" href="https://www.ozgurkocaeli.com.tr/ilan?b=68198">
+<div>
+<h4>TEMİZLİK PERSONELİ ALINACAKTIR</h4>
+<p class="cut-2">TEMİZLİK PERSONELİ ALINACAKTIR
+İzmit Alikahya’da bulunan Otomotiv fabrikasının boyahane bölümünde
+temizlik işlerinde görevlendirilmek üzere;
+aşağıd...</p>
+<span class="tel"></span>
+<span class="sahip"></span>
+</div>
+</a>
+<a class="item" href="https://www.ozgurkocaeli.com.tr/ilan?b=68177">
+<div>
+<h4>KERESTE PAZARI</h4>
+<p class="cut-2">KALİTELİ İNŞAATLIK ÇAM KERESTE Çatı - Kalıp - Kamelya Malzemelerinde Aradığınız Her Şey Ekonomik Fiyatlarla Burada! KERESTE PAZARI - KIRKBİR AĞAÇ Özdi...</p>
+<span class="tel"></span>
+<span class="sahip"></span>
+</div>
+</a>
+<a class="item" href="https://www.ozgurkocaeli.com.tr/ilan?b=68169">
+<div>
+<h4>BAYAN GARSON ARANIYOR</h4>
+<p class="cut-2">Sanayide börekçi dükkanında çalışacak BAYAN GARSON aranıyor
+Tel: 0 532 450 74 64</p>
+<span class="tel"></span>
+<span class="sahip"></span>
+</div>
+</a>
+<a class="item" href="https://www.ozgurkocaeli.com.tr/ilan?b=68168">
+<div>
+<h4>BAY TEZGAHTAR ARANIYOR</h4>
+<p class="cut-2">40 yaşını aşmamış sabah saat 06:00’ da  iş başı yapacak börekçi dükkanına BAY TEZGAHTAR aranmaktadır
+Tel: 0 532 450 74 64</p>
+<span class="tel"></span>
+<span class="sahip"></span>
+</div>
+</a>
+<a class="item" href="https://www.ozgurkocaeli.com.tr/ilan?b=68165">
+<div>
+<h4>ÇALIŞMA ARKADAŞLARI ARANIYOR</h4>
+<p class="cut-2">Oto ekspertiz firmasında çalışacak, BOYA-KAPORTA TECRÜBESİ OLAN ÇALIŞMA ARKADAŞLARI alınacaktır.
+Tel: 0533 259 63 39</p>
+<span class="tel"></span>
+<span class="sahip"></span>
+</div>
+</a>
+<a class="item" href="https://www.ozgurkocaeli.com.tr/ilan?b=67964">
+<div>
+<h4>PERSONEL ALINACAKTIR</h4>
+<p class="cut-2">Firmamıza tercihen meslek lisesi mezunu   Kaynak bölümü ve CNC bölümü için deneyimli ya da Yetiştirilmek üzere, askerliğini yapmış PERSONEL aranmaktad...</p>
+<span class="tel"></span>
+<span class="sahip"></span>
+</div>
+</a>
+<a class="item" href="https://www.ozgurkocaeli.com.tr/ilan?b=67963">
+<div>
+<h4>PERSONEL ALINACAKTIR</h4>
+<p class="cut-2">Firmamıza tercihen meslek lisesi mezunu   Kaynak bölümü ve CNC bölümü için deneyimli ya da Yetiştirilmek üzere, askerliğini yapmış PERSONEL aranmaktad...</p>
+<span class="tel"></span>
+<span class="sahip"></span>
+</div>
+</a>
+<a class="item" href="https://www.ozgurkocaeli.com.tr/ilan?b=67263">
+<div>
+<h4>DENEYİMLİ-DENEYİMSİZ MASÖZ ARANIYOR</h4>
+<p class="cut-2">EseR Masaj Salonu
+(Eski Anatolia Masaj Salonu)
+Yenilenen, güleryüzlü, profesyonel kadromuzla hizmetinizdeyiz.
+DENEYİMLİ-DENEYİMSİZ MASÖZ ARANIYOR...</p>
+<span class="tel"></span>
+<span class="sahip"></span>
+</div>
+</a>
+<a class="item" href="https://www.ozgurkocaeli.com.tr/ilan?b=66371">
+<div>
+<h4>VİZYONER MAKİNA ELEMANLAR ARIYOR</h4>
+<p class="cut-2">Vizyoner Makina İmalat San. Ve Tic. Ltd. Şti firmamızda görevlendirilmek üzere, İzmit ve çevresinde ikamet eden çalışma arkadaşları arıyoruz:
+1-MANUE...</p>
+<span class="tel"></span>
+<span class="sahip"></span>
+</div>
+</a>
+<a class="item" href="https://www.ozgurkocaeli.com.tr/ilan?b=63195">
+<div>
+<h4>MOBİLYA USTALARI ARANIYOR</h4>
+<p class="cut-2">Mobilya atölyesinde çalışacak MOBİLYA USTALARI aranıyor.
+Hüseyin Eren Mobilya San. Tic. Ltd. Şti.İzmit San Sit. 16. Cad. 14. Blok No: 7
+Tel: 0532 67...</p>
+<span class="tel"></span>
+<span class="sahip"></span>
+</div>
+</a>
+</div>
+</div>
+<div class="end link-5 underline">
+<p>
+<p>* İlanlarınız hem gazete hem de internet sitemizde eş zamanlı yayınlanmaktadır. <br />
+* Gün sayısı artıkça indirimlerimiz mevcuttur. <br />
+* İlan metninize en uygun ebat için tarafınıza en kısa sürede geri dönüş sağlanacaktır.<br />
+* Seri İlanlarınız için (262) 331 11 11</p>
+</p>
+</div>
+</div>
+<!--googleon: all-->
+<hr class="space mb15">
+<ins id="rkm-alt-c5" class="rkm c-nrm us as f-mobile f-response">
+<div class="f  mt15">
+<div class="ad-channel   js" data-name="alt-c5">
+</div>
+</div>
+</ins>
+<script> pushfn('ads'); </script>
+<hr class="space mt20" />
+<div class="postblock point-18 point-15-sm point-24-xs">
+<div class="row-2 row-ms-1 gut-1 gut-xs row-sm-3 row-xs-2 row-ms-1 list-normal ">
+<div class="col">
+<div class="post ">
+<figure class="mask-ratio crop ">
+<a href="/haber/8891834/akaryakit-fiyatlarinda-ciddi-dusus-bekleniyor" target="_blank">
+<img src="https://file.daktilo.com/themes/enerjik_ozgur/assets/img/bos.png" class="real lazy" data-src="https://static.daktilo.com/sites/535/uploads/2021/12/21/medium/3290113-810x458-1640082400.jpg" alt="Akaryakıt fiyatlarında ciddi düşüş bekleniyor" />
+<img src="https://file.daktilo.com/themes/enerjik_ozgur/assets/img/mask-16-9.png" class="mask " alt="mask" />
+</a>
+</figure>
+<span class="b">
+<a href="/haber/8891834/akaryakit-fiyatlarinda-ciddi-dusus-bekleniyor" target="_blank">Akaryakıt fiyatlarında ciddi düşüş bekleniyor</a>
+</span>
+</div> </div>
+<div class="col">
+<div class="post ">
+<figure class="mask-ratio crop ">
+<a href="/haber/8890899/vatandas-indirim-bekliyor-gozler-zincir-marketlerde" target="_blank">
+<img src="https://file.daktilo.com/themes/enerjik_ozgur/assets/img/bos.png" class="real lazy" data-src="https://static.daktilo.com/sites/535/uploads/2021/12/21/medium/dolar-dustu-vatandas-fiyatlarda-indirim-bekliyor-14612679-9514-osd-1640074618.jpg" alt="Vatandaş indirim bekliyor! Gözler zincir marketlerde" />
+<img src="https://file.daktilo.com/themes/enerjik_ozgur/assets/img/mask-16-9.png" class="mask " alt="mask" />
+</a>
+</figure>
+<span class="b">
+<a href="/haber/8890899/vatandas-indirim-bekliyor-gozler-zincir-marketlerde" target="_blank">Vatandaş indirim bekliyor! Gözler zincir marketlerde</a>
+</span>
+</div> </div>
+<div class="col">
+<div class="post ">
+<figure class="mask-ratio crop ">
+<a href="/haber/8890357/asgari-ucrete-vergi-istisnasi-komisyondan-gecti" target="_blank">
+<img src="https://file.daktilo.com/themes/enerjik_ozgur/assets/img/bos.png" class="real lazy" data-src="https://static.daktilo.com/sites/535/uploads/2021/12/21/medium/687188a0-8ed4-4a38-b263-039153aa43d3.jpg" alt="Asgari ücrete vergi istisnası komisyondan geçti" />
+<img src="https://file.daktilo.com/themes/enerjik_ozgur/assets/img/mask-16-9.png" class="mask " alt="mask" />
+</a>
+</figure>
+<span class="b">
+<a href="/haber/8890357/asgari-ucrete-vergi-istisnasi-komisyondan-gecti" target="_blank">Asgari ücrete vergi istisnası komisyondan geçti</a>
+</span>
+</div> </div>
+<div class="col">
+<div class="post ">
+<figure class="mask-ratio crop ">
+<a href="/haber/8890105/vergi-oranlarina-zam-yapildi" target="_blank">
+<img src="https://file.daktilo.com/themes/enerjik_ozgur/assets/img/bos.png" class="real lazy" data-src="https://static.daktilo.com/sites/535/uploads/2021/12/21/medium/zam-elhk-cover-1640067139.jpg" alt="Vergi oranlarına zam yapıldı" />
+<img src="https://file.daktilo.com/themes/enerjik_ozgur/assets/img/mask-16-9.png" class="mask " alt="mask" />
+</a>
+</figure>
+<span class="b">
+<a href="/haber/8890105/vergi-oranlarina-zam-yapildi" target="_blank">Vergi oranlarına zam yapıldı</a>
+</span>
+</div> </div>
+<div class="col">
+<div class="post ">
+<figure class="mask-ratio crop ">
+<a href="/haber/8889605/akaryakit-zammi-durduruldu" target="_blank">
+<img src="https://file.daktilo.com/themes/enerjik_ozgur/assets/img/bos.png" class="real lazy" data-src="https://static.daktilo.com/sites/535/uploads/2021/12/20/medium/manset-1640033021.jpg" alt="Akaryakıt zammı durduruldu" />
+<img src="https://file.daktilo.com/themes/enerjik_ozgur/assets/img/mask-16-9.png" class="mask " alt="mask" />
+</a>
+</figure>
+<span class="b">
+<a href="/haber/8889605/akaryakit-zammi-durduruldu" target="_blank">Akaryakıt zammı durduruldu</a>
+</span>
+</div> </div>
+<div class="col">
+<div class="post ">
+<figure class="mask-ratio crop ">
+<a href="/haber/8889500/dolarda-hizli-dusus" target="_blank">
+<img src="https://file.daktilo.com/themes/enerjik_ozgur/assets/img/bos.png" class="real lazy" data-src="https://static.daktilo.com/sites/535/uploads/2021/12/20/medium/dolardoviz-1537318.jpg" alt="Dolarda hızlı düşüş" />
+<img src="https://file.daktilo.com/themes/enerjik_ozgur/assets/img/mask-16-9.png" class="mask " alt="mask" />
+</a>
+</figure>
+<span class="b">
+<a href="/haber/8889500/dolarda-hizli-dusus" target="_blank">Dolarda hızlı düşüş</a>
+</span>
+</div> </div>
+</div>
+</div>
+</div>
+</div>
+<aside class="sidbox col c-336 col-sm-12" style="overflow:hidden;">
+<div class="in pl0 pl0-sm">
+<div class="block-pano t2">
+<div class="us">
+<ins id="rkm-alt-s1" class="rkm c-nrm">
+<div class="f ">
+<div class="ad-channel   js" data-name="alt-s1">
+</div>
+</div>
+</ins>
+<script> pushfn('ads'); </script>
+</div>
+<div class="as">
+<section class="block-fan row c-nb -gut-1">
+<h6 class="hidden">Sosyal Sayfalar</h6>
+<div class="col face">
+<div class="in touch">
+<a href="https://facebook.com/ozgurkocaeligazetesi" target="_blank" rel="external nofollow noopener noreferrer" class="one row row-ms-1 ns c-nb middle center-ms">
+<span class="col nocolsize-ms a"><span><i class="ss-social ss-facebook"></i></span></span>
+<span class="col b pt10-ms">BEĞEN 90 B</span>
+</a>
+</div>
+</div>
+<div class="col twit">
+<div class="in touch">
+<a href="https://twitter.com/ozgurkocaeli" target="_blank" rel="external nofollow noopener noreferrer" class="one row row-ms-1  ns c-nb middle center-ms">
+<span class="col nocolsize-ms a"><span><i class="ss-social ss-twitter"></i></span></span>
+<span class="col col-ms-12 b pt10-ms">TAKİP ET 12 B</span>
+</a>
+</div>
+</div>
+</section>
+<section class="block-fan row c-nb -gut-1" style="margin-top:10px;">
+<div class="col" style="background:#BD0082; margin:0 5px;">
+<div class="in touch">
+<a href="https://instagram.com/ozgurkocaeli/" target="_blank" rel="external nofollow noopener noreferrer" class="one row row-ms-1 ns c-nb middle center-ms">
+<span class="col nocolsize-ms a"><span><i class="ss-social ss-instagram"></i></span></span>
+<span class="col b pt10-ms">TAKİP ET</span>
+</a>
+</div>
+</div>
+<div class="col" style="background:#FF0000; margin:0 5px; ">
+<div class="in touch">
+<a href="https://youtube.com/channel/UC_21QgQnbxbwYMlPksg-iQw" target="_blank" rel="external nofollow noopener noreferrer" class="one row row-ms-1 ns c-nb middle center-ms">
+<span class="col nocolsize-ms a"><span><i class="ss-social ss-youtube"></i></span></span>
+<span class="col b pt10-ms">TAKİP ET</span>
+</a>
+</div>
+</div>
+</section>
+</div>
+</div>
+<hr class="space mt20" />
+<section class="postblock block-in block-basit  full-width-ms">
+<div class="post ">
+<figure class="mask-ratio crop ">
+<a href="/haber/8884136/mustafa-resit-akcay-bana-niye-kufrediyorsun-oglum" target="_blank">
+<img src="https://file.daktilo.com/themes/enerjik_ozgur/assets/img/bos.png" class="real lazy" data-src="https://static.daktilo.com/sites/535/uploads/2021/12/19/medium/aw495442-05-1639942835.jpg" alt="Mustafa Reşit Akçay: “Bana niye küfrediyorsun oğlum”" />
+<img src="https://file.daktilo.com/themes/enerjik_ozgur/assets/img/mask-16-9.png" class="mask " alt="mask" />
+</a>
+</figure>
+<span class="b">
+<a href="/haber/8884136/mustafa-resit-akcay-bana-niye-kufrediyorsun-oglum" target="_blank">Mustafa Reşit Akçay: “Bana niye küfrediyorsun oğlum”</a>
+</span>
+</div> <hr class="space b1 mb5 mt15" />
+<div class="post-list-satir">
+<div class="post ">
+<figure class="mask-ratio crop ">
+<a href="/haber/8883860/kocaeli-valiliginden-soguk-hava-uyarisi" target="_blank">
+<img src="https://file.daktilo.com/themes/enerjik_ozgur/assets/img/bos.png" class="real lazy" data-src="https://static.daktilo.com/sites/535/uploads/2021/12/19/medium/1467298-1639934398.jpg" alt="Kocaeli Valiliği&#039;nden soğuk hava uyarısı" />
+<img src="https://file.daktilo.com/themes/enerjik_ozgur/assets/img/mask-16-9.png" class="mask " alt="mask" />
+</a>
+</figure>
+<span class="b">
+<a href="/haber/8883860/kocaeli-valiliginden-soguk-hava-uyarisi" target="_blank">Kocaeli Valiliği&#039;nden soğuk hava uyarısı</a>
+</span>
+</div>
+<div class="post ">
+<figure class="mask-ratio crop ">
+<a href="/haber/8889673/kocaelililer-dikkat-kar-kapida" target="_blank">
+<img src="https://file.daktilo.com/themes/enerjik_ozgur/assets/img/bos.png" class="real lazy" data-src="https://static.daktilo.com/sites/535/uploads/2021/12/21/medium/1051766641-0-0-2000-1125-1920x0-80-0-0-91ce7ca7e613a76a8d97c67f6aa438cf.jpg" alt="Kocaelililer dikkat! Kar kapıda" />
+<img src="https://file.daktilo.com/themes/enerjik_ozgur/assets/img/mask-16-9.png" class="mask " alt="mask" />
+</a>
+</figure>
+<span class="b">
+<a href="/haber/8889673/kocaelililer-dikkat-kar-kapida" target="_blank">Kocaelililer dikkat! Kar kapıda</a>
+</span>
+</div>
+<div class="post ">
+<figure class="mask-ratio crop ">
+<a href="/haber/8881733/efe-tur-otobusu-kaza-yapti-2si-agir-20-yarali" target="_blank">
+<img src="https://file.daktilo.com/themes/enerjik_ozgur/assets/img/bos.png" class="real lazy" data-src="https://static.daktilo.com/sites/535/uploads/2021/12/19/medium/aw494894-08-1639892349.jpg" alt="Efe Tur otobüsü kaza yaptı: 2&#039;si ağır 20 yaralı" />
+<img src="https://file.daktilo.com/themes/enerjik_ozgur/assets/img/mask-16-9.png" class="mask " alt="mask" />
+</a>
+</figure>
+<span class="b">
+<a href="/haber/8881733/efe-tur-otobusu-kaza-yapti-2si-agir-20-yarali" target="_blank">Efe Tur otobüsü kaza yaptı: 2&#039;si ağır 20 yaralı</a>
+</span>
+</div>
+<div class="post ">
+<figure class="mask-ratio crop ">
+<a href="/haber/8883808/kandirali-ogretmen-fenomen-oldu" target="_blank">
+<img src="https://file.daktilo.com/themes/enerjik_ozgur/assets/img/bos.png" class="real lazy" data-src="https://static.daktilo.com/sites/535/uploads/2021/12/19/medium/manset-1639932965.jpg" alt="Kandıralı öğretmen fenomen oldu" />
+<img src="https://file.daktilo.com/themes/enerjik_ozgur/assets/img/mask-16-9.png" class="mask " alt="mask" />
+</a>
+</figure>
+<span class="b">
+<a href="/haber/8883808/kandirali-ogretmen-fenomen-oldu" target="_blank">Kandıralı öğretmen fenomen oldu</a>
+</span>
+</div>
+<div class="post ">
+<figure class="mask-ratio crop ">
+<a href="/haber/8885452/izmitte-icradan-satilik-tarla" target="_blank">
+<img src="https://file.daktilo.com/themes/enerjik_ozgur/assets/img/bos.png" class="real lazy" data-src="https://static.daktilo.com/sites/535/uploads/2021/12/20/medium/476b269a04b099bb3a731209efa9de599844152-2-1636100736-1636621322-1636705316-1637742567-1638004387-1639987160.jpg" alt="İzmit&#039;te icradan satılık tarla" />
+<img src="https://file.daktilo.com/themes/enerjik_ozgur/assets/img/mask-16-9.png" class="mask " alt="mask" />
+</a>
+</figure>
+<span class="b">
+<a href="/haber/8885452/izmitte-icradan-satilik-tarla" target="_blank">İzmit&#039;te icradan satılık tarla</a>
+</span>
+</div> </div>
+</section>
+<hr class="space mt20" />
+<section class="postblock block-medya bs-2">
+<div class="head icon-left">
+<h2 class="hb">
+<a href="">GALERİ</a>
+</h2>
+<i class="ss-standard ss-camera"></i>
+</div>
+<div class="row-2 row-ms-1 list-basic ">
+<div class="col">
+<div class="post t-2">
+<figure class="mask-ratio crop ">
+<a href="/video/8891803/kartepede-masalsi-goruntuler" target="_blank">
+<img src="https://file.daktilo.com/themes/enerjik_ozgur/assets/img/bos.png" class="real lazy" data-src="https://static.daktilo.com/sites/535/uploads/2021/12/21/medium/aw496825-05.jpg" alt="Kartepe&#039;de masalsı görüntüler" />
+<img src="https://file.daktilo.com/themes/enerjik_ozgur/assets/img/mask-16-9.png" class="mask " alt="mask" />
+<span class="grand"></span>
+</a>
+</figure>
+<span class="b">
+<a class="cut-2" href="/video/8891803/kartepede-masalsi-goruntuler" target="_blank">Kartepe&#039;de masalsı görüntüler</a>
+</span>
+</div> </div>
+<div class="col">
+<div class="post t-2">
+<figure class="mask-ratio crop ">
+<a href="/video/8890332/yeni-yila-sayili-gunler-kala-vatandaslarin-tercihi-bu-urunler-oldu" target="_blank">
+<img src="https://file.daktilo.com/themes/enerjik_ozgur/assets/img/bos.png" class="real lazy" data-src="https://static.daktilo.com/sites/535/uploads/2021/12/21/medium/aw496348-01 (2).jpg" alt="Yeni yıla sayılı günler kala vatandaşların tercihi bu ürünler oldu" />
+<img src="https://file.daktilo.com/themes/enerjik_ozgur/assets/img/mask-16-9.png" class="mask " alt="mask" />
+<span class="grand"></span>
+</a>
+</figure>
+<span class="b">
+<a class="cut-2" href="/video/8890332/yeni-yila-sayili-gunler-kala-vatandaslarin-tercihi-bu-urunler-oldu" target="_blank">Yeni yıla sayılı günler kala vatandaşların tercihi bu ürünler oldu</a>
+</span>
+</div> </div>
+<div class="col">
+<div class="post t-2">
+<figure class="mask-ratio crop ">
+<a href="/video/8890082/istinat-duvari-yikildi-2-ev-bosaltildi" target="_blank">
+<img src="https://file.daktilo.com/themes/enerjik_ozgur/assets/img/bos.png" class="real lazy" data-src="https://static.daktilo.com/sites/535/uploads/2021/12/21/medium/aw496404-05.jpg" alt="İstinat duvarı yıkıldı, 2 ev boşaltıldı" />
+<img src="https://file.daktilo.com/themes/enerjik_ozgur/assets/img/mask-16-9.png" class="mask " alt="mask" />
+<span class="grand"></span>
+</a>
+</figure>
+<span class="b">
+<a class="cut-2" href="/video/8890082/istinat-duvari-yikildi-2-ev-bosaltildi" target="_blank">İstinat duvarı yıkıldı, 2 ev boşaltıldı</a>
+</span>
+</div> </div>
+<div class="col">
+<div class="post t-2">
+<figure class="mask-ratio crop ">
+<a href="/foto/8887240/kis-masali-gibi-kartepe-beyaz-gelinligini-giydi" target="_blank">
+<img src="https://file.daktilo.com/themes/enerjik_ozgur/assets/img/bos.png" class="real lazy" data-src="https://static.daktilo.com/sites/535/uploads/2021/12/20/medium/kartepe-kis-masali.jpeg" alt="Kış masalı gibi... Kartepe beyaz gelinliğini giydi" />
+<img src="https://file.daktilo.com/themes/enerjik_ozgur/assets/img/mask-16-9.png" class="mask " alt="mask" />
+<span class="grand"></span>
+</a>
+</figure>
+<span class="b">
+<a class="cut-2" href="/foto/8887240/kis-masali-gibi-kartepe-beyaz-gelinligini-giydi" target="_blank">Kış masalı gibi... Kartepe beyaz gelinliğini giydi</a>
+</span>
+</div> </div>
+<div class="col">
+<div class="post t-2">
+<figure class="mask-ratio crop ">
+<a href="/video/8887040/kizlar-calisani-oyaladi-cocuk-telefonu-caldi" target="_blank">
+<img src="https://file.daktilo.com/themes/enerjik_ozgur/assets/img/bos.png" class="real custom portrait lazy" data-src="https://static.daktilo.com/sites/535/uploads/2021/12/20/medium/aw495936-03-1639996998.jpg" alt="Kızlar çalışanı oyaladı, çocuk telefonu çaldı" />
+<img src="https://file.daktilo.com/themes/enerjik_ozgur/assets/img/mask-16-9.png" class="mask " alt="mask" />
+<span class="grand"></span>
+</a>
+</figure>
+<span class="b">
+<a class="cut-2" href="/video/8887040/kizlar-calisani-oyaladi-cocuk-telefonu-caldi" target="_blank">Kızlar çalışanı oyaladı, çocuk telefonu çaldı</a>
+</span>
+</div> </div>
+<div class="col">
+<div class="post t-2">
+<figure class="mask-ratio crop ">
+<a href="/video/8885766/kartepede-lapa-lapa-yagan-kar-altinda-kizak-keyfi" target="_blank">
+<img src="https://file.daktilo.com/themes/enerjik_ozgur/assets/img/bos.png" class="real lazy" data-src="https://static.daktilo.com/sites/535/uploads/2021/12/20/medium/aw495740-03-1639989988.jpg" alt="Kartepe&#039;de lapa lapa yağan kar altında kızak keyfi" />
+<img src="https://file.daktilo.com/themes/enerjik_ozgur/assets/img/mask-16-9.png" class="mask " alt="mask" />
+<span class="grand"></span>
+</a>
+</figure>
+<span class="b">
+<a class="cut-2" href="/video/8885766/kartepede-lapa-lapa-yagan-kar-altinda-kizak-keyfi" target="_blank">Kartepe&#039;de lapa lapa yağan kar altında kızak keyfi</a>
+</span>
+</div> </div>
+</div>
+</section>
+<div class="sticky" id="_s_fan" data-set='{"top":56,"media":"md+"}'>
+<hr class="space b1 mt15 mb20" />
+<section class="block-fan row c-nb -gut-1">
+<h6 class="hidden">Sosyal Sayfalar</h6>
+<div class="col face">
+<div class="in touch">
+<a href="https://facebook.com/ozgurkocaeligazetesi" target="_blank" rel="external nofollow noopener noreferrer" class="one row row-ms-1 ns c-nb middle center-ms">
+<span class="col nocolsize-ms a"><span><i class="ss-social ss-facebook"></i></span></span>
+<span class="col b pt10-ms">BEĞEN 90 B</span>
+</a>
+</div>
+</div>
+<div class="col twit">
+<div class="in touch">
+<a href="https://twitter.com/ozgurkocaeli" target="_blank" rel="external nofollow noopener noreferrer" class="one row row-ms-1  ns c-nb middle center-ms">
+<span class="col nocolsize-ms a"><span><i class="ss-social ss-twitter"></i></span></span>
+<span class="col col-ms-12 b pt10-ms">TAKİP ET 12 B</span>
+</a>
+</div>
+</div>
+</section>
+<section class="block-fan row c-nb -gut-1" style="margin-top:10px;">
+<div class="col" style="background:#BD0082; margin:0 5px;">
+<div class="in touch">
+<a href="https://instagram.com/ozgurkocaeli/" target="_blank" rel="external nofollow noopener noreferrer" class="one row row-ms-1 ns c-nb middle center-ms">
+<span class="col nocolsize-ms a"><span><i class="ss-social ss-instagram"></i></span></span>
+<span class="col b pt10-ms">TAKİP ET</span>
+</a>
+</div>
+</div>
+<div class="col" style="background:#FF0000; margin:0 5px; ">
+<div class="in touch">
+<a href="https://youtube.com/channel/UC_21QgQnbxbwYMlPksg-iQw" target="_blank" rel="external nofollow noopener noreferrer" class="one row row-ms-1 ns c-nb middle center-ms">
+<span class="col nocolsize-ms a"><span><i class="ss-social ss-youtube"></i></span></span>
+<span class="col b pt10-ms">TAKİP ET</span>
+</a>
+</div>
+</div>
+</section>
+<hr class="space mt20" />
+</div>
+</div>
+</aside>
+</div>
+<script type="text/javascript">
+		var itemswipe = {
+		1 : [
+							
+				{ 
+					src 		: "https://static.daktilo.com/sites/535/uploads/2020/03/28/403317-0.jpg",
+					w 			: 880,
+					h 			: 440,
+					title 		: "<b>Kredi kartı faizleri düştü</b><br/>"				
+				}				
+						
+		]
+	};
+</script>
+</div>
+<footer class="mt100 mt60-xs">
+<div class="block-visitors">
+<div class="con">
+<div class="row">
+<div class="col-sol col-6 col-sm-12">
+<p>Sitemizde <strong id="realtime-visitors"></strong> online</p>
+</div>
+<div class="col-sag col-6 col-sm-12">
+<p><a href="/bilgi/reklam" target="_blank">Reklam seçeneklerimizi inceleyin</a></p>
+</div>
+</div>
+</div>
+</div>
+<div class="block-as pt55  pt0-sm">
+<div class="con">
+<div class="us row c-nb">
+<div class="one col-4 col-sm-12 order-sm-3 pt40-sm pt35-xs  ">
+<i class="figur hidden-sm import mob-remove"></i>
+<div class="pr25 pr10-md pr0-sm">
+ <blockquote class="tjustify-md tcenter-sm">Sitemizdeki dış bağlantılar referans amaçlıdır, dış bağlantıların içeriklerinden<br class="visible-sm hidden-ms"> kuruluşumuz <br class="visible-ms"> sorumlu değildir</blockquote>
+<span class="social row ns mt30 mt0-sm center-sm">
+<a href="https://facebook.com/ozgurkocaeligazetesi" target="" rel=""><i class="ss-social ss-facebook"></i></a>
+<a href="https://twitter.com/ozgurkocaeli" target="" rel=""><i class="ss-social ss-twitter"></i></a>
+<a href="https://instagram.com/ozgurkocaeli/" target="" rel=""><i class="ss-social ss-instagram"></i></a>
+<a href="https://youtube.com/channel/UC_21QgQnbxbwYMlPksg-iQw" target="" rel=""><i class="ss-social ss-youtube"></i></a>
+<a href="https://www.ozgurkocaeli.com.tr/rss.xml" class="rss"><i class="ss-icon ss-social ss-rss"></i></a>
+<a href="/iletisim"><i class="ss-icon ss-social ss-mail"></i></a>
+</span>
+<hr class="space visible-sm mt15 b1" />
+<nav class="row mt30 mt20-xs c-nb underline tcenter-sm">
+<ul class="col">
+<li><a href="https://www.ozgurkocaeli.com.tr/bilgi/kurulus" target="_self" rel="">Kuruluş Hakkında</a></li>
+<li><a href="https://www.ozgurkocaeli.com.tr/bilgi/kunye" target="_self" rel="">Künye Bilgileri</a></li>
+<li><a href="https://www.ozgurkocaeli.com.tr/bilgi/yayin-ilkeleri" target="_self" rel="">Yayın İlkeleri</a></li>
+<li><a href="https://www.ozgurkocaeli.com.tr/haber-ihbar" target="_self" rel="">Haber İhbar</a></li>
+</ul>
+<ul class="col">
+<li><a href="https://www.ozgurkocaeli.com.tr/bilgi/reklam" target="_self" rel="">Reklam Ver</a></li>
+<li><a href="https://www.ozgurkocaeli.com.tr/iletisim" target="_self" rel="">İletişim</a></li>
+</ul>
+</nav>
+</div> </div>
+<div class="two col col-sm-12 row order-sm-2 hidden-sm mob-remove">
+<div class="w100 w80-sm w95-xs w100-ms cm">
+<div class="row middle center ns">
+<ul>
+<li><a href="https://www.ozgurkocaeli.com.tr/foto" target="_self" rel=""><i class="ss-gizmo ss-camera"></i>Foto Galeri</a></li>
+<li><a href="https://www.ozgurkocaeli.com.tr/video" target="_self" rel=""><i class="ss-gizmo ss-video"></i>Video Galeri</a></li>
+<li><a href="https://www.ozgurkocaeli.com.tr/yazarlar" target="_self" rel=""><i class="ss-pika ss-feather"></i>Yazarlar</a></li>
+<li><a href="https://www.ozgurkocaeli.com.tr/anket" target="_self" rel=""><i class="ss-gizmo ss-piechart"></i>Anketler</a></li>
+<li><a href="https://www.ozgurkocaeli.com.tr/arsiv" target="_self" rel=""><i class="ss-gizmo ss-index"></i>Arşiv</a></li>
+</ul>
+</div> </div>
+</div>
+<div class="tree col-5 col-sm-12  underline order-sm-1 hidden-sm  mob-remove">
+<div class="w80-sm w95-xs w100-ms cm">
+<div class="row center-sm">
+<div class="col-8 col-sm-7 col-ms-6 f-topic">
+<div class="pl20 pl0-md pl10-ms">
+<span class="tree-title">Konular</span>
+<div class="row row-ms-1 w95 c-nb wauto-xs">
+<ul class="col">
+<li><a href="https://www.ozgurkocaeli.com.tr/gazete-mansetleri" target="_self" rel="">Gazete Manşetleri</a></li>
+<li><a href="https://www.ozgurkocaeli.com.tr/roportaj" target="_self" rel="">Röportaj</a></li>
+<li><a href="https://www.ozgurkocaeli.com.tr/kocaeli-haberleri" target="" rel="">Gündem</a></li>
+<li><a href="https://www.ozgurkocaeli.com.tr/kocaeli-siyaset-haberleri" target="" rel="">Siyaset</a></li>
+<li><a href="https://www.ozgurkocaeli.com.tr/kocaeli-asayis-haberleri" target="" rel="">Asayiş</a></li>
+<li><a href="https://www.ozgurkocaeli.com.tr/perde-arkasi" target="" rel="">Perde Arkası</a></li>
+<li><a href="https://www.ozgurkocaeli.com.tr/kocaeli-spor-haberleri" target="" rel="">Spor</a></li>
+<li><a href="https://www.ozgurkocaeli.com.tr/kocaeli-ekonomi-haberleri" target="" rel="">Ekonomi</a></li>
+<li><a href="https://www.ozgurkocaeli.com.tr/kocaeli-egitim-haberleri" target="" rel="">Eğitim</a></li>
+</ul>
+<ul class="col">
+<li><a href="https://www.ozgurkocaeli.com.tr/teknoloji-haberleri" target="" rel="">Teknoloji</a></li>
+<li><a href="https://www.ozgurkocaeli.com.tr/mektup" target="" rel="">Mektup</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-4 col-sm-5 col-ms-6 f-services">
+<div class="pl15-sm p20-ms">
+<span class="tree-title">Servisler</span>
+<ul>
+<li><a href="https://www.ozgurkocaeli.com.tr/rehber" target="_self" rel="">Mekanlar</a></li>
+<li><a href="https://www.ozgurkocaeli.com.tr/kocaeli-hava-durumu" target="_self" rel="">Hava Durumu</a></li>
+<li><a href="https://www.ozgurkocaeli.com.tr/ilan" target="_blank" rel="">Seri İlanlar</a></li>
+<li><a href="https://www.ozgurkocaeli.com.tr/kocaeli-nobetci-eczaneler" target="_self" rel="">Eczaneler</a></li>
+<li><a href="https://www.ozgurkocaeli.com.tr/birinci-lig-fiksturu" target="_self" rel="">Lig Fikstürü</a></li>
+<li><a href="https://www.ozgurkocaeli.com.tr/kocaeli-namaz-vakitleri" target="_self" rel="">Namaz Vakti</a></li>
+<li><a href="https://www.ozgurkocaeli.com.tr/kocaeli-vefatlar" target="_self" rel="">Vefatlar</a></li>
+</ul>
+</div>
+</div>
+</div> </div>
+</div>
+</div>
+</div>
+<div class="as mt35 mt0-sm">
+<div class="con">
+<div class="in w80-sm w95-xs w100-ms cm">
+<div class="row c-nb middle top-sm between tcenter-sm">
+<p class="flex underline block-sm col-sm-12">
+<span class="t1"><span class="copy">©</span><span class="none-ms">Copyright</span> 2021 Özgür Kocaeli Gazetesi Tüm Hakları Saklıdır</span>
+<span class="t2 none-sm import">-</span>
+<span class="t3 pt5-sm"><a href="/bilgi/veri-politikasi">Veri Politikası</a><a href="/bilgi/uyelik-sozlesmesi">Kullanım Şartları</a></span>
+<span class="t4 pt15-sm row ns middle-ms center-sm"><i class="ss-pika ss-fax none-sm"></i><a class="format-tel" href="tel:+902623311111" itemprop="telephone">+90 <s>(</s>262<s>)</s> 331 11 11</a></span>
+</p>
+<span class="col-sm-12 pt20-sm">
+<a href="https://daktilo.com" target="_blank" class="t5 software" title="Haber Yazılımı">
+<i class="ss-gizmo ss-pointupleft"></i>
+<b>daktilo</b> haber yazılımı - <span> v1.9</span>
+</a>
+</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="comment-reply-form" class="hidden">
+<section class="c-send reply fit-con">
+<div class="cs-head cs-mob row ns middle between mb15">
+<div class="csh-sol row ns middle">
+<figure class="no-avatar">
+<i class="ss-standard ss-user"></i>
+</figure>
+<a href="https://www.ozgurkocaeli.com.tr/user/login?prev=" class="c-login">
+<i class="ss-pika ss-login"></i>
+<span>GİRİŞ YAP</span>
+</a>
+</div>
+<div class="csh-sag">
+<a class="c-send-close">
+<span><i class="ss-gizmo ss-delete"></i></span>
+</a>
+</div>
+</div>
+<div class="cs-body row ns c-nb">
+<div class="col sol">
+<figure class="no-avatar">
+<i class="ss-gizmo ss-user"></i>
+</figure>
+</div>
+<div class="col sag">
+<form name="reply" class="form -gut-1 -f-round-6 -f-border-0 touchs" method="post">
+<script>
+					fn.push('f_uc_first');
+				</script>
+<ul class="f1">
+<li class="f2 field-yorum">
+<div class="f4">
+<textarea tabindex="1" name="yorum" placeholder="Üsteki yorumu yanıtla" data-olay="reply" maxlength="2000" class="field"></textarea>
+</div>
+</li>
+<li class="f2 f2-user no-mb user row -gut-1 -gut-1-xs c-nb c-ob-xs">
+<div class="col-7 col-xs-12">
+<div class="f4 field-isim">
+<span class="icon crop end"><i class="ss-gizmo ss-user"></i></span>
+<input tabindex="2" type="text" name="isim" class="field type-text uc-first-upper" maxlength="22" placeholder="Ad veya Rumuz" />
+</div>
+</div>
+</li>
+</ul>
+<div class="robot ">
+<div class="robot-in">
+<div class="robot-us">
+<a href="#" class="prt robot-close"><i class="ss-gizmo ss-delete"></i></a>
+<div>
+<div id="captcha-1474838845" class="g-recaptcha" data-sitekey="6LeDfuAUAAAAAKW6XR4dlN4Sx_2kHbYll0wY2bY4" data-callback="reply_submit"></div>
+<small>göndermek için kutuyu işaretleyin</small>
+</div>
+</div>
+<script>
+				function reply_submit(){ 
+					$("form[name=reply]").submit();
+				}
+			</script>
+</div>
+<script>fn.push('f_robot')</script>
+<script>
+	if (typeof grecaptcha !== 'undefined'){
+		grecaptcha.render('captcha-1474838845', {
+			'sitekey' : '6LeDfuAUAAAAAKW6XR4dlN4Sx_2kHbYll0wY2bY4'
+		});
+	}
+	</script>
+</div>
+<nav class="pt15 pt25-sm pt10-xs">
+<div class="row ns middle block-sm">
+<div class="cs-submit-mob visible-sm">
+<div class="btn btn-submit">
+<i class="ss-standard ss-send plt"></i>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40px" height="40px" viewBox="0 0 50 50" style="enable-background:new 0 0 50 50;" xml:space="preserve">
+<path fill="#44a2d8" d="M25.251,6.461c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615V6.461z">
+<animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite" />
+</path>
+</svg>
+<input type="submit" class="submit" value="Yorumu Gönder" />
+</div>
+<div class="btn btn-report more">
+<i class="ss-standard ss-alert plt"></i>
+<input type="button" class="submit" value="Yoruma Devam Et" />
+</div>
+<div class="btn btn-report ok">
+<i class="ss-standard ss-send plt"></i>
+<input type="button" class="ok" value="Yorum Gönderildi" />
+</div>
+<div class="btn btn-report no">
+<i class="ss-standard ss-alert plt"></i>
+<input type="button" class="no" value="Yorum Gönderilemedi" />
+</div>
+</div>
+<div class="cs-submit-web hidden-sm">
+<div class="row ns h">
+<a href="https://www.ozgurkocaeli.com.tr/user/login?prev=" class="h no c-login" title="Oturum Aç">
+<figure class="no-avatar">
+<i class="ss-gizmo ss-user"></i>
+</figure>
+</a>
+<input type="submit" class="submit web hidden-sm" value="Gönder" />
+</div>
+</div>
+<div class="report">
+<div class="more">
+<div class="mob visible-sm link-5">
+<p>Yorumunuz yarım kaldı, devam etmek için üstteki yoruma, silmek için <a href="#" class="remove-comment">buraya</a> tıklayın</p>
+</div>
+</div>
+<div class="no">
+<div class="web hidden-sm">
+<i class="ss-pika ss-info"></i>
+<span class="text">Kırmızı alanları dolduralım</span>
+</div>
+<div class="mob visible-sm">
+<p>Kırmızı alanlar eksik veya hatalı girildi. Lütfen bu alanları düzeltip tekrar gönderelim</p>
+</div>
+</div>
+<div class="ok">
+<div class="web hidden-sm">
+<i class="ss-standard ss-like"></i>
+<span class="text">Yorumunuz gözden geçirilip yayınlanacaktır</span>
+</div>
+<div class="mob visible-sm">
+<p>Yorumunuz için teşekkürler, en kısa sürede gözden geçirilip yayınlanacaktır</p>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<input type="hidden" name="user_id" value="" />
+<input type="hidden" name="reply_id" class="field-replyid" value="" />
+</form>
+</div>
+</div>
+<hr class="cs-back cs-mob" />
+<div class="cs-foot mob cs-mob mt30 ">
+<p>Yorum yazarak Özgür Kocaeli Gazetesi <a href="https://www.ozgurkocaeli.com.tr/bilgi/topluluk-kurallari" target="_blank">Topluluk Kuralları’nı</a> kabul etmiş bulunuyor ve yorumunuzla ilgili doğrudan veya dolaylı tüm sorumluluğu tek başınıza üstleniyorsunuz. Yazılan yorumlardan Özgür Kocaeli Gazetesi hiçbir şekilde sorumlu tutulamaz.</p>
+<p>Anadolu Ajansı (AA), İhlas Haber Ajansı (İHA), Demirören Haber Ajansı (DHA) tarafından servis edilen tüm haberler Özgür Kocaeli Gazetesi editörlerinin hiçbir editöryel müdahalesi olmadan, ajans kanallarından geldiği şekliyle yayınlanmaktadır. Sitemize ajanslar üzerinden aktarılan haberlerin hukuki muhatabı Özgür Kocaeli Gazetesi değil haberi geçen ajanstır.</p>
+</div>
+</section>
+<div class="c-foot reply hidden hidden-xs  mt15 link-5 underline pl0-ms ">
+<p class="on hidden pt5"><i class="ss-gizmo ss-navigatedown plt"></i>Şimdi <a class="c-login" href="https://www.ozgurkocaeli.com.tr/user/login?prev=">oturum açın</a>, her yorumda <b>isim</b> ve <b>e.posta</b> yazma zahmetinden kurtulun. Oturum açmak için bir hesabınız yoksa, oluşturmak için <a class="c-login" href="https://www.ozgurkocaeli.com.tr/user/register?prev=">buraya</a> tıklayın.
+<p>Yorum yazarak <a href="https://www.ozgurkocaeli.com.tr/bilgi/topluluk-kurallari" target="_blank"> Özgür Kocaeli Gazetesi Topluluk Kuralları’nı</a> kabul etmiş bulunuyor ve yorumunuzla ilgili doğrudan veya dolaylı tüm sorumluluğu tek başınıza üstleniyorsunuz. Yazılan yorumlardan Özgür Kocaeli Gazetesi hiçbir şekilde sorumlu tutulamaz.</p>
+<p>Anadolu Ajansı (AA), İhlas Haber Ajansı (İHA), Demirören Haber Ajansı (DHA) tarafından servis edilen tüm haberler Özgür Kocaeli Gazetesi editörlerinin hiçbir editöryel müdahalesi olmadan, ajans kanallarından geldiği şekliyle yayınlanmaktadır. Sitemize ajanslar üzerinden aktarılan haberlerin hukuki muhatabı Özgür Kocaeli Gazetesi değil haberi geçen ajanstır.</p>
+</div>
+</div>
+</footer>
+<ins id="rkm-code" class="rkm c-nrm">
+<div class="f ">
+<div class="ad-channel   js" data-name="code">
+</div>
+</div>
+</ins>
+<script> pushfn('ads'); </script>
+<s class="main-perde hidden" id="main-perde"></s>
+</main>
+<ins id="rkm-ac" class="rkm c-intro">
+<div class="f-fit">
+<div class="ad-channel   js" data-set='{"noLazy":true,"values":{"unit":true},"attr":{"ad":{"id":true}}}' data-name="ac">
+</div>
+</div>
+</ins>
+<script> pushfn('ads'); </script>
+<div class="client-action">
+<script>
+	document.getElementById("htm").classList.add("sub-nav-on");
+</script>
+<section class="subnav visible-ms">
+<div class="fix on" data-nav="entry">
+<div class="sn-entry on">
+<div class="row ns h">
+<nav class="col share row ns between middle stretch">
+<a href="https://www.ozgurkocaeli.com.tr/paylas?platform=twitter&amp;text=Kredi+kart%C4%B1+faizleri+d%C3%BC%C5%9Ft%C3%BC&amp;type=entry&amp;id=4497468" rel="nofollow" class="col twit"><i class="ss-social ss-twitter"></i></a>
+<a href="https://www.ozgurkocaeli.com.tr/paylas?platform=facebook&amp;type=entry&amp;id=4497468" rel="nofollow" target="blank" class="col face"><i class="ss-social ss-facebook"></i></a>
+<a href="https://www.ozgurkocaeli.com.tr/paylas?platform=whatsapp&amp;type=entry&amp;id=4497468" rel="nofollow" target="blank" class="col wsap"><i class="icon-whatsapp"></i></a>
+</nav>
+<nav class="text-size row ns stretch" id="text-size">
+<a class="col eksi"><span>A</span></a>
+<a class="col arti"><span>A</span></a>
+<span>
+<s class="one"></s>
+<s class="two">9</s>
+</span>
+</nav>
+</div>
+</div>
+</div>
+<script>fn.push('subnav');</script>
+</section>
+<section class="menu-mobil haber of sag us  " id="menu-mobil">
+<div class="in">
+<a href="#" id="mm-close" class="close prt un-tochstyle"><i class="ss-gizmo ss-delete"></i></a>
+<div class="find">
+<form name="search" action="https://www.ozgurkocaeli.com.tr/ara" method="get" class="form" id="mmf-form">
+<input type="hidden" name="_token" value="gvdzC1zT7PatTG0xOWXjEqFu5JLeYaA5N4QPFd9E">
+<input type="text" class="key" name="key" id="mmf-key" placeholder="Arayın" />
+<span class="bar" id="mmf-bar">
+<span id="mmf-close"><i class="ss-gizmo ss-delete"></i></span>
+<input type="submit" value="&#x1F50E;" class="submit ss-icon ss-gizmo ss-search" />
+</span>
+</form>
+</div>
+<div class="in-scroll">
+<div class="one">
+<div class="row-sm-2 gut-2-sm gut-1-ms row-ms-1">
+<div class="col topic">
+<ul>
+<li><a href="https://www.ozgurkocaeli.com.tr">Anasayfa</a></li>
+<li><a href="https://www.ozgurkocaeli.com.tr/video" target="_self" rel="">Video Galeri</a></li>
+<li><a href="https://www.ozgurkocaeli.com.tr/foto" target="_self" rel="">Foto Galeri</a></li>
+<li><a href="https://www.ozgurkocaeli.com.tr/yazarlar" target="_self" rel="">Yazarlar</a></li>
+<li><a href="https://www.ozgurkocaeli.com.tr/roportaj" target="_self" rel="">Röportaj</a></li>
+<li><a href="https://www.ozgurkocaeli.com.tr/kocaeli-haberleri">Gündem</a></li>
+<li><a href="https://www.ozgurkocaeli.com.tr/kocaeli-siyaset-haberleri">Siyaset</a></li>
+<li><a href="https://www.ozgurkocaeli.com.tr/kocaeli-asayis-haberleri">Asayiş</a></li>
+<li><a href="https://www.ozgurkocaeli.com.tr/perde-arkasi">Perde Arkası</a></li>
+<li><a href="https://www.ozgurkocaeli.com.tr/kocaeli-spor-haberleri">Spor</a></li>
+<li><a href="https://www.ozgurkocaeli.com.tr/kocaeli-ekonomi-haberleri">Ekonomi</a></li>
+<li><a href="https://www.ozgurkocaeli.com.tr/kocaeli-egitim-haberleri">Eğitim</a></li>
+<li><a href="https://www.ozgurkocaeli.com.tr/kocaeli-yasam-haberleri">Yaşam</a></li>
+<li><a href="https://www.ozgurkocaeli.com.tr/teknoloji-haberleri">Teknoloji</a></li>
+<li><a href="https://www.ozgurkocaeli.com.tr/mektup">Mektup</a></li>
+</ul>
+</div>
+<div class="col city">
+<h4>Şehir Rehberi</h4>
+<ul>
+<li><a href="https://www.ozgurkocaeli.com.tr/rehber" target="_self" rel=""><span>Şehir Rehberi</span><b><i class="ss-pika ss-location"></i></b></a></li>
+<li><a href="https://www.ozgurkocaeli.com.tr/kocaeli-hava-durumu" target="_self" rel=""><span>Hava Durumu</span><b><i class="ss-gizmo ss-partlycloudy"></i></b></a></li>
+<li><a href="https://www.ozgurkocaeli.com.tr/ilan" target="_blank" rel=""><span>Seri İlanlar</span><b><i class="ss-gizmo ss-businessuser"></i></b></a></li>
+<li><a href="https://www.ozgurkocaeli.com.tr/kocaeli-nobetci-eczaneler" target="_self" rel=""><span>Eczaneler</span><b><i class="ss-pika ss-pill"></i></b></a></li>
+<li><a href="https://www.ozgurkocaeli.com.tr/birinci-lig-fiksturu" target="_self" rel=""><span>Lig Fikstürü</span><b><i class="ss-pika ss-soccer"></i></b></a></li>
+<li><a href="https://www.ozgurkocaeli.com.tr/kocaeli-namaz-vakitleri" target="_self" rel=""><span>Namaz Vakti</span><b><i class="icon-dua"></i></b></a></li>
+<li><a href="https://www.ozgurkocaeli.com.tr/gazete-mansetleri" target="_self" rel=""><span>Gazete Manşetleri</span><b><i class="ss-gizmo ss-newspaper"></i></b></a></li>
+<li><a href="https://www.ozgurkocaeli.com.tr/kocaeli-vefatlar" target="_self" rel=""><span>Vefatlar</span><b><i class="icon-sad"></i></b></a></li>
+<li><a href="https://www.ozgurkocaeli.com.tr/kocaeli-trafik-durumu" target="_self" rel=""><span>Trafik Durumu</span><b><i class="ss-pika ss-car"></i></b></a></li>
+</ul>
+</div>
+<div class="col city">
+<h4>Kurumsal</h4>
+<ul>
+<li><a href="https://www.ozgurkocaeli.com.tr/bilgi/kurulus" target="_self" rel=""><span>Kuruluş Hakkında</span></a></li>
+<li><a href="https://www.ozgurkocaeli.com.tr/bilgi/kunye" target="_self" rel=""><span>Künye Bilgileri</span></a></li>
+<li><a href="https://www.ozgurkocaeli.com.tr/bilgi/yayin-ilkeleri" target="_self" rel=""><span>Yayın İlkeleri</span></a></li>
+<li><a href="https://www.ozgurkocaeli.com.tr/bilgi/topluluk-kurallari" target="_self" rel=""><span>Topluluk Kuralları</span></a></li>
+<li><a href="https://www.ozgurkocaeli.com.tr/haber-ihbar" target="_self" rel=""><span>Haber İhbar</span></a></li>
+<li><a href="https://www.ozgurkocaeli.com.tr/iletisim" target="_self" rel=""><span>Adres ve İletişim</span></a></li>
+<li><a href="https://www.ozgurkocaeli.com.tr/bilgi/hesap-bilgileri" target="_self" rel=""><span>Banka Hesapları</span></a></li>
+<li><a href="https://www.ozgurkocaeli.com.tr/bilgi/reklam" target="_self" rel=""><span>Reklam Seçenekleri</span></a></li>
+<li><a href="https://www.ozgurkocaeli.com.tr/bilgi/abonelik" target="_self" rel=""><span>Abonelik</span></a></li>
+<li><a href="https://www.ozgurkocaeli.com.tr/bilgi/veri-politikasi" target="_self" rel=""><span>Veri Politikası</span></a></li>
+<li><a href="https://www.ozgurkocaeli.com.tr/bilgi/uyelik-sozlesmesi" target="_self" rel=""><span>Kullanım Şartları</span></a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="user w80 w90-ms cm mt20 mb35 un-c-tochstyle">
+<span class="row ns">
+<a href="https://www.ozgurkocaeli.com.tr/user/login?prev=https://www.ozgurkocaeli.com.tr/haber/4497468/kredi-karti-faizleri-dustu" rel="nofollow" class="col a"><i class="ss-gizmo ss-login"></i><span>GİRİŞ YAP</span></a>
+<a href="https://www.ozgurkocaeli.com.tr/user/register?prev=https://www.ozgurkocaeli.com.tr/haber/4497468/kredi-karti-faizleri-dustu" rel="nofollow" class="col b"><i class="ss-gizmo ss-user"></i><span>KAYIT OL</span></a>
+</span>
+</div> <div class="two">
+<div>
+<span class="social row ns mt10 center-sm un-c-tochstyle">
+<a href="https://www.facebook.com/ozgurkocaeligazetesi"><i class="ss-icon ss-social ss-facebook"></i></a>
+<a href="https://twitter.com/ozgurkocaeli"><i class="ss-icon ss-social ss-twitter"></i></a>
+<a href="https://www.instagram.com/ozgurkocaeli/"><i class="ss-icon ss-social ss-instagram"></i></a>
+</span>
+<ul class="mt35 un-c-tochstyle">
+<li><a href="https://www.ozgurkocaeli.com.tr/foto" target="_self" rel=""><s><i class="ss-gizmo ss-camera"></i></s>Foto Galeri</a></li>
+<li><a href="https://www.ozgurkocaeli.com.tr/video" target="_self" rel=""><s><i class="ss-gizmo ss-video"></i></s>Video Galeri</a></li>
+<li><a href="https://www.ozgurkocaeli.com.tr/anket" target="_self" rel=""><s><i class="ss-gizmo ss-piechart"></i></s>Anketler</a></li>
+<li><a href="https://www.ozgurkocaeli.com.tr/arsiv" target="_self" rel=""><s><i class="ss-gizmo ss-index"></i></s>Arşiv</a></li>
+<li><a href="https://www.ozgurkocaeli.com.tr/haber-ihbar" target="_self" rel=""><s><i class="ss-pika ss-flame"></i></s>Haber İhbar</a></li>
+<li><a href="https://www.ozgurkocaeli.com.tr/bilgi/kurulus" target="_self" rel=""><s><i class="ss-standard ss-buildings"></i></s>Hakkında</a></li>
+<li><a href="https://www.ozgurkocaeli.com.tr/iletisim" target="_self" rel=""><s><i class="ss-pika ss-phone"></i></s>İletişim</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<span class="mm-outclose" id="mm-closeout"></span>
+<script>
+						fn.push('menu_mobil');
+	</script>
+</section>
+<div id="gallery" class="pswp" tabindex="-1" role="dialog" aria-hidden="true"><div class="pswp__bg"></div><div class="pswp__scroll-wrap"><div class="pswp__container"><div class="pswp__item"></div><div class="pswp__item"></div><div class="pswp__item"></div></div><div class="pswp__ui pswp__ui--hidden"><div class="pswp__top-bar"><div class="pswp__counter"></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button><button class="pswp__button pswp__button--share" title="Share"></button><button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button><button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button><div class="pswp__preloader"><div class="pswp__preloader__icn"><div class="pswp__preloader__cut"><div class="pswp__preloader__donut"></div></div></div></div></div><div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"><div class="pswp__share-tooltip"></div></div><button class="pswp__button pswp__button--ok--left" title="Previous (arrow left)"></button><button class="pswp__button pswp__button--ok--right" title="Next (arrow right)"></button><div class="pswp__caption"><div class="pswp__caption__center"></div></div></div></div></div>
+<div class="screen one" id="screen-one"></div>
+<div class="screen two" id="screen-two"></div>
+<div class="screen tre" id="screen-tre"></div>
+<div class="screen for" id="screen-for"></div>
+<div id="fb-root"></div>
+<a class="topGo rel-subnav sn-on" id="topGo"><i class="ss-standard ss-navigateup"></i></a>
+<style type="text/css">
+
+            #onesignal-bell-container.onesignal-reset .onesignal-bell-launcher.onesignal-bell-launcher-bottom-right {bottom: 20px; right: 23px; transition:all ease 1s; }
+            .top-go-on #onesignal-bell-container.onesignal-reset .onesignal-bell-launcher.onesignal-bell-launcher-bottom-right {bottom: 100px; right: 23px; }
+         
+            .sub-nav-on:not(.top-go-on) #onesignal-bell-container.onesignal-reset .onesignal-bell-launcher.onesignal-bell-launcher-bottom-right {bottom: 60px; right: 23px; transition:all ease 1s; }
+            .sub-nav-on.top-go-on #onesignal-bell-container.onesignal-reset .onesignal-bell-launcher.onesignal-bell-launcher-bottom-right {bottom: 120px; right: 23px; transition:all ease 1s; }
+
+            #onesignal-bell-container { z-index:2 !important; }
+            #onesignal-bell-container.onesignal-reset .onesignal-bell-launcher.onesignal-bell-launcher-sm .onesignal-bell-launcher-button { width:48px; height:48px; }
+        </style>
+</div>
+
+<div class="sub-info hidden f-data-policy">
+<div class="con flex-yc">
+<p><i class="ss-standard ss-info"></i> Veri politikasındaki amaçlarla sınırlı ve mevzuata uygun şekilde çerez konumlandırmaktayız. Detaylar için <a href="https://www.ozgurkocaeli.com.tr/bilgi/veri-politikasi">veri politikamızı</a> inceleyebilirsiniz.</p>
+<button class="prt close"><i class="ss-gizmo ss-delete"></i></button>
+</div>
+</div>
+<code id="code-js">
+<script src="//file.daktilo.com/themes/default/assets/all-of-defer.js?m=1632226142"></script>
+<script data-name="lazy">
+	var bLazy ; 
+	if ( set.lazy == 'blazy'){ 
+		bLazy = new Blazy({ 
+			selector: '.lazy',
+			container : '.lazy-content'
+			})
+		}
+	$("#slide-manset.t-native").bind('touchstart touchend',function(e){
+		slick_lzy_before("#slide-manset",'#slide-manset img.lzy');
+		});
+	function slick_lzy_before(span,items,skip){
+		if( !$(span).hasClass('on-lzy') ){
+			$(items).each(function(i){
+				console.log('slick_lzy_before touch');
+				$(this).attr('src',$(this).data('lzy'));
+				$(this).removeAttr('data-lzy');});
+				$(span).addClass('on-lzy'); 
+			}}
+</script>
+<script data-name="advert">
+
+fs.ad_ac = {
+	
+	count 	: '#rkm-ac-count',
+	second  : $('#rkm-ac-count').data('time') ? $('#rkm-ac-count').data('time') : 15,
+	span 	: '#rkm-ac',
+	unit    : '#rkm-ac .ad-channel',
+	has 	: false,
+	mobile 	: false 
+}
+
+function ad_ac(){
+
+	// if (!exis('ad_ac')) return false;
+
+	// console.log(fs.ad_ac);
+
+	// setTimeout(function(){
+	// 	fs.ad_ac.second = $('#rkm-ac-count').data('time');
+	// }, 1000)
+
+	fs.ad_ac.second = $('#rkm-ac-count').data('time');
+
+	if($(fs.ad_ac.span).length == 0 ) {
+		ad_ac_close();
+		return false;
+	} 
+	
+	if( $(fs.ad_ac.span+' .ad-channel .ad-unit').length == 0 ) {
+		ad_ac_close();
+		return false;
+	}
+	
+	fs.ad_ac.mobil = $(fs.ad_ac.span).hasClass('f-mobile') ? true : false;
+
+	if( set.user.media =='ms' && !fs.ad_ac.mobil ){
+		ad_ac_close();
+		return false
+	}
+
+	var adId = $(fs.ad_ac.unit).data('id');
+
+	if (adId === undefined ){
+		adId = 0;
+	}
+
+	var lastShown 	 = 'ad_ac_last_shown_' + adId;
+	var lastNthShown = 'ad_ac_nth_shown_' + adId;
+
+	var introAdLastShown = localStorage.getItem(lastShown),
+	nth 		= localStorage.getItem(lastNthShown),
+	nth  		= (nth != null) ?  parseInt(nth) : 0 ,
+	
+	// Bu alana değer dakika olarak geliyor
+	waitUntil 	= ($('#rkm-ac-rate').data('until') * 60), 
+	show 		= true;
+	
+	/* switch(nth){
+		case 1:  waitUntil = 60;  break;
+	} */	
+	 	
+	// Daha önce gösterilmis ise 
+	if (introAdLastShown != null){
+		introAdLastShown = parseInt(introAdLastShown);
+		var diff = (Date.now() - introAdLastShown) / 1000;
+		if (diff < waitUntil){
+			show = false;
+		}
+	}
+	
+	if (adId==0){
+		show = false;
+	}
+
+	if( $(fs.ad_ac.span).length ){ 
+
+		if(show){
+			
+			$(fs.ad_ac.span).addClass('on');
+
+			localStorage.setItem(lastShown, Date.now().toString());
+			localStorage.setItem(lastNthShown, (nth+1).toString());
+			
+			var secound = fs.ad_ac.second; 
+			
+			fs.ad_ac.has = window.setInterval(function(){
+				
+				$(fs.ad_ac.count).text(secound);
+				
+				secound--;
+				
+				if (secound < 0) {
+					ad_ac_close()
+				}
+
+			}, 1000);
+			
+			$(fs.ad_ac.span).find('.close').click( function(){
+				
+				ad_ac_close(); 
+			});
+
+		}
+		else {
+			
+			/*
+			waitForFinalEvent(function(){
+	   			ad_ac();
+	  		},700,"") ; */
+		}
+	}
+	
+}
+
+function ad_ac_close(){
+	window.clearInterval(fs.ad_ac.has);
+	$(fs.ad_ac.span).removeClass('on');
+	$(fs.ad_ac.span).remove();
+}
+
+if ( typeof window._tema_ads_intro_close === 'undefined' ){
+	window._tema_ads_intro_close = function(){
+		// $('#rkm-ac').remove();
+		ad_ac_close();
+	}
+}
+
+
+	if (fn.indexOf('ads') > -1){
+		
+		var channels=[],elements=[];
+
+		$('.ad-channel.js').each(function(){
+			
+			if( $(this).data('name') ) {
+				elements.push($(this));
+				channels.push({
+					'slug'  :  $(this).data('name'),
+					'set'   :  $(this).data('set') ? $(this).data('set') : false 
+				})
+			}
+		});
+		
+		var isMobile = $('html').hasClass('ua-mobile');
+		
+		var entryId = 4497468; 
+		var categoryId = null; 
+
+		
+		// 120 sn ilk 3 saniye random gelsin
+		// if ((Date.now()/1000) % 120 < 3){
+		// 	m = Math.random();
+		// } else {
+		// 	m = parseInt((Date.now() / 1000) / 120);
+		// }
+
+		//, entry_id:entryId, category_id:categoryId, m:m
+
+		setTimeout(function(){
+			if (set.disable_ads == 0){
+				fetchAds();		
+			} else {
+				console.log('Reklam sorgusu yapılmadı...');
+			}
+		}, 150);  
+
+
+		function fetchAds()
+		{
+			$.get('/service/advertchannels',{ channels:channels, is_mobile:isMobile },function(json){
+
+					if (typeof ad_ac === "function"){
+						setTimeout(function(){
+							ad_ac(); 
+						}, 4000);
+					}	
+
+					var has_aspect_ratio  = false;
+
+					$(json).each(function(i,item){
+						
+						if (item.has_advert){
+							adChannelsUsed.push(item.id);
+							
+							$(item.ads).each(function(i,id){
+								adsUsed.push(id);
+							})				
+						}
+					
+						if ( item.has_advert || item.html != '' ){
+							
+							
+							//var p = '#'+set.ad.prefix+'-'+item.slug,
+							var p = '#rkm-'+item.slug,
+							e_ou  = $(e).parent('.rkm-outer'),
+							e_ad  = p+' .ad-channel',
+							e_fo  = p+' > div',
+							e 	  = $(p);
+							
+							
+							$(e_ou).removeClass('hidden-ms');
+							$(e).removeClass('hidden-ms');
+						
+							$.each(item.units, function(key, value){
+
+								span = value.css;
+
+								if(span.ins.style)	$(e).attr('style',span.ins.style);
+								if(span.ins.class)	$(e).addClass(span.ins.class);
+								
+								if(span.ad.style && item.units.length == 1)	$(e_ad).attr('style',span.ad.style);
+								if(span.ad.class)	$(e_ad).addClass(span.ad.class);
+
+								if(span.ad.attr) {
+									$.each(span.ad.attr, function(attr_key,attr_val){
+										$(e_ad).attr('data-'+attr_key,attr_val);
+									})
+								}
+							})
+						
+							if(e_ou){
+								outer_s = $(e_ou).data('set');
+								if(outer_s){
+									outer_c = ( outer_s.mob == 'of' && item.has_mobile ) ? '' : ' hidden-ms';
+									if(item.format == 'html'){
+										outer_c = ( outer_s.res == 'on' && item.responsive ) ? outer_c : ( item.has_mobile ? ' block-ms hidden-sm' : ' hidden-sm' );	
+									}
+									$(e_ou).addClass(outer_c);
+								}
+							}
+
+							elements[i].html(item.html);
+							
+							str = item.slug.replace("-", "_");
+							set.ad.loadchannels.push(str);
+						
+						// Reklam yok ise alanı kaldır
+						} else {
+							var p = '#rkm-'+item.slug
+							$(p).parent('.c-reklam,.c-adblok').remove();
+							$(p).remove();
+						}
+					});
+
+					if( set.lazy =='blazy'){
+						bLazy.revalidate();	
+					}
+
+
+					adChannelsUsed = adChannelsUsed.concat(adStats.all.channels);
+					adsUsed = adsUsed.concat(adStats.all.ads);
+
+					if ($('html').hasClass('ua-desktop')){
+						
+						adChannelsUsed = adChannelsUsed.concat(adStats.desktop.channels);
+						adsUsed = adsUsed.concat(adStats.desktop.ads);
+					}
+					else{
+
+						adChannelsUsed = adChannelsUsed.concat(adStats.mobile.channels);
+						adsUsed = adsUsed.concat(adStats.mobile.ads);
+					}
+					
+					$.post('https://statistics.daktilo.com/stats/adverts', {
+						channels:adChannelsUsed, 
+						ads:adsUsed, 
+						site_id:535
+					});	
+				})
+		}
+
+		
+	}
+
+</script>
+<script data-name="set-update">
+
+	var site = {
+		id: 535,
+		domain: 'ozgurkocaeli.com.tr'
+	};
+
+	set.page.current = 'https://www.ozgurkocaeli.com.tr/haber/4497468/kredi-karti-faizleri-dustu';
+	set.page.url = 'https://www.ozgurkocaeli.com.tr/';
+	set.page.theme = "https://file.daktilo.com/themes/enerjik_ozgur/";
+	set.page.cat = "entry";
+	set.page.sub = "haber";
+	set.page.mod = "detay";
+	set.user.login = false;
+	set.ad.prefix = 'ets';
+	set.map.cx = '40.76310085615202';
+	set.map.cy = '29.954175353050232';
+	set.map.px = '40.76310085615202';
+	set.map.py = '29.954175353050232';
+	set.stats =  true;
+	set.defer =   true ;
+	set.stats_url =   'https://statistics.daktilo.com/stats/entry' ;
+	set.stats_data =   {"id":4497468,"type":"hit","site_id":535} ;
+	set.stats_referrer = document.referrer;
+	set.OneSignal.appId = '';
+		
+	set.OneSignal.title = 'Özgür Kocaeli Gazetesi';
+	set.OneSignal.site_id = '535';
+	set.OneSignal.homepage = '';
+	set.OneSignal.logo = 'https://static.daktilo.com/sites/535/uploads/2020/06/20/desktop.png';
+		set.OneSignal.menu_back		=   'rgb(2, 149, 221)'  ;
+	set.OneSignal.menu_active	=  true;
+	set.OneSignal.back		=   'rgb(2, 149, 221)'  ;
+	set.OneSignal.text		=   'rgb(255, 255, 255)'  ;
+	
+	set.show_all_comments = true;
+
+	set.env						= 'production';
+	set.unscript 				= { 
+	slide : false 
+}
+	
+	
+													
+	set.disable_ads = 0;
+	set.entry_id = 4497468;
+	set.category_id = null;
+
+
+</script>
+<script data-name="defer">
+		
+		function defer() {
+			
+						
+			var file = ["//file.daktilo.com/themes/default/assets/all-on-defer.js?m=1632226142",
+"//file.daktilo.com/themes/default/assets/libs/photoswipe/merge/photoswipe.js?m=1632226142",
+"//file.daktilo.com/themes/default/assets/libs/merge/form-kits.js?m=1632226142",
+"https://www.google.com/recaptcha/api.js",
+"//file.daktilo.com/themes/default/assets/main.js?m=1632226142",
+"//file.daktilo.com/themes/enerjik_ozgur/assets/main-theme.js?m=1637067903",
+"//file.daktilo.com/themes/default/assets/builds/comment/comment.js?m=1634728785",
+"//file.daktilo.com/themes/default/assets/api/twitter.js?m=1632226142"];
+			
+			
+			// file.push("//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js");
+
+			file.forEach( function(src){
+				var element = document.createElement("script"); 
+				element.src = src;
+				document.getElementById('code-js').appendChild(element); 
+			});
+
+					}
+
+		if (window.addEventListener) window.addEventListener("load", defer, false);	else if (window.attachEvent) window.attachEvent("onload", defer); else window.onload = defer;
+
+	</script>
+<script>
+	
+	$("html").removeClass (function (index, css) {	
+		return (css.match (/(^|\s)ua-\S+/g) || []).join(' ');
+	});
+	
+		$.post('https://statistics.daktilo.com/stats/bots',{id:4497468, site_id: 535, agent:navigator.userAgent});
+		
+</script>
+<script src="https://vjs.zencdn.net/7.11.4/video.min.js"></script>
+<script src="https://imasdk.googleapis.com/js/sdkloader/ima3.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/videojs-contrib-ads/6.7.0/videojs.ads.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/videojs-contrib-ads/6.7.0/videojs-contrib-ads.min.js"></script>
+<script src="/themes/default/assets/Youtube.min.js"></script>
+<script src="/themes/default/assets/videojs.ima.min.js"></script>
+<script>
+
+		 
+			var autoplay = false;
+		 
+
+		$('.dkt-video').each(function(index, element){
+
+			var sources = {
+				type: $(element).data('video-type'),
+				src: $(element).data('video-src')
+			}
+
+			var options = {
+					controls: true,
+					autoplay: autoplay,
+					preload: 'auto',
+					sources: sources
+			}
+
+			var player = videojs(element, options, function() { });
+			
+						
+		});
+
+</script>
+</code>
+<link rel="stylesheet" href="//file.daktilo.com/themes/default/assets/icon/icon.min.css?m=1632226142">
+<link rel="stylesheet" href="//file.daktilo.com/themes/enerjik_ozgur/assets/icon/icon-theme.min.css?m=1637067930">
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.eu01.nr-data.net","licenseKey":"2588219186","applicationID":"141047623","transactionName":"MhBSZQoZXkoAVEwMDAtacVIMEV9XTkNBFQY6BV9CDA==","queueTime":0,"applicationTime":247,"atts":"HldRE0IDTUQ=","errorBeacon":"bam.eu01.nr-data.net","agent":""}</script><script type="text/javascript">(function(){window['__CF$cv$params']={r:'6c15e019fe4826a4',m:'Y_xPE2NUQobWbazqv.Jsxm_pzdxOTgWyFOU_RDL_DpY-1640139674-0-AdQptZ2+CDtjqnSxvfTRSR8nrxOuoGR2ETFUVO24gBAq1dWBFi9P1tC8rwc3iPj+amtdJFM3RetmAIlk6IRRwhdglFn317rZvlqjHpO1o5pLivSGes900Nicu7BgyRDJaJkYEKM+hxnCwf82nmdI6S5GHXG0GrRmEm5xpSwb6g+K',s:[0x1026905369,0x3c2775c8ca],u:'/cdn-cgi/challenge-platform/h/g'}})();</script></body>
+</html>

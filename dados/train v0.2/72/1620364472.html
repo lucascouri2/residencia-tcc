@@ -1,0 +1,1998 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" prefix="og: https://ogp.me/ns#">
+  <head>
+    <!-- Google Tag Manager -->
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push(
+
+      {'gtm.start': new Date().getTime(),event:'gtm.js'}
+      );var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-N8MP7P');</script>
+    <!-- End Google Tag Manager -->
+    <meta charset="utf-8" /><script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam-cell.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"4e6a073858",applicationID:"480718279"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(10),c=t(11),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(12);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],7:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?p("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&p("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(f&&f<r.startTime)return;p("lcp",[r])}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||p("cls",[t])})}function a(t){if(t instanceof g&&!y){var e=Math.round(t.timeStamp),n={type:t.type};e<=l.now()?n.fid=l.now()-e:e>l.offset&&e<=Date.now()?(e-=l.offset,n.fid=l.now()-e):e=l.now(),y=!0,p("timing",["fi",e,n])}}function c(t){"hidden"===t&&(f=l.now(),p("pageHide",[f]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var f,u,s,d,p=t("handle"),l=t("loader"),v=t(9),m=t(3),g=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){u=new PerformanceObserver(r);try{u.observe({entryTypes:["paint"]})}catch(h){}s=new PerformanceObserver(i);try{s.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}d=new PerformanceObserver(o);try{d.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var y=!1,w=["click","keydown","mousedown","pointerdown","touchstart"];w.forEach(function(t){document.addEventListener(t,a,m(!1))})}v(c)}},{}],8:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],9:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],10:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],11:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],12:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){y[t]=m(t).concat(e)}function v(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:h,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(10),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!T++){var t=P.info=NREUM.info,e=g.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(O,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+P.offset],null,"api"),c("timing",["load",n]);var r=g.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=v+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===g.readyState&&o()}function o(){c("mark",["domContent",a()+P.offset],null,"api")}var a=t(5),c=t("handle"),f=t(10),u=t("ee"),s=t(8),d=t(6),p=t(2),l=t(3),v=p.getConfiguration("ssl")===!1?"http":"https",m=window,g=m.document,h="addEventListener",y="attachEvent",w=m.XMLHttpRequest,b=w&&w.prototype,E=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:w,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,O={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1212.min.js"},M=w&&b&&b[h]&&!/CriOS/.test(navigator.userAgent),P=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:M,userAgent:s,disabled:E};if(!E){t(1),t(7),g[h]?(g[h]("DOMContentLoaded",o,l(!1)),m[h]("load",r,l(!1))):(g[y]("onreadystatechange",i),m[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var T=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(11),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+<script>
+  var OneSignal = window.OneSignal || [];
+  OneSignal.push(function() {
+    OneSignal.init({
+      appId: "f1832945-14bc-4278-b265-f35863f7c225",
+      safari_web_id: "web.onesignal.auto.5f257b48-e003-493b-a584-79b35812c24b",      
+      autoRegister: "true", 
+      notifyButton: {   
+        enable: "true",
+      },    
+      welcomeNotification: {    
+        title: "Thanks",    
+      },    
+      promptOptions: {    
+        actionMessage: "We'd like to show you notifications for the latest news and updates.",    
+        acceptButtonText: "Allow",    
+        cancelButtonText: "No Thanks",    
+      }
+      
+    });
+  });
+  </script>
+<script>(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-1481650-2", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("set", "dimension1", "712501");ga("set", "dimension2", "article");ga("send", "pageview");</script>
+<link rel="canonical" href="https://www.alhurra.com/libya/2020/05/29/%D8%B9%D8%B3%D9%83%D8%B1%D9%8A-%D8%A3%D9%85%D9%8A%D8%B1%D9%83%D9%8A-%D9%8A%D8%B6%D8%B9-%D9%85%D9%81%D8%A7%D8%AA%D9%8A%D8%AD-%D8%AD%D9%84-%D8%A7%D9%84%D8%B5%D8%B1%D8%A7%D8%B9-%D8%A7%D9%84%D9%84%D9%8A%D8%A8%D9%8A" />
+<meta http-equiv="content-language" content="ar" />
+<meta name="news_keywords" content="تركيا، روسيا، ليبيا، صراع، مرتزقة، حرب أهلية" />
+<meta name="apple-itunes-app" content="app-id=639637717" />
+<meta name="keywords" content="تركيا، روسيا، ليبيا، صراع، مرتزقة، حرب أهلية" />
+<meta property="fb:pages" content="307323366135" />
+<meta property="fb:app_id" content="475940996616076" />
+<meta property="og:site_name" content="الحرة" />
+<meta property="og:type" content="Article" />
+<meta property="og:url" content="https://www.alhurra.com/libya/2020/05/29/%D8%B9%D8%B3%D9%83%D8%B1%D9%8A-%D8%A3%D9%85%D9%8A%D8%B1%D9%83%D9%8A-%D9%8A%D8%B6%D8%B9-%D9%85%D9%81%D8%A7%D8%AA%D9%8A%D8%AD-%D8%AD%D9%84-%D8%A7%D9%84%D8%B5%D8%B1%D8%A7%D8%B9-%D8%A7%D9%84%D9%84%D9%8A%D8%A8%D9%8A" />
+<meta property="og:title" content="عسكري أميركي يضع مفاتيح حل الصراع الليبي" />
+<meta property="og:image" content="https://media.voltron.alhurra.com/Drupal/01live-106/2020-05/000_1PN10B.jpg" />
+<meta property="og:image" content="https://media.voltron.alhurra.com/Drupal/01live-106/2020-05/000_1PN10B.jpg" />
+<meta property="og:image:width" content="1100" />
+<meta property="og:image:height" content="619" />
+<meta property="article:section" content="ليبيا, آخر الأخبار, عربي ودولي, تركيا" />
+<meta property="article:tag" content="تركيا، روسيا، ليبيا، صراع، مرتزقة، حرب أهلية" />
+<meta name="msvalidate.01" content="3286EE554B6F672A6F2E608C02343C0E" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@alhurra" />
+<meta name="twitter:title" content="عسكري أميركي يضع مفاتيح حل الصراع الليبي" />
+<meta name="twitter:url" content="https://www.alhurra.com/libya/2020/05/29/%D8%B9%D8%B3%D9%83%D8%B1%D9%8A-%D8%A3%D9%85%D9%8A%D8%B1%D9%83%D9%8A-%D9%8A%D8%B6%D8%B9-%D9%85%D9%81%D8%A7%D8%AA%D9%8A%D8%AD-%D8%AD%D9%84-%D8%A7%D9%84%D8%B5%D8%B1%D8%A7%D8%B9-%D8%A7%D9%84%D9%84%D9%8A%D8%A8%D9%8A" />
+<meta name="twitter:image" content="https://www.alhurra.com/s3/files/styles/710x340/s3/2020-05/000_1PN10B.jpg?itok=v8TGL5_W" />
+<meta name="Generator" content="Drupal 8 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="format-detection" content="date=no" />
+<script type="application/ld+json">{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "NewsArticle",
+            "headline": "عسكري أميركي يضع مفاتيح حل الصراع الليبي",
+            "name": "عسكري أميركي يضع مفاتيح حل الصراع الليبي",
+            "description": "وتابع ستافريديس الذي قاد تحالف الناتو من أجل إضعاف نظام القذافي في 2011، أن أزمة ليبيا لم تنجم عن التدخل العسكري، وإنما بسبب رفض المجتمع الدولي البقاء هناك وإرساء الاستقرار في الداخل، مما أدى إلى انزلاق البلاد في الفوضى التي تعانيها حتى اليوم.\u003Cbr /\u003E\r\n\u003Cbr /\u003E",
+            "image": {
+                "@type": "ImageObject",
+                "representativeOfPage": "True",
+                "url": "https://media.voltron.alhurra.com/Drupal/01live-106/styles/google_amp_1280x720/s3/2020-05/000_1PN10B.jpg?itok=HXZL30XN",
+                "width": "1280",
+                "height": "780"
+            },
+            "datePublished": "2020-05-29T18:46:58+0300",
+            "dateModified": "2020-05-29T22:12:38+0300",
+            "author": {
+                "@type": "Person",
+                "name": "الحرة / ترجمات - واشنطن",
+                "url": "https://www.alhurra.com/author/%D8%A7%D9%84%D8%AD%D8%B1%D8%A9-%D8%AA%D8%B1%D8%AC%D9%85%D8%A7%D8%AA-%D9%88%D8%A7%D8%B4%D9%86%D8%B7%D9%86"
+            },
+            "publisher": {
+                "@type": "Organization",
+                "name": "الحرة",
+                "url": "https://www.alhurra.com/",
+                "sameAs": [
+                    "https://www.facebook.com/alhurra/",
+                    "https://www.youtube.com/user/alhurra",
+                    "https://twitter.com/alhurra",
+                    "https://www.instagram.com/alhurranews/"
+                ],
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://www.alhurra.com/themes/custom/voa/favicons/Al_Hurra_Favicon.png",
+                    "width": "512",
+                    "height": "512"
+                }
+            },
+            "mainEntityOfPage": "https://www.alhurra.com/libya/2020/05/29/%D8%B9%D8%B3%D9%83%D8%B1%D9%8A-%D8%A3%D9%85%D9%8A%D8%B1%D9%83%D9%8A-%D9%8A%D8%B6%D8%B9-%D9%85%D9%81%D8%A7%D8%AA%D9%8A%D8%AD-%D8%AD%D9%84-%D8%A7%D9%84%D8%B5%D8%B1%D8%A7%D8%B9-%D8%A7%D9%84%D9%84%D9%8A%D8%A8%D9%8A"
+        }
+    ]
+}</script>
+<link rel="sitemap" type="application/rss+xml" href="/sitemap.xml" />
+<link rel="shortcut icon" href="/themes/custom/voa/favicons/Al_Hurra_Favicon.png" type="image/png" />
+<link rel="revision" href="https://www.alhurra.com/libya/2020/05/29/%D8%B9%D8%B3%D9%83%D8%B1%D9%8A-%D8%A3%D9%85%D9%8A%D8%B1%D9%83%D9%8A-%D9%8A%D8%B6%D8%B9-%D9%85%D9%81%D8%A7%D8%AA%D9%8A%D8%AD-%D8%AD%D9%84-%D8%A7%D9%84%D8%B5%D8%B1%D8%A7%D8%B9-%D8%A7%D9%84%D9%84%D9%8A%D8%A8%D9%8A" />
+<link rel="amphtml" href="https://www.alhurra.com/libya/2020/05/29/%D8%B9%D8%B3%D9%83%D8%B1%D9%8A-%D8%A3%D9%85%D9%8A%D8%B1%D9%83%D9%8A-%D9%8A%D8%B6%D8%B9-%D9%85%D9%81%D8%A7%D8%AA%D9%8A%D8%AD-%D8%AD%D9%84-%D8%A7%D9%84%D8%B5%D8%B1%D8%A7%D8%B9-%D8%A7%D9%84%D9%84%D9%8A%D8%A8%D9%8A?amp" />
+
+    <title>عسكري أميركي يضع مفاتيح حل الصراع الليبي | الحرة</title>
+    <link rel="stylesheet" media="all" href="/sites/g/files/jroluf106/files/css/css_36vaWpf6lxv1Wo9TyDyLyoklAA2Aeey_eCskTPmIwms.css" />
+<link rel="stylesheet" media="all" href="/modules/custom/voa_breaking_news/css/voa-breaking-news.theme.css?r4f1qc" />
+<link rel="stylesheet" media="all" href="/sites/g/files/jroluf106/files/css/css_ZRBohcypxW4MmRY_9AMJcoTszVAK530je2Zidvz3EDQ.css" />
+
+    
+<!--[if lte IE 8]>
+<script src="/sites/g/files/jroluf106/files/js/js_VtafjXmRvoUgAzqzYTA3Wrjkx9wcWhjP0G4ZnnqRamA.js"></script>
+<![endif]-->
+<script src="/sites/g/files/jroluf106/files/js/js_IwLksrG8sKkrR2rg_KLQ1vbcNXBo3jnW5xFRgs7Fjjc.js"></script>
+<script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async></script>
+
+  </head>
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N8MP7P"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+        <a href="#main-content" class="visually-hidden focusable">
+      تجاوز إلى المحتوى الرئيسي
+    </a>
+    <script type="text/javascript">var utag_data = {"slug":"\u0639\u0633\u0643\u0631\u064a-\u0623\u0645\u064a\u0631\u0643\u064a-\u064a\u0636\u0639-\u0645\u0641\u0627\u062a\u064a\u062d-\u062d\u0644-\u0627\u0644\u0635\u0631\u0627\u0639-\u0627\u0644\u0644\u064a\u0628\u064a","page_type":"article","content_type":"article","article_uid":"712501","video_event":[],"pub_day":"29","pub_hour":"18","pub_minute":"46","pub_min":"46","pub_month":"05","pub_weekday":"\u062c\u0645\u0639\u0629","pub_year":"2020","pub_date":"\u0627\u0644\u062c\u0645\u0639\u0629, \u0645\u0627\u064a\u0648 29, 2020","dateline":"","short_headline":null,"byline":"\u0627\u0644\u062d\u0631\u0629 \/ \u062a\u0631\u062c\u0645\u0627\u062a - \u0648\u0627\u0634\u0646\u0637\u0646","categories":"\u0644\u064a\u0628\u064a\u0627, \u0622\u062e\u0631 \u0627\u0644\u0623\u062e\u0628\u0627\u0631, \u0639\u0631\u0628\u064a \u0648\u062f\u0648\u0644\u064a, \u062a\u0631\u0643\u064a\u0627","subcontent_type":"Article","section":"\u0644\u064a\u0628\u064a\u0627, \u0622\u062e\u0631 \u0627\u0644\u0623\u062e\u0628\u0627\u0631, \u0639\u0631\u0628\u064a \u0648\u062f\u0648\u0644\u064a, \u062a\u0631\u0643\u064a\u0627","tags":"\u0644\u064a\u0628\u064a\u0627, \u0622\u062e\u0631 \u0627\u0644\u0623\u062e\u0628\u0627\u0631, \u0639\u0631\u0628\u064a \u0648\u062f\u0648\u0644\u064a, \u062a\u0631\u0643\u064a\u0627","english_section":"\u0644\u064a\u0628\u064a\u0627, \u0622\u062e\u0631 \u0627\u0644\u0623\u062e\u0628\u0627\u0631, \u0639\u0631\u0628\u064a \u0648\u062f\u0648\u0644\u064a, \u062a\u0631\u0643\u064a\u0627","page_name":"\u0639\u0633\u0643\u0631\u064a \u0623\u0645\u064a\u0631\u0643\u064a \u064a\u0636\u0639 \u0645\u0641\u0627\u062a\u064a\u062d \u062d\u0644 \u0627\u0644\u0635\u0631\u0627\u0639 \u0627\u0644\u0644\u064a\u0628\u064a","page_title":"\u0639\u0633\u0643\u0631\u064a \u0623\u0645\u064a\u0631\u0643\u064a \u064a\u0636\u0639 \u0645\u0641\u0627\u062a\u064a\u062d \u062d\u0644 \u0627\u0644\u0635\u0631\u0627\u0639 \u0627\u0644\u0644\u064a\u0628\u064a","long_headline":"\u0639\u0633\u0643\u0631\u064a \u0623\u0645\u064a\u0631\u0643\u064a \u064a\u0636\u0639 \u0645\u0641\u0627\u062a\u064a\u062d \u062d\u0644 \u0627\u0644\u0635\u0631\u0627\u0639 \u0627\u0644\u0644\u064a\u0628\u064a","headline":"\u0639\u0633\u0643\u0631\u064a \u0623\u0645\u064a\u0631\u0643\u064a \u064a\u0636\u0639 \u0645\u0641\u0627\u062a\u064a\u062d \u062d\u0644 \u0627\u0644\u0635\u0631\u0627\u0639 \u0627\u0644\u0644\u064a\u0628\u064a","runs_js":"yes","language":"\u0625\u0646\u062c\u0644\u064a\u0632\u064a\u0629","language_service":"mbn arabic","entity":"mbn","platform":"Responsive","short_language_service":"ar","platform_short":"r","property_id":"445","enviro_type":"prod","domain":"www.alhurra.com","url":"www.alhurra.com\/libya\/2020\/05\/29\/\u0639\u0633\u0643\u0631\u064a-\u0623\u0645\u064a\u0631\u0643\u064a-\u064a\u0636\u0639-\u0645\u0641\u0627\u062a\u064a\u062d-\u062d\u0644-\u0627\u0644\u0635\u0631\u0627\u0639-\u0627\u0644\u0644\u064a\u0628\u064a"}</script>
+<script type="text/javascript">
+  (function(a,b,c,d){
+  a='//tags.tiqcdn.com/utag/bbg/mbn-pangea/prod/utag.js';
+  b=document;c='script';d=b.createElement(c);d.src=a;d.type='text/java'+c;d.async=true;
+  a=b.getElementsByTagName(c)[0];a.parentNode.insertBefore(d,a);
+  })();
+</script>
+
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div class="l-page">
+
+      <div class="site-header">
+
+  <div class="site-header__topbar">
+    <div class="site-header__topbar-container">
+
+      <a href="/" class="site-header__branding"><img alt="Site Logo" src="/themes/custom/voa/images/sites_logos/logo_Al_Hurra.png"/></a>
+      <div class="site-header__sites-menu">
+          <div>
+    <nav role="navigation" aria-labelledby="block-sitesmenu-menu" id="block-sitesmenu">
+            
+  <h2 class="visually-hidden" id="block-sitesmenu-menu">Sites Menu</h2>
+  
+
+                <ul data-region="sites_menu" class="site-header__featured-menupage">
+              <li><a class="site-header__featured-menupage-item" href="https://www.facebook.com/ElsahaEGAlHurra/">
+            <div data-blazy="" class="blazy blazy--field blazy--field-media-image">
+
+
+
+                    <div class="media media--bundle--image media--blazy media--loading media--image">
+      
+      
+      
+      <img alt="El Saha" class="media__image media__element b-lazy" loading="lazy" data-src="https://media.voltron.alhurra.com/Drupal/01live-106/2019-12/el-saha_0.png" src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D&#039;http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg&#039; viewBox%3D&#039;0 0 210 100&#039;%2F%3E" width="210" height="100" />
+
+      
+                  
+      
+
+            
+      
+    </div>
+        
+  
+  
+
+
+</div>
+      </a></li>
+              <li><a class="site-header__featured-menupage-item" href="https://www.maghrebvoices.com">
+            <div data-blazy="" class="blazy blazy--field blazy--field-media-image">
+
+
+
+                    <div class="media media--bundle--image media--blazy media--loading media--image">
+      
+      
+      
+      <img alt="Maghreb Voices" class="media__image media__element b-lazy" loading="lazy" data-src="https://media.voltron.alhurra.com/Drupal/01live-106/2019-12/maghreb-voices_0.png" src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D&#039;http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg&#039; viewBox%3D&#039;0 0 210 100&#039;%2F%3E" width="210" height="100" />
+
+      
+                  
+      
+
+            
+      
+    </div>
+        
+  
+  
+
+
+</div>
+      </a></li>
+              <li><a class="site-header__featured-menupage-item" href="https://www.radiosawa.com">
+            <div data-blazy="" class="blazy blazy--field blazy--field-media-image">
+
+
+
+                    <div class="media media--bundle--image media--blazy media--loading media--image">
+      
+      
+      
+      <img alt="Radio Sawa" class="media__image media__element b-lazy" loading="lazy" data-src="https://media.voltron.alhurra.com/Drupal/01live-106/2019-12/radio-sawa_0.png" src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D&#039;http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg&#039; viewBox%3D&#039;0 0 210 100&#039;%2F%3E" width="210" height="100" />
+
+      
+                  
+      
+
+            
+      
+    </div>
+        
+  
+  
+
+
+</div>
+      </a></li>
+              <li><a class="site-header__featured-menupage-item" href="https://www.irfaasawtak.com">
+            <div data-blazy="" class="blazy blazy--field blazy--field-media-image">
+
+
+
+                    <div class="media media--bundle--image media--blazy media--loading media--image">
+      
+      
+      
+      <img alt="Irfaasawtak" class="media__image media__element b-lazy" loading="lazy" data-src="https://media.voltron.alhurra.com/Drupal/01live-106/2019-12/irfaasawtak_1.png" src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D&#039;http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg&#039; viewBox%3D&#039;0 0 210 100&#039;%2F%3E" width="210" height="100" />
+
+      
+                  
+      
+
+            
+      
+    </div>
+        
+  
+  
+
+
+</div>
+      </a></li>
+          </ul>
+  
+  </nav>
+
+  </div>
+
+      </div>
+    </div>
+
+    <div class="site-header__search-drop desktop-search-drop" data-sticky data-sticky-class="is-sticky" data-margin-top="65">
+      <div class="grid">
+        <div class="col-1">
+          <form class="site-header__search-form" action="/search" method="GET">
+            <label class="site-header__search-label" for="header-search">بحث</label>
+            <input placeholder="بحث" class="site-header__search" id="header-search" type="text"
+                    name="search_api_fulltext">
+            <input type="hidden" name="type" value="1">
+            <input type="hidden" name="sort_by" value="publication_time">
+            <button class="button site-header__search-button fa fa-search" type="submit"><span
+                class="site-header__search-label">بحث</span></button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="site-header__bar" data-sticky data-sticky-class="is-sticky">
+    <a href="/" class="site-header__branding"><img alt="Site Logo" src="/themes/custom/voa/images/sites_logos/logo_Al_Hurra.png"/></a>
+    <div class="site-header__secondary">
+              <a href="/watch" id="js-watch-drop" class="site-header__item site-header__item--secondary site-header__item--wide-only site-header__item--no-text site-header__play">
+          <div>
+            <span class="site-header__icon fa fa-play"></span>
+          </div>
+        </a>
+        <div class="site-header__watch-drop">
+        <div class="grid">
+          <div class="col-1">
+            <div id="watch-drop-menu">
+              <div>
+  
+    
+      <div class="schedule-menu voa-media-schedule-menu-block">
+      <div class="channel-schedule-wrapper" id="channel-170691-wrapper-desktop" data-menu-block-channel="170691" >
+              <div class="channel-schedule__section-title">
+          <span class="channel-schedule__icon fa fa-play"></span>
+                      بث مباشر                  </div>
+
+              <div class="livestreams-menu__links">
+              <div class="livestreams-menu__link">
+          <a href="/alhurra-live-stream">الحرة</a>
+        </div>
+              <div class="livestreams-menu__link">
+          <a href="/alhurra-iraq-live-stream">الحرة عراق</a>
+        </div>
+          </div>
+  
+      
+      <div class="channel-playing">
+      </div>
+    </div>
+
+          <div class="channel-schedule-wrapper" id="channel-170686-wrapper-desktop" data-menu-block-channel="170686" >
+      
+      <div class="channel-playing">
+      </div>
+    </div>
+
+          <div class="schedule-menu__links">
+        <div class="schedule-menu__link"><a
+            href="/watch/schedule">جدول البث</a>
+        </div>
+        <div class="schedule-menu__link"><a
+            href="/watch/programs">برامجنا</a>
+        </div>
+      </div>
+      </div>
+
+  </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+            
+      <div class="site-header__dropdown">
+      </div>
+      <button id="js-search-drop" class="button site-header__item">
+        <span class="site-header__icon fa fa-search"></span>
+      </button>
+    </div>
+
+    <div class="site-header__primary">
+
+        <div>
+    
+<div id="block-featuredmenu" class="feature-menu">
+  
+      
+              <ul class="site-header__featured-menu">
+              <li><a class="site-header__featured-menu-item" href="/usa">أميركا</a></li>
+              <li><a class="site-header__featured-menu-item" href="/latest">الأحدث</a></li>
+              <li><a class="site-header__featured-menu-item" href="/coronavirus">جائحة كورونا</a></li>
+              <li><a class="site-header__featured-menu-item" href="/arabic-and-international-0">عربي ودولي</a></li>
+              <li><a class="site-header__featured-menu-item" href="/iraq">الحرة عراق</a></li>
+              <li><a class="site-header__featured-menu-item" href="/different-angle">من زاوية أخرى</a></li>
+              <li><a class="site-header__featured-menu-item" href="/watch-alhurra">فيديو</a></li>
+              <li><a class="site-header__featured-menu-item" href="/video">برامج الحرة</a></li>
+          </ul>
+  
+  </div>
+
+  </div>
+
+
+      <div class="site-header__menu">
+        <button class="button site-header__menu-item">
+          <div class="triangle-right"></div>
+          <span class="hidden">Open main navigation</span>
+        </button>
+      </div>
+    </div>
+    <nav class="site-header__mega-menu">
+      <div class="site-header__mega-menu--inner">
+        <!-- This is hidden by default -->
+        <div class="grid">
+          <div class="col-1 col--hidden-large">
+                          <div>
+  
+    
+      <div class="schedule-menu voa-media-schedule-menu-block">
+      <div class="channel-schedule-wrapper" id="channel-170691-wrapper-mobile" data-menu-block-channel="170691" >
+              <div class="channel-schedule__section-title">
+          <span class="channel-schedule__icon fa fa-play"></span>
+                      بث مباشر                  </div>
+
+              <div class="livestreams-menu__links">
+              <div class="livestreams-menu__link">
+          <a href="/alhurra-live-stream">الحرة</a>
+        </div>
+              <div class="livestreams-menu__link">
+          <a href="/alhurra-iraq-live-stream">الحرة عراق</a>
+        </div>
+          </div>
+  
+      
+      <div class="channel-playing">
+      </div>
+    </div>
+
+          <div class="channel-schedule-wrapper" id="channel-170686-wrapper-mobile" data-menu-block-channel="170686" >
+      
+      <div class="channel-playing">
+      </div>
+    </div>
+
+          <div class="schedule-menu__links">
+        <div class="schedule-menu__link"><a
+            href="/watch/schedule">جدول البث</a>
+        </div>
+        <div class="schedule-menu__link"><a
+            href="/watch/programs">برامجنا</a>
+        </div>
+      </div>
+      </div>
+
+  </div>
+
+                                  </div>
+        </div>
+
+        
+  
+<div id="block-featuredmenu-2" class="feature-menu">
+  
+          <h2>أقسام الموقع</h2>
+      
+              <ul class="site-header__featured-menu">
+              <li><a class="site-header__featured-menu-item" href="/usa">أميركا</a></li>
+              <li><a class="site-header__featured-menu-item" href="/latest">الأحدث</a></li>
+              <li><a class="site-header__featured-menu-item" href="/coronavirus">جائحة كورونا</a></li>
+              <li><a class="site-header__featured-menu-item" href="/arabic-and-international-0">عربي ودولي</a></li>
+              <li><a class="site-header__featured-menu-item" href="/iraq">الحرة عراق</a></li>
+              <li><a class="site-header__featured-menu-item" href="/different-angle">من زاوية أخرى</a></li>
+              <li><a class="site-header__featured-menu-item" href="/watch-alhurra">فيديو</a></li>
+              <li><a class="site-header__featured-menu-item" href="/video">برامج الحرة</a></li>
+          </ul>
+  
+  </div>
+  
+    
+      
+<ul data-region="site_header_drop" class="grid site-header__mega-menu-list">
+          <li class="site-header__mega-menu-item level-0">
+      <a href="/alhurra-podcasts" title="الحرة بودكاست" class="site-header__mega-menu-item-link site-header__mega-menu-item-link--header">الحرة بودكاست</a>
+                    
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-0 menu-type-default">
+              
+      </div>
+
+
+
+          </li>
+          <li class="site-header__mega-menu-item level-0">
+      <a href="/lebanon" class="site-header__mega-menu-item-link site-header__mega-menu-item-link--header" data-drupal-link-system-path="taxonomy/term/170851">لبنان</a>
+                    
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-0 menu-type-default">
+              
+      </div>
+
+
+
+          </li>
+          <li class="site-header__mega-menu-item level-0">
+      <a href="/tech" class="site-header__mega-menu-item-link site-header__mega-menu-item-link--header" data-drupal-link-system-path="taxonomy/term/86">تكنولوجيا</a>
+                    
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-0 menu-type-default">
+              
+      </div>
+
+
+
+          </li>
+          <li class="site-header__mega-menu-item level-0">
+      <a href="/sport" class="site-header__mega-menu-item-link site-header__mega-menu-item-link--header" data-drupal-link-system-path="taxonomy/term/19">رياضة</a>
+                    
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-0 menu-type-default">
+              
+      </div>
+
+
+
+          </li>
+          <li class="site-header__mega-menu-item level-0">
+      <a href="/business" class="site-header__mega-menu-item-link site-header__mega-menu-item-link--header" data-drupal-link-system-path="taxonomy/term/96">اقتصاد</a>
+                    
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-0 menu-type-default">
+              
+      </div>
+
+
+
+          </li>
+          <li class="site-header__mega-menu-item level-0">
+      <a href="/health" class="site-header__mega-menu-item-link site-header__mega-menu-item-link--header" data-drupal-link-system-path="taxonomy/term/131">صحة</a>
+                    
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-0 menu-type-default">
+              
+      </div>
+
+
+
+          </li>
+          <li class="site-header__mega-menu-item level-0">
+      <a href="/varieties" class="site-header__mega-menu-item-link site-header__mega-menu-item-link--header" data-drupal-link-system-path="taxonomy/term/126">منوعات</a>
+                    
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-0 menu-type-default">
+              
+      </div>
+
+
+
+          </li>
+          <li class="site-header__mega-menu-item col-2 col-2--full-mobile site-header__mega-menu-item--header menu-item--expanded level-0">
+      <a href="/watch/programs" class="site-header__mega-menu-item-link site-header__mega-menu-item-link--header" data-drupal-link-system-path="watch/programs">برامج الحرة</a>
+                    
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-0 menu-type-default">
+              
+<ul class="site-header__mega-menu-sub-list">
+  
+                                                                                            <div class="grid">
+    <div class="col-2 site-header__mega-menu-sub-column">
+              <li class="site-header__mega-menu-item">
+          <a href="/alyoumshow" class="site-header__mega-menu-item-link" data-drupal-link-system-path="taxonomy/term/170791">اليوم</a>
+                                
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-1 menu-type-default">
+              
+      </div>
+
+
+
+                  </li>
+              <li class="site-header__mega-menu-item">
+          <a href="/investigative-report" class="site-header__mega-menu-item-link" data-drupal-link-system-path="taxonomy/term/170041">الحرة تتحرى</a>
+                                
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-1 menu-type-default">
+              
+      </div>
+
+
+
+                  </li>
+              <li class="site-header__mega-menu-item">
+          <a href="https://www.alhurra.com/iraqi" class="site-header__mega-menu-item-link">بالعراقي</a>
+                                
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-1 menu-type-default">
+              
+      </div>
+
+
+
+                  </li>
+              <li class="site-header__mega-menu-item">
+          <a href="https://www.alhurra.com/almshhd-allbnany" class="site-header__mega-menu-item-link">المشهد اللبناني</a>
+                                
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-1 menu-type-default">
+              
+      </div>
+
+
+
+                  </li>
+              <li class="site-header__mega-menu-item">
+          <a href="/gulf-talk" class="site-header__mega-menu-item-link" data-drupal-link-system-path="taxonomy/term/61">حديث الخليج</a>
+                                
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-1 menu-type-default">
+              
+      </div>
+
+
+
+                  </li>
+              <li class="site-header__mega-menu-item">
+          <a href="/dakhil-washington" class="site-header__mega-menu-item-link" data-drupal-link-system-path="taxonomy/term/71">داخل واشنطن</a>
+                                
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-1 menu-type-default">
+              
+      </div>
+
+
+
+                  </li>
+              <li class="site-header__mega-menu-item">
+          <a href="/kalimathak" class="site-header__mega-menu-item-link" data-drupal-link-system-path="taxonomy/term/51">كلمة حق</a>
+                                
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-1 menu-type-default">
+              
+      </div>
+
+
+
+                  </li>
+          </div>
+    <div class="col-2 site-header__mega-menu-sub-column">
+              <li class="site-header__mega-menu-item">
+          <a href="/decision-capital" class="site-header__mega-menu-item-link" data-drupal-link-system-path="taxonomy/term/56">عاصمة القرار</a>
+                                
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-1 menu-type-default">
+              
+      </div>
+
+
+
+                  </li>
+              <li class="site-header__mega-menu-item">
+          <a href="/hollywood-news" class="site-header__mega-menu-item-link" data-drupal-link-system-path="taxonomy/term/170796">أخبار هوليود</a>
+                                
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-1 menu-type-default">
+              
+      </div>
+
+
+
+                  </li>
+              <li class="site-header__mega-menu-item">
+          <a href="/alhurra-tonight" class="site-header__mega-menu-item-link" data-drupal-link-system-path="taxonomy/term/170761">الحرة الليلة</a>
+                                
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-1 menu-type-default">
+              
+      </div>
+
+
+
+                  </li>
+              <li class="site-header__mega-menu-item">
+          <a href="/syrian-talk" class="site-header__mega-menu-item-link" data-drupal-link-system-path="taxonomy/term/170056">الحكي سوري</a>
+                                
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-1 menu-type-default">
+              
+      </div>
+
+
+
+                  </li>
+              <li class="site-header__mega-menu-item">
+          <a href="/debatable" class="site-header__mega-menu-item-link" data-drupal-link-system-path="taxonomy/term/36">مختلف عليه</a>
+                                
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-1 menu-type-default">
+              
+      </div>
+
+
+
+                  </li>
+              <li class="site-header__mega-menu-item">
+          <a href="https://www.alhurra.com/2-dollars" class="site-header__mega-menu-item-link">2 دولار</a>
+                                
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-1 menu-type-default">
+              
+      </div>
+
+
+
+                  </li>
+          </div>
+  </div>
+</ul>
+
+      </div>
+
+
+
+          </li>
+          <li class="site-header__mega-menu-item col-2 col-2--full-mobile site-header__mega-menu-item--header menu-item--expanded level-0">
+      <a href="/2020/02/26/%D9%86%D8%AD%D9%86" class="site-header__mega-menu-item-link site-header__mega-menu-item-link--header" data-drupal-link-system-path="node/655026">من نحن</a>
+                    
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-0 menu-type-default">
+              
+<ul class="site-header__mega-menu-sub-list">
+  
+                                                  <div class="grid">
+    <div class="col-2 site-header__mega-menu-sub-column">
+              <li class="site-header__mega-menu-item">
+          <a href="/2021/02/03/%D8%AA%D9%88%D8%A7%D8%B5%D9%84-%D9%85%D8%B9%D9%86%D8%A7" class="site-header__mega-menu-item-link" data-drupal-link-system-path="node/815806">تواصل معنا</a>
+                                
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-1 menu-type-default">
+              
+      </div>
+
+
+
+                  </li>
+              <li class="site-header__mega-menu-item">
+          <a href="/watch-us" class="site-header__mega-menu-item-link" data-drupal-link-system-path="node/673361">موجات البث</a>
+                                
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-1 menu-type-default">
+              
+      </div>
+
+
+
+                  </li>
+              <li class="site-header__mega-menu-item">
+          <a href="/2020/02/21/careers" class="site-header__mega-menu-item-link" data-drupal-link-system-path="node/654936">وظائف</a>
+                                
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-1 menu-type-default">
+              
+      </div>
+
+
+
+                  </li>
+          </div>
+    <div class="col-2 site-header__mega-menu-sub-column">
+              <li class="site-header__mega-menu-item">
+          <a href="/2020/03/22/%D8%B3%D9%8A%D8%A7%D8%B3%D8%A9-%D8%A7%D9%84%D8%AA%D8%B9%D9%84%D9%8A%D9%82" class="site-header__mega-menu-item-link" data-drupal-link-system-path="node/671891">سياسة التعليق</a>
+                                
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-1 menu-type-default">
+              
+      </div>
+
+
+
+                  </li>
+              <li class="site-header__mega-menu-item">
+          <a href="/apps" class="site-header__mega-menu-item-link">تطبيقات الحرة</a>
+                                
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-1 menu-type-default">
+              
+      </div>
+
+
+
+                  </li>
+              <li class="site-header__mega-menu-item">
+          <a href="/privacy-policy" title="سياسة الخصوصية" class="site-header__mega-menu-item-link" data-drupal-link-system-path="node/849331">سياسة الخصوصية</a>
+                                
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-1 menu-type-default">
+              
+      </div>
+
+
+
+                  </li>
+          </div>
+  </div>
+</ul>
+
+      </div>
+
+
+
+          </li>
+  </ul>
+
+  
+
+      </div>
+    </nav>
+  </div>
+
+  <div class="site-header__undermobile">
+    <div class="site-header__topbar-container">
+        <div class="site-header__sites-menu">
+           <div>
+    <nav role="navigation" aria-labelledby="block-sitesmenu-menu" id="block-sitesmenu">
+            
+  <h2 class="visually-hidden" id="block-sitesmenu-menu">Sites Menu</h2>
+  
+
+                <ul data-region="sites_menu" class="site-header__featured-menupage">
+              <li><a class="site-header__featured-menupage-item" href="https://www.facebook.com/ElsahaEGAlHurra/">
+            <div data-blazy="" class="blazy blazy--field blazy--field-media-image">
+
+
+
+                    <div class="media media--bundle--image media--blazy media--loading media--image">
+      
+      
+      
+      <img alt="El Saha" class="media__image media__element b-lazy" loading="lazy" data-src="https://media.voltron.alhurra.com/Drupal/01live-106/2019-12/el-saha_0.png" src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D&#039;http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg&#039; viewBox%3D&#039;0 0 210 100&#039;%2F%3E" width="210" height="100" />
+
+      
+                  
+      
+
+            
+      
+    </div>
+        
+  
+  
+
+
+</div>
+      </a></li>
+              <li><a class="site-header__featured-menupage-item" href="https://www.maghrebvoices.com">
+            <div data-blazy="" class="blazy blazy--field blazy--field-media-image">
+
+
+
+                    <div class="media media--bundle--image media--blazy media--loading media--image">
+      
+      
+      
+      <img alt="Maghreb Voices" class="media__image media__element b-lazy" loading="lazy" data-src="https://media.voltron.alhurra.com/Drupal/01live-106/2019-12/maghreb-voices_0.png" src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D&#039;http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg&#039; viewBox%3D&#039;0 0 210 100&#039;%2F%3E" width="210" height="100" />
+
+      
+                  
+      
+
+            
+      
+    </div>
+        
+  
+  
+
+
+</div>
+      </a></li>
+              <li><a class="site-header__featured-menupage-item" href="https://www.radiosawa.com">
+            <div data-blazy="" class="blazy blazy--field blazy--field-media-image">
+
+
+
+                    <div class="media media--bundle--image media--blazy media--loading media--image">
+      
+      
+      
+      <img alt="Radio Sawa" class="media__image media__element b-lazy" loading="lazy" data-src="https://media.voltron.alhurra.com/Drupal/01live-106/2019-12/radio-sawa_0.png" src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D&#039;http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg&#039; viewBox%3D&#039;0 0 210 100&#039;%2F%3E" width="210" height="100" />
+
+      
+                  
+      
+
+            
+      
+    </div>
+        
+  
+  
+
+
+</div>
+      </a></li>
+              <li><a class="site-header__featured-menupage-item" href="https://www.irfaasawtak.com">
+            <div data-blazy="" class="blazy blazy--field blazy--field-media-image">
+
+
+
+                    <div class="media media--bundle--image media--blazy media--loading media--image">
+      
+      
+      
+      <img alt="Irfaasawtak" class="media__image media__element b-lazy" loading="lazy" data-src="https://media.voltron.alhurra.com/Drupal/01live-106/2019-12/irfaasawtak_1.png" src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D&#039;http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg&#039; viewBox%3D&#039;0 0 210 100&#039;%2F%3E" width="210" height="100" />
+
+      
+                  
+      
+
+            
+      
+    </div>
+        
+  
+  
+
+
+</div>
+      </a></li>
+          </ul>
+  
+  </nav>
+
+  </div>
+
+        </div>
+    </div>
+
+    <div class="site-header__search-drop" data-sticky data-sticky-class="is-sticky" data-margin-top="65">
+      <div class="grid">
+        <div class="col-1">
+          <form class="site-header__search-form" action="/search" method="GET">
+            <label class="site-header__search-label" for="header-search">بحث</label>
+            <input placeholder="بحث" class="site-header__search" id="header-search" type="text"
+                    name="search_api_fulltext">
+            <input type="hidden" name="type" value="1">
+            <input type="hidden" name="sort_by" value="publication_time">
+            <button class="button site-header__search-button fa fa-search" type="submit"><span
+                class="site-header__search-label">بحث</span></button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    <div id="breaking-news-ajax"></div>
+
+  <main role="main" id="main-content" tabindex="-1" class="main-content-class">
+        <div>
+    <div data-drupal-messages-fallback class="hidden"></div>
+<div id="block-voa-content">
+  
+    
+      
+
+
+
+    
+
+
+  
+  
+  
+
+        
+          
+
+
+  <div class="l-content-container">
+<div class="article" id="article-start-712501" data-articleurl="https://www.alhurra.com/libya/2020/05/29/%D8%B9%D8%B3%D9%83%D8%B1%D9%8A-%D8%A3%D9%85%D9%8A%D8%B1%D9%83%D9%8A-%D9%8A%D8%B6%D8%B9-%D9%85%D9%81%D8%A7%D8%AA%D9%8A%D8%AD-%D8%AD%D9%84-%D8%A7%D9%84%D8%B5%D8%B1%D8%A7%D8%B9-%D8%A7%D9%84%D9%84%D9%8A%D8%A8%D9%8A" data-articletitle="عسكري أميركي يضع مفاتيح حل الصراع الليبي">
+  <div class="article__social">
+    <div class="article__social-container">
+      
+
+  
+  
+<div class="social-widget">
+      <div id="share-facebook" class="fab social-widget__icon social-widget__icon--facebook share-facebook" data-url="https%3A%2F%2Fwww.alhurra.com%2Flibya%2F2020%2F05%2F29%2F%25D8%25B9%25D8%25B3%25D9%2583%25D8%25B1%25D9%258A-%25D8%25A3%25D9%2585%25D9%258A%25D8%25B1%25D9%2583%25D9%258A-%25D9%258A%25D8%25B6%25D8%25B9-%25D9%2585%25D9%2581%25D8%25A7%25D8%25AA%25D9%258A%25D8%25AD-%25D8%25AD%25D9%2584-%25D8%25A7%25D9%2584%25D8%25B5%25D8%25B1%25D8%25A7%25D8%25B9-%25D8%25A7%25D9%2584%25D9%2584%25D9%258A%25D8%25A8%25D9%258A">
+      <span class="fa-facebook-f"><span class="sr-only">Share on Facebook</span></span>
+    </div>
+        <div id="share-twitter" class="fab social-widget__icon social-widget__icon--twitter share-twitter" data-url="https%3A%2F%2Fwww.alhurra.com%2Flibya%2F2020%2F05%2F29%2F%25D8%25B9%25D8%25B3%25D9%2583%25D8%25B1%25D9%258A-%25D8%25A3%25D9%2585%25D9%258A%25D8%25B1%25D9%2583%25D9%258A-%25D9%258A%25D8%25B6%25D8%25B9-%25D9%2585%25D9%2581%25D8%25A7%25D8%25AA%25D9%258A%25D8%25AD-%25D8%25AD%25D9%2584-%25D8%25A7%25D9%2584%25D8%25B5%25D8%25B1%25D8%25A7%25D8%25B9-%25D8%25A7%25D9%2584%25D9%2584%25D9%258A%25D8%25A8%25D9%258A" data-title="%D8%B9%D8%B3%D9%83%D8%B1%D9%8A%20%D8%A3%D9%85%D9%8A%D8%B1%D9%83%D9%8A%20%D9%8A%D8%B6%D8%B9%20%D9%85%D9%81%D8%A7%D8%AA%D9%8A%D8%AD%20%D8%AD%D9%84%20%D8%A7%D9%84%D8%B5%D8%B1%D8%A7%D8%B9%20%D8%A7%D9%84%D9%84%D9%8A%D8%A8%D9%8A" >
+      <span class="fa-twitter"><span class="sr-only">Share on Twitter</span></span>
+    </div>
+            <div id="share-whatsapp" class="fab social-widget__icon social-widget__icon--whatsapp share-whatsapp" data-url="https%3A%2F%2Fwww.alhurra.com%2Flibya%2F2020%2F05%2F29%2F%25D8%25B9%25D8%25B3%25D9%2583%25D8%25B1%25D9%258A-%25D8%25A3%25D9%2585%25D9%258A%25D8%25B1%25D9%2583%25D9%258A-%25D9%258A%25D8%25B6%25D8%25B9-%25D9%2585%25D9%2581%25D8%25A7%25D8%25AA%25D9%258A%25D8%25AD-%25D8%25AD%25D9%2584-%25D8%25A7%25D9%2584%25D8%25B5%25D8%25B1%25D8%25A7%25D8%25B9-%25D8%25A7%25D9%2584%25D9%2584%25D9%258A%25D8%25A8%25D9%258A" data-title="%D8%B9%D8%B3%D9%83%D8%B1%D9%8A%20%D8%A3%D9%85%D9%8A%D8%B1%D9%83%D9%8A%20%D9%8A%D8%B6%D8%B9%20%D9%85%D9%81%D8%A7%D8%AA%D9%8A%D8%AD%20%D8%AD%D9%84%20%D8%A7%D9%84%D8%B5%D8%B1%D8%A7%D8%B9%20%D8%A7%D9%84%D9%84%D9%8A%D8%A8%D9%8A" >
+      <span class="fa-whatsapp"><span class="sr-only">Share on WhatsApp</span></span>
+    </div>
+            </div>
+    </div>
+  </div>
+  <div class="article__main">
+    <div class="page-header">
+  <span class="page-header__eyebrow eyebrow section-title--callout"><a href="/libya" hreflang="ar">ليبيا</a></span>
+  <h1 class="page-header__title"><span>عسكري أميركي يضع مفاتيح حل الصراع الليبي</span>
+</h1>
+
+  
+  <div class="caption page-header__meta ">
+          <div class="page-header__author-pictures">
+              </div>
+      <div class="page-header__meta-item">
+                  <span>الحرة / ترجمات - واشنطن</span>              </div>
+    
+    <div class="page-header__meta-item">
+              29 مايو 2020
+          </div>
+          <div class="page-header__meta-item">
+        
+      </div>
+      </div>
+</div>
+<div class="article__social article__social--mobile-only">
+      
+
+  
+  
+<div class="social-widget">
+      <div id="share-facebook-mobile" class="fab social-widget__icon social-widget__icon--facebook share-facebook" data-url="https%3A%2F%2Fwww.alhurra.com%2Flibya%2F2020%2F05%2F29%2F%25D8%25B9%25D8%25B3%25D9%2583%25D8%25B1%25D9%258A-%25D8%25A3%25D9%2585%25D9%258A%25D8%25B1%25D9%2583%25D9%258A-%25D9%258A%25D8%25B6%25D8%25B9-%25D9%2585%25D9%2581%25D8%25A7%25D8%25AA%25D9%258A%25D8%25AD-%25D8%25AD%25D9%2584-%25D8%25A7%25D9%2584%25D8%25B5%25D8%25B1%25D8%25A7%25D8%25B9-%25D8%25A7%25D9%2584%25D9%2584%25D9%258A%25D8%25A8%25D9%258A">
+      <span class="fa-facebook-f"><span class="sr-only">Share on Facebook</span></span>
+    </div>
+        <div id="share-twitter-mobile" class="fab social-widget__icon social-widget__icon--twitter share-twitter" data-url="https%3A%2F%2Fwww.alhurra.com%2Flibya%2F2020%2F05%2F29%2F%25D8%25B9%25D8%25B3%25D9%2583%25D8%25B1%25D9%258A-%25D8%25A3%25D9%2585%25D9%258A%25D8%25B1%25D9%2583%25D9%258A-%25D9%258A%25D8%25B6%25D8%25B9-%25D9%2585%25D9%2581%25D8%25A7%25D8%25AA%25D9%258A%25D8%25AD-%25D8%25AD%25D9%2584-%25D8%25A7%25D9%2584%25D8%25B5%25D8%25B1%25D8%25A7%25D8%25B9-%25D8%25A7%25D9%2584%25D9%2584%25D9%258A%25D8%25A8%25D9%258A" data-title="%D8%B9%D8%B3%D9%83%D8%B1%D9%8A%20%D8%A3%D9%85%D9%8A%D8%B1%D9%83%D9%8A%20%D9%8A%D8%B6%D8%B9%20%D9%85%D9%81%D8%A7%D8%AA%D9%8A%D8%AD%20%D8%AD%D9%84%20%D8%A7%D9%84%D8%B5%D8%B1%D8%A7%D8%B9%20%D8%A7%D9%84%D9%84%D9%8A%D8%A8%D9%8A" >
+      <span class="fa-twitter"><span class="sr-only">Share on Twitter</span></span>
+    </div>
+            <div id="share-whatsapp-mobile" class="fab social-widget__icon social-widget__icon--whatsapp share-whatsapp" data-url="https%3A%2F%2Fwww.alhurra.com%2Flibya%2F2020%2F05%2F29%2F%25D8%25B9%25D8%25B3%25D9%2583%25D8%25B1%25D9%258A-%25D8%25A3%25D9%2585%25D9%258A%25D8%25B1%25D9%2583%25D9%258A-%25D9%258A%25D8%25B6%25D8%25B9-%25D9%2585%25D9%2581%25D8%25A7%25D8%25AA%25D9%258A%25D8%25AD-%25D8%25AD%25D9%2584-%25D8%25A7%25D9%2584%25D8%25B5%25D8%25B1%25D8%25A7%25D8%25B9-%25D8%25A7%25D9%2584%25D9%2584%25D9%258A%25D8%25A8%25D9%258A" data-title="%D8%B9%D8%B3%D9%83%D8%B1%D9%8A%20%D8%A3%D9%85%D9%8A%D8%B1%D9%83%D9%8A%20%D9%8A%D8%B6%D8%B9%20%D9%85%D9%81%D8%A7%D8%AA%D9%8A%D8%AD%20%D8%AD%D9%84%20%D8%A7%D9%84%D8%B5%D8%B1%D8%A7%D8%B9%20%D8%A7%D9%84%D9%84%D9%8A%D8%A8%D9%8A" >
+      <span class="fa-whatsapp"><span class="sr-only">Share on WhatsApp</span></span>
+    </div>
+            </div>
+    </div>
+    <div class="grid">
+      <div class="col-2of3">
+        <div class="article__lightbox-available">
+                                            <div class="article__featured-media-wrapper image-wrapper">
+              <div class="article__featured-media"><figure class="media media--type-image media--view-mode-feature" itemscope itemtype="http://schema.org/ImageObject">
+      <a href="https://media.voltron.alhurra.com/Drupal/01live-106/styles/sourced/s3/2020-05/000_1PN10B.jpg?itok=XKZqlA8j" data-size="3800x2646">
+      <i class="fa fa-images article__feature-media-gallery"></i>
+      
+            <div>    <picture>
+                  <source srcset="/s3/files/styles/817x459/s3/2020-05/000_1PN10B.jpg?itok=CPJYHH-m 1x, /s3/files/styles/817x459_retina/s3/2020-05/000_1PN10B.jpg?itok=FWqr6KxH 2x" media="(min-width: 2000px)" type="image/jpeg"/>
+              <source srcset="/s3/files/styles/817x459/s3/2020-05/000_1PN10B.jpg?itok=CPJYHH-m 1x, /s3/files/styles/817x459_retina/s3/2020-05/000_1PN10B.jpg?itok=FWqr6KxH 2x" media="(min-width: 1280px)" type="image/jpeg"/>
+              <source srcset="/s3/files/styles/710x340/s3/2020-05/000_1PN10B.jpg?itok=v8TGL5_W 1x, /s3/files/styles/710x340_retina/s3/2020-05/000_1PN10B.jpg?itok=p5K_m6lz 2x" media="(min-width: 1024px)" type="image/jpeg"/>
+              <source srcset="/s3/files/styles/545x307/s3/2020-05/000_1PN10B.jpg?itok=AjimXnP8 1x, /s3/files/styles/576x564_retina/s3/2020-05/000_1PN10B.jpg?itok=eX9uM9MC 2x" media="(min-width: 992px)" type="image/jpeg"/>
+              <source srcset="https://media.voltron.alhurra.com/Drupal/01live-106/styles/892x501/s3/2020-05/000_1PN10B.jpg?itok=SyTrgzGV 1x, /s3/files/styles/892x501_retina/s3/2020-05/000_1PN10B.jpg?itok=E5GdmpN0 2x" media="(min-width: 769px)" type="image/jpeg"/>
+              <source srcset="/s3/files/styles/671x377/s3/2020-05/000_1PN10B.jpg?itok=984Kfnmk 1x, /s3/files/styles/671x377_retina/s3/2020-05/000_1PN10B.jpg?itok=ZZTL6L97 2x" media="(min-width: 580px)" type="image/jpeg"/>
+              <source srcset="/s3/files/styles/516x290/s3/2020-05/000_1PN10B.jpg?itok=zn70HHwv 1x" type="image/jpeg"/>
+                  <img src="https://media.voltron.alhurra.com/Drupal/01live-106/styles/892x501/s3/2020-05/000_1PN10B.jpg?itok=SyTrgzGV" alt="يرى العميد الأميركي السابق جون سترافيديس أن حل الأزمة في ليبيا يكمن في اتفاق بين تركيا وروسيا" />
+
+  </picture>
+
+</div>
+      
+      <figcaption>
+                          يرى العميد الأميركي السابق جون ستافريديس أن حل الأزمة في ليبيا يكمن في اتفاق بين أردوغان وبوتين
+                      </figcaption>
+    </a>
+  </figure>
+
+</div>
+            </div>
+                    <div class="article__content">
+            <div class="article__body">
+              
+            <div><p>رغم اشتعال الصراع الليبي على أشده خاصة خلال الأيام الأخيرة، يرى البعض أنه أوشك على الانتهاء، مثل العميد السابق بالقوات البحرية الأميركية والقائد الأعلى السابق للناتو، جيمس ستافريديس.</p>
+
+<p>وقال ستافريديس في مقاله المنشور على وكالة "<a href="https://www.bloomberg.com/opinion/articles/2020-05-29/turkey-and-russia-are-at-war-but-libya-s-the-loser">بلومبيرغ</a>" الأميركية، إن الصراع الليبي ليس شأنا محليا، وإنما تحول ليصبح حرب وكالة بين القوى الإقليمية والعالمية، فروسيا وفرنسا تساندان الجنرال خليفة حفتر سرا من ناحية، بينما تساند تركيا حكومة طرابلس بقوة على الناحية الأخرى.</p>
+
+<p>وتابع ستافريديس الذي قاد تحالف الناتو من أجل إضعاف نظام القذافي في 2011، أن أزمة ليبيا لم تنجم عن التدخل العسكري، وإنما بسبب رفض المجتمع الدولي البقاء هناك وإرساء الاستقرار في الداخل، مما أدى إلى انزلاق البلاد في الفوضى التي تعانيها حتى اليوم.</p>
+
+<p>وأشار ستافريديس في مقاله إلى أنه قابل حفتر الذي يحمل الجنسية الليبية والأميركية معا قرب واشنطن منذ عدة سنوات، حيث أعرب ستافريديس آنذاك عن أمله في أن يكون حفتر جزءا من حل أزمة البلاد بعد مغادرة الناتو.</p>
+
+<p>ومع اندلاع الحرب الأهلية في عام 2014، قاد حفتر حملة عسكرية للسيطرة على البلاد، شارك فيها وضدها عدة دول، خاصة تركيا التي ساندت حكومة طرابلس بقوة، فيما أيدت روسيا حفتر وأرسلت له قوات فاغنر المرتزقة.</p>
+
+<p>ويعود ستافريديس ليعلق على الأحداث الجارية بقوله "خلال هذا الأسبوع، تم نقل المرتزقة الروس جوا بشكل مخز، لكن يقال إن القوات الجوية الروسية يتم نشرها لدعم قوات حفتر".</p>
+
+<p>ومع ذلك، تبدو حكومة طرابلس واثقة في حربها البرية والقوة الجوية التركية (بما في ذلك الطائرات بدون طيار المتطورة) والتي لها تأثير قوي، كما يرى ستافريديس.</p>
+
+<p>وبجانب الطائرات المسيرة، ترسل تركيا مرتزقة سوريين إلى ليبيا، حيث وثق المرصد السوري لحقوق الإنسان الجمعة 13 قتيلا منهم خلال الأيام الماضي، لترتفع حصيلة قتلى المرتزقة السوريين في ليبيا منذ لحظة وصولهم وحتى الآن إلى 331 مقاتلا، بينهم 20 طفلا دون سن الـ 18.</p>
+
+<p>ويصف ستافريديس الوضع بأنه "صدى للعبة كبيرة خاضها البريطانيون والروس في منطقة آسيا الوسطى في القرن التاسع عشر، لكن الآن تدور أحداثها في شمال أفريقيا".</p>
+
+<p>ويرى ستافريديس أن كلما ازداد القتال في ليبيا كلما زادت حركة الهجرة غير الشرعية إلى أوروبا، في وقت ينتشر وباء كورونا في المنطقة والعالم، بحيث أصبحت قوى عالمية مثل الولايات المتحدة منشغلة عن الوضع في ليبيا.</p>
+
+<p>لكن بالرغم من هذا، فإن الولايات المتحدة لم تغب تماما عن المشهد في رأي ستافريديس، فقد دعا وزير الخارجية الأميركي مايك بومبيو في مؤتمر عالمي ببرلين الطرفين المتصارعين للتفاوض، إلا أن روسيا وتركيا اللتان تحركاهما الثروة النفطية والنفوذ الإقليمي لم يصلا إلى اتفاق، لكن ربما بسبب انتكاسات قوات حفتر الأخيرة تكون هناك فرصة للسلام.</p>
+
+<p>وقال العميد الأميركي السابق، إن أفضل مسار للولايات المتحدة هو مشاركة الاتحاد الأوروبي في بدء محادثات في غرب أوروبا، حيث يتم الضغط على تركيا للتفاوض مع روسيا من أجل تقليص الدعم العسكري، وذلك بالتزامن مع التوصل لاتفاق مع دول الخليج، ومصر، من أجل ترك الليبيين يحلون الأزمة داخليا، والمساعدة في وقف إطلاق النار والذي من شأنه أن يعيد عملية إنتاج النفط المتوقفة، ويوفر الإغاثة الإنسانية لكبح انتشار فيروس كورونا المستجد.</p>
+</div>
+      
+            </div>
+          </div>
+        </div>
+                  <div class="article__footer">
+                                                            
+<div class="author-card">
+  <div class="author-card__content">
+    <span class="author-card__eyebrow eyebrow">  </span>
+    <div class="author-card__name">
+      الحرة / ترجمات - واشنطن
+    </div>
+  </div>
+</div>
+                                                                </div>
+        
+              </div>
+
+      <div class="col-3">
+                  
+
+
+
+
+    
+    
+    
+                                                                                                                  
+
+        
+  
+  <div class="section-content-widgets">
+    
+<div class="content-list">
+        <h2 class="section-title">
+            <div>اقرأ أيضا</div>
+      </h2>
+    
+<div class="grid vertical-list vertical-list--list">
+      <div class="col-1 vertical-list__item vertical-list__item--list">
+      
+  
+
+
+<div class="teaser teaser--small">
+  <div class="teaser__img-wrap">
+    <div class="teaser__img teaser__img--small">
+      <a href="/usa/2021/12/22/%D8%A3%D9%82%D9%84-%D9%86%D8%B3%D8%A8%D8%A9-%D8%AA%D8%A3%D8%B3%D9%8A%D8%B3-%D8%A7%D9%84%D9%88%D9%84%D8%A7%D9%8A%D8%A7%D8%AA-%D8%A7%D9%84%D9%85%D8%AA%D8%AD%D8%AF%D8%A9-%D8%AA%D8%B1%D8%A7%D8%AC%D8%B9-%D8%A7%D9%84%D9%86%D9%85%D9%88-%D8%A7%D9%84%D8%B3%D9%83%D8%A7%D9%86%D9%8A-%D9%81%D9%8A-%D8%A3%D9%85%D9%8A%D8%B1%D9%83%D8%A7" title="&quot;أقل نسبة&quot; منذ تأسيس الولايات المتحدة.. تراجع النمو السكاني في أميركا">
+                  
+            <div><div>
+  
+  
+            <div data-blazy="" class="blazy blazy--field blazy--field-media-image blazy--field-media-image--block-3 blazy--view blazy--view--manual-related-articles blazy--view--manual-related-articles--block-3">
+
+
+
+                    <div class="media media--bundle--image media--blazy media--loading media--responsive media--image">
+      
+      
+      
+        <picture>
+                  <source media="(min-width: 2000px)" type="image/jpeg" data-srcset="/s3/files/styles/192x108_retina/s3/reuters-images/2021/03/reuters_com_2021_newsml_RC2MSL96RR6H.jpg?itok=D1-jW3nz 1x"/>
+              <source media="(min-width: 1280px)" type="image/jpeg" data-srcset="/s3/files/styles/192x108/s3/reuters-images/2021/03/reuters_com_2021_newsml_RC2MSL96RR6H.jpg?itok=6Mdvy7Tx 1x, /s3/files/styles/192x108_retina/s3/reuters-images/2021/03/reuters_com_2021_newsml_RC2MSL96RR6H.jpg?itok=D1-jW3nz 2x"/>
+              <source media="(min-width: 1024px)" type="image/jpeg" data-srcset="/s3/files/styles/192x108/s3/reuters-images/2021/03/reuters_com_2021_newsml_RC2MSL96RR6H.jpg?itok=6Mdvy7Tx 1x, /s3/files/styles/192x108_retina/s3/reuters-images/2021/03/reuters_com_2021_newsml_RC2MSL96RR6H.jpg?itok=D1-jW3nz 2x"/>
+              <source media="(min-width: 992px)" type="image/jpeg" data-srcset="/s3/files/styles/192x108/s3/reuters-images/2021/03/reuters_com_2021_newsml_RC2MSL96RR6H.jpg?itok=6Mdvy7Tx 1x, /s3/files/styles/192x108_retina/s3/reuters-images/2021/03/reuters_com_2021_newsml_RC2MSL96RR6H.jpg?itok=D1-jW3nz 2x"/>
+              <source media="(min-width: 769px)" type="image/jpeg" data-srcset="/s3/files/styles/576x564/s3/reuters-images/2021/03/reuters_com_2021_newsml_RC2MSL96RR6H.jpg?itok=LOlNnhEy 1x, /s3/files/styles/576x564_retina/s3/reuters-images/2021/03/reuters_com_2021_newsml_RC2MSL96RR6H.jpg?itok=b25zwBOH 2x"/>
+              <source media="(min-width: 580px)" type="image/jpeg" data-srcset="/s3/files/styles/576x564/s3/reuters-images/2021/03/reuters_com_2021_newsml_RC2MSL96RR6H.jpg?itok=LOlNnhEy 1x, /s3/files/styles/576x564_retina/s3/reuters-images/2021/03/reuters_com_2021_newsml_RC2MSL96RR6H.jpg?itok=b25zwBOH 2x"/>
+              <source type="image/jpeg" data-srcset="/s3/files/styles/485x273_retina/s3/reuters-images/2021/03/reuters_com_2021_newsml_RC2MSL96RR6H.jpg?itok=Gzc6etrJ 1x"/>
+                  <img class="media__image media__element b-lazy b-responsive" loading="lazy" data-src="/s3/files/styles/485x273_retina/s3/reuters-images/2021/03/reuters_com_2021_newsml_RC2MSL96RR6H.jpg?itok=Gzc6etrJ" src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D&#039;http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg&#039; viewBox%3D&#039;0 0 970 546&#039;%2F%3E" alt="حي مانهاتن النيويوركي" />
+
+  </picture>
+
+      
+                  
+      
+
+            
+      
+    </div>
+        
+  
+  
+
+
+</div>
+      
+</div>
+</div>
+      
+                        
+      </a>
+              <div class="story-card__label section-title--callout">
+          <a href="/usa" hreflang="ar">أميركا</a>
+        </div>
+          </div>
+  </div>
+  <div class="teaser__content teaser__content--small">
+    <a href="/usa/2021/12/22/%D8%A3%D9%82%D9%84-%D9%86%D8%B3%D8%A8%D8%A9-%D8%AA%D8%A3%D8%B3%D9%8A%D8%B3-%D8%A7%D9%84%D9%88%D9%84%D8%A7%D9%8A%D8%A7%D8%AA-%D8%A7%D9%84%D9%85%D8%AA%D8%AD%D8%AF%D8%A9-%D8%AA%D8%B1%D8%A7%D8%AC%D8%B9-%D8%A7%D9%84%D9%86%D9%85%D9%88-%D8%A7%D9%84%D8%B3%D9%83%D8%A7%D9%86%D9%8A-%D9%81%D9%8A-%D8%A3%D9%85%D9%8A%D8%B1%D9%83%D8%A7" title="&quot;أقل نسبة&quot; منذ تأسيس الولايات المتحدة.. تراجع النمو السكاني في أميركا">
+      <h3 class="teaser__title teaser__title--small"><span>&quot;أقل نسبة&quot; منذ تأسيس الولايات المتحدة.. تراجع النمو السكاني في أميركا</span>
+</h3>
+    </a>
+  </div>
+</div>
+
+    </div>
+      <div class="col-1 vertical-list__item vertical-list__item--list">
+      
+  
+
+
+<div class="teaser teaser--small">
+  <div class="teaser__img-wrap">
+    <div class="teaser__img teaser__img--small">
+      <a href="/iraq/2021/12/22/%D8%AA%D8%B9%D9%88%D9%8A%D8%B6%D8%A7%D8%AA-%D8%A7%D9%84%D9%83%D9%88%D9%8A%D8%AA-%D8%A7%D9%84%D8%B9%D8%B1%D8%A7%D9%82-%D9%8A%D8%B9%D9%84%D9%86-%D8%A7%D8%B3%D8%AA%D9%83%D9%85%D8%A7%D9%84-%D8%B3%D8%AF%D8%A7%D8%AF-%D8%A7%D9%84%D9%85%D8%A8%D9%84%D8%BA" title="تعويضات الكويت.. العراق يعلن استكمال سداد المبلغ">
+                  
+            <div><div>
+  
+  
+            <div data-blazy="" class="blazy blazy--field blazy--field-media-image blazy--field-media-image--block-3 blazy--view blazy--view--manual-related-articles blazy--view--manual-related-articles--block-3">
+
+
+
+                    <div class="media media--bundle--image media--blazy media--loading media--responsive media--image">
+      
+      
+      
+        <picture>
+                  <source media="(min-width: 2000px)" type="image/jpeg" data-srcset="/s3/files/styles/192x108_retina/s3/2021-12/1991-02-28T000000Z_2014285117_RP2DRIQYGAAA_RTRMADP_3_GULF.JPG?itok=HJksOFEP 1x"/>
+              <source media="(min-width: 1280px)" type="image/jpeg" data-srcset="https://media.voltron.alhurra.com/Drupal/01live-106/styles/192x108/s3/2021-12/1991-02-28T000000Z_2014285117_RP2DRIQYGAAA_RTRMADP_3_GULF.JPG?itok=49PERrhC 1x, /s3/files/styles/192x108_retina/s3/2021-12/1991-02-28T000000Z_2014285117_RP2DRIQYGAAA_RTRMADP_3_GULF.JPG?itok=HJksOFEP 2x"/>
+              <source media="(min-width: 1024px)" type="image/jpeg" data-srcset="https://media.voltron.alhurra.com/Drupal/01live-106/styles/192x108/s3/2021-12/1991-02-28T000000Z_2014285117_RP2DRIQYGAAA_RTRMADP_3_GULF.JPG?itok=49PERrhC 1x, /s3/files/styles/192x108_retina/s3/2021-12/1991-02-28T000000Z_2014285117_RP2DRIQYGAAA_RTRMADP_3_GULF.JPG?itok=HJksOFEP 2x"/>
+              <source media="(min-width: 992px)" type="image/jpeg" data-srcset="https://media.voltron.alhurra.com/Drupal/01live-106/styles/192x108/s3/2021-12/1991-02-28T000000Z_2014285117_RP2DRIQYGAAA_RTRMADP_3_GULF.JPG?itok=49PERrhC 1x, /s3/files/styles/192x108_retina/s3/2021-12/1991-02-28T000000Z_2014285117_RP2DRIQYGAAA_RTRMADP_3_GULF.JPG?itok=HJksOFEP 2x"/>
+              <source media="(min-width: 769px)" type="image/jpeg" data-srcset="/s3/files/styles/576x564/s3/2021-12/1991-02-28T000000Z_2014285117_RP2DRIQYGAAA_RTRMADP_3_GULF.JPG?itok=dCMYYNMs 1x, https://media.voltron.alhurra.com/Drupal/01live-106/styles/576x564_retina/s3/2021-12/1991-02-28T000000Z_2014285117_RP2DRIQYGAAA_RTRMADP_3_GULF.JPG?itok=s29X_n-q 2x"/>
+              <source media="(min-width: 580px)" type="image/jpeg" data-srcset="/s3/files/styles/576x564/s3/2021-12/1991-02-28T000000Z_2014285117_RP2DRIQYGAAA_RTRMADP_3_GULF.JPG?itok=dCMYYNMs 1x, https://media.voltron.alhurra.com/Drupal/01live-106/styles/576x564_retina/s3/2021-12/1991-02-28T000000Z_2014285117_RP2DRIQYGAAA_RTRMADP_3_GULF.JPG?itok=s29X_n-q 2x"/>
+              <source type="image/jpeg" data-srcset="/s3/files/styles/485x273_retina/s3/2021-12/1991-02-28T000000Z_2014285117_RP2DRIQYGAAA_RTRMADP_3_GULF.JPG?itok=ye8C-4II 1x"/>
+                  <img class="media__image media__element b-lazy b-responsive" loading="lazy" data-src="/s3/files/styles/485x273_retina/s3/2021-12/1991-02-28T000000Z_2014285117_RP2DRIQYGAAA_RTRMADP_3_GULF.JPG?itok=ye8C-4II" src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D&#039;http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg&#039; viewBox%3D&#039;0 0 970 546&#039;%2F%3E" alt="الحرب أدت إلى دمار كبير في البلدين" />
+
+  </picture>
+
+      
+                  
+      
+
+            
+      
+    </div>
+        
+  
+  
+
+
+</div>
+      
+</div>
+</div>
+      
+                        
+      </a>
+              <div class="story-card__label section-title--callout">
+          <a href="/iraq" hreflang="ar">العراق</a>
+        </div>
+          </div>
+  </div>
+  <div class="teaser__content teaser__content--small">
+    <a href="/iraq/2021/12/22/%D8%AA%D8%B9%D9%88%D9%8A%D8%B6%D8%A7%D8%AA-%D8%A7%D9%84%D9%83%D9%88%D9%8A%D8%AA-%D8%A7%D9%84%D8%B9%D8%B1%D8%A7%D9%82-%D9%8A%D8%B9%D9%84%D9%86-%D8%A7%D8%B3%D8%AA%D9%83%D9%85%D8%A7%D9%84-%D8%B3%D8%AF%D8%A7%D8%AF-%D8%A7%D9%84%D9%85%D8%A8%D9%84%D8%BA" title="تعويضات الكويت.. العراق يعلن استكمال سداد المبلغ">
+      <h3 class="teaser__title teaser__title--small"><span>تعويضات الكويت.. العراق يعلن استكمال سداد المبلغ</span>
+</h3>
+    </a>
+  </div>
+</div>
+
+    </div>
+      <div class="col-1 vertical-list__item vertical-list__item--list">
+      
+  
+
+
+<div class="teaser teaser--small">
+  <div class="teaser__img-wrap">
+    <div class="teaser__img teaser__img--small">
+      <a href="/palestine/2021/12/22/%D9%85%D9%82%D8%AA%D9%84-%D9%81%D9%84%D8%B3%D8%B7%D9%8A%D9%86%D9%8A-%D8%AD%D8%A7%D9%88%D9%84-%D8%AF%D9%87%D8%B3-%D8%AC%D9%86%D9%88%D8%AF-%D8%A5%D8%B3%D8%B1%D8%A7%D8%A6%D9%8A%D9%84%D9%8A%D9%8A%D9%86" title="مقتل فلسطيني حاول دهس جنود إسرائيليين">
+                  
+            <div><div>
+  
+  
+            <div data-blazy="" class="blazy blazy--field blazy--field-media-image blazy--field-media-image--block-3 blazy--view blazy--view--manual-related-articles blazy--view--manual-related-articles--block-3">
+
+
+
+                    <div class="media media--bundle--image media--blazy media--loading media--responsive media--image">
+      
+      
+      
+        <picture>
+                  <source media="(min-width: 2000px)" type="image/jpeg" data-srcset="/s3/files/styles/192x108_retina/s3/2021-12/000_9QF9HV.jpg?itok=fgbFjFJQ 1x"/>
+              <source media="(min-width: 1280px)" type="image/jpeg" data-srcset="https://media.voltron.alhurra.com/Drupal/01live-106/styles/192x108/s3/2021-12/000_9QF9HV.jpg?itok=KUDpPvC0 1x, /s3/files/styles/192x108_retina/s3/2021-12/000_9QF9HV.jpg?itok=fgbFjFJQ 2x"/>
+              <source media="(min-width: 1024px)" type="image/jpeg" data-srcset="https://media.voltron.alhurra.com/Drupal/01live-106/styles/192x108/s3/2021-12/000_9QF9HV.jpg?itok=KUDpPvC0 1x, /s3/files/styles/192x108_retina/s3/2021-12/000_9QF9HV.jpg?itok=fgbFjFJQ 2x"/>
+              <source media="(min-width: 992px)" type="image/jpeg" data-srcset="https://media.voltron.alhurra.com/Drupal/01live-106/styles/192x108/s3/2021-12/000_9QF9HV.jpg?itok=KUDpPvC0 1x, /s3/files/styles/192x108_retina/s3/2021-12/000_9QF9HV.jpg?itok=fgbFjFJQ 2x"/>
+              <source media="(min-width: 769px)" type="image/jpeg" data-srcset="/s3/files/styles/576x564/s3/2021-12/000_9QF9HV.jpg?itok=kV9xHdXh 1x, https://media.voltron.alhurra.com/Drupal/01live-106/styles/576x564_retina/s3/2021-12/000_9QF9HV.jpg?itok=tzkNKGWX 2x"/>
+              <source media="(min-width: 580px)" type="image/jpeg" data-srcset="/s3/files/styles/576x564/s3/2021-12/000_9QF9HV.jpg?itok=kV9xHdXh 1x, https://media.voltron.alhurra.com/Drupal/01live-106/styles/576x564_retina/s3/2021-12/000_9QF9HV.jpg?itok=tzkNKGWX 2x"/>
+              <source type="image/jpeg" data-srcset="/s3/files/styles/485x273_retina/s3/2021-12/000_9QF9HV.jpg?itok=u8Xb2VTd 1x"/>
+                  <img class="media__image media__element b-lazy b-responsive" loading="lazy" data-src="/s3/files/styles/485x273_retina/s3/2021-12/000_9QF9HV.jpg?itok=u8Xb2VTd" src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D&#039;http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg&#039; viewBox%3D&#039;0 0 970 546&#039;%2F%3E" alt="قال الجيش إن جنوده أطلقوا النار على &quot;المهاجم&quot; .. صورة تعبيرية" />
+
+  </picture>
+
+      
+                  
+      
+
+            
+      
+    </div>
+        
+  
+  
+
+
+</div>
+      
+</div>
+</div>
+      
+                        
+      </a>
+              <div class="story-card__label section-title--callout">
+          <a href="/palestine" hreflang="ar">الأراضي الفلسطينية</a>
+        </div>
+          </div>
+  </div>
+  <div class="teaser__content teaser__content--small">
+    <a href="/palestine/2021/12/22/%D9%85%D9%82%D8%AA%D9%84-%D9%81%D9%84%D8%B3%D8%B7%D9%8A%D9%86%D9%8A-%D8%AD%D8%A7%D9%88%D9%84-%D8%AF%D9%87%D8%B3-%D8%AC%D9%86%D9%88%D8%AF-%D8%A5%D8%B3%D8%B1%D8%A7%D8%A6%D9%8A%D9%84%D9%8A%D9%8A%D9%86" title="مقتل فلسطيني حاول دهس جنود إسرائيليين">
+      <h3 class="teaser__title teaser__title--small"><span>مقتل فلسطيني حاول دهس جنود إسرائيليين</span>
+</h3>
+    </a>
+  </div>
+</div>
+
+    </div>
+      <div class="col-1 vertical-list__item vertical-list__item--list">
+      
+  
+
+
+<div class="teaser teaser--small">
+  <div class="teaser__img-wrap">
+    <div class="teaser__img teaser__img--small">
+      <a href="/varieties/2021/12/22/%D8%A8%D8%B7%D9%84%D8%A7%D8%AA-%D8%A7%D9%84%D8%AC%D9%86%D8%B3-%D9%88%D8%A7%D9%84%D9%85%D8%AF%D9%8A%D9%86%D8%A9-%D9%8A%D8%AF%D8%B9%D9%85%D9%86-%D9%86%D8%B3%D8%A7%D8%A1-%D8%A7%D8%AA%D9%87%D9%85%D9%86-%D9%83%D8%B1%D9%8A%D8%B3-%D9%86%D9%88%D8%AB-%D8%A8%D9%80-%D8%A7%D8%B9%D8%AA%D8%AF%D8%A7%D8%A1%D8%A7%D8%AA-%D8%AC%D9%86%D8%B3%D9%8A%D8%A9" title="بطلات &quot;الجنس والمدينة&quot; يدعمن نساء اتهمن كريس نوث بـ &quot;اعتداءات جنسية&quot;">
+                  
+            <div><div>
+  
+  
+            <div data-blazy="" class="blazy blazy--field blazy--field-media-image blazy--field-media-image--block-3 blazy--view blazy--view--manual-related-articles blazy--view--manual-related-articles--block-3">
+
+
+
+                    <div class="media media--bundle--image media--blazy media--loading media--responsive media--image">
+      
+      
+      
+        <picture>
+                  <source media="(min-width: 2000px)" type="image/jpeg" data-srcset="/s3/files/styles/192x108_retina/s3/2021-12/000_Par3263738.jpg?itok=jC8umeKk 1x"/>
+              <source media="(min-width: 1280px)" type="image/jpeg" data-srcset="https://media.voltron.alhurra.com/Drupal/01live-106/styles/192x108/s3/2021-12/000_Par3263738.jpg?itok=Am9QE7x0 1x, /s3/files/styles/192x108_retina/s3/2021-12/000_Par3263738.jpg?itok=jC8umeKk 2x"/>
+              <source media="(min-width: 1024px)" type="image/jpeg" data-srcset="https://media.voltron.alhurra.com/Drupal/01live-106/styles/192x108/s3/2021-12/000_Par3263738.jpg?itok=Am9QE7x0 1x, /s3/files/styles/192x108_retina/s3/2021-12/000_Par3263738.jpg?itok=jC8umeKk 2x"/>
+              <source media="(min-width: 992px)" type="image/jpeg" data-srcset="https://media.voltron.alhurra.com/Drupal/01live-106/styles/192x108/s3/2021-12/000_Par3263738.jpg?itok=Am9QE7x0 1x, /s3/files/styles/192x108_retina/s3/2021-12/000_Par3263738.jpg?itok=jC8umeKk 2x"/>
+              <source media="(min-width: 769px)" type="image/jpeg" data-srcset="/s3/files/styles/576x564/s3/2021-12/000_Par3263738.jpg?itok=B-XZjCKE 1x, https://media.voltron.alhurra.com/Drupal/01live-106/styles/576x564_retina/s3/2021-12/000_Par3263738.jpg?itok=jikqsHLO 2x"/>
+              <source media="(min-width: 580px)" type="image/jpeg" data-srcset="/s3/files/styles/576x564/s3/2021-12/000_Par3263738.jpg?itok=B-XZjCKE 1x, https://media.voltron.alhurra.com/Drupal/01live-106/styles/576x564_retina/s3/2021-12/000_Par3263738.jpg?itok=jikqsHLO 2x"/>
+              <source type="image/jpeg" data-srcset="/s3/files/styles/485x273_retina/s3/2021-12/000_Par3263738.jpg?itok=IpAdMSUu 1x"/>
+                  <img class="media__image media__element b-lazy b-responsive" loading="lazy" data-src="/s3/files/styles/485x273_retina/s3/2021-12/000_Par3263738.jpg?itok=IpAdMSUu" src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D&#039;http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg&#039; viewBox%3D&#039;0 0 970 546&#039;%2F%3E" alt="كريس نوث لعب دور البطولة في مسلسلات مشهورة" />
+
+  </picture>
+
+      
+                  
+      
+
+            
+      
+    </div>
+        
+  
+  
+
+
+</div>
+      
+</div>
+</div>
+      
+                        
+      </a>
+              <div class="story-card__label section-title--callout">
+          <a href="/varieties" hreflang="ar">منوعات</a>
+        </div>
+          </div>
+  </div>
+  <div class="teaser__content teaser__content--small">
+    <a href="/varieties/2021/12/22/%D8%A8%D8%B7%D9%84%D8%A7%D8%AA-%D8%A7%D9%84%D8%AC%D9%86%D8%B3-%D9%88%D8%A7%D9%84%D9%85%D8%AF%D9%8A%D9%86%D8%A9-%D9%8A%D8%AF%D8%B9%D9%85%D9%86-%D9%86%D8%B3%D8%A7%D8%A1-%D8%A7%D8%AA%D9%87%D9%85%D9%86-%D9%83%D8%B1%D9%8A%D8%B3-%D9%86%D9%88%D8%AB-%D8%A8%D9%80-%D8%A7%D8%B9%D8%AA%D8%AF%D8%A7%D8%A1%D8%A7%D8%AA-%D8%AC%D9%86%D8%B3%D9%8A%D8%A9" title="بطلات &quot;الجنس والمدينة&quot; يدعمن نساء اتهمن كريس نوث بـ &quot;اعتداءات جنسية&quot;">
+      <h3 class="teaser__title teaser__title--small"><span>بطلات &quot;الجنس والمدينة&quot; يدعمن نساء اتهمن كريس نوث بـ &quot;اعتداءات جنسية&quot;</span>
+</h3>
+    </a>
+  </div>
+</div>
+
+    </div>
+      <div class="col-1 vertical-list__item vertical-list__item--list">
+      
+  
+
+
+<div class="teaser teaser--small">
+  <div class="teaser__img-wrap">
+    <div class="teaser__img teaser__img--small">
+      <a href="/arabic-and-international/2021/12/21/%D8%A3%D9%86%D9%82%D8%B0%D9%88%D8%A7-%D8%A3%D8%B1%D9%88%D8%A7%D8%AD%D8%A7-%D8%A3%D9%88%D8%B1%D9%88%D8%A8%D9%8A%D9%88%D9%86-%D9%8A%D8%B3%D8%A7%D8%B9%D8%AF%D9%88%D9%86-%D8%A7%D9%84%D9%85%D9%87%D8%A7%D8%AC%D8%B1%D9%8A%D9%86-%D9%81%D9%8A-%D8%B1%D8%AD%D9%84%D8%A7%D8%AA%D9%87%D9%85-%D8%A7%D9%84%D8%AE%D8%B7%D9%8A%D8%B1%D8%A9" title="&quot;أنقذوا أرواحا&quot;.. أوروبيون يساعدون المهاجرين في رحلاتهم الخطيرة">
+                  
+            <div><div>
+  
+  
+            <div data-blazy="" class="blazy blazy--field blazy--field-media-image blazy--field-media-image--block-3 blazy--view blazy--view--manual-related-articles blazy--view--manual-related-articles--block-3">
+
+
+
+                    <div class="media media--bundle--image media--blazy media--loading media--responsive media--image">
+      
+      
+      
+        <picture>
+                  <source media="(min-width: 2000px)" type="image/jpeg" data-srcset="/s3/files/styles/192x108_retina/s3/ap-images/2021/12/c786287c301eb262b35344f9cf7b98e9.jpg?itok=FkPIARDT 1x"/>
+              <source media="(min-width: 1280px)" type="image/jpeg" data-srcset="https://media.voltron.alhurra.com/Drupal/01live-106/styles/192x108/s3/ap-images/2021/12/c786287c301eb262b35344f9cf7b98e9.jpg?itok=z3JC4e69 1x, /s3/files/styles/192x108_retina/s3/ap-images/2021/12/c786287c301eb262b35344f9cf7b98e9.jpg?itok=FkPIARDT 2x"/>
+              <source media="(min-width: 1024px)" type="image/jpeg" data-srcset="https://media.voltron.alhurra.com/Drupal/01live-106/styles/192x108/s3/ap-images/2021/12/c786287c301eb262b35344f9cf7b98e9.jpg?itok=z3JC4e69 1x, /s3/files/styles/192x108_retina/s3/ap-images/2021/12/c786287c301eb262b35344f9cf7b98e9.jpg?itok=FkPIARDT 2x"/>
+              <source media="(min-width: 992px)" type="image/jpeg" data-srcset="https://media.voltron.alhurra.com/Drupal/01live-106/styles/192x108/s3/ap-images/2021/12/c786287c301eb262b35344f9cf7b98e9.jpg?itok=z3JC4e69 1x, /s3/files/styles/192x108_retina/s3/ap-images/2021/12/c786287c301eb262b35344f9cf7b98e9.jpg?itok=FkPIARDT 2x"/>
+              <source media="(min-width: 769px)" type="image/jpeg" data-srcset="/s3/files/styles/576x564/s3/ap-images/2021/12/c786287c301eb262b35344f9cf7b98e9.jpg?itok=0OgoFEeg 1x, https://media.voltron.alhurra.com/Drupal/01live-106/styles/576x564_retina/s3/ap-images/2021/12/c786287c301eb262b35344f9cf7b98e9.jpg?itok=iD2YVQfV 2x"/>
+              <source media="(min-width: 580px)" type="image/jpeg" data-srcset="/s3/files/styles/576x564/s3/ap-images/2021/12/c786287c301eb262b35344f9cf7b98e9.jpg?itok=0OgoFEeg 1x, https://media.voltron.alhurra.com/Drupal/01live-106/styles/576x564_retina/s3/ap-images/2021/12/c786287c301eb262b35344f9cf7b98e9.jpg?itok=iD2YVQfV 2x"/>
+              <source type="image/jpeg" data-srcset="/s3/files/styles/485x273_retina/s3/ap-images/2021/12/c786287c301eb262b35344f9cf7b98e9.jpg?itok=mErO94yc 1x"/>
+                  <img class="media__image media__element b-lazy b-responsive" loading="lazy" data-src="/s3/files/styles/485x273_retina/s3/ap-images/2021/12/c786287c301eb262b35344f9cf7b98e9.jpg?itok=mErO94yc" src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D&#039;http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg&#039; viewBox%3D&#039;0 0 970 546&#039;%2F%3E" alt="مهاجرون يعبرون جبال الألب" />
+
+  </picture>
+
+      
+                  
+      
+
+            
+      
+    </div>
+        
+  
+  
+
+
+</div>
+      
+</div>
+</div>
+      
+                        
+      </a>
+              <div class="story-card__label section-title--callout">
+          <a href="/arabic-and-international" hreflang="ar">عربي ودولي</a>
+        </div>
+          </div>
+  </div>
+  <div class="teaser__content teaser__content--small">
+    <a href="/arabic-and-international/2021/12/21/%D8%A3%D9%86%D9%82%D8%B0%D9%88%D8%A7-%D8%A3%D8%B1%D9%88%D8%A7%D8%AD%D8%A7-%D8%A3%D9%88%D8%B1%D9%88%D8%A8%D9%8A%D9%88%D9%86-%D9%8A%D8%B3%D8%A7%D8%B9%D8%AF%D9%88%D9%86-%D8%A7%D9%84%D9%85%D9%87%D8%A7%D8%AC%D8%B1%D9%8A%D9%86-%D9%81%D9%8A-%D8%B1%D8%AD%D9%84%D8%A7%D8%AA%D9%87%D9%85-%D8%A7%D9%84%D8%AE%D8%B7%D9%8A%D8%B1%D8%A9" title="&quot;أنقذوا أرواحا&quot;.. أوروبيون يساعدون المهاجرين في رحلاتهم الخطيرة">
+      <h3 class="teaser__title teaser__title--small"><span>&quot;أنقذوا أرواحا&quot;.. أوروبيون يساعدون المهاجرين في رحلاتهم الخطيرة</span>
+</h3>
+    </a>
+  </div>
+</div>
+
+    </div>
+      <div class="col-1 vertical-list__item vertical-list__item--list">
+      
+  
+
+
+<div class="teaser teaser--small">
+  <div class="teaser__img-wrap">
+    <div class="teaser__img teaser__img--small">
+      <a href="/sudan/2021/12/21/%D8%B1%D9%88%D9%8A%D8%AA%D8%B1%D8%B2-%D8%B1%D8%A6%D9%8A%D8%B3-%D8%A7%D9%84%D9%88%D8%B2%D8%B1%D8%A7%D8%A1-%D8%A7%D9%84%D8%B3%D9%88%D8%AF%D8%A7%D9%86%D9%8A-%D9%8A%D9%86%D9%88%D9%8A-%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%82%D8%A7%D9%84%D8%A9-%D9%85%D9%86%D8%B5%D8%A8%D9%87" title="رويترز: رئيس الوزراء السوداني ينوي الاستقالة من منصبه">
+                  
+            <div><div>
+  
+  
+            <div data-blazy="" class="blazy blazy--field blazy--field-media-image blazy--field-media-image--block-3 blazy--view blazy--view--manual-related-articles blazy--view--manual-related-articles--block-3">
+
+
+
+                    <div class="media media--bundle--image media--blazy media--loading media--responsive media--image">
+      
+      
+      
+        <picture>
+                  <source media="(min-width: 2000px)" type="image/jpeg" data-srcset="https://media.voltron.alhurra.com/Drupal/01live-106/styles/192x108_retina/s3/2021-12/000_9T42TR.jpg?itok=nnRgQA1o 1x"/>
+              <source media="(min-width: 1280px)" type="image/jpeg" data-srcset="https://media.voltron.alhurra.com/Drupal/01live-106/styles/192x108/s3/2021-12/000_9T42TR.jpg?itok=r2V4wa7F 1x, https://media.voltron.alhurra.com/Drupal/01live-106/styles/192x108_retina/s3/2021-12/000_9T42TR.jpg?itok=nnRgQA1o 2x"/>
+              <source media="(min-width: 1024px)" type="image/jpeg" data-srcset="https://media.voltron.alhurra.com/Drupal/01live-106/styles/192x108/s3/2021-12/000_9T42TR.jpg?itok=r2V4wa7F 1x, https://media.voltron.alhurra.com/Drupal/01live-106/styles/192x108_retina/s3/2021-12/000_9T42TR.jpg?itok=nnRgQA1o 2x"/>
+              <source media="(min-width: 992px)" type="image/jpeg" data-srcset="https://media.voltron.alhurra.com/Drupal/01live-106/styles/192x108/s3/2021-12/000_9T42TR.jpg?itok=r2V4wa7F 1x, https://media.voltron.alhurra.com/Drupal/01live-106/styles/192x108_retina/s3/2021-12/000_9T42TR.jpg?itok=nnRgQA1o 2x"/>
+              <source media="(min-width: 769px)" type="image/jpeg" data-srcset="/s3/files/styles/576x564/s3/2021-12/000_9T42TR.jpg?itok=UgfZHyP- 1x, https://media.voltron.alhurra.com/Drupal/01live-106/styles/576x564_retina/s3/2021-12/000_9T42TR.jpg?itok=lbN4J28w 2x"/>
+              <source media="(min-width: 580px)" type="image/jpeg" data-srcset="/s3/files/styles/576x564/s3/2021-12/000_9T42TR.jpg?itok=UgfZHyP- 1x, https://media.voltron.alhurra.com/Drupal/01live-106/styles/576x564_retina/s3/2021-12/000_9T42TR.jpg?itok=lbN4J28w 2x"/>
+              <source type="image/jpeg" data-srcset="/s3/files/styles/485x273_retina/s3/2021-12/000_9T42TR.jpg?itok=Y6LVd7ad 1x"/>
+                  <img class="media__image media__element b-lazy b-responsive" loading="lazy" data-src="/s3/files/styles/485x273_retina/s3/2021-12/000_9T42TR.jpg?itok=Y6LVd7ad" src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D&#039;http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg&#039; viewBox%3D&#039;0 0 970 546&#039;%2F%3E" alt="حمدوك رفض اتصالات لحمله على العدول عن نيته الاستقالة.. بحسب رويترز" />
+
+  </picture>
+
+      
+                  
+      
+
+            
+      
+    </div>
+        
+  
+  
+
+
+</div>
+      
+</div>
+</div>
+      
+                        
+      </a>
+              <div class="story-card__label section-title--callout">
+          <a href="/sudan" hreflang="ar">السودان</a>
+        </div>
+          </div>
+  </div>
+  <div class="teaser__content teaser__content--small">
+    <a href="/sudan/2021/12/21/%D8%B1%D9%88%D9%8A%D8%AA%D8%B1%D8%B2-%D8%B1%D8%A6%D9%8A%D8%B3-%D8%A7%D9%84%D9%88%D8%B2%D8%B1%D8%A7%D8%A1-%D8%A7%D9%84%D8%B3%D9%88%D8%AF%D8%A7%D9%86%D9%8A-%D9%8A%D9%86%D9%88%D9%8A-%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%82%D8%A7%D9%84%D8%A9-%D9%85%D9%86%D8%B5%D8%A8%D9%87" title="رويترز: رئيس الوزراء السوداني ينوي الاستقالة من منصبه">
+      <h3 class="teaser__title teaser__title--small"><span>رويترز: رئيس الوزراء السوداني ينوي الاستقالة من منصبه</span>
+</h3>
+    </a>
+  </div>
+</div>
+
+    </div>
+      <div class="col-1 vertical-list__item vertical-list__item--list">
+      
+  
+
+
+<div class="teaser teaser--small">
+  <div class="teaser__img-wrap">
+    <div class="teaser__img teaser__img--small">
+      <a href="/egypt/2021/12/21/%D9%88%D8%A7%D9%84%D8%AF%D8%A9-%D8%A7%D9%84%D9%86%D8%A7%D8%B4%D8%B7-%D8%A7%D9%84%D9%85%D8%B5%D8%B1%D9%8A-%D8%B9%D9%84%D8%A7%D8%A1-%D8%B9%D8%A8%D8%AF-%D8%A7%D9%84%D9%81%D8%AA%D8%A7%D8%AD-%D8%AA%D8%B9%D9%84%D9%82-%D9%84%D9%80-%D8%A7%D9%84%D8%AD%D8%B1%D8%A9-%D8%A7%D9%84%D8%AD%D9%83%D9%85-%D8%A8%D8%B3%D8%AC%D9%86%D9%87" title="والدة الناشط المصري علاء عبد الفتاح تعلق لـ &quot;الحرة&quot; على الحكم بسجنه">
+                  
+            <div><div>
+  
+  
+            <div data-blazy="" class="blazy blazy--field blazy--field-media-image blazy--field-media-image--teaser-small">
+
+
+
+                    <div class="media media--bundle--image media--blazy media--loading media--responsive media--image">
+      
+      
+      
+        <picture>
+                  <source media="(min-width: 2000px)" type="image/jpeg" data-srcset="/s3/files/styles/192x108_retina/s3/2021-12/1_36.JPG?itok=uIUrEl1M 1x"/>
+              <source media="(min-width: 1280px)" type="image/jpeg" data-srcset="https://media.voltron.alhurra.com/Drupal/01live-106/styles/192x108/s3/2021-12/1_36.JPG?itok=0fUrX6rY 1x, /s3/files/styles/192x108_retina/s3/2021-12/1_36.JPG?itok=uIUrEl1M 2x"/>
+              <source media="(min-width: 1024px)" type="image/jpeg" data-srcset="https://media.voltron.alhurra.com/Drupal/01live-106/styles/192x108/s3/2021-12/1_36.JPG?itok=0fUrX6rY 1x, /s3/files/styles/192x108_retina/s3/2021-12/1_36.JPG?itok=uIUrEl1M 2x"/>
+              <source media="(min-width: 992px)" type="image/jpeg" data-srcset="https://media.voltron.alhurra.com/Drupal/01live-106/styles/192x108/s3/2021-12/1_36.JPG?itok=0fUrX6rY 1x, /s3/files/styles/192x108_retina/s3/2021-12/1_36.JPG?itok=uIUrEl1M 2x"/>
+              <source media="(min-width: 769px)" type="image/jpeg" data-srcset="/s3/files/styles/576x564/s3/2021-12/1_36.JPG?itok=N5EmNan4 1x, https://media.voltron.alhurra.com/Drupal/01live-106/styles/576x564_retina/s3/2021-12/1_36.JPG?itok=9PfFie4W 2x"/>
+              <source media="(min-width: 580px)" type="image/jpeg" data-srcset="/s3/files/styles/576x564/s3/2021-12/1_36.JPG?itok=N5EmNan4 1x, https://media.voltron.alhurra.com/Drupal/01live-106/styles/576x564_retina/s3/2021-12/1_36.JPG?itok=9PfFie4W 2x"/>
+              <source type="image/jpeg" data-srcset="https://media.voltron.alhurra.com/Drupal/01live-106/styles/485x273_retina/s3/2021-12/1_36.JPG?itok=3gbw4MV- 1x"/>
+                  <img class="media__image media__element b-lazy b-responsive" loading="lazy" data-src="https://media.voltron.alhurra.com/Drupal/01live-106/styles/485x273_retina/s3/2021-12/1_36.JPG?itok=3gbw4MV-" src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D&#039;http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg&#039; viewBox%3D&#039;0 0 970 546&#039;%2F%3E" alt="محكمة مصرية قضت بسجن علاء عبد الفتاح خمس سنوات" />
+
+  </picture>
+
+      
+                  
+      
+
+            
+      
+    </div>
+        
+  
+  
+
+
+</div>
+      
+</div>
+</div>
+      
+                        
+      </a>
+              <div class="story-card__label section-title--callout">
+          <a href="/egypt" hreflang="ar">مصر</a>
+        </div>
+          </div>
+  </div>
+  <div class="teaser__content teaser__content--small">
+    <a href="/egypt/2021/12/21/%D9%88%D8%A7%D9%84%D8%AF%D8%A9-%D8%A7%D9%84%D9%86%D8%A7%D8%B4%D8%B7-%D8%A7%D9%84%D9%85%D8%B5%D8%B1%D9%8A-%D8%B9%D9%84%D8%A7%D8%A1-%D8%B9%D8%A8%D8%AF-%D8%A7%D9%84%D9%81%D8%AA%D8%A7%D8%AD-%D8%AA%D8%B9%D9%84%D9%82-%D9%84%D9%80-%D8%A7%D9%84%D8%AD%D8%B1%D8%A9-%D8%A7%D9%84%D8%AD%D9%83%D9%85-%D8%A8%D8%B3%D8%AC%D9%86%D9%87" title="والدة الناشط المصري علاء عبد الفتاح تعلق لـ &quot;الحرة&quot; على الحكم بسجنه">
+      <h3 class="teaser__title teaser__title--small"><span>والدة الناشط المصري علاء عبد الفتاح تعلق لـ &quot;الحرة&quot; على الحكم بسجنه</span>
+</h3>
+    </a>
+  </div>
+</div>
+
+    </div>
+  </div>
+</div>
+  </div>
+
+
+              </div>
+    </div>
+  </div>
+</div>
+
+
+  <div class="article__related-content">
+  <h2 class="section-title">  </h2>
+      <div class="views-element-container"><div class="js-view-dom-id-965ebe9f6f3f98ce229bff2c4028ff60b94ced73749e5c5a745973c0b8555dc2" data-progress-type="throbber">
+  
+  
+  
+
+  
+  
+  
+
+  <div data-drupal-views-infinite-scroll-content-wrapper class="views-infinite-scroll-content-wrapper clearfix">    <div>
+
+    
+
+
+  
+  
+        
+
+
+  <div class="">
+<div class="article" id="article-start-929121" data-articleurl="https://www.alhurra.com/libya/2021/12/21/%D8%A7%D8%B1%D8%AA%D8%A8%D8%A7%D9%83-%D8%A3%D9%85%D9%86%D9%8A-%D9%85%D8%B5%D9%8A%D8%B1-%D9%85%D8%AC%D9%87%D9%88%D9%84-%D9%8A%D9%86%D8%AA%D8%B8%D8%B1-%D8%A7%D9%86%D8%AA%D8%AE%D8%A7%D8%A8%D8%A7%D8%AA-%D9%84%D9%8A%D8%A8%D9%8A%D8%A7" data-articletitle="وسط ارتباك أمني.. &quot;مصير مجهول&quot; ينتظر انتخابات ليبيا">
+  <div class="article__social">
+    <div class="article__social-container">
+      
+
+  
+  
+<div class="social-widget">
+      <div id="share-facebook" class="fab social-widget__icon social-widget__icon--facebook share-facebook" data-url="https%3A%2F%2Fwww.alhurra.com%2Flibya%2F2021%2F12%2F21%2F%25D8%25A7%25D8%25B1%25D8%25AA%25D8%25A8%25D8%25A7%25D9%2583-%25D8%25A3%25D9%2585%25D9%2586%25D9%258A-%25D9%2585%25D8%25B5%25D9%258A%25D8%25B1-%25D9%2585%25D8%25AC%25D9%2587%25D9%2588%25D9%2584-%25D9%258A%25D9%2586%25D8%25AA%25D8%25B8%25D8%25B1-%25D8%25A7%25D9%2586%25D8%25AA%25D8%25AE%25D8%25A7%25D8%25A8%25D8%25A7%25D8%25AA-%25D9%2584%25D9%258A%25D8%25A8%25D9%258A%25D8%25A7">
+      <span class="fa-facebook-f"><span class="sr-only">Share on Facebook</span></span>
+    </div>
+        <div id="share-twitter" class="fab social-widget__icon social-widget__icon--twitter share-twitter" data-url="https%3A%2F%2Fwww.alhurra.com%2Flibya%2F2021%2F12%2F21%2F%25D8%25A7%25D8%25B1%25D8%25AA%25D8%25A8%25D8%25A7%25D9%2583-%25D8%25A3%25D9%2585%25D9%2586%25D9%258A-%25D9%2585%25D8%25B5%25D9%258A%25D8%25B1-%25D9%2585%25D8%25AC%25D9%2587%25D9%2588%25D9%2584-%25D9%258A%25D9%2586%25D8%25AA%25D8%25B8%25D8%25B1-%25D8%25A7%25D9%2586%25D8%25AA%25D8%25AE%25D8%25A7%25D8%25A8%25D8%25A7%25D8%25AA-%25D9%2584%25D9%258A%25D8%25A8%25D9%258A%25D8%25A7" data-title="%D9%88%D8%B3%D8%B7%20%D8%A7%D8%B1%D8%AA%D8%A8%D8%A7%D9%83%20%D8%A3%D9%85%D9%86%D9%8A..%20%22%D9%85%D8%B5%D9%8A%D8%B1%20%D9%85%D8%AC%D9%87%D9%88%D9%84%22%20%D9%8A%D9%86%D8%AA%D8%B8%D8%B1%20%D8%A7%D9%86%D8%AA%D8%AE%D8%A7%D8%A8%D8%A7%D8%AA%20%D9%84%D9%8A%D8%A8%D9%8A%D8%A7" >
+      <span class="fa-twitter"><span class="sr-only">Share on Twitter</span></span>
+    </div>
+            <div id="share-whatsapp" class="fab social-widget__icon social-widget__icon--whatsapp share-whatsapp" data-url="https%3A%2F%2Fwww.alhurra.com%2Flibya%2F2021%2F12%2F21%2F%25D8%25A7%25D8%25B1%25D8%25AA%25D8%25A8%25D8%25A7%25D9%2583-%25D8%25A3%25D9%2585%25D9%2586%25D9%258A-%25D9%2585%25D8%25B5%25D9%258A%25D8%25B1-%25D9%2585%25D8%25AC%25D9%2587%25D9%2588%25D9%2584-%25D9%258A%25D9%2586%25D8%25AA%25D8%25B8%25D8%25B1-%25D8%25A7%25D9%2586%25D8%25AA%25D8%25AE%25D8%25A7%25D8%25A8%25D8%25A7%25D8%25AA-%25D9%2584%25D9%258A%25D8%25A8%25D9%258A%25D8%25A7" data-title="%D9%88%D8%B3%D8%B7%20%D8%A7%D8%B1%D8%AA%D8%A8%D8%A7%D9%83%20%D8%A3%D9%85%D9%86%D9%8A..%20%22%D9%85%D8%B5%D9%8A%D8%B1%20%D9%85%D8%AC%D9%87%D9%88%D9%84%22%20%D9%8A%D9%86%D8%AA%D8%B8%D8%B1%20%D8%A7%D9%86%D8%AA%D8%AE%D8%A7%D8%A8%D8%A7%D8%AA%20%D9%84%D9%8A%D8%A8%D9%8A%D8%A7" >
+      <span class="fa-whatsapp"><span class="sr-only">Share on WhatsApp</span></span>
+    </div>
+            </div>
+    </div>
+  </div>
+  <div class="article__main">
+    <div class="page-header">
+  <span class="page-header__eyebrow eyebrow section-title--callout"><a href="/libya" hreflang="ar">ليبيا</a></span>
+  <h1 class="page-header__title"><span>وسط ارتباك أمني.. &quot;مصير مجهول&quot; ينتظر انتخابات ليبيا</span>
+</h1>
+
+  
+  <div class="caption page-header__meta ">
+          <div class="page-header__author-pictures">
+              </div>
+      <div class="page-header__meta-item">
+                  <span>مصطفى هاشم - واشنطن</span>              </div>
+    
+    <div class="page-header__meta-item">
+              21 ديسمبر 2021
+          </div>
+          <div class="page-header__meta-item">
+        
+      </div>
+      </div>
+</div>
+<div class="article__social article__social--mobile-only">
+      
+
+  
+  
+<div class="social-widget">
+      <div id="share-facebook-mobile" class="fab social-widget__icon social-widget__icon--facebook share-facebook" data-url="https%3A%2F%2Fwww.alhurra.com%2Flibya%2F2021%2F12%2F21%2F%25D8%25A7%25D8%25B1%25D8%25AA%25D8%25A8%25D8%25A7%25D9%2583-%25D8%25A3%25D9%2585%25D9%2586%25D9%258A-%25D9%2585%25D8%25B5%25D9%258A%25D8%25B1-%25D9%2585%25D8%25AC%25D9%2587%25D9%2588%25D9%2584-%25D9%258A%25D9%2586%25D8%25AA%25D8%25B8%25D8%25B1-%25D8%25A7%25D9%2586%25D8%25AA%25D8%25AE%25D8%25A7%25D8%25A8%25D8%25A7%25D8%25AA-%25D9%2584%25D9%258A%25D8%25A8%25D9%258A%25D8%25A7">
+      <span class="fa-facebook-f"><span class="sr-only">Share on Facebook</span></span>
+    </div>
+        <div id="share-twitter-mobile" class="fab social-widget__icon social-widget__icon--twitter share-twitter" data-url="https%3A%2F%2Fwww.alhurra.com%2Flibya%2F2021%2F12%2F21%2F%25D8%25A7%25D8%25B1%25D8%25AA%25D8%25A8%25D8%25A7%25D9%2583-%25D8%25A3%25D9%2585%25D9%2586%25D9%258A-%25D9%2585%25D8%25B5%25D9%258A%25D8%25B1-%25D9%2585%25D8%25AC%25D9%2587%25D9%2588%25D9%2584-%25D9%258A%25D9%2586%25D8%25AA%25D8%25B8%25D8%25B1-%25D8%25A7%25D9%2586%25D8%25AA%25D8%25AE%25D8%25A7%25D8%25A8%25D8%25A7%25D8%25AA-%25D9%2584%25D9%258A%25D8%25A8%25D9%258A%25D8%25A7" data-title="%D9%88%D8%B3%D8%B7%20%D8%A7%D8%B1%D8%AA%D8%A8%D8%A7%D9%83%20%D8%A3%D9%85%D9%86%D9%8A..%20%22%D9%85%D8%B5%D9%8A%D8%B1%20%D9%85%D8%AC%D9%87%D9%88%D9%84%22%20%D9%8A%D9%86%D8%AA%D8%B8%D8%B1%20%D8%A7%D9%86%D8%AA%D8%AE%D8%A7%D8%A8%D8%A7%D8%AA%20%D9%84%D9%8A%D8%A8%D9%8A%D8%A7" >
+      <span class="fa-twitter"><span class="sr-only">Share on Twitter</span></span>
+    </div>
+            <div id="share-whatsapp-mobile" class="fab social-widget__icon social-widget__icon--whatsapp share-whatsapp" data-url="https%3A%2F%2Fwww.alhurra.com%2Flibya%2F2021%2F12%2F21%2F%25D8%25A7%25D8%25B1%25D8%25AA%25D8%25A8%25D8%25A7%25D9%2583-%25D8%25A3%25D9%2585%25D9%2586%25D9%258A-%25D9%2585%25D8%25B5%25D9%258A%25D8%25B1-%25D9%2585%25D8%25AC%25D9%2587%25D9%2588%25D9%2584-%25D9%258A%25D9%2586%25D8%25AA%25D8%25B8%25D8%25B1-%25D8%25A7%25D9%2586%25D8%25AA%25D8%25AE%25D8%25A7%25D8%25A8%25D8%25A7%25D8%25AA-%25D9%2584%25D9%258A%25D8%25A8%25D9%258A%25D8%25A7" data-title="%D9%88%D8%B3%D8%B7%20%D8%A7%D8%B1%D8%AA%D8%A8%D8%A7%D9%83%20%D8%A3%D9%85%D9%86%D9%8A..%20%22%D9%85%D8%B5%D9%8A%D8%B1%20%D9%85%D8%AC%D9%87%D9%88%D9%84%22%20%D9%8A%D9%86%D8%AA%D8%B8%D8%B1%20%D8%A7%D9%86%D8%AA%D8%AE%D8%A7%D8%A8%D8%A7%D8%AA%20%D9%84%D9%8A%D8%A8%D9%8A%D8%A7" >
+      <span class="fa-whatsapp"><span class="sr-only">Share on WhatsApp</span></span>
+    </div>
+            </div>
+    </div>
+    <div class="grid">
+      <div class="col-2of3">
+        <div class="article__lightbox-available">
+                                            <div class="article__featured-media-wrapper image-wrapper">
+              <div class="article__featured-media"><figure class="media media--type-image media--view-mode-feature" itemscope itemtype="http://schema.org/ImageObject">
+      <a href="https://media.voltron.alhurra.com/Drupal/01live-106/styles/sourced/s3/2021-11/000_Nic6154462.jpg?itok=TLYCDqIm" data-size="1024x649">
+      <i class="fa fa-images article__feature-media-gallery"></i>
+      
+            <div>    <picture>
+                  <source srcset="https://media.voltron.alhurra.com/Drupal/01live-106/styles/817x459/s3/2021-11/000_Nic6154462.jpg?itok=xA1kxR-0 1x, https://media.voltron.alhurra.com/Drupal/01live-106/styles/817x459_retina/s3/2021-11/000_Nic6154462.jpg?itok=wSdWuIGZ 2x" media="(min-width: 2000px)" type="image/jpeg"/>
+              <source srcset="https://media.voltron.alhurra.com/Drupal/01live-106/styles/817x459/s3/2021-11/000_Nic6154462.jpg?itok=xA1kxR-0 1x, https://media.voltron.alhurra.com/Drupal/01live-106/styles/817x459_retina/s3/2021-11/000_Nic6154462.jpg?itok=wSdWuIGZ 2x" media="(min-width: 1280px)" type="image/jpeg"/>
+              <source srcset="https://media.voltron.alhurra.com/Drupal/01live-106/styles/710x340/s3/2021-11/000_Nic6154462.jpg?itok=RIykfRaS 1x, https://media.voltron.alhurra.com/Drupal/01live-106/styles/710x340_retina/s3/2021-11/000_Nic6154462.jpg?itok=jpMesMfh 2x" media="(min-width: 1024px)" type="image/jpeg"/>
+              <source srcset="/s3/files/styles/545x307/s3/2021-11/000_Nic6154462.jpg?itok=0r0Sv8aT 1x, https://media.voltron.alhurra.com/Drupal/01live-106/styles/576x564_retina/s3/2021-11/000_Nic6154462.jpg?itok=hoWIdoEv 2x" media="(min-width: 992px)" type="image/jpeg"/>
+              <source srcset="https://media.voltron.alhurra.com/Drupal/01live-106/styles/892x501/s3/2021-11/000_Nic6154462.jpg?itok=dOl4PTaV 1x, https://media.voltron.alhurra.com/Drupal/01live-106/styles/892x501_retina/s3/2021-11/000_Nic6154462.jpg?itok=WcEqptLp 2x" media="(min-width: 769px)" type="image/jpeg"/>
+              <source srcset="https://media.voltron.alhurra.com/Drupal/01live-106/styles/671x377/s3/2021-11/000_Nic6154462.jpg?itok=3fpPwf6B 1x, https://media.voltron.alhurra.com/Drupal/01live-106/styles/671x377_retina/s3/2021-11/000_Nic6154462.jpg?itok=uYIngxEd 2x" media="(min-width: 580px)" type="image/jpeg"/>
+              <source srcset="https://media.voltron.alhurra.com/Drupal/01live-106/styles/516x290/s3/2021-11/000_Nic6154462.jpg?itok=7bCCKsz8 1x" type="image/jpeg"/>
+                  <img src="https://media.voltron.alhurra.com/Drupal/01live-106/styles/892x501/s3/2021-11/000_Nic6154462.jpg?itok=dOl4PTaV" alt="ليبيا- انتخابات" />
+
+  </picture>
+
+</div>
+      
+      <figcaption>
+                          غموض يحيط بمصير العملية الانتخابية في البلاد
+                      </figcaption>
+    </a>
+  </figure>
+
+</div>
+            </div>
+                    <div class="article__content">
+            <div class="article__body">
+              
+            <div><p>رغم عدم الإعلان رسميا في ليبيا عن تأجيل إجراء الانتخابات التي كانت مقررة في الرابع والعشرين من ديسمبر الجاري، فقد بات الليبيون متأكدين من عدم انعقادها في ظل غموض يحيط بمصير العملية السياسية في البلاد، وفوضى محتملة وحالة من الارتباك الأمني. </p>
+
+<p>وقبل ثلاثة أيام من موعد الاستحقاق، يؤكد العديد من المسؤولين الليبيين استحالة إجراء الانتخابات في موعدها المقرر بسبب عدم وجود قائمة رسمية بالمرشحين، واستمرار الخلافات بين الأطراف السياسيين حول القاعدة القانونية للاقتراع.</p>
+
+<h4>حل اللجان الانتخابية</h4>
+
+<p>وتناقلت وسائل إعلام ليبية، الثلاثاء، قرارا صدر من رئيس المفوضية الوطنية العليا للانتخابات الليبية، عماد السايح، بحل كافة اللجان الانتخابية، وقد أكده لموقع "الحرة" عضو مجلس النواب، إبراهيم الدريسي، بإرساله لموقع "الحرة" صورة من القرار، لكنه رفض التعليق عليه ولا على أسباب تأجيل الانتخابات. </p>
+
+<figure role="group"><div data-embed-button="wysiwug_image" data-entity-embed-display="view_mode:media.large_embedded" data-entity-type="media" data-entity-uuid="d94041f4-9176-4e05-a0ab-93f32aed1add" data-langcode="ar" class="embedded-entity">
+
+<figure><div>
+    
+    
+            <div>    <picture><source srcset="https://media.voltron.alhurra.com/Drupal/01live-106/2021-12/WhatsApp%20Image%202021-12-21%20at%2011.16.22%20AM.jpeg 1x, https://media.voltron.alhurra.com/Drupal/01live-106/2021-12/WhatsApp%20Image%202021-12-21%20at%2011.16.22%20AM.jpeg 2x" media="(min-width: 2000px)" type="image/jpeg"></source><source srcset="https://media.voltron.alhurra.com/Drupal/01live-106/2021-12/WhatsApp%20Image%202021-12-21%20at%2011.16.22%20AM.jpeg 1x, https://media.voltron.alhurra.com/Drupal/01live-106/2021-12/WhatsApp%20Image%202021-12-21%20at%2011.16.22%20AM.jpeg 2x" media="(min-width: 1280px)" type="image/jpeg"></source><source srcset="https://media.voltron.alhurra.com/Drupal/01live-106/styles/banner_story_976x500/s3/2021-12/WhatsApp%20Image%202021-12-21%20at%2011.16.22%20AM.jpeg?itok=bC9o7QQf 1x, https://media.voltron.alhurra.com/Drupal/01live-106/styles/banner_story_976x500_retina/s3/2021-12/WhatsApp%20Image%202021-12-21%20at%2011.16.22%20AM.jpeg?itok=K_GvQqsU 2x" media="(min-width: 1024px)" type="image/jpeg"></source><source srcset="https://media.voltron.alhurra.com/Drupal/01live-106/styles/892x501/s3/2021-12/WhatsApp%20Image%202021-12-21%20at%2011.16.22%20AM.jpeg?itok=7rYTSMKY 1x, https://media.voltron.alhurra.com/Drupal/01live-106/styles/892x501_retina/s3/2021-12/WhatsApp%20Image%202021-12-21%20at%2011.16.22%20AM.jpeg?itok=dNzmFREM 2x" media="(min-width: 992px)" type="image/jpeg"></source><source srcset="https://media.voltron.alhurra.com/Drupal/01live-106/styles/720x405/s3/2021-12/WhatsApp%20Image%202021-12-21%20at%2011.16.22%20AM.jpeg?itok=p0mjq3a7 1x, https://media.voltron.alhurra.com/Drupal/01live-106/styles/720x405_retina/s3/2021-12/WhatsApp%20Image%202021-12-21%20at%2011.16.22%20AM.jpeg?itok=pC3BkmBc 2x" media="(min-width: 769px)" type="image/jpeg"></source><source srcset="https://media.voltron.alhurra.com/Drupal/01live-106/styles/576x564/s3/2021-12/WhatsApp%20Image%202021-12-21%20at%2011.16.22%20AM.jpeg?itok=UIvSmZ2S 1x, https://media.voltron.alhurra.com/Drupal/01live-106/styles/576x564_retina/s3/2021-12/WhatsApp%20Image%202021-12-21%20at%2011.16.22%20AM.jpeg?itok=JI6R1p7s 2x" media="(min-width: 580px)" type="image/jpeg"></source><source srcset="https://media.voltron.alhurra.com/Drupal/01live-106/styles/356x237_retina/s3/2021-12/WhatsApp%20Image%202021-12-21%20at%2011.16.22%20AM.jpeg?itok=j8c-lUCD 1x" type="image/jpeg"></source><img src="https://media.voltron.alhurra.com/Drupal/01live-106/styles/356x237_retina/s3/2021-12/WhatsApp%20Image%202021-12-21%20at%2011.16.22%20AM.jpeg?itok=j8c-lUCD" alt="مفوضية الانتخابات تحل لجانها" /></picture></div>
+      
+    </div>
+</figure></div>
+<figcaption>مفوضية الانتخابات تحل لجانها</figcaption></figure><p>ويقول المستشار السياسي السابق للمجلس الأعلى للدولة في ليبيا، أشرف الشح، لموقع "الحرة"، إن "من صمم هذه الانتخابات هو من أفشلها"، مشيرا إلى مجلس النواب الذي أصدر قانون الانتخابات. </p>
+
+<p>وقال الشح إن "إعادة المحكمة رئيس الحكومة الانتقالية الحالية، عبد الحميد الدبيبة، للسباق، وكذلك سيف الإسلام القذافي، أربك حسابات عقيلة صالح، رئيس المجلس والمرشح الرئاسي، بالإضافة إلى قائد قوات شرق ليبيا، خليفة حفتر، والمرشح الرئاسي أيضا، ما جعلهما يوقفان هذه العملية". </p>
+
+<p>وأضاف أنه "حسب المواعيد الانتخابية بعد انتهاء مرحلة الطعون في السادس من سبتمبر، كان من المفترض أن تعلن المفوضية القائمة النهائية للمرشحين في السابع من ديسمبر، لكن مجلس النواب وجماعته، بالإضافة إلى خليفة حفتر، طالبوا السايح الحضور فورا إلى طبرق وعدم إعلان القائمة النهائية بدعوى أن هناك خللا في عملية الطعون، وبالتالي لن تحصل الانتخابات. </p>
+
+<figure role="group"><div data-embed-button="wysiwug_image" data-entity-embed-display="view_mode:media.large_embedded" data-entity-type="media" data-entity-uuid="046f2c5d-ccde-472b-86a2-9a591c593905" data-langcode="ar" class="embedded-entity">
+
+<figure><div>
+    
+    
+            <div>    <picture><source srcset="https://media.voltron.alhurra.com/Drupal/01live-106/2021-12/001_9RH4JN_JPEG.jpg 1x, https://media.voltron.alhurra.com/Drupal/01live-106/2021-12/001_9RH4JN_JPEG.jpg 2x" media="(min-width: 2000px)" type="image/jpeg"></source><source srcset="https://media.voltron.alhurra.com/Drupal/01live-106/2021-12/001_9RH4JN_JPEG.jpg 1x, https://media.voltron.alhurra.com/Drupal/01live-106/2021-12/001_9RH4JN_JPEG.jpg 2x" media="(min-width: 1280px)" type="image/jpeg"></source><source srcset="https://media.voltron.alhurra.com/Drupal/01live-106/styles/banner_story_976x500/s3/2021-12/001_9RH4JN_JPEG.jpg?itok=bVV9lwV2 1x, https://media.voltron.alhurra.com/Drupal/01live-106/styles/banner_story_976x500_retina/s3/2021-12/001_9RH4JN_JPEG.jpg?itok=rqwwtFnf 2x" media="(min-width: 1024px)" type="image/jpeg"></source><source srcset="https://media.voltron.alhurra.com/Drupal/01live-106/styles/892x501/s3/2021-12/001_9RH4JN_JPEG.jpg?itok=g5xsUKKA 1x, https://media.voltron.alhurra.com/Drupal/01live-106/styles/892x501_retina/s3/2021-12/001_9RH4JN_JPEG.jpg?itok=hz5G5Fih 2x" media="(min-width: 992px)" type="image/jpeg"></source><source srcset="https://media.voltron.alhurra.com/Drupal/01live-106/styles/720x405/s3/2021-12/001_9RH4JN_JPEG.jpg?itok=W7VSBS-L 1x, https://media.voltron.alhurra.com/Drupal/01live-106/styles/720x405_retina/s3/2021-12/001_9RH4JN_JPEG.jpg?itok=2n5pVBew 2x" media="(min-width: 769px)" type="image/jpeg"></source><source srcset="https://media.voltron.alhurra.com/Drupal/01live-106/styles/576x564/s3/2021-12/001_9RH4JN_JPEG.jpg?itok=L9eIFr_b 1x, https://media.voltron.alhurra.com/Drupal/01live-106/styles/576x564_retina/s3/2021-12/001_9RH4JN_JPEG.jpg?itok=ExsMc_w1 2x" media="(min-width: 580px)" type="image/jpeg"></source><source srcset="https://media.voltron.alhurra.com/Drupal/01live-106/styles/356x237_retina/s3/2021-12/001_9RH4JN_JPEG.jpg?itok=Vh1lloiE 1x" type="image/jpeg"></source><img src="https://media.voltron.alhurra.com/Drupal/01live-106/styles/356x237_retina/s3/2021-12/001_9RH4JN_JPEG.jpg?itok=Vh1lloiE" alt="خريطة السيطرة في ليبيا" /></picture></div>
+      
+    </div>
+</figure></div>
+<figcaption>خريطة السيطرة في ليبيا</figcaption></figure><p>وأعلنت المفوضية، في السابع من الشهر الجاري، تأجيل نشر "القائمة النهائية لمرشحي الرئاسة"، بسبب متطلبات فنية وقضائية لم توضح طبيعتها.</p>
+
+<p>ودعا 17 مرشحا للانتخابات الرئاسية الليبية، الإثنين، المفوضية الوطنية العليا للانتخابات إلى تزويدهم بتفسيرات لأسباب عدم إجراء الاقتراع في الموعد المحدد، ما يشكل اعترافا ضمنيا بأن ليبيا لن تشهد انتخابات رئاسية في 24 ديسمبر.</p>
+
+<p>ورفض عضوا مجلس النواب، إبراهيم الدريسي، وأبو بكر بعيرة، الإجابة على سؤال لموقع"الحرة" حول ما إذا كان حفتر أو صالح طالبا السايح بعدم الإعلان عن القائمة النهائية للمرشحين أو تأجيل الانتخابات. </p>
+
+<p>وقال بعيرة: "ما يحدث في ليبيا الآن هو عبث سياسي. لا أريد الدخول في تفاصيله، فأرجو أن تعذرني عن الإجابة". </p>
+
+<p>وأضاف أن "العملية الانتخابية غير حقيقية، 98 شخص يترشحون للرئاسة، هذا يعني أن الشروط الموضوعة للترشح كانت غير منطقية، فضلا عن التجاذبات التي تحصل، وهذا كله يمثل نوعا من العبث السياسي الذي يقود ليبيا إلى المجهول". </p>
+
+<h4>اجتماع "المصالحة"</h4>
+
+<p>والثلاثاء، اجتمع عدد من المترشحين للرئاسة، بدعوة من المرشح الرئاسي خليفة حفتر، لتوحيد الجهود الوطنية"، بحسب المرشح الرئاسي فتحي باشاغا. </p>
+
+<p>وقال باشاغا الذي تلا بيان نتائج <a href="https://twitter.com/almasartvlibya/status/1473321699416367107">الاجتماع</a> وكان يقف خلفه حفتر، إنه تم الاتفاق على أن "المصلحة الوطنية الجامعة فوق كل اعتبار، وأن المصالحة الوطنية خيار وطني جامع لا تراجع عنه، واستمرار التواصل والتنسيق وتوسيع هذه المباردة للم الشمل واحترام إرادة الليبيين". </p>
+
+<blockquote class="twitter-tweet" data-lang="ar">
+<p dir="rtl" lang="ar" xml:lang="ar" xml:lang="ar">بيان <a href="https://twitter.com/hashtag/%D8%A8%D9%86%D8%BA%D8%A7%D8%B2%D9%8A?src=hash&amp;ref_src=twsrc%5Etfw">#بنغازي</a> للمترشحين للانتخابات الرئاسية<a href="https://twitter.com/hashtag/%D8%AA%D9%84%D9%81%D8%B2%D9%8A%D9%88%D9%86_%D8%A7%D9%84%D9%85%D8%B3%D8%A7%D8%B1?src=hash&amp;ref_src=twsrc%5Etfw">#تلفزيون_المسار</a> <a href="https://t.co/u6CrFwOYvA">pic.twitter.com/u6CrFwOYvA</a></p>
+— تلفزيون المسار (@almasartvlibya) <a href="https://twitter.com/almasartvlibya/status/1473321699416367107?ref_src=twsrc%5Etfw">December 21, 2021</a></blockquote>
+<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><p>وتحاول ليبيا منذ سقوط نظام معمر القذافي عام 2011 تجاوز عقد من الفوضى، اتسم في السنوات الأخيرة بوجود قوى متنافسة في شرق وغرب البلاد.</p>
+
+<p>وكان حوار سياسي بين الفرقاء الليبيين برعاية الأمم المتحدة، في جنيف في فبراير الماضي، أفضى إلى تشكيل حكومة وحدة وطنية انتقالية مهمتها التحضير للانتخابات الرئاسية والبرلمانية التي حددت على التوالي في ديسمبر ويناير.</p>
+
+<h4>مصير الحكومة</h4>
+
+<p>لكن هناك شكوكا تحوم حول مصير الحكومة الانتقالية الحالية، بعد تأجيل الانتخابات. وقال المرشح للانتخابات الرئاسية، عبدالمجيد سيف النصر، على هامش الاجتماع، إن "ولاية جميع الأجسام الحالية تنتهي بعد ثلاثة أيام"، وفقا لخارطة الطريق السياسية، مطالبا في الوقت ذاته باعتماد القائمة النهائية للمرشحين وبدء مرحلة الدعاية الانتخابية وتجميد عمل حكومة الوحدة الوطنية حتى تسليم السلطة، عبر انتخابات تجرى خلال فترة زمنية لا تتجاوز الشهر.</p>
+
+<p>وقال بعيرة لموقع "الحرة": "يتوقف الأمر على جلسة مجلس النواب يوم السابع والعشرين من ديسمبر الجاري".  </p>
+
+<p>وأوضح أن هناك احتمالين لنتيجة الجلسة، إما أن يتم التمديد لحكومة الدبيبة مثلما هي حكومة تصريف أعمال أو تكليف حكومة جديدة. </p>
+
+<p>ورجح بعيرة أن يقرر المجلس تكليف حكومة جديدة، لكنه قال إنه ليست هناك معلومات حتى الآن حول من سيرأسها ولا تشكيلها. </p>
+
+<h4>فوضى أمنية</h4>
+
+<p>في هذه الأثناء، انتشرت بشكل كثيف مجموعات مسلحة في عدة مناطق جنوب العاصمة الليبية الثلاثاء، ما أجبر جامعة طرابلس وبعض المدارس على الإغلاق، تزامنا مع توقع تأجيل الانتخابات الرئاسية.</p>
+
+<p>وأظهرت صور ومقاطع فيديو نشرت على مواقع التواصل الاجتماعي، سيارات مسلحة بمدافع رشاشة ودبابة في أحد شوارع حي الفرناج، بالقرب من الحرم الجامعي، فيما أغلقت متاريس رملية بعضها الآخر بحراسة مسلحين.</p>
+
+<p>ولم ترد أنباء عن اشتباكات أو تبادل لإطلاق النار في هذه المناطق، بحسب إفادات جمعتها فرانس برس.</p>
+
+<p>ولم تصدر السلطات الرسمية أي تعليق رسمي حول أسباب هذا الانتشار الكثيف وخلفياته، وهو الثاني للمجموعات المسلحة في العاصمة طرابلس في أقل من أسبوع.</p>
+
+<p>من جانبها، عبرت الأمم المتحدة عن قلقها من "التطورات الأمنية" في طرابلس، داعية جميع الجهات الفاعلة إلى "ضبط النفس".</p>
+
+<p>واعتبرت بعثة الأمم المتحدة في بيان صحفي أن هذه التحركات في طرابلس "تخلق حالة من التوتر، وتعزز خطر الصدامات التي قد تتحول إلى صراع". وأضافت: "يتعين حل أي خلافات بشأن المسائل السياسية أو العسكرية عبر الحوار، لاسيما في هذه المرحلة، حيث تمر البلاد فيها بعملية انتخابية صعبة ومعقدة يرجى منها أن تؤدي إلى انتقال سلمي".</p>
+
+<p>ودعت البعثة الأممية، جميع الجهات الفاعلة الليبية إلى "ممارسة ضبط النفس في هذه المرحلة الدقيقة، والعمل معا لتهيئة مناخ أمني وسياسي يحافظ على تقدم ليبيا ويمكِّن من إجراء انتخابات سلمية وعملية انتقال ناجحة".</p>
+
+<p>وأشارت في ختام بيانها إلى أن المستشارة الخاصة للأمين العام بشأن ليبيا، ستيفاني وليامز، تعمل حاليا مع الأطراف المعنية في البلاد في سبيل تحقيق هذا الهدف.</p>
+
+<p>وقال الشح لموقع "الحرة": إن "عدم إجراء الانتخابات وانهيار موعد 24 ديسمبر سيلحقه بعض الاضطرابات هنا وهناك لا ترتقي إلى مستوى الحرب ولكنها حالة فوضى مؤقتة بحكم أنه لم يعد يعرف من له شرعية ومن ليس له شرعية". </p>
+
+<p>وأضاف أن "المسار السياسي أُربك، ولاسترجاع الثقة فيه يحتاج إلى وقت وجهد وتوحيد الموقف الغربي بشكل خاص، والذي أرى أنه مهزوز وغير واضح".  </p>
+
+<p>وتابع: "كانت هناك تهديدات بفرض عقوبات على من سيعوق العملية الانتخابات، والآن لن تعقد الانتخابات ولن يعاقب أحد وستمر مرور الكرام، ما سيجلب مناعة ضد هذه التصريحات مستقبلا". </p>
+</div>
+      
+            </div>
+          </div>
+        </div>
+                  <div class="article__footer">
+                                                            
+<div class="author-card">
+  <div class="author-card__content">
+    <span class="author-card__eyebrow eyebrow">  </span>
+    <div class="author-card__name">
+      مصطفى هاشم - واشنطن
+    </div>
+  </div>
+</div>
+                                                                </div>
+        
+              </div>
+
+      <div class="col-3">
+              </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+  <!-- Background of PhotoSwipe.
+       It's a separate element as animating opacity is faster than rgba(). -->
+  <div class="pswp__bg"></div>
+
+  <!-- Slides wrapper with overflow:hidden. -->
+  <div class="pswp__scroll-wrap">
+
+    <!-- Container that holds slides.
+        PhotoSwipe keeps only 3 of them in the DOM to save memory.
+        Don't modify these 3 pswp__item elements, data is added later on. -->
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+
+    <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+    <div class="pswp__ui pswp__ui--hidden">
+
+      <div class="pswp__top-bar">
+
+        <!--  Controls are self-explanatory. Order can be changed. -->
+
+        <div class="pswp__counter"></div>
+
+        <button class="pswp__button pswp__button--close" title="إغلاق (Esc)"></button>
+
+        <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+        <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+        <!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
+        <!-- element will get class pswp__preloader--active when preloader is running -->
+        <div class="pswp__preloader">
+          <div class="pswp__preloader__icn">
+            <div class="pswp__preloader__cut">
+              <div class="pswp__preloader__donut"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+        <div class="pswp__share-tooltip"></div>
+      </div>
+
+      <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+      </button>
+
+      <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+      </button>
+
+      <div class="pswp__caption">
+        <div class="pswp__caption__center"></div>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+</div>
+</div>
+</div>
+
+    
+<ul class="js-pager__items pager" data-drupal-views-infinite-scroll-pager="automatic">
+  <li class="pager__item">
+    <a class="button" href="?_wrapper_format=html&amp;page=1" title="الذهاب إلى الصفحة التالية" rel="next">المزيد</a>
+  </li>
+</ul>
+
+
+  
+  
+
+  
+  
+</div>
+</div>
+
+  </div>
+  
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+  <!-- Background of PhotoSwipe.
+       It's a separate element as animating opacity is faster than rgba(). -->
+  <div class="pswp__bg"></div>
+
+  <!-- Slides wrapper with overflow:hidden. -->
+  <div class="pswp__scroll-wrap">
+
+    <!-- Container that holds slides.
+        PhotoSwipe keeps only 3 of them in the DOM to save memory.
+        Don't modify these 3 pswp__item elements, data is added later on. -->
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+
+    <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+    <div class="pswp__ui pswp__ui--hidden">
+
+      <div class="pswp__top-bar">
+
+        <!--  Controls are self-explanatory. Order can be changed. -->
+
+        <div class="pswp__counter"></div>
+
+        <button class="pswp__button pswp__button--close" title="إغلاق (Esc)"></button>
+
+        <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+        <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+        <!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
+        <!-- element will get class pswp__preloader--active when preloader is running -->
+        <div class="pswp__preloader">
+          <div class="pswp__preloader__icn">
+            <div class="pswp__preloader__cut">
+              <div class="pswp__preloader__donut"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+        <div class="pswp__share-tooltip"></div>
+      </div>
+
+      <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+      </button>
+
+      <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+      </button>
+
+      <div class="pswp__caption">
+        <div class="pswp__caption__center"></div>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+</div>
+
+  </div>
+
+  </div>
+
+  </main>
+
+      <div class="site-footer">
+  <div class="site-footer__container">
+    <div class="grid site-footer__upper">
+      <div class="col-2of3 site-footer__social--mobile">
+                                          <a class="site-footer__social-link" href="https://www.facebook.com/alhurra/"><span class="fab fa-facebook-square"></span></a>
+                          <a class="site-footer__social-link" href="https://twitter.com/alhurra"><span class="fab fa-twitter"></span></a>
+                          <a class="site-footer__social-link" href="https://www.youtube.com/user/alhurra"><span class="fab fa-youtube"></span></a>
+                          <a class="site-footer__social-link" href="https://www.instagram.com/alhurranews/"><span class="fab fa-instagram"></span></a>
+                <a class="site-footer__social-link" href="/rssfeeds"><span class="fa fa-rss"></span></a>
+      </div>
+      <form class="col-3 site-footer__search-form" action="/search" method="GET">
+        <label class="site-footer__search-label" for="footer-search">Search MBN News</label>
+        <input placeholder="بحث" class="input--large" id="footer-search" type="text" name="search_api_fulltext" />
+        <input type="hidden" name="type" value="1">
+        <input type="hidden" name="sort_by" value="publication_time">
+        <button class="button site-footer__search-button fa fa-search" type="submit"><span class="site-footer__search-label">بحث</span></button>
+      </form>
+      <div class="col-2of3 site-footer__social">
+                                          <a class="site-footer__social-link" href="https://www.facebook.com/alhurra/"><span class="fab fa-facebook-square"></span><span class="sr-only">Facebook</span></a>
+                          <a class="site-footer__social-link" href="https://twitter.com/alhurra"><span class="fab fa-twitter"></span><span class="sr-only">Twitter</span></a>
+                          <a class="site-footer__social-link" href="https://www.youtube.com/user/alhurra"><span class="fab fa-youtube"></span><span class="sr-only">YouTube</span></a>
+                          <a class="site-footer__social-link" href="https://www.instagram.com/alhurranews/"><span class="fab fa-instagram"></span><span class="sr-only">Instagram</span></a>
+                <a class="site-footer__social-link" href="/rssfeeds"><span class="fa fa-rss"></span><span class="sr-only">RSS</span></a>
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/712501","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"ar","currentQuery":{"_wrapper_format":"html"}},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"blazy\/load,core\/html5shiv,core\/picturefill,entity_embed\/caption,google_analytics\/google_analytics,onesignal\/global-scripts,paragraphs\/drupal.paragraphs.unpublished,poll\/drupal.poll-links,system\/base,views\/views.module,views_infinite_scroll\/views-infinite-scroll,voa\/alhurra,voa\/article-autoloading,voa\/bower,voa_breaking_news\/breaking-news,voa_media_schedule\/menu_block","theme":"voa","theme_token":null},"ajaxTrustedUrl":[],"google_analytics":{"trackOutbound":true,"trackMailto":true,"trackDownload":true,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"fBappId":"475940996616076","views":{"ajax_path":"\/views\/ajax","ajaxViews":{"views_dom_id:965ebe9f6f3f98ce229bff2c4028ff60b94ced73749e5c5a745973c0b8555dc2":{"view_name":"manual_related_articles","view_display_id":"block_3","view_args":"712501\/170886","view_path":"\/node\/712501","view_base_path":null,"view_dom_id":"965ebe9f6f3f98ce229bff2c4028ff60b94ced73749e5c5a745973c0b8555dc2","pager_element":0,"pager_query_method":"GET"}}},"blazy":{"loadInvisible":false,"offset":100,"saveViewportOffsetDelay":50},"blazyIo":{"enabled":false,"disconnect":false,"rootMargin":"0px","threshold":[0]},"0":{"voaMediaSchedule":{"liveText":"\u0645\u0628\u0627\u0634\u0631"}},"baseFilePath":"\/sites\/g\/files\/jroluf106\/files\/voa_breaking_news.html","user":{"uid":0,"permissionsHash":"beb7323963ff84cc271d13c72f7aa8e7acc98568a44b7c0d9eb7bc6b23e2f34c"}}</script>
+<script src="/sites/g/files/jroluf106/files/js/js_3GqzNs5qD2LkgiTxOOh1b3NaW6RSL4PIfmDKmmGT8-8.js"></script>
+<script src="/modules/custom/voa_breaking_news/js/voa-breaking-news.js?v=1.1"></script>
+
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","licenseKey":"4e6a073858","applicationID":"480718279,480718280","transactionName":"MwABMUdVXkcHBkwLXwpKIgZBXV9aSSFKF0AFCT8LWlBVaCUKVhZCCwkPAEdoflsCAG4LVRMmDAtBRl9YCgBKTw4SDAYS","queueTime":0,"applicationTime":940,"atts":"H0cCRw9PTUk=","errorBeacon":"bam-cell.nr-data.net","agent":""}</script></body>
+</html>
