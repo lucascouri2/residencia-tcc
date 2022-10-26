@@ -5,7 +5,7 @@ from nltk.corpus import stopwords
 from nltk.stem.porter import PorterStemmer
 from nltk.stem import WordNetLemmatizer
 import pandas as pd
-
+import re
 
 #Global variables
 other_punctuation = '—“”'  
@@ -20,6 +20,11 @@ def remove_punctuation(text):
     punctuation_free_doc = "".join([i for i in text if i not in string.punctuation+other_punctuation])
     return punctuation_free_doc
 
+def remove_url(text):
+    #text_without_url = text.replace(r'http\S+', '', regex=True).replace(r'www\S+', '', regex=True)
+    text_without_url = re.sub(r'http\S+', '', text)
+    text_without_url = re.sub(r'www\S+', '', text_without_url)
+    return text_without_url
 
 def remove_stopwords(list_words):
     filtered_words = [word for word in list_words if word not in stop_words]
@@ -36,16 +41,22 @@ def do_lemmatization(list_words):
     return lemm_text
 
 
-def pre_process(doc, basic_processing = False, no_stopwords = False, stemming = False, lema = False):
+
+def pre_process(doc, no_url = False, basic_processing = False, tokenization = False, no_stopwords = False, stemming = False, lema = False):
 
     final_doc = doc
 
+    if no_url == True:
+        final_doc = remove_url(doc)
+
     if basic_processing == True:
         
-        final_doc = remove_punctuation(doc)
+        final_doc = remove_punctuation(final_doc)
         final_doc = final_doc.lower()
 
-    final_doc = nltk.word_tokenize(final_doc)
+
+    if tokenization == True:
+        final_doc = nltk.word_tokenize(final_doc)
 
     if no_stopwords == True:
         final_doc = remove_stopwords(final_doc)    
