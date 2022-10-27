@@ -1,0 +1,1648 @@
+
+<!doctype html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1" />
+<link rel="preload" as="script" href="https://cdn.ampproject.org/v0.js">
+<style amp-custom>
+		/*! normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css */
+html{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}
+body{margin:0}
+article,aside,footer,header,nav,section{display:block}
+h1{font-size:2em;margin:.67em 0}
+figcaption,figure,main{display:block}
+figure{margin:1em 40px}
+hr{box-sizing:content-box;height:0;overflow:visible}
+pre{font-family:monospace,monospace;font-size:1em}
+a{background-color:transparent;-webkit-text-decoration-skip:objects}
+a:active,a:hover{outline-width:0}
+abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}
+b,strong{font-weight:inherit;font-weight:bolder}
+code,kbd,samp{font-family:monospace,monospace;font-size:1em}
+dfn{font-style:italic}
+mark{background-color:#ff0;color:#000}
+small{font-size:80%}
+sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}
+sub{bottom:-.25em}
+sup{top:-.5em}
+audio,video{display:inline-block}
+audio:not([controls]){display:none;height:0}
+img{border-style:none}
+svg:not(:root){overflow:hidden}
+button,input,optgroup,select,textarea{font-family:sans-serif;font-size:100%;line-height:1.15;margin:0}
+button,input{overflow:visible}
+button,select{text-transform:none}
+[type=reset],[type=submit],button,html [type=button]{-webkit-appearance:button}
+[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}
+[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}
+fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}
+legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}
+progress{display:inline-block;vertical-align:baseline}
+textarea{overflow:auto}
+[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}
+[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}
+[type=search]{-webkit-appearance:textfield;outline-offset:-2px}
+[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}
+::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}
+details,menu{display:block}
+summary{display:list-item}
+canvas{display:inline-block}
+html {box-sizing: border-box;}
+*, *:before, *:after {box-sizing: inherit;}
+/* ---------------------------- */
+
+/* UTILIDADES  =================== */
+
+
+
+
+.amp-sticky-ad-close-button {
+	display: none
+}
+
+
+
+.flex, .row-flex{display: flex; width: 100%; flex-wrap: wrap;}
+.row-flex{width: 100%;}
+.align-center{align-items: center;}
+.justify-sb{justify-content: space-between;}
+
+nav ul{list-style: none; padding: 0; margin: 0;}
+
+
+/* GENERICOS  =================== */
+
+a{color: #000;}
+p{margin:0 ;}
+
+body{
+   background: #fff;       
+   font-family: -apple-system, BlinkMacSystemFont, Segoe UI,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,Arial,sans-serif;
+   min-width: 315px;
+   overflow-x: hidden;
+   color: #4a4a4a;   
+}
+
+.article-content--cuerpo ol,
+.article-content--cuerpo ul{
+  margin-left: 0;
+  padding-left: 1.4rem;
+}
+
+.article-content--cuerpo ol li,
+.article-content--cuerpo ul li{
+  padding-left: .3rem;
+  margin-bottom: .2rem;
+
+}
+
+/* LAYOUT =================== */
+
+
+.container,
+.main-container{
+  width: 100%;
+  max-width: 1170px;
+  margin-right: auto;
+  margin-left: auto;    
+}
+
+.container,
+.article-content--cuerpo{padding-left: 1rem; padding-right: 1rem;}
+
+.row{display: flex; width: 100%;}
+
+.col--main{flex: 1 75%; }
+.col--sidebar{flex: 0 0 336px; width:336px }
+
+@media screen and (min-width:768px){
+  .col--main{margin-right: 30px;}
+}
+
+.content-modulo .container{padding-top: 0; padding-bottom: 0;}
+
+
+.article-content--cuerpo .container{padding: 0;}
+
+
+
+
+/* Control de margenes =============== */
+
+/* banners */
+.bnn{margin-bottom: 1rem;}
+
+/* modulos */
+
+section.mod {
+  margin-bottom: 1rem;
+}
+
+
+
+
+
+h2, h3, h4{margin-top: 0; margin-bottom: 1rem; line-height: 1em;}
+
+.article-content--cuerpo > h2{font-size: 1.27em; margin-bottom: 1rem; }/* varios body */
+.marker{background-color: yellow; font-weight: 400; color: #000;}
+
+
+/* BODY ===================== */
+
+.main-container{padding-top: 2rem;}
+
+@media screen and (max-width:768px){
+  .main-container{padding-top: calc(60px + 1.7rem);}
+}
+
+.main-article--header .antetitulo{font-size: 1em; font-weight: 400;}
+.main-article--header .titulo{font-size: 2em; line-height: 1em; margin:0; margin-bottom: .5rem;}
+.main-article--header .bajada{font-size: 1em;line-height: 1.3em; font-weight: 500; margin-bottom: 1rem;}
+
+
+
+/* foto principal */
+
+.main-photo {
+  padding: 0;
+  margin: 0;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.35);  
+}
+
+
+.main-photo .epigrafe{font-size: .7em; line-height: 1.1em; position: absolute; bottom: 0; left: 0; width: 100%; padding: .5rem; background-color: rgba(0, 0, 0, 0.308); color: #fff; display: flex; align-items: center; justify-content: flex-start; flex-wrap: wrap;}
+.main-photo .epigrafe:empty{display: none;}
+.main-photo .epigrafe strong,
+.main-photo .epigrafe .desc{margin-right: 5px;}
+
+
+
+
+
+
+
+/* Nota cuerpo */
+
+
+.main-article--body{display: flex; flex-direction: column;}
+
+.article-content--cuerpo  {
+  line-height: 1.5rem;
+  letter-spacing: normal;
+}
+
+.article-content--cuerpo > p,
+.article-content--cuerpo > ul,
+.tags-cloud {margin-bottom: 1rem;}
+.tags-cloud .row {flex-wrap: wrap;}
+
+
+
+/* autor*/
+.article-content--autor {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f3f3f3;
+    margin: 1rem 0; 
+    padding: .5rem 1rem;
+    margin-bottom: 1rem;
+  }
+
+  @media screen and (min-width:320px) and (max-width:370px) {
+    .article-content--autor{padding-left: .7rem; padding-right: .7rem;}
+    .el-autor .foto-autor{display: none;}
+  }
+
+.el-autor {display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-start;}
+
+.foto-autor{overflow: hidden; border-radius: 50%; filter: grayscale(); width: 25px; height: 25px; margin-right: 10px;}
+.article-content--autor a{color: inherit; text-decoration: none;}
+.nombre-autor{font-size: .7em;}
+.nombre-autor .post-author-name{text-decoration: underline; font-weight: 600; }
+
+/* fecha*/
+.article-content--fecha{font-size: .7em; margin-left: auto;}
+.article-content--fecha .seccion,
+.article-content--fecha .fecha-time {color: #000; font-weight: 600;}
+@media screen and (max-width:455px){
+  .article-content--fecha .escrito,
+  .article-content--fecha .el  {    display: none;  }
+  .article-content--fecha .seccion::after { 
+    content: "\0020\00B7\0020";
+    }
+}
+
+
+
+/* banner */
+
+.content-banner{text-align: center; justify-content: center; margin-bottom: 1rem; /*background-color: rgba(0, 0, 0, 0.15);*/} 
+.main-article--body .content-banner{margin-left: -1rem; margin-right: -1rem;} 
+
+.main-article--body  amp-ima-video.content-banner{
+  margin-left: 0;
+  margin-right: 0;
+}
+
+
+
+.tags-cloud + .content-banner{ margin-bottom: 0;}
+
+@media screen and (max-width:768px){
+  .main-article--header + .content-banner{margin-top: 0;}  
+}
+
+/* Modulo */
+
+.content-modulo{margin-bottom: 1rem;}
+/* Relacionadas  ~~~~~~~ */
+
+.titulo-section {color: #000; font-weight: 700; border-bottom: 2px solid #bbb; padding-bottom: .5rem; margin-bottom: .5rem; margin-top: 0;}
+
+.noticias_relacionadas_2{margin-bottom: 0;}
+.noticias_relacionadas_2 header {padding-bottom: 0;}
+
+.noticias_relacionadas_2.en-cuerpo {margin-bottom: 1rem;}
+
+
+
+ul.listado_relacionadas{padding: 0; margin: 0; list-style: none;}
+
+ul.listado_relacionadas li {
+  width: 100%;
+  padding: .5rem 0;
+}
+
+  ul.listado_relacionadas li a{
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  text-decoration: none;
+}
+ul.listado_relacionadas li a:hover{background-color: rgba(0, 0, 0, 0.02);}
+
+ul.listado_relacionadas .pic{flex: 1 150px;  max-width: 150px;}
+ul.listado_relacionadas .txt{flex: 1 ; padding-left: 1rem; margin-top: -1px; }
+ul.listado_relacionadas .antetitulo{font-style: normal; font-size: .8em; margin-top: 0; margin-bottom: .1rem; display: block; line-height: 1em;}
+ul.listado_relacionadas .title{margin: 0; font-weight: 700; font-size: 1.05em; line-height: 1.1em; }
+
+
+
+
+
+/* Foto en cuerpo ~~~~~~~ */
+
+.article-content--cuerpo  .imgcuerpo,
+.article-content--cuerpo figure.image,
+.article-content--cuerpo .image-align-left,
+.article-content--cuerpo .image-align-right
+{
+  width: 100%;
+  max-width: 100%;
+  padding: 0; 
+  margin: 0 auto;
+  max-width: 768px;
+  position: relative;
+
+}
+
+.article-content--cuerpo figure.image,
+.article-content--cuerpo .image-align-left,
+.article-content--cuerpo .image-align-right
+{
+  margin-bottom: 1rem;
+  /*border-bottom: solid 5px red;*/
+}
+
+/*
+.article-content--cuerpo .image-align-left,
+.article-content--cuerpo .image-align-right {
+    border-bottom: solid 5px fuchsia;
+}
+*/
+
+
+
+.article-content--cuerpo figure.image figcaption{
+  font-size: .7em; position: absolute; bottom: 0; left: 0; width: 100%; padding: .5rem; background-color: rgba(0, 0, 0, 0.308); color: #fff;line-height: 1em;
+}
+
+.article-content--cuerpo figure.image img{max-width: 768px;}
+
+
+
+
+.imgcuerpo {background-color: #000;}
+
+
+
+/* Quotes ~~~~~~~ */
+
+
+.article-content--cuerpo    blockquote{
+  background-color: #eff1f3; margin: 0; margin-bottom: 1rem; padding: 2rem; text-align: center; font-size: 1.2em; font-style: italic;
+  font-weight: 600; margin-left: auto; margin-right: auto;
+}
+
+.article-content--cuerpo    blockquote p{margin: 0;}
+
+
+/* Tags ~~~~~~~ */
+.tags-cloud{display: flex; flex-direction: column; flex-wrap: wrap; align-items: baseline;}
+.tags-cloud .label {
+  text-decoration: none;
+  font-size: .8em;
+  line-height: 1;
+  background-color: #f3f3f3;
+  padding: .5rem;
+  margin-right: .5rem;
+  margin-bottom: .5rem;
+  font-weight: 600;
+}
+
+.tags-cloud .label:hover{background-color: #eeecec;}
+
+
+
+
+
+
+/* SIDEBAR ===================== */
+
+.main-sidebar{  padding:2rem; width: 300px; position: relative;}
+.main-sidebar a{text-decoration: none; color: #000;}
+.main-sidebar nav a{padding: .3rem 0; display: flex;}
+.main-sidebar nav ul ul{padding-left: .5rem; font-size: .9em;}
+.main-sidebar nav > ul > li > a{font-weight: 500;}
+
+.close-sidebar{
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center; justify-content: center;
+}
+
+.path-close{width: 50px; }
+
+
+
+/* ~~~ solo movil ~~~~ */
+
+
+@media screen and (max-width:768px){
+
+    .main-article--header {padding-left: 1rem; padding-right: 1rem;}
+
+    .article-content--cuerpo  {padding-left: 1rem; padding-right: 1rem;}
+
+    .main-container > .row{flex-direction: column;}
+
+    ul.listado_relacionadas .txt{padding-left: .7rem;}
+    ul.listado_relacionadas .antetitulo{font-size: .65em; margin-top: 0;}
+
+
+    .article-content--autor{margin-bottom: 0;}
+
+}
+
+
+
+
+/* loader ............ */
+.lds-dual-ring{display:inline-block;width:80px;height:80px}
+.lds-dual-ring:after{content:" ";display:block;width:64px;height:64px;margin:8px;border-radius:50%;border:6px solid #fff;border-color:#fff transparent;animation:lds-dual-ring 1.2s linear infinite}
+@keyframes lds-dual-ring {
+0%{transform:rotate(0deg)}
+100%{transform:rotate(360deg)}
+}
+
+
+/* Widgets en cuerpo */
+
+.article-content--cuerpo .widget[class^="widget"]{  
+  max-width: 550px;
+  margin: auto;
+}
+.article-content--cuerpo .widget[class^="widget"]::after{
+  content: " ";  
+  display: block;
+  width: 25%;
+  height: 3px;
+  background-color: #ccc;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.article-content--cuerpo .widget-instagram iframe{
+  border: solid 1px #dbdbdb;
+}
+
+.margen-top1{
+  margin-bottom: 60px;
+  margin-top:20px
+}
+
+
+/* banner sticky sidebar 
+@media screen and (min-width:768px){
+  
+  .col--sidebar .content-banner:last-child{
+    position: sticky;
+    top: 10px;
+  }
+
+}
+*/
+
+
+
+/* nuevo componente del 25/08/2021 - Compatir iconos */
+
+
+.share-group {
+  font-size: 11px;
+  background-color: #f0f0f0 ;
+  display: flex;  
+  align-items: center;
+  justify-content: center;
+  position: sticky;
+  top: 77px;  
+  width: 100%;
+  z-index: 10;
+  padding:.7rem;
+  margin-bottom: 1rem;
+}
+.share-group .txt{font-style: italic;}
+.share-group amp-social-share{margin-left:10px; background-size: 16px; border-radius: 2px; width: 20px; height: 20px;}
+
+
+
+@media screen and (min-width:768px){
+
+  
+  .share-group {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    top: auto;
+    flex-wrap: wrap;
+    width: 150px;
+    border: solid 1px #dbdbdb;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    box-shadow: -3px 4px 3px -2px #00000024;
+}
+
+
+  .share-group .txt {width: 100%; text-align: center; margin-bottom: 7px;}
+  .share-group amp-social-share{width: 30px; height: 30px; background-size: 26px; margin: 0; margin-bottom: 5px;}
+  .share-group .share-icon--tw{margin-left: 7.5px; margin-right: 7.5px;}
+
+}
+
+
+/* botón siganos en google news */
+
+.btn-seguinos-gnews {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  line-height: 12px;
+  margin-bottom: 20px;
+  padding: 15px 0;
+  border-top: solid 1px #e5e5e5;
+  border-bottom: solid 1px #e5e5e5;
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.btn-seguinos-gnews::before {
+  content: "Sí­ganos en";
+  margin-right: 5px;
+}
+
+.btn-seguinos-gnews a {
+  background-image: url(/a/plantillas/imgs/google-news.svg);
+  background-size: 83%;
+  border: solid 1px #dadada;
+  width: 72px;
+  height: 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 2px;
+}
+
+.btn-seguinos-gnews a span {
+  display: none;
+}
+
+
+/* carousel */
+
+
+.main-article--body amp-carousel{margin-bottom: 1rem;}
+
+amp-carousel figure { margin: 0;}
+.theFigure {position: relative;   margin: 0;}
+.theCaption:empty {  display: none;}
+
+amp-carousel .theCaption,
+.galeriaSimple--foto .theCaption {
+  position        : absolute;
+  bottom          : 0;
+  left            : 0;
+  background-color: rgba(0, 0, 0, 0.801);
+  font-size       : .7em;
+  line-height     : 1.2em;
+  color           : rgba(255, 255, 255, 1);
+  padding         : 7px 12px;
+  width           : 100%;
+}
+
+
+.theCaption span{color: rgba(255, 255, 255, 0.6); margin-left: 5px;}
+.galeriaSimple--foto .theFigure{margin-bottom: 1rem;}
+
+
+
+
+/* archivos adjuntos */
+
+.archivos-adjuntos{margin-bottom: 1rem;}
+.archivos-adjuntos ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-left: -.5em;
+  margin-right: -.5em;
+}
+
+.archivos-adjuntos ul li {display: flex; margin: .5em; padding: 0;}
+
+.archivos-adjuntos ul li a {
+  font-size: .85em;
+  line-height: 1em;
+  text-decoration: none;
+  background-color: #eeecec;
+  /*padding: .45em .65em;*/
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  border: solid 1px #e1e0e0;
+}
+
+.archivos-adjuntos ul li a:hover {
+  border: solid 1px rgba(0, 0, 0, 0.075);
+  background-color: #efefef;
+  color: #000;
+}
+
+
+
+
+
+.archivos-adjuntos ul li a span.ico {
+  display: block;
+  width: 30px;
+  height: 100%;
+  background-color: #e1e1e1;
+  background-image: url(/a/plantillas/imgs/ico-gral/adjuntos-download-3.svg);
+  background-size: 16px;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-right: solid 1px #ffffff87;
+}
+
+
+
+.archivos-adjuntos ul li a span.txt {
+  padding: .7em;
+  box-shadow: inset 3px 0 5px -5px black;
+}
+
+.archivos-adjuntos ul li a[href*="pdf"] span.ico {
+  background-image: url(/a/plantillas/imgs/ico-gral/adjuntos-pdf.svg);
+  background-size: 19px;
+}
+
+
+.archivos-adjuntos ul li a:hover {
+  background-color: #f9f6e9;
+}
+
+.archivos-adjuntos ul li a[href*="pdf"]:hover {
+  background-color: #f9e9e9;
+}.mlist__section p,
+.mlist__section h5{margin:0;}
+
+.mlist__item{ display: flex; padding-bottom: .5rem; margin-bottom: .5rem; border-bottom: solid 1px #ccc;}
+.mlist__item a{text-decoration: none;}
+.mlist__photo-content{ flex-grow: 0; width: 80px; background-color: #ccc;}
+.mlist__txt-content{ flex-grow: 1; display: flex; }
+.mlist__txt-content a{padding-left: 1rem; display: flex;flex-direction: column; width: 100%;}
+
+
+.mlist__section .volanta {font-size: .7em; text-transform: uppercase;}
+.mlist__section .title{font-size: 1em; font-weight: 600;}
+
+/*footer de cada item */
+
+.mod .item-footer{font-size: .7em; margin-top: .5rem; line-height: 1em; display: flex; align-items: center; justify-content: flex-start; line-height: 1em;}
+
+
+
+/* modulo minuto a minuto */
+
+.mod.m-a-m .mlist__item{flex-direction: column;}
+
+/* RELACIONADAS  ============== */
+
+.nrel{width: 100%;}
+.nrel .link-url{text-decoration: none;}
+
+.nrel--group div[role="listitem"]{display: flex; flex-wrap: wrap; margin-left: 0; margin-right: 0;}
+
+.nrel--group div[role=listitem]{overflow: hidden; min-width: 100%;}
+
+.nrel--row {display: flex;flex-wrap: wrap;  margin-left: -15px;  margin-right: -15px;}
+
+.nrel--noticia {
+  flex: 0 33.333%;
+  width:  33.333%;
+  display: flex;
+  flex-direction: column;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-bottom: 30px;
+}
+.nrel--link-img{flex: 1 30%;}
+.nrel--txt{flex: 1 70%; background-color: #f5f5f5; padding:15px; padding-bottom: 1.2rem; display: flex; flex-direction: column;}
+.nrel--link-titulo{text-decoration: none;}
+.nrel--link-titulo:hover{text-decoration: underline;}
+.nrel--titulo-noticia{margin-bottom: auto; font-size: 1.2em; line-height: 1.1em;}
+
+.nrel--seccion-link{text-decoration: underline;}
+
+.nrel--article-footer{font-size: .85em; line-height: 1em; margin-top: .5rem;}
+
+.nrel--foto.imagen-m{display: none;}
+
+
+.btn-mas-noticias {
+  text-decoration: none;
+  font-size: 1em;
+  line-height: 1;
+  background-color: #f3f3f3;
+  padding: .5rem;
+  margin-right: .5rem;
+  font-weight: 600;
+  max-width: fit-content;
+  cursor: pointer;
+}
+
+
+.nrel-autor{display: flex; justify-content: space-between; align-items: center; text-transform: uppercase; font-size: .7em;}
+.nrel .amp-social-share-system{
+    background-color: #d3d3d3;
+    border-radius: 50%;
+    background-size:10px ;
+}
+.nrel .amp-social-share-system:hover{
+    background-color: #868686;
+}
+
+
+@media screen and (max-width:768px){
+  
+  .nrel{padding-left: 1rem; padding-right: 1rem;}
+  .nrel--foto.imagen-m{display: block;}
+  .nrel--foto.imagen-d{display: none;}
+  
+  .nrel--group div[role=listitem]{flex-direction: column;}
+
+  .nrel--noticia {
+    flex: 1 100%;
+    width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;    
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    flex-direction: row;
+    border-bottom: solid 1px #eee;
+  }
+
+  .nrel--row{
+    flex-direction: column;    
+    max-width: 100%;
+  }
+
+  .nrel--txt{padding:0 .8rem; padding-right: 0; background-color: transparent; display: flex; flex-direction: column;}
+  .nrel--titulo-noticia{font-size: 1em; line-height: 1.05em; margin-bottom: 0;}
+  
+   .nrel-autor{margin-top: 0;}
+   .nrel--article-footer{margin-top: auto; margin-bottom: 0; }
+
+   .nrel .amp-social-share-system{margin-top: -2px; margin-bottom: -2px; margin-right: 0;}
+
+   .nrel--row--bnn .content-banner{margin-top: calc(1rem - 10px) ;}
+
+   .nrel-autor{margin-top: .5rem; }
+
+   .nrel{padding-left: 0; padding-right: 0;}
+   .nrel .mod__titulo{margin-left: 1rem; margin-right: 1rem;}
+   .nrel--row{margin-left: 0; margin-right: 0;}
+
+}
+
+
+
+
+
+/* modulos ocultos */
+
+@media screen and (min-width:768px){
+  .nrel--noticia{margin-top: 30px;}
+  .nrel--noticia:nth-child(1),
+  .nrel--noticia:nth-child(2),
+  .nrel--noticia:nth-child(3)  { margin-bottom: 0; margin-top: 0;}
+  .nrel--noticia.hidden-d {margin: 0;}
+
+  .nrel--txt{border: 1px solid #e4e4e4;}
+}/* FOOTER ===================== */
+
+.site-footer{    
+    width: 100%;
+    background-color: #f8f9fa;   
+    text-align: center;   
+  }
+  .footer-zone-1{padding: 1rem; padding-bottom: 0;}
+  .footer-zone-2{padding: 1rem;}
+  .footer-zone-3{padding: 1rem;}
+  
+  .footer--main-logo-img{width: 150px; }
+  .footer--redes  {width: 100%; display: flex; justify-content: center;}
+  .footer--redes a {margin: 0 .5rem; opacity: .7;}
+  .footer--redes a:hover { opacity: 1;}
+  .footer--redes .ico {width: 20px; filter: invert(100); opacity: .7;}
+  
+  
+  .footer--nav{display: flex; flex-wrap: wrap; justify-content: center; font-size: .8em;}
+  
+  .footer--nav a{text-decoration: none; font-size: .9em; line-height: 1em; color: #000; text-transform: uppercase; padding:.7rem; }
+  
+  .site-footer small{font-size: .7em; line-height: 1en; display: flex; justify-content: center; align-items: center; flex-wrap: wrap;}
+  .site-footer small span.separa{border-left: solid 1px #818181; height: 5px; margin: 0 .5rem;}
+  
+  .footer-zone-3{ background-color: #eff1f3}
+  
+  .e80logo {width: 40px; height: 14px; filter: invert(1); margin-top: -5px; opacity: .6;}
+  .color-e80{fill: #575757 ;}
+  
+  @media screen and (max-width:768px){
+    .site-footer small {line-height: 1.5em;}
+    .site-footer small span.derechos{width: 100%;}
+    .site-footer small span.copy + .separa,
+    .site-footer small span.derechos + .separa  {display: none;}
+    .footer-link-e80 svg{margin-top: 5px;}
+  
+  }
+  
+  
+  
+  
+  
+  :root { --casi-negro: #454545; --casi-negro2: #030303; --azul: #000429; --celeste: #017daf; --celeste-2: #009ad7; } 
+
+
+
+/* HEADER herencia base ===================== */
+.main-header { background: var(--celeste-2); box-shadow: 0px 1px 4px 0px rgb(0 0 0 / 36%); position: relative; z-index: 999; color: #fff; width: 100%; } 
+.main-logo-link { width:200px } 
+.main-logo-img { width:200px } 
+.main-header a { text-decoration:none; color:#000 } 
+
+.header-toggle-button { width:30px; height:24px } 
+
+.main-header--center-bar { display: flex; justify-content: space-between; align-content: center; } 
+
+
+.main-header--center-bar > .item { align-items: center; font-weight: 400; flex: 0 0 33.33%; } 
+
+.main-header--center-bar > .item.main-logo { margin-right: auto; margin-left: auto; padding-top: 7px; padding-bottom: 7px; display: flex; justify-content: center; align-items: center; } 
+ 
+
+.main-header--center-bar > .item.redes { display: flex; align-items: center; justify-content: flex-end; } 
+
+
+.main-header--center-bar > .item.toggle .header-toggle-button { height: 100%; width: 75px; border-radius: 0; border-right: solid 1px rgb(255 255 255 / 18%); box-shadow: inset -1px 0 0 0px rgb(0 0 0 / 18%); display: flex; flex-direction: column; justify-content: center; align-items: center; cursor: pointer; } 
+
+.main-header--center-bar > .item.toggle .header-toggle-button svg { width: 30px; fill: #fff; } 
+
+ .top-bar--redes { font-size: 2em; text-shadow: 2px 2px 2px rgb(0 0 0 / 4%); display: flex; align-items: center; justify-content: center; height: 100%; border-left: solid 1px rgb(0 0 0 / 18%); box-shadow: inset 1px 0 0 0px rgb(255 255 255 / 22%); padding-left: 10px; padding-right: 0; } 
+
+
+
+body, .main-header { position: relative; } 
+.header-zone-2 { position: sticky; top:0 } 
+
+
+/* dropdown ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+.nav-desktop li.dropdown { position:relative } 
+.nav-desktop ul.dropdown-menu { display:none; position:absolute; top:100%; left:0; width:100%; min-width:100%; background-color:#f5f4f4; border-top:solid 1px #e6e6e6; box-shadow:0 3px 5px -6px rgba(0,0,0,0.75) inset,0 5px 3px -3px #000; width: max-content; list-style: none; padding-left: 0; } 
+
+.nav-desktop ul.nav .dropdown-menu li { justify-content:flex-start } 
+.nav-desktop ul.nav .dropdown-menu li a { font-weight:400; width:100%; font-size:.9em; padding: 7.5px 15px; } 
+.nav-desktop ul.nav li.dropdown:hover { background-color:rgba(0,0,0,0.035) } 
+.nav-desktop ul.nav li.dropdown:hover > a { background-color:transparent } 
+.nav-desktop ul.nav li.dropdown:hover ul.dropdown-menu { display:block } 
+.ico-down { width:12px; margin-left:5px } 
+
+
+
+/* FIN HEADER BASE ===================== */
+
+
+/* HEADER ================================== */
+
+
+
+
+.main-logo-link { max-width: 210px; } 
+
+@media screen and (min-width: 768px){
+ .main-header--center-bar .container { padding-left: 0; padding-right: 0; } 
+ }
+
+@media screen and (max-width: 768px){
+ .main-container { padding-top: calc(60px + 1rem); } 
+ .main-header { position: fixed; } 
+ .main-header--center-bar { padding: 0 1rem; } 
+ .main-logo-img, .main-logo-link { width: 135px; } 
+ .header-social-share { margin-right: 1rem; min-width: 20px; padding: 1rem; display: flex; justify-content: center; align-items: center; } 
+ .amp-social-share-system { background-color: transparent; } 
+ .main-header--center-bar > .item.redes { display: none; } 
+ .main-header--center-bar > .item.main-logo { order: 1; margin-left: 0; } 
+ .main-header--center-bar > .header-social-share { order: 2; margin-right: 0; } 
+ .main-header--center-bar > .item.toggle { order: 3; border: 0; flex: 0; width: 40px; margin: 0; } 
+ .main-header--center-bar > .item.toggle .header-toggle-button { box-shadow: none; margin-left: auto; margin-right: 0; border-right: 0; padding: 0; width: inherit; } 
+ }
+
+
+
+
+
+/* top bar redes */
+.top-bar--redes { display: flex; align-items: center; justify-content: flex-end; } 
+.top-bar--redes a { margin-bottom: 0; vertical-align: middle; display: flex; align-items: center; justify-content: center; width: 45px; height: 45px; padding: 0; color: #fff; margin: 0 10px; } 
+
+.top-bar--redes a:hover { opacity: 1; box-shadow: none; } 
+
+.top-bar--redes a svg { width: 24px; fill: #fff; } 
+.top-bar--redes a.gn svg { width: 28px; } 
+
+#button-abre-buscador { background-color: transparent; border: none; box-shadow: inset 1px 0 0 0 rgb(255 255 255 / 22%); border-left: 1px solid rgb(0 0 0/18%); height: 100%; padding-left: 20px; padding-right: 20px; cursor: pointer; } 
+#button-abre-buscador svg { width: 20px; fill: #fff; color: #fff; } 
+
+
+/* buscador */
+
+.lbx--buscador { background-color:rgba(0,0,0,0.8); display:flex; align-items:center; justify-content:center } 
+.lbx-buscador-form { display:flex; position:absolute; top:50%; left:50%; transform:translateX(-50%) translateY(-50%) } 
+.lbx-buscador-form input,.lbx-buscador-form button { border:none; border-radius:0 } 
+.lbx-buscador-form .buscador--input { font-size:2rem; padding-left:2rem } 
+.lbx-buscador-form .buscador--submit { display:flex; align-items:center; justify-content:center; padding:2rem; cursor:pointer; background-color:var(--celeste) } 
+.lbx-buscador-form .buscador--submit img { filter:invert(1) } 
+.lbx--buscador-cerrar { background-color:transparent; border:none; cursor:pointer; position:absolute; right:20px; top:20px } 
+.lbx--buscador-cerrar svg { width:30px; color:var(--celeste) } 
+
+
+/*MENU Desktop*/
+.header-zone-2 { border-top: solid 1px rgba(0, 0, 0, 0.2); box-shadow: inset 0 1px 0 0 rgb(255 255 255 / 15%); justify-content: center; align-items: center; } 
+
+.header-zone-2 .nav-desktop .nav { display: flex; justify-content: center; padding-left: 0; padding-right: 0; } 
+
+.header-zone-2 .nav.ul-main, 
+.header-zone-2 .navbar-nav > li,
+.header-zone-2 .nav.ul-main a { display: flex; flex-wrap: wrap; line-height: 1em; align-items: center; } 
+
+
+
+@media only screen and (min-width: 992px){
+ .nav-desktop .nav>li>a { font-weight:700; text-transform:uppercase; position:relative; font-size:13px; line-height:1em; padding:10px 4px; color:#fff } 
+ .nav-desktop .ul-main { margin:0; padding-top:0 } 
+ .header-zone-2 .ico-movil-drop { margin-right:5px } 
+ .header-zone-2 .ico-movil-drop .caret { transform:none; display:inline-block; width:0; height:0; margin-left:2px; vertical-align:middle; border-top:4px dashed; border-top:4px solid\9; border-right:4px solid transparent; border-left:4px solid transparent; color:#fff } 
+ }
+/* article ============== */
+
+.article-content--autor a,
+.article-content--cuerpo a { color: #000; } 
+.article-content--cuerpo a:hover { background-color: var(--celeste); } 
+.article-content--fecha .fecha-time, .article-content--fecha .seccion { color: var(--azul); } 
+
+.main-article--header .antetitulo { font-size: 1em; font-weight: 500; color: var(--celeste); } 
+.main-article--header .titulo { color: var(--azul); font-size: 2.5em; } 
+.main-article--header .bajada { font-size: 1.2em; } 
+
+.article-content--cuerpo blockquote { font-family: Georgia,times new roman,Times,serif; font-style: italic; font-weight: 400; font-size: 1.4em; position: relative; background-color: #f5f5f5; padding: 3rem 4rem; margin: 2rem 0; text-shadow: 2px 2px 2px rgb(150 150 150 / 30%); text-align: center; } 
+
+
+
+.article-content--cuerpo blockquote:before,
+.article-content--cuerpo blockquote:after { position: absolute; background-repeat: no-repeat; background-size: cover; width: 30px; height: 30px; content: ""; display: block; opacity: .1; } 
+
+.article-content--cuerpo blockquote:before { background-image: url(/a/plantillas/imgs/quotation-left.svg); left: 20px; top: 20px; } 
+
+.article-content--cuerpo blockquote:after { background-image: url(/a/plantillas/imgs/quotation-right.svg); right: 20px; bottom: 20px; } 
+
+
+
+
+
+.tags-cloud .label { background-color: var(--celeste); color: #fff; font-weight: 400; } 
+.tags-cloud .label:hover { background-color:var(--celeste-2); color: #fff; } 
+
+@media screen and (max-width:768px){
+ .main-article--header .titulo { font-size: 1.9em; } 
+ }
+
+
+.nrel-autor { color: var(--celeste); } 
+
+/* MODULOS ============== */
+
+.mod__titulo { text-transform: uppercase; position: relative; padding-top: 1rem; } 
+.mod__titulo::after { content: ""; display: block; position: absolute; left: 0; top: 0; width: 2rem; height: 3px; background-color: var(--celeste); } 
+
+/* SIDEBAR ============== */
+.main-sidebar { background-color: #000; font-size: .85em; } 
+.main-sidebar a { color: #fff; } 
+.main-sidebar .close-sidebar { top: 5px; right: 5px; } 
+.main-sidebar .close-sidebar svg { fill:var(--celeste); } 
+.main-sidebar .navar ul { display: flex; flex-direction: column; } 
+.main-sidebar .nav > li { width: 100%; } 
+.main-sidebar .nav > li > a { color: #fff; font-weight: 400; text-transform: uppercase; padding: .7rem 0; border-bottom: solid 1px rgba(255, 255, 255, 0.2); display: flex; } 
+
+.main-sidebar nav ul ul { padding-left: 0; } 
+.mod .item-footer a { color: var(--celeste); margin-right: 10px; } 
+.mlist__section .volanta { color: var(--celeste); } 
+
+/* FOOTER ============== */
+
+.main-footer { background-color:#000; color: #fff; padding: 1rem 0; } 
+.main-footer a { color: #fff; text-decoration: none; } 
+.main-footer ul { list-style: none; padding-left: 0; } 
+.footer__top h4 { color:#fff; font-weight:600; font-size:17px; line-height:1em; text-transform:uppercase; padding-left:38px; position:relative; padding-top:10px; padding-bottom:10px } 
+.footer__top h4:before { content:""; width:17px; height:35px; background-color:#009ad7; left:0; top:0; position:absolute; display:block } 
+.footer__whatsaap p,.footer__suscribe p { font-size:15px; line-height:19px; font-weight:400; } 
+.footer__whatsaap a,.footer__suscribe a { font-size:13px; font-weight:600; color:#fff; background-color:#009ad7; height:40px; width:181px; text-align:center; margin:25px auto 0; text-transform:uppercase; display:flex; justify-content:center; align-items:center; transition:all .2s; -ms-transition:all .2s; -moz-transition:all .2s; -webkit-transition:all .2s } 
+.footer__logo { margin-bottom:30px; display:block } 
+
+/* footer links */
+.footer--main-row { display:flex; justify-content:flex-start } 
+.footer__links { display:flex; flex-wrap:wrap } 
+.footer--main-row .footer__links { width:100%; padding-left:35px; padding-top:24px } 
+.footer__links a:hover { text-decoration:underline } 
+.footer__bottom .row { flex-direction:column; align-items:center; text-align:center } 
+.footer__bottom .footer__links { justify-content:center } 
+.footer__bottom .footer__links a { margin:0 .5rem; font-size:.85em } 
+.footer-logos { display:flex; justify-content:center; margin-bottom:1rem } 
+.footer-logos a { padding:10px } 
+.footer__bottom p { color:#6a6a6a; font-size:.9em; line-height:1em; margin:0 } 
+.footer__creator { position:absolute; top:30px; right:0 } 
+.footer__creator img { opacity:.7; filter:grayscale(100) } 
+.footer__suscribe p,.footer__whatsaap p { padding-left:1rem; padding-right:1rem; position: relative; } 
+.footer__whatsaap a:hover,.footer__suscribe a:hover { background-color:#fff; color:#000; text-decoration:none } 
+
+
+@media only screen and (max-width: 992px){
+ .footer--main-row { flex-direction:column } 
+ .footer__suscribe a,.footer__whatsaap a { margin-left:1rem; margin-right:auto; background-color:transparent; border:solid 1px #fff; padding-bottom:3px } 
+ .footer__whatsaap,.footer__suscribe { padding-bottom:53px } 
+ .footer__suscribe p:before { content:""; display:block; width:138px; height:88px; display:block; background-image:url(/a/plantillas/p/tribuna-del-yaqui/imgs/icono__footer--suscribete.png); background-repeat:no-repeat; background-size:contain; position:absolute; right:-81px; top:6px } 
+ .footer__whatsaap p:before { content:""; width:103px; height:110px; display:block; background-repeat:no-repeat; background-size:contain; position:absolute; right:-7px; top:20px; margin-top:0; background-image:url(/a/plantillas/p/tribuna-del-yaqui/imgs/icono__footer--whatsapp.svg) } 
+ .footer__whatsaap p span { font-weight:500; color:var(--celeste); margin-bottom:3px; display:block } 
+ .footer__bottom { border-top:1px solid #333 } 
+ .footer__bottom p { font-size:.9em; line-height:1.2em; margin-bottom:1rem; color:#fff } 
+ .footer__creator { position:relative; top:auto; right:auto } 
+ .footer__bottom .footer__links li,.footer__bottom .footer__links li a { display:flex; align-items:center } 
+ .footer__bottom .footer__links li a { height:48px } 
+ }
+
+
+
+
+
+
+@media only screen and (min-width: 992px){
+ .main-footer { padding: 2rem; } 
+ .footer__bottom .footer__links { margin-top:24px } 
+ .footer--main-row .footer__links li { width:33%; position:relative; max-width:250px; margin-bottom:7px; font-size:14px } 
+ .footer--main-row .col-links { width:50% } 
+ .footer--main-row .col-links-otros { width:25% } 
+ .footer__whatsaap p,.footer__suscribe p { text-align: center; } 
+ .footer__suscribe p:before { content:""; display:inline-block; width:138px; height:88px; display:block; background-image:url(/a/plantillas/p/tribuna-del-yaqui/imgs/icono__footer--suscribete.png); background-repeat:no-repeat; margin:0 auto 46px } 
+ .footer__bottom .row { border-top:1px solid #333; position:relative } 
+ .footer__whatsaap,.footer__suscribe { padding-bottom:53px; border-left:1px solid #333 } 
+ .footer__whatsaap h4,.footer__suscribe h4 { margin-bottom:40px } 
+ .footer__whatsaap p:before { content:""; width:109px; height:99px; display:block; background-image:url(/a/plantillas/p/tribuna-del-yaqui/imgs/icono__footer--whatsapp.svg); background-repeat:no-repeat; margin:0 auto 12px; background-size:cover; margin-top:-40px } 
+ }
+
+
+@media screen and (max-width:768px){
+ .share-group { top: 58px; border-top: solid 1px #dedede; } 
+ }
+
+
+ /* arreglos del 02/06/22 */
+
+ul.listado_relacionadas .antetitulo { color: var(--celeste); } 
+ul.listado_relacionadas li a { border-radius: 2px; transition: box-shadow .1s ease-in-out, background-color .1s ease-in-out;}
+ul.listado_relacionadas li a:hover { background-color: var(--celeste); color: #fff; box-shadow: 0 0 0 10px var(--celeste); }
+ul.listado_relacionadas li a:hover .antetitulo { color: #fff; } 
+		@media screen and (min-width:768px){
+		.hidden-d,
+		* .hidden-d,
+		*.hidden-d,
+		.hidden-d > * {display: none;}
+		}
+
+		@media screen and (max-width:768px){
+		.hidden-m,
+		* .hidden-m,
+		*.hidden-m,
+		.hidden-m > *  {display: none;}
+		}
+		
+
+	</style>
+<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+<script async src="https://cdn.ampproject.org/v0.js"></script>
+<script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
+<script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+<script async custom-element="amp-sticky-ad" src="https://cdn.ampproject.org/v0/amp-sticky-ad-1.0.js"></script>
+<script async custom-element="amp-lightbox-gallery" src="https://cdn.ampproject.org/v0/amp-lightbox-gallery-0.1.js"></script>
+<script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
+<script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+<script async custom-element="amp-facebook" src="https://cdn.ampproject.org/v0/amp-facebook-0.1.js"></script>
+<script async custom-element="amp-twitter" src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"></script>
+<script async custom-element="amp-instagram" src="https://cdn.ampproject.org/v0/amp-instagram-0.1.js"></script>
+<script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+<script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+<script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
+<script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
+<script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
+<script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
+<script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>
+<script async custom-element="amp-timeago" src="https://cdn.ampproject.org/v0/amp-timeago-0.1.js"></script>
+<title>"Qué viva el amor": Tania Ruiz muestra lo que siente por Peña en Instagram | TRIBUNA</title>
+<meta name="description" content="La modelo potosina, Tania Ruiz, sorprendi&oacute; a sus seguidores de Instagram con un mensaje en el que&nbsp;muestra lo que siente por Pe&ntilde;a Nieto&nbsp;
+" />
+<link rel="canonical" href="https://www.tribuna.com.mx/espectaculos/2020/3/1/que-viva-el-amor-tania-ruiz-muestra-lo-que-siente-por-pena-en-instagram-14.html" />
+<meta property="og:site_name" content="TRIBUNA" />
+<meta property="og:image" content="https://www.tribuna.com.mx/u/fotografias/m/2020/3/1/f1280x720-100637_232312_5050.jpg" />
+<meta property="og:image:width" content="1280" />
+<meta property="og:image:height" content="720" />
+<meta property="fb:app_id" content="177122726333124">
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.tribuna.com.mx/espectaculos/2020/3/1/que-viva-el-amor-tania-ruiz-muestra-lo-que-siente-por-pena-en-instagram-14.html" />
+<meta property="og:title" content="" Qué viva el amor": Tania Ruiz muestra lo que siente por Peña en Instagram" />
+<meta property="og:description" content="La modelo potosina, Tania Ruiz, sorprendi&oacute; a sus seguidores de Instagram con un mensaje en el que&nbsp;muestra lo que siente por Pe&ntilde;a Nieto&nbsp;
+" />
+<meta property="og:locale" content="es_LA" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="distribution" content="global" />
+<meta name="rating" content="general" />
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@TribunaSonora">
+<meta name="twitter:url" content="https://twitter.com/TribunaSonora" />
+<meta name="twitter:title" content="" Qué viva el amor": Tania Ruiz muestra lo que siente por Peña en Instagram">
+<meta name="twitter:image" content="https://www.tribuna.com.mx/u/fotografias/m/2020/3/1/f1280x720-100637_232312_5050.jpg">
+<meta name="twitter:domain" content="https://www.tribuna.com.mx">
+<meta name="twitter:description" content="La modelo potosina, Tania Ruiz, sorprendi&oacute; a sus seguidores de Instagram con un mensaje en el que&nbsp;muestra lo que siente por Pe&ntilde;a Nieto&nbsp;
+">
+<script type="application/ld+json"> 
+{
+	"@context": "http://schema.org",
+	"@type": "NewsArticle",
+	"mainEntityOfPage": {
+		"@type": "WebPage",
+		"@id": "https://www.tribuna.com.mx/espectaculos/2020/3/1/que-viva-el-amor-tania-ruiz-muestra-lo-que-siente-por-pena-en-instagram-14.html"
+	},
+	"headline": ""Qué viva el amor": Tania Ruiz muestra lo que siente por Peña en Instagram",
+    "image": [
+        "https://www.tribuna.com.mx/u/fotografias/m/2020/3/1/f1280x720-100637_232312_5050.jpg",
+        "https://www.tribuna.com.mx/u/fotografias/m/2020/3/1/f850x638-100637_178126_5050.jpg",
+        "https://www.tribuna.com.mx/u/fotografias/m/2020/3/1/f638x638-100637_158804_5050.jpg"
+    ],
+	"datePublished": "2020-3-1T17:59:00",
+	"dateModified": "2020-3-1T17:59:00",
+	"author": {
+		"@type": "Person",
+		"name": "",
+		"url": ""		
+	},
+	"publisher": {
+		"@type": "Organization",
+		"name": "TRIBUNA",
+		"logo": {
+			"@type": "ImageObject",
+			"url": "https://www.tribuna.com.mx/inc/amp/img/logo_amp.png",
+			"width": "220",
+			"height": "60"
+		}
+	},
+	"articleSection": "Noticias",
+	"description": "La modelo potosina, Tania Ruiz, sorprendi&oacute; a sus seguidores de Instagram con un mensaje en el que&nbsp;muestra lo que siente por Pe&ntilde;a Nieto&nbsp;
+"
+}
+</script>
+</head>
+<body>
+<amp-analytics type="googleanalytics" id="analytics1">
+<script type="application/json">
+{
+  "vars": {
+    "account": "UA-120567705-1"
+  },
+
+  "triggers": {
+    "trackPageview": {
+      "on": "visible",
+      "request": "pageview"
+    }
+  }
+}
+</script>
+</amp-analytics>
+<amp-analytics>
+<script type="application/json">
+{
+  "requests": {
+    "pageview": "https://www.tribuna.com.mx/include/includes/varios/lecturas.asp?u=USER_AGENT&r=DOCUMENT_REFERRER&desde=a&docid=0014&a=0&s=18&t=0&fn=2020/3/1 17:59:00"
+  },
+  "triggers": {
+    "trackPageview": {
+      "on": "visible",
+      "request": "pageview"
+    }
+  }
+}
+</script>
+</amp-analytics>
+<header class="main-header">
+<div class="main-header--center-bar">
+<div class="item toggle">
+<div role="button" aria-label="open sidebar" class="header-toggle-button" tabindex="0" on="tap:main-sidebar.open">
+<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 384 384" style="enable-background:new 0 0 384 384;" xml:space="preserve">
+<g>
+<rect x="0" y="277.333" width="384" height="42.667" />
+<rect x="0" y="170.667" width="384" height="42.667" />
+<rect x="0" y="64" width="384" height="42.667" />
+</g>
+</svg>
+</div>
+</div>
+<div class="item  main-logo">
+<a href="/" class="main-logo-link">
+<amp-img data-hero alt="Logotipo" class="main-logo-img" src="/a/plantillas/p/tribuna-del-yaqui/imgs/main-logo.svg" layout="responsive" width="150" height="50" alt="TRIBUNA" noloading>
+</amp-img>
+</a>
+</div>
+<div class="item redes hidden-m">
+<div class="top-bar--redes hidden-m">
+<a class="gn" target="_blank" itemprop="sameAs" rel="noopener" title="Síguenos en Google News" href="https://news.google.com/publications/CAAqBwgKMM35hQsw876DAw">
+<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+<path class="st0" d="M512,152.6l-67.6-13.4V15.7H67.6v123.5L0,152.6l52.6,264.5v79.2h406.8v-79.2L512,152.6z M459.4,263.4v-61.9
+                            h-50.2l-8-40.4l75.6,15L459.4,263.4z M97.6,45.6h316.8v87.6l-19.6-3.9l-10.6-53.1l-286.7,57V45.6z M35.3,176.2l325.4-64.7
+                            l17.9,90.1h-326v61.9L35.3,176.2z M429.4,466.4H82.6V231.5h346.8V466.4z" />
+<path class="st0" d="M200,436.4c48.2,0,87.5-39.2,87.5-87.5v-15H200v30h55.5c-6.6,24.4-29,42.5-55.5,42.5
+                            c-31.7,0-57.5-25.8-57.5-57.5s25.8-57.5,57.5-57.5c14.8,0,28.9,5.6,39.6,15.9l20.7-21.7C244,270,222.6,261.5,200,261.5
+                            c-48.2,0-87.5,39.2-87.5,87.5S151.8,436.4,200,436.4L200,436.4z" />
+<path class="st0" d="M317.5,274h82v30h-82V274z" />
+<path class="st0" d="M317.5,333.9h82v30h-82V333.9z" />
+<path class="st0" d="M317.5,393.9h82v30h-82V393.9z" />
+</svg>
+</a>
+<a class="fb" target="_blank" itemprop="sameAs" rel="noopener" href="https://www.facebook.com/TribunaSonora/" title="Sí­guenos en Facebook">
+<svg width="10" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="facebook-square" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg-inline--fa fa-facebook-square fa-w-14 fa-9x"><path fill="currentColor" d="M400 32H48A48 48 0 0 0 0 80v352a48 48 0 0 0 48 48h137.25V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.27c-30.81 0-40.42 19.12-40.42 38.73V256h68.78l-11 71.69h-57.78V480H400a48 48 0 0 0 48-48V80a48 48 0 0 0-48-48z" class=""></path></svg>
+</a>
+<a class="tw" target="_blank" itemprop="sameAs" rel="noopener" href="https://twitter.com/TribunaSonora" title="Sí­guenos en Twitter">
+<svg width="10" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="twitter" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-twitter fa-w-16 fa-9x"><path fill="currentColor" d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z" class=""></path></svg>
+</a>
+<a class="yt" target="_blank" itemprop="sameAs" rel="noopener" href="https://www.youtube.com/channel/UCqp4BZ4tDN4QJKZvh1r-FMA" title="Sí­guenos en Youtube">
+<svg width="10" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="youtube" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="svg-inline--fa fa-youtube fa-w-18 fa-9x"><path fill="currentColor" d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z" class=""></path></svg>
+</a>
+<a class="ig" target="_blank" itemprop="sameAs" rel="noopener" href="https://www.instagram.com/tribunasonora/" title="Sí­guenos en Instagram">
+<svg width="10" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="instagram" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg-inline--fa fa-instagram fa-w-14 fa-9x"><path fill="currentColor" d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" class=""></path></svg>
+</a>
+<button on="tap:lbx--buscador" id="button-abre-buscador">
+<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-search fa-w-16 fa-3x"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z" class=""></path></svg>
+</button>
+</div>
+</div>
+<div class="header-social-share hidden-d">
+<amp-social-share type="system" width="20" height="20" data-param-url="https://www.tribuna.com.mx/espectaculos/2020/3/1/que-viva-el-amor-tania-ruiz-muestra-lo-que-siente-por-pena-en-instagram-14.html">
+</amp-social-share>
+</div>
+</div>
+<div class="header-zone-2 hidden-m">
+<div class="nav-desktop">
+<div class="container">
+<ul class="nav navbar-nav ul-main">
+<li class="home"><a href="/">Inicio</a></li>
+<li><a href="/sonora/">Sonora</a></li>
+<li><a href="/mexico/">México</a></li>
+<li><a href="/mundo/">Mundo</a></li>
+<li><a href="/seguridad/">Seguridad</a></li>
+<li><a href="/opinion/">Opinión</a></li>
+<li><a href="/viral/">Viral</a></li>
+<li><a href="/deportes/">Deportes</a></li>
+<li><a href="/politica/">Política y Economía</a></li>
+<li><a href="/cienciaytecnologia/">Ciencia y Tecnología</a></li>
+<li><a href="/tendencias/">Tendencias</a></li>
+<li><a href="/sociales/">Sociales</a></li>
+<li><a href="/campo/">Campo</a></li>
+<li><a href="/famosos/">Famosos</a></li> </ul>
+</div>
+</div>
+</div>
+</header>
+<amp-lightbox id="lbx--buscador" class="lbx--buscador" layout="nodisplay">
+<form action="/noticias/buscar/" target="_top" method="get" class="lbx-buscador-form">
+<input type="text" class="buscador--input" placeholder="Busque su noticia" name="buscar">
+<button type="submit" class="buscador--submit">
+<amp-img alt="Icono buscar" class="ico-buscador" src="/a/plantillas/p/tribuna-del-yaqui/imgs/ico-search.svg" layout="fixed" width="41" height="40">
+</amp-img>
+</button>
+</form>
+<button class="lbx--buscador-cerrar" on="tap:lbx--buscador.close">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 492 492" style="enable-background:new 0 0 492 492;" xml:space="preserve">
+<path fill="currentColor" d="M300.188,246L484.14,62.04c5.06-5.064,7.852-11.82,7.86-19.024c0-7.208-2.792-13.972-7.86-19.028L468.02,7.872
+			c-5.068-5.076-11.824-7.856-19.036-7.856c-7.2,0-13.956,2.78-19.024,7.856L246.008,191.82L62.048,7.872
+			c-5.06-5.076-11.82-7.856-19.028-7.856c-7.2,0-13.96,2.78-19.02,7.856L7.872,23.988c-10.496,10.496-10.496,27.568,0,38.052
+			L191.828,246L7.872,429.952c-5.064,5.072-7.852,11.828-7.852,19.032c0,7.204,2.788,13.96,7.852,19.028l16.124,16.116
+			c5.06,5.072,11.824,7.856,19.02,7.856c7.208,0,13.968-2.784,19.028-7.856l183.96-183.952l183.952,183.952
+			c5.068,5.072,11.824,7.856,19.024,7.856h0.008c7.204,0,13.96-2.784,19.028-7.856l16.12-16.116
+			c5.06-5.064,7.852-11.824,7.852-19.028c0-7.204-2.792-13.96-7.852-19.028L300.188,246z" />
+</svg>
+</button>
+</amp-lightbox><amp-sidebar id="main-sidebar" class="main-sidebar" layout="nodisplay" side="left">
+<div role="button" on="tap:main-sidebar.toggle" tabindex="0" class="close-sidebar">
+<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512.001 512.001" style="enable-background:new 0 0 512.001 512.001;" xml:space="preserve" width="16" height="16">
+<g>
+<path class="close-sidebar--path" d="M284.286,256.002L506.143,34.144c7.811-7.811,7.811-20.475,0-28.285c-7.811-7.81-20.475-7.811-28.285,0L256,227.717
+			 L34.143,5.859c-7.811-7.811-20.475-7.811-28.285,0c-7.81,7.811-7.811,20.475,0,28.285l221.857,221.857L5.858,477.859
+			 c-7.811,7.811-7.811,20.475,0,28.285c3.905,3.905,9.024,5.857,14.143,5.857c5.119,0,10.237-1.952,14.143-5.857L256,284.287
+			 l221.857,221.857c3.905,3.905,9.024,5.857,14.143,5.857s10.237-1.952,14.143-5.857c7.811-7.811,7.811-20.475,0-28.285
+			 L284.286,256.002z" />
+</g>
+</svg>
+</div>
+<nav class="navbar" role="navigation">
+<ul class="nav navbar-nav ul-main">
+<li class="home"><a href="/">Home</a></li>
+<li><a href="/sonora/">Sonora</a></li>
+<li><a href="/mexico/">México</a></li>
+<li><a href="/mundo/">Mundo</a></li>
+<li><a href="/seguridad/">Seguridad</a></li>
+<li><a href="/opinion/">Opinión</a></li>
+<li><a href="/viral/">Viral</a></li>
+<li><a href="/deportes/">Deportes</a></li>
+<li><a href="/politica/">Política y Economía</a></li>
+<li><a href="/cienciaytecnologia/">Ciencia y Tecnología</a></li>
+<li><a href="/tendencias/">Tendencias</a></li>
+<li><a href="/sociales/">Sociales</a></li>
+<li><a href="/campo/">Campo</a></li>
+<li><a href="/famosos/">Famosos</a></li>
+</ul>
+</nav>
+</amp-sidebar>
+<div class="main-container">
+<div class="content-banner hidden-m"><amp-ad width=970 height=250 type="doubleclick" data-slot="/21716783838/Ty_inicio940" data-multi-size="970x90,728x90,970x250" data-multi-size-validation="false" json='{"targeting":{"sitio":["tribuna"],"seccion":["espectaculos"], "autor":["No es Noticia"],"cfg_adx":["on"], "id_noticia":["n0014"], "temas":["Sin Tema"], "tema_oculto":[""]}}'>
+</amp-ad></div>
+<div class="row">
+<div class="col--main">
+<section class="main-section">
+<article class="main-article">
+<header class="main-article--header">
+<strong class="antetitulo"></strong>
+<h1 class="titulo">"Qué viva el amor": Tania Ruiz muestra lo que siente por Peña en Instagram</h1>
+<h2 class="bajada">La modelo potosina, Tania Ruiz, sorprendi&oacute; a sus seguidores de Instagram con un mensaje en el que&nbsp;muestra lo que siente por Pe&ntilde;a Nieto&nbsp;
+</h2>
+</header>
+<div class="margen-top1">
+<div class="content-banner hidden-d"><amp-ad width=336 height=280 type="doubleclick" data-slot="/21716783838/Tyamp_top(1)" data-multi-size="300x250,320x100" data-multi-size-validation="false" json='{"targeting":{"sitio":["tribuna"],"seccion":["espectaculos"], "autor":["No es Noticia"],"cfg_adx":["on"], "id_noticia":["n0014"], "temas":["Sin Tema"], "tema_oculto":[""]}}' rtc-config='{"urls": ["https://api-gui.cxense.com/profile/user/segment?persisted=bd61fbafbe866d7d9d9947dbe16fd27030d71b1a&json=%7B%22identities%22%3A%5B%7B%22id%22%3A%22CLIENT_ID(cX_P)%22%2C%22type%22%3A%22cx%22%7D%5D%7D"], "timeoutMillis": 999}'>
+</amp-ad>
+</div>
+</div>
+<div class="main-article--body">
+<figure class="main-photo">
+<amp-img width="960" height="540" media="(min-width: 426px)" layout="responsive" src="/u/fotografias/m/2020/3/1/f960x540-100637_174712_0.jpg" alt="Tania Ruiz muestra lo que siente por Peña Nieto " data-amp-auto-lightbox-disable></amp-img>
+<amp-img width="608" height="342" layout="responsive" media="(max-width: 425px)" src="/u/fotografias/m/2020/3/1/f608x342-100637_130360_0.jpg" alt="Tania Ruiz muestra lo que siente por Peña Nieto " data-amp-auto-lightbox-disable></amp-img>
+<figcaption class="epigrafe"><span class="desc">Tania Ruiz muestra lo que siente por Peña Nieto </span></figcaption>
+</figure>
+<div class="article-content">
+<div class="article-content--autor">
+<div class="el-autor">
+<div class="nombre-autor">
+Por <span class="post-author-name change-utf" itemprop="name"></span>
+</div>
+</div>
+<div class="article-content--fecha">
+<span class="escrito">Escrito en </span>
+<span class="seccion">ESPECTÁCULOS</span>
+<span class="el">el</span>
+<time class="fecha-time" itemprop="datePublished" datetime="2020-3-1T17:59:00">1/3/2020 &middot; 17:59 hs</time>
+</div>
+</div>
+<div class="share-group">
+<span class="txt">Comparta este artículo</span>
+<amp-social-share type="facebook" width="20" height="20" layout="responsive" class="share-icon--fb" data-param-app_id="177122726333124" data-param-url="https://www.tribuna.com.mx/espectaculos/2020/3/1/que-viva-el-amor-tania-ruiz-muestra-lo-que-siente-por-pena-en-instagram-14.html">
+</amp-social-share>
+<amp-social-share type="twitter" width="20" height="20" layout="responsive" class="share-icon--tw" data-param-url="https://www.tribuna.com.mx/espectaculos/2020/3/1/que-viva-el-amor-tania-ruiz-muestra-lo-que-siente-por-pena-en-instagram-14.html">
+</amp-social-share>
+<amp-social-share type="whatsapp" width="20" height="20" layout="responsive" class="share-icon--wa" data-param-url="https://www.tribuna.com.mx/espectaculos/2020/3/1/que-viva-el-amor-tania-ruiz-muestra-lo-que-siente-por-pena-en-instagram-14.html">
+</amp-social-share>
+</div><div class="content-banner hidden-d"><amp-ad width=336 height=280 type="doubleclick" data-slot="/21716783838/Tyamp_middle(1)" data-multi-size="300x250,320x100" data-multi-size-validation="false" json='{"targeting":{"sitio":["tribuna"],"seccion":["espectaculos"], "autor":["No es Noticia"],"cfg_adx":["on"], "id_noticia":["n0014"], "temas":["Sin Tema"], "tema_oculto":[""]}}' rtc-config='{"urls": ["https://api-gui.cxense.com/profile/user/segment?persisted=bd61fbafbe866d7d9d9947dbe16fd27030d71b1a&json=%7B%22identities%22%3A%5B%7B%22id%22%3A%22CLIENT_ID(cX_P)%22%2C%22type%22%3A%22cx%22%7D%5D%7D"], "timeoutMillis": 999}'>
+</amp-ad>
+</div>
+<div class="article-content--cuerpo">
+<p><strong>Ciudad de M&eacute;xico.- Tania Ruiz Eichelmann&nbsp;</strong>volvi&oacute; a dejar claro que est&aacute; viviendo un momento pleno de su vida y presumi&oacute; que est&aacute; <strong>m&aacute;s enamorada</strong> que nunca del expresidente de M&eacute;xico,&nbsp;<strong>Enrique Pe&ntilde;a Nieto</strong>.</p>
+<p>A trav&eacute;s de su cuenta oficial de&nbsp;<strong>Instagram</strong>, la modelo originaria de San Luis Potos&iacute; comparti&oacute; un amoroso mensaje que dej&oacute; impactados a sus seguidores.</p>
+<p>Tania public&oacute; una imagen en la que se puede leer la corta leyenda:</p>
+<blockquote>
+<p>Qu&eacute; viva el amor&quot;.</p>
+</blockquote>
+<div style=&quot;text-align:center&quot;>
+<figure class=&quot;image&quot; style=&quot;display:inline-block&quot;><img alt=&quot;&quot; data-height=&quot;772&quot; data-size=&quot;w:460,h:772&quot; data-width=&quot;460&quot; hspace=&quot;5&quot; src=&quot;%(link0)&quot; title=&quot;&quot; vspace=&quot;5&quot; />
+<figcaption></figcaption>
+</figure>
+</div>
+<p>Aunque Tania no explic&oacute; a qui&eacute;n iba dirigida, varios de sus seguidores afirmaron que la frase estaba dedicada a su novio.</p>
+</div>
+</div>
+</div>
+</article>
+<div class="btn-seguinos-gnews">
+<a href="https://news.google.com/publications/CAAqBwgKMM35hQsw876DAw" title="Link a Google News" target="_blank" rel="noopener"><span>Google News</span></a>
+</div>
+</section>
+</div>
+<aside class="col--sidebar hidden-m">
+<div class="content-banner hidden-m"><amp-ad width=336 height=280 type="doubleclick" data-slot="/21716783838/Ty_derecha(1)" data-multi-size="336x280,300x250" data-multi-size-validation="false" json='{"targeting":{"sitio":["tribuna"],"seccion":["espectaculos"], "autor":["No es Noticia"],"cfg_adx":["on"], "id_noticia":["n0014"], "temas":["Sin Tema"], "tema_oculto":[""]}}'>
+</amp-ad></div><div class="content-banner hidden-m"><amp-ad width=300 height=600 type="doubleclick" data-slot="/21716783838/Ty_derecha(2)" data-multi-size="336x280,300x250,300x600" data-multi-size-validation="false" json='{"targeting":{"sitio":["tribuna"],"seccion":["espectaculos"], "autor":["No es Noticia"],"cfg_adx":["on"], "id_noticia":["n0014"], "temas":["Sin Tema"], "tema_oculto":[""]}}'>
+</amp-ad></div>
+</aside>
+</div>
+<aside class="aside-section main-ampbottom">
+<div class="content-banner hidden-m"><amp-ad width=970 height=250 type="doubleclick" data-slot="/21716783838/Ty_pie940(1)" data-multi-size="970x250,728x90,970x100" data-multi-size-validation="false" json='{"targeting":{"sitio":["tribuna"],"seccion":["espectaculos"], "autor":["No es Noticia"],"cfg_adx":["on"], "id_noticia":["n0014"], "temas":["Sin Tema"], "tema_oculto":[""]}}'>
+</amp-ad></div><div class="content-banner hidden-d"><amp-ad width=336 height=280 type="doubleclick" data-slot="/21716783838/Tyamp_bottom(1)" data-multi-size="300x250,320x100" data-multi-size-validation="false" json='{"targeting":{"sitio":["tribuna"],"seccion":["espectaculos"], "autor":["No es Noticia"],"cfg_adx":["on"], "id_noticia":["n0014"], "temas":["Sin Tema"], "tema_oculto":[""]}}' rtc-config='{"urls": ["https://api-gui.cxense.com/profile/user/segment?persisted=bd61fbafbe866d7d9d9947dbe16fd27030d71b1a&json=%7B%22identities%22%3A%5B%7B%22id%22%3A%22CLIENT_ID(cX_P)%22%2C%22type%22%3A%22cx%22%7D%5D%7D"], "timeoutMillis": 999}'>
+</amp-ad>
+<amp-analytics type="cxense">
+<script type="application/json">
+    {
+        "vars": {
+            "siteId": "1134080978869758067"
+        }
+    }
+    </script>
+</amp-analytics>
+</div> <div class="content-modulo">
+<section class="nrel amp-list mas_noticias_misma_seccion">
+<h3 class="mod__titulo">Más Noticias</h3>
+<div class="nrel--group">
+<amp-list src="/a/aps/noticias/dinamicos/ajax/amp-list.asp?page=1&ids=18&idm=29" noloading width="auto" height="350" binding="no" load-more="manual" load-more-bookmark="siguiente">
+<div placeholder class="nrel-placeholder">
+<div class="lds-dual-ring"></div>
+</div>
+<template type="amp-mustache">
+<div class="row">
+<div class="nrel--row">
+{{#noticias}}
+<div class="nrel--noticia">
+<a href="{{link-url}}" title="{{titulo-portada}}" class="nrel--link-img">
+{{#imagen-m}}
+<amp-img class="nrel--foto imagen-m" layout="responsive" alt="{{titulo-noticia}}" width="400" height="300" src="{{imagen-m}}"></amp-img>
+<amp-img class="nrel--foto imagen-d" layout="responsive" alt="{{titulo-noticia}}" width="400" height="225" src="{{imagen-d}}"></amp-img>
+{{/imagen-m}}
+</a>
+<div class="nrel--txt">
+<h4 class="nrel--titulo-noticia">
+<a class="nrel--link-titulo" href="{{link-url}}">{{titulo-noticia}}</a>
+</h4>
+<div class="nrel--article-footer">
+<small class="nrel-autor">
+{{#fecha-p}}
+<amp-timeago layout="responsive" width="160" height="21" datetime="{{fecha}}" locale="es-MX" cutoff="259200">
+<span>{{fecha-p}} </span>
+</amp-timeago>
+{{/fecha-p}}
+<amp-social-share type="system" width="16" height="16" data-param-text="Compartir el artículo" data-param-url="{{link-url}}">
+</amp-social-share>
+</small>
+</div>
+</div>
+</div>
+{{/noticias}}
+</div>
+{{#noticias}}
+{{#anuncio}}
+<div class="hidden-d nrel--row--bnn">
+<div class="content-banner"><amp-ad width=336 height=280 type="doubleclick" data-slot="/21716783838/Tyamp_relacionadas" data-multi-size="300x250,320x100" data-multi-size-validation="false" json='{"targeting":{"sitio":["tribuna"],"seccion":["espectaculos"],"autor":["No es Noticia"],"cfg_adx":["on"],"id_noticia":["n0014"],"temas":["Sin Tema"],"tema_oculto":[""]}}' rtc-config='{"urls": ["https://api-gui.cxense.com/profile/user/segment?persisted=bd61fbafbe866d7d9d9947dbe16fd27030d71b1a&json=%7B%22identities%22%3A%5B%7B%22id%22%3A%22CLIENT_ID(cX_P)%22%2C%22type%22%3A%22cx%22%7D%5D%7D"], "timeoutMillis": 999}'>
+</amp-ad>
+</div>
+</div>
+<div class="hidden-m nrel--row--bnn" style="width:100%">
+<div class="content-banner"><amp-ad width=970 height=250 type="doubleclick" data-slot="/21716783838/Ty_inicio940" data-multi-size="970x90,728x90,970x250" data-multi-size-validation="false" json='{"targeting":{"sitio":["tribuna"],"seccion":["espectaculos"],"autor":["No es Noticia"],"cfg_adx":["on"],"id_noticia":["n0014"],"temas":["Sin Tema"],"tema_oculto":[""]}}'>
+</amp-ad></div>
+</div>
+{{/anuncio}}
+{{/noticias}}
+</template>
+<amp-list-load-more load-more-loading></amp-list-load-more>
+<amp-list-load-more load-more-end></amp-list-load-more>
+<amp-list-load-more load-more-failed></amp-list-load-more>
+<amp-list-load-more load-more-button>
+<div class="btn-mas-noticias">Mas Noticias</div>
+</amp-list-load-more>
+</amp-list>
+</div>
+</section>
+</div><div class="content-banner hidden-d"><amp-ad width=336 height=280 type="doubleclick" data-slot="/21716783838/Tyamp_relacionadas" data-multi-size="300x250,320x100" data-multi-size-validation="false" json='{"targeting":{"sitio":["tribuna"],"seccion":["espectaculos"], "autor":["No es Noticia"],"cfg_adx":["on"], "id_noticia":["n0014"], "temas":["Sin Tema"], "tema_oculto":[""]}}' rtc-config='{"urls": ["https://api-gui.cxense.com/profile/user/segment?persisted=bd61fbafbe866d7d9d9947dbe16fd27030d71b1a&json=%7B%22identities%22%3A%5B%7B%22id%22%3A%22CLIENT_ID(cX_P)%22%2C%22type%22%3A%22cx%22%7D%5D%7D"], "timeoutMillis": 999}'>
+</amp-ad>
+</div> <div class="content-modulo">
+<section class="nrel rel-puroshow">
+<h3 class="mod__titulo">Puro Show</h3>
+<div class="nrel--group">
+<amp-list src="/a/aps/noticias/dinamicos/ajax/amp-list-otros-sitios.asp?idm=31&ids=1" noloading width="auto" height="350" binding="no" load-more="auto" load-more-bookmark="siguiente">
+<div placeholder class="nrel-placeholder">
+<div class="lds-dual-ring"></div>
+</div>
+<template type="amp-mustache">
+<div class="row">
+<div class="nrel--row">
+{{#noticias}}
+<div class="nrel--noticia {{csssolom}}">
+<a href="{{link-url}}" title="{{titulo-portada}}" class="nrel--link-img">
+{{#imagen-m}}
+<amp-img class="nrel--foto imagen-m" layout="responsive" alt="{{titulo-noticia}}" width="400" height="300" src="{{imagen-m}}"></amp-img>
+<amp-img class="nrel--foto imagen-d" layout="responsive" alt="{{titulo-noticia}}" width="400" height="225" src="{{imagen-d}}"></amp-img>
+{{/imagen-m}}
+</a>
+<div class="nrel--txt">
+<h4 class="nrel--titulo-noticia">
+<a class="nrel--link-titulo" href="{{link-url}}">{{titulo-noticia}}</a>
+</h4>
+<div class="nrel--article-footer">
+<small class="nrel-autor">
+{{#fecha-p}}
+<amp-timeago layout="responsive" width="160" height="21" datetime="{{fecha}}" locale="es" cutoff="259200">
+<span>{{fecha-p}} </span>
+</amp-timeago>
+{{/fecha-p}}
+<amp-social-share type="system" width="16" height="16" data-param-text="Compartir el artículo" data-param-url="{{link-url}}">
+</amp-social-share>
+</small>
+</div>
+</div>
+</div>
+{{/noticias}}
+</div>
+{{#noticias}}
+{{/noticias}}
+</template>
+<amp-list-load-more load-more-loading>
+<div class="btn-mas-noticias">Cargando</div>
+</amp-list-load-more>
+<amp-list-load-more load-more-end>
+<div></div>
+</amp-list-load-more>
+<amp-list-load-more load-more-failed>
+<div class="btn-mas-noticias">Ops!</div>
+</amp-list-load-more>
+<amp-list-load-more load-more-button>
+<div class="btn-mas-noticias">Mas Noticias</div>
+</amp-list-load-more>
+</amp-list>
+</div>
+</section>
+</div><div class="content-banner hidden-d"><amp-embed width=100 height=100 type=taboola layout=responsive data-publisher='tribunasonora' data-mode='thumbnails-a-AMP' data-placement='Mobile Below Article Thumbnails' data-target_type='mix' data-article='auto' data-url=''>
+</amp-embed></div><div class="content-banner hidden-d"><amp-sticky-ad layout="nodisplay">
+<amp-ad width="320" height="100" type="doubleclick" data-slot="/21716783838/Mobile_Nota_Sticky" data-multi-size="300x100,320x50,300x50" data-multi-size-validation="false" json='{"targeting":{"sitio":["tribuna"],"seccion":["espectaculos"], "autor":["No es Noticia"],"cfg_adx":["on"], "id_noticia":["n0014"], "temas":["Sin Tema"], "tema_oculto":[""]}}'>
+</amp-ad></div>
+</aside>
+</div>
+<footer class="main-footer">
+<div class="footer__top">
+<div class="container">
+<div class="row hidden-m">
+<a class="footer__logo" href="/" title="Ir al inicio">
+<amp-img src="/a/plantillas/p/tribuna-del-yaqui/imgs/main-logo-footer.svg" width="148" height="30" layout="fixed" alt="Logo Tribuna">
+</amp-img>
+</a>
+</div>
+ <div class="row footer--main-row">
+<div class="col-links hidden-m">
+<h4>Lugares</h4>
+<ul class="footer__links">
+<li><a href="/mundo/" title="Ir a la sección Mundo">Mundo</a></li>
+<li><a href="/mexico/" title="Ir a la sección México">México</a></li>
+<li><a href="/sonora/" title="Ir a la sección Sonora">Sonora</a></li>
+</ul>
+<h4>Secciones</h4>
+<ul class="footer__links">
+<li><a href="/espectaculos/" title="Ir a la sección Espectáculos">Espectáculos</a></li>
+<li><a href="/seguridad/" title="Ir a la sección Seguridad">Seguridad</a></li>
+<li><a href="/opinion/" title="Ir a la sección Opinión">Opinión</a></li>
+<li><a href="/tendencias/" title="Ir a la sección Tendencias">Tendencias</a></li>
+<li><a href="/deportes/" title="Ir a la sección Deportes">Deportes</a></li>
+<li><a href="/politica/" title="Ir a la sección Política">Política y Economía</a></li>
+<li><a href="/cienciaytecnologia/" title="Ir a la sección Ciencia y Tecnología">Ciencia y Tecnología</a>
+</li>
+<li><a href="/viral/" title="Ir a la sección Viral">Viral</a></li>
+<li><a href="/sociales/" title="Ir a la sección Sociales">Sociales</a></li>
+<li><a href="/campo/" title="Ir a la sección Campo">Campo</a></li>
+<li><a href="https://www.diariovalor.com/" title="Ir a la sección Valor Noticias">Valor Noticias</a></li>
+</ul>
+</div>
+<div class="col-links-otros">
+<div class="footer__suscribe">
+<h4>Suscríbete</h4>
+<p>Información sobre suscripciones<br>
+a nuestras ediciones<br>
+tradicionales y digitales.</p>
+<a href="https://d3339197.sibforms.com/serve/MUIEAGv84pYjXdxMGCtlXqlSPfKwBzKJz4s7qA4eOqaXY1VJOjv9KdIkpBwI9Cgu4DTMEQ3P-1iaGDhd8TudomIhhFOy2ja2EODnuYVUiu-4SjXbk35UYQo0qfRMynFT8py1mJFJ5_sEoDlYC7AzMuR_erro3DD7nncZFTEKAmpkNIPfcStnvkS0a9H_vb-KlUltx6KQ-eFBg_sK" title="Ir a susribirme" target="_blank" rel="noopener">Comienza ahora</a>
+</div>
+</div>
+<div class="col-links-otros">
+<div class="footer__whatsaap">
+<h4>WhatsApp</h4>
+<p><span>(+521 644) 161-0856</span>
+Escríbenos y recibe<br>
+las últimas noticias<br>
+en tu celular</p>
+<a href="https://api.whatsapp.com/send?phone=+5216441610856&amp;text=¡Hola!%20Quisiera%20recibir%20las%20ultimas%20noticias%20de%20Tribuna." rel="noopener" target="_blank" title="Ir a nuestro WhatsApp">Enviar mensaje</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="footer__bottom">
+<div class="container">
+<div class="row">
+<ul class="footer__links">
+<li>
+<a href="https://www.diariovalor.com/" title="Valor Noticias">Valor Noticias</a>
+</li>
+<li>
+<a href="/p/institucionales/directorio.html" title="Directorio">Directorio</a>
+</li>
+<li>
+<a href="/p/institucionales/anunciate-con-nosotros.html" title="Publicidad">Publicidad</a>
+</li>
+<li>
+<a href=" /p/institucionales/aviso-de-privacidad.html" title="Aviso de privacidad">Aviso de privacidad</a>
+</li>
+<li>
+<a href="/contacto" title="Conoce más de nosotros">Conoce más de nosotros</a>
+</li>
+</ul>
+<div class="footer-logos">
+<a href="https://diariovalor.com/" target="_blank" rel="noopener" title="Ir a Diario Valor">
+<amp-img src="/a/plantillas/p/tribuna-del-yaqui/imgs/footer-logo-valor.png" width="25" height="27" layout="fixed" alt="Diario Valor" class="footer-logo-valor">
+</amp-img>
+ </a>
+
+<a href="https://www.puroshow.com/" target="_blank" rel="noopener" title="Ir a Puro Show">
+<amp-img src="/a/plantillas/p/tribuna-del-yaqui/imgs/footer-logo-puroshow.svg" width="51" height="27" layout="fixed" alt="Puro Show" class="footer-logo-puroshow">
+</amp-img>
+</a>
+</div>
+<p class="copy">© Copyright TRIBUNA | Noticias de Sonora y México. Todos los derechos reservados.</p>
+<div class="footer__creator">
+<a href="https://www.editor80.com" title="Editor80" target="_blank" rel="noopener">
+<amp-img src="/a/plantillas/imgs/e80-blanco.svg" width="60" height="22" layout="fixed" alt="Editor80">
+</amp-img>
+</a>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vaafb692b2aea4879b33c060e79fe94621666317369993" integrity="sha512-0ahDYl866UMhKuYcW078ScMalXqtFJggm7TmlUtp0UlD4eQk0Ixfnm5ykXKvGJNFjLMoortdseTfsRT8oCfgGA==" data-cf-beacon='{"rayId":"76095da31a061179","version":"2022.10.3","r":1,"token":"67354cfac84d499cbd2180a30aa1a782","si":100}' crossorigin="anonymous"></script>
+</body>
+</html>

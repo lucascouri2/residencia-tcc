@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<!--[if gte IE 9]>
+<html class="no-js lt-ie9 animated-content no-animation no-animation-effects" lang="en-US">
+   <![endif]-->
+   <html lang="it-IT">
+      <head>
+         <!-- Meta Tags -->
+         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+         <!-- Mobile Specifics -->
+         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+         <meta name="HandheldFriendly" content="true"/>
+         <meta name="MobileOptimized" content="320"/>
+
+      <link rel="shortcut icon" href="https://ilformat.info/wp-content/themes/ilformat-news/images/icon/favicon.ico" type="image/x-icon" />
+      <link rel="apple-touch-icon" href="https://ilformat.info/wp-content/themes/ilformat-news/images/icon/apple-touch-icon.png" />
+      <link rel="apple-touch-icon" sizes="57x57" href="https://ilformat.info/wp-content/themes/ilformat-news/images/icon/apple-touch-icon-57x57.png" />
+      <link rel="apple-touch-icon" sizes="72x72" href="https://ilformat.info/wp-content/themes/ilformat-news/images/icon/apple-touch-icon-72x72.png" />
+      <link rel="apple-touch-icon" sizes="76x76" href="https://ilformat.info/wp-content/themes/ilformat-news/images/icon/apple-touch-icon-76x76.png" />
+      <link rel="apple-touch-icon" sizes="114x114" href="https://ilformat.info/wp-content/themes/ilformat-news/images/icon/apple-touch-icon-114x114.png" />
+      <link rel="apple-touch-icon" sizes="120x120" href="https://ilformat.info/wp-content/themes/ilformat-news/images/icon/apple-touch-icon-120x120.png" />
+      <link rel="apple-touch-icon" sizes="144x144" href="https://ilformat.info/wp-content/themes/ilformat-news/images/icon/apple-touch-icon-144x144.png" />
+      <link rel="apple-touch-icon" sizes="152x152" href="https://ilformat.info/wp-content/themes/ilformat-news/images/icon/apple-touch-icon-152x152.png" />
+      <link rel="apple-touch-icon" sizes="180x180" href="https://ilformat.info/wp-content/themes/ilformat-news/images/icon/apple-touch-icon-180x180.png" />
+
+         <!-- Mobile Internet Explorer ClearType Technology -->
+         <!--[if IEMobile]>  
+         <meta http-equiv="cleartype" content="on">
+         <![endif]-->
+         <!-- Title -->
+         <title>L&#039;India e il Bangladesh investiti dal ciclone Amphan</title>
+         <!-- RSS & Pingbacks -->
+         <link rel="alternate" type="application/rss+xml" title="ILFORMAT RSS Feed" href="https://ilformat.info/feed/" />
+         <link rel="pingback" href="https://ilformat.info/xmlrpc.php" />
+         
+	<style>
+		.wpcf7-submit{
+			display:none;
+		}
+		.recaptcha-btn{
+			display:block;
+		}
+		.grecaptcha-badge { margin: 10px 0; }
+	</style>
+	<script type="text/javascript">
+		var contactform = [];
+		var checkIfCalled = true;
+		var renderGoogleInvisibleRecaptchaFront = function() {
+			// prevent form submit from enter key
+			jQuery("input[name=_wpcf7]").attr("class","formid");
+				jQuery('.wpcf7-form').on('keyup keypress', "input", function(e) {
+				  var keyCode = e.keyCode || e.which;
+				  if (keyCode === 13) {
+					e.preventDefault();
+					return false;
+				  }
+				});
+
+			jQuery('.wpcf7-submit').each(function(index){
+
+				var checkexclude = 0;
+				var form = jQuery(this).closest('.wpcf7-form');
+				var value = jQuery(form).find(".formid").val();
+				// check form exclude from invisible recaptcha
+								if(checkexclude == 0){
+					// Hide the form orig submit button
+					form.find('.wpcf7-submit').hide();
+
+					// Fetch class and value of orig submit button
+					btnClasses = form.find('.wpcf7-submit').attr('class');
+					btnValue = form.find('.wpcf7-submit').attr('value');
+
+					// Add custom button and recaptcha holder
+
+					form.find('.wpcf7-submit').after('<input type="button" id="wpcf-custom-btn-'+index+'" class="'+btnClasses+'  recaptcha-btn recaptcha-btn-type-css" value="'+btnValue+'" title="'+btnValue+'" >');
+					form.append('<div class="recaptcha-holder" id="recaptcha-holder-'+index+'"></div>');
+					// Recaptcha rendenr from here
+					var holderId = grecaptcha.render('recaptcha-holder-'+index,{
+								'sitekey':'6LfQTt4ZAAAAAPBFxuxIsxfPk9iiy2UcGO-JOnls',
+								'size': 'invisible',
+								'badge' : 'inline', // possible values: bottomright, bottomleft, inline
+								'callback' : function (recaptchaToken) {
+									//console.log(recaptchaToken);
+									var response=jQuery('#recaptcha-holder-'+index).find('.g-recaptcha-response').val();
+									//console.log(response);
+									//Remove old response and store new respone
+									jQuery('#recaptcha-holder-'+index).parent().find(".respose_post").remove();
+									jQuery('#recaptcha-holder-'+index).after('<input type="hidden" name="g-recaptcha-response"  value="'+response+'" class="respose_post">')
+									grecaptcha.reset(holderId);
+
+									if(typeof customCF7Validator !== 'undefined'){
+										if(!customCF7Validator(form)){
+											return;
+										}
+									}
+									// Call default Validator function
+									else if(contactFormDefaultValidator(form)){
+										return;
+									}
+									else{
+										// hide the custom button and show orig submit button again and submit the form
+										jQuery('#wpcf-custom-btn-'+index).hide();
+										form.find('input[type=submit]').show();
+										form.find("input[type=submit]").click();
+										form.find('input[type=submit]').hide();
+										jQuery('#wpcf-custom-btn-'+index).attr('style','');
+									}
+								}
+						},false);
+
+					// action call when click on custom button
+					jQuery('#wpcf-custom-btn-'+index).click(function(event){
+						event.preventDefault();
+						// Call custom validator function
+						if(typeof customCF7Validator == 'function'){
+							if(!customCF7Validator(form)){
+								return false;
+							}
+						}
+						// Call default Validator function
+						else if(contactFormDefaultValidator(form)){
+							return false;
+						}
+						else if(grecaptcha.getResponse(holderId) != ''){
+							grecaptcha.reset(holderId);
+						}
+						else{
+							// execute the recaptcha challenge
+							grecaptcha.execute(holderId);
+						}
+					});
+				}
+			});
+		}
+	</script><script  src="https://www.google.com/recaptcha/api.js?onload=renderGoogleInvisibleRecaptchaFront&render=explicit" async defer></script><meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+	<!-- This site is optimized with the Yoast SEO plugin v19.9 - https://yoast.com/wordpress/plugins/seo/ -->
+	<meta name="description" content="Centinaia di villaggi allagati, raccolti perduti e case distrutte: il passaggio del ciclone Amphan ha lasciato scene di &quot;incredibile devastazione&quot;" />
+	<link rel="canonical" href="https://ilformat.info/2020/05/22/lindia-e-il-bangladesh-investiti-dal-ciclone-amphan/" />
+	<meta property="og:locale" content="it_IT" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="L&#039;India e il Bangladesh investiti dal ciclone Amphan" />
+	<meta property="og:description" content="Centinaia di villaggi allagati, raccolti perduti e case distrutte: il passaggio del ciclone Amphan ha lasciato scene di &quot;incredibile devastazione&quot;" />
+	<meta property="og:url" content="https://ilformat.info/2020/05/22/lindia-e-il-bangladesh-investiti-dal-ciclone-amphan/" />
+	<meta property="og:site_name" content="ILFORMAT" />
+	<meta property="article:publisher" content="https://www.facebook.com/IlFormat/" />
+	<meta property="article:published_time" content="2020-05-22T04:00:50+00:00" />
+	<meta property="article:modified_time" content="2020-07-31T13:46:46+00:00" />
+	<meta property="og:image" content="https://ilformat.info/wp-content/uploads/2020/05/Ciclone-Amphan.jpg" />
+	<meta property="og:image:width" content="768" />
+	<meta property="og:image:height" content="512" />
+	<meta property="og:image:type" content="image/jpeg" />
+	<meta name="author" content="Giuseppe Gallinella" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:creator" content="@il_format" />
+	<meta name="twitter:site" content="@il_format" />
+	<meta name="twitter:label1" content="Scritto da" />
+	<meta name="twitter:data1" content="Giuseppe Gallinella" />
+	<meta name="twitter:label2" content="Tempo di lettura stimato" />
+	<meta name="twitter:data2" content="3 minuti" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://ilformat.info/2020/05/22/lindia-e-il-bangladesh-investiti-dal-ciclone-amphan/#article","isPartOf":{"@id":"https://ilformat.info/2020/05/22/lindia-e-il-bangladesh-investiti-dal-ciclone-amphan/"},"author":{"name":"Giuseppe Gallinella","@id":"https://ilformat.info/#/schema/person/d3b4a3782acab5f3d8a877d1eca3cf25"},"headline":"L&#8217;India e il Bangladesh investiti dal ciclone Amphan","datePublished":"2020-05-22T04:00:50+00:00","dateModified":"2020-07-31T13:46:46+00:00","mainEntityOfPage":{"@id":"https://ilformat.info/2020/05/22/lindia-e-il-bangladesh-investiti-dal-ciclone-amphan/"},"wordCount":635,"commentCount":0,"publisher":{"@id":"https://ilformat.info/#organization"},"image":{"@id":"https://ilformat.info/2020/05/22/lindia-e-il-bangladesh-investiti-dal-ciclone-amphan/#primaryimage"},"thumbnailUrl":"https://ilformat.info/wp-content/uploads/2020/05/Ciclone-Amphan.jpg","keywords":["#pandemia","Amphan","Bangladesh","cicloni","Distruzione","India"],"articleSection":["CRONACA"],"inLanguage":"it-IT","potentialAction":[{"@type":"CommentAction","name":"Comment","target":["https://ilformat.info/2020/05/22/lindia-e-il-bangladesh-investiti-dal-ciclone-amphan/#respond"]}]},{"@type":"WebPage","@id":"https://ilformat.info/2020/05/22/lindia-e-il-bangladesh-investiti-dal-ciclone-amphan/","url":"https://ilformat.info/2020/05/22/lindia-e-il-bangladesh-investiti-dal-ciclone-amphan/","name":"L'India e il Bangladesh investiti dal ciclone Amphan","isPartOf":{"@id":"https://ilformat.info/#website"},"primaryImageOfPage":{"@id":"https://ilformat.info/2020/05/22/lindia-e-il-bangladesh-investiti-dal-ciclone-amphan/#primaryimage"},"image":{"@id":"https://ilformat.info/2020/05/22/lindia-e-il-bangladesh-investiti-dal-ciclone-amphan/#primaryimage"},"thumbnailUrl":"https://ilformat.info/wp-content/uploads/2020/05/Ciclone-Amphan.jpg","datePublished":"2020-05-22T04:00:50+00:00","dateModified":"2020-07-31T13:46:46+00:00","description":"Centinaia di villaggi allagati, raccolti perduti e case distrutte: il passaggio del ciclone Amphan ha lasciato scene di \"incredibile devastazione\"","breadcrumb":{"@id":"https://ilformat.info/2020/05/22/lindia-e-il-bangladesh-investiti-dal-ciclone-amphan/#breadcrumb"},"inLanguage":"it-IT","potentialAction":[{"@type":"ReadAction","target":["https://ilformat.info/2020/05/22/lindia-e-il-bangladesh-investiti-dal-ciclone-amphan/"]}]},{"@type":"ImageObject","inLanguage":"it-IT","@id":"https://ilformat.info/2020/05/22/lindia-e-il-bangladesh-investiti-dal-ciclone-amphan/#primaryimage","url":"https://ilformat.info/wp-content/uploads/2020/05/Ciclone-Amphan.jpg","contentUrl":"https://ilformat.info/wp-content/uploads/2020/05/Ciclone-Amphan.jpg","width":768,"height":512},{"@type":"BreadcrumbList","@id":"https://ilformat.info/2020/05/22/lindia-e-il-bangladesh-investiti-dal-ciclone-amphan/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://ilformat.info/"},{"@type":"ListItem","position":2,"name":"L&#8217;India e il Bangladesh investiti dal ciclone Amphan"}]},{"@type":"WebSite","@id":"https://ilformat.info/#website","url":"https://ilformat.info/","name":"ILFORMAT","description":"Testata Giornalistica, quotidiano, agenzia stampa","publisher":{"@id":"https://ilformat.info/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://ilformat.info/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"it-IT"},{"@type":"Organization","@id":"https://ilformat.info/#organization","name":"ilFormat.info","url":"https://ilformat.info/","logo":{"@type":"ImageObject","inLanguage":"it-IT","@id":"https://ilformat.info/#/schema/logo/image/","url":"","contentUrl":"","caption":"ilFormat.info"},"image":{"@id":"https://ilformat.info/#/schema/logo/image/"},"sameAs":["https://www.instagram.com/ilformat.info/","https://www.youtube.com/channel/UC4UaAZVzhJRVHl4L8-E5kkQ","https://www.facebook.com/IlFormat/","https://twitter.com/il_format"]},{"@type":"Person","@id":"https://ilformat.info/#/schema/person/d3b4a3782acab5f3d8a877d1eca3cf25","name":"Giuseppe Gallinella","image":{"@type":"ImageObject","inLanguage":"it-IT","@id":"https://ilformat.info/#/schema/person/image/","url":"https://secure.gravatar.com/avatar/631c02f67d1d253dcfc7b9a18e57e54c?s=96&d=mm&r=g","contentUrl":"https://secure.gravatar.com/avatar/631c02f67d1d253dcfc7b9a18e57e54c?s=96&d=mm&r=g","caption":"Giuseppe Gallinella"},"sameAs":["https://ilformat.info"],"url":"https://ilformat.info/author/giuseppe/"}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel='dns-prefetch' href='//s7.addthis.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<script type="text/javascript">
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/ilformat.info\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.0.3"}};
+/*! This file is auto-generated */
+!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode,e=(p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0),i.toDataURL());return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([129777,127995,8205,129778,127999],[129777,127995,8203,129778,127999])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(e=t.source||{}).concatemoji?c(e.concatemoji):e.wpemoji&&e.twemoji&&(c(e.twemoji),c(e.wpemoji)))}(window,document,window._wpemojiSettings);
+</script>
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='wp-block-library-css'  href='https://ilformat.info/wp-includes/css/dist/block-library/style.min.css?ver=6.0.3' type='text/css' media='all' />
+<style id='global-styles-inline-css' type='text/css'>
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+</style>
+<link rel='stylesheet' id='contact-form-7-css'  href='https://ilformat.info/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=5.6.4' type='text/css' media='all' />
+<link rel='stylesheet' id='bootstrap-css'  href='https://ilformat.info/wp-content/themes/ilformat-news/css/bootstrap.css?ver=2.7' type='text/css' media='all' />
+<link rel='stylesheet' id='style-css'  href='https://ilformat.info/wp-content/themes/ilformat-news/css/style.css?ver=2.96' type='text/css' media='all' />
+<link rel='stylesheet' id='typhography-css'  href='https://ilformat.info/wp-content/themes/ilformat-news/css/typhography.css?ver=1.0' type='text/css' media='all' />
+<link rel='stylesheet' id='responsive-css'  href='https://ilformat.info/wp-content/themes/ilformat-news/css/responsive.css?ver=3.4' type='text/css' media='all' />
+<script type='text/javascript' src='https://ilformat.info/wp-includes/js/jquery/jquery.min.js?ver=3.6.0' id='jquery-core-js'></script>
+<script type='text/javascript' src='https://ilformat.info/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2' id='jquery-migrate-js'></script>
+<script type='text/javascript' src='https://ilformat.info/wp-content/plugins/cf7-invisible-recaptcha/js/cf7_invisible_recaptcha.js?ver=1.2.3' id='cf7_invisible_recaptcha_functions-js'></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://ilformat.info/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://ilformat.info/wp-includes/wlwmanifest.xml" /> 
+<link rel='shortlink' href='https://ilformat.info/?p=36223' />
+
+<!-- Meta Pixel Code -->
+<script type='text/javascript'>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+</script>
+<!-- End Meta Pixel Code -->
+<script type='text/javascript'>
+  fbq('init', '403134281662350', {}, {
+    "agent": "wordpress-6.0.3-3.0.7"
+});
+  </script><script type='text/javascript'>
+  fbq('track', 'PageView', []);
+  </script>
+<!-- Meta Pixel Code -->
+<noscript>
+<img height="1" width="1" style="display:none" alt="fbpx"
+src="https://www.facebook.com/tr?id=403134281662350&ev=PageView&noscript=1" />
+</noscript>
+<!-- End Meta Pixel Code -->
+<link rel="icon" href="https://ilformat.info/wp-content/uploads/2020/03/cropped-logo-singolo-il-format-trasparente-150x150.png" sizes="32x32" />
+<link rel="icon" href="https://ilformat.info/wp-content/uploads/2020/03/cropped-logo-singolo-il-format-trasparente-300x300.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://ilformat.info/wp-content/uploads/2020/03/cropped-logo-singolo-il-format-trasparente-300x300.png" />
+<meta name="msapplication-TileImage" content="https://ilformat.info/wp-content/uploads/2020/03/cropped-logo-singolo-il-format-trasparente-300x300.png" />
+                     <!-- Iubenda -->
+            <script type="text/javascript">
+            var _iub = _iub || [];
+            _iub.csConfiguration = {"consentOnContinuedBrowsing":false,"enableCMP":true,"googleAdditionalConsentMode":true,"isTCFConsentGlobal":false,"whitelabel":false,"lang":"it","siteId":2051914,"perPurposeConsent":true,"cookiePolicyId":87457246, "banner":{ "acceptButtonDisplay":true,"customizeButtonDisplay":true,"position":"float-bottom-left" }};
+            </script>
+            <script type="text/javascript" src="//cdn.iubenda.com/cs/tcf/stub-v2.js"></script>
+            <script type="text/javascript" src="//cdn.iubenda.com/cs/iubenda_cs.js" charset="UTF-8" async></script>
+            <!-- /Iubenda -->
+            <!-- Google Analytics -->
+            <script>
+              (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+              })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+              ga('create', 'UA-122011528-1', 'auto');
+              ga('set', 'anonymizeIp', true);
+              ga('send', 'pageview');
+
+            </script>
+            <!-- Google Analytics -->
+                  <script data-ad-client="ca-pub-8817578573401247" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      </head>
+      <body class="post-template-default single single-post postid-36223 single-format-standard">
+         <div id="responsive-menu" class="responsive-menu"><ul><li id="menu-item-41693" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-41693"><a href="https://ilformat.info/">Home</a></li>
+<li id="menu-item-41700" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-41700"><a href="https://ilformat.info/categoria/politica/">Politica</a></li>
+<li id="menu-item-41697" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-41697"><a href="https://ilformat.info/categoria/economia/">Economia</a></li>
+<li id="menu-item-41699" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-41699"><a href="https://ilformat.info/categoria/esteri/">Esteri</a></li>
+<li id="menu-item-41694" class="sub-menu menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-41694"><a href="https://ilformat.info/categoria/attualita/">Attualità  <i class="icon-angle-double-down"></i></a>
+<ul class="sub-menu">
+	<li id="menu-item-41702" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-41702"><a href="https://ilformat.info/categoria/attualita/ambiente/">Ambiente</a></li>
+	<li id="menu-item-41703" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-41703"><a href="https://ilformat.info/categoria/attualita/salute/">Salute</a></li>
+	<li id="menu-item-41704" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-41704"><a href="https://ilformat.info/categoria/attualita/tecnologia/">Tecnologia</a></li>
+</ul>
+</li>
+<li id="menu-item-41695" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-41695"><a href="https://ilformat.info/categoria/cronaca/">Cronaca</a></li>
+<li id="menu-item-41696" class="sub-menu menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-41696"><a href="https://ilformat.info/categoria/cultura-interno/">Cultura <i class="icon-angle-double-down"></i></a>
+<ul class="sub-menu">
+	<li id="menu-item-41705" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-41705"><a href="https://ilformat.info/categoria/cultura-interno/cinema-spettacoli/">Cinema</a></li>
+	<li id="menu-item-41706" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-41706"><a href="https://ilformat.info/categoria/cultura-interno/libri/">Libri</a></li>
+	<li id="menu-item-41707" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-41707"><a href="https://ilformat.info/categoria/cultura-interno/teatro-spettacoli/">Teatro</a></li>
+	<li id="menu-item-41708" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-41708"><a href="https://ilformat.info/categoria/cultura-interno/tv/">Tv</a></li>
+</ul>
+</li>
+<li id="menu-item-41701" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-41701"><a href="https://ilformat.info/categoria/sport/">Sport</a></li>
+<li id="menu-item-41698" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-41698"><a href="https://ilformat.info/categoria/editoriale/">Editoriale</a></li>
+<li><div id="search-bar-mobile"><form role="search" method="get" action="https://ilformat.info/"><span>Cerca</span><input  name="s" type="text" placeholder="Scrivi qui la parola chiave..."></form></div></li></ul></div>         <div class="wrapper">
+<header id="header-desktop">
+   <div id="first-header" class="">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-1 col-md-2 col-sm-2">
+               <div id="news-top-title">
+                  <a href="https://ilformat.info/#news">
+                  News
+                  </a>
+               </div>
+            </div>
+            <div class="col-lg-7 col-md-8 col-sm-10 align-xs-center">
+               <div id="news-top-wrapper" class="flexslider">
+                                    <ul class="slides">
+                     <li>
+                        <a title="Rubrica Sport: Terzo appuntamento con Mattia Buzzanca" href="https://ilformat.info/2022/10/27/rubrica-sport-terzo-appuntamento-con-mattia-buzzanca/">Rubrica Sport: Terzo appuntamento con Mattia Buzzanca</a></li>
+                     <li>
+                        <a title="A Milano &#8220;La Meta Vita&#8221;, il primo Meta Party di Halloween nel Metaverso  " href="https://ilformat.info/2022/10/27/a-milano-la-meta-vita-il-primo-meta-party-di-halloween-nel-metaverso/">A Milano &#8220;La Meta Vita&#8221;, il primo Meta Party di Halloween nel Metaverso  </a></li>
+                     <li>
+                        <a title="Borsa: Milano positiva in attesa della Bce" href="https://ilformat.info/2022/10/27/borsa-milano-positiva-in-attesa-della-bce/">Borsa: Milano positiva in attesa della Bce</a></li>
+                     <li>
+                        <a title="Il segretario generale Stoltenberg: &#8220;La Russia non usi falsi pretesti per escalation&#8221;" href="https://ilformat.info/2022/10/27/il-segretario-generale-stoltenberg-la-russia-non-usi-falsi-pretesti-per-escalation/">Il segretario generale Stoltenberg: &#8220;La Russia non usi falsi pretesti per escalation&#8221;</a></li>
+                     <li>
+                        <a title="Influencer pubblicano foto sexy davanti alla Venere del Botticelli" href="https://ilformat.info/2022/10/27/influencer-pubblicano-foto-sexy-davanti-alla-venere-del-botticelli/">Influencer pubblicano foto sexy davanti alla Venere del Botticelli</a></li>
+                     <li>
+                        <a title="Champions League: Inter passa agli ottavi, ordinaria amministrazione per il Napoli già qualificato" href="https://ilformat.info/2022/10/27/champions-league-inter-passa-agli-ottavi-ordinaria-amministrazione-per-il-napoli-gia-qualificato/">Champions League: Inter passa agli ottavi, ordinaria amministrazione per il Napoli già qualificato</a></li>
+                                       </ul>
+               </div>
+            </div>
+            <div class="col-lg-4 col-md-2 hidden-xs hidden-sm">
+               <div id="top-date" class="hidden-md">
+                  Giovedì 27 Ottobre 2022               </div>
+               <div id="header-social">
+                  <ul>
+                     <li>
+                        <a title="Segui il Format su Facebook" rel="nofollow" target="_blank" href="https://www.facebook.com/IlFormat">
+                           <i class="icon-facebook"></i>
+                        </a>
+                     </li>
+                     <li>
+                        <a title="Segui il Format su Twitter" rel="nofollow" target="_blank" href="https://twitter.com/il_format">
+                           <i class="icon-twitter"></i>
+                        </a>
+                     </li>
+                     <li>
+                        <a title="Segui il Format su YouTube" rel="nofollow" target="_blank" href="https://www.youtube.com/channel/UC4UaAZVzhJRVHl4L8-E5kkQ">
+                           <i class="icon-youtube"></i>
+                        </a>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div id="ultimate-header">
+      <div class="container">
+         <div class="row">
+            <div class="col-sm-4 col-xs-4 hidden-lg hidden-md">
+            <div class="menu-button">
+               <span></span>
+               <span></span>
+               <span></span>
+               <span></span>
+               <span></span>
+               <span></span>
+            </div>
+            </div>
+            <div class="col-md-4 col-sm-8 col-xs-8">
+               <div id="logo-header" class="hidden-xs hidden-sm">
+                  <a href="https://ilformat.info/">
+                  <img src="https://ilformat.info/wp-content/themes/ilformat-news/images/logo-standard.jpg" alt="" class="standard-img">
+                  <img src="https://ilformat.info/wp-content/themes/ilformat-news/images/logo-retina.jpg" alt="" class="retina-img">
+                  </a>
+               </div>
+               <div id="logo-header-mobile" class="hidden-lg hidden-md">
+                  <a href="https://ilformat.info/">
+                  <img src="https://ilformat.info/wp-content/themes/ilformat-news/images/logo-standard-mobile.jpg" alt="" class="standard-img">
+                  <img src="https://ilformat.info/wp-content/themes/ilformat-news/images/logo-retina-mobile.jpg" alt="" class="retina-img">
+                  </a>     
+               </div>
+            </div>
+            <div class="clearfix hidden-lg hidden-md"></div>
+            <div class="col-md-8 col-xs-12 col-sm-12">
+               <div id="bn-header">
+                  
+
+
+<a rel="nofollow" id="block_1_click_657" target="_blank" href="https://clicks.pipaffiliates.com/c?m=8529&#038;c=208632">
+	<img src="https://ilformat.info/wp-content/uploads/2020/11/xm-bn-hd.jpeg" alt="adv-657">	
+</a>
+
+ 	<script>
+		ga('send', 'event', 'Header - 728 x 90', 'XM', 'Impression');
+		jQuery('#block_1_click_657').on('click', function(event) {
+			ga('send', 'event', 'Header - 728 x 90', 'XM', 'Click');
+		});
+	</script> 
+
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div id="menu-header" class="hidden-sm hidden-xs">
+      <div class="container">
+         <div class="row">
+            <div class="col-md-12">
+               <div id="menu-desktop-wrapper-inner">
+               <div id="menu-header-wrapper" class="menu-header"><ul><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-41693"><a href="https://ilformat.info/">Home</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-41700"><a href="https://ilformat.info/categoria/politica/">Politica</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-41697"><a href="https://ilformat.info/categoria/economia/">Economia</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-41699"><a href="https://ilformat.info/categoria/esteri/">Esteri</a></li>
+<li class="sub-menu menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-41694"><a href="https://ilformat.info/categoria/attualita/">Attualità  <i class="icon-angle-double-down"></i></a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-41702"><a href="https://ilformat.info/categoria/attualita/ambiente/">Ambiente</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-41703"><a href="https://ilformat.info/categoria/attualita/salute/">Salute</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-41704"><a href="https://ilformat.info/categoria/attualita/tecnologia/">Tecnologia</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-41695"><a href="https://ilformat.info/categoria/cronaca/">Cronaca</a></li>
+<li class="sub-menu menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-41696"><a href="https://ilformat.info/categoria/cultura-interno/">Cultura <i class="icon-angle-double-down"></i></a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-41705"><a href="https://ilformat.info/categoria/cultura-interno/cinema-spettacoli/">Cinema</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-41706"><a href="https://ilformat.info/categoria/cultura-interno/libri/">Libri</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-41707"><a href="https://ilformat.info/categoria/cultura-interno/teatro-spettacoli/">Teatro</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-41708"><a href="https://ilformat.info/categoria/cultura-interno/tv/">Tv</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-41701"><a href="https://ilformat.info/categoria/sport/">Sport</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-41698"><a href="https://ilformat.info/categoria/editoriale/">Editoriale</a></li>
+<li class="search-menu"><a href="#"><i class="icon-search"></i></a></li></ul></div>                  <div id="search-bar">
+                     <div id="search-bar-inner">
+                     <form role="search" method="get" action="https://ilformat.info/">
+                        <ul>
+                           <li><input  name="s" type="text" placeholder="Scrivi qui la parola chiave..."></li>
+                           <li><input type="submit" class="btn" value="Cerca"></li>
+                        </ul>
+                     </form>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</header>
+      <div class="margin-40"></div>
+<div class="container">
+   <div id="content-row" class="row">
+      <div id="content-right" class="col-md-9">
+         <div id="post-wrapper">
+            <div class="share-post">
+               <div class="addthis_inline_share_toolbox"></div>
+            </div>
+            <div id="single-post-category">
+               <a href="https://ilformat.info/categoria/cronaca/"><< CRONACA</a>            </div>
+            <div id="single-post-title">
+               <h1>L&#8217;India e il Bangladesh investiti dal ciclone Amphan</h1>
+            </div>
+                        <div id="single-post-meta">
+                <strong><a href="https://ilformat.info/author/giuseppe/" title="Articoli scritti da Giuseppe Gallinella" rel="author">Giuseppe Gallinella</a></strong> <span>|</span> 22 Maggio 2020 <span>|</span> <a href="https://ilformat.info/categoria/cronaca/">CRONACA</a>            </div>
+            <div id="single-post-image">
+               <img width="768" height="420" src="https://ilformat.info/wp-content/uploads/2020/05/Ciclone-Amphan-768x420.jpg" class="attachment-image_single_post size-image_single_post wp-post-image" alt="" />            </div>
+            <div id="single-post-content">
+				<div class="line textcontent_img watermark">
+<p><span>Centinaia di villaggi allagati, raccolti perduti e case distrutte: il passaggio del ciclone <strong>Amphan</strong> ha lasciato scene di &#8220;incredibile devastazione&#8221; in <strong>India e Bangladesh</strong> dove ha causato almeno 95 morti, secondo l&#8217;ultimo bilancio.</span>
+<p><strong>L&#8217;ufficio delle Nazioni Unite in Bangladesh ha stimato che 10 milioni di persone sono colpite e circa 500.000 sono senza casa.</strong>
+</div>
+<p><span>Nonostante il notevole danno causato dal ciclone, il più potente da formarsi nel Golfo del Bengala nel 21° secolo, la perdita della vita umana sembra essere stata contenuta. Fino a poco tempo fa, i cicloni più violenti a volte reclamavano migliaia di vite in questa regione del mondo.</span>			               <div class="bn-single-post">
+			               	
+<a rel="nofollow" id="block_4_click_54" target="_blank" href="https://www.okforex.it/go/xtb-jose/">
+	<img src="https://www.okforex.it/wp-content/uploads/2021/12/xtb-jm-side-small.jpg" alt="adv-54">	
+</a>
+
+ 	<script>
+		ga('send', 'event', 'Single Post Content - 336 x 280', 'XTB JOSE', 'Impression');
+		jQuery('#block_4_click_54').on('click', function(event) {
+			ga('send', 'event', 'Single Post Content - 336 x 280', 'XTB JOSE', 'Click');
+		});
+	</script>
+
+			               </div>
+                        
+<p><span>L&#8217;India ha contato 72 morti nello stato del Bengala Occidentale e il Bangladesh ha riportato 23 morti sul suo territorio, secondo i rapporti ufficiali ancora provvisori di ieri.</span>
+<p><span>Esperti nella gestione dei cicloni e che beneficiano di efficaci sistemi di monitoraggio meteorologico, le due nazioni dell&#8217;Asia meridionale hanno evacuato oltre tre milioni di persone come misura preventiva.</span>
+<p><strong>Il primo ministro indiano Narendra Modi dovrebbe venire a conoscenza del danno avvenuto nel Bengala occidentale e nello stato di Odisha.</strong>
+<p><span>&#8220;Tutto sarà fatto per aiutare le vittime&#8221;, ha detto su Twitter.</span>
+<p><span>Nella città indiana di <strong>Calcutta</strong>, l&#8217;acqua ha ristagnato giovedì </span><span>nelle strade allagate. Alberi e pali caduti a volte bloccavano la strada, i servizi di internet e telefonia mobile sono interrotti.</span>
+<p><span>Quando il ciclone ha colpito la metropoli di 15 milioni di abitanti per quasi sei ore mercoledì sera, &#8220;è stato terrificante e abbiamo pensato che la nostra fine fosse arrivata&#8221;, ha detto una dipendente di banca.</span>
+<p><span>&#8220;C&#8217;era solo l&#8217;ululato del vento e i suoni delle finestre rotte&#8221;, ha detto, &#8220;ogni secondo sembrava durare un&#8217;ora&#8221;.</span>
+<p><span>Apparendo questo fine settimana al largo delle coste dell&#8217;India, Amphan si è abbattuto mercoledì in ritardo a sud di Calcutta, accompagnato da venti intorno a 165 km/h e forti piogge.</span>
+<p><span>Nella città del Bangladesh di Buri Goalini, uno dei più colpiti, &#8220;il ciclone non ha ucciso le persone, ma ha distrutto i nostri mezzi di sostentamento&#8221;, ha detto <strong>Bhabotosh Kumar Mondal.</strong> Questo funzionario del comune descrive &#8220;una scia di incredibile devastazione&#8221;.</span>
+<p><span>Stessa osservazione dall&#8217;altra parte del confine, in India: &#8220;Non ho mai visto un disastro di questa portata&#8221;, ha detto <strong>Mamata Banerjee</strong>, il primo ministro del Bengala Occidentale.</span>
+<p>Abbattendo i pali delle utenze, tagliando i cavi e distruggendo i trasformatori, il ciclone ha ridotto la potenza a 15 milioni di bengalesi. A partire da giovedì mattina, 10 milioni di loro erano ancora senza energia.
+<div class="line textcontent_img watermark">
+<p>Un&#8217;ondata di tempesta &#8211; un brusco aumento delle acque causato dal ciclone &#8211; a volte quattro metri di altezza ha sommerso parte della costa e causato ondate di acqua salata che si propagavano attraverso i villaggi.
+<div id="attachment_36225" style="width: 778px" class="wp-caption alignnone"><img aria-describedby="caption-attachment-36225" loading="lazy" class="size-full wp-image-36225" src="https://ilformat.info/wp-content/uploads/2020/05/Gli-Stati-colpiti-dal-ciclone-Amphan.jpg" alt="" width="768" height="587" srcset="https://ilformat.info/wp-content/uploads/2020/05/Gli-Stati-colpiti-dal-ciclone-Amphan.jpg 768w, https://ilformat.info/wp-content/uploads/2020/05/Gli-Stati-colpiti-dal-ciclone-Amphan-300x229.jpg 300w, https://ilformat.info/wp-content/uploads/2020/05/Gli-Stati-colpiti-dal-ciclone-Amphan-696x532.jpg 696w, https://ilformat.info/wp-content/uploads/2020/05/Gli-Stati-colpiti-dal-ciclone-Amphan-550x420.jpg 550w, https://ilformat.info/wp-content/uploads/2020/05/Gli-Stati-colpiti-dal-ciclone-Amphan-80x60.jpg 80w" sizes="(max-width: 768px) 100vw, 768px" /><p id="caption-attachment-36225" class="wp-caption-text">Le zone colpite dal devastante ciclone Amphan</div>
+<p>Nel villaggio bengalese di <strong>Purba Durgabati</strong>, centinaia di residenti hanno combattuto tutta la notte contro gli elementi per cercare di consolidare la diga proteggendo la loro località. Ma l&#8217;ascesa del fiume lo ha polverizzato per quasi due chilometri e inondato 600 case.
+</div>
+<p>&#8220;La mia casa è sott&#8217;acqua. La mia fattoria di gamberetti è scomparsa. Non so come sopravviverò&#8221;, ha detto <strong>Omar Faruq</strong>, un residente di 28 anni.
+<div class="line textcontent_img watermark">
+<p><strong>Il ciclone Amphan si è indebolito verso nord giovedì al punto da essere declassato a una semplice depressione tropicale.</strong>
+<p><span>Ha raggiunto la categoria 4 sulla scala <strong>Saffir-Simpson</strong> lunedì, con venti da 200 a 240 km/h. È il ciclone più potente nato nel Golfo del Bengala dal 1999. In quell&#8217;anno un ciclone aveva ucciso 10.000 persone a Odisha (India).</span>
+</div>
+<p>I paesi della regione hanno provveduto, visto i devastanti cicloni degli anni precedenti, a costruire migliaia di rifugi per la popolazione e attuato politiche di evacuazione rapida.
+<p><span>La pandemia di coronavirus, tuttavia, ha reso il loro lavoro molto più difficile quest&#8217;anno. Per prevenire la diffusione del virus, le autorità avevano invitato gli sfollati a rispettare la distanza fisica nei rifugi e a indossare maschere.</span>
+            </div>
+                        <div id="single-post-tag">
+               <strong>TAG:</strong> 
+               <a href="https://ilformat.info/tag/pandemia">#pandemia</a>, <a href="https://ilformat.info/tag/amphan">Amphan</a>, <a href="https://ilformat.info/tag/bangladesh">Bangladesh</a>, <a href="https://ilformat.info/tag/cicloni">cicloni</a>, <a href="https://ilformat.info/tag/distruzione">Distruzione</a>, <a href="https://ilformat.info/tag/india">India</a>            </div>
+                        <div class="share-post share-bottom">
+               <div class="addthis_inline_share_toolbox"></div>
+            </div>
+            <div class="margin-10"></div>
+            <div id="bn-single-post" class="align-center margin-40">
+               
+<a rel="nofollow" id="block_2_click_778" target="_blank" href="https://www.amazon.it/?tag=subitcomilmas-21&#038;linkCode=ez">
+	<img src="https://www.okforex.it/wp-content/uploads/2020/10/amazon_it_default_728x90.gif" alt="adv-778">	
+</a>
+
+ 	<script>
+		ga('send', 'event', 'Bottom Post 729 x 90', 'Amazon', 'Impression');
+		jQuery('#block_2_click_778').on('click', function(event) {
+			ga('send', 'event', 'Bottom Post 729 x 90', 'Amazon', 'Click');
+		});
+	</script>
+
+            </div>
+            <div class="margin-20">
+            <!-- Composite Start -->
+            <div id="M718173ScriptRootC1145928"></div>
+            <script src="https://jsc.epeex.io/i/l/ilformat.info.1145928.js" async></script>
+            <!-- Composite End -->
+            </div>   
+            <div class="row">
+   <div class="col-md-12">
+      <div class="category-title">
+         <span>Articoli Correlati</span>
+      </div>
+   </div>
+</div>
+<div id="loop-style-standard" class="related-post">
+   <div class="row">
+            <div class="col-md-4 col-sm-6">
+         <div class="post-style-standard-item eq-height">
+            <div class="post-style-standard-image">
+               <a title="Influencer pubblicano foto sexy davanti alla Venere del Botticelli" href="https://ilformat.info/2022/10/27/influencer-pubblicano-foto-sexy-davanti-alla-venere-del-botticelli/">
+               <img width="360" height="220" src="https://ilformat.info/wp-content/uploads/2022/10/Alex-Mucci-e-Eva-Menta-e1666817051923-360x220.jpg" class="attachment-image_small_loop_standard size-image_small_loop_standard wp-post-image" alt="" loading="lazy" srcset="https://ilformat.info/wp-content/uploads/2022/10/Alex-Mucci-e-Eva-Menta-e1666817051923-360x220.jpg 360w, https://ilformat.info/wp-content/uploads/2022/10/Alex-Mucci-e-Eva-Menta-e1666817051923-720x440.jpg 720w" sizes="(max-width: 360px) 100vw, 360px" />               </a>
+            </div>
+            <div class="post-style-standard-date">
+               27 Ottobre 2022 | <a href="https://ilformat.info/categoria/cronaca/">CRONACA</a>            </div>
+            <div class="post-style-standard-title">
+               <h3><a title="Influencer pubblicano foto sexy davanti alla Venere del Botticelli" href="https://ilformat.info/2022/10/27/influencer-pubblicano-foto-sexy-davanti-alla-venere-del-botticelli/">Influencer pubblicano foto sexy davanti alla Venere del Botticelli</a></h3>
+            </div>
+         </div>
+      </div>
+                  <div class="col-md-4 col-sm-6">
+         <div class="post-style-standard-item eq-height">
+            <div class="post-style-standard-image">
+               <a title="La donna trovata morta in casa a Taranto è stata soffocata" href="https://ilformat.info/2022/10/26/la-donna-trovata-morta-in-casa-a-taranto-e-stata-soffocata/">
+               <img width="360" height="220" src="https://ilformat.info/wp-content/uploads/2021/04/Ambulanza-e-polizia-360x220.jpg" class="attachment-image_small_loop_standard size-image_small_loop_standard wp-post-image" alt="" loading="lazy" srcset="https://ilformat.info/wp-content/uploads/2021/04/Ambulanza-e-polizia-360x220.jpg 360w, https://ilformat.info/wp-content/uploads/2021/04/Ambulanza-e-polizia-720x440.jpg 720w" sizes="(max-width: 360px) 100vw, 360px" />               </a>
+            </div>
+            <div class="post-style-standard-date">
+               26 Ottobre 2022 | <a href="https://ilformat.info/categoria/cronaca/">CRONACA</a>            </div>
+            <div class="post-style-standard-title">
+               <h3><a title="La donna trovata morta in casa a Taranto è stata soffocata" href="https://ilformat.info/2022/10/26/la-donna-trovata-morta-in-casa-a-taranto-e-stata-soffocata/">La donna trovata morta in casa a Taranto è stata soffocata</a></h3>
+            </div>
+         </div>
+      </div>
+                  <div class="col-md-4 col-sm-6">
+         <div class="post-style-standard-item eq-height">
+            <div class="post-style-standard-image">
+               <a title="Studenti sparano alla prof con pistola ad aria compressa" href="https://ilformat.info/2022/10/26/studenti-sparano-alla-prof-con-pistola-ad-aria-compressa/">
+               <img width="360" height="220" src="https://ilformat.info/wp-content/uploads/2022/10/Prof-colpita-con-pistola-ad-aria-compressa-in-aula-e1666735793991-360x220.jpg" class="attachment-image_small_loop_standard size-image_small_loop_standard wp-post-image" alt="" loading="lazy" srcset="https://ilformat.info/wp-content/uploads/2022/10/Prof-colpita-con-pistola-ad-aria-compressa-in-aula-e1666735793991-360x220.jpg 360w, https://ilformat.info/wp-content/uploads/2022/10/Prof-colpita-con-pistola-ad-aria-compressa-in-aula-e1666735793991-720x440.jpg 720w" sizes="(max-width: 360px) 100vw, 360px" />               </a>
+            </div>
+            <div class="post-style-standard-date">
+               26 Ottobre 2022 | <a href="https://ilformat.info/categoria/cronaca/">CRONACA</a>            </div>
+            <div class="post-style-standard-title">
+               <h3><a title="Studenti sparano alla prof con pistola ad aria compressa" href="https://ilformat.info/2022/10/26/studenti-sparano-alla-prof-con-pistola-ad-aria-compressa/">Studenti sparano alla prof con pistola ad aria compressa</a></h3>
+            </div>
+         </div>
+      </div>
+                  <div class="col-md-4 col-sm-6">
+         <div class="post-style-standard-item eq-height">
+            <div class="post-style-standard-image">
+               <a title="Femminicidio a Bolzano, marito si presenta in Procura" href="https://ilformat.info/2022/10/25/femminicidio-a-bolzano-marito-si-presenta-in-procura/">
+               <img width="360" height="220" src="https://ilformat.info/wp-content/uploads/2022/10/Alexandra-Elena-Mocanu-e1666639968444-360x220.jpg" class="attachment-image_small_loop_standard size-image_small_loop_standard wp-post-image" alt="" loading="lazy" srcset="https://ilformat.info/wp-content/uploads/2022/10/Alexandra-Elena-Mocanu-e1666639968444-360x220.jpg 360w, https://ilformat.info/wp-content/uploads/2022/10/Alexandra-Elena-Mocanu-e1666639968444-300x183.jpg 300w, https://ilformat.info/wp-content/uploads/2022/10/Alexandra-Elena-Mocanu-e1666639968444-768x469.jpg 768w, https://ilformat.info/wp-content/uploads/2022/10/Alexandra-Elena-Mocanu-e1666639968444-720x440.jpg 720w, https://ilformat.info/wp-content/uploads/2022/10/Alexandra-Elena-Mocanu-e1666639968444.jpg 985w" sizes="(max-width: 360px) 100vw, 360px" />               </a>
+            </div>
+            <div class="post-style-standard-date">
+               25 Ottobre 2022 | <a href="https://ilformat.info/categoria/cronaca/">CRONACA</a>            </div>
+            <div class="post-style-standard-title">
+               <h3><a title="Femminicidio a Bolzano, marito si presenta in Procura" href="https://ilformat.info/2022/10/25/femminicidio-a-bolzano-marito-si-presenta-in-procura/">Femminicidio a Bolzano, marito si presenta in Procura</a></h3>
+            </div>
+         </div>
+      </div>
+                  <div class="col-md-4 col-sm-6">
+         <div class="post-style-standard-item eq-height">
+            <div class="post-style-standard-image">
+               <a title="La gatta Chicchi sbranata da un cane, era la mascotte di Monzuno" href="https://ilformat.info/2022/10/24/la-gatta-chicchi-sbranata-da-un-cane-era-la-mascotte-di-monzuno/">
+               <img width="360" height="220" src="https://ilformat.info/wp-content/uploads/2022/10/La-gatta-Chicchi-360x220.jpg" class="attachment-image_small_loop_standard size-image_small_loop_standard wp-post-image" alt="" loading="lazy" srcset="https://ilformat.info/wp-content/uploads/2022/10/La-gatta-Chicchi-360x220.jpg 360w, https://ilformat.info/wp-content/uploads/2022/10/La-gatta-Chicchi-720x440.jpg 720w" sizes="(max-width: 360px) 100vw, 360px" />               </a>
+            </div>
+            <div class="post-style-standard-date">
+               24 Ottobre 2022 | <a href="https://ilformat.info/categoria/cronaca/">CRONACA</a>            </div>
+            <div class="post-style-standard-title">
+               <h3><a title="La gatta Chicchi sbranata da un cane, era la mascotte di Monzuno" href="https://ilformat.info/2022/10/24/la-gatta-chicchi-sbranata-da-un-cane-era-la-mascotte-di-monzuno/">La gatta Chicchi sbranata da un cane, era la mascotte di Monzuno</a></h3>
+            </div>
+         </div>
+      </div>
+                  <div class="col-md-4 col-sm-6">
+         <div class="post-style-standard-item eq-height">
+            <div class="post-style-standard-image">
+               <a title="Barchino di migranti si ribalta nei pressi di Lampedusa" href="https://ilformat.info/2022/10/23/barchino-di-migranti-si-ribalta-nei-pressi-di-lampedusa/">
+               <img width="360" height="220" src="https://ilformat.info/wp-content/uploads/2020/02/migranti-360x220.jpg" class="attachment-image_small_loop_standard size-image_small_loop_standard wp-post-image" alt="migranti" loading="lazy" srcset="https://ilformat.info/wp-content/uploads/2020/02/migranti-360x220.jpg 360w, https://ilformat.info/wp-content/uploads/2020/02/migranti-300x182.jpg 300w, https://ilformat.info/wp-content/uploads/2020/02/migranti-720x440.jpg 720w, https://ilformat.info/wp-content/uploads/2020/02/migranti.jpg 1000w" sizes="(max-width: 360px) 100vw, 360px" />               </a>
+            </div>
+            <div class="post-style-standard-date">
+               23 Ottobre 2022 | <a href="https://ilformat.info/categoria/cronaca/">CRONACA</a>            </div>
+            <div class="post-style-standard-title">
+               <h3><a title="Barchino di migranti si ribalta nei pressi di Lampedusa" href="https://ilformat.info/2022/10/23/barchino-di-migranti-si-ribalta-nei-pressi-di-lampedusa/">Barchino di migranti si ribalta nei pressi di Lampedusa</a></h3>
+            </div>
+         </div>
+      </div>
+                  <div class="col-md-4 col-sm-6">
+         <div class="post-style-standard-item eq-height">
+            <div class="post-style-standard-image">
+               <a title="Rogo mortale a Catanzaro, il disperato tentativo di fuga delle vittime" href="https://ilformat.info/2022/10/22/rogo-mortale-a-catanzaro-il-disperato-tentativo-di-fuga-delle-vittime/">
+               <img width="360" height="220" src="https://ilformat.info/wp-content/uploads/2022/10/Incendio-a-Catanzaro-360x220.jpg" class="attachment-image_small_loop_standard size-image_small_loop_standard wp-post-image" alt="" loading="lazy" srcset="https://ilformat.info/wp-content/uploads/2022/10/Incendio-a-Catanzaro-360x220.jpg 360w, https://ilformat.info/wp-content/uploads/2022/10/Incendio-a-Catanzaro-720x440.jpg 720w" sizes="(max-width: 360px) 100vw, 360px" />               </a>
+            </div>
+            <div class="post-style-standard-date">
+               22 Ottobre 2022 | <a href="https://ilformat.info/categoria/cronaca/">CRONACA</a>            </div>
+            <div class="post-style-standard-title">
+               <h3><a title="Rogo mortale a Catanzaro, il disperato tentativo di fuga delle vittime" href="https://ilformat.info/2022/10/22/rogo-mortale-a-catanzaro-il-disperato-tentativo-di-fuga-delle-vittime/">Rogo mortale a Catanzaro, il disperato tentativo di fuga delle vittime</a></h3>
+            </div>
+         </div>
+      </div>
+                  <div class="col-md-4 col-sm-6">
+         <div class="post-style-standard-item eq-height">
+            <div class="post-style-standard-image">
+               <a title="Bimba di 4 anni arriva sola a Lampedusa, famiglia bloccata in Tunisia" href="https://ilformat.info/2022/10/19/bimba-di-4-anni-arriva-sola-a-lampedusa-famiglia-bloccata-in-tunisia/">
+               <img width="360" height="220" src="https://ilformat.info/wp-content/uploads/2020/08/Lampedusa-e1666124542444-360x220.jpg" class="attachment-image_small_loop_standard size-image_small_loop_standard wp-post-image" alt="" loading="lazy" srcset="https://ilformat.info/wp-content/uploads/2020/08/Lampedusa-e1666124542444-360x220.jpg 360w, https://ilformat.info/wp-content/uploads/2020/08/Lampedusa-e1666124542444-720x440.jpg 720w" sizes="(max-width: 360px) 100vw, 360px" />               </a>
+            </div>
+            <div class="post-style-standard-date">
+               19 Ottobre 2022 | <a href="https://ilformat.info/categoria/cronaca/">CRONACA</a>            </div>
+            <div class="post-style-standard-title">
+               <h3><a title="Bimba di 4 anni arriva sola a Lampedusa, famiglia bloccata in Tunisia" href="https://ilformat.info/2022/10/19/bimba-di-4-anni-arriva-sola-a-lampedusa-famiglia-bloccata-in-tunisia/">Bimba di 4 anni arriva sola a Lampedusa, famiglia bloccata in Tunisia</a></h3>
+            </div>
+         </div>
+      </div>
+                  <div class="col-md-4 col-sm-6">
+         <div class="post-style-standard-item eq-height">
+            <div class="post-style-standard-image">
+               <a title="Violenze sulla figlia di due anni, arrestato 33enne a Roma" href="https://ilformat.info/2022/10/15/violenze-sulla-figlia-di-due-anni-arrestato-33enne-a-roma/">
+               <img width="360" height="220" src="https://ilformat.info/wp-content/uploads/2020/12/Violenza-sui-minori-e1665088879707-360x220.jpg" class="attachment-image_small_loop_standard size-image_small_loop_standard wp-post-image" alt="" loading="lazy" srcset="https://ilformat.info/wp-content/uploads/2020/12/Violenza-sui-minori-e1665088879707-360x220.jpg 360w, https://ilformat.info/wp-content/uploads/2020/12/Violenza-sui-minori-e1665088879707-720x440.jpg 720w" sizes="(max-width: 360px) 100vw, 360px" />               </a>
+            </div>
+            <div class="post-style-standard-date">
+               15 Ottobre 2022 | <a href="https://ilformat.info/categoria/cronaca/">CRONACA</a>            </div>
+            <div class="post-style-standard-title">
+               <h3><a title="Violenze sulla figlia di due anni, arrestato 33enne a Roma" href="https://ilformat.info/2022/10/15/violenze-sulla-figlia-di-due-anni-arrestato-33enne-a-roma/">Violenze sulla figlia di due anni, arrestato 33enne a Roma</a></h3>
+            </div>
+         </div>
+      </div>
+               
+   </div>
+</div>         </div>
+      </div>
+      <div id="content-left" class="col-md-3">
+         <div id="sidebar">
+            <div id="custom_html-4" class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Il Format Info -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8817578573401247"
+     data-ad-slot="9303054076"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div><div id="rt_recent_posts-2" class="widget latest_post"><div class="widget-title"><div class="category-title"><span>Ultimi Articoli</span></div></div><div class="clearfix"></div><div class="widget-post-loop">               <div class="widget-post-item clearfix">
+                  <div class="widget-post-post-left">
+                     <a title="Rubrica Sport: Terzo appuntamento con Mattia Buzzanca" href="https://ilformat.info/2022/10/27/rubrica-sport-terzo-appuntamento-con-mattia-buzzanca/">
+                     <img width="100" height="80" src="https://ilformat.info/wp-content/uploads/2022/10/2022-10-27-08-32-09-059-100x80.jpg" class="attachment-image_loop_widget size-image_loop_widget wp-post-image" alt="" loading="lazy" />                     </a>
+                  </div>
+                  <div class="widget-post-right">
+                     <div class="widget-post-title">
+                        <h4><a title="Rubrica Sport: Terzo appuntamento con Mattia Buzzanca" href="https://ilformat.info/2022/10/27/rubrica-sport-terzo-appuntamento-con-mattia-buzzanca/">Rubrica Sport: Terzo appuntamento con Mattia Buzzanca</a></h4>
+                     </div>
+                     <div class="widget-post-date">
+                        27 Ottobre 2022 | <a href="https://ilformat.info/categoria/sport/">SPORT</a>                     </div>
+                  </div>
+               </div>
+               <div class="widget-post-item clearfix">
+                  <div class="widget-post-post-left">
+                     <a title="A Milano &#8220;La Meta Vita&#8221;, il primo Meta Party di Halloween nel Metaverso  " href="https://ilformat.info/2022/10/27/a-milano-la-meta-vita-il-primo-meta-party-di-halloween-nel-metaverso/">
+                     <img width="100" height="80" src="https://ilformat.info/wp-content/uploads/2022/10/Screenshot_20221027_070722-100x80.jpg" class="attachment-image_loop_widget size-image_loop_widget wp-post-image" alt="" loading="lazy" srcset="https://ilformat.info/wp-content/uploads/2022/10/Screenshot_20221027_070722-100x80.jpg 100w, https://ilformat.info/wp-content/uploads/2022/10/Screenshot_20221027_070722-720x585.jpg 720w" sizes="(max-width: 100px) 100vw, 100px" />                     </a>
+                  </div>
+                  <div class="widget-post-right">
+                     <div class="widget-post-title">
+                        <h4><a title="A Milano &#8220;La Meta Vita&#8221;, il primo Meta Party di Halloween nel Metaverso  " href="https://ilformat.info/2022/10/27/a-milano-la-meta-vita-il-primo-meta-party-di-halloween-nel-metaverso/">A Milano &#8220;La Meta Vita&#8221;, il primo Meta Party di Halloween nel ...</a></h4>
+                     </div>
+                     <div class="widget-post-date">
+                        27 Ottobre 2022 | <a href="https://ilformat.info/categoria/cultura-interno/">CULTURA</a>                     </div>
+                  </div>
+               </div>
+               <div class="widget-post-item clearfix">
+                  <div class="widget-post-post-left">
+                     <a title="Borsa: Milano positiva in attesa della Bce" href="https://ilformat.info/2022/10/27/borsa-milano-positiva-in-attesa-della-bce/">
+                     <img width="100" height="80" src="https://ilformat.info/wp-content/uploads/2021/04/Piazza-Affari-Milano-100x80.jpg" class="attachment-image_loop_widget size-image_loop_widget wp-post-image" alt="" loading="lazy" srcset="https://ilformat.info/wp-content/uploads/2021/04/Piazza-Affari-Milano-100x80.jpg 100w, https://ilformat.info/wp-content/uploads/2021/04/Piazza-Affari-Milano-300x239.jpg 300w, https://ilformat.info/wp-content/uploads/2021/04/Piazza-Affari-Milano-768x612.jpg 768w, https://ilformat.info/wp-content/uploads/2021/04/Piazza-Affari-Milano-720x585.jpg 720w, https://ilformat.info/wp-content/uploads/2021/04/Piazza-Affari-Milano.jpg 800w" sizes="(max-width: 100px) 100vw, 100px" />                     </a>
+                  </div>
+                  <div class="widget-post-right">
+                     <div class="widget-post-title">
+                        <h4><a title="Borsa: Milano positiva in attesa della Bce" href="https://ilformat.info/2022/10/27/borsa-milano-positiva-in-attesa-della-bce/">Borsa: Milano positiva in attesa della Bce</a></h4>
+                     </div>
+                     <div class="widget-post-date">
+                        27 Ottobre 2022 | <a href="https://ilformat.info/categoria/economia/">ECONOMIA</a>                     </div>
+                  </div>
+               </div>
+               <div class="widget-post-item clearfix">
+                  <div class="widget-post-post-left">
+                     <a title="Il segretario generale Stoltenberg: &#8220;La Russia non usi falsi pretesti per escalation&#8221;" href="https://ilformat.info/2022/10/27/il-segretario-generale-stoltenberg-la-russia-non-usi-falsi-pretesti-per-escalation/">
+                     <img width="100" height="80" src="https://ilformat.info/wp-content/uploads/2022/10/Zelensky-e-Stoltenberg-100x80.png" class="attachment-image_loop_widget size-image_loop_widget wp-post-image" alt="" loading="lazy" srcset="https://ilformat.info/wp-content/uploads/2022/10/Zelensky-e-Stoltenberg-100x80.png 100w, https://ilformat.info/wp-content/uploads/2022/10/Zelensky-e-Stoltenberg-720x585.png 720w" sizes="(max-width: 100px) 100vw, 100px" />                     </a>
+                  </div>
+                  <div class="widget-post-right">
+                     <div class="widget-post-title">
+                        <h4><a title="Il segretario generale Stoltenberg: &#8220;La Russia non usi falsi pretesti per escalation&#8221;" href="https://ilformat.info/2022/10/27/il-segretario-generale-stoltenberg-la-russia-non-usi-falsi-pretesti-per-escalation/">Il segretario generale Stoltenberg: &#8220;La Russia non usi falsi pretesti per escalation&#8221;</a></h4>
+                     </div>
+                     <div class="widget-post-date">
+                        27 Ottobre 2022 | <a href="https://ilformat.info/categoria/esteri/">ESTERI</a>                     </div>
+                  </div>
+               </div>
+</div><div class="clearfix"></div></div><div id="ads_widget-2" class="widget widget_ads_widget">			<div class="textwidget">
+               <div class="textwidget widget-bn">
+					
+<a rel="nofollow" id="block_5_click_537" target="_blank" href="https://www.plus500.it/?id=58648&#038;pl=2">
+	<img src="https://cdn.plus500.com/Media/Banners/300x250/31810.gif?set=Excel_New&#038;language=IT&#038;country=IT" alt="adv-537">	
+</a>
+
+ 	<script>
+		ga('send', 'event', 'Sidebar - 300 x 250 / 300 x 600', 'Plus500', 'Impression');
+		jQuery('#block_5_click_537').on('click', function(event) {
+			ga('send', 'event', 'Sidebar - 300 x 250 / 300 x 600', 'Plus500', 'Click');
+		});
+	</script>
+
+               </div>
+            </div>
+		</div><div id="custom_html-6" class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><!-- Composite Start -->
+<div id="M718173ScriptRootC1145932"></div>
+<script src="https://jsc.epeex.io/i/l/ilformat.info.1145932.js" async></script>
+<!-- Composite End --></div></div><div id="rt_recent_posts-3" class="widget latest_post"><div class="widget-title"><div class="category-title"><span>Editoriale</span></div></div><div class="clearfix"></div><div class="widget-post-loop">               <div class="widget-post-item clearfix">
+                  <div class="widget-post-post-left">
+                     <a title="L&#8217;Italia si è cinta la testa ma la sfida sarà governare" href="https://ilformat.info/2022/09/27/litalia-si-e-cinta-la-testa-ma-la-sfida-sara-governare/">
+                     <img width="100" height="80" src="https://ilformat.info/wp-content/uploads/2020/02/giorgia_meloni-e1666208536182-100x80.jpg" class="attachment-image_loop_widget size-image_loop_widget wp-post-image" alt="" loading="lazy" srcset="https://ilformat.info/wp-content/uploads/2020/02/giorgia_meloni-e1666208536182-100x80.jpg 100w, https://ilformat.info/wp-content/uploads/2020/02/giorgia_meloni-e1666208536182-720x585.jpg 720w" sizes="(max-width: 100px) 100vw, 100px" />                     </a>
+                  </div>
+                  <div class="widget-post-right">
+                     <div class="widget-post-title">
+                        <h4><a title="L&#8217;Italia si è cinta la testa ma la sfida sarà governare" href="https://ilformat.info/2022/09/27/litalia-si-e-cinta-la-testa-ma-la-sfida-sara-governare/">L&#8217;Italia si è cinta la testa ma la sfida sarà governare</a></h4>
+                     </div>
+                     <div class="widget-post-date">
+                        27 Settembre 2022 | <a href="https://ilformat.info/categoria/editoriale/">EDITORIALE</a>                     </div>
+                  </div>
+               </div>
+               <div class="widget-post-item clearfix">
+                  <div class="widget-post-post-left">
+                     <a title="L&#8217;Ordine Mondiale sull&#8217;orlo di un collasso globale" href="https://ilformat.info/2022/08/07/lordine-mondiale-sullorlo-di-un-collasso-globale/">
+                     <img width="100" height="80" src="https://ilformat.info/wp-content/uploads/2022/08/Mondo-100x80.jpg" class="attachment-image_loop_widget size-image_loop_widget wp-post-image" alt="" loading="lazy" srcset="https://ilformat.info/wp-content/uploads/2022/08/Mondo-100x80.jpg 100w, https://ilformat.info/wp-content/uploads/2022/08/Mondo-720x585.jpg 720w" sizes="(max-width: 100px) 100vw, 100px" />                     </a>
+                  </div>
+                  <div class="widget-post-right">
+                     <div class="widget-post-title">
+                        <h4><a title="L&#8217;Ordine Mondiale sull&#8217;orlo di un collasso globale" href="https://ilformat.info/2022/08/07/lordine-mondiale-sullorlo-di-un-collasso-globale/">L&#8217;Ordine Mondiale sull&#8217;orlo di un collasso globale</a></h4>
+                     </div>
+                     <div class="widget-post-date">
+                        7 Agosto 2022 | <a href="https://ilformat.info/categoria/editoriale/">EDITORIALE</a>                     </div>
+                  </div>
+               </div>
+               <div class="widget-post-item clearfix">
+                  <div class="widget-post-post-left">
+                     <a title="Svegliati Italia! Il futuro della Nazione è adesso" href="https://ilformat.info/2022/07/23/svegliati-italia-il-futuro-della-nazione-e-adesso/">
+                     <img width="100" height="63" src="https://ilformat.info/wp-content/uploads/2020/06/bandiera-italiana.jpg" class="attachment-image_loop_widget size-image_loop_widget wp-post-image" alt="" loading="lazy" srcset="https://ilformat.info/wp-content/uploads/2020/06/bandiera-italiana.jpg 800w, https://ilformat.info/wp-content/uploads/2020/06/bandiera-italiana-300x188.jpg 300w, https://ilformat.info/wp-content/uploads/2020/06/bandiera-italiana-768x480.jpg 768w, https://ilformat.info/wp-content/uploads/2020/06/bandiera-italiana-696x435.jpg 696w, https://ilformat.info/wp-content/uploads/2020/06/bandiera-italiana-672x420.jpg 672w, https://ilformat.info/wp-content/uploads/2020/06/bandiera-italiana-356x220.jpg 356w" sizes="(max-width: 100px) 100vw, 100px" />                     </a>
+                  </div>
+                  <div class="widget-post-right">
+                     <div class="widget-post-title">
+                        <h4><a title="Svegliati Italia! Il futuro della Nazione è adesso" href="https://ilformat.info/2022/07/23/svegliati-italia-il-futuro-della-nazione-e-adesso/">Svegliati Italia! Il futuro della Nazione è adesso</a></h4>
+                     </div>
+                     <div class="widget-post-date">
+                        23 Luglio 2022 | <a href="https://ilformat.info/categoria/editoriale/">EDITORIALE</a>                     </div>
+                  </div>
+               </div>
+               <div class="widget-post-item clearfix">
+                  <div class="widget-post-post-left">
+                     <a title="La crisi di Governo è una sconfitta per i prossimi elettori" href="https://ilformat.info/2022/07/19/la-crisi-di-governo-e-una-sconfitta-per-i-prossimi-elettori/">
+                     <img width="100" height="80" src="https://ilformat.info/wp-content/uploads/2022/02/Parlamento-Italiano-100x80.jpg" class="attachment-image_loop_widget size-image_loop_widget wp-post-image" alt="" loading="lazy" srcset="https://ilformat.info/wp-content/uploads/2022/02/Parlamento-Italiano-100x80.jpg 100w, https://ilformat.info/wp-content/uploads/2022/02/Parlamento-Italiano-720x585.jpg 720w" sizes="(max-width: 100px) 100vw, 100px" />                     </a>
+                  </div>
+                  <div class="widget-post-right">
+                     <div class="widget-post-title">
+                        <h4><a title="La crisi di Governo è una sconfitta per i prossimi elettori" href="https://ilformat.info/2022/07/19/la-crisi-di-governo-e-una-sconfitta-per-i-prossimi-elettori/">La crisi di Governo è una sconfitta per i prossimi elettori</a></h4>
+                     </div>
+                     <div class="widget-post-date">
+                        19 Luglio 2022 | <a href="https://ilformat.info/categoria/editoriale/">EDITORIALE</a>                     </div>
+                  </div>
+               </div>
+</div><div class="clearfix"></div></div><div id="sticky_widget-2" class="widget widget_sticky_widget">               <div class="widget-fixed widget-bn">
+				
+<a rel="nofollow" id="block_6_click_794" target="_blank" href="https://www.plus500.it/?id=58648&#038;pl=2">
+	<img src="https://cdn.plus500.com/Media/Banners/300x250/31810.gif?set=Excel_New&#038;language=IT&#038;country=IT" alt="adv-794">	
+</a>
+
+ 	<script>
+		ga('send', 'event', 'Sidebar Fixed - 300 x 250 / 300 x 600', 'Plus500', 'Impression');
+		jQuery('#block_6_click_794').on('click', function(event) {
+			ga('send', 'event', 'Sidebar Fixed - 300 x 250 / 300 x 600', 'Plus500', 'Click');
+		});
+	</script>
+
+              </div>
+		</div>         </div>
+      </div>
+   </div>
+</div>
+<div class="margin-60"></div>   
+<footer>
+   <div id="first-footer">
+      <div class="container">
+         <div class="row">
+            <div class="col-md-4 margin-sm-30">
+               <div id="footer-text" class="align-center">
+                  <div class="margin-30">
+                     <img alt="Il Format - Logo Footer Standard" src="https://ilformat.info/wp-content/themes/ilformat-news/images/logo-footer-standard.png" class="standard-img">
+                     <img alt="Il Format - Logo Footer Retina" src="https://ilformat.info/wp-content/themes/ilformat-news/images/logo-footer-retina.png" class="retina-img">
+                  </div>
+                  <p>Le foto, video e testi presenti su ilformat.info provengono anche attraverso la rete Internet: per utilizzo informativo, didattico, scientifico e non a scopo di lucro. Al fine di accettare il libero regime di circolazione e non violare il diritto d'autore o altri diritti esclusivi verranno effettuate le opportune verifiche. Per segnalare alla redazione eventuali errori nell'uso di materiale riservato.</p>
+                  <p>Testata Giornalistica Registrata<br>
+                     al Tribunale di Vicenza n° 7/2018
+                  </p>
+                  <p>Scrivici: <span class="email-spam">redazione [at] ilformat.info</span></p>
+                  <!-- <p><em>Non forniamo consulenza in materia di investimenti in nessuna circostanza.</em></p> -->
+               </div>
+            </div>
+            <div class="col-md-4 margin-sm-30">
+               <div class="sidebar-footer">
+                  <div id="rt_popular_posts-2" class="widget-footer clearfix popular_post"><div class="widget-title-footer">Più Letti</div><div class="clearfix"></div><div class="widget-post-loop">               <div class="widget-post-item clearfix">
+                  <div class="widget-post-post-left">
+                     <a title="Max Ernst, un gigante del novecento" href="https://ilformat.info/2022/10/08/max-ernst-un-gigante-del-novecento/">
+                     <img width="100" height="80" src="https://ilformat.info/wp-content/uploads/2022/10/IMG_20221003_134532-100x80.jpg" class="attachment-image_loop_widget size-image_loop_widget wp-post-image" alt="" loading="lazy" srcset="https://ilformat.info/wp-content/uploads/2022/10/IMG_20221003_134532-100x80.jpg 100w, https://ilformat.info/wp-content/uploads/2022/10/IMG_20221003_134532-720x585.jpg 720w" sizes="(max-width: 100px) 100vw, 100px" />                     </a>
+                  </div>
+                  <div class="widget-post-right">
+                     <div class="widget-post-title">
+                        <h4><a title="Max Ernst, un gigante del novecento" href="https://ilformat.info/2022/10/08/max-ernst-un-gigante-del-novecento/">Max Ernst, un gigante del novecento</a></h4>
+                     </div>
+                     <div class="widget-post-date">
+                        8 Ottobre 2022 | <a href="https://ilformat.info/categoria/cultura-interno/cinema-spettacoli/">CINEMA</a>                     </div>
+                  </div>
+               </div>
+               <div class="widget-post-item clearfix">
+                  <div class="widget-post-post-left">
+                     <a title="Ungheria e Serbia costruiranno un oleodotto per il trasporto del petrolio russo" href="https://ilformat.info/2022/10/11/ungheria-e-serbia-costruiranno-un-oleodotto-per-il-trasporto-del-petrolio-russo/">
+                     <img width="100" height="80" src="https://ilformat.info/wp-content/uploads/2022/10/Loleodotto-di-Druzhba-tra-Ungheria-e-Russia-100x80.jpg" class="attachment-image_loop_widget size-image_loop_widget wp-post-image" alt="" loading="lazy" srcset="https://ilformat.info/wp-content/uploads/2022/10/Loleodotto-di-Druzhba-tra-Ungheria-e-Russia-100x80.jpg 100w, https://ilformat.info/wp-content/uploads/2022/10/Loleodotto-di-Druzhba-tra-Ungheria-e-Russia-720x585.jpg 720w" sizes="(max-width: 100px) 100vw, 100px" />                     </a>
+                  </div>
+                  <div class="widget-post-right">
+                     <div class="widget-post-title">
+                        <h4><a title="Ungheria e Serbia costruiranno un oleodotto per il trasporto del petrolio russo" href="https://ilformat.info/2022/10/11/ungheria-e-serbia-costruiranno-un-oleodotto-per-il-trasporto-del-petrolio-russo/">Ungheria e Serbia costruiranno un oleodotto per il trasporto del petrolio russo</a></h4>
+                     </div>
+                     <div class="widget-post-date">
+                        11 Ottobre 2022 | <a href="https://ilformat.info/categoria/europa/">EUROPA</a>                     </div>
+                  </div>
+               </div>
+               <div class="widget-post-item clearfix">
+                  <div class="widget-post-post-left">
+                     <a title="Gli scatti di Richard Avedon a Palazzo Reale" href="https://ilformat.info/2022/09/30/gli-scatti-di-richard-avedon-a-palazzo-reale/">
+                     <img width="100" height="80" src="https://ilformat.info/wp-content/uploads/2022/09/IMG_20220920_124743-100x80.jpg" class="attachment-image_loop_widget size-image_loop_widget wp-post-image" alt="" loading="lazy" srcset="https://ilformat.info/wp-content/uploads/2022/09/IMG_20220920_124743-100x80.jpg 100w, https://ilformat.info/wp-content/uploads/2022/09/IMG_20220920_124743-720x585.jpg 720w" sizes="(max-width: 100px) 100vw, 100px" />                     </a>
+                  </div>
+                  <div class="widget-post-right">
+                     <div class="widget-post-title">
+                        <h4><a title="Gli scatti di Richard Avedon a Palazzo Reale" href="https://ilformat.info/2022/09/30/gli-scatti-di-richard-avedon-a-palazzo-reale/">Gli scatti di Richard Avedon a Palazzo Reale</a></h4>
+                     </div>
+                     <div class="widget-post-date">
+                        30 Settembre 2022 | <a href="https://ilformat.info/categoria/cultura-interno/">CULTURA</a>                     </div>
+                  </div>
+               </div>
+               <div class="widget-post-item clearfix">
+                  <div class="widget-post-post-left">
+                     <a title="&#8220;The Loneliest&#8221; è il brano più ascoltato al mondo" href="https://ilformat.info/2022/10/09/the-loneliest-e-il-brano-piu-ascoltato-al-mondo/">
+                     <img width="100" height="80" src="https://ilformat.info/wp-content/uploads/2022/10/Maneskin-100x80.jpg" class="attachment-image_loop_widget size-image_loop_widget wp-post-image" alt="" loading="lazy" srcset="https://ilformat.info/wp-content/uploads/2022/10/Maneskin-100x80.jpg 100w, https://ilformat.info/wp-content/uploads/2022/10/Maneskin-720x585.jpg 720w" sizes="(max-width: 100px) 100vw, 100px" />                     </a>
+                  </div>
+                  <div class="widget-post-right">
+                     <div class="widget-post-title">
+                        <h4><a title="&#8220;The Loneliest&#8221; è il brano più ascoltato al mondo" href="https://ilformat.info/2022/10/09/the-loneliest-e-il-brano-piu-ascoltato-al-mondo/">&#8220;The Loneliest&#8221; è il brano più ascoltato al mondo</a></h4>
+                     </div>
+                     <div class="widget-post-date">
+                        9 Ottobre 2022 | <a href="https://ilformat.info/categoria/musica/">MUSICA</a>                     </div>
+                  </div>
+               </div>
+</div><div class="clearfix"></div></div>               </div>
+            </div>
+            <div class="col-md-4">
+               <div class="sidebar-footer">
+                  <div id="categories-3" class="widget-footer clearfix widget_categories"><div class="widget-title-footer">Categorie</div>
+			<ul>
+					<li class="cat-item cat-item-5900"><a href="https://ilformat.info/categoria/attualita/ambiente/">AMBIENTE</a>
+</li>
+	<li class="cat-item cat-item-62"><a href="https://ilformat.info/categoria/attualita/">ATTUALITÀ</a>
+</li>
+	<li class="cat-item cat-item-845"><a href="https://ilformat.info/categoria/cultura-interno/cinema-spettacoli/">CINEMA</a>
+</li>
+	<li class="cat-item cat-item-33"><a href="https://ilformat.info/categoria/cronaca/">CRONACA</a>
+</li>
+	<li class="cat-item cat-item-30"><a href="https://ilformat.info/categoria/cultura-interno/">CULTURA</a>
+</li>
+	<li class="cat-item cat-item-29"><a href="https://ilformat.info/categoria/economia/">ECONOMIA</a>
+</li>
+	<li class="cat-item cat-item-247"><a href="https://ilformat.info/categoria/editoriale/">EDITORIALE</a>
+</li>
+	<li class="cat-item cat-item-5669"><a href="https://ilformat.info/categoria/esteri/">ESTERI</a>
+</li>
+	<li class="cat-item cat-item-6631"><a href="https://ilformat.info/categoria/europa/">EUROPA</a>
+</li>
+	<li class="cat-item cat-item-1"><a href="https://ilformat.info/categoria/il-format/">IL FORMAT</a>
+</li>
+	<li class="cat-item cat-item-304"><a href="https://ilformat.info/categoria/inchieste/">INCHIESTE</a>
+</li>
+	<li class="cat-item cat-item-11068"><a href="https://ilformat.info/categoria/cultura-interno/intervista/">INTERVISTA</a>
+</li>
+	<li class="cat-item cat-item-11569"><a href="https://ilformat.info/categoria/interviste/">INTERVISTE</a>
+</li>
+	<li class="cat-item cat-item-8303"><a href="https://ilformat.info/categoria/lopinione/">L&#039;OPINIONE</a>
+</li>
+	<li class="cat-item cat-item-5699"><a href="https://ilformat.info/categoria/cultura-interno/libri/">LIBRI</a>
+</li>
+	<li class="cat-item cat-item-9045"><a href="https://ilformat.info/categoria/mafia/">MAFIA</a>
+</li>
+	<li class="cat-item cat-item-6168"><a href="https://ilformat.info/categoria/musica/">MUSICA</a>
+</li>
+	<li class="cat-item cat-item-21"><a href="https://ilformat.info/categoria/politica/">POLITICA</a>
+</li>
+	<li class="cat-item cat-item-7165"><a href="https://ilformat.info/categoria/regione-veneto/">REGIONE VENETO</a>
+</li>
+	<li class="cat-item cat-item-5899"><a href="https://ilformat.info/categoria/attualita/salute/">SALUTE</a>
+</li>
+	<li class="cat-item cat-item-7739"><a href="https://ilformat.info/categoria/sport/">SPORT</a>
+</li>
+	<li class="cat-item cat-item-2993"><a href="https://ilformat.info/categoria/cultura-interno/teatro-spettacoli/">TEATRO</a>
+</li>
+	<li class="cat-item cat-item-5898"><a href="https://ilformat.info/categoria/attualita/tecnologia/">TECNOLOGIA</a>
+</li>
+	<li class="cat-item cat-item-235"><a href="https://ilformat.info/categoria/cultura-interno/tv/">TV</a>
+</li>
+			</ul>
+
+			</div><div id="custom_html-3" class="widget_text widget-footer clearfix widget_custom_html"><div class="widget-title-footer">Media Partner</div><div class="textwidget custom-html-widget"><a href="https://www.radiozeus.it/" rel="nofollow noopener" target="_blank">
+<img src="https://ilformat.info/wp-content/uploads/2020/10/Radio-Zeus-logo.jpg" alt="Radio Zeus Media Partner">
+</a></div></div>               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div id="ultimate-footer">
+      <div class="container">
+         <div class="row">
+            <div class="col-md-12">
+               <div id="footer-menu" class="footer-menu"><ul><li id="menu-item-41709" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-41709"><a href="https://ilformat.info/">Home</a></li>
+<li id="menu-item-41718" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-41718"><a href="https://ilformat.info/chi-siamo/">Chi Siamo</a></li>
+<li id="menu-item-41717" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-41717"><a href="https://ilformat.info/pubblicita/">Pubblicità</a></li>
+<li id="menu-item-41716" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-41716"><a href="https://ilformat.info/contatti/">Contatti</a></li>
+<li id="menu-item-41719" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41719"><a target="_blank" rel="noopener" href="https://www.facebook.com/IlFormat">Facebook</a></li>
+<li id="menu-item-41720" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41720"><a target="_blank" rel="noopener" href="https://twitter.com/il_format">Twitter</a></li>
+<li id="menu-item-41721" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41721"><a target="_blank" rel="noopener" href="https://www.youtube.com/channel/UC4UaAZVzhJRVHl4L8-E5kkQ">YouTube</a></li>
+</ul></div>               <div id="copy" class="align-center">
+                  &copy; Copyright 2022 by <a href="https://ilformat.info/">IlFormat.info</a> <br>
+                  <a class="iubenda-advertising-preferences-link" href="#">Aggiorna le tue preferenze di tracciamento pubblicitario</a>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</footer>
+<div class="menu-overlay"></div>
+</div>
+    <!-- Meta Pixel Event Code -->
+    <script type='text/javascript'>
+        document.addEventListener( 'wpcf7mailsent', function( event ) {
+        if( "fb_pxl_code" in event.detail.apiResponse){
+          eval(event.detail.apiResponse.fb_pxl_code);
+        }
+      }, false );
+    </script>
+    <!-- End Meta Pixel Event Code -->
+    <div id='fb-pxl-ajax-code'></div><script type='text/javascript' src='https://ilformat.info/wp-content/plugins/contact-form-7/includes/swv/js/index.js?ver=5.6.4' id='swv-js'></script>
+<script type='text/javascript' id='contact-form-7-js-extra'>
+/* <![CDATA[ */
+var wpcf7 = {"api":{"root":"https:\/\/ilformat.info\/wp-json\/","namespace":"contact-form-7\/v1"}};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://ilformat.info/wp-content/plugins/contact-form-7/includes/js/index.js?ver=5.6.4' id='contact-form-7-js'></script>
+<script type='text/javascript' src='https://ilformat.info/wp-content/themes/ilformat-news/js/min/match-height.js?ver=1.0' id='match-height-js'></script>
+<script type='text/javascript' src='https://ilformat.info/wp-content/themes/ilformat-news/js/min/sticky.js?ver=1.0' id='sticky-js'></script>
+<script type='text/javascript' src='https://ilformat.info/wp-content/themes/ilformat-news/js/min/flexslider.js?ver=1.0' id='flexslider-js'></script>
+<script type='text/javascript' src='https://ilformat.info/wp-content/themes/ilformat-news/js/min/main.js?ver=1.0' id='main-js'></script>
+<script type='text/javascript' src='//s7.addthis.com/js/300/addthis_widget.js?ver=1.0#pubid=ra-5f997610e250f3d9' id='addthis-js'></script>
+</body>
+</html>

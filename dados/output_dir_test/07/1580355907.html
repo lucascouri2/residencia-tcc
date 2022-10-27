@@ -1,0 +1,3668 @@
+<!doctype html>
+<!--[if lt IE 9]><html class="no-js no-svg ie lt-ie9 lt-ie8 lt-ie7" lang="fr-BE"> <![endif]-->
+<!--[if IE 9]><html class="no-js no-svg ie ie9 lt-ie9 lt-ie8" lang="fr-BE"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html class="no-js no-svg" lang="fr-BE"> <!--<![endif]-->
+<head>
+            <meta charset="UTF-8"/>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<script type="text/javascript">var rmg_bc_pl_data = {"DAP_DATA":"{\"ARTICLE\":{\"dl_art_content_guid\":\"971bb5d6-a575-11ea-a372-0a9e0632fe0a\",\"dl_art_content_id\":17000265413,\"dl_art_pluscontent\":false,\"dl_art_paywall\":false,\"dl_art_full_content_available\":true},\"CONTEXT\":{\"dl_ctx_timestamp_pageview\":1666824588,\"dl_ctx_sitecode\":\"Site-LeVif-FR\",\"dl_ctx_user\":\"ANONYMOUS\",\"dl_ctx_pw_dialog\":\"NONE\",\"dl_ctx_page_type\":\"article\",\"dl_ctx_page_category\":\"content\"}}","CIAM_ID":"","PROFILE_LOGGED_IN":0,"PROFILE_AUDIENCE":"UNKNOWN","PROFILE_LEVEL":"","PLUSCONTENT":0,"FULL_CONTENT_AVAILABLE":1,"CIAM_CREATED":0,"EMAIL_REGISTRATION_CONFIRMED_ACCESSTOKEN":0,"GUEST_GUID":""}</script><script type="text/javascript">
+    var rmgDapdataOverrule = {
+        init: function () {
+            var uuid = this.getCookie('rmg_profile') || '';
+            var dap_data = JSON.parse(rmg_bc_pl_data.DAP_DATA);
+
+            var rmg_sub = this.getCookie('rmg_sub') || '';
+            if(rmg_sub) {
+            	cookie_data = rmg_sub.split('|');
+            	dap_data['SITEMULTIACCESS'] = {
+            		"licenseBrand":cookie_data[3],
+            		"membershipType":cookie_data[4],
+            		"subscriptionType":cookie_data[5]
+            	};
+            }
+
+            // overwrite dap data
+            dap_data.CONTEXT.dl_ctx_user = this.isUser(uuid) ? 'REGISTERED' : 'ANONYMOUS';
+
+            const hasPaywall = dap_data.ARTICLE.dl_art_paywall;
+
+            if (this.isUser(uuid)) {
+                // overwrite bc pl data
+                rmg_bc_pl_data.CIAM_ID = uuid;
+                rmg_bc_pl_data.PROFILE_LOGGED_IN = 1;
+                const subscriptionCookie = this.getCookie('rmg_abs');
+                if (-1 !== ['DM', 'ABO', 'SINGLE'].indexOf(subscriptionCookie)) {
+                    rmg_bc_pl_data.PROFILE_AUDIENCE = this.checkSubscription(subscriptionCookie);
+                    dap_data.CONTEXT.dl_ctx_user = this.checkSubscription(subscriptionCookie);
+                } else {
+                    rmg_bc_pl_data.PROFILE_AUDIENCE = 'REGISTERED';
+                    if ( hasPaywall ) {
+                        dap_data.CONTEXT.dl_ctx_pw_dialog = 'TEASE-SUBSCRIPTION-TRIAL';
+                    }
+                }
+
+                // get profile
+                let profile = this.decode(this.getCookie('rmg_at'));
+
+                rmg_bc_pl_data.CIAM_CREATED = profile && profile.created ? profile.created * 1000 : 0;
+                rmg_bc_pl_data.EMAIL_REGISTRATION_CONFIRMED_ACCESSTOKEN = profile && profile.email_verified ? 1 : 0;
+
+                // set profile_level
+                rmg_bc_pl_data.PROFILE_LEVEL = profile && profile.profile_level ? profile.profile_level : 'none';
+            } else {
+                rmg_bc_pl_data.PROFILE_AUDIENCE = 'ANONYMOUS';
+                rmg_bc_pl_data.PROFILE_LEVEL = 'none';
+                rmg_bc_pl_data.GUEST_GUID = this.getCookie('rmg_guest') || '';
+
+                if ( hasPaywall ) {
+                    dap_data.CONTEXT.dl_ctx_pw_dialog = 'TEASE-REGISTER';
+                }
+            }
+
+            rmg_bc_pl_data.DAP_DATA = JSON.stringify(dap_data);
+
+            rmg_bc_pl_data.PAGE_TYPE = 'detail';
+            rmg_bc_pl_data.PAGE_SUB_TYPE = 'default';
+            rmg_bc_pl_data.PAGE_POST_FORMAT = 'normal';
+            rmg_bc_pl_data.PAGE_ACCESS_LEVEL = 'low';
+        },
+        getCookie: function (name) {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) return parts.pop().split(';').shift();
+        },
+        isUser: function (guid) {
+            return (guid.split('-').length == 5) ? true : false
+        },
+        checkSubscription: function(subscription) {
+            if ( 'DM' === subscription ) {
+                return 'TRIAL';
+            }
+            return subscription;
+        },
+        decode: function (t) {
+            try {
+                let base64Url = t.split('.')[1];
+                let base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+                let jsonPayload = decodeURIComponent(atob(base64).split('').map(function (c) {
+                    return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+                }).join(''));
+                return JSON.parse(jsonPayload);
+            } catch (err) {
+                return null;
+            }
+        },
+    }
+    rmgDapdataOverrule.init();
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="pingback" href="https://www.levif.be/wp/xmlrpc.php"/>
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="apple-touch-icon" href="https://www.levif.be/app/themes/rmg-wp-news-theme/assets/favicon/levif/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="512x512" href="https://www.levif.be/app/themes/rmg-wp-news-theme/assets/favicon/levif/android-chrome-512x512.png">
+<link rel="icon" type="image/png" sizes="192x192" href="https://www.levif.be/app/themes/rmg-wp-news-theme/assets/favicon/levif/android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.levif.be/app/themes/rmg-wp-news-theme/assets/favicon/levif/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.levif.be/app/themes/rmg-wp-news-theme/assets/favicon/levif/favicon-16x16.png">
+<link rel="manifest" href="https://www.levif.be/app/themes/rmg-wp-news-theme/assets/favicon/levif/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="https://www.levif.be/app/themes/rmg-wp-news-theme/assets/favicon/levif/mstile-150x150.png">
+<meta name="theme-color" content="#ed1c24">
+<meta property="article:section" content="international" />
+<meta property="article:id" content="17000265413" />
+<meta property="article:author" content="Le Vif" />
+<meta property="article:tag:person"  content="Le Vif" />
+<meta property="article:contentguid" content="971bb5d6-a575-11ea-a372-0a9e0632fe0a" />
+<meta property="site_code" content="Site-LeVif-FR" />
+<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+	<!-- This site is optimized with the Yoast SEO plugin v19.8 - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>Coronavirus : plus de 140.000 morts dans le monde</title>
+	<meta name="description" content="La pandémie provoquée par le nouveau coronavirus a fait au moins 141.127 morts dans le monde depuis son apparition en décembre en Chine, selon un bilan établi par l&#039;AFP à partir de sources officielles." />
+	<link rel="canonical" href="https://www.levif.be/international/coronavirus-plus-de-140-000-morts-dans-le-monde/" />
+	<meta property="og:locale" content="fr_FR" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="Coronavirus : plus de 140.000 morts dans le monde" />
+	<meta property="og:description" content="La pandémie provoquée par le nouveau coronavirus a fait au moins 141.127 morts dans le monde depuis son apparition en décembre en Chine, selon un bilan établi par l&#039;AFP à partir de sources officielles." />
+	<meta property="og:url" content="https://www.levif.be/international/coronavirus-plus-de-140-000-morts-dans-le-monde/" />
+	<meta property="og:site_name" content="Le Vif" />
+	<meta property="article:published_time" content="2020-04-16T16:28:00+00:00" />
+	<meta property="article:modified_time" content="2021-01-21T08:48:59+00:00" />
+	<meta property="og:image" content="https://img.static-rmg.be/a/view/q75/w1500/h1000/3661506/9efa669738573bd931e636442b24a89d-jpg.jpg" />
+	<meta property="og:image:width" content="1500" />
+	<meta property="og:image:height" content="1000" />
+	<meta property="og:image:type" content="image/jpeg" />
+	<meta name="author" content="Le Vif" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:label1" content="Written by" />
+	<meta name="twitter:data1" content="Le Vif" />
+	<meta name="twitter:label2" content="Est. reading time" />
+	<meta name="twitter:data2" content="2 minutes" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://www.levif.be/international/coronavirus-plus-de-140-000-morts-dans-le-monde/#article","isPartOf":{"@id":"https://www.levif.be/international/coronavirus-plus-de-140-000-morts-dans-le-monde/"},"author":{"name":"Le Vif","@id":"https://www.levif.be/#/schema/person/fa61f51c551802b5f7db8f7ed80b5500"},"headline":"Coronavirus : plus de 140.000 morts dans le monde","datePublished":"2020-04-16T16:28:00+00:00","dateModified":"2021-01-21T08:48:59+00:00","mainEntityOfPage":{"@id":"https://www.levif.be/international/coronavirus-plus-de-140-000-morts-dans-le-monde/"},"wordCount":380,"commentCount":0,"publisher":{"@id":"https://www.levif.be/#organization"},"image":{"@id":"https://www.levif.be/international/coronavirus-plus-de-140-000-morts-dans-le-monde/#primaryimage"},"thumbnailUrl":"https://img.static-rmg.be/a/view/q75/w1500/h1000/3661506/9efa669738573bd931e636442b24a89d-jpg.jpg","articleSection":["International"],"inLanguage":"fr-BE","copyrightYear":"2020","copyrightHolder":{"@id":"https://www.levif.be/#organization"}},{"@type":"WebPage","@id":"https://www.levif.be/international/coronavirus-plus-de-140-000-morts-dans-le-monde/","url":"https://www.levif.be/international/coronavirus-plus-de-140-000-morts-dans-le-monde/","name":"Coronavirus : plus de 140.000 morts dans le monde","isPartOf":{"@id":"https://www.levif.be/#website"},"primaryImageOfPage":{"@id":"https://www.levif.be/international/coronavirus-plus-de-140-000-morts-dans-le-monde/#primaryimage"},"image":{"@id":"https://www.levif.be/international/coronavirus-plus-de-140-000-morts-dans-le-monde/#primaryimage"},"thumbnailUrl":"https://img.static-rmg.be/a/view/q75/w1500/h1000/3661506/9efa669738573bd931e636442b24a89d-jpg.jpg","datePublished":"2020-04-16T16:28:00+00:00","dateModified":"2021-01-21T08:48:59+00:00","description":"La pandémie provoquée par le nouveau coronavirus a fait au moins 141.127 morts dans le monde depuis son apparition en décembre en Chine, selon un bilan établi par l'AFP à partir de sources officielles.","breadcrumb":{"@id":"https://www.levif.be/international/coronavirus-plus-de-140-000-morts-dans-le-monde/#breadcrumb"},"inLanguage":"fr-BE","potentialAction":[{"@type":"ReadAction","target":["https://www.levif.be/international/coronavirus-plus-de-140-000-morts-dans-le-monde/"]}]},{"@type":"ImageObject","inLanguage":"fr-BE","@id":"https://www.levif.be/international/coronavirus-plus-de-140-000-morts-dans-le-monde/#primaryimage","url":"https://img.static-rmg.be/a/view/q75/w1500/h1000/3661506/9efa669738573bd931e636442b24a89d-jpg.jpg","contentUrl":"https://img.static-rmg.be/a/view/q75/w1500/h1000/3661506/9efa669738573bd931e636442b24a89d-jpg.jpg","width":"1500","height":"1000"},{"@type":"BreadcrumbList","@id":"https://www.levif.be/international/coronavirus-plus-de-140-000-morts-dans-le-monde/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.levif.be/"},{"@type":"ListItem","position":2,"name":"Coronavirus : plus de 140.000 morts dans le monde"}]},{"@type":"WebSite","@id":"https://www.levif.be/#website","url":"https://www.levif.be/","name":"Le Vif","description":"Tous les jours, toute l&#039;info.","publisher":{"@id":"https://www.levif.be/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://www.levif.be/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"fr-BE"},{"@type":"Organization","@id":"https://www.levif.be/#organization","name":"Le Vif","url":"https://www.levif.be/","sameAs":[],"logo":{"@type":"ImageObject","inLanguage":"fr-BE","@id":"https://www.levif.be/#/schema/logo/image/","url":"https://img.static-rmg.be/a/view/q75/w1000/h198/4381264/logo-le-vif-1000x198-png.png","contentUrl":"https://img.static-rmg.be/a/view/q75/w1000/h198/4381264/logo-le-vif-1000x198-png.png","width":"1000","height":"198","caption":"Le Vif"},"image":{"@id":"https://www.levif.be/#/schema/logo/image/"}},{"@type":"Person","@id":"https://www.levif.be/#/schema/person/fa61f51c551802b5f7db8f7ed80b5500","name":"Le Vif","url":"https://www.levif.be/a/le-vif/"}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel='dns-prefetch' href='//z.moatads.com' />
+<link rel='dns-prefetch' href='//cdn.pushwoosh.com' />
+<link rel='dns-prefetch' href='//api.mijnmagazines.be' />
+<link rel='dns-prefetch' href='//c431.levif.be' />
+<link rel='dns-prefetch' href='//sdk.privacy-center.org' />
+<link rel='dns-prefetch' href='//cdn.adshim.com' />
+<link rel='preconnect' href='//myprivacy.roularta.be' />
+<link rel='preconnect' href='//img.static-rmg.be' />
+
+<link rel="alternate" type="application/rss+xml" title="Le Vif &raquo; Flux" href="https://www.levif.be/feed/" />
+<!-- Start Cookie consent production --><script>window.didomiConfig = {cookies: {group: {enabled: true, customDomain: 'myprivacy.roularta.be'}},tagManager: {provider: 'gtm'}};window.didomiEventListeners = window.didomiEventListeners || [];window.gdprAppliesGlobally=true;(function(){function n(){if(!window.frames.__cmpLocator){if(document.body&&document.body.firstChild){var e=document.body;var t=document.createElement("iframe");t.style.display="none";t.name="__cmpLocator";t.title="cmpLocator";e.insertBefore(t,e.firstChild)}else{setTimeout(n,5)}}}function e(e,t,n){if(typeof n!=="function"){return}if(!window.__cmpBuffer){window.__cmpBuffer=[]}if(e==="ping"){n({gdprAppliesGlobally:window.gdprAppliesGlobally,cmpLoaded:false},true)}else{window.__cmpBuffer.push({command:e,parameter:t,callback:n})}}e.stub=true;function t(r){if(!window.__cmp||window.__cmp.stub!==true){return}if(!r.data){return}var a=typeof r.data==="string";var e;try{e=a?JSON.parse(r.data):r.data}catch(t){return}if(e.__cmpCall){var o=e.__cmpCall;window.__cmp(o.command,o.parameter,function(e,t){var n={__cmpReturn:{returnValue:e,success:t,callId:o.callId}};r.source.postMessage(a?JSON.stringify(n):n,"*")})}}if(typeof window.__cmp!=="function"){window.__cmp=e;if(window.addEventListener){window.addEventListener("message",t,false)}else{window.attachEvent("onmessage",t)}}n()})();(function(e){var t=document.createElement("script");t.id="spcloader";t.type="text/javascript";t.async=true;t.src="https://sdk.privacy-center.org/"+e+"/loader.js?target="+document.location.hostname;t.charset="utf-8";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n)})("0c7f196f-0b85-4850-bfd5-f5512ebf3f5d");window.addEventListener("hashchange", function(e){if (e.newURL) {checkCookieHash(); }; }, false);window.didomiOnReady = window.didomiOnReady || [];window.didomiOnReady.push(function () { checkCookieHash(); }); function checkCookieHash() {var hash = window.location.hash.substring(1);if ("cookies" == hash) {Didomi.preferences.show(); history.pushState(null, null, "#");}}</script><!-- End Cookie consent production --><link rel="preload" href="https://img.static-rmg.be/a/view/q75/w1200/h627/3661506/9efa669738573bd931e636442b24a89d-jpg.jpg" as="image">
+<script type="text/javascript">dataLayer = [{"dl_ctx_page_classification":"content","dl_ctx_page_type":"detail","dl_ctx_page_sub_type":"article","dl_ctx_page_content_type":"default","dl_ctx_page_language":"fr","dl_ctx_content_zone":"","dl_ctx_content_section":"","dl_ctx_brand":"","dl_ctx_site_code":"Site-LeVif-FR","dl_ctx_environment":"production","dl_ctx_media":"","dl_ctx_paywall":"","dl_ctx_adblocker":"","dl_art_content_id":265413,"dl_art_content_length":2965,"dl_art_content_title":"Coronavirus : plus de 140.000 morts dans le monde","dl_art_publishdate_ts":"2020-04-16 18:28:00","dl_art_authors":["Le Vif"],"dl_art_owner_digital_id":"","dl_art_tags":[],"dl_usr_rmg_id":"","dl_usr_usertype":"ANONYMOUS","dl_usr_age":"","dl_usr_city":"","dl_usr_postal_code":"","dl_usr_country":"","dl_usr_gender":""}]; </script><script type="text/javascript">var datalayer_extend = {
+    init: function () {
+        var uuid = this.getCookie('rmg_profile') || '';
+        if (this.isUser(uuid)) {
+            let profile = this.decode(this.getCookie('rmg_at'));
+            dataLayer.push({'dl_usr_usertype': 'REGISTERED'});
+            dataLayer.push({'dl_usr_rmg_id': uuid});
+            if (profile.birthdate) {
+                var year = profile.birthdate.split('-')[0];
+                var dt = new Date();
+                dataLayer.push({'dl_usr_age': dt.getFullYear() - year});
+            }
+            if (profile.address) {
+                if (profile.address.locality) dataLayer.dl_usr_city = profile.address.locality;
+                dataLayer.push({'dl_usr_postal_code': profile.address.postal_code});
+                dataLayer.push({'dl_usr_country': profile.address.country});
+            }
+            if (profile.gender) dataLayer.push({'dl_usr_gender': profile.gender});
+        } else {
+            dataLayer.push({'dl_usr_usertype': 'ANONYMOUS'});
+        }
+    },
+    getCookie: function (name) {
+        const value = `; ${document.cookie}`;
+        const parts = value.split(`; ${name}=`);
+        if (parts.length === 2) return parts.pop().split(';').shift();
+    },
+    isUser: function (guid) {
+        return (guid.split('-').length == 5) ? true : false
+    },
+    decode: function (t) {
+        try {
+            let base64Url = t.split('.')[1];
+            let base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+            let jsonPayload = decodeURIComponent(atob(base64).split('').map(function (c) {
+                return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+            }).join(''));
+            return JSON.parse(jsonPayload);
+        } catch (err) {
+            return null;
+        }
+    },
+}
+datalayer_extend.init();</script><!-- Start blueconic production --><link rel="preconnect" href="//c431.levif.be/" crossorigin><script type="text/javascript">    (function () {        var bcScript = document.createElement('script');        bcScript.async = true;        bcScript.src = '//c431.levif.be/script.js';        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(bcScript);    })();</script><!-- End blueconic production --><script type="text/javascript">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-TNT28CW');</script><!-- levif.be is managing ads with Advanced Ads 1.37.0 --><!--noptimize--><script id="levif-ready">
+			window.advanced_ads_ready=function(e,a){a=a||"complete";var d=function(e){return"interactive"===a?"loading"!==e:"complete"===e};d(document.readyState)?e():document.addEventListener("readystatechange",(function(a){d(a.target.readyState)&&e()}),{once:"interactive"===a})},window.advanced_ads_ready_queue=window.advanced_ads_ready_queue||[];		</script>
+		<!--/noptimize--><link rel='stylesheet' id='rmg-clevercast-styles-css'  href='https://www.levif.be/app/plugins/rmg-clevercast/build/index.css?ver=7517952a3f86f67fb26470d0dd7197f1' type='text/css' media='all' />
+<style id='wp-block-library-inline-css' type='text/css'>
+:root{--wp-admin-theme-color:#007cba;--wp-admin-theme-color--rgb:0,124,186;--wp-admin-theme-color-darker-10:#006ba1;--wp-admin-theme-color-darker-10--rgb:0,107,161;--wp-admin-theme-color-darker-20:#005a87;--wp-admin-theme-color-darker-20--rgb:0,90,135;--wp-admin-border-width-focus:2px}@media (-webkit-min-device-pixel-ratio:2),(min-resolution:192dpi){:root{--wp-admin-border-width-focus:1.5px}}:root{--wp--preset--font-size--normal:16px;--wp--preset--font-size--huge:42px}:root .has-very-light-gray-background-color{background-color:#eee}:root .has-very-dark-gray-background-color{background-color:#313131}:root .has-very-light-gray-color{color:#eee}:root .has-very-dark-gray-color{color:#313131}:root .has-vivid-green-cyan-to-vivid-cyan-blue-gradient-background{background:linear-gradient(135deg,#00d084,#0693e3)}:root .has-purple-crush-gradient-background{background:linear-gradient(135deg,#34e2e4,#4721fb 50%,#ab1dfe)}:root .has-hazy-dawn-gradient-background{background:linear-gradient(135deg,#faaca8,#dad0ec)}:root .has-subdued-olive-gradient-background{background:linear-gradient(135deg,#fafae1,#67a671)}:root .has-atomic-cream-gradient-background{background:linear-gradient(135deg,#fdd79a,#004a59)}:root .has-nightshade-gradient-background{background:linear-gradient(135deg,#330968,#31cdcf)}:root .has-midnight-gradient-background{background:linear-gradient(135deg,#020381,#2874fc)}.has-regular-font-size{font-size:1em}.has-larger-font-size{font-size:2.625em}.has-normal-font-size{font-size:var(--wp--preset--font-size--normal)}.has-huge-font-size{font-size:var(--wp--preset--font-size--huge)}.has-text-align-center{text-align:center}.has-text-align-left{text-align:left}.has-text-align-right{text-align:right}#end-resizable-editor-section{display:none}.aligncenter{clear:both}.items-justified-left{justify-content:flex-start}.items-justified-center{justify-content:center}.items-justified-right{justify-content:flex-end}.items-justified-space-between{justify-content:space-between}.screen-reader-text{border:0;clip:rect(1px,1px,1px,1px);-webkit-clip-path:inset(50%);clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;word-wrap:normal!important}.screen-reader-text:focus{background-color:#ddd;clip:auto!important;-webkit-clip-path:none;clip-path:none;color:#444;display:block;font-size:1em;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000}html :where(.has-border-color),html :where([style*=border-width]){border-style:solid}html :where(img[class*=wp-image-]){height:auto;max-width:100%}
+</style>
+<style id='adshim-ads-styles-inline-css' type='text/css'>
+.c-ad{display:flex;flex-direction:column;align-items:center;width:100%}.c-ad--hidden,.u-visually-hidden{visibility:hidden!important;margin:0!important;padding:0!important;height:0!important;min-height:0!important;display:inherit!important}.c-ad iframe{position:relative}.c-ad[data-type=OUT_OF_PAGE]{position:fixed;left:0;top:0}.c-ad[data-type=INPAGE]{display:block}.c-ad[data-type=FLOORAD],.c-ad[data-type=SKY_RIGHT]{position:fixed;bottom:0;left:50%;margin-bottom:0;width:fit-content;z-index:6000;transform:translate(-50%)}.c-ad[data-type^=HALFRECT]{min-height:125px}.c-ad[data-type^=RECT]{min-height:250px}.c-ad[data-type^=BANNER]{min-height:90px}.c-ad[data-type=BANNER_ABOVE] .c-ad--sticky{position:fixed;text-align:center;z-index:9000}.c-ad[data-type=BANNER_ABOVE] .c-ad--absolute{position:absolute;text-align:center}.c-ad[data-device=desktop]{display:none}@media only screen and (min-width: 980px){.c-ad[data-device=mobile]{display:none}.c-ad[data-device=desktop]{display:flex}.c-ad[data-type=SKY_RIGHT]{position:static;transform:translate(0)}}@media only screen and (max-width: 980px){.c-ad[data-type^=BANNER]{min-height:75px}}@media only screen and (max-width: 480px){.c-ad--with-background{padding:10px;background-color:#f5f5f5;border:1px solid #f0f0f0}.c-ad[data-prefix]:before{font-weight:500;font-size:10px;line-height:16px;content:attr(data-prefix);text-transform:uppercase;margin-bottom:10px;color:#a3a3a3}}@media print{.c-ad{display:none}}
+
+</style>
+<link rel='stylesheet' id='rmg-main-css'  href='https://www.levif.be/app/themes/rmg-wp-news-theme/dist/main.c239f4e5b6b0e28fe90c.css' type='text/css' media='all' />
+<script type='text/javascript' id='rmg-dap-events-js-after'>
+			/* globals rmgDap */
+			( function () {
+				const queue = Array.isArray( window.rmgDapEvents ) ? window.rmgDapEvents : [];
+				let dapReady = typeof rmgDap !== 'undefined';
+
+				function sendEvent( event ) {
+					if ( dapReady ) {
+						rmgDap.sendEvent.apply( rmgDap, event );
+						return true;
+					}
+					return false;
+				}
+
+				function sendOrQueue( event ) {
+					if ( !sendEvent( event ) ) {
+						queue.push( event )
+					}
+				}
+
+				function runQueue() {
+					queue.splice( 0 ).forEach( sendEvent );
+				}
+
+				window.rmgDapEvents = { push: sendOrQueue };
+				
+				if ( dapReady && queue.length > 0 ) {
+					runQueue();
+				}
+
+				if ( !dapReady ) {
+					const checkDapReady = setInterval( function () {
+						dapReady = typeof rmgDap !== 'undefined';
+						if ( dapReady ) {
+							clearInterval( checkDapReady );
+							runQueue();
+						}
+					}, 500 );
+				}
+
+				document.addEventListener( 'click', function ( event ) {
+					if ( event.target.dataset.dapEvent ) {
+						try {
+							sendOrQueue( JSON.parse( event.target.dataset.dapEvent ) );
+						} catch ( e ) {
+							console.warn( e.message );
+						}
+					}
+				}, false );
+			} )();
+</script>
+<script id='adshim-script-js-before'>
+			var adshim = adshim || [];
+			var rmgAds = rmgAds || [];
+			rmgAds.push(function() {
+				rmgAds.setTargeting({
+					dossier: "",
+					site_code: "3040_I000",
+					section_code: "3040_I0214",
+					env: "production",
+					no_pub: false,
+					no_pub_video: false,
+					no_pub_outbrain: false
+				})
+			});
+
+			adshim.push(function () {
+				adshim.init({
+					adUnit: "3040_I0214",
+					targeting: {
+						dossier: "",
+						contextId: "",
+						platform: window.matchMedia("(max-width: 979px)").matches ? "mobile" : "desktop",
+						env: "production",
+						lang: "fr"
+					}
+				});
+
+				adshim.subscribe("load", function (e) {
+					rmgAds.push(function() {
+						rmgAds.slotRenderedLogic(e);
+					})
+				});
+			});
+		
+</script>
+<script async src="https://cdn.adshim.com/3d953644-f686-49cd-8fdb-730701cf25c6/adshim.js" id='adshim-script-js'></script>
+<script id='adshim-script-js-after'>
+		window.addEventListener('load', function() {
+            var liverampScript = document.createElement("script");
+            liverampScript.src = "https://ats-wrapper.privacymanager.io/ats-modules/3902afc2-ef92-4861-8903-516504d24051/ats.js";
+            liverampScript.onload = function() {
+                function setEnvelope() {
+                    if (rmgAuth.profile) {
+                        atsenvelopemodule.setAdditionalData({
+							"type": "email",
+							"id": rmgAuth.profile.emailaddress || rmgAuth.profile.email
+						})
+                    }
+                }
+                if (rmgAuth.profile) {
+                    setEnvelope();
+                } else {
+                    window.addEventListener("miaaOnWidgetLoaded", function () {
+                        setEnvelope()
+                    });
+                }
+            }
+            document.head.appendChild(liverampScript);
+		});
+        
+</script>
+<script async src="https://www.levif.be/app/plugins/rmg-adshim/public/assets/rmgAds-OVDTHWQE.js" id='adshim-rmg-script-js'></script>
+<script data-vendor='iab:772' type='didomi/javascript' src="https://z.moatads.com/roulartaheader380117297998/moatheader.js" id='adshim-moat-yield-js' defer></script>
+<script data-vendor='c:fallback-HNjBhJe6' type='didomi/javascript'  src='https://cdn.pushwoosh.com/webpush/v3/pushwoosh-web-notifications.js?ver=6.0.3' id='pushwoosh_notification-js' defer></script>
+<link rel='shortlink' href='https://www.levif.be/?p=265413' />
+<link rel="alternate" type="application/json+oembed" href="https://www.levif.be/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.levif.be%2Finternational%2Fcoronavirus-plus-de-140-000-morts-dans-le-monde%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://www.levif.be/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.levif.be%2Finternational%2Fcoronavirus-plus-de-140-000-morts-dans-le-monde%2F&#038;format=xml" />
+<link rel="preload" href="https://cdn.adshim.com/3d953644-f686-49cd-8fdb-730701cf25c6/adshim.js" as="script" />
+<link rel="preload" as="font" href="https://www.levif.be/app/themes/rmg-wp-news-theme/dist/fonts/adelle-semibold.92cffa151fb5020d5fd4.woff2" crossorigin>
+<link rel="preload" as="font" href="https://www.levif.be/app/themes/rmg-wp-news-theme/dist/fonts/adelle-bold.ff66eeb578d3734a538b.woff2" crossorigin>
+<link rel="preload" as="font" href="https://www.levif.be/app/themes/rmg-wp-news-theme/dist/fonts/adelle-sans-regular.f31c325f04ba26c51c7d.woff2" crossorigin>
+<link rel="preload" as="font" href="https://www.levif.be/app/themes/rmg-wp-news-theme/dist/fonts/adelle-condensed-bold.583ca38522b4e2bdde29.woff2" crossorigin>
+<link rel="preload" as="font" href="https://www.levif.be/app/themes/rmg-wp-news-theme/dist/fonts/adelle-sans-bold.e005a51105ad18ad50a7.woff2" crossorigin>
+<link rel="preload" as="font" href="https://www.levif.be/app/themes/rmg-wp-news-theme/dist/fonts/adelle-sans-semibold.00887a47e2add50ef8b3.woff2" crossorigin>    <meta property="article:subtype" content="news"/>
+    
+<noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript>
+                    </head>
+
+<body class="article-body rmgDetail post-template-default single single-post postid-265413 single-format-standard wp-embed-responsive aa-prefix-levif-" data-template="base.twig">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-dark-grayscale"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 0.49803921568627" /><feFuncG type="table" tableValues="0 0.49803921568627" /><feFuncB type="table" tableValues="0 0.49803921568627" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-grayscale"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 1" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0 1" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-purple-yellow"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.54901960784314 0.98823529411765" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0.71764705882353 0.25490196078431" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-blue-red"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 1" /><feFuncG type="table" tableValues="0 0.27843137254902" /><feFuncB type="table" tableValues="0.5921568627451 0.27843137254902" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-midnight"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 0" /><feFuncG type="table" tableValues="0 0.64705882352941" /><feFuncB type="table" tableValues="0 1" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-magenta-yellow"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.78039215686275 1" /><feFuncG type="table" tableValues="0 0.94901960784314" /><feFuncB type="table" tableValues="0.35294117647059 0.47058823529412" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-purple-green"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.65098039215686 0.40392156862745" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0.44705882352941 0.4" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-blue-orange"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.098039215686275 1" /><feFuncG type="table" tableValues="0 0.66274509803922" /><feFuncB type="table" tableValues="0.84705882352941 0.41960784313725" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><style>#rmg-mma-navigation { min-height: 55px; width: 100%; }</style>
+<div id="rmg-mma-navigation"></div>
+<div data-adshim data-adshim-format="out_of_page" data-adshim-slot="" data-adshim-targeting='{"AdType":"OUT_OF_PAGE"}' id="gpt-ad-OUT_OF_PAGE" class="rmgAd c-ad js-ad " data-type="OUT_OF_PAGE" data-device="all" ></div>
+
+    
+
+	
+	
+
+	
+<header class="c-header js-header js-header-fixed c-header--multi-brand js-header-fixed">
+	
+	<div class="c-header__content-container">
+		<div class="c-header__container">
+			<div class="l-container:12/12 l-container--with-default-spacing c-header__content js-container">
+									<form class="c-header__search" role="search" action="https://www.levif.be/">
+						
+
+
+<div class="c-input c-header__search-input c-input--small js-header__search-input  c-input--with-icon-before  ">
+			
+<span class="c-icon c-icon--search c-input__icon-before c-icon--size-x0.7" aria-hidden="true" focusable="false">
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
+	<path d="M 9.402344,0 C 4.209209,0 0,4.2109774 0,9.4042969 0,14.59767 4.209209,18.806641 9.402344,18.806641 c 2.127327,0 4.090543,-0.707323 5.666015,-1.898438 L 22.158203,24 24,22.158203 16.910156,15.068359 C 18.100793,13.492936 18.806641,11.531238 18.806641,9.4042969 18.806641,4.2109774 14.595447,0 9.402344,0 Z m 0,2.6035156 c 3.754986,0 6.798828,3.0456104 6.798828,6.8007813 0,3.7552031 -3.043842,6.7988281 -6.798828,6.7988281 -3.755029,0 -6.798828,-3.043625 -6.798828,-6.7988281 0,-3.7551709 3.043799,-6.8007813 6.798828,-6.8007813 z"/>
+</svg>
+	</span>
+	
+	<input
+		class="c-input__field "
+		id=""
+		name="s"
+		type="text"
+		placeholder=""
+		value=""
+			/>
+
+	
+	
+	</div>
+					</form>
+				
+				<div class="c-header__content-left">
+					
+											<div class="c-header__magazines u-display-none@to:viewport-9">
+															
+
+<div class="c-logo c-header__magazine-logo"
+	 >
+			<a class="c-logo__link" href="https://weekend.levif.be/"
+			 target="_blank" 			 rel="noopener noreferrer" 		>
+	
+					<img class="c-logo__image" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E"
+				 alt="Le Vif Weekend"
+				 				 		 data-lazy-src="https://api.mijnmagazines.be/svg/publication/logo/LW.svg"	/><noscript><img class="c-logo__image" src="https://api.mijnmagazines.be/svg/publication/logo/LW.svg"
+				 alt="Le Vif Weekend"
+				 				 			/></noscript>
+		
+			</a>
+	</div>
+															
+
+<div class="c-logo c-header__magazine-logo"
+	 >
+			<a class="c-logo__link" href="https://focus.levif.be/"
+			 target="_blank" 			 rel="noopener noreferrer" 		>
+	
+					<img class="c-logo__image" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E"
+				 alt="Focus Vif"
+				 				 		 data-lazy-src="https://api.mijnmagazines.be/svg/publication/logo/FP.svg"	/><noscript><img class="c-logo__image" src="https://api.mijnmagazines.be/svg/publication/logo/FP.svg"
+				 alt="Focus Vif"
+				 				 			/></noscript>
+		
+			</a>
+	</div>
+													</div>
+					
+											<button class="c-header__search-button js-header__search-button">
+							
+<span class="c-icon c-icon--search c-header__search-icon c-icon--size-x0.9" aria-hidden="true" focusable="false">
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
+	<path d="M 9.402344,0 C 4.209209,0 0,4.2109774 0,9.4042969 0,14.59767 4.209209,18.806641 9.402344,18.806641 c 2.127327,0 4.090543,-0.707323 5.666015,-1.898438 L 22.158203,24 24,22.158203 16.910156,15.068359 C 18.100793,13.492936 18.806641,11.531238 18.806641,9.4042969 18.806641,4.2109774 14.595447,0 9.402344,0 Z m 0,2.6035156 c 3.754986,0 6.798828,3.0456104 6.798828,6.8007813 0,3.7552031 -3.043842,6.7988281 -6.798828,6.7988281 -3.755029,0 -6.798828,-3.043625 -6.798828,-6.7988281 0,-3.7551709 3.043799,-6.8007813 6.798828,-6.8007813 z"/>
+</svg>
+	</span>
+						</button>
+									</div>
+
+				<div class="c-header__content-middle">
+											
+
+<div class="c-logo c-header__main-logo"
+	 >
+			<a class="c-logo__link" href="https://www.levif.be"
+								>
+	
+					<img width="710" height="140" class="c-logo__image" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20710%20140'%3E%3C/svg%3E"
+				 alt="Le Vif"
+				 				 		 data-lazy-src="https://www.levif.be/app/themes/rmg-wp-news-theme/dist/images/logo.78fb39ad5ba2f55fc8bf.svg"	/><noscript><img width="710" height="140" class="c-logo__image" src="https://www.levif.be/app/themes/rmg-wp-news-theme/dist/images/logo.78fb39ad5ba2f55fc8bf.svg"
+				 alt="Le Vif"
+				 				 			/></noscript>
+		
+			</a>
+	</div>
+					
+											
+<nav class="c-nav-alt c-header__nav-alt">
+	
+	</nav>
+									</div>
+
+				<div class="c-header__content-right">
+											
+<nav class="c-nav-alt c-header__nav-alt">
+			<ul class="c-nav-alt__list c-nav-alt__desktop u-display-none@to:viewport-9">
+															
+				
+				<li class="c-nav-alt__item ">
+					
+	<a class="c-nav-alt__link" href="https://newsroom.roularta.be/static/10082022/A54_11929_GuideAvantage_LEVIF2022_Lowres.pdf" target="_blank"  rel="noopener noreferrer" >
+		<div class="c-nav-alt__link-container">
+							<span class="c-nav-alt__text">
+					Guide Avantages
+				</span>
+			
+							
+<span class="c-icon c-icon--link-external c-nav-alt__icon" aria-hidden="true" focusable="false">
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
+<path d="M20.3,15h-1.5c-0.4,0-0.8,0.3-0.8,0.8V21H3V6h6.8c0.4,0,0.8-0.3,0.8-0.8V3.8c0-0.4-0.3-0.8-0.8-0.8H2.3C1,3,0,4,0,5.3v16.5
+	C0,23,1,24,2.3,24l0,0h16.5c1.2,0,2.3-1,2.3-2.3l0,0v-6C21,15.3,20.7,15,20.3,15z M22.3,0h-7.4c-0.7,0-1.3,0.6-1.3,1.3v0.9
+	c0,0.7,0.6,1.3,1.3,1.3c0,0,0,0,0,0L18,3.4L6.3,15l0,0c-0.4,0.4-0.4,1.2,0,1.6l1.1,1.1l0,0c0.4,0.4,1.2,0.4,1.6,0L20.6,6l-0.1,3.2v0
+	c0,0.7,0.6,1.3,1.3,1.3h0.8c0.7,0,1.3-0.6,1.3-1.3V1.7l0,0C24,0.8,23.2,0,22.3,0z"/>
+</svg>
+	</span>
+					</div>
+	</a>
+
+				</li>
+															
+				
+				<li class="c-nav-alt__item ">
+					
+	<a class="c-nav-alt__link" href="https://shop.levif.be/" target="_blank"  rel="noopener noreferrer" >
+		<div class="c-nav-alt__link-container">
+							<span class="c-nav-alt__text">
+					Shop
+				</span>
+			
+							
+<span class="c-icon c-icon--link-external c-nav-alt__icon" aria-hidden="true" focusable="false">
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
+<path d="M20.3,15h-1.5c-0.4,0-0.8,0.3-0.8,0.8V21H3V6h6.8c0.4,0,0.8-0.3,0.8-0.8V3.8c0-0.4-0.3-0.8-0.8-0.8H2.3C1,3,0,4,0,5.3v16.5
+	C0,23,1,24,2.3,24l0,0h16.5c1.2,0,2.3-1,2.3-2.3l0,0v-6C21,15.3,20.7,15,20.3,15z M22.3,0h-7.4c-0.7,0-1.3,0.6-1.3,1.3v0.9
+	c0,0.7,0.6,1.3,1.3,1.3c0,0,0,0,0,0L18,3.4L6.3,15l0,0c-0.4,0.4-0.4,1.2,0,1.6l1.1,1.1l0,0c0.4,0.4,1.2,0.4,1.6,0L20.6,6l-0.1,3.2v0
+	c0,0.7,0.6,1.3,1.3,1.3h0.8c0.7,0,1.3-0.6,1.3-1.3V1.7l0,0C24,0.8,23.2,0,22.3,0z"/>
+</svg>
+	</span>
+					</div>
+	</a>
+
+				</li>
+															
+				
+				<li class="c-nav-alt__item ">
+					
+	<a class="c-nav-alt__link" href="https://www.levif.be/actions/vif-club/"  >
+		<div class="c-nav-alt__link-container">
+							<span class="c-nav-alt__text">
+					Vif Club
+				</span>
+			
+					</div>
+	</a>
+
+				</li>
+					</ul>
+	
+	</nav>
+					
+																	
+
+
+
+	<a
+		id="subscr_site-levif-fr_main"		class="c-button c-header__action c-button--small "
+		href="https://levif.be/abonnements/"
+				style=""
+					>
+			
+			<span class="c-button__text js-button__text">
+			S'ABONNER
+		</span>
+	
+	
+	
+	</a>
+
+					
+											<button class="c-header__search-button js-header__search-button">
+							
+<span class="c-icon c-icon--search c-header__search-icon c-icon--size-x0.9" aria-hidden="true" focusable="false">
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
+	<path d="M 9.402344,0 C 4.209209,0 0,4.2109774 0,9.4042969 0,14.59767 4.209209,18.806641 9.402344,18.806641 c 2.127327,0 4.090543,-0.707323 5.666015,-1.898438 L 22.158203,24 24,22.158203 16.910156,15.068359 C 18.100793,13.492936 18.806641,11.531238 18.806641,9.4042969 18.806641,4.2109774 14.595447,0 9.402344,0 Z m 0,2.6035156 c 3.754986,0 6.798828,3.0456104 6.798828,6.8007813 0,3.7552031 -3.043842,6.7988281 -6.798828,6.7988281 -3.755029,0 -6.798828,-3.043625 -6.798828,-6.7988281 0,-3.7551709 3.043799,-6.8007813 6.798828,-6.8007813 z"/>
+</svg>
+	</span>
+						</button>
+					
+					
+<div class="c-hamburger js-hamburger c-header__hamburger js-header__hamburger">
+	<div class="c-hamburger__container">
+		<span class="c-hamburger__line c-hamburger__line--top"></span>
+		<span class="c-hamburger__line c-hamburger__line--middle"></span>
+		<span class="c-hamburger__line c-hamburger__line--bottom"></span>
+	</div>
+</div>
+				</div>
+			</div>
+
+			<div class="c-header__bottom js-header__bottom" data-sticky-ad-offset>
+				
+<nav class="c-nav js-nav c-header__nav js-header__nav">
+	<div class="l-container:12/12 l-container--with-default-spacing c-nav__desktop js-container">
+		<ul class="c-nav__main">
+							<li class="c-nav__logo-container">
+					
+
+<div class="c-logo c-nav__logo"
+	 >
+			<a class="c-logo__link" href="https://www.levif.be"
+								>
+	
+					<img width="710" height="140" class="c-logo__image" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20710%20140'%3E%3C/svg%3E"
+				 alt="Le Vif"
+				 				 		 data-lazy-src="https://www.levif.be/app/themes/rmg-wp-news-theme/dist/images/logo.78fb39ad5ba2f55fc8bf.svg"	/><noscript><img width="710" height="140" class="c-logo__image" src="https://www.levif.be/app/themes/rmg-wp-news-theme/dist/images/logo.78fb39ad5ba2f55fc8bf.svg"
+				 alt="Le Vif"
+				 				 			/></noscript>
+		
+			</a>
+	</div>
+				</li>
+			
+															
+				
+				<li class="c-nav__item ">
+					
+	
+	
+	
+	
+
+
+	
+<div class="c-flyout js-flyout c-flyout--bottom  c-flyout--with-arrow">
+	<div class="c-flyout__trigger js-flyout-trigger">
+							<a class="c-nav__link" href="https://www.levif.be/belgique/"  >
+						<div class="c-nav__item-inner">
+			<span class="c-nav__text">
+				Belgique
+			</span>
+
+			
+<span class="c-icon c-icon--chevron-down c-nav__icon c-icon--size-x0.5" aria-hidden="true" focusable="false">
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
+  <path d="M 24,7.41 21.18,4.59 12,13.79 2.82,4.59 0,7.41 l 12,12 z" />
+</svg>
+	</span>
+		</div>
+	
+			</a>
+			
+	</div>
+
+			<div class="c-flyout__arrow-container">
+			<span class="c-flyout__arrow"></span>
+		</div>
+	
+	<div class="c-flyout__content js-flyout-content ">
+				
+<ul class="c-nav__sub">
+									
+		<li class="c-nav__sub-item ">
+			<a class="c-nav__sub-link" href="https://www.levif.be/belgique/politique/" data-text="Politique">
+				Politique
+			</a>
+		</li>
+									
+		<li class="c-nav__sub-item ">
+			<a class="c-nav__sub-link" href="https://www.levif.be/belgique/justice/" data-text="Justice">
+				Justice
+			</a>
+		</li>
+									
+		<li class="c-nav__sub-item ">
+			<a class="c-nav__sub-link" href="https://www.levif.be/belgique/social/" data-text="Social">
+				Social
+			</a>
+		</li>
+									
+		<li class="c-nav__sub-item ">
+			<a class="c-nav__sub-link" href="https://www.levif.be/societe/" data-text="Société">
+				Société
+			</a>
+		</li>
+									
+		<li class="c-nav__sub-item ">
+			<a class="c-nav__sub-link" href="https://www.levif.be/belgique/enseignement/" data-text="Enseignement">
+				Enseignement
+			</a>
+		</li>
+									
+		<li class="c-nav__sub-item ">
+			<a class="c-nav__sub-link" href="https://www.levif.be/economie/" data-text="Economie">
+				Economie
+			</a>
+		</li>
+									
+		<li class="c-nav__sub-item ">
+			<a class="c-nav__sub-link" href="https://www.levif.be/societe/mobilite/" data-text="Mobilité">
+				Mobilité
+			</a>
+		</li>
+	</ul>
+	
+	</div>
+</div>
+				</li>
+															
+				
+				<li class="c-nav__item ">
+					
+	
+	
+	
+	
+
+
+	
+<div class="c-flyout js-flyout c-flyout--bottom  c-flyout--with-arrow">
+	<div class="c-flyout__trigger js-flyout-trigger">
+							<a class="c-nav__link" href="https://www.levif.be/international/"  >
+						<div class="c-nav__item-inner">
+			<span class="c-nav__text">
+				Monde
+			</span>
+
+			
+<span class="c-icon c-icon--chevron-down c-nav__icon c-icon--size-x0.5" aria-hidden="true" focusable="false">
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
+  <path d="M 24,7.41 21.18,4.59 12,13.79 2.82,4.59 0,7.41 l 12,12 z" />
+</svg>
+	</span>
+		</div>
+	
+			</a>
+			
+	</div>
+
+			<div class="c-flyout__arrow-container">
+			<span class="c-flyout__arrow"></span>
+		</div>
+	
+	<div class="c-flyout__content js-flyout-content ">
+				
+<ul class="c-nav__sub">
+									
+		<li class="c-nav__sub-item ">
+			<a class="c-nav__sub-link" href="https://www.levif.be/international/europe/" data-text="Europe">
+				Europe
+			</a>
+		</li>
+									
+		<li class="c-nav__sub-item ">
+			<a class="c-nav__sub-link" href="https://www.levif.be/international/amerique/" data-text="Amérique">
+				Amérique
+			</a>
+		</li>
+									
+		<li class="c-nav__sub-item ">
+			<a class="c-nav__sub-link" href="https://www.levif.be/international/asie/" data-text="Asie">
+				Asie
+			</a>
+		</li>
+									
+		<li class="c-nav__sub-item ">
+			<a class="c-nav__sub-link" href="https://www.levif.be/international/afrique/" data-text="Afrique">
+				Afrique
+			</a>
+		</li>
+									
+		<li class="c-nav__sub-item ">
+			<a class="c-nav__sub-link" href="https://www.levif.be/international/oceanie/" data-text="Océanie">
+				Océanie
+			</a>
+		</li>
+									
+		<li class="c-nav__sub-item ">
+			<a class="c-nav__sub-link" href="https://www.levif.be/international/moyen-orient/" data-text="Moyen-Orient">
+				Moyen-Orient
+			</a>
+		</li>
+	</ul>
+	
+	</div>
+</div>
+				</li>
+															
+				
+				<li class="c-nav__item ">
+					
+	
+	
+	
+	
+
+
+	
+<div class="c-flyout js-flyout c-flyout--bottom  c-flyout--with-arrow">
+	<div class="c-flyout__trigger js-flyout-trigger">
+							<a class="c-nav__link" href="https://www.levif.be/economie/mon-argent/"  >
+						<div class="c-nav__item-inner">
+			<span class="c-nav__text">
+				Mon argent
+			</span>
+
+			
+<span class="c-icon c-icon--chevron-down c-nav__icon c-icon--size-x0.5" aria-hidden="true" focusable="false">
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
+  <path d="M 24,7.41 21.18,4.59 12,13.79 2.82,4.59 0,7.41 l 12,12 z" />
+</svg>
+	</span>
+		</div>
+	
+			</a>
+			
+	</div>
+
+			<div class="c-flyout__arrow-container">
+			<span class="c-flyout__arrow"></span>
+		</div>
+	
+	<div class="c-flyout__content js-flyout-content ">
+				
+<ul class="c-nav__sub">
+									
+		<li class="c-nav__sub-item ">
+			<a class="c-nav__sub-link" href="https://www.levif.be/economie/immo/" data-text="Immobilier">
+				Immobilier
+			</a>
+		</li>
+									
+		<li class="c-nav__sub-item ">
+			<a class="c-nav__sub-link" href="https://www.levif.be/belgique/politique/fiscalite/" data-text="Fiscalité">
+				Fiscalité
+			</a>
+		</li>
+									
+		<li class="c-nav__sub-item ">
+			<a class="c-nav__sub-link" href="https://www.levif.be/economie/mon-argent/consommation/" data-text="Consommation">
+				Consommation
+			</a>
+		</li>
+	</ul>
+	
+	</div>
+</div>
+				</li>
+															
+				
+				<li class="c-nav__item ">
+					
+	
+	
+	
+	
+
+
+	
+<div class="c-flyout js-flyout c-flyout--bottom  c-flyout--with-arrow">
+	<div class="c-flyout__trigger js-flyout-trigger">
+							<a class="c-nav__link" href="https://www.levif.be/opinions/"  >
+						<div class="c-nav__item-inner">
+			<span class="c-nav__text">
+				Opinions
+			</span>
+
+			
+<span class="c-icon c-icon--chevron-down c-nav__icon c-icon--size-x0.5" aria-hidden="true" focusable="false">
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
+  <path d="M 24,7.41 21.18,4.59 12,13.79 2.82,4.59 0,7.41 l 12,12 z" />
+</svg>
+	</span>
+		</div>
+	
+			</a>
+			
+	</div>
+
+			<div class="c-flyout__arrow-container">
+			<span class="c-flyout__arrow"></span>
+		</div>
+	
+	<div class="c-flyout__content js-flyout-content ">
+				
+<ul class="c-nav__sub">
+									
+		<li class="c-nav__sub-item ">
+			<a class="c-nav__sub-link" href="https://www.levif.be/opinions/cartes-blanches/" data-text="Cartes blanches">
+				Cartes blanches
+			</a>
+		</li>
+									
+		<li class="c-nav__sub-item ">
+			<a class="c-nav__sub-link" href="https://www.levif.be/opinions/editos/" data-text="Editos">
+				Editos
+			</a>
+		</li>
+									
+		<li class="c-nav__sub-item ">
+			<a class="c-nav__sub-link" href="https://www.levif.be/opinions/chroniques/" data-text="Chroniques">
+				Chroniques
+			</a>
+		</li>
+									
+		<li class="c-nav__sub-item ">
+			<a class="c-nav__sub-link" href="https://www.levif.be/opinions/humeurs/" data-text="Humeurs">
+				Humeurs
+			</a>
+		</li>
+	</ul>
+	
+	</div>
+</div>
+				</li>
+															
+				
+				<li class="c-nav__item ">
+					
+	<a class="c-nav__link" href="https://www.levif.be/societe/sante/"  >
+		<div class="c-nav__item-inner">
+			
+			<span class="c-nav__text">
+				Santé
+			</span>
+
+					</div>
+	</a>
+				</li>
+															
+				
+				<li class="c-nav__item ">
+					
+	
+	
+	
+	
+
+
+	
+<div class="c-flyout js-flyout c-flyout--bottom  c-flyout--with-arrow">
+	<div class="c-flyout__trigger js-flyout-trigger">
+							<a class="c-nav__link" href="https://www.levif.be/sciences-et-environnement/"  >
+						<div class="c-nav__item-inner">
+			<span class="c-nav__text">
+				Sciences et environnement
+			</span>
+
+			
+<span class="c-icon c-icon--chevron-down c-nav__icon c-icon--size-x0.5" aria-hidden="true" focusable="false">
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
+  <path d="M 24,7.41 21.18,4.59 12,13.79 2.82,4.59 0,7.41 l 12,12 z" />
+</svg>
+	</span>
+		</div>
+	
+			</a>
+			
+	</div>
+
+			<div class="c-flyout__arrow-container">
+			<span class="c-flyout__arrow"></span>
+		</div>
+	
+	<div class="c-flyout__content js-flyout-content ">
+				
+<ul class="c-nav__sub">
+									
+		<li class="c-nav__sub-item ">
+			<a class="c-nav__sub-link" href="https://www.levif.be/societe/environnement/" data-text="Environnement">
+				Environnement
+			</a>
+		</li>
+									
+		<li class="c-nav__sub-item ">
+			<a class="c-nav__sub-link" href="https://www.levif.be/vivifiant/sciences/" data-text="Sciences">
+				Sciences
+			</a>
+		</li>
+									
+		<li class="c-nav__sub-item ">
+			<a class="c-nav__sub-link" href="https://www.levif.be/les-optimistes-du-climat/" data-text="Les optimistes du climat">
+				Les optimistes du climat
+			</a>
+		</li>
+	</ul>
+	
+	</div>
+</div>
+				</li>
+					</ul>
+
+					<ul class="c-nav__secondary">
+																			
+					
+					<li class="c-nav__item ">
+						
+	<a class="c-nav__link" href="https://www.levif.be/podcasts/"  >
+		<div class="c-nav__item-inner">
+							
+<span class="c-icon c-icon--microphone-outline c-nav__icon-before" aria-hidden="true" focusable="false">
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
+<path d="M19.5,9h-0.8C18.3,9,18,9.3,18,9.8V12c0,3.5-3,6.3-6.6,6C8.3,17.7,6,14.9,6,11.7v-2C6,9.3,5.7,9,5.3,9H4.5
+	C4.1,9,3.8,9.3,3.8,9.8v1.9c0,4.2,3,7.9,7.1,8.5v1.6H8.3c-0.4,0-0.8,0.3-0.8,0.8v0.8c0,0.4,0.3,0.8,0.8,0.8h7.5
+	c0.4,0,0.8-0.3,0.8-0.8v-0.8c0-0.4-0.3-0.8-0.8-0.8h-2.6v-1.6c4-0.6,7.1-4,7.1-8.2V9.8C20.3,9.3,19.9,9,19.5,9z M12,16.5
+	c2.5,0,4.5-2,4.5-4.5V4.5C16.5,2,14.5,0,12,0S7.5,2,7.5,4.5V12C7.5,14.5,9.5,16.5,12,16.5z M9.8,4.5c0-1.2,1-2.3,2.3-2.3
+	s2.3,1,2.3,2.3V12c0,1.2-1,2.3-2.3,2.3s-2.3-1-2.3-2.3V4.5z"/>
+</svg>
+	</span>
+			
+			<span class="c-nav__text">
+				Podcasts
+			</span>
+
+					</div>
+	</a>
+					</li>
+							</ul>
+		
+					<button class="c-nav__search-button js-nav__search-button">
+				
+<span class="c-icon c-icon--search c-nav__search-icon c-icon--size-x0.9" aria-hidden="true" focusable="false">
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
+	<path d="M 9.402344,0 C 4.209209,0 0,4.2109774 0,9.4042969 0,14.59767 4.209209,18.806641 9.402344,18.806641 c 2.127327,0 4.090543,-0.707323 5.666015,-1.898438 L 22.158203,24 24,22.158203 16.910156,15.068359 C 18.100793,13.492936 18.806641,11.531238 18.806641,9.4042969 18.806641,4.2109774 14.595447,0 9.402344,0 Z m 0,2.6035156 c 3.754986,0 6.798828,3.0456104 6.798828,6.8007813 0,3.7552031 -3.043842,6.7988281 -6.798828,6.7988281 -3.755029,0 -6.798828,-3.043625 -6.798828,-6.7988281 0,-3.7551709 3.043799,-6.8007813 6.798828,-6.8007813 z"/>
+</svg>
+	</span>
+			</button>
+
+			<form class="c-nav__search" role="search" action="https://www.levif.be/">
+				
+
+
+<div class="c-input c-nav__search-input c-input--small js-nav__search-input  c-input--with-icon-before  ">
+			
+<span class="c-icon c-icon--search c-input__icon-before c-icon--size-x0.7" aria-hidden="true" focusable="false">
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
+	<path d="M 9.402344,0 C 4.209209,0 0,4.2109774 0,9.4042969 0,14.59767 4.209209,18.806641 9.402344,18.806641 c 2.127327,0 4.090543,-0.707323 5.666015,-1.898438 L 22.158203,24 24,22.158203 16.910156,15.068359 C 18.100793,13.492936 18.806641,11.531238 18.806641,9.4042969 18.806641,4.2109774 14.595447,0 9.402344,0 Z m 0,2.6035156 c 3.754986,0 6.798828,3.0456104 6.798828,6.8007813 0,3.7552031 -3.043842,6.7988281 -6.798828,6.7988281 -3.755029,0 -6.798828,-3.043625 -6.798828,-6.7988281 0,-3.7551709 3.043799,-6.8007813 6.798828,-6.8007813 z"/>
+</svg>
+	</span>
+	
+	<input
+		class="c-input__field "
+		id=""
+		name="s"
+		type="search"
+		placeholder=""
+		value=""
+			/>
+
+	
+	
+	</div>
+			</form>
+			</div>
+
+	<div class="c-nav__mobile">
+		<ul class="c-nav__main">
+							<li class="c-nav__logo-container">
+					
+
+<div class="c-logo c-nav__logo"
+	 >
+			<a class="c-logo__link" href="https://www.levif.be"
+								>
+	
+					<img width="710" height="140" class="c-logo__image" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20710%20140'%3E%3C/svg%3E"
+				 alt="Le Vif"
+				 				 		 data-lazy-src="https://www.levif.be/app/themes/rmg-wp-news-theme/dist/images/logo.78fb39ad5ba2f55fc8bf.svg"	/><noscript><img width="710" height="140" class="c-logo__image" src="https://www.levif.be/app/themes/rmg-wp-news-theme/dist/images/logo.78fb39ad5ba2f55fc8bf.svg"
+				 alt="Le Vif"
+				 				 			/></noscript>
+		
+			</a>
+	</div>
+				</li>
+			
+															
+				
+				<li class="c-nav__item ">
+					
+	<a class="c-nav__link" href="https://www.levif.be/belgique/"  >
+		<div class="c-nav__item-inner">
+			
+			<span class="c-nav__text">
+				Belgique
+			</span>
+
+					</div>
+	</a>
+				</li>
+															
+				
+				<li class="c-nav__item ">
+					
+	<a class="c-nav__link" href="https://www.levif.be/international/"  >
+		<div class="c-nav__item-inner">
+			
+			<span class="c-nav__text">
+				Monde
+			</span>
+
+					</div>
+	</a>
+				</li>
+															
+				
+				<li class="c-nav__item ">
+					
+	<a class="c-nav__link" href="https://www.levif.be/economie/mon-argent/"  >
+		<div class="c-nav__item-inner">
+			
+			<span class="c-nav__text">
+				Mon argent
+			</span>
+
+					</div>
+	</a>
+				</li>
+															
+				
+				<li class="c-nav__item ">
+					
+	<a class="c-nav__link" href="https://www.levif.be/opinions/"  >
+		<div class="c-nav__item-inner">
+			
+			<span class="c-nav__text">
+				Opinions
+			</span>
+
+					</div>
+	</a>
+				</li>
+															
+				
+				<li class="c-nav__item ">
+					
+	<a class="c-nav__link" href="https://www.levif.be/societe/sante/"  >
+		<div class="c-nav__item-inner">
+			
+			<span class="c-nav__text">
+				Santé
+			</span>
+
+					</div>
+	</a>
+				</li>
+															
+				
+				<li class="c-nav__item ">
+					
+	<a class="c-nav__link" href="https://www.levif.be/sciences-et-environnement/"  >
+		<div class="c-nav__item-inner">
+			
+			<span class="c-nav__text">
+				Sciences et environnement
+			</span>
+
+					</div>
+	</a>
+				</li>
+					</ul>
+	</div>
+</nav>
+
+				
+<div class="c-hamburger js-hamburger c-header__hamburger js-header__hamburger">
+	<div class="c-hamburger__container">
+		<span class="c-hamburger__line c-hamburger__line--top"></span>
+		<span class="c-hamburger__line c-hamburger__line--middle"></span>
+		<span class="c-hamburger__line c-hamburger__line--bottom"></span>
+	</div>
+</div>
+			</div>
+		</div>
+	</div>
+
+			<div class="c-header__ad">
+			<div data-adshim data-adshim-format="banner" data-adshim-slot="above" data-adshim-targeting='{"AdType":"BANNER_ABOVE"}' id="gpt-ad-BANNER_ABOVE" class="rmgAd c-ad js-ad c-ad--with-background" data-type="BANNER_ABOVE" data-device="all" ></div>
+		</div>
+	
+			
+	
+<div class="c-mobile-nav c-header__mobile-nav js-header__mobile-nav c-mobile-nav--with-action">
+	<div class="c-mobile-nav__content">
+		
+					<div class="c-mobile-nav__magazines l-container:12/12 l-container--with-default-spacing">
+								
+				
+				<ul class="c-mobile-nav__magazines-list">
+																																			
+						
+						<li class="c-mobile-nav__magazine ">
+							<a href="https://weekend.levif.be/" class="c-mobile-nav__magazine-link" target="_blank" rel="noopener noreferrer">
+																	<img class="c-mobile-nav__magazine-image" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Le Vif Weekend" data-lazy-src="https://api.mijnmagazines.be/svg/publication/logo/LW.svg"><noscript><img class="c-mobile-nav__magazine-image" src="https://api.mijnmagazines.be/svg/publication/logo/LW.svg" alt="Le Vif Weekend"></noscript>
+															</a>
+						</li>
+																																			
+						
+						<li class="c-mobile-nav__magazine ">
+							<a href="https://focus.levif.be/" class="c-mobile-nav__magazine-link" target="_blank" rel="noopener noreferrer">
+																	<img class="c-mobile-nav__magazine-image" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Focus Vif" data-lazy-src="https://api.mijnmagazines.be/svg/publication/logo/FP.svg"><noscript><img class="c-mobile-nav__magazine-image" src="https://api.mijnmagazines.be/svg/publication/logo/FP.svg" alt="Focus Vif"></noscript>
+															</a>
+						</li>
+									</ul>
+			</div>
+		
+		
+					<div class="c-mobile-nav__grouped-list-container">
+				<div class="l-container:12/12 l-container--with-default-spacing">
+																	
+						<div class="c-mobile-nav__grouped-item">
+							
+															<ul class="c-mobile-nav__list c-mobile-nav__grouped-item__list">
+																																																	
+										<li class="c-mobile-nav__item c-mobile-nav__grouped-item__item">
+																							
+												
+												
+<div class="c-expander js-expander c-mobile-nav__dropdown c-expander--reverse">
+			<div class="c-expander__content js-expander-content" >
+			<div class="c-expander__content-inner js-expander-content-inner">
+																	<ul class="c-mobile-nav__sub-list c-mobile-nav__grouped-item__sub-list">
+																																																											
+															<li class="c-mobile-nav__sub-item c-mobile-nav__grouped-item__sub-item">
+																<a class="c-mobile-nav__sub-item-content c-mobile-nav__grouped-item__sub-item-content" href="https://www.levif.be/belgique/politique/">
+																	
+																	Politique
+																</a>
+															</li>
+																																																											
+															<li class="c-mobile-nav__sub-item c-mobile-nav__grouped-item__sub-item">
+																<a class="c-mobile-nav__sub-item-content c-mobile-nav__grouped-item__sub-item-content" href="https://www.levif.be/belgique/justice/">
+																	
+																	Justice
+																</a>
+															</li>
+																																																											
+															<li class="c-mobile-nav__sub-item c-mobile-nav__grouped-item__sub-item">
+																<a class="c-mobile-nav__sub-item-content c-mobile-nav__grouped-item__sub-item-content" href="https://www.levif.be/belgique/social/">
+																	
+																	Social
+																</a>
+															</li>
+																																																											
+															<li class="c-mobile-nav__sub-item c-mobile-nav__grouped-item__sub-item">
+																<a class="c-mobile-nav__sub-item-content c-mobile-nav__grouped-item__sub-item-content" href="https://www.levif.be/societe/">
+																	
+																	Société
+																</a>
+															</li>
+																																																											
+															<li class="c-mobile-nav__sub-item c-mobile-nav__grouped-item__sub-item">
+																<a class="c-mobile-nav__sub-item-content c-mobile-nav__grouped-item__sub-item-content" href="https://www.levif.be/belgique/enseignement/">
+																	
+																	Enseignement
+																</a>
+															</li>
+																																																											
+															<li class="c-mobile-nav__sub-item c-mobile-nav__grouped-item__sub-item">
+																<a class="c-mobile-nav__sub-item-content c-mobile-nav__grouped-item__sub-item-content" href="https://www.levif.be/economie/">
+																	
+																	Economie
+																</a>
+															</li>
+																																																											
+															<li class="c-mobile-nav__sub-item c-mobile-nav__grouped-item__sub-item">
+																<a class="c-mobile-nav__sub-item-content c-mobile-nav__grouped-item__sub-item-content" href="https://www.levif.be/societe/mobilite/">
+																	
+																	Mobilité
+																</a>
+															</li>
+																											</ul>
+												
+			</div>
+		</div>
+
+		<div class="c-expander__trigger js-expander-trigger">
+																				<button class="c-mobile-nav__item-content c-mobile-nav__trigger c-mobile-nav__grouped-item__item-content">
+														<span class="c-mobile-nav__item-content-title c-mobile-nav__grouped-item__item-content-title">
+															Belgique
+														</span>
+
+														
+<span class="c-icon c-icon--chevron-down c-mobile-nav__chevron c-icon--size-x0.5" aria-hidden="true" focusable="false">
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
+  <path d="M 24,7.41 21.18,4.59 12,13.79 2.82,4.59 0,7.41 l 12,12 z" />
+</svg>
+	</span>
+													</button>
+												
+					</div>
+	</div>
+																					</li>
+																																																	
+										<li class="c-mobile-nav__item c-mobile-nav__grouped-item__item">
+																							
+												
+												
+<div class="c-expander js-expander c-mobile-nav__dropdown c-expander--reverse">
+			<div class="c-expander__content js-expander-content" >
+			<div class="c-expander__content-inner js-expander-content-inner">
+																	<ul class="c-mobile-nav__sub-list c-mobile-nav__grouped-item__sub-list">
+																																																											
+															<li class="c-mobile-nav__sub-item c-mobile-nav__grouped-item__sub-item">
+																<a class="c-mobile-nav__sub-item-content c-mobile-nav__grouped-item__sub-item-content" href="https://www.levif.be/international/europe/">
+																	
+																	Europe
+																</a>
+															</li>
+																																																											
+															<li class="c-mobile-nav__sub-item c-mobile-nav__grouped-item__sub-item">
+																<a class="c-mobile-nav__sub-item-content c-mobile-nav__grouped-item__sub-item-content" href="https://www.levif.be/international/amerique/">
+																	
+																	Amérique
+																</a>
+															</li>
+																																																											
+															<li class="c-mobile-nav__sub-item c-mobile-nav__grouped-item__sub-item">
+																<a class="c-mobile-nav__sub-item-content c-mobile-nav__grouped-item__sub-item-content" href="https://www.levif.be/international/asie/">
+																	
+																	Asie
+																</a>
+															</li>
+																																																											
+															<li class="c-mobile-nav__sub-item c-mobile-nav__grouped-item__sub-item">
+																<a class="c-mobile-nav__sub-item-content c-mobile-nav__grouped-item__sub-item-content" href="https://www.levif.be/international/afrique/">
+																	
+																	Afrique
+																</a>
+															</li>
+																																																											
+															<li class="c-mobile-nav__sub-item c-mobile-nav__grouped-item__sub-item">
+																<a class="c-mobile-nav__sub-item-content c-mobile-nav__grouped-item__sub-item-content" href="https://www.levif.be/international/oceanie/">
+																	
+																	Océanie
+																</a>
+															</li>
+																																																											
+															<li class="c-mobile-nav__sub-item c-mobile-nav__grouped-item__sub-item">
+																<a class="c-mobile-nav__sub-item-content c-mobile-nav__grouped-item__sub-item-content" href="https://www.levif.be/international/moyen-orient/">
+																	
+																	Moyen-Orient
+																</a>
+															</li>
+																											</ul>
+												
+			</div>
+		</div>
+
+		<div class="c-expander__trigger js-expander-trigger">
+																				<button class="c-mobile-nav__item-content c-mobile-nav__trigger c-mobile-nav__grouped-item__item-content">
+														<span class="c-mobile-nav__item-content-title c-mobile-nav__grouped-item__item-content-title">
+															Monde
+														</span>
+
+														
+<span class="c-icon c-icon--chevron-down c-mobile-nav__chevron c-icon--size-x0.5" aria-hidden="true" focusable="false">
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
+  <path d="M 24,7.41 21.18,4.59 12,13.79 2.82,4.59 0,7.41 l 12,12 z" />
+</svg>
+	</span>
+													</button>
+												
+					</div>
+	</div>
+																					</li>
+																																																	
+										<li class="c-mobile-nav__item c-mobile-nav__grouped-item__item">
+																							
+												
+												
+<div class="c-expander js-expander c-mobile-nav__dropdown c-expander--reverse">
+			<div class="c-expander__content js-expander-content" >
+			<div class="c-expander__content-inner js-expander-content-inner">
+																	<ul class="c-mobile-nav__sub-list c-mobile-nav__grouped-item__sub-list">
+																																																											
+															<li class="c-mobile-nav__sub-item c-mobile-nav__grouped-item__sub-item">
+																<a class="c-mobile-nav__sub-item-content c-mobile-nav__grouped-item__sub-item-content" href="https://www.levif.be/economie/immo/">
+																	
+																	Immobilier
+																</a>
+															</li>
+																																																											
+															<li class="c-mobile-nav__sub-item c-mobile-nav__grouped-item__sub-item">
+																<a class="c-mobile-nav__sub-item-content c-mobile-nav__grouped-item__sub-item-content" href="https://www.levif.be/belgique/politique/fiscalite/">
+																	
+																	Fiscalité
+																</a>
+															</li>
+																																																											
+															<li class="c-mobile-nav__sub-item c-mobile-nav__grouped-item__sub-item">
+																<a class="c-mobile-nav__sub-item-content c-mobile-nav__grouped-item__sub-item-content" href="https://www.levif.be/economie/mon-argent/consommation/">
+																	
+																	Consommation
+																</a>
+															</li>
+																											</ul>
+												
+			</div>
+		</div>
+
+		<div class="c-expander__trigger js-expander-trigger">
+																				<button class="c-mobile-nav__item-content c-mobile-nav__trigger c-mobile-nav__grouped-item__item-content">
+														<span class="c-mobile-nav__item-content-title c-mobile-nav__grouped-item__item-content-title">
+															Mon argent
+														</span>
+
+														
+<span class="c-icon c-icon--chevron-down c-mobile-nav__chevron c-icon--size-x0.5" aria-hidden="true" focusable="false">
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
+  <path d="M 24,7.41 21.18,4.59 12,13.79 2.82,4.59 0,7.41 l 12,12 z" />
+</svg>
+	</span>
+													</button>
+												
+					</div>
+	</div>
+																					</li>
+																																																	
+										<li class="c-mobile-nav__item c-mobile-nav__grouped-item__item">
+																							
+												
+												
+<div class="c-expander js-expander c-mobile-nav__dropdown c-expander--reverse">
+			<div class="c-expander__content js-expander-content" >
+			<div class="c-expander__content-inner js-expander-content-inner">
+																	<ul class="c-mobile-nav__sub-list c-mobile-nav__grouped-item__sub-list">
+																																																											
+															<li class="c-mobile-nav__sub-item c-mobile-nav__grouped-item__sub-item">
+																<a class="c-mobile-nav__sub-item-content c-mobile-nav__grouped-item__sub-item-content" href="https://www.levif.be/opinions/cartes-blanches/">
+																	
+																	Cartes blanches
+																</a>
+															</li>
+																																																											
+															<li class="c-mobile-nav__sub-item c-mobile-nav__grouped-item__sub-item">
+																<a class="c-mobile-nav__sub-item-content c-mobile-nav__grouped-item__sub-item-content" href="https://www.levif.be/opinions/editos/">
+																	
+																	Editos
+																</a>
+															</li>
+																																																											
+															<li class="c-mobile-nav__sub-item c-mobile-nav__grouped-item__sub-item">
+																<a class="c-mobile-nav__sub-item-content c-mobile-nav__grouped-item__sub-item-content" href="https://www.levif.be/opinions/chroniques/">
+																	
+																	Chroniques
+																</a>
+															</li>
+																																																											
+															<li class="c-mobile-nav__sub-item c-mobile-nav__grouped-item__sub-item">
+																<a class="c-mobile-nav__sub-item-content c-mobile-nav__grouped-item__sub-item-content" href="https://www.levif.be/opinions/humeurs/">
+																	
+																	Humeurs
+																</a>
+															</li>
+																											</ul>
+												
+			</div>
+		</div>
+
+		<div class="c-expander__trigger js-expander-trigger">
+																				<button class="c-mobile-nav__item-content c-mobile-nav__trigger c-mobile-nav__grouped-item__item-content">
+														<span class="c-mobile-nav__item-content-title c-mobile-nav__grouped-item__item-content-title">
+															Opinions
+														</span>
+
+														
+<span class="c-icon c-icon--chevron-down c-mobile-nav__chevron c-icon--size-x0.5" aria-hidden="true" focusable="false">
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
+  <path d="M 24,7.41 21.18,4.59 12,13.79 2.82,4.59 0,7.41 l 12,12 z" />
+</svg>
+	</span>
+													</button>
+												
+					</div>
+	</div>
+																					</li>
+																																																	
+										<li class="c-mobile-nav__item c-mobile-nav__grouped-item__item">
+																							<a class="c-mobile-nav__item-content c-mobile-nav__grouped-item__item-content" href="https://www.levif.be/societe/sante/">
+													
+													<span class="c-mobile-nav__item-content-title c-mobile-nav__grouped-item__item-content-title">
+														Santé
+													</span>
+												</a>
+																					</li>
+																																																	
+										<li class="c-mobile-nav__item c-mobile-nav__grouped-item__item">
+																							
+												
+												
+<div class="c-expander js-expander c-mobile-nav__dropdown c-expander--reverse">
+			<div class="c-expander__content js-expander-content" >
+			<div class="c-expander__content-inner js-expander-content-inner">
+																	<ul class="c-mobile-nav__sub-list c-mobile-nav__grouped-item__sub-list">
+																																																											
+															<li class="c-mobile-nav__sub-item c-mobile-nav__grouped-item__sub-item">
+																<a class="c-mobile-nav__sub-item-content c-mobile-nav__grouped-item__sub-item-content" href="https://www.levif.be/societe/environnement/">
+																	
+																	Environnement
+																</a>
+															</li>
+																																																											
+															<li class="c-mobile-nav__sub-item c-mobile-nav__grouped-item__sub-item">
+																<a class="c-mobile-nav__sub-item-content c-mobile-nav__grouped-item__sub-item-content" href="https://www.levif.be/vivifiant/sciences/">
+																	
+																	Sciences
+																</a>
+															</li>
+																																																											
+															<li class="c-mobile-nav__sub-item c-mobile-nav__grouped-item__sub-item">
+																<a class="c-mobile-nav__sub-item-content c-mobile-nav__grouped-item__sub-item-content" href="https://www.levif.be/les-optimistes-du-climat/">
+																	
+																	Les optimistes du climat
+																</a>
+															</li>
+																											</ul>
+												
+			</div>
+		</div>
+
+		<div class="c-expander__trigger js-expander-trigger">
+																				<button class="c-mobile-nav__item-content c-mobile-nav__trigger c-mobile-nav__grouped-item__item-content">
+														<span class="c-mobile-nav__item-content-title c-mobile-nav__grouped-item__item-content-title">
+															Sciences et environnement
+														</span>
+
+														
+<span class="c-icon c-icon--chevron-down c-mobile-nav__chevron c-icon--size-x0.5" aria-hidden="true" focusable="false">
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
+  <path d="M 24,7.41 21.18,4.59 12,13.79 2.82,4.59 0,7.41 l 12,12 z" />
+</svg>
+	</span>
+													</button>
+												
+					</div>
+	</div>
+																					</li>
+																	</ul>
+													</div>
+																	
+						<div class="c-mobile-nav__grouped-item">
+							
+															<ul class="c-mobile-nav__list c-mobile-nav__grouped-item__list">
+																																																	
+										<li class="c-mobile-nav__item c-mobile-nav__grouped-item__item">
+																							<a class="c-mobile-nav__item-content c-mobile-nav__grouped-item__item-content" href="https://www.levif.be/podcasts/">
+													
+													<span class="c-mobile-nav__item-content-title c-mobile-nav__grouped-item__item-content-title">
+														Podcasts
+													</span>
+												</a>
+																					</li>
+																	</ul>
+													</div>
+																	
+						<div class="c-mobile-nav__grouped-item">
+							
+															<ul class="c-mobile-nav__list c-mobile-nav__grouped-item__list">
+																																																	
+										<li class="c-mobile-nav__item c-mobile-nav__grouped-item__item">
+																							<a class="c-mobile-nav__item-content c-mobile-nav__grouped-item__item-content" href="https://newsroom.roularta.be/static/10082022/A54_11929_GuideAvantage_LEVIF2022_Lowres.pdf">
+																											
+<span class="c-icon c-icon--link-external c-mobile-nav__icon c-icon--size-x0.8" aria-hidden="true" focusable="false">
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
+<path d="M20.3,15h-1.5c-0.4,0-0.8,0.3-0.8,0.8V21H3V6h6.8c0.4,0,0.8-0.3,0.8-0.8V3.8c0-0.4-0.3-0.8-0.8-0.8H2.3C1,3,0,4,0,5.3v16.5
+	C0,23,1,24,2.3,24l0,0h16.5c1.2,0,2.3-1,2.3-2.3l0,0v-6C21,15.3,20.7,15,20.3,15z M22.3,0h-7.4c-0.7,0-1.3,0.6-1.3,1.3v0.9
+	c0,0.7,0.6,1.3,1.3,1.3c0,0,0,0,0,0L18,3.4L6.3,15l0,0c-0.4,0.4-0.4,1.2,0,1.6l1.1,1.1l0,0c0.4,0.4,1.2,0.4,1.6,0L20.6,6l-0.1,3.2v0
+	c0,0.7,0.6,1.3,1.3,1.3h0.8c0.7,0,1.3-0.6,1.3-1.3V1.7l0,0C24,0.8,23.2,0,22.3,0z"/>
+</svg>
+	</span>
+													
+													<span class="c-mobile-nav__item-content-title c-mobile-nav__grouped-item__item-content-title">
+														Guide Avantages
+													</span>
+												</a>
+																					</li>
+																																																	
+										<li class="c-mobile-nav__item c-mobile-nav__grouped-item__item">
+																							<a class="c-mobile-nav__item-content c-mobile-nav__grouped-item__item-content" href="https://shop.levif.be/">
+																											
+<span class="c-icon c-icon--link-external c-mobile-nav__icon c-icon--size-x0.8" aria-hidden="true" focusable="false">
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
+<path d="M20.3,15h-1.5c-0.4,0-0.8,0.3-0.8,0.8V21H3V6h6.8c0.4,0,0.8-0.3,0.8-0.8V3.8c0-0.4-0.3-0.8-0.8-0.8H2.3C1,3,0,4,0,5.3v16.5
+	C0,23,1,24,2.3,24l0,0h16.5c1.2,0,2.3-1,2.3-2.3l0,0v-6C21,15.3,20.7,15,20.3,15z M22.3,0h-7.4c-0.7,0-1.3,0.6-1.3,1.3v0.9
+	c0,0.7,0.6,1.3,1.3,1.3c0,0,0,0,0,0L18,3.4L6.3,15l0,0c-0.4,0.4-0.4,1.2,0,1.6l1.1,1.1l0,0c0.4,0.4,1.2,0.4,1.6,0L20.6,6l-0.1,3.2v0
+	c0,0.7,0.6,1.3,1.3,1.3h0.8c0.7,0,1.3-0.6,1.3-1.3V1.7l0,0C24,0.8,23.2,0,22.3,0z"/>
+</svg>
+	</span>
+													
+													<span class="c-mobile-nav__item-content-title c-mobile-nav__grouped-item__item-content-title">
+														Shop
+													</span>
+												</a>
+																					</li>
+																																																	
+										<li class="c-mobile-nav__item c-mobile-nav__grouped-item__item">
+																							<a class="c-mobile-nav__item-content c-mobile-nav__grouped-item__item-content" href="https://www.levif.be/actions/vif-club/">
+													
+													<span class="c-mobile-nav__item-content-title c-mobile-nav__grouped-item__item-content-title">
+														Vif Club
+													</span>
+												</a>
+																					</li>
+																	</ul>
+													</div>
+									</div>
+			</div>
+		
+					<div class="c-mobile-nav__action-wrapper">
+								
+
+
+
+	<a
+		id="subscr_site-levif-fr_main"		class="c-button c-mobile-nav__action c-button--fill-space "
+		href="https://levif.be/abonnements/"
+				style=""
+					>
+			
+			<span class="c-button__text js-button__text">
+			S'ABONNER
+		</span>
+	
+	
+	
+	</a>
+
+			</div>
+			</div>
+
+	
+	</div>
+	</header>
+
+
+<main>
+            
+        
+<div class="l-container:12/12 l-container--with-default-spacing js-container">
+	            <div id="bc-above-content"></div>
+            
+    
+    
+        
+                    
+
+<div class="l-layout-block l-layout-block--with-spacing:x3 l-layout-block--column@to:viewport-9">
+	
+		<div class="l-layout-block__item l-layout-block__main ">
+		                                                                        
+<div class="l-stack l-stack l-stack--align:stretch l-stack--with-spacing:x3">
+					
+		<div class="l-stack__item ">
+			<div id="bc-article-abovearticle"></div>
+		</div>
+					
+		<div class="l-stack__item ">
+			                                
+
+	
+<figure class="c-picture-figure c-picture--fill-space c-picture--with-caption">
+	<div class="c-picture__container">
+		<picture class="c-picture" >
+			
+						<img
+				class="c-picture__image  skip-lazy"
+				src="https://img.static-rmg.be/a/view/q75/w1200/h627/3661506/9efa669738573bd931e636442b24a89d-jpg.jpg"
+				alt=""
+											/>
+		</picture>
+
+		
+			</div>
+
+			<figcaption class="c-picture__caption">
+			
+							<span class="c-picture__copyright">
+					&copy;&nbsp;Belga
+				</span>
+					</figcaption>
+	</figure>
+
+    
+            
+		</div>
+					
+		<div class="l-stack__item ">
+			                
+                
+                            
+                                    
+                
+                
+                
+        
+        
+        
+        
+                
+        
+        
+<div class="l-grid l-grid--with-default-spacing">
+					
+		<div class="l-grid__col:2/12 u-display-none@to:viewport-9">
+			
+                                                                                                                
+
+
+<div class="c-socials-aside ">
+	
+
+<div class="c-social-shares c-social-shares--column c-socials-aside__shares">
+	
+	<div class="c-social-shares__content">
+		<ul class="c-social-shares__list">
+			
+																											
+				<li class="c-social-shares__item ">
+					<a class="c-social-shares__link"
+					   target="_blank"
+						 href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fwww.levif.be%2Finternational%2Fcoronavirus-plus-de-140-000-morts-dans-le-monde%2F" 					   	title=""
+					   	aria-label="Deel dit artikel op Facebook"
+											>
+						<span class="c-social-shares__icon-container">
+							
+<span class="c-icon c-icon--facebook c-social-shares__icon c-icon--size-x0.9" aria-hidden="true" focusable="false">
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
+	<path d="M9.8,13.1V24h4.5V13.1H18l0.6-4.3h-4.3V6.1c0-1.2,0.4-2.1,2.1-2.1h2.3V0.2C17.6,0.1,16.5,0,15.4,0C12,0,9.8,2,9.8,5.6v3.2H6
+		v4.3H9.8z"/>
+</svg>
+	</span>
+						</span>
+					</a>
+				</li>
+																											
+				<li class="c-social-shares__item ">
+					<a class="c-social-shares__link"
+					   target="_blank"
+						 href="https://twitter.com/share?url=https%3A%2F%2Fwww.levif.be%2Finternational%2Fcoronavirus-plus-de-140-000-morts-dans-le-monde%2F&text=Coronavirus : plus de 140.000 morts dans le monde" 					   	title=""
+					   	aria-label="Deel dit artikel op Twitter"
+											>
+						<span class="c-social-shares__icon-container">
+							
+<span class="c-icon c-icon--twitter c-social-shares__icon c-icon--size-x0.9" aria-hidden="true" focusable="false">
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
+	<path d="M24,4.1c-0.9,0.4-1.8,0.6-2.8,0.8c1-0.6,1.8-1.5,2.2-2.7c-1,0.6-2,1-3.1,1.2c-0.9-0.9-2.2-1.5-3.6-1.5c-3.2,0-5.5,2.9-4.8,6
+		C7.7,7.6,4.1,5.7,1.7,2.7C0.4,4.9,1,7.8,3.2,9.2C2.4,9.2,1.6,9,1,8.6c-0.1,2.2,1.6,4.3,3.9,4.8c-0.7,0.2-1.5,0.2-2.2,0.1
+		c0.6,1.9,2.4,3.3,4.6,3.4c-2.1,1.6-4.7,2.3-7.3,2c2.2,1.4,4.8,2.2,7.5,2.2c9.1,0,14.3-7.6,14-14.4C22.5,6,23.3,5.1,24,4.1z"/>
+</svg>
+	</span>
+						</span>
+					</a>
+				</li>
+																											
+				<li class="c-social-shares__item ">
+					<a class="c-social-shares__link"
+					   target="_blank"
+						 href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.levif.be%2Finternational%2Fcoronavirus-plus-de-140-000-morts-dans-le-monde%2F&title=Coronavirus%20%3A%20plus%20de%20140.000%20morts%20dans%20le%20monde&source=KW" 					   	title=""
+					   	aria-label="Deel dit artikel op LinkedIn"
+											>
+						<span class="c-social-shares__icon-container">
+							
+<span class="c-icon c-icon--linkedin c-social-shares__icon c-icon--size-x0.9" aria-hidden="true" focusable="false">
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
+	<path d="M5,3.5C5,4.9,3.9,6,2.5,6C1.1,6,0,4.9,0,3.5C0,2.2,1.1,1,2.5,1C3.9,1,5,2.2,5,3.5z M5,8H0v16h5V8z M13,8H8v16h5v-8.4
+	c0-4.7,6-5,6,0V24h5V13.9c0-7.9-8.9-7.6-11-3.7V8z"/>
+</svg>
+	</span>
+						</span>
+					</a>
+				</li>
+																											
+				<li class="c-social-shares__item u-display-none@at:viewport-9">
+					<a class="c-social-shares__link"
+					   target="_blank"
+						 href="whatsapp://send?text=https%3A%2F%2Fwww.levif.be%2Finternational%2Fcoronavirus-plus-de-140-000-morts-dans-le-monde%2F" 					   	title=""
+					   	aria-label="Deel dit artikel via WhatsApp"
+											>
+						<span class="c-social-shares__icon-container">
+							
+<span class="c-icon c-icon--whatsapp c-social-shares__icon c-icon--size-x0.9" aria-hidden="true" focusable="false">
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
+<path d="M20.4,3.5C18.2,1.2,15.2,0,12,0C5.4,0,0.1,5.3,0.1,11.9c0,2.1,0.5,4.1,1.6,5.9L0,24l6.3-1.7C8,23.3,10,23.8,12,23.8h0
+	c6.6,0,12-5.3,12-11.9C24,8.7,22.6,5.7,20.4,3.5z M12,21.8c-1.8,0-3.5-0.5-5-1.4l-0.4-0.2l-3.7,1l1-3.6l-0.2-0.4
+	c-1-1.6-1.5-3.4-1.5-5.3C2.1,6.4,6.5,2,12,2c2.6,0,5.1,1,7,2.9s3,4.4,3,7C22,17.4,17.4,21.8,12,21.8z M17.4,14.4
+	c-0.3-0.1-1.8-0.9-2-1c-0.3-0.1-0.5-0.1-0.7,0.1c-0.2,0.3-0.8,1-0.9,1.2c-0.2,0.2-0.3,0.2-0.6,0.1c-1.7-0.9-2.9-1.6-4-3.5
+	c-0.3-0.5,0.3-0.5,0.9-1.6c0.1-0.2,0-0.4,0-0.5C9.9,9,9.3,7.5,9,6.9C8.8,6.3,8.5,6.4,8.3,6.4c-0.2,0-0.4,0-0.6,0
+	C7.6,6.4,7.3,6.5,7,6.8c-0.3,0.3-1,1-1,2.5s1.1,2.9,1.2,3.1c0.2,0.2,2.1,3.2,5.1,4.5c1.9,0.8,2.6,0.9,3.6,0.7c0.6-0.1,1.8-0.7,2-1.4
+	c0.2-0.7,0.2-1.3,0.2-1.4C17.9,14.6,17.7,14.5,17.4,14.4z"/>
+</svg>
+	</span>
+						</span>
+					</a>
+				</li>
+																											
+				<li class="c-social-shares__item ">
+					<a class="c-social-shares__link"
+					   target="_blank"
+						 href="mailto:?subject=Coronavirus%20%3A%20plus%20de%20140.000%20morts%20dans%20le%20monde&body=Je%20viens%20de%20lire%20cet%20article%20int%C3%A9ressant%20sur%20LeVif.be%3A%20https%3A%2F%2Fwww.levif.be%2Finternational%2Fcoronavirus-plus-de-140-000-morts-dans-le-monde%2F" 					   	title=""
+					   	aria-label="Email dit artikel"
+											>
+						<span class="c-social-shares__icon-container">
+							
+<span class="c-icon c-icon--envelope c-social-shares__icon c-icon--size-x0.9" aria-hidden="true" focusable="false">
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
+	<path d="M12,13.2L0,3.5h24L12,13.2z M6.6,11.4L0,6.1v12.5L6.6,11.4z M17.4,11.4l6.6,7.2V6.1L17.4,11.4z M15.9,12.7L12,15.8l-3.9-3.1 
+	L0,21.5h24L15.9,12.7z"/>
+</svg>
+	</span>
+						</span>
+					</a>
+				</li>
+																											
+				<li class="c-social-shares__item ">
+					<a class="c-social-shares__link"
+					   target="_blank"
+						 href="https://www.levif.be/international/coronavirus-plus-de-140-000-morts-dans-le-monde/" 					   	title=""
+					   	aria-label="Hyperlink"
+						 onclick="const el = document.createElement('textarea'); el.value = 'https://www.levif.be/international/coronavirus-plus-de-140-000-morts-dans-le-monde/'; document.body.appendChild(el); el.select(); document.execCommand('copy'); document.body.removeChild(el); return false; " 					>
+						<span class="c-social-shares__icon-container">
+							
+<span class="c-icon c-icon--link c-social-shares__icon c-icon--size-x0.9" aria-hidden="true" focusable="false">
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
+	<path d="M6.2,8.7c0.4-0.4,0.9-0.8,1.4-1.1c2.9-1.6,6.6-0.7,8.4,2.1l-2.2,2.2c-0.6-1.5-2.2-2.3-3.8-1.9c-0.6,0.1-1.2,0.4-1.6,0.9
+	l-4.3,4.3c-1.3,1.3-1.3,3.4,0,4.7c1.3,1.3,3.4,1.3,4.7,0l1.3-1.3c1.2,0.5,2.5,0.7,3.8,0.6L11,22.1c-2.5,2.5-6.6,2.5-9.1,0
+	c-2.5-2.5-2.5-6.6,0-9.1L6.2,8.7z M13,1.9l-2.9,2.9c1.3-0.1,2.6,0.1,3.8,0.6l1.3-1.3c1.3-1.3,3.4-1.3,4.7,0c1.3,1.3,1.3,3.4,0,4.7
+	l-4.3,4.3c-1.3,1.3-3.4,1.3-4.7,0c-0.3-0.3-0.6-0.7-0.7-1.1l-2.2,2.2c0.2,0.4,0.5,0.7,0.8,1c0.8,0.8,1.8,1.4,3,1.7
+	c1.5,0.4,3.2,0.2,4.6-0.6c0.5-0.3,1-0.6,1.4-1.1l4.3-4.3c2.5-2.5,2.5-6.6,0-9.1C19.6-0.6,15.5-0.6,13,1.9z"/>
+</svg>
+	</span>
+						</span>
+					</a>
+				</li>
+																											
+				<li class="c-social-shares__item ">
+					<a class="c-social-shares__link"
+					   target="_blank"
+						 href="https://www.levif.be/international/coronavirus-plus-de-140-000-morts-dans-le-monde/" 					   	title=""
+					   	aria-label="Print dit artikel"
+						 onclick="print(); return false; " 					>
+						<span class="c-social-shares__icon-container">
+							
+<span class="c-icon c-icon--printer c-social-shares__icon c-icon--size-x0.9" aria-hidden="true" focusable="false">
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
+	<path d="M22.9,5.2h-4.8V2.4c0-0.6-0.5-1.1-1.1-1.1H7c-0.6,0-1.1,0.5-1.1,1.1v2.8H1.1C0.5,5.2,0,5.6,0,6.2v11c0,0.6,0.5,1.1,1.1,1.1
+	h4.5v3.4c0,0.6,0.5,1.1,1.1,1.1h10.5c0.6,0,1.1-0.5,1.1-1.1v-3.4h4.5c0.6,0,1.1-0.5,1.1-1.1v-11C24,5.6,23.5,5.2,22.9,5.2z M8.1,3.5
+	h7.7v1.7H8.1V3.5z M16.1,20.6H7.9v-6.2h8.3V20.6z M20.8,10.1h-2.5V7.9h2.5V10.1z"/>
+</svg>
+	</span>
+						</span>
+					</a>
+				</li>
+			
+			
+					</ul>
+
+			</div>
+</div>
+</div>
+
+		</div>
+					
+		<div class="l-grid__col:12/12 l-grid__col:8/12@at:viewport-9">
+			
+<div class="l-stack l-stack l-stack--align:stretch l-stack--with-spacing:x3">
+					
+		<div class="l-stack__item ">
+			
+
+
+
+<div class="c-article-title ">
+
+	<div class="c-article-title__inner">
+		
+		
+		<div class="c-article-title__content">
+							
+
+<div class="c-stamp  c-article-title__stamp">
+	
+	<div class="c-stamp__text-container">
+		
+		
+									<a class="c-stamp__text c-stamp__link" href="https://www.levif.be/international/">
+					International
+				</a>
+					
+			</div>
+</div>
+			
+			
+			<div class="c-article-title__title-container">
+				<div class="c-article-title__title">
+					
+					
+					<h1>Coronavirus : plus de 140.000 morts dans le monde</h1>
+				</div>
+			</div>
+
+					</div>
+
+			</div>
+
+	</div>
+
+		</div>
+					
+		<div class="l-stack__item ">
+				
+
+<div class="c-author-meta ">
+			<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Le Vif" class="c-author-meta__image" data-lazy-src="https://img.static-rmg.be/a/view/q75/w150/h150/4361149/v-vif-jpg.jpg"><noscript><img src="https://img.static-rmg.be/a/view/q75/w150/h150/4361149/v-vif-jpg.jpg" alt="Le Vif" class="c-author-meta__image"></noscript>
+	
+	<div class="c-author-meta__content">
+					<div class="c-author-meta__authors">
+																			
+					<div class="c-author-meta__author-data">
+																					<a href="/a/le-vif/" class="c-author-meta__author c-author-meta__author-link">Le Vif</a>
+													
+											</div>
+							</div>
+		
+		<div class="c-author-meta__metadata">
+												
+												
+							<span class="c-author-meta__published c-author-meta__metadata__item">16-04-2020, 18:28</span>
+			
+							<span class="c-author-meta__updated c-author-meta__metadata__item">Mise à jour le: 21-01-2021, 09:48</span>
+			
+			
+			
+							<span class="c-author-meta__duration c-author-meta__metadata__item">
+					</span>
+					</div>
+	</div>
+</div>
+
+
+		</div>
+					
+		<div class="l-stack__item ">
+			
+
+<div class="s-wysiwyg-editor paywalled">
+	<p class="dropcap">La pandémie provoquée par le nouveau coronavirus a fait au moins 141.127 morts dans le monde depuis son apparition en décembre en Chine, selon un bilan établi par l&rsquo;AFP à partir de sources officielles.</p><div id="below_para_1"></div>
+<!--more-->
+
+<p>Plus de 2.135.410 cas de contamination ont été officiellement diagnostiqués dans 193 pays et territoires depuis le début de l&rsquo;épidémie. Ce chiffre ne reflète toutefois qu&rsquo;une fraction du nombre réel des porteurs du virus, beaucoup de pays ne testant que les personnes requérant une prise en charge hospitalière. Parmi elles, <strong>au moins 465.700 sont aujourd&rsquo;hui considérées comme guéries.</strong></p>
+<div class="u-display-none@at:viewport-7"><div data-adshim data-adshim-format="rect-large-new" data-adshim-slot="above" data-adshim-targeting='{"AdType":"RECT_ABOVE"}' id="gpt-ad-RECT_ABOVE_3" class="rmgAd c-ad js-ad c-ad--with-background" data-type="RECT_ABOVE" data-device="mobile" data-prefix = 'Advertisement' ></div><div data-adshim data-adshim-format="halfrect" data-adshim-slot="above" data-adshim-targeting='{"AdType":"HALFRECT_ABOVE"}' id="gpt-ad-HALFRECT_ABOVE" class="rmgAd c-ad js-ad c-ad--with-background" data-type="HALFRECT_ABOVE" data-device="mobile" data-prefix = 'Advertisement' ></div></div><div id="below_para_2"></div>
+<p>Depuis le comptage réalisé la veille à 19H00 GMT, 9.490 nouveaux décès et 101.787 nouveaux cas ont été recensés dans le monde.</p>
+<div data-adshim data-adshim-format="inpage" data-adshim-slot="" data-adshim-targeting='{"AdType":"INPAGE"}' id="gpt-ad-INPAGE_3" class="rmgAd c-ad js-ad " data-type="INPAGE" data-device="all" ></div><div id="below_para_3"></div>
+<p>Les pays qui ont enregistré le plus de morts en 24h sont les États-Unis (4.505), le Royaume-Uni (861) et la France (753).</p>
+<div id="below_para_4"></div>
+<p>Les <strong>États-Unis</strong>, qui ont recensé leur premier décès lié au coronavirus fin février, sont le pays le plus touché tant en nombre de morts que de cas, avec 31.590 décès pour 648.788 cas. Au moins 53.489 personnes ont été déclarées guéries.</p>
+<div id="below_para_5"></div>
+<p>Les autres pays où le plus grand nombre de morts a été signalé sont l&rsquo;<strong>Italie</strong> avec 22.170 décès pour 168.941 cas, l&rsquo;<strong>Espagne</strong> avec 19.130 décès (182.816 cas), la <strong>France</strong> avec 17.920 décès (165.027 cas) et le <strong>Royaume-Uni</strong> avec 13.729 décès (103.093 cas).</p>
+<div id="below_para_6"></div>
+<p>La <strong>Chine</strong> (sans les territoires de Hong Kong et de Macao) a officiellement dénombré au total 82.341 cas (46 nouveaux entre mercredi et jeudi), dont 3.342 mortels et 77.892 guérisons.</p>
+<div id="below_para_7"></div>
+<p>Depuis mercredi à 19H00 GMT, la Guinée, l&rsquo;Eswatini (ex-Zwaziland) et l&rsquo;Érythrée ont annoncé les premières morts liées au virus sur leur sol.</p>
+<div id="below_para_8"></div>
+<p><strong>L&rsquo;Europe totalisait jeudi à 19H00 GMT 92.941 décès pour 1.082.930 cas</strong>, les Etats-Unis et le Canada 32.803 décès (678.698 cas), l&rsquo;Asie 5.391 décès (153.340 cas), le Moyen-Orient 5.260 décès (113.977 cas), l&rsquo;Amérique latine et les Caraïbes 3.702 décès (80.706 cas), l&rsquo;Afrique 951 décès (18.033 cas) et l&rsquo;Océanie 79 décès (7.730 cas).</p>
+<div id="below_para_9"></div>
+<p>C<em>e bilan a été réalisé à partir de données collectées par les bureaux de l&rsquo;AFP auprès des autorités nationales compétentes et des informations de l&rsquo;Organisation mondiale de la santé (OMS).</em></p>
+<div id="below_para_10"></div>
+</div>
+
+		</div>
+					
+		<div class="l-stack__item ">
+			
+
+<div class="c-seo-tags ">
+	<span class="c-seo-tags__label">
+		
+	</span>
+
+	<ul class="c-seo-tags__tags">
+			</ul>
+</div>
+
+		</div>
+					
+		<div class="l-stack__item u-display-none@at:viewport-9">
+			            <div data-adshim data-adshim-format="rect" data-adshim-slot="below" data-adshim-targeting='{"AdType":"RECT_BELOW"}' id="gpt-ad-RECT_BELOW_3" class="rmgAd c-ad js-ad c-ad--with-background" data-type="RECT_BELOW" data-device="mobile" data-prefix = 'Advertisement' ></div>
+        
+		</div>
+					
+		<div class="l-stack__item ">
+			                
+		</div>
+					
+		<div class="l-stack__item ">
+			
+                                                                                                                
+
+
+<div class="c-social-shares ">
+	
+	<div class="c-social-shares__content">
+		<ul class="c-social-shares__list">
+			
+																											
+				<li class="c-social-shares__item ">
+					<a class="c-social-shares__link"
+					   target="_blank"
+						 href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fwww.levif.be%2Finternational%2Fcoronavirus-plus-de-140-000-morts-dans-le-monde%2F" 					   	title=""
+					   	aria-label="Deel dit artikel op Facebook"
+											>
+						<span class="c-social-shares__icon-container">
+							
+<span class="c-icon c-icon--facebook c-social-shares__icon c-icon--size-x0.9" aria-hidden="true" focusable="false">
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
+	<path d="M9.8,13.1V24h4.5V13.1H18l0.6-4.3h-4.3V6.1c0-1.2,0.4-2.1,2.1-2.1h2.3V0.2C17.6,0.1,16.5,0,15.4,0C12,0,9.8,2,9.8,5.6v3.2H6
+		v4.3H9.8z"/>
+</svg>
+	</span>
+						</span>
+					</a>
+				</li>
+																											
+				<li class="c-social-shares__item ">
+					<a class="c-social-shares__link"
+					   target="_blank"
+						 href="https://twitter.com/share?url=https%3A%2F%2Fwww.levif.be%2Finternational%2Fcoronavirus-plus-de-140-000-morts-dans-le-monde%2F&text=Coronavirus : plus de 140.000 morts dans le monde" 					   	title=""
+					   	aria-label="Deel dit artikel op Twitter"
+											>
+						<span class="c-social-shares__icon-container">
+							
+<span class="c-icon c-icon--twitter c-social-shares__icon c-icon--size-x0.9" aria-hidden="true" focusable="false">
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
+	<path d="M24,4.1c-0.9,0.4-1.8,0.6-2.8,0.8c1-0.6,1.8-1.5,2.2-2.7c-1,0.6-2,1-3.1,1.2c-0.9-0.9-2.2-1.5-3.6-1.5c-3.2,0-5.5,2.9-4.8,6
+		C7.7,7.6,4.1,5.7,1.7,2.7C0.4,4.9,1,7.8,3.2,9.2C2.4,9.2,1.6,9,1,8.6c-0.1,2.2,1.6,4.3,3.9,4.8c-0.7,0.2-1.5,0.2-2.2,0.1
+		c0.6,1.9,2.4,3.3,4.6,3.4c-2.1,1.6-4.7,2.3-7.3,2c2.2,1.4,4.8,2.2,7.5,2.2c9.1,0,14.3-7.6,14-14.4C22.5,6,23.3,5.1,24,4.1z"/>
+</svg>
+	</span>
+						</span>
+					</a>
+				</li>
+																											
+				<li class="c-social-shares__item ">
+					<a class="c-social-shares__link"
+					   target="_blank"
+						 href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.levif.be%2Finternational%2Fcoronavirus-plus-de-140-000-morts-dans-le-monde%2F&title=Coronavirus%20%3A%20plus%20de%20140.000%20morts%20dans%20le%20monde&source=KW" 					   	title=""
+					   	aria-label="Deel dit artikel op LinkedIn"
+											>
+						<span class="c-social-shares__icon-container">
+							
+<span class="c-icon c-icon--linkedin c-social-shares__icon c-icon--size-x0.9" aria-hidden="true" focusable="false">
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
+	<path d="M5,3.5C5,4.9,3.9,6,2.5,6C1.1,6,0,4.9,0,3.5C0,2.2,1.1,1,2.5,1C3.9,1,5,2.2,5,3.5z M5,8H0v16h5V8z M13,8H8v16h5v-8.4
+	c0-4.7,6-5,6,0V24h5V13.9c0-7.9-8.9-7.6-11-3.7V8z"/>
+</svg>
+	</span>
+						</span>
+					</a>
+				</li>
+																											
+				<li class="c-social-shares__item u-display-none@at:viewport-9">
+					<a class="c-social-shares__link"
+					   target="_blank"
+						 href="whatsapp://send?text=https%3A%2F%2Fwww.levif.be%2Finternational%2Fcoronavirus-plus-de-140-000-morts-dans-le-monde%2F" 					   	title=""
+					   	aria-label="Deel dit artikel via WhatsApp"
+											>
+						<span class="c-social-shares__icon-container">
+							
+<span class="c-icon c-icon--whatsapp c-social-shares__icon c-icon--size-x0.9" aria-hidden="true" focusable="false">
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
+<path d="M20.4,3.5C18.2,1.2,15.2,0,12,0C5.4,0,0.1,5.3,0.1,11.9c0,2.1,0.5,4.1,1.6,5.9L0,24l6.3-1.7C8,23.3,10,23.8,12,23.8h0
+	c6.6,0,12-5.3,12-11.9C24,8.7,22.6,5.7,20.4,3.5z M12,21.8c-1.8,0-3.5-0.5-5-1.4l-0.4-0.2l-3.7,1l1-3.6l-0.2-0.4
+	c-1-1.6-1.5-3.4-1.5-5.3C2.1,6.4,6.5,2,12,2c2.6,0,5.1,1,7,2.9s3,4.4,3,7C22,17.4,17.4,21.8,12,21.8z M17.4,14.4
+	c-0.3-0.1-1.8-0.9-2-1c-0.3-0.1-0.5-0.1-0.7,0.1c-0.2,0.3-0.8,1-0.9,1.2c-0.2,0.2-0.3,0.2-0.6,0.1c-1.7-0.9-2.9-1.6-4-3.5
+	c-0.3-0.5,0.3-0.5,0.9-1.6c0.1-0.2,0-0.4,0-0.5C9.9,9,9.3,7.5,9,6.9C8.8,6.3,8.5,6.4,8.3,6.4c-0.2,0-0.4,0-0.6,0
+	C7.6,6.4,7.3,6.5,7,6.8c-0.3,0.3-1,1-1,2.5s1.1,2.9,1.2,3.1c0.2,0.2,2.1,3.2,5.1,4.5c1.9,0.8,2.6,0.9,3.6,0.7c0.6-0.1,1.8-0.7,2-1.4
+	c0.2-0.7,0.2-1.3,0.2-1.4C17.9,14.6,17.7,14.5,17.4,14.4z"/>
+</svg>
+	</span>
+						</span>
+					</a>
+				</li>
+																											
+				<li class="c-social-shares__item ">
+					<a class="c-social-shares__link"
+					   target="_blank"
+						 href="mailto:?subject=Coronavirus%20%3A%20plus%20de%20140.000%20morts%20dans%20le%20monde&body=Je%20viens%20de%20lire%20cet%20article%20int%C3%A9ressant%20sur%20LeVif.be%3A%20https%3A%2F%2Fwww.levif.be%2Finternational%2Fcoronavirus-plus-de-140-000-morts-dans-le-monde%2F" 					   	title=""
+					   	aria-label="Email dit artikel"
+											>
+						<span class="c-social-shares__icon-container">
+							
+<span class="c-icon c-icon--envelope c-social-shares__icon c-icon--size-x0.9" aria-hidden="true" focusable="false">
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
+	<path d="M12,13.2L0,3.5h24L12,13.2z M6.6,11.4L0,6.1v12.5L6.6,11.4z M17.4,11.4l6.6,7.2V6.1L17.4,11.4z M15.9,12.7L12,15.8l-3.9-3.1 
+	L0,21.5h24L15.9,12.7z"/>
+</svg>
+	</span>
+						</span>
+					</a>
+				</li>
+																											
+				<li class="c-social-shares__item ">
+					<a class="c-social-shares__link"
+					   target="_blank"
+						 href="https://www.levif.be/international/coronavirus-plus-de-140-000-morts-dans-le-monde/" 					   	title=""
+					   	aria-label="Hyperlink"
+						 onclick="const el = document.createElement('textarea'); el.value = 'https://www.levif.be/international/coronavirus-plus-de-140-000-morts-dans-le-monde/'; document.body.appendChild(el); el.select(); document.execCommand('copy'); document.body.removeChild(el); return false; " 					>
+						<span class="c-social-shares__icon-container">
+							
+<span class="c-icon c-icon--link c-social-shares__icon c-icon--size-x0.9" aria-hidden="true" focusable="false">
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
+	<path d="M6.2,8.7c0.4-0.4,0.9-0.8,1.4-1.1c2.9-1.6,6.6-0.7,8.4,2.1l-2.2,2.2c-0.6-1.5-2.2-2.3-3.8-1.9c-0.6,0.1-1.2,0.4-1.6,0.9
+	l-4.3,4.3c-1.3,1.3-1.3,3.4,0,4.7c1.3,1.3,3.4,1.3,4.7,0l1.3-1.3c1.2,0.5,2.5,0.7,3.8,0.6L11,22.1c-2.5,2.5-6.6,2.5-9.1,0
+	c-2.5-2.5-2.5-6.6,0-9.1L6.2,8.7z M13,1.9l-2.9,2.9c1.3-0.1,2.6,0.1,3.8,0.6l1.3-1.3c1.3-1.3,3.4-1.3,4.7,0c1.3,1.3,1.3,3.4,0,4.7
+	l-4.3,4.3c-1.3,1.3-3.4,1.3-4.7,0c-0.3-0.3-0.6-0.7-0.7-1.1l-2.2,2.2c0.2,0.4,0.5,0.7,0.8,1c0.8,0.8,1.8,1.4,3,1.7
+	c1.5,0.4,3.2,0.2,4.6-0.6c0.5-0.3,1-0.6,1.4-1.1l4.3-4.3c2.5-2.5,2.5-6.6,0-9.1C19.6-0.6,15.5-0.6,13,1.9z"/>
+</svg>
+	</span>
+						</span>
+					</a>
+				</li>
+																											
+				<li class="c-social-shares__item ">
+					<a class="c-social-shares__link"
+					   target="_blank"
+						 href="https://www.levif.be/international/coronavirus-plus-de-140-000-morts-dans-le-monde/" 					   	title=""
+					   	aria-label="Print dit artikel"
+						 onclick="print(); return false; " 					>
+						<span class="c-social-shares__icon-container">
+							
+<span class="c-icon c-icon--printer c-social-shares__icon c-icon--size-x0.9" aria-hidden="true" focusable="false">
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
+	<path d="M22.9,5.2h-4.8V2.4c0-0.6-0.5-1.1-1.1-1.1H7c-0.6,0-1.1,0.5-1.1,1.1v2.8H1.1C0.5,5.2,0,5.6,0,6.2v11c0,0.6,0.5,1.1,1.1,1.1
+	h4.5v3.4c0,0.6,0.5,1.1,1.1,1.1h10.5c0.6,0,1.1-0.5,1.1-1.1v-3.4h4.5c0.6,0,1.1-0.5,1.1-1.1v-11C24,5.6,23.5,5.2,22.9,5.2z M8.1,3.5
+	h7.7v1.7H8.1V3.5z M16.1,20.6H7.9v-6.2h8.3V20.6z M20.8,10.1h-2.5V7.9h2.5V10.1z"/>
+</svg>
+	</span>
+						</span>
+					</a>
+				</li>
+			
+			
+					</ul>
+
+			</div>
+</div>
+
+		</div>
+					
+		<div class="l-stack__item ">
+			<div id="below-article"></div>
+		</div>
+	</div>
+
+		</div>
+	</div>
+    
+		</div>
+					
+		<div class="l-stack__item article_below u-children--with-spacing:x3">
+			<div id="recommendations-widget"></div>
+
+
+
+
+
+
+	
+<div class="l-module l-module--with-spacing:x6 js-partner-content l-module--with-header">
+	
+					
+		<header class="l-module__header ">
+			<div class="l-module__header-inner">
+				<h2>Partner Content</h2>
+			</div>
+		</header>
+	
+					
+		<div class="l-module__content ">
+			        
+                                        
+    
+	
+		
+
+<div active-class="s-slider-container">
+	<div class="s-slider swiper s-slider-container--with-slide-height:equal js-slider--partner-content js-slider-with-navigation" data-slider-id="2012784981">
+		<div class="s-slider__wrapper swiper-wrapper">
+											
+				<div class="s-slider__slide swiper-slide ">
+					<div data-adshim data-adshim-format="native" data-adshim-slot="_1" data-adshim-targeting='{"AdType":"NATIVE"}' id="gpt-ad-NATIVE-_1" class="rmgAd c-ad js-ad " data-type="NATIVE" data-device="all" ></div>
+				</div>
+											
+				<div class="s-slider__slide swiper-slide ">
+					<div data-adshim data-adshim-format="native" data-adshim-slot="_2" data-adshim-targeting='{"AdType":"NATIVE"}' id="gpt-ad-NATIVE-_2" class="rmgAd c-ad js-ad " data-type="NATIVE" data-device="all" ></div>
+				</div>
+											
+				<div class="s-slider__slide swiper-slide ">
+					<div data-adshim data-adshim-format="native" data-adshim-slot="_3" data-adshim-targeting='{"AdType":"NATIVE"}' id="gpt-ad-NATIVE-_3" class="rmgAd c-ad js-ad " data-type="NATIVE" data-device="all" ></div>
+				</div>
+					</div>
+
+		<div class="s-slider__footer">
+			<div class="s-slider__pagination swiper-pagination  u-display-none"></div>
+		</div>
+
+		<div class="s-slider__button-prev swiper-button-prev s-slider__button--disabled-hidden">
+			
+<span class="c-icon c-icon--chevron-left " aria-hidden="true" focusable="false">
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
+	<path d="M10.2,12l9.2,9.2L16.6,24l-12-12l12-12l2.8,2.8L10.2,12z"/>
+</svg>
+	</span>
+		</div>
+		<div class="s-slider__button-next swiper-button-next s-slider__button--disabled-hidden">
+			
+<span class="c-icon c-icon--chevron-right " aria-hidden="true" focusable="false">
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
+	<path d="M 13.788079,12 4.5960269,2.8079469 7.4039737,0 19.403973,12 7.4039737,24 4.5960269,21.192052 Z" />
+</svg>
+	</span>
+		</div>
+	</div>
+</div>
+              
+		</div>
+	
+	</div>
+
+
+
+<div id="below-article"></div>
+
+
+
+<script type="didomi/javascript" data-vendor="iab:164" async="async" src="//widgets.outbrain.com/outbrain.js"></script>
+<script type="didomi/html" data-vendor="iab:164">
+        <div class="OUTBRAIN" data-src="https://www.levif.be/international/coronavirus-plus-de-140-000-morts-dans-le-monde" data-widget-id="AR_1"></div>
+
+</script>
+		</div>
+	</div>
+            
+
+			</div>
+
+				
+	<aside class="l-layout-block__item l-layout-block__sidebar:30 u-display-none@to:viewport-9">
+		<div class="l-layout-block__sidebar__inner">
+			<div id="bc-article-topright"></div>
+
+<div data-adshim data-adshim-format="rect-large-new" data-adshim-slot="above" data-adshim-targeting='{"AdType":"RECT_ABOVE"}' id="gpt-ad-RECT_ABOVE" class="rmgAd c-ad js-ad c-ad--with-background" data-type="RECT_ABOVE" data-device="all" data-prefix = 'Advertisement' ></div>
+
+    
+    
+    
+                
+                    
+                    
+                    
+                    
+            
+        
+                    
+
+	
+<div class="l-module l-module--with-spacing:x3 l-module--with-header">
+	
+					
+		<header class="l-module__header l-module__header--primary">
+			<div class="l-module__header-inner">
+				<h3>Les plus lus</h3>
+			</div>
+		</header>
+	
+					
+		<div class="l-module__content ">
+			        
+<ol class="c-numbered-list js-slider-to-viewport-9">
+			<li class="c-numbered-list__item ">
+			            
+
+<article class="c-teaser-item  ">
+	<div class="c-teaser-item__container">
+					<div class="c-teaser-item__visual">
+									<a href="https://www.levif.be/belgique/politique/financement-cache-de-844-millions-deuros-les-partis-politiques-sont-encore-plus-riches-quon-ne-le-pensait/" class="c-teaser-item__visual-link"></a>
+				
+				<div href="https://www.levif.be/belgique/politique/financement-cache-de-844-millions-deuros-les-partis-politiques-sont-encore-plus-riches-quon-ne-le-pensait/" class="c-teaser-item__picture-container">
+					
+					
+
+
+<figure class="c-picture-figure  c-teaser-item__picture c-picture--fill-space">
+	<div class="c-picture__container">
+		<picture class="c-picture" >
+															
+									<source
+						class="c-picture__source "
+						media="(min-width: 720px)"
+						data-lazy-srcset="https://img.static-rmg.be/a/view/q75/w104/h133/4759960/belgaimage-46987804-jpg.jpg"
+					>
+																			
+									<source
+						class="c-picture__source "
+						media="(min-width: 1px)"
+						data-lazy-srcset="https://img.static-rmg.be/a/view/q75/w142/h131/4759960/belgaimage-46987804-jpg.jpg"
+					>
+							
+						<img
+				class="c-picture__image  "
+			 src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E"
+				alt=""
+										 data-lazy-src="https://img.static-rmg.be/a/view/q75/w104/h133/4759960/belgaimage-46987804-jpg.jpg"	/><noscript><img
+				class="c-picture__image  "
+				src="https://img.static-rmg.be/a/view/q75/w104/h133/4759960/belgaimage-46987804-jpg.jpg"
+				alt=""
+											/></noscript>
+		</picture>
+
+		
+			</div>
+
+	</figure>
+
+					<div class="c-teaser-item__visual-overlay">
+						<div class="c-teaser-item__visual-overlay__left">
+													</div>
+
+						<div class="c-teaser-item__visual-overlay__right">
+													</div>
+
+						
+											</div>
+				</div>
+			</div>
+		
+		<div class="c-teaser-item__content">
+			
+			
+							<a href="https://www.levif.be/belgique/politique/financement-cache-de-844-millions-deuros-les-partis-politiques-sont-encore-plus-riches-quon-ne-le-pensait/" class="c-teaser-item__title">
+											
+
+<span
+	class="c-premium-indicator c-teaser-item__premium-indicator"
+			lock="629546"
+	>
+	
+<span class="c-icon c-icon--lock c-premium-indicator__icon c-premium-indicator__icon--locked" aria-hidden="true" focusable="false">
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
+<path d="M20.3,10.5h-1.1V7.1C19.1,3.2,15.9,0,12,0S4.9,3.2,4.9,7.1v3.4H3.8c-1.2,0-2.3,1-2.3,2.3v9c0,1.2,1,2.3,2.3,2.3h16.5
+	c1.2,0,2.3-1,2.3-2.3v-9C22.5,11.5,21.5,10.5,20.3,10.5z M13.9,18.4c0,1-0.8,1.9-1.9,1.9s-1.9-0.8-1.9-1.9v-2.3c0-1,0.8-1.9,1.9-1.9
+	s1.9,0.8,1.9,1.9V18.4z M15.4,10.5H8.6V7.1c0-1.9,1.5-3.4,3.4-3.4s3.4,1.5,3.4,3.4V10.5z"/>
+</svg>
+	</span>
+
+			
+<span class="c-icon c-icon--lock-open c-premium-indicator__icon c-premium-indicator__icon--unlocked" aria-hidden="true" focusable="false">
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
+<path d="M17.6,1.3c-3.5,0-6.3,2.9-6.3,6.4v2.9H2c-1.1,0-2,0.9-2,2v8c0,1.1,0.9,2,2,2h14.7c1.1,0,2-0.9,2-2v-8c0-1.1-0.9-2-2-2h-2v-3
+	c0-1.7,1.3-3,3-3c1.7,0,3,1.3,3,3V11c0,0.6,0.4,1,1,1H23c0.6,0,1-0.4,1-1V7.7C24,4.2,21.1,1.3,17.6,1.3z M11,17.7
+	c0,0.9-0.7,1.7-1.7,1.7s-1.7-0.7-1.7-1.7v-2c0-0.9,0.7-1.7,1.7-1.7s1.7,0.7,1.7,1.7V17.7z"/>
+</svg>
+	</span>
+	</span>
+					
+					<span class="c-teaser-item__title-inner">Financement caché de 84,4 millions d'euros : les partis politiques sont encore plus riches qu'on ne le pensait</span>
+
+									</a>
+			
+					</div>
+	</div>
+</article>
+
+        
+		</li>
+			<li class="c-numbered-list__item ">
+			            
+
+<article class="c-teaser-item  ">
+	<div class="c-teaser-item__container">
+					<div class="c-teaser-item__visual">
+									<a href="https://www.levif.be/international/live/guerre_en_ukraine/zelensky-affirme-quenviron-400-drones-iraniens-ont-ete-utilises-par-la-russie-en-ukraine-546137/" class="c-teaser-item__visual-link"></a>
+				
+				<div href="https://www.levif.be/international/live/guerre_en_ukraine/zelensky-affirme-quenviron-400-drones-iraniens-ont-ete-utilises-par-la-russie-en-ukraine-546137/" class="c-teaser-item__picture-container">
+					
+					
+
+
+<figure class="c-picture-figure  c-teaser-item__picture c-picture--fill-space">
+	<div class="c-picture__container">
+		<picture class="c-picture" >
+															
+									<source
+						class="c-picture__source "
+						media="(min-width: 720px)"
+						data-lazy-srcset="https://img.static-rmg.be/a/view/q75/w104/h133/4760079/belgaimage-47567622-jpg.jpg"
+					>
+																			
+									<source
+						class="c-picture__source "
+						media="(min-width: 1px)"
+						data-lazy-srcset="https://img.static-rmg.be/a/view/q75/w142/h131/4760079/belgaimage-47567622-jpg.jpg"
+					>
+							
+						<img
+				class="c-picture__image  "
+			 src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E"
+				alt=""
+										 data-lazy-src="https://img.static-rmg.be/a/view/q75/w104/h133/4760079/belgaimage-47567622-jpg.jpg"	/><noscript><img
+				class="c-picture__image  "
+				src="https://img.static-rmg.be/a/view/q75/w104/h133/4760079/belgaimage-47567622-jpg.jpg"
+				alt=""
+											/></noscript>
+		</picture>
+
+		
+			</div>
+
+	</figure>
+
+					<div class="c-teaser-item__visual-overlay">
+						<div class="c-teaser-item__visual-overlay__left">
+													</div>
+
+						<div class="c-teaser-item__visual-overlay__right">
+													</div>
+
+						
+											</div>
+				</div>
+			</div>
+		
+		<div class="c-teaser-item__content">
+							<div class="c-teaser-item__meta">
+											
+						
+
+<div class="c-stamp  c-teaser-item__stamp c-stamp--no-invert">
+	
+	<div class="c-stamp__text-container">
+									<span class="c-stamp__title">
+				Live
+			</span>
+					
+		
+		
+			</div>
+</div>
+					
+									</div>
+			
+			
+							<a href="https://www.levif.be/international/live/guerre_en_ukraine/zelensky-affirme-quenviron-400-drones-iraniens-ont-ete-utilises-par-la-russie-en-ukraine-546137/" class="c-teaser-item__title">
+					
+					<span class="c-teaser-item__title-inner">Zelensky affirme qu'"environ 400 drones iraniens" ont été utilisés par la Russie en Ukraine</span>
+
+									</a>
+			
+					</div>
+	</div>
+</article>
+
+        
+		</li>
+			<li class="c-numbered-list__item ">
+			            
+
+<article class="c-teaser-item  ">
+	<div class="c-teaser-item__container">
+					<div class="c-teaser-item__visual">
+									<a href="https://www.levif.be/societe/mobilite/importantes-perturbations-attendues-sur-le-ring-de-bruxelles-ce-week-end/" class="c-teaser-item__visual-link"></a>
+				
+				<div href="https://www.levif.be/societe/mobilite/importantes-perturbations-attendues-sur-le-ring-de-bruxelles-ce-week-end/" class="c-teaser-item__picture-container">
+					
+					
+
+
+<figure class="c-picture-figure  c-teaser-item__picture c-picture--fill-space">
+	<div class="c-picture__container">
+		<picture class="c-picture" >
+															
+									<source
+						class="c-picture__source "
+						media="(min-width: 720px)"
+						data-lazy-srcset="https://img.static-rmg.be/a/view/q75/w104/h133/4758820/belgaimage-45849741-jpg.jpg"
+					>
+																			
+									<source
+						class="c-picture__source "
+						media="(min-width: 1px)"
+						data-lazy-srcset="https://img.static-rmg.be/a/view/q75/w142/h131/4758820/belgaimage-45849741-jpg.jpg"
+					>
+							
+						<img
+				class="c-picture__image  "
+			 src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E"
+				alt=""
+										 data-lazy-src="https://img.static-rmg.be/a/view/q75/w104/h133/4758820/belgaimage-45849741-jpg.jpg"	/><noscript><img
+				class="c-picture__image  "
+				src="https://img.static-rmg.be/a/view/q75/w104/h133/4758820/belgaimage-45849741-jpg.jpg"
+				alt=""
+											/></noscript>
+		</picture>
+
+		
+			</div>
+
+	</figure>
+
+					<div class="c-teaser-item__visual-overlay">
+						<div class="c-teaser-item__visual-overlay__left">
+													</div>
+
+						<div class="c-teaser-item__visual-overlay__right">
+													</div>
+
+						
+											</div>
+				</div>
+			</div>
+		
+		<div class="c-teaser-item__content">
+			
+			
+							<a href="https://www.levif.be/societe/mobilite/importantes-perturbations-attendues-sur-le-ring-de-bruxelles-ce-week-end/" class="c-teaser-item__title">
+					
+					<span class="c-teaser-item__title-inner">Importantes perturbations attendues sur le ring de Bruxelles ce week-end</span>
+
+									</a>
+			
+					</div>
+	</div>
+</article>
+
+        
+		</li>
+			<li class="c-numbered-list__item ">
+			            
+
+<article class="c-teaser-item  ">
+	<div class="c-teaser-item__container">
+					<div class="c-teaser-item__visual">
+									<a href="https://www.levif.be/belgique/bientot-les-vacances-quand-auront-lieu-les-conges-scolaires-en-2022-2023-calendrier-interactif/" class="c-teaser-item__visual-link"></a>
+				
+				<div href="https://www.levif.be/belgique/bientot-les-vacances-quand-auront-lieu-les-conges-scolaires-en-2022-2023-calendrier-interactif/" class="c-teaser-item__picture-container">
+					
+					
+
+
+<figure class="c-picture-figure  c-teaser-item__picture c-picture--fill-space">
+	<div class="c-picture__container">
+		<picture class="c-picture" >
+															
+									<source
+						class="c-picture__source "
+						media="(min-width: 720px)"
+						data-lazy-srcset="https://img.static-rmg.be/a/view/q75/w104/h133/f50.00,50.00/3641722/6d22d011049135a00d722dab69d82be8-jpg.jpg"
+					>
+																			
+									<source
+						class="c-picture__source "
+						media="(min-width: 1px)"
+						data-lazy-srcset="https://img.static-rmg.be/a/view/q75/w142/h131/f50.00,50.00/3641722/6d22d011049135a00d722dab69d82be8-jpg.jpg"
+					>
+							
+						<img
+				class="c-picture__image  "
+			 src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E"
+				alt=""
+										 data-lazy-src="https://img.static-rmg.be/a/view/q75/w104/h133/f50.00,50.00/3641722/6d22d011049135a00d722dab69d82be8-jpg.jpg"	/><noscript><img
+				class="c-picture__image  "
+				src="https://img.static-rmg.be/a/view/q75/w104/h133/f50.00,50.00/3641722/6d22d011049135a00d722dab69d82be8-jpg.jpg"
+				alt=""
+											/></noscript>
+		</picture>
+
+		
+			</div>
+
+	</figure>
+
+					<div class="c-teaser-item__visual-overlay">
+						<div class="c-teaser-item__visual-overlay__left">
+													</div>
+
+						<div class="c-teaser-item__visual-overlay__right">
+													</div>
+
+						
+											</div>
+				</div>
+			</div>
+		
+		<div class="c-teaser-item__content">
+			
+			
+							<a href="https://www.levif.be/belgique/bientot-les-vacances-quand-auront-lieu-les-conges-scolaires-en-2022-2023-calendrier-interactif/" class="c-teaser-item__title">
+					
+					<span class="c-teaser-item__title-inner">Les vacances de Toussaint ont débuté: quels seront ensuite les prochains congés scolaires 2022-2023 ?</span>
+
+									</a>
+			
+					</div>
+	</div>
+</article>
+
+        
+		</li>
+			<li class="c-numbered-list__item ">
+			            
+
+<article class="c-teaser-item  ">
+	<div class="c-teaser-item__container">
+					<div class="c-teaser-item__visual">
+									<a href="https://www.levif.be/animaux/pour-de-nombreux-belges-soccuper-dun-animal-de-compagnie-devient-un-luxe-les-demandes-dabandon-explosent/" class="c-teaser-item__visual-link"></a>
+				
+				<div href="https://www.levif.be/animaux/pour-de-nombreux-belges-soccuper-dun-animal-de-compagnie-devient-un-luxe-les-demandes-dabandon-explosent/" class="c-teaser-item__picture-container">
+					
+					
+
+
+<figure class="c-picture-figure  c-teaser-item__picture c-picture--fill-space">
+	<div class="c-picture__container">
+		<picture class="c-picture" >
+															
+									<source
+						class="c-picture__source "
+						media="(min-width: 720px)"
+						data-lazy-srcset="https://img.static-rmg.be/a/view/q75/w104/h133/4759847/gettyimages-13642531071-jpg.jpg"
+					>
+																			
+									<source
+						class="c-picture__source "
+						media="(min-width: 1px)"
+						data-lazy-srcset="https://img.static-rmg.be/a/view/q75/w142/h131/4759847/gettyimages-13642531071-jpg.jpg"
+					>
+							
+						<img
+				class="c-picture__image  "
+			 src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E"
+				alt=""
+										 data-lazy-src="https://img.static-rmg.be/a/view/q75/w104/h133/4759847/gettyimages-13642531071-jpg.jpg"	/><noscript><img
+				class="c-picture__image  "
+				src="https://img.static-rmg.be/a/view/q75/w104/h133/4759847/gettyimages-13642531071-jpg.jpg"
+				alt=""
+											/></noscript>
+		</picture>
+
+		
+			</div>
+
+	</figure>
+
+					<div class="c-teaser-item__visual-overlay">
+						<div class="c-teaser-item__visual-overlay__left">
+													</div>
+
+						<div class="c-teaser-item__visual-overlay__right">
+													</div>
+
+						
+											</div>
+				</div>
+			</div>
+		
+		<div class="c-teaser-item__content">
+			
+			
+							<a href="https://www.levif.be/animaux/pour-de-nombreux-belges-soccuper-dun-animal-de-compagnie-devient-un-luxe-les-demandes-dabandon-explosent/" class="c-teaser-item__title">
+					
+					<span class="c-teaser-item__title-inner">Pour de nombreux Belges, s’occuper d’un animal de compagnie devient un luxe: "Les demandes d’abandon explosent"</span>
+
+									</a>
+			
+					</div>
+	</div>
+</article>
+
+        
+		</li>
+	</ol>
+    
+		</div>
+	
+	</div>
+    
+    
+<div data-adshim data-adshim-format="rect-large-new" data-adshim-slot="middle" data-adshim-targeting='{"AdType":"RECT_MIDDLE"}' id="gpt-ad-RECT_MIDDLE_1" class="rmgAd c-ad js-ad c-ad--with-background" data-type="RECT_MIDDLE" data-device="all" data-prefix = 'Advertisement' ></div>
+<div class="l-module l-module--with-spacing:x3 "><div class="l-module__content">
+
+    
+    
+                                
+
+
+
+
+	
+<div class="l-module l-module--with-spacing:x3 l-module--with-header">
+	
+					
+		<header class="l-module__header l-module__header--secondary">
+			<div class="l-module__header-inner">
+				<h3>A la une</h3>
+			</div>
+		</header>
+	
+					
+		<div class="l-module__content ">
+			    
+<div class="l-grid l-grid--with-default-spacing js-slider-to-viewport-9">
+					
+		<div class="l-grid__col:12/12">
+			        
+
+<article class="c-teaser-item  ">
+	<div class="c-teaser-item__container">
+		
+		<div class="c-teaser-item__content">
+							<div class="c-teaser-item__meta">
+					
+											<time class="c-teaser-item__time" datetime="21:00" aria-hidden="true">
+							21:00
+						</time>
+									</div>
+			
+			
+							<a href="https://www.levif.be/economie/mon-argent/logement-10-astuces-pour-economiser-jusqua-4-000-euros/" class="c-teaser-item__title">
+					
+					<span class="c-teaser-item__title-inner">Logement: 10 astuces pour économiser jusqu'à 4.000 euros</span>
+
+									</a>
+			
+					</div>
+	</div>
+</article>
+
+    
+		</div>
+					
+		<div class="l-grid__col:12/12">
+			        
+
+<article class="c-teaser-item  ">
+	<div class="c-teaser-item__container">
+		
+		<div class="c-teaser-item__content">
+							<div class="c-teaser-item__meta">
+					
+											<time class="c-teaser-item__time" datetime="21:00" aria-hidden="true">
+							21:00
+						</time>
+									</div>
+			
+			
+							<a href="https://www.levif.be/economie/mon-argent/sept-astuces-pour-economiser-sur-ses-frais-de-chauffage/" class="c-teaser-item__title">
+					
+					<span class="c-teaser-item__title-inner">Sept astuces pour économiser sur ses frais de chauffage</span>
+
+									</a>
+			
+					</div>
+	</div>
+</article>
+
+    
+		</div>
+					
+		<div class="l-grid__col:12/12">
+			        
+
+<article class="c-teaser-item  ">
+	<div class="c-teaser-item__container">
+		
+		<div class="c-teaser-item__content">
+							<div class="c-teaser-item__meta">
+					
+											<time class="c-teaser-item__time" datetime="16:35" aria-hidden="true">
+							16:35
+						</time>
+									</div>
+			
+			
+							<a href="https://www.levif.be/belgique/politique/financement-cache-de-844-millions-deuros-les-partis-politiques-sont-encore-plus-riches-quon-ne-le-pensait/" class="c-teaser-item__title">
+											
+
+<span
+	class="c-premium-indicator c-teaser-item__premium-indicator"
+			lock="629546"
+	>
+	
+<span class="c-icon c-icon--lock c-premium-indicator__icon c-premium-indicator__icon--locked" aria-hidden="true" focusable="false">
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
+<path d="M20.3,10.5h-1.1V7.1C19.1,3.2,15.9,0,12,0S4.9,3.2,4.9,7.1v3.4H3.8c-1.2,0-2.3,1-2.3,2.3v9c0,1.2,1,2.3,2.3,2.3h16.5
+	c1.2,0,2.3-1,2.3-2.3v-9C22.5,11.5,21.5,10.5,20.3,10.5z M13.9,18.4c0,1-0.8,1.9-1.9,1.9s-1.9-0.8-1.9-1.9v-2.3c0-1,0.8-1.9,1.9-1.9
+	s1.9,0.8,1.9,1.9V18.4z M15.4,10.5H8.6V7.1c0-1.9,1.5-3.4,3.4-3.4s3.4,1.5,3.4,3.4V10.5z"/>
+</svg>
+	</span>
+
+			
+<span class="c-icon c-icon--lock-open c-premium-indicator__icon c-premium-indicator__icon--unlocked" aria-hidden="true" focusable="false">
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
+<path d="M17.6,1.3c-3.5,0-6.3,2.9-6.3,6.4v2.9H2c-1.1,0-2,0.9-2,2v8c0,1.1,0.9,2,2,2h14.7c1.1,0,2-0.9,2-2v-8c0-1.1-0.9-2-2-2h-2v-3
+	c0-1.7,1.3-3,3-3c1.7,0,3,1.3,3,3V11c0,0.6,0.4,1,1,1H23c0.6,0,1-0.4,1-1V7.7C24,4.2,21.1,1.3,17.6,1.3z M11,17.7
+	c0,0.9-0.7,1.7-1.7,1.7s-1.7-0.7-1.7-1.7v-2c0-0.9,0.7-1.7,1.7-1.7s1.7,0.7,1.7,1.7V17.7z"/>
+</svg>
+	</span>
+	</span>
+					
+					<span class="c-teaser-item__title-inner">Financement caché de 84,4 millions d'euros : les partis politiques sont encore plus riches qu'on ne le pensait</span>
+
+									</a>
+			
+					</div>
+	</div>
+</article>
+
+    
+		</div>
+					
+		<div class="l-grid__col:12/12">
+			        
+
+<article class="c-teaser-item  ">
+	<div class="c-teaser-item__container">
+		
+		<div class="c-teaser-item__content">
+							<div class="c-teaser-item__meta">
+					
+											<time class="c-teaser-item__time" datetime="16:29" aria-hidden="true">
+							16:29
+						</time>
+									</div>
+			
+			
+							<a href="https://www.levif.be/lesoptimistesduclimat/decarboner-le-monde-avec-des-baleines-volantes/" class="c-teaser-item__title">
+											
+
+<span
+	class="c-premium-indicator c-teaser-item__premium-indicator"
+			lock="503860"
+	>
+	
+<span class="c-icon c-icon--lock c-premium-indicator__icon c-premium-indicator__icon--locked" aria-hidden="true" focusable="false">
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
+<path d="M20.3,10.5h-1.1V7.1C19.1,3.2,15.9,0,12,0S4.9,3.2,4.9,7.1v3.4H3.8c-1.2,0-2.3,1-2.3,2.3v9c0,1.2,1,2.3,2.3,2.3h16.5
+	c1.2,0,2.3-1,2.3-2.3v-9C22.5,11.5,21.5,10.5,20.3,10.5z M13.9,18.4c0,1-0.8,1.9-1.9,1.9s-1.9-0.8-1.9-1.9v-2.3c0-1,0.8-1.9,1.9-1.9
+	s1.9,0.8,1.9,1.9V18.4z M15.4,10.5H8.6V7.1c0-1.9,1.5-3.4,3.4-3.4s3.4,1.5,3.4,3.4V10.5z"/>
+</svg>
+	</span>
+
+			
+<span class="c-icon c-icon--lock-open c-premium-indicator__icon c-premium-indicator__icon--unlocked" aria-hidden="true" focusable="false">
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
+<path d="M17.6,1.3c-3.5,0-6.3,2.9-6.3,6.4v2.9H2c-1.1,0-2,0.9-2,2v8c0,1.1,0.9,2,2,2h14.7c1.1,0,2-0.9,2-2v-8c0-1.1-0.9-2-2-2h-2v-3
+	c0-1.7,1.3-3,3-3c1.7,0,3,1.3,3,3V11c0,0.6,0.4,1,1,1H23c0.6,0,1-0.4,1-1V7.7C24,4.2,21.1,1.3,17.6,1.3z M11,17.7
+	c0,0.9-0.7,1.7-1.7,1.7s-1.7-0.7-1.7-1.7v-2c0-0.9,0.7-1.7,1.7-1.7s1.7,0.7,1.7,1.7V17.7z"/>
+</svg>
+	</span>
+	</span>
+					
+					<span class="c-teaser-item__title-inner">Décarboner le monde avec des baleines volantes</span>
+
+									</a>
+			
+					</div>
+	</div>
+</article>
+
+    
+		</div>
+	</div>
+
+		</div>
+	
+	</div>
+</div></div><div data-adshim data-adshim-format="rect" data-adshim-slot="below" data-adshim-targeting='{"AdType":"RECT_BELOW"}' id="gpt-ad-RECT_BELOW_2" class="rmgAd c-ad js-ad c-ad--with-background" data-type="RECT_BELOW" data-device="all" data-prefix = 'Advertisement' ></div>
+
+		</div>
+	</aside>
+	</div>
+    
+        
+                
+</div>
+    </main>
+
+    <div data-adshim data-adshim-format="banner" data-adshim-slot="below" data-adshim-targeting='{"AdType":"BANNER_BELOW"}' id="gpt-ad-BANNER_BELOW" class="rmgAd c-ad js-ad c-ad--with-background" data-type="BANNER_BELOW" data-device="all" ></div>
+    <div data-adshim data-adshim-format="floorad" data-adshim-slot="" data-adshim-targeting='{"AdType":"FLOORAD"}' id="gpt-ad-FLOORAD" class="rmgAd c-ad js-ad " data-type="FLOORAD" data-device="all" ></div>
+    
+<footer class="c-footer js-footer ">
+			<div class="l-container:12/12 l-container--with-default-spacing c-footer__highlighted-cta-container">
+			
+<div  class="c-highlighted-cta c-footer__highlighted-cta">
+	<div class="c-highlighted-cta__container">
+					<div class="c-highlighted-cta__picture-desktop">
+									<div class="c-highlighted-cta__covers-container">
+																				
+							
+							<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="" class="c-highlighted-cta__cover" style=								"z-index: 0; transform: scale(1); margin-left: 0px;"
+						 data-lazy-src="https://makr.roularta.be/makr-resize-cover/getCover.action?editionCode=LV&width=300"	><noscript><img src="https://makr.roularta.be/makr-resize-cover/getCover.action?editionCode=LV&width=300" alt="" class="c-highlighted-cta__cover" style=								"z-index: 0; transform: scale(1); margin-left: 0px;"
+							></noscript>
+																				
+							
+							<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="" class="c-highlighted-cta__cover" style=								"z-index: -1; transform: scale(0.9); margin-left: -15px;"
+						 data-lazy-src="https://makr.roularta.be/makr-resize-cover/getCover.action?editionCode=FP&width=300"	><noscript><img src="https://makr.roularta.be/makr-resize-cover/getCover.action?editionCode=FP&width=300" alt="" class="c-highlighted-cta__cover" style=								"z-index: -1; transform: scale(0.9); margin-left: -15px;"
+							></noscript>
+																				
+							
+							<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="" class="c-highlighted-cta__cover" style=								"z-index: -2; transform: scale(0.8); margin-left: -30px;"
+						 data-lazy-src="https://makr.roularta.be/makr-resize-cover/getCover.action?editionCode=LW&width=300"	><noscript><img src="https://makr.roularta.be/makr-resize-cover/getCover.action?editionCode=LW&width=300" alt="" class="c-highlighted-cta__cover" style=								"z-index: -2; transform: scale(0.8); margin-left: -30px;"
+							></noscript>
+											</div>
+				
+				<svg class="c-highlighted-cta__picture-desktop__background-shape" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 288 236" preserveAspectRatio="none">
+					<polygon fill-rule="evenodd" points="288 0 288 236 0 236"/>
+				</svg>
+			</div>
+
+					
+		<div class="c-highlighted-cta__content">
+			<h3 class="c-highlighted-cta__title">
+				Parce qu’il y a autant de personnes que d’opinions
+			</h3>
+
+			
+
+<div class="s-wysiwyg-editor c-highlighted-cta__text">
+	Dans un monde où l’on s’accroche à ses convictions, Le Vif sème le doute, car l’actualité n’est pas à sens unique. 
+</div>
+
+							<div class="c-highlighted-cta__button-container">
+					
+					
+
+
+
+	<a
+				class="c-button c-highlighted-cta__button c-button--inverted"
+		href="https://levif.be/abonnements/"
+				style=""
+					>
+			
+			<span class="c-button__text js-button__text">
+			S'ABONNER
+		</span>
+	
+	
+	
+	</a>
+
+				</div>
+			
+							<div class="c-highlighted-cta__price">
+					
+					<span class="c-highlighted-cta__price-amount">20,75 &euro;</span>
+
+											<span class="c-highlighted-cta__price-suffix">/mois</span>
+									</div>
+					</div>
+	</div>
+</div>
+		</div>
+	
+			<div class="l-container:12/12 l-container--with-default-spacing">
+			
+<div class="c-subscribe-block c-footer__subscribe-block">
+			<p class="c-subscribe-block__content">
+			<strong>Newsletters</strong><br>Ne manquez plus l'actualité importante du jour. Abonnez-vous à nos newsletters.
+		</p>
+	
+	
+			
+
+
+
+	<a
+				class="c-button  c-subscribe-block__button c-button--fill-space"
+		href="https://compte.mesmagazines.be/newsletters?site_code=Site-LeVif-FR&referer=https://levif.be/"
+				style=""
+					>
+			
+			<span class="c-button__text js-button__text">
+			S'inscrire
+		</span>
+	
+	
+	
+	</a>
+
+	</div>
+		</div>
+	
+	
+			<div class="c-footer__content-container">
+			<div class="l-container:12/12 l-container--with-default-spacing c-footer__content">
+				<div class="c-footer__nav-container">
+
+											
+													
+<div class="c-nav-list c-footer__nav-list c-nav-list--col-1 c-nav-list--col-m-2">
+	
+	
+			
+<div class="c-expander js-expander c-expander--reverse c-nav-list__expander">
+			<div class="c-expander__content js-expander-content" >
+			<div class="c-expander__content-inner js-expander-content-inner">
+						<nav class="c-nav-list__nav">
+			<ul class="c-nav-list__list">
+																			
+					<li class="c-nav-list__list-item">
+						<a href="https://www.levif.be/abonnements/" class="c-nav-list__item-link">
+							S’abonner
+						</a>
+					</li>
+																			
+					<li class="c-nav-list__list-item">
+						<a href="https://www.roularta-advertising.be/fr/marques/magazines/le-viflexpress/" class="c-nav-list__item-link">
+							Annoncer
+						</a>
+					</li>
+																			
+					<li class="c-nav-list__list-item">
+						<a href="https://www.levif.be/contacts-infos/" class="c-nav-list__item-link">
+							Contacts &#038; infos
+						</a>
+					</li>
+																			
+					<li class="c-nav-list__list-item">
+						<a href="https://compte.mesmagazines.be/newsletters?site_code=Site-LeVif-FR&referer=https://www.levif.be/" class="c-nav-list__item-link">
+							Newsletters
+						</a>
+					</li>
+				
+							</ul>
+
+					</nav>
+	
+			</div>
+		</div>
+
+		<div class="c-expander__trigger js-expander-trigger">
+									<h4 class="c-nav-list__title">
+			Le Vif
+
+							
+<span class="c-icon c-icon--chevron-down c-icon--size-x0.5 c-nav-list__icon" aria-hidden="true" focusable="false">
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
+  <path d="M 24,7.41 21.18,4.59 12,13.79 2.82,4.59 0,7.41 l 12,12 z" />
+</svg>
+	</span>
+					</h4>
+	
+					</div>
+	</div>
+	</div>
+													
+<div class="c-nav-list c-footer__nav-list c-nav-list--col-1 c-nav-list--col-m-2">
+	
+	
+			
+<div class="c-expander js-expander c-expander--reverse c-nav-list__expander">
+			<div class="c-expander__content js-expander-content" >
+			<div class="c-expander__content-inner js-expander-content-inner">
+						<nav class="c-nav-list__nav">
+			<ul class="c-nav-list__list">
+																			
+					<li class="c-nav-list__list-item">
+						<a href="https://www.levif.be/belgique/" class="c-nav-list__item-link">
+							Belgique
+						</a>
+					</li>
+																			
+					<li class="c-nav-list__list-item">
+						<a href="https://www.levif.be/international/" class="c-nav-list__item-link">
+							Monde
+						</a>
+					</li>
+																			
+					<li class="c-nav-list__list-item">
+						<a href="https://www.levif.be/economie/mon-argent/" class="c-nav-list__item-link">
+							Mon argent
+						</a>
+					</li>
+																			
+					<li class="c-nav-list__list-item">
+						<a href="https://www.levif.be/opinions/" class="c-nav-list__item-link">
+							Opinions
+						</a>
+					</li>
+																			
+					<li class="c-nav-list__list-item">
+						<a href="https://www.levif.be/societe/sante/" class="c-nav-list__item-link">
+							Santé
+						</a>
+					</li>
+																			
+					<li class="c-nav-list__list-item">
+						<a href="https://www.levif.be/vivifiant/sciences/" class="c-nav-list__item-link">
+							Sciences
+						</a>
+					</li>
+																			
+					<li class="c-nav-list__list-item">
+						<a href="https://www.levif.be/societe/environnement/" class="c-nav-list__item-link">
+							Environnement
+						</a>
+					</li>
+				
+							</ul>
+
+					</nav>
+	
+			</div>
+		</div>
+
+		<div class="c-expander__trigger js-expander-trigger">
+									<h4 class="c-nav-list__title">
+			Nos rubriques
+
+							
+<span class="c-icon c-icon--chevron-down c-icon--size-x0.5 c-nav-list__icon" aria-hidden="true" focusable="false">
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
+  <path d="M 24,7.41 21.18,4.59 12,13.79 2.82,4.59 0,7.41 l 12,12 z" />
+</svg>
+	</span>
+					</h4>
+	
+					</div>
+	</div>
+	</div>
+													
+<div class="c-nav-list c-footer__nav-list c-nav-list--col-1 c-nav-list--col-m-2">
+	
+	
+			
+<div class="c-expander js-expander c-expander--reverse c-nav-list__expander">
+			<div class="c-expander__content js-expander-content" >
+			<div class="c-expander__content-inner js-expander-content-inner">
+						<nav class="c-nav-list__nav">
+			<ul class="c-nav-list__list">
+																			
+					<li class="c-nav-list__list-item">
+						<a href="https://www.levif.be/dossier/guerre-en-ukraine/" class="c-nav-list__item-link">
+							Guerre en Ukraine
+						</a>
+					</li>
+																			
+					<li class="c-nav-list__list-item">
+						<a href="https://www.levif.be/dossier/covid/" class="c-nav-list__item-link">
+							Covid
+						</a>
+					</li>
+																			
+					<li class="c-nav-list__list-item">
+						<a href="/dossier/les-fact-checking-du-vif/" class="c-nav-list__item-link">
+							Fact-checkings
+						</a>
+					</li>
+																			
+					<li class="c-nav-list__list-item">
+						<a href="/dossier/pensez-en-couleur/" class="c-nav-list__item-link">
+							Pensez en couleurs
+						</a>
+					</li>
+																			
+					<li class="c-nav-list__list-item">
+						<a href="https://www.levif.be/dossier/en-mai-tonte-a-larret/" class="c-nav-list__item-link">
+							En mai, tonte à l'arrêt
+						</a>
+					</li>
+				
+							</ul>
+
+					</nav>
+	
+			</div>
+		</div>
+
+		<div class="c-expander__trigger js-expander-trigger">
+									<h4 class="c-nav-list__title">
+			Nos dossiers
+
+							
+<span class="c-icon c-icon--chevron-down c-icon--size-x0.5 c-nav-list__icon" aria-hidden="true" focusable="false">
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
+  <path d="M 24,7.41 21.18,4.59 12,13.79 2.82,4.59 0,7.41 l 12,12 z" />
+</svg>
+	</span>
+					</h4>
+	
+					</div>
+	</div>
+	</div>
+													
+<div class="c-nav-list c-footer__nav-list c-nav-list--col-1 c-nav-list--col-m-2">
+	
+	
+			
+<div class="c-expander js-expander c-expander--reverse c-nav-list__expander">
+			<div class="c-expander__content js-expander-content" >
+			<div class="c-expander__content-inner js-expander-content-inner">
+						<nav class="c-nav-list__nav">
+			<ul class="c-nav-list__list">
+																			
+					<li class="c-nav-list__list-item">
+						<a href="https://www.levif.be/actions/vif-club/" class="c-nav-list__item-link">
+							Vif Club
+						</a>
+					</li>
+																			
+					<li class="c-nav-list__list-item">
+						<a href="https://shop.levif.be/" class="c-nav-list__item-link">
+							Vif Shop
+						</a>
+					</li>
+																			
+					<li class="c-nav-list__list-item">
+						<a href="https://levifcroisieres.be/" class="c-nav-list__item-link">
+							Vif Croisières
+						</a>
+					</li>
+																			
+					<li class="c-nav-list__list-item">
+						<a href="https://codepromo.levif.be/" class="c-nav-list__item-link">
+							Codes promo
+						</a>
+					</li>
+																			
+					<li class="c-nav-list__list-item">
+						<a href="https://www.mesmagazines.be/lire/LV" class="c-nav-list__item-link">
+							Archives
+						</a>
+					</li>
+																			
+					<li class="c-nav-list__list-item">
+						<a href="https://shop.levif.be/hors-series" class="c-nav-list__item-link">
+							Hors-séries
+						</a>
+					</li>
+				
+							</ul>
+
+					</nav>
+	
+			</div>
+		</div>
+
+		<div class="c-expander__trigger js-expander-trigger">
+									<h4 class="c-nav-list__title">
+			Vos avantages
+
+							
+<span class="c-icon c-icon--chevron-down c-icon--size-x0.5 c-nav-list__icon" aria-hidden="true" focusable="false">
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
+  <path d="M 24,7.41 21.18,4.59 12,13.79 2.82,4.59 0,7.41 l 12,12 z" />
+</svg>
+	</span>
+					</h4>
+	
+					</div>
+	</div>
+	</div>
+											
+											
+<div class="c-nav-list c-footer__nav-list c-footer__nav-partner-list ">
+	
+	
+			
+<div class="c-expander js-expander c-expander--reverse c-nav-list__expander">
+			<div class="c-expander__content js-expander-content" >
+			<div class="c-expander__content-inner js-expander-content-inner">
+						<nav class="c-nav-list__nav">
+			<ul class="c-nav-list__list">
+																			
+					<li class="c-nav-list__list-item">
+						<a href="https://be.itjobonly.be/en/datanewsjobs-it-and-technology-jobs-in-belgium" class="c-nav-list__item-link">
+							Data News Jobs
+						</a>
+					</li>
+																			
+					<li class="c-nav-list__list-item">
+						<a href="https://www.femmesdaujourdhui.be/" class="c-nav-list__item-link">
+							Femmes d'aujourd'hui
+						</a>
+					</li>
+																			
+					<li class="c-nav-list__list-item">
+						<a href="https://www.flair.be/fr/" class="c-nav-list__item-link">
+							Flair
+						</a>
+					</li>
+																			
+					<li class="c-nav-list__list-item">
+						<a href="https://www.gael.be/" class="c-nav-list__item-link">
+							Gael
+						</a>
+					</li>
+																			
+					<li class="c-nav-list__list-item">
+						<a href="https://gocar.be/fr" class="c-nav-list__item-link">
+							Gocar.be
+						</a>
+					</li>
+																			
+					<li class="c-nav-list__list-item">
+						<a href="https://immo.vlan.be/fr" class="c-nav-list__item-link">
+							Immovlan.be
+						</a>
+					</li>
+																			
+					<li class="c-nav-list__list-item">
+						<a href="https://www.lejournaldumedecin.com/" class="c-nav-list__item-link">
+							Le Journal du Médecin
+						</a>
+					</li>
+																			
+					<li class="c-nav-list__list-item">
+						<a href="https://www.lepharmacien.be/" class="c-nav-list__item-link">
+							le Pharmacien
+						</a>
+					</li>
+																			
+					<li class="c-nav-list__list-item">
+						<a href="https://www.vacancesweb.be/" class="c-nav-list__item-link">
+							Vacancesweb
+						</a>
+					</li>
+																			
+					<li class="c-nav-list__list-item">
+						<a href="https://www.femmesdaujourdhui.be/bien-etre/" class="c-nav-list__item-link">
+							Femmes d'Aujourd'hui Mamans
+						</a>
+					</li>
+				
+							</ul>
+
+					</nav>
+	
+			</div>
+		</div>
+
+		<div class="c-expander__trigger js-expander-trigger">
+									<h4 class="c-nav-list__title">
+			Partners
+
+							
+<span class="c-icon c-icon--chevron-down c-icon--size-x0.5 c-nav-list__icon" aria-hidden="true" focusable="false">
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
+  <path d="M 24,7.41 21.18,4.59 12,13.79 2.82,4.59 0,7.41 l 12,12 z" />
+</svg>
+	</span>
+					</h4>
+	
+					</div>
+	</div>
+	</div>
+					
+											<div class="c-footer__socials-container">
+							
+<ul class="c-socials c-footer__socials c-socials--inverted c-socials--no-border">
+			<li class="c-socials__prefix">
+			Suivez-nous
+		</li>
+	
+									
+		<li class="c-socials__item ">
+			<a
+				class="c-socials__link"
+				target="_blank"
+				href="https://www.facebook.com/Leviflexpress"
+				aria-label="Facebook Le Vif"
+			>
+									
+<span class="c-icon c-icon--facebook c-socials__icon" aria-hidden="true" focusable="false">
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
+	<path d="M9.8,13.1V24h4.5V13.1H18l0.6-4.3h-4.3V6.1c0-1.2,0.4-2.1,2.1-2.1h2.3V0.2C17.6,0.1,16.5,0,15.4,0C12,0,9.8,2,9.8,5.6v3.2H6
+		v4.3H9.8z"/>
+</svg>
+	</span>
+							</a>
+		</li>
+									
+		<li class="c-socials__item ">
+			<a
+				class="c-socials__link"
+				target="_blank"
+				href="https://twitter.com/LeVif"
+				aria-label="Twitter Le Vif"
+			>
+									
+<span class="c-icon c-icon--twitter c-socials__icon" aria-hidden="true" focusable="false">
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
+	<path d="M24,4.1c-0.9,0.4-1.8,0.6-2.8,0.8c1-0.6,1.8-1.5,2.2-2.7c-1,0.6-2,1-3.1,1.2c-0.9-0.9-2.2-1.5-3.6-1.5c-3.2,0-5.5,2.9-4.8,6
+		C7.7,7.6,4.1,5.7,1.7,2.7C0.4,4.9,1,7.8,3.2,9.2C2.4,9.2,1.6,9,1,8.6c-0.1,2.2,1.6,4.3,3.9,4.8c-0.7,0.2-1.5,0.2-2.2,0.1
+		c0.6,1.9,2.4,3.3,4.6,3.4c-2.1,1.6-4.7,2.3-7.3,2c2.2,1.4,4.8,2.2,7.5,2.2c9.1,0,14.3-7.6,14-14.4C22.5,6,23.3,5.1,24,4.1z"/>
+</svg>
+	</span>
+							</a>
+		</li>
+									
+		<li class="c-socials__item ">
+			<a
+				class="c-socials__link"
+				target="_blank"
+				href="https://www.instagram.com/levif.be/?hl=nl"
+				aria-label="Instagram Le Vif"
+			>
+									
+<span class="c-icon c-icon--instagram c-socials__icon" aria-hidden="true" focusable="false">
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
+	<path d="M12,2.2c3.2,0,3.6,0,4.8,0.1c3.3,0.1,4.8,1.7,4.9,4.9c0.1,1.3,0.1,1.6,0.1,4.8c0,3.2,0,3.6-0.1,4.8
+		c-0.1,3.2-1.7,4.8-4.9,4.9c-1.3,0.1-1.6,0.1-4.8,0.1c-3.2,0-3.6,0-4.8-0.1c-3.3-0.1-4.8-1.7-4.9-4.9c-0.1-1.3-0.1-1.6-0.1-4.8
+		c0-3.2,0-3.6,0.1-4.8c0.1-3.2,1.7-4.8,4.9-4.9C8.4,2.2,8.8,2.2,12,2.2z M12,0C8.7,0,8.3,0,7.1,0.1c-4.4,0.2-6.8,2.6-7,7
+		C0,8.3,0,8.7,0,12c0,3.3,0,3.7,0.1,4.9c0.2,4.4,2.6,6.8,7,7C8.3,24,8.7,24,12,24c3.3,0,3.7,0,4.9-0.1c4.4-0.2,6.8-2.6,7-7
+		C24,15.7,24,15.3,24,12c0-3.3,0-3.7-0.1-4.9c-0.2-4.4-2.6-6.8-7-7C15.7,0,15.3,0,12,0L12,0z M12,5.8c-3.4,0-6.2,2.8-6.2,6.2
+		c0,3.4,2.8,6.2,6.2,6.2c3.4,0,6.2-2.8,6.2-6.2C18.2,8.6,15.4,5.8,12,5.8z M12,16c-2.2,0-4-1.8-4-4c0-2.2,1.8-4,4-4c2.2,0,4,1.8,4,4
+		C16,14.2,14.2,16,12,16z M18.4,4.2c-0.8,0-1.4,0.6-1.4,1.4S17.6,7,18.4,7c0.8,0,1.4-0.6,1.4-1.4S19.2,4.2,18.4,4.2z"/>
+</svg>
+	</span>
+							</a>
+		</li>
+									
+		<li class="c-socials__item ">
+			<a
+				class="c-socials__link"
+				target="_blank"
+				href="https://www.linkedin.com/company/le-vif/"
+				aria-label="LinkedIn Le Vif"
+			>
+									
+<span class="c-icon c-icon--linkedin c-socials__icon" aria-hidden="true" focusable="false">
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
+	<path d="M5,3.5C5,4.9,3.9,6,2.5,6C1.1,6,0,4.9,0,3.5C0,2.2,1.1,1,2.5,1C3.9,1,5,2.2,5,3.5z M5,8H0v16h5V8z M13,8H8v16h5v-8.4
+	c0-4.7,6-5,6,0V24h5V13.9c0-7.9-8.9-7.6-11-3.7V8z"/>
+</svg>
+	</span>
+							</a>
+		</li>
+	</ul>
+						</div>
+									</div>
+
+									<div class="c-footer__content-cta-container">
+						
+<div  class="c-highlighted-cta c-footer__highlighted-cta">
+	<div class="c-highlighted-cta__container">
+					<div class="c-highlighted-cta__picture-desktop">
+									<div class="c-highlighted-cta__covers-container">
+																				
+							
+							<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="" class="c-highlighted-cta__cover" style=								"z-index: 0; transform: scale(1); margin-left: 0px;"
+						 data-lazy-src="https://makr.roularta.be/makr-resize-cover/getCover.action?editionCode=LV&width=300"	><noscript><img src="https://makr.roularta.be/makr-resize-cover/getCover.action?editionCode=LV&width=300" alt="" class="c-highlighted-cta__cover" style=								"z-index: 0; transform: scale(1); margin-left: 0px;"
+							></noscript>
+																				
+							
+							<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="" class="c-highlighted-cta__cover" style=								"z-index: -1; transform: scale(0.9); margin-left: -15px;"
+						 data-lazy-src="https://makr.roularta.be/makr-resize-cover/getCover.action?editionCode=FP&width=300"	><noscript><img src="https://makr.roularta.be/makr-resize-cover/getCover.action?editionCode=FP&width=300" alt="" class="c-highlighted-cta__cover" style=								"z-index: -1; transform: scale(0.9); margin-left: -15px;"
+							></noscript>
+																				
+							
+							<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="" class="c-highlighted-cta__cover" style=								"z-index: -2; transform: scale(0.8); margin-left: -30px;"
+						 data-lazy-src="https://makr.roularta.be/makr-resize-cover/getCover.action?editionCode=LW&width=300"	><noscript><img src="https://makr.roularta.be/makr-resize-cover/getCover.action?editionCode=LW&width=300" alt="" class="c-highlighted-cta__cover" style=								"z-index: -2; transform: scale(0.8); margin-left: -30px;"
+							></noscript>
+											</div>
+				
+				<svg class="c-highlighted-cta__picture-desktop__background-shape" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 288 236" preserveAspectRatio="none">
+					<polygon fill-rule="evenodd" points="288 0 288 236 0 236"/>
+				</svg>
+			</div>
+
+					
+		<div class="c-highlighted-cta__content">
+			<h3 class="c-highlighted-cta__title">
+				Parce qu’il y a autant de personnes que d’opinions
+			</h3>
+
+			
+
+<div class="s-wysiwyg-editor c-highlighted-cta__text">
+	Dans un monde où l’on s’accroche à ses convictions, Le Vif sème le doute, car l’actualité n’est pas à sens unique. 
+</div>
+
+							<div class="c-highlighted-cta__button-container">
+					
+					
+
+
+
+	<a
+				class="c-button c-highlighted-cta__button c-button--inverted"
+		href="https://levif.be/abonnements/"
+				style=""
+					>
+			
+			<span class="c-button__text js-button__text">
+			S'ABONNER
+		</span>
+	
+	
+	
+	</a>
+
+				</div>
+			
+							<div class="c-highlighted-cta__price">
+					
+					<span class="c-highlighted-cta__price-amount">20,75 &euro;</span>
+
+											<span class="c-highlighted-cta__price-suffix">/mois</span>
+									</div>
+					</div>
+	</div>
+</div>
+					</div>
+							</div>
+		</div>
+	
+					
+		<div class="c-footer__partners-container">
+			<div class="l-container:12/12 l-container--with-default-spacing">
+				<ul class="c-footer__partners-list">
+											<li class="c-footer__partners-list-title">
+							Partners:
+						</li>
+					
+																							
+						<li class="c-footer__partners-list-item">
+							<a href="https://be.itjobonly.be/en/datanewsjobs-it-and-technology-jobs-in-belgium" class="c-footer__partners-list-item-link">
+								Data News Jobs
+							</a>
+						</li>
+																							
+						<li class="c-footer__partners-list-item">
+							<a href="https://www.femmesdaujourdhui.be/" class="c-footer__partners-list-item-link">
+								Femmes d'aujourd'hui
+							</a>
+						</li>
+																							
+						<li class="c-footer__partners-list-item">
+							<a href="https://www.flair.be/fr/" class="c-footer__partners-list-item-link">
+								Flair
+							</a>
+						</li>
+																							
+						<li class="c-footer__partners-list-item">
+							<a href="https://www.gael.be/" class="c-footer__partners-list-item-link">
+								Gael
+							</a>
+						</li>
+																							
+						<li class="c-footer__partners-list-item">
+							<a href="https://gocar.be/fr" class="c-footer__partners-list-item-link">
+								Gocar.be
+							</a>
+						</li>
+																							
+						<li class="c-footer__partners-list-item">
+							<a href="https://immo.vlan.be/fr" class="c-footer__partners-list-item-link">
+								Immovlan.be
+							</a>
+						</li>
+																							
+						<li class="c-footer__partners-list-item">
+							<a href="https://www.lejournaldumedecin.com/" class="c-footer__partners-list-item-link">
+								Le Journal du Médecin
+							</a>
+						</li>
+																							
+						<li class="c-footer__partners-list-item">
+							<a href="https://www.lepharmacien.be/" class="c-footer__partners-list-item-link">
+								le Pharmacien
+							</a>
+						</li>
+																							
+						<li class="c-footer__partners-list-item">
+							<a href="https://www.vacancesweb.be/" class="c-footer__partners-list-item-link">
+								Vacancesweb
+							</a>
+						</li>
+																							
+						<li class="c-footer__partners-list-item">
+							<a href="https://www.femmesdaujourdhui.be/bien-etre/" class="c-footer__partners-list-item-link">
+								Femmes d'Aujourd'hui Mamans
+							</a>
+						</li>
+									</ul>
+			</div>
+		</div>
+	
+			
+<div class="c-bottom-bar c-footer__bottom-bar">
+	<div class="l-container:12/12 l-container--with-default-spacing c-bottom-bar__container">
+		<div class="c-bottom-bar__main">
+							<a class="c-bottom-bar__company-link" href="https://www.roularta.be" target="_blank" rel="noopener noreferrer">
+					<img width="818" height="215" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20818%20215'%3E%3C/svg%3E" alt="Roularta Media Group" class="c-bottom-bar__company-logo" data-lazy-src="https://www.levif.be/app/themes/rmg-wp-base-theme/assets/img/logo_Roularta.svg"><noscript><img width="818" height="215" src="https://www.levif.be/app/themes/rmg-wp-base-theme/assets/img/logo_Roularta.svg" alt="Roularta Media Group" class="c-bottom-bar__company-logo"></noscript>
+				</a>
+			
+			<span class="c-bottom-bar__title">
+				LeVif est une publication de Roularta Media Group
+
+									<p class="c-bottom-bar__copyright c-bottom-bar__copyright--main">
+						&copy;2022 Roularta Media Group Copyright
+					</p>
+							</span>
+		</div>
+
+					<ul class="c-bottom-bar__list">
+														
+											<li class="c-bottom-bar__list-item">
+							<a href="https://www.roularta.be/fr/copyright" class="c-bottom-bar__item-link">
+								Copyright
+							</a>
+						</li>
+																			
+											<li class="c-bottom-bar__list-item">
+							<a href="https://www.roularta.be/fr/disclaimer" class="c-bottom-bar__item-link">
+								Disclaimer
+							</a>
+						</li>
+																			
+											<li class="c-bottom-bar__list-item">
+							<a href="https://www.roularta.be/fr/privacy-policy" class="c-bottom-bar__item-link">
+								Privacy Policy
+							</a>
+						</li>
+																			
+											<li class="c-bottom-bar__list-item">
+							<a href="#cookies" class="c-bottom-bar__item-link">
+								Paramètres des cookies
+							</a>
+						</li>
+																			
+											<li class="c-bottom-bar__list-item">
+							<a href="https://www.roularta.be/fr/cookies" class="c-bottom-bar__item-link">
+								Politique en matière de cookies
+							</a>
+						</li>
+												</ul>
+		
+		<div class="c-bottom-bar__meta">
+							<p class="c-bottom-bar__copyright">
+					&copy;2022 Roularta Media Group
+					<br>
+					Copyright
+				</p>
+			
+							<a class="c-bottom-bar__partner-link" href="https://www.cim.be/fr/internet/disclaimer-cim-internet" target="_blank" rel="noopener noreferrer">
+					<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="CIM internet" class="c-bottom-bar__partner-logo" data-lazy-src="https://img.static-rmg.be/a/view/q75/w841/h276/3357842/cim-jpg.jpg"><noscript><img src="https://img.static-rmg.be/a/view/q75/w841/h276/3357842/cim-jpg.jpg" alt="CIM internet" class="c-bottom-bar__partner-logo"></noscript>
+				</a>
+					</div>
+	</div>
+</div>
+	</footer>
+    <style id='wp-block-paragraph-inline-css' type='text/css'>
+.is-small-text{font-size:.875em}.is-regular-text{font-size:1em}.is-large-text{font-size:2.25em}.is-larger-text{font-size:3em}.has-drop-cap:not(:focus):first-letter{float:left;font-size:8.4em;line-height:.68;font-weight:100;margin:.05em .1em 0 0;text-transform:uppercase;font-style:normal}p.has-drop-cap.has-background{overflow:hidden}p.has-background{padding:1.25em 2.375em}:where(p.has-text-color:not(.has-link-color)) a{color:inherit}
+</style>
+<style id='global-styles-inline-css' type='text/css'>
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+</style>
+<script type='text/javascript' id='rmgWpAccount-js-before'>
+var rmgFrontLoggedIn = false; addEventListener("rmg_front_logged_in_event", function(){
+        rmgFrontLoggedIn = true;
+        });
+</script>
+<script type='text/javascript' src='https://www.levif.be/app/plugins/rmg-wp-account/assets/rmg-auth.js?ver=1.9.2' id='rmgWpAccount-js'></script>
+<script type='text/javascript' id='rmgWpAccount-js-after'>
+rmgAuth.start({"backend_url":"https:\/\/www.levif.be\/wp-json\/rmg-sso\/v1\/state","language":"fr","site_code":"site-levif-fr"}); 
+</script>
+<script type='text/javascript' id='rmg-one-brand-header-js-js-before'>
+window.rmgOneBrandHeader = {"accountUrl":"https:\/\/account.mijnmagazines.be","useJs":true,"siteCode":"Site-LeVif-FR","baseUrl":"https:\/\/api.mijnmagazines.be\/packages\/navigation\/","cluster":["Site-LeVifWeekend-FR","Site-LeVifFocus-FR"]};
+</script>
+<script type='text/javascript' src='https://www.levif.be/app/plugins/one-brand-header/build/index.71774ca10fa9a2caccb0.js?ver=1666824600' id='rmg-one-brand-header-js-js' defer></script>
+<script type='text/javascript' id='rmg_notification-js-before'>
+            var Pushwoosh = Pushwoosh || [];
+            Pushwoosh.push(["init", {
+                logLevel: 'error', // possible values: error, info, debug
+                applicationCode: 'B0022-E8C7B',
+                safariWebsitePushID: 'web.be.levif.push',
+                defaultNotificationTitle: 'Site-LeVif-FR',
+                defaultNotificationImage: 'https://www.levif.beimages/logo.png'
+            }]);
+</script>
+<script type='text/javascript' src='https://www.levif.be/app/plugins/rmg-notifications/public/js/rmgNotifications.js?ver=1.9.2' id='rmg_notification-js' defer></script>
+<script type='text/javascript' id='rocket-browser-checker-js-after'>
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+</script>
+<script type='text/javascript' id='rocket-preload-links-js-extra'>
+/* <![CDATA[ */
+var RocketPreloadLinksConfig = {"excludeUris":"\/(?:.+\/)?feed(?:\/(?:.+\/?)?)?$|\/(?:.+\/)?embed\/|\/(index\\.php\/)?wp\\-json(\/.*|$)|\/refer\/|\/go\/|\/recommend\/|\/recommends\/","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php|html|htm","siteUrl":"https:\/\/www.levif.be","onHoverDelay":"100","rateThrottle":"3"};
+/* ]]> */
+</script>
+<script type='text/javascript' id='rocket-preload-links-js-after'>
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+</script>
+<script type='text/javascript' id='rmg-main-js-before'>
+window.rmgArticleData = {"articleId":265413,"accessLevel":"low"};
+window.wall_visibleDelay = 3000; 
+window.rmgOpenCloseLocks = true; 
+window.rmgRest = {"homeUrl":"https:\/\/www.levif.be","restNonce":"ba70424ee1"};
+</script>
+<script type='text/javascript' src='https://www.levif.be/app/themes/rmg-wp-news-theme/dist/main.6a4540c9ef68221dcb61.js' id='rmg-main-js' defer></script>
+<!--noptimize--><script>!function(){window.advanced_ads_ready_queue=window.advanced_ads_ready_queue||[],advanced_ads_ready_queue.push=window.advanced_ads_ready;for(var d=0,a=advanced_ads_ready_queue.length;d<a;d++)advanced_ads_ready(advanced_ads_ready_queue[d])}();</script><!--/noptimize--><script>window.lazyLoadOptions=[{elements_selector:"img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}},{elements_selector:".rocket-lazyload",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,}];window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async src="https://www.levif.be/app/plugins/wp-rocket/assets/js/lazyload/17.5/lazyload.min.js"></script>
+
+</body>
+</html>
+
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me -->

@@ -1,0 +1,765 @@
+
+<!doctype html>
+<html dir="ltr" lang="en">
+<head>
+    <script src="//medyanet-com-tr.videoplayerhub.com/galleryloader.js" async></script>
+    <script async id="adservice_gpt_script" src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+    <script async id="adservice_script" src="https://ad.medyanetads.com/adservice/adservice.js"></script>
+    <script>
+
+        var adServiceConfig = {
+            isMobile: function () { return /iPhone|iPod|Windows Phone|Opera Mini|BlackBerry|webOS|Android.+Mobile/i.test(navigator.userAgent); },
+            prebidBidders: function () { return this.isMobile() ? 'https://ad.medyanetads.com/adservice/prebid/m_hurriyetdailynews_com.json' : 'https://ad.medyanetads.com/adservice/prebid/hurriyetdailynews_com.json'; },
+            slotHeights: [],
+            adTargeting: [
+                { "hdn_kategori": "hdn_world" },
+                { "keywords": "pagetype_article" },
+                { "catlist": "c1_world,Cct_greece,Cct_migrants,Cct_unhcr"},
+                { "contentid": "151868" },
+                { "context": "" },
+                { "AdServiceStatus": "true"}
+            ]
+        };
+
+        var adservice = adservice || {
+            targetings: [],
+            adUnits: [],
+            oopAdUnits: [],
+            interactiveAdUnits: [],
+            modules: ['prebid', 'interstitial', 'scroll','oneTrust'],
+            prebidSettings: {
+                bidders: adServiceConfig.prebidBidders(),
+            },
+            oneTrustSettings: {
+                domainScript: '95415498-b0db-4f5e-889a-2485cf758709'
+            }
+        };
+
+        document.addEventListener('adservice-gpt-slot', function (event) {
+            var adUnit = event.detail;
+            if (adUnit.status === 'adUnitRenderEnded') {
+                var adUnitHeight = adUnit.height;
+                if (adUnitHeight) {
+                    adServiceConfig.slotHeights.push({
+                        slotDivId: adUnit.adUnitDivId,
+                        minHeight: adUnitHeight + 'px'
+                    });
+                    adServiceConfig.slotHeights.forEach(function (item, index) {
+                        var adUnitDiv = document.getElementById(item.slotDivId);
+                        if (adUnitDiv) {
+                            document.getElementById(item.slotDivId).style.minHeight = item.minHeight;
+                        }
+                    });
+                }
+            }
+        });
+
+        adservice.targetings.push(
+            { "hdn_kategori": "hdn_world" },
+            { "keywords": "pagetype_article" },
+            { "catlist": "c1_world,Cct_greece,Cct_migrants,Cct_unhcr" },
+            { "contentid": "151868" },
+            { "context": "" },
+            { "AdServiceStatus": "true" }
+        );
+        if (adServiceConfig.isMobile()) {
+adservice.oopAdUnits.push({path: '/9927946,22420977938/hurriyetdailynews_mobilsite/diger/oop_2',divId: '/9927946,22420977938/hurriyetdailynews_mobilsite/diger/oop_2',});adservice.interactiveAdUnits.push({path: '/9927946,22420977938/hurriyetdailynews_mobilsite/diger/interstitial_oop',size: JSON.parse('[[320,480], "fluid"]'),divId: '/9927946,22420977938/hurriyetdailynews_mobilsite/diger/interstitial_oop',sizeMappings: JSON.parse('[]'),type: 'interstitial'});adservice.interactiveAdUnits.push({path: '/9927946,22420977938/hurriyetdailynews_mobilsite/diger/scroll_ad',size: JSON.parse('[[320,50],[320,100]]'),divId: '/9927946,22420977938/hurriyetdailynews_mobilsite/diger/scroll_ad',sizeMappings: JSON.parse('[]'),type: 'scroll'});adservice.adUnits.push({path: '/9927946,22420977938/hurriyetdailynews_mobilsite/diger/320x50',size: JSON.parse('[[320,100],[320,200],[300, 250]]'),divId: '/9927946,22420977938/hurriyetdailynews_mobilsite/diger/320x50',sizeMappings: JSON.parse('[]')});adservice.oopAdUnits.push({path: '/9927946,22420977938/hurriyetdailynews_mobilsite/diger/pageskin_sol_120x600',divId: '/9927946,22420977938/hurriyetdailynews_mobilsite/diger/pageskin_sol_120x600',});adservice.adUnits.push({path: '/9927946,22420977938/hurriyetdailynews_mobilsite/diger/feed1_300x250',size: JSON.parse('[[300,250],[250,250],[336,280]]'),divId: '/9927946,22420977938/hurriyetdailynews_mobilsite/diger/feed1_300x250',sizeMappings: JSON.parse('[]')});adservice.adUnits.push({path: '/9927946,22420977938/hurriyetdailynews_mobilsite/diger/haberici_300x250_1',size: JSON.parse('[[300, 250], [250, 250], [336, 280], [320, 480], [320, 50], [320, 100], "fluid"]'),divId: '/9927946,22420977938/hurriyetdailynews_mobilsite/diger/haberici_300x250_1',sizeMappings: JSON.parse('[]')});adservice.adUnits.push({path: '/9927946,22420977938/hurriyetdailynews_mobilsite/diger/300x250',size: JSON.parse('[300, 250]'),divId: '/9927946,22420977938/hurriyetdailynews_mobilsite/diger/300x250',sizeMappings: JSON.parse('[]')});        } else {
+adservice.oopAdUnits.push({path: '/9927946,22420977938/hurriyetdailynews/diger/oop_2',divId: '/9927946,22420977938/hurriyetdailynews/diger/oop_2',});adservice.oopAdUnits.push({path: '/9927946,22420977938/hurriyetdailynews/diger/oop_3',divId: '/9927946,22420977938/hurriyetdailynews/diger/oop_3',});adservice.interactiveAdUnits.push({path: '/9927946,22420977938/hurriyetdailynews/diger/interstitial_oop',size: JSON.parse('[[800,600], "fluid"]'),divId: '/9927946,22420977938/hurriyetdailynews/diger/interstitial_oop',sizeMappings: JSON.parse('[]'),type: 'interstitial'});adservice.interactiveAdUnits.push({path: '/9927946,22420977938/hurriyetdailynews/diger/scroll_ad',size: JSON.parse('[300, 250]'),divId: '/9927946,22420977938/hurriyetdailynews/diger/scroll_ad',sizeMappings: JSON.parse('[]'),type: 'scroll'});adservice.adUnits.push({path: '/9927946,22420977938/hurriyetdailynews/diger/pageskin_sol_120x600',size: JSON.parse('[[120,600],[160,600],[220,800],[300,600]]'),divId: '/9927946,22420977938/hurriyetdailynews/diger/pageskin_sol_120x600',sizeMappings: JSON.parse('[[[1770, 100], [[160, 600], [120, 600], [220, 800], [300, 600]]],[[1610, 100], [[160, 600], [120, 600], [220, 800]]],[[1340, 100],[[160, 600], [120, 600]]],[[1260, 100], [[120, 600]]],[[0, 0],[]]]')});adservice.adUnits.push({path: '/9927946,22420977938/hurriyetdailynews/diger/header_728x90',size: JSON.parse('[[728, 90], [940, 90], [940, 250], [970, 90], [970, 250], "fluid"]'),divId: '/9927946,22420977938/hurriyetdailynews/diger/header_728x90',sizeMappings: JSON.parse('[[[1200, 100], [[728, 90], [940, 90], [940, 250], [970, 90], [970, 250]]],[[728, 90], [[940, 90], [940, 250]]],[[768,100],[728,90]],[[0,0],[]]]')});adservice.adUnits.push({path: '/9927946,22420977938/hurriyetdailynews/diger/sag_120x600',size: JSON.parse('[[120,600],[160,600],[220,800],[300,600]]'),divId: '/9927946,22420977938/hurriyetdailynews/diger/sag_120x600',sizeMappings: JSON.parse('[[[1770, 100], [[160, 600], [120, 600], [220, 800], [300, 600]]],[[1610, 100], [[160, 600], [120, 600], [220, 800]]],[[1340, 100],[[160, 600], [120, 600]]],[[1260, 100], [[120, 600]]],[[0, 0],[]]]')});adservice.adUnits.push({path: '/9927946,22420977938/hurriyetdailynews/diger/body_300x250_1',size: JSON.parse('[[250, 250], [300, 250], [336, 280], "fluid"]'),divId: '/9927946,22420977938/hurriyetdailynews/diger/body_300x250_1',sizeMappings: JSON.parse('[[[1200, 100], [[300, 250], [336, 280],[250,250]]],[[992, 100], [[300, 250],[250,250]]],[[0, 0], []]]')});adservice.adUnits.push({path: '/9927946,22420977938/hurriyetdailynews/diger/sidebar_300x250_1',size: JSON.parse('[300, 250]'),divId: '/9927946,22420977938/hurriyetdailynews/diger/sidebar_300x250_1',sizeMappings: JSON.parse('[[[1200, 100], [300, 250]],[[992, 100], [300, 250]],[[768, 100], [300, 250]],[[0,0],[]]]')});adservice.adUnits.push({path: '/9927946,22420977938/hurriyetdailynews/diger/sidebar_300x250_2',size: JSON.parse('[300,250]'),divId: '/9927946,22420977938/hurriyetdailynews/diger/sidebar_300x250_2',sizeMappings: JSON.parse('[[[1200, 100], [300, 250]],[[992, 100], [300, 250]],[[768, 100], [300, 250]],[[0,0],[]]]')});adservice.adUnits.push({path: '/9927946,22420977938/hurriyetdailynews/diger/footer_728x90',size: JSON.parse('[[728,90], [ 940,90], [940,250], [ 970,90], [970,250]]'),divId: '/9927946,22420977938/hurriyetdailynews/diger/footer_728x90',sizeMappings: JSON.parse('[[[1200, 100], [[728, 90], [940, 90], [940, 250], [970, 90], [970, 250]]],[[728, 90], [[940, 90], [940, 250]]],[[768,100],[728,90]],[[0,0],[]]]')});        }
+    </script>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="max-image-preview:large, max-video-preview:-1">
+    <title>UNHCR urges Greece to improve refugee conditions - World News</title>
+    <meta name="description" content="The United Nations Refugee Agency (UNHCR) urged Greece on Feb. 7 to increase efforts to address &quot;alarming&quot; overcrowding and precarious conditions for asylum seekers and migrants staying on the five Aegean islands of Lesbos, Chios, Samos, Kos and Leros.">
+    <meta name="keywords" content="Greece,migrants,UNHCR">
+    <meta name="news_keywords" content="Greece,migrants,UNHCR">
+    <meta property="og:title" content="UNHCR urges Greece to improve refugee conditions - World News" />
+    <meta property="og:description" content="The United Nations Refugee Agency (UNHCR) urged Greece on Feb. 7 to increase efforts to address &quot;alarming&quot; overcrowding and precarious conditions for asylum seekers and migrants staying on the five Aegean islands of Lesbos, Chios, Samos, Kos and Leros." />
+    <meta property="og:image" content="https://i.hurimg.com/i/hdn/75/200x200/5e3e8c2c67b0a9216c42fa94.jpeg" />
+    <meta property="og:site_name" content="Hürriyet Daily News" />
+    <meta property="og:url" content="https://www.hurriyetdailynews.com/unhcr-urges-greece-to-improve-refugee-conditions-151868" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@HDNER" />
+    <meta name="twitter:url" content="https://www.hurriyetdailynews.com/unhcr-urges-greece-to-improve-refugee-conditions-151868" />
+    <meta name="twitter:title" content="UNHCR urges Greece to improve refugee conditions - World News" />
+    <meta name="twitter:description" content="The United Nations Refugee Agency (UNHCR) urged Greece on Feb. 7 to increase efforts to address &quot;alarming&quot; overcrowding and precarious conditions for asylum seekers and migrants staying on the five Aegean islands of Lesbos, Chios, Samos, Kos and Leros." />
+    <meta name="twitter:image:src" content="https://i.hurimg.com/i/hdn/75/200x200/5e3e8c2c67b0a9216c42fa94.jpeg" />
+    <meta name="twitter:account_id" content="87645208" />
+            <link rel="amphtml" href="https://www.hurriyetdailynews.com/amp/unhcr-urges-greece-to-improve-refugee-conditions-151868">
+        <link rel="canonical" href="https://www.hurriyetdailynews.com/unhcr-urges-greece-to-improve-refugee-conditions-151868" />
+    <link type="image/x-icon" href="//s.hurriyet.com.tr/hdnstatic/dist/images/hdn.ico" rel="shortcut icon">
+    <link rel="stylesheet" href="//s.hurriyet.com.tr/hdnstatic/dist/styles/hdn/lib/lib.min.css?v=octo-2.78.0.362">
+    <link rel="stylesheet" href="//s.hurriyet.com.tr/hdnstatic/dist/styles/hdn/project.min.css?v=octo-2.78.0.362">
+
+        <script type="text/javascript">
+            window._taboola = window._taboola || [];
+            _taboola.push({ article: 'auto' });
+            !function (e, f, u, i) {
+                if (!document.getElementById(i)) {
+                    e.async = 1;
+                    e.src = u;
+                    e.id = i;
+                    f.parentNode.insertBefore(e, f);
+                }
+            }(document.createElement('script'),
+                document.getElementsByTagName('script')[0],
+                '//cdn.taboola.com/libtrc/hurriyetdailynews/loader.js',
+                'tb_loader_script');
+            if (window.performance && typeof window.performance.mark == 'function') { window.performance.mark('tbl_ic'); }
+        </script>
+
+</head>
+<body data-page-category="">
+
+        <div id="/9927946,22420977938/hurriyetdailynews/diger/oop_2" class="adRenderer dfp adserviceOop   adserviceOop" data-platform="desktop" data-ad-height="1" data-ad-width="1"></div>
+
+        <div id="/9927946,22420977938/hurriyetdailynews_mobilsite/diger/oop_2" class="adRenderer dfp adserviceOop   adserviceOop" data-platform="mobile" data-ad-height="1" data-ad-width="1"></div>
+
+        <div id="/9927946,22420977938/hurriyetdailynews/diger/oop_3" class="adRenderer dfp adserviceOop   adserviceOop" data-platform="desktop" data-ad-height="1" data-ad-width="1"></div>
+
+        <div id="/9927946,22420977938/hurriyetdailynews_mobilsite/diger/pageskin_sol_120x600" class="adRenderer dfp   module advertorial-high left-side medyanet-pageskin-left adserviceOop" data-platform="mobile" data-ad-height="1" data-ad-width="1"></div>
+
+                <div class="interstitial-wrapper">
+                    <div id="/9927946,22420977938/hurriyetdailynews/diger/interstitial_oop" class="adRenderer dfp   " data-platform="desktop"></div>
+                </div>
+
+                <div class="interstitial-wrapper">
+                    <div id="/9927946,22420977938/hurriyetdailynews_mobilsite/diger/interstitial_oop" class="adRenderer dfp   " data-platform="mobile"></div>
+                </div>
+
+                <div id="/9927946,22420977938/hurriyetdailynews/diger/scroll_ad" class="adRenderer dfp   " data-platform="desktop"></div>
+
+                <div id="/9927946,22420977938/hurriyetdailynews_mobilsite/diger/scroll_ad" class="adRenderer dfp   " data-platform="mobile"></div>
+
+    <header>
+        <div class="logo text-center">
+            <a href="/" title="Hürriyet Daily News">
+                <img src="//s.hurriyet.com.tr/hdnstatic/dist/images/logo.png" alt="Hürriyet Daily News" width="355" height="76" />
+            </a>
+        </div>
+        <div class="menu">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9 col-sm-10">
+                        <i class="fa fa-navicon" aria-hidden="true"></i>
+                        <ul class="nav">
+                            
+    <li>
+        <a href="/turkiye/" title="T&#252;rkiye" target="_blank">T&#252;rkiye</a>
+    </li>
+
+    <li>
+        <a href="/economy/" title="Economy" target="_blank">Economy</a>
+    </li>
+
+    <li>
+        <a href="/opinion/" title="Opinion" target="_blank">Opinion</a>
+    </li>
+
+    <li>
+        <a href="/world/" title="World" target="_blank">World</a>
+    </li>
+
+    <li>
+        <a href="/artsandlife/" title="Arts &amp; Life News" target="_blank">Arts &amp; Life</a>
+    </li>
+
+    <li>
+        <a href="/sports/" title="Sports" target="_blank">Sports</a>
+    </li>
+
+
+    <li>
+        <a href="/photo/" title="Photo" target="_blank">Photo</a>
+    </li>
+
+
+
+
+
+                        </ul>
+                    </div>
+                    <div class="col-md-3 col-sm-2">
+                        <div class="search">
+                            <a href="javascript:;" title="Search" class="fa fa-search"></a>
+                            <input title="Search" type="text" placeholder="Search" />
+                        </div>
+                        <ul class="social-links">
+                            <li><a class="facebook fa-facebook-official" href="https://www.facebook.com/hurriyetdailynews" target="_blank" title="Facebook"></a></li>
+                            <li><a class="twitter fa-twitter" href="https://twitter.com/HDNER" target="_blank" title="Twitter"></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+        <div class="page-category-band">
+            <h2 class="">UNHCR urges Greece to improve refugee conditions</h2>
+        </div>     
+    
+    <div class="container">
+         
+
+
+
+
+
+
+<div class="row">
+
+
+<div class="col-md-12 col-sm-12">
+
+
+<div class="module advertorial-interstitial-oop " id="div-gpt-ad-1502366090339-2" data-module-type="advertorial-interstitial-oop"></div>
+</div>
+</div>
+
+<div class="row">
+
+
+<div class="col-md-12 col-sm-12">
+
+
+<div class="module advertorial-interstitial-oop-2 " id="div-gpt-ad-1512414043778-0" data-module-type="advertorial-interstitial-oop-2"></div>
+</div>
+</div>
+
+<div class="row">
+
+
+<div class="col-md-4 col-sm-12">
+
+
+<div class="module advertorial-high left-side " id="div-gpt-ad-1502366090339-3" data-module-type="advertorial-high"></div>
+                <div id="/9927946,22420977938/hurriyetdailynews/diger/pageskin_sol_120x600" class="adRenderer dfp  pageskin module advertorial-high left-side medyanet-pageskin-left" data-platform="desktop"></div>
+
+</div>
+</div>
+
+<div class="row">
+
+
+<div class="col-md-4 col-sm-12">
+
+
+<div class="module advertorial-high right-side " id="div-gpt-ad-1502366090339-4" data-module-type="advertorial-high"></div>
+                <div id="/9927946,22420977938/hurriyetdailynews/diger/sag_120x600" class="adRenderer dfp  pageskin module advertorial-high right-side medyanet-pageskin-right" data-platform="desktop"></div>
+
+</div>
+</div>
+
+<div class="row">
+
+
+<div class="col-md-12 col-sm-12">
+
+
+<div class="module advertorial-wide " id="div-gpt-ad-1502366090339-1" data-empty-control="true" data-module-type="advertorial-wide"></div>
+            <div class="advMasthead ">
+                <div id="/9927946,22420977938/hurriyetdailynews/diger/header_728x90" class="adRenderer dfp  header " data-platform="desktop"></div>
+            </div>
+
+            <div class="advMasthead mobileMasthead">
+                <div id="/9927946,22420977938/hurriyetdailynews_mobilsite/diger/320x50" class="adRenderer dfp  header " data-platform="mobile"></div>
+            </div>
+
+</div>
+</div>
+
+<div class="row">
+
+
+<div class="col-md-8 col-sm-8">
+
+        <div class="content-info">
+            <ul class="breadcrumb">
+                <li><a href="/" title="News">News</a></li>
+                        <li><a href="/world/" title="World">World</a></li>
+            </ul>
+            <ul class="info">
+                <li class="date">
+
+
+                    <time datetime="2020-02-08T13:23:42+03:00">February 08 2020 13:23:42</time>
+                </li>
+            </ul>
+            <ul class="social-links custom-social-buttons">
+                
+                <li><a class="facebook fa-facebook-official" href="javascript:;" title="Facebook"></a></li>
+                <li><a class="twitter fa-twitter" href="javascript:;" title="Twitter"></a></li>
+                
+            </ul>
+        </div>
+
+<div class="content">
+
+    <h1>UNHCR urges Greece to improve refugee conditions</h1>
+
+            <h5>GENEVA-Anadolu Agency</h5>
+<img src="//s.hurriyet.com.tr/hdnstatic/dist/images/placeholder-img.jpg" data-src="//i.hurimg.com/i/hdn/75/0x0/5e3e8c2c67b0a9216c42fa94.jpeg" alt="UNHCR urges Greece to improve refugee conditions" />
+
+
+
+
+    <p>The United Nations Refugee Agency (<a title="UNHCR" href="/index/unhcr">UNHCR</a>) urged <a title="Greece" href="/index/greece">Greece</a> on Feb. 7 to increase efforts to address "alarming" overcrowding and precarious conditions for asylum seekers and <a title="migrants" href="/index/migrants">migrants</a> staying on the five Aegean islands of Lesbos, Chios, Samos, Kos and Leros.</p><div class='cf' class='cf'><!-- /9927946,22420977938/hurriyetdailynews/diger/body_300x250_1 --><div id="/9927946,22420977938/hurriyetdailynews/diger/body_300x250_1" class="adRenderer dfp   "></div><!-- /9927946,22420977938/hurriyetdailynews_mobilsite/diger/haberici_300x250_1 --><div id="/9927946,22420977938/hurriyetdailynews_mobilsite/diger/haberici_300x250_1" class="adRenderer dfp   "></div></div class='cf'>
+<p>"UNHCR has been appealing to the Greek government to use emergency measures to expedite its plans to transfer a greater number of asylum-seekers to appropriate accommodation on the mainland," UNHCR spokesman Andrej Mahecic said at a regular U.N. briefing.</p>
+<p>The agency said that more than 36,000 asylum seekers were currently staying in reception centers across five islands initially designed with a capacity of 5,400.</p>
+<p>It said Greece had been "generous and compassionate towards refugees, despite a very complex and difficult situation," noting that the east Aegean islands had shouldered a disproportionate burden and responsibility.</p>
+<p>"It is critical that other regions in Greece step up their solidarity to help alleviate pressures by receiving transferred asylum seekers and opening up reception places," said Mahecic.</p>
+<p>UNHCR said continued European support in terms of resources, capacity and solidarity were also needed to boost Greece's response.</p><div class='cf' class='cf'><div id="taboola-mid-article-thumbnails"></div></div class='cf'>
+<p>On Samos, 6,782 people are staying in a center designed for 660, while others reside in makeshift shelters pitched in surrounding fields.</p>
+<p>Moria, a town on Lesbos, is hosting 18,342 inside a facility for 2,200 and others are staying in adjacent olive groves.</p>
+<p>Reception centers on Chios, Kos and Leros are also overcrowded, said UNHCR.</p>
+<p>Families make up the majority of the asylum-seekers and migrants, a third of whom are children, most below the age of twelve.</p>
+<p>Thousands of women, men and children who currently live in small tents are exposed to cold and rain with little or no access to heating, electricity or hot water.</p>
+<p>Hygiene and sanitation conditions are unsafe, with health problems on the rise, said UNHCR, adding that despite the dedication of medical professionals and volunteers, many were unable to receive medical attention as there were not enough doctors at reception centers and local hospitals.</p>
+<p>"Longer-term solutions and improvement of conditions on the islands are necessary but will only be possible once the overcrowded centers are decongested," said Mahecic.</p>
+
+        <p class="tags"></p>
+
+</div>
+
+<script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type"    : "NewsArticle",
+        "articleSection"   : "World",
+        "mainEntityOfPage" :  {
+            "@type" : "WebPage",
+            "@id"   : "https://www.hurriyetdailynews.com/unhcr-urges-greece-to-improve-refugee-conditions-151868"
+        },
+        "headline"            : "UNHCR urges Greece to improve refugee conditions",
+        "alternativeHeadline" : "The United Nations Refugee Agency (UNHCR) urged Greece on Feb. 7 to increase efforts to address &quot;alarming&quot; overcrowding and precarious conditions for asylum seekers and migrants staying on the five Aegean islands of Lesbos, Chios, Samos, Kos and Leros.",
+        "keywords"            : "Greece, migrants, UNHCR",
+        "image": {
+            "@type": "ImageObject",
+            "url"    : "https://i.hurimg.com/i/hdn/75/650x400/5e3e8c2c67b0a9216c42fa94.jpeg",
+            "width"  : "650",
+            "height" : "400"
+        },
+        "datePublished" : "2020-02-08T10:13:00+03:00",
+        "dateModified"  : "2020-02-08T10:23:42+03:00",
+        "description"   : "The United Nations Refugee Agency (UNHCR) urged Greece on Feb. 7 to increase efforts to address &quot;alarming&quot; overcrowding and precarious conditions for asylum seekers and migrants staying on the five Aegean islands of Lesbos, Chios, Samos, Kos and Leros.",
+        "articleBody"   : "The United Nations Refugee Agency (UNHCR) urged Greece on Feb. 7 to increase efforts to address &quot;alarming&quot; overcrowding and precarious conditions for asylum seekers and migrants staying on the five Aegean islands of Lesbos, Chios, Samos, Kos and Leros.
+&quot;UNHCR has been appealing to the Greek government to use emergency measures to expedite its plans to transfer a greater number of asylum-seekers to appropriate accommodation on the mainland,&quot; UNHCR spokesman Andrej Mahecic said at a regular U.N. briefing.
+The agency said that more than 36,000 asylum seekers were currently staying in reception centers across five islands initially designed with a capacity of 5,400.
+It said Greece had been &quot;generous and compassionate towards refugees, despite a very complex and difficult situation,&quot; noting that the east Aegean islands had shouldered a disproportionate burden and responsibility.
+&quot;It is critical that other regions in Greece step up their solidarity to help alleviate pressures by receiving transferred asylum seekers and opening up reception places,&quot; said Mahecic.
+UNHCR said continued European support in terms of resources, capacity and solidarity were also needed to boost Greece&#39;s response.
+On Samos, 6,782 people are staying in a center designed for 660, while others reside in makeshift shelters pitched in surrounding fields.
+Moria, a town on Lesbos, is hosting 18,342 inside a facility for 2,200 and others are staying in adjacent olive groves.
+Reception centers on Chios, Kos and Leros are also overcrowded, said UNHCR.
+Families make up the majority of the asylum-seekers and migrants, a third of whom are children, most below the age of twelve.
+Thousands of women, men and children who currently live in small tents are exposed to cold and rain with little or no access to heating, electricity or hot water.
+Hygiene and sanitation conditions are unsafe, with health problems on the rise, said UNHCR, adding that despite the dedication of medical professionals and volunteers, many were unable to receive medical attention as there were not enough doctors at reception centers and local hospitals.
+&quot;Longer-term solutions and improvement of conditions on the islands are necessary but will only be possible once the overcrowded centers are decongested,&quot; said Mahecic.",
+        "author": {
+            "@type": "Thing",
+            "name": "hurriyetdailynews.com"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "hurriyetdailynews.com",
+            "logo": {
+                "@type": "ImageObject",
+                "url"    : "https://s.hurriyet.com.tr/hdnstatic/dist/images/hdn-amp-logo.png",
+                "width"  : "304",
+                "height" : "60"
+            }
+        },
+        "speakable": {
+            "@type": "SpeakableSpecification",
+            "xpath": [ "/html/head/title", "/html/head/meta[@name='description']/@content" ]
+        }
+    }
+</script><ul class="social-bottom custom-social-buttons">
+    
+    <li><a class="facebook fa-facebook-official" href="javascript:;" title="Facebook"></a></li>
+    <li><a class="twitter fa-twitter" href="javascript:;" title="Twitter"></a></li>
+    
+</ul>
+
+<div id="taboola-feed---below-article-thumbnails"></div>
+
+
+</div>
+
+<div class="col-md-4 col-sm-4">
+
+
+<div class="row">
+
+
+<div class="col-md-12 col-sm-12">
+
+
+<div class="module advertorial-square-type-1 has-not-alternate-news">
+    <div class="module-alternate none">
+                <div id="/9927946,22420977938/hurriyetdailynews/diger/sidebar_300x250_1" class="adRenderer dfp   " data-platform="desktop">
+
+                        <a href="/ukraine-cites-success-in-downing-drones-fixes-energy-sites-177965" title="Ukraine cites success in downing drones, fixes energy sites">
+                                <span class="category">WORLD</span>
+                            <img src="//s.hurriyet.com.tr/hdnstatic/dist/images/placeholder-img.jpg" data-src="//i.hurimg.com/i/hdn/75/310x250/63577e104e3fe029100a6cc1.jpeg" alt="Ukraine cites success in downing drones, fixes energy sites" />
+                            <h3>Ukraine cites success in downing drones, fixes energy sites</h3>
+
+                        </a>
+                </div>
+
+    </div>
+</div>
+                <div id="/9927946,22420977938/hurriyetdailynews_mobilsite/diger/feed1_300x250" class="adRenderer dfp   " data-platform="mobile"></div>
+
+</div>
+</div>
+
+<div class="row">
+
+
+<div class="col-md-12 col-sm-12">
+
+
+    <div class="module news-most-popular" data-module-type="news-most-popular">
+        <span class="category-band relative">MOST POPULAR</span>
+        <ol>
+                    <li>
+                        <a href="/farmer-from-konya-exports-pumpkin-for-halloween-177904" target="_blank" title="Farmer from Konya exports pumpkin for Halloween">
+                            <h3>Farmer from Konya exports pumpkin for Halloween</h3>
+                            <img width="120" alt="Farmer from Konya exports pumpkin for Halloween" src="//s.hurriyet.com.tr/hdnstatic/dist/images/placeholder-img.jpg" data-src="//i.hurimg.com/i/hdn/75/0x0/6354f88a4e3fe11728c552cc.jpg" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/10-000-flamingo-chicks-hold-on-to-life-in-lake-salt-177906" target="_blank" title="10,000 flamingo chicks hold on to life in Lake Salt">
+                            <h3>10,000 flamingo chicks hold on to life in Lake Salt</h3>
+                            <img width="120" alt="10,000 flamingo chicks hold on to life in Lake Salt" src="//s.hurriyet.com.tr/hdnstatic/dist/images/placeholder-img.jpg" data-src="//i.hurimg.com/i/hdn/75/0x0/6354fd5d4e3fe11728c55309.jpg" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/turkiye-eu-to-convene-high-level-business-meeting-after-3-5-years-177913" target="_blank" title="T&#252;rkiye, EU to convene high-level business meeting after 3.5 years">
+                            <h3>T&#252;rkiye, EU to convene high-level business meeting after 3.5 years</h3>
+                            <img width="120" alt="T&#252;rkiye, EU to convene high-level business meeting after 3.5 years" src="//s.hurriyet.com.tr/hdnstatic/dist/images/placeholder-img.jpg" data-src="//i.hurimg.com/i/hdn/75/0x0/635524ee4e3fe11728c55514.jpg" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/e-t-the-movie-turns-40-177925" target="_blank" title="‘E.T.’ the movie turns 40">
+                            <h3>‘E.T.’ the movie turns 40</h3>
+                            <img width="120" alt="‘E.T.’ the movie turns 40" src="//s.hurriyet.com.tr/hdnstatic/dist/images/placeholder-img.jpg" data-src="//i.hurimg.com/i/hdn/75/0x0/635516894e3fe11728c554cf.jpg" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/rishi-sunak-to-become-britains-next-prime-minister-177964" target="_blank" title="Rishi Sunak to become Britain’s next prime minister">
+                            <h3>Rishi Sunak to become Britain’s next prime minister</h3>
+                            <img width="120" alt="Rishi Sunak to become Britain’s next prime minister" src="//s.hurriyet.com.tr/hdnstatic/dist/images/placeholder-img.jpg" data-src="//i.hurimg.com/i/hdn/75/0x0/635690944e3fe113444266db.jpg" />
+                        </a>
+                    </li>
+        </ol>
+    </div>
+
+</div>
+</div>
+
+<div class="row">
+
+
+<div class="col-md-12 col-sm-12">
+
+
+<div class="module advertorial-square-type-2 ">
+    <div class="module-alternate none">
+                <div id="/9927946,22420977938/hurriyetdailynews/diger/sidebar_300x250_2" class="adRenderer dfp   " data-platform="desktop">
+                </div>
+
+    </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="row">
+
+
+<div class="col-md-8 col-sm-8">
+
+
+<div class="recommendeds ">
+    <span class="separator-title">Recommended</span>
+    <div class="row">
+                        <div class="col-md-4 col-sm-4">
+                            <div class="item">
+                                <a href="/ukraine-cites-success-in-downing-drones-fixes-energy-sites-177965" title="Ukraine cites success in downing drones, fixes energy sites">
+                                    <img src="//s.hurriyet.com.tr/hdnstatic/dist/images/placeholder-img.jpg" data-src="//i.hurimg.com/i/hdn/75/210x157/63577e104e3fe029100a6cc1.jpeg" alt="Ukraine cites success in downing drones, fixes energy sites" />
+                                    <h3>Ukraine cites success in downing drones, fixes energy sites</h3>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-4">
+                            <div class="item">
+                                <a href="/rishi-sunak-to-become-britains-next-prime-minister-177964" title="Rishi Sunak to become Britain’s next prime minister">
+                                    <img src="//s.hurriyet.com.tr/hdnstatic/dist/images/placeholder-img.jpg" data-src="//i.hurimg.com/i/hdn/75/210x157/635690944e3fe113444266db.jpg" alt="Rishi Sunak to become Britain’s next prime minister" />
+                                    <h3>Rishi Sunak to become Britain’s next prime minister</h3>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-4">
+                            <div class="item">
+                                <a href="/korean-air-plane-overshoots-runway-shuts-philippine-airport-177939" title="Korean Air plane overshoots runway, shuts Philippine airport">
+                                    <img src="//s.hurriyet.com.tr/hdnstatic/dist/images/placeholder-img.jpg" data-src="//i.hurimg.com/i/hdn/75/210x157/63562fff4e3fe11344426087.jpeg" alt="Korean Air plane overshoots runway, shuts Philippine airport" />
+                                    <h3>Korean Air plane overshoots runway, shuts Philippine airport</h3>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-4">
+                            <div class="item">
+                                <a href="/russian-warplane-falls-on-building-in-siberia-2-pilots-die-177938" title="Russian warplane falls on building in Siberia; 2 pilots die">
+                                    <img src="//s.hurriyet.com.tr/hdnstatic/dist/images/placeholder-img.jpg" data-src="//i.hurimg.com/i/hdn/75/210x157/63562f444e3fe1134442606b.jpeg" alt="Russian warplane falls on building in Siberia; 2 pilots die" />
+                                    <h3>Russian warplane falls on building in Siberia; 2 pilots die</h3>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-4">
+                            <div class="item">
+                                <a href="/brazil-pol-and-bolsonaro-ally-refuses-arrest-injures-police-177936" title="Brazil pol and Bolsonaro ally refuses arrest, injures police">
+                                    <img src="//s.hurriyet.com.tr/hdnstatic/dist/images/placeholder-img.jpg" data-src="//i.hurimg.com/i/hdn/75/210x157/63562e034e3fe11344426049.jpeg" alt="Brazil pol and Bolsonaro ally refuses arrest, injures police" />
+                                    <h3>Brazil pol and Bolsonaro ally refuses arrest, injures police</h3>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-4">
+                            <div class="item">
+                                <a href="/ukraine-slams-russias-dirty-bomb-claims-as-dangerous-lies-177935" title="Ukraine slams Russia’s ‘dirty bomb’ claims as ‘dangerous’ lies">
+                                    <img src="//s.hurriyet.com.tr/hdnstatic/dist/images/placeholder-img.jpg" data-src="//i.hurimg.com/i/hdn/75/210x157/63562a0f4e3fe11344426002.jpeg" alt="Ukraine slams Russia’s ‘dirty bomb’ claims as ‘dangerous’ lies" />
+                                    <h3>Ukraine slams Russia’s ‘dirty bomb’ claims as ‘dangerous’ lies</h3>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-4">
+                            <div class="item">
+                                <a href="/hurricane-roslyn-forecast-to-bring-dangerous-surge-to-mexico-177903" title="Hurricane Roslyn forecast to bring dangerous surge to Mexico">
+                                    <img src="//s.hurriyet.com.tr/hdnstatic/dist/images/placeholder-img.jpg" data-src="//i.hurimg.com/i/hdn/75/210x157/6354ea6c4e3fe11728c5524b.jpeg" alt="Hurricane Roslyn forecast to bring dangerous surge to Mexico" />
+                                    <h3>Hurricane Roslyn forecast to bring dangerous surge to Mexico</h3>
+                                </a>
+                            </div>
+                        </div>
+    </div>
+</div>
+</div>
+</div>
+
+<div class="row">
+
+
+<div class="col-md-4 col-sm-4">
+
+
+    <div class="module media-single-detailed " data-module-type="media-single-detailed">
+        <div class="media">
+                        <span class="category-band">WORLD</span>
+                    <a href="/ukraine-cites-success-in-downing-drones-fixes-energy-sites-177965" target="_blank" title="Ukraine cites success in downing drones, fixes energy sites">
+                        <img src="//s.hurriyet.com.tr/hdnstatic/dist/images/placeholder-img.jpg" data-src="//i.hurimg.com/i/hdn/75/310x455/63577e104e3fe029100a6cc1.jpeg" alt="Ukraine cites success in downing drones, fixes energy sites" />
+                        <h3>Ukraine cites success in downing drones, fixes energy sites</h3>
+                        <p>Ukrainian authorities tried to dampen public fears over Russia’s use of Iranian drones by claiming increasing success Monday in shooting them down, while the Kremlin’s talk of a possible “dirty bomb” attack added another worrying dimension as the war enters its ninth month.
+</p>
+                        <span class="media-author">
+
+                        </span>
+                    </a>
+        </div>
+    </div>
+
+</div>
+
+<div class="col-md-4 col-sm-4">
+
+
+    <div class="module media-single-detailed " data-module-type="media-single-detailed">
+        <div class="media">
+                        <span class="category-band">ECONOMY</span>
+                    <a href="/enerjisas-power-plant-in-kayseri-comes-online-177961" target="_blank" title="Enerjisa’s power plant in Kayseri comes online">
+                        <img src="//s.hurriyet.com.tr/hdnstatic/dist/images/placeholder-img.jpg" data-src="//i.hurimg.com/i/hdn/75/310x455/63566fd64e3fe11344426560.jpg" alt="Enerjisa’s power plant in Kayseri comes online" />
+                        <h3>Enerjisa’s power plant in Kayseri comes online</h3>
+                        <p>Energy company Enerjisa’s Erciyes power plant with 65 megawatts installed capacity in the province of Kayseri has come online.</p>
+                        <span class="media-author">
+
+                        </span>
+                    </a>
+        </div>
+    </div>
+
+</div>
+
+<div class="col-md-4 col-sm-4">
+
+
+    <div class="module media-single-detailed " data-module-type="media-single-detailed">
+        <div class="media">
+                        <span class="category-band">SPORTS</span>
+                    <a href="/istanbul-thessaloniki-to-be-on-bodrum-cups-route-in-2023-177941" target="_blank" title="Istanbul, Thessaloniki to be on Bodrum Cup’s route in 2023">
+                        <img src="//s.hurriyet.com.tr/hdnstatic/dist/images/placeholder-img.jpg" data-src="//i.hurimg.com/i/hdn/75/310x455/635655054e3fe1134442632a.jpg" alt="Istanbul, Thessaloniki to be on Bodrum Cup’s route in 2023" />
+                        <h3>Istanbul, Thessaloniki to be on Bodrum Cup’s route in 2023</h3>
+                        <p>The route of the Bodrum Cup will be Istanbul-Thessaloniki-Bodrum next year, the event’s organizer has announced.</p>
+                        <span class="media-author">
+
+                        </span>
+                    </a>
+        </div>
+    </div>
+
+</div>
+</div>
+
+
+        
+    </div>
+    <footer>
+        <nav class="top">
+            <div class="container">
+                <span class="logo" title="Hürriyet Daily News"></span>
+                <ul>
+                    
+
+
+
+
+    <li>
+        <a href="/turkey/" title="T&#252;rkiye" target="_blank">T&#252;rkiye</a>
+    </li>
+
+    <li>
+        <a href="/economy/" title="Economy" target="_blank">Economy</a>
+    </li>
+
+    <li>
+        <a href="/opinion/" title="Opinion" target="_blank">Opinion</a>
+    </li>
+
+    <li>
+        <a href="/world/" title="World" target="_blank">World</a>
+    </li>
+
+    <li>
+        <a href="/artsandlife/" title="Arts &amp; Life" target="_blank">Arts &amp; Life</a>
+    </li>
+
+    <li>
+        <a href="/sports/" title="Sports" target="_blank">Sports</a>
+    </li>
+
+    <li>
+        <a href="/video/" title="Video" target="_blank">Video</a>
+    </li>
+
+    <li>
+        <a href="/photo/" title="Photo" target="_blank">Photo</a>
+    </li>
+
+                </ul>
+            </div>
+        </nav>
+        <div class="container">
+
+                <div id="/9927946,22420977938/hurriyetdailynews/diger/footer_728x90" class="adRenderer dfp  footer " data-platform="desktop"></div>
+
+                <div id="/9927946,22420977938/hurriyetdailynews_mobilsite/diger/300x250" class="adRenderer dfp  footer " data-platform="mobile"></div>
+
+            
+        </div>
+        <nav class="bottom">
+            <div class="container">
+                <span class="copyright">© <span class="year"></span> Hürriyet Daily News</span>
+                <ul>
+                    <li><a href="/privacy-policy" title="Privacy Policy">Privacy Policy</a></li>
+                    <li><a href="/work-with-us" title="Work With Us">Work With Us</a></li>
+                    <li><a href="/about-the-newsroom" title="About the Newsroom">About the Newsroom</a></li>
+                    <li><a href="/letters-to-the-editor" title="Letters to the Editor">Letters to the Editor</a></li>
+                    <li><a href="/advertise-in-daily-news" title="Advertise">Advertise</a></li>
+                </ul>
+            </div>
+        </nav>
+    </footer>
+    <script src="//s.hurriyet.com.tr/hdnstatic/dist/scripts/hdn/lazy.min.js?v=octo-2.78.0.362"></script>
+    <script src="//s.hurriyet.com.tr/hdnstatic/dist/scripts/hdn/lib/lib.min.js?v=octo-2.78.0.362"></script>
+    <script src="//s.hurriyet.com.tr/hdnstatic/dist/scripts/hdn/project.min.js?v=octo-2.78.0.362"></script>
+    
+    
+
+    
+    <script src="//www.googletagservices.com/tag/js/gpt.js?v=octo-2.78.0.362"></script>
+    
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-KC9FBC');</script>
+    
+    
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KC9FBC" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    
+    
+    <script async src="https://www.hurpass.com/static/v3/all.js?v=octo-2.78.0.362" id="sso_script"></script>
+    <script>
+        $(document).ready(function () {
+            SSO.appkey = '57a1b3c4f55daf4e6d964e651470215108332';
+            SSO.secret = '57a1b3c4f55daf4e6d964e661470215108332';
+            SSO.domain = 'hurriyetdailynews.com';
+            SSO.init_analytics();
+        });</script>
+    <script>
+        (function (url, namespace, portal) {
+            window['ClicksTrackingObject'] = namespace;
+            window['ClicksPortal'] = portal;
+            window['ClicksRequestUrl'] = "https://clicks.hurriyet.com.tr/request";
+            window[namespace] = window[namespace] || function () {
+                (window[namespace].q = window[namespace].q || []).push(arguments)
+            };
+            var wa = document.createElement('script');
+            wa.async = 1;
+            wa.src = url;
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(wa, s);
+        })('https://clicks.hurriyet.com.tr/static/clicks.min.js', 'Clicks', 'hurriyetdailynews');
+
+        gtmAndClicks.method.pushClicks();</script>
+    
+    
+    <script type="application/ld+json">
+        {
+        "@context" : "http://schema.org",
+        "@type"    : "WebSite",
+        "name" : "Hürriyet Daily News",
+        "url"  : "https://www.hurriyetdailynews.com"
+        }
+    </script>
+    <script type="application/ld+json">
+        {
+        "@context" : "http://schema.org",
+        "@type"    : "Organization",
+        "name"   : "Hürriyet Daily News",
+        "url"    : "https://www.hurriyetdailynews.com",
+        "sameAs" : [
+        "https://www.facebook.com/hurriyetdailynews",
+        "https://twitter.com/HDNER"
+        ]
+        }
+    </script>
+
+
+    
+    
+        <script type="text/javascript">
+            window._taboola = window._taboola || [];
+            _taboola.push(
+                { flush: true }
+            );
+        </script>
+</body>
+</html>

@@ -1,0 +1,2385 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"7ef148dbc4",applicationID:"946521853"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(9),c=t(10),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(11);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(8),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],7:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],8:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],9:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],10:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],11:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(9),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!M++){var t=T.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(x,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+T.offset],null,"api"),c("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){c("mark",["domContent",a()+T.offset],null,"api")}var a=t(5),c=t("handle"),f=t(9),u=t("ee"),s=t(7),d=t(2),p=t(3),l=d.getConfiguration("ssl")===!1?"http":"https",v=window,m=v.document,g="addEventListener",y="attachEvent",h=v.XMLHttpRequest,w=h&&h.prototype,b=!1;NREUM.o={ST:setTimeout,SI:v.setImmediate,CT:clearTimeout,XHR:h,REQ:v.Request,EV:v.Event,PR:v.Promise,MO:v.MutationObserver};var E=""+location,x={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1216.min.js"},O=h&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),T=e.exports={offset:a.getLastTimestamp(),now:a,origin:E,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(6),m[g]?(m[g]("DOMContentLoaded",o,p(!1)),v[g]("load",r,p(!1))):(m[y]("onreadystatechange",i),v[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var M=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(10),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+
+                
+        
+        
+            <meta name="title" content="&quot;Alcaldes y gobernadores deben defender los recursos regionales&quot;: Dilian Francisca Toro"/>
+        <meta property="taboolaType" content="default" />
+	<meta property="spc:url" content="https://www.elpais.com.co/valle/alcaldes-y-gobernadores-deben-defender-los-recursos-regionales-dilian-francisca-toro.html" />
+	<meta property="spc:title" content="&quot;Alcaldes y gobernadores deben defender los recursos regionales&quot;: Dilian Francisca Toro" />
+	<meta property="spc:description" content="La exgobernadora del Valle cuestionó el Decreto 444 del Gobierno Nacional, que posibilita al Gobierno a prestar fondos de entidades territoriales." />
+	<meta property="spc:published_time" content="2020-03-23" />
+	<meta property="spc:modified_time" content="2020-03-23" />
+	<meta property="spc:section" content="Valle" />
+	<meta property="spc:tags" content="Dilian Francisca Toro, coronavirus" />
+	<meta property="spc:author" content="elpais.com.co" /><meta property="spc:image_url" content="https://www.elpais.com.co/files/article_main/uploads/2019/12/14/5df551dda6f31.jpeg" />
+		<meta property="spc:article_id" content="61371138"/>			    <meta name="cXenseParse:recs:publishername" content="www.elpais.com.co"/>
+    <meta name="cXenseParse:recs:articleid" content="61371138"/>
+    <meta name="cXenseParse:pageclass" content="article"/>
+    <meta name="cXenseParse:recommendable" content="true"/>
+    <meta name="cXenseParse:recs:pep-articleid" content="61371138"/>
+    <meta name="cXenseParse:recs:publishtime" content="2020-03-23"/>
+    <meta name="cXenseParse:recs:pep-articlepublicationdate" content="2020-03-23"/>
+    <meta name="cXenseParse:recs:pep-publishtime" content="2020-03-23"/>
+    <meta name="cXenseParse:recs:pep-expirationtime" content="2020-03-23"/>
+    <meta name="cXenseParse:recs:pep-seccion" content="Valle"/>
+    <meta name="cXenseParse:recs:pep-titulo" content="&quot;Alcaldes y gobernadores deben defender los recursos regionales&quot;: Dilian Francisca Toro"/>
+    <meta name="cXenseParse:recs:pep-descripcion" content="La exgobernadora del Valle cuestionó el Decreto 444 del Gobierno Nacional, que posibilita al Gobierno a prestar fondos de entidades territoriales."/>
+    <meta name="cXenseParse:image" content="https://www.elpais.com.co/files/listing_multimedia_main/uploads/2019/12/14/5df551dda6f31.jpeg"/>
+    <meta name="cXenseParse:recs:imagengrande" content="https://www.elpais.com.co/files/listing_multimedia_main/uploads/2019/12/14/5df551dda6f31.jpeg"/>
+    <meta name="news_keywords" content="gobernadores, regionales, francisca, recursos, defender"/>
+    <meta name="cXenseParse:recs:tags" content="Dilian Francisca Toro, coronavirus"/>
+
+
+    
+	  		<link rel="amphtml" href="https://www.elpais.com.co/valle/alcaldes-y-gobernadores-deben-defender-los-recursos-regionales-dilian-francisca-toro.html?amp=1"><meta property="fb:app_id" content="647114432496346"/>
+	<meta property="fb:pages" content="171280749364" />
+	<meta property="fb:app_id" content="853965771414513"/>
+	
+											
+		<meta property="globalPianoExperiencieInit" content="https://experience.tinypass.com/xbuilder/experience/load?aid=1GcngOR8DF" />
+		<meta property="global_sso_url" content="https://sso.elpais.com.co/" />
+		<meta property="global_debug" content="" />
+					<meta property="baseXalokUrl" content="https://www.elpais.com.co" />
+				<meta property="pricePrintedIdTarifa" content="0" />
+		<meta property="pricePrintedSalesPrice" content="0" />
+		<meta property="pricePrintedPrice" content="0" />
+		<meta property="pricePrintDiscount" content="0" />
+		<meta property="googleRecapchat-locale" content="es"/>
+	
+		<link rel="preconnect" href="https://piano_api.elpais.com.co/">
+	<link rel="preconnect" href="https://cdn.cxense.com">
+	<link rel="preconnect" href="https://s8t.teads.tv/media/format/v3/teads-format.min.js">
+	<link rel="preconnect" href="https://www.googletagservices.com"> 
+	<link rel="preconnect" href="https://services.insurads.com">
+	<link rel="preconnect" href="https://securepubads.g.doubleclick.net/tag/js/gpt.js"> 
+	<link rel="preload" href="/assets/css-screen.3e4ee5d3bbc9578dacca3b70300df5bd.css" as="style">    <meta name="format-detection" content="telephone=no"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:site" content="@Elpaiscali"/>
+    <meta name="twitter:creator" content="@Elpaiscali"/>
+    <meta name="author" content="Casa Editorial El País Cali"/>
+    <meta name="genre" content="News"/>
+    <meta name="geo.placename" content="Colombia"/>
+    <meta name="geo.position" content="3.435310;-76.544787"/>
+    <meta name="geo.region" content="CO"/>
+    <meta name="google" content="notranslate"/>
+    <meta name="ICBM" content="3.435310, -76.544787"/>
+    <meta name="language" content="spanish"/>
+<meta name="yandex-verification" content="7a407b3ef94d31ba" />    <meta name="twitter:image" content="https://www.elpais.com.co/files/listing_multimedia_main/uploads/2019/12/14/5df551dda6f31.jpeg"/>
+    <meta name="twitter:title" content="&quot;Alcaldes y gobernadores deben defender los recursos regionales&quot;: Dilian Francisca Toro"/>
+			<meta name="google-signin-client_id" content="353262910726-042g9i680kmnj4pidahekn0sqoa4t45i.apps.googleusercontent.com">
+	            <link href="https://www.elpais.com.co/valle/alcaldes-y-gobernadores-deben-defender-los-recursos-regionales-dilian-francisca-toro.html" rel="canonical">
+	<link href="https://www.elpais.com.co/valle/alcaldes-y-gobernadores-deben-defender-los-recursos-regionales-dilian-francisca-toro.html" media="only screen and (max-width: 640px)" rel="alternate">
+            <meta name="keywords" content="gobernadores, regionales, francisca, recursos, defender">
+    
+    <meta name="description" content="La exgobernadora del Valle cuestionó el Decreto 444 del Gobierno Nacional, que posibilita al Gobierno a prestar fondos de entidades territoriales.">
+            <meta property="og:type" content="article"/>
+        <meta property="fb:app_id" content="171280749364"/>
+        <meta property="og:title" content="&quot;Alcaldes y gobernadores deben defender los recursos regionales&quot;: Dilian Francisca Toro"/>
+        <meta property="og:url" content="https://www.elpais.com.co/valle/alcaldes-y-gobernadores-deben-defender-los-recursos-regionales-dilian-francisca-toro.html"/>
+        <meta property="og:site_name" content="elpais.com.co"/>
+        <meta property="fb:fb_admins" content="10153836729434365"/>
+        <meta property="og:locale" content="es_CO"/>
+        <meta property="og:image" content="https://www.elpais.com.co/files/listing_multimedia_main/uploads/2019/12/14/5df551dda6f31.jpeg"/>
+        <meta property="og:image:width" content="224"/>
+
+				        <meta property="og:image:height" content="170"/>
+
+				        <meta property="og:image:type" content="image/jpeg"/>
+
+                    <meta property="og:description" content="La exgobernadora del Valle cuestionó el Decreto 444 del Gobierno Nacional, que posibilita al Gobierno a prestar fondos de entidades territoriales."/>
+
+            <meta property="twitter:description" content="La exgobernadora del Valle cuestionó el Decreto 444 del Gobierno Nacional, que posibilita al Gobierno a prestar fondos de entidades territoriales."/>
+
+            <meta property="og:image" content="https://www.elpais.com.co/files/listing_multimedia_main/uploads/2019/12/14/5df551dda6f31.jpeg"/>
+        <meta property="og:image:width" content="224"/>
+
+				        <meta property="og:image:height" content="170"/>
+
+				        <meta property="og:image:type" content="image/jpeg"/>
+
+        
+                                <meta property="article:tag" content="Dilian Francisca Toro"/>
+
+                            <meta property="article:tag" content="coronavirus"/>
+
+                    <title>&quot;Alcaldes y gobernadores deben defender los recursos regionales&quot;: Dilian Francisca Toro</title>
+            
+    																				
+					
+					
+					
+					
+							
+		<style data-device="Desktop" data-slug="article" data-pageTemplate="default" data-type="nota">
+	 	@import url(https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900,900i|Open+Sans:400,400i,800,800i&display=swap); @import url(https://fonts.googleapis.com/css?family=Bubblegum+Sans|Roboto+Slab&display=swap); @import url(https://fonts.googleapis.com/css?family=Lato&display=swap); @import url(https://fonts.googleapis.com/css?family=Righteous&display=swap); @import url(https://fonts.googleapis.com/css?family=Lato:400,900&display=swap); @charset "UTF-8";html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}header,nav{display:block}a{background-color:transparent}b{font-weight:bold}h1{font-size:2em;margin:0.67em 0}img{border:0}button,input{color:inherit;font:inherit;margin:0}button{overflow:visible}button{text-transform:none}button,html input[type="button"]{-webkit-appearance:button}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}input{line-height:normal}*{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}*:before,*:after{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}html{font-size:10px}body{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:14px;line-height:1.42857;color:#333333;background-color:#fff}input,button{font-family:inherit;font-size:inherit;line-height:inherit}a{color:#337ab7;text-decoration:none}img{vertical-align:middle}.container{margin-right:auto;margin-left:auto;padding-left:10px;padding-right:10px}.container:before,.container:after{content:" ";display:table}.container:after{clear:both}@media (min-width:768px){.container{width:100%}}@media (min-width:992px){.container{width:100%}}@media (min-width:1200px){.container{width:1050px}}.row{margin-left:-10px;margin-right:-10px}.row:before,.row:after{content:" ";display:table}.row:after{clear:both}.col-xs-4,.col-md-6,.col-xs-8,.col-xs-12,.col-md-12{position:relative;min-height:1px;padding-left:10px;padding-right:10px}.col-xs-4,.col-xs-8,.col-xs-12{float:left}.col-xs-4{width:33.33333%}.col-xs-8{width:66.66667%}.col-xs-12{width:100%}@media (min-width:992px){.col-md-6,.col-md-12{float:left}.col-md-6{width:50%}.col-md-12{width:100%}}@-ms-viewport{width:device-width}.header-category .category-name{width:980px!important}.section-colombia .default-menu .inicio+.expandable span{background-color:#0078cd}.section-colombia .default-menu .inicio+.expandable span{color:#fff}.section-colombia .default-menu .inicio+.expandable span:after{border-top-color:#fff}.articleDefault .category.colombia a{color:#0078cd}.articleDefault .category.colombia a:before{border-left-color:#0078cd}.articleDefault .category.colombia a{color:#0078cd}.articleDefault .category.colombia a:before{border-left-color:#0078cd}.articleDefault .category.deportes a{color:#ff8700}.articleDefault .category.deportes a:before{border-left-color:#ff8700}.bg-white{background:white}.articleDefault .category{font-size:11px;font-size:1.1rem;font-weight:400;line-height:1;font-family:"Lato",Arial,Helvetica,sans-serif;display:inline-block}.topics-header a,.header-category .category-path li a{font-size:13px;font-size:1.3rem;font-weight:400;line-height:1;font-family:"Lato",Arial,Helvetica,sans-serif;display:inline-block}.square-icons li span,.square-icons .square-comment-34 span,header .header-subscribe .subscribe,header .header-diamond-zone .diamond-zone,nav.sticky .menu-principal .header-subscribe .subscribe,.article-page .global-arrows .prev .title,.article-page .global-arrows .next .title{font-size:14px;font-size:1.4rem;font-weight:400;line-height:1;font-family:"Lato",Arial,Helvetica,sans-serif;display:inline-block}.menu-principal li>a,.menu-principal li>span,.search-form .search-input{font-size:16px;font-size:1.6rem;font-weight:400;line-height:1.2;font-family:"Lato",Arial,Helvetica,sans-serif;display:inline-block}.article .paragraph{font-size:18px;font-size:1.8rem;font-weight:400;line-height:1.2;font-family:"Lato",Arial,Helvetica,sans-serif;display:inline-block}.article .article-quote.quote-default{font-size:28px;font-size:2.8rem;font-weight:400;line-height:1.2;font-family:"Lato",Arial,Helvetica,sans-serif;display:inline-block}.menu-dropdown-news .menu-dropdown-title{font-size:12px;font-size:1.2rem;font-weight:700;line-height:1;font-family:"Lato",Arial,Helvetica,sans-serif;display:inline-block}.topics-header .topics-title{font-size:13px;font-size:1.3rem;font-weight:700;line-height:1;font-family:"Lato",Arial,Helvetica,sans-serif;display:inline-block}.menu-dropdown-clasificados .clasificados-menu-link{font-size:16px;font-size:1.6rem;font-weight:700;line-height:1;font-family:"Lato",Arial,Helvetica,sans-serif;display:inline-block}.article .paragraph b{font-size:18px;font-size:1.8rem;font-weight:700;line-height:1.2;font-family:"Lato",Arial,Helvetica,sans-serif;display:inline-block}.article .headline.h5{font-size:22px;font-size:2.2rem;font-weight:700;line-height:1.2;font-family:"Lato",Arial,Helvetica,sans-serif;display:inline-block}.search-form .search-button{font-size:16px;font-size:1.6rem;font-weight:900;line-height:1;font-family:"Lato",Arial,Helvetica,sans-serif;display:inline-block}.global-arrows .prev .title,.global-arrows .next .title{font-size:18px;font-size:1.8rem;font-weight:900;line-height:1;font-family:"Lato",Arial,Helvetica,sans-serif;display:inline-block}.header-category .category-name{font-size:30px;font-size:3rem;font-weight:900;line-height:1;font-family:"Lato",Arial,Helvetica,sans-serif;display:inline-block}.article h1.title{font-size:48px;font-size:4.8rem;font-weight:900;line-height:1;font-family:"Lato",Arial,Helvetica,sans-serif;display:inline-block}.article .article-details span{font-size:13px;font-size:1.3rem;font-weight:400;line-height:1;font-family:"Lato",Arial,Helvetica,sans-serif;font-style:italic;display:inline-block}html,body,div,span,iframe,h1,h2,h5,p,a,img,ins,b,i,ol,ul,li,form,header,nav{margin:0;padding:0;border:0;vertical-align:baseline}body{min-width:1024px;height:100%;font-family:Arial,sans-serif;margin:0 auto}a{text-decoration:none;outline:none}b{font-weight:bold}i{font-style:italic}*{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}ul li{list-style:none}.text-right{text-align:right!important}.image{display:block;line-height:1;font-size:0}.round-icons{display:inline-block}.round-icons li{float:left;margin-right:10px}.round-icons .round-icon{font-size:0;display:block;background-repeat:no-repeat;background-position:center}.round-icons .round-icon-30{width:30px;height:30px}.round-icons .round-facebook-30{background-image:url(/images/social/facebook-round-30.png)}.round-icons .round-twitter-30{background-image:url(/images/social/twitter-round-30.png)}.round-icons .round-gplus-30{background-image:url(/images/social/gplus-round-30.png)}.round-icons .round-whatsapp-30{background-image:url(/images/social/whatsapp-logo-black.png);background-size:70%}.round-icons .round-instagram-30{background-image:url(/images/social/instagram-logo-black.png);background-size:70%}.round-icons .round-youtube-30{background-image:url(/images/social/youtube-logo-black.png);background-size:70%}.square-icons{display:inline-block;padding:10px}.square-icons li{margin-bottom:9px}.square-icons li span{color:#303030;width:34px;text-align:center}.square-icons .square-icon{font-size:0;display:block;background-repeat:no-repeat;background-position:center}.square-icons .square-icon-34{width:34px;height:34px}.square-icons .square-comment-34{background-color:#0078cd;width:34px;height:35px;text-align:center;padding-top:8px;margin-bottom:35px;position:relative}.square-icons .square-comment-34:after{border-color:transparent #0078cd!important}.square-icons .square-comment-34:before{content:"";width:32px;height:1px;display:block;position:relative;top:40px;background-color:#dadada}.square-icons .square-comment-34 span{color:#ffffff}.square-icons .square-facebook-34{background-image:url(/images/social/facebook-square-34.png)}.square-icons .square-twitter-34{background-image:url(/images/social/twitter-square-34.png)}.square-icons .square-mail-34{background-image:url(/images/social/square-mail-34.png)}.left-social-icons{text-align:center;margin-top:5px}.menu-dropdown-news .menu-news-col a:before,.articleDefault .category a:before{content:'';width:0;height:0;border-top:4px solid transparent;border-left:4px solid #0078cd;border-bottom:4px solid transparent;display:block}.menu-principal .expandable>span:after,.menu-principal .expandable>a:after{content:'';width:0;height:0;border-left:4px solid transparent;border-right:4px solid transparent;border-top:4px solid #0078cd;display:block}.square-icons .square-comment-34{border-radius:4px;color:#ffffff;width:35px;height:30px;text-align:center;padding-top:5px;position:relative;display:block}.square-icons .square-comment-34:after{content:"";position:absolute;bottom:-5px;right:5px;border-width:0 5px 5px 0px;border-style:solid;border-color:transparent #000000;display:block;width:0}.close-icon{background:url(/images/icons/close.png) no-repeat center;width:34px;height:34px;display:inline-block}.search-icon{background:url(/images/icons/search-blue.png) no-repeat center;width:33px;height:42px;display:inline-block}.user-black-icon{background:url(/images/icons/user-black.png) no-repeat center;width:30px;height:30px;display:inline-block}.share-icon{background:url(/images/icons/share-grey.png) no-repeat center;width:30px;height:30px;display:inline-block}.zoom-icon{background:url(/images/icons/zoom.png) no-repeat center;width:34px;height:34px;display:inline-block}.subscribe-icon{background:url(/images/icons/subscribe-icon.png) no-repeat center;width:18px;height:17px;display:inline-block}.global-arrows{z-index:10;position:fixed;top:600px;margin-top:-37.5px;width:100%}@media screen and (max-width:1200px){.global-arrows{display:none}}.global-arrows .prev{left:0}.global-arrows .prev .arrow{left:0;margin-left:22px}.global-arrows .prev .arrow:after{content:"";display:block;width:21.98582px;height:21.98582px;border-top:5px solid #0078cd;-webkit-transform:rotate(-45deg);-ms-transform:rotate(-45deg);-o-transform:rotate(-45deg);transform:rotate(-45deg);border-left:5px solid #0078cd;margin-left:8px}.global-arrows .prev .title{margin-left:60px;padding-right:10px}.global-arrows .next{right:0}.global-arrows .next .arrow{right:0;margin-right:22px}.global-arrows .next .arrow:after{content:"";display:block;width:21.98582px;height:21.98582px;border-top:5px solid #0078cd;-webkit-transform:rotate(45deg);-ms-transform:rotate(45deg);-o-transform:rotate(45deg);transform:rotate(45deg);border-right:5px solid #0078cd;margin-right:8px}.global-arrows .next .title{margin-right:75px;padding-left:10px}.global-arrows .prev,.global-arrows .next{display:inline-block;position:absolute;width:75px;height:75px;overflow:hidden;background-color:#0078cd;color:white}.global-arrows .prev .arrow,.global-arrows .next .arrow{display:inline-block;position:absolute;top:50%;-webkit-transform:translate(0,-50%);-ms-transform:translate(0,-50%);-o-transform:translate(0,-50%);transform:translate(0,-50%)}.global-arrows .prev .arrow:after,.global-arrows .next .arrow:after{border-color:white}.global-arrows .prev .title,.global-arrows .next .title{color:#303030;display:none;position:absolute;top:50%;-webkit-transform:translate(0,-50%);-ms-transform:translate(0,-50%);-o-transform:translate(0,-50%);transform:translate(0,-50%);max-height:56px;height:56px;overflow:hidden;opacity:0;filter:alpha(opacity=0);width:182px;text-align:center}.comments-container.hide{display:none}.article .article-comments{clear:both}header .top-content{position:relative;height:49px;border-bottom:1px solid #e7e7e7}header .logo-container{position:absolute;left:10px;top:10px;width:215px}header .logo{background:url(/images/logos/logo-small-2022.png) no-repeat center;width:110px;height:27px;display:block;font-size:0}header .social-icons{position:absolute;right:10px;top:0}header .header-subscribe{position:absolute;right:10px;top:6px}header .header-subscribe .subscribe{border:1px solid #d9d9d9;padding:8px 15px 8px 33px;color:#333333;background-color:#ffa01c}header .header-subscribe .subscribe .subscribe-icon{position:absolute;left:9px;top:8px}header .header-diamond-zone{position:absolute;right:127px;top:6px}header .header-diamond-zone .diamond-zone{border:1px solid #d9d9d9;padding:8px 15px 8px 5px;color:#333333}header .user-details{position:absolute;top:11px;right:130px}header .search-icon{position:absolute;top:0;right:0}header .close-icon{position:absolute;top:20px;right:15px}.header-search-form{display:none;position:absolute;left:0;right:0;top:42px;height:80px;border-bottom:1px solid #0078cd;z-index:9;background:#ffffff}nav{position:relative}.nav{margin-bottom:0;z-index:500}.menu-principal{border-bottom:2px solid #0078cd}.menu-principal:after{content:"";display:table;clear:both}.menu-principal li{float:left}.menu-principal li>a,.menu-principal li>span{color:#090909;padding:12px 9px}.menu-principal .active{padding:12px 15px}.menu-principal .expandable{position:relative}.menu-principal .expandable>span:after,.menu-principal .expandable>a:after{display:inline-block;vertical-align:middle;margin-left:5px}.menu-principal .menu_level_1{display:none;position:absolute;top:43px;width:144px;background:#ffffff;z-index:10;box-shadow:0px 5px 5px 1px rgba(0,0,0,0.1)}.menu-principal .menu_level_1 li{float:none}.menu-dropdown-news .menu-news-col{float:left;padding:20px 0 6px;background:#ffffff}.menu-dropdown-news .menu-news-col a{padding:10px 0px 10px 20px!important;width:150px}.menu-dropdown-news .menu-news-col a:before{position:relative;display:inline-block;margin-right:5px;top:-1px;border-left-color:#0078cd!important}.menu-dropdown-news .menu-news-section{width:300px}.menu-dropdown-news .news-section-menu{position:relative;-webkit-column-count:2;-moz-column-count:2;column-count:2;-webkit-column-gap:0;-moz-column-gap:0;column-gap:0}.menu-dropdown-news .news-section-menu a{width:147px!important}.menu-dropdown-news .menu-news-multimedia{width:150px;background:#f3f3f3;height:100%}.menu-dropdown-news .menu-dropdown-title{color:#777777;border-bottom:1px solid #dcdcdc;padding-bottom:10px;text-transform:uppercase;margin:0 20px 5px;display:block}.menu-dropdown-clasificados{padding:30px}.menu-dropdown-clasificados .clasificados-menu-link{color:#0078cd;border-bottom:1px solid #0078cd;padding:15px 0;width:100%!important}.menu-dropdown-clasificados .clasificados-menu-container:first-child a{padding-top:0}.menu-dropdown-clasificados .link-color-lightorange a{color:#ff9000;border-bottom:1px solid #ff9000}.menu-dropdown-clasificados .link-color-red a{color:#d40000;border-bottom:1px solid #d40000}.menu-dropdown-clasificados .link-color-green a{color:#1e9400;border-bottom:1px solid #1e9400}.menu-dropdown-clasificados .link-color-blue a{color:#0056d9;border-bottom:1px solid #0056d9}.menu-dropdown-clasificados .link-color-darkorange a{color:#ff4d00;border-bottom:1px solid #ff4d00}.menu-dropdown-clasificados .clasificados-image{text-align:center;margin:10px auto;width:178px;height:44px}nav.sticky{display:none;position:fixed;top:0;left:0;right:0;background:#fff;z-index:503;border-bottom:2px solid #0078cd;height:45px}nav.sticky .menu-principal{border-bottom:none;position:relative}nav.sticky .menu-principal li>a,nav.sticky .menu-principal li>span{padding:12px 6px}nav.sticky .menu-principal .header-subscribe{display:inline-block;position:relative;top:-14px;left:7px}nav.sticky .menu-principal .header-subscribe .subscribe{border:1px solid #d9d9d9;padding:8px 8px 8px 8px;color:#333333;background-color:#ffa01c}nav.sticky .menu-principal .header-subscribe .subscribe .subscribe-icon{position:relative;left:0px;top:3px}nav.sticky .logo-sticky{background:url(/images/logos/logo-sticky.png) no-repeat center;width:32px;height:32px;display:inline-block;vertical-align:top;font-size:0;margin-top:4px}nav.sticky .default-menu{display:inline-block;vertical-align:top}nav.sticky .inicio{display:none}nav.sticky .user-black-icon,nav.sticky .share-icon{height:42px}nav.sticky .sticky-share-icons{display:none;position:absolute;top:40px;right:210px;background:#ffffff;padding:12px 0 12px 8px}nav.sticky .sticky-user-nav{display:none;position:absolute;top:40px;right:110px;background:#ffffff;padding:12px 8px}.topics-header{margin-top:20px;float:right}.topics-header .topics-list li{border-left:1px solid #cdcdcd;padding-left:8px;padding-right:8px;min-height:18px}.topics-header .topics-list li:first-child{border-left:none}.topics-header a{color:#777777}.topics-header .topic-item{display:inline-block}.topics-header .topics-title{color:#0078cd;margin-top:4px;text-transform:uppercase}.header-category .header-bottom{margin-bottom:20px;padding-top:15px;padding-bottom:30px;border-bottom:1px solid #f0f0f0}.header-category .header-category-left{padding-left:15px}.header-category .category-path{display:block;overflow:hidden}.header-category .category-path li{float:left;color:#666666}.header-category .category-path li a{color:#666666}.header-category .category-path li:after{content:'›';display:inline-block;margin-right:5px}.header-category .category-name{color:#0078cd;text-transform:uppercase;display:block}.header-category .user-details{top:0px;right:448px;z-index:503}.header-category .header-subscribe{top:10px;right:225px}.header-category .header-diamond-zone{top:10px;right:345px}.header-category .social-icons{top:10px}ol li{list-style-type:none}.category-breadcrumbList{position:absolute;margin:19px 0px}.category-breadcrumbList:after{content:""!important}#tts-buttons .hidden{display:none}#tts-buttons .btn-tts{width:60px;height:50px;border:solid 1px #ccc;margin:20px 0px}#tts-buttons .titulo-tts{box-sizing:border-box;display:inline-block;justify-content:center;align-items:center;color:#0078cd;position:absolute;transform:translate(20px,30px)}#tts-buttons .btn-tts#btn-hablar{background:url(/images/icons/tts-reproducir.png) no-repeat center}#tts-buttons .btn-tts#btn-resume{background:url(/images/icons/tts-reproducir.png) no-repeat center}#tts-buttons .btn-tts#btn-pause{background:url(/images/icons/tts-pausa.png) no-repeat center}#tts-buttons .btn-tts#btn-repetir{background:url(/images/icons/tts-repetir.png) no-repeat center}.article h1.title{color:#090909;margin-bottom:10px}.article .article-details{margin:5px 0 20px}.article .article-social{width:65px;min-height:1px;float:left;margin-right:20px}.article .article-media{float:right}.article .article-media .media-small{width:565px;margin-left:25px}.article .article-content{width:565px;margin-left:85px;margin-right:20px}.article .article-sidebar{width:310px;min-height:1px;float:right;clear:right}.article .headline{border-top:1px solid #cccccc;color:#090909;padding-top:20px;margin-bottom:30px;display:block!important}.article .paragraph{color:#1c1c1c;line-height:1.7;margin-bottom:40px;display:block}.article .paragraph a{color:#0078cd;display:inline;line-height:1.7}.article .paragraph b{display:inline;line-height:1.7}.article .article-details span{color:#666666}.article .article-details .signature-container{display:inline-block}.article .article-details .published-at:after{content:'|';display:inline-block;vertical-align:top;margin:0 8px}.article .captioned-image{margin-bottom:30px}.article .captioned-image .image{margin-bottom:20px}.article .captioned-image{position:relative}.article .captioned-image .image-icon-zoom{position:absolute;width:40px;height:40px;right:10px;top:10px;z-index:9}.article .article-quote{border-left:3px solid #0078cd;padding:30px;line-height:1.3!important;margin-bottom:30px;width:100%;display:block}.article-page .global-arrows .prev .title,.article-page .global-arrows .next .title{height:44px}.article-page .comments-container{border-top:3px solid #e6e6e6;border-left:1px solid #f9f9f9;border-right:1px solid #f9f9f9;border-bottom:1px solid #f9f9f9}.article .article-comments{margin:0 0 60px 84px;width:896px}.board-article-multimedia-related .multimedia-related .category{display:none}@media (max-width:991px){.container{width:100%}}.registro-usuario{position:fixed;bottom:0;max-width:1000px;z-index:10}.articleDefault .category{display:block}.articleDefault .category a{color:#0078cd}.articleDefault .category a:before{display:inline-block;margin-right:5px}.category{display:block}.category a{text-transform:uppercase}.tower{position:fixed;top:45px;width:160px}.tower.tower-left{margin-left:-170px}.tower.tower-right{margin-left:990px}.search-form{width:583px;height:40px;margin:20px auto 0}.search-form .search-input{color:#9a9a9a;border:1px solid #cdcdcd;border-right:none;float:left;width:488px;height:40px;padding:0 10px}.search-form .search-button{color:#ffffff;width:93px;background:#0078cd;text-transform:uppercase;padding:0 15px;height:40px;float:left;border:none}.section-noticias .global-arrows .prev,.section-noticias .global-arrows .next{background-color:#0078cd}.section-noticias .menu-principal,.section-noticias nav.sticky{border-bottom-color:#0078cd}.section-noticias header .menu-principal .expandable>span:after,.section-noticias header .menu-principal .expandable>a:after{border-top-color:#0078cd}.section-noticias .square-icons .square-comment-34{background-color:#0078cd!important}.section-noticias .square-icons .square-comment-34:after{border-color:transparent #0078cd!important}.section-noticias .square-icons .square-comment-34:after{border-color:transparent #0078cd}.section-noticias .header-category .category-name,.section-noticias .topics-header .topics-title{color:#0078cd}html{margin:0px;padding:0px}body{margin:0px;padding:0px}button::-moz-focus-inner{padding:0;border:0}		/** Inicio Grid Article*/
+@charset "UTF-8";.board-sociales-obituarios .listing-item,.category-noticia .category-main,.category-noticia .category-secondary .listing .listing-item,.category-noticia .category-sidebar,.col-xs-1,.col-xs-10,.col-xs-11,.col-xs-12,.col-xs-2,.col-xs-3,.col-xs-4,.col-xs-5,.col-xs-6,.col-xs-7,.col-xs-8,.col-xs-9,.home-caricaturas .board-caricaturas .author-col,.module-1-v1+.board-most-listing-container,.module-1-v1+.module-1-most-read,.module-1-v2+.board-most-listing-container,.module-1-v2+.module-1-most-read,.module-1-v3+.board-most-listing-container,.module-1-v3+.module-1-most-read,.module-1-v4+.board-most-listing-container,.module-1-v4+.module-1-most-read,.module-1-v5+.board-most-listing-container,.module-1-v5+.module-1-most-read,.opinion-subcats .category-main,.opinion-subcats .category-secondary,.opinion-subcats .category-sidebar{float:left}.col-xs-3,.module-1-v4+.board-most-listing-container,.module-1-v4+.module-1-most-read{width:25%}.board-sociales-obituarios .listing-item,.category-noticia .category-secondary .listing .listing-item,.category-noticia .category-sidebar,.col-xs-4,.home-caricaturas .board-caricaturas .author-col,.module-1-v5+.board-most-listing-container,.module-1-v5+.module-1-most-read,.opinion-subcats .category-sidebar{width:33.33333%}.category-noticia .category-main,.col-xs-8,.opinion-subcats .category-main,.opinion-subcats .category-secondary{width:66.66667%}.col-xs-9{width:75%}.col-xs-12{width:100%}@media (min-width:992px){.col-md-1,.col-md-10,.col-md-11,.col-md-12,.col-md-2,.col-md-3,.col-md-4,.col-md-5,.col-md-6,.col-md-7,.col-md-8,.col-md-9{float:left}.col-md-12{width:100%}}.page-link{background-color:transparent!important;border:0!important;padding:0!important}html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,header,nav{display:block}a{background-color:transparent}h1{font-size:2em;margin:.67em 0}img{border:0}button,input{color:inherit;font:inherit;margin:0}button{overflow:visible}button{text-transform:none}button{-webkit-appearance:button}input{line-height:normal}*{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}:after,:before{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}html{font-size:10px}body{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:14px;line-height:1.42857;color:#333;background-color:#fff}button,input{font-family:inherit;font-size:inherit;line-height:inherit}a{color:#337ab7;text-decoration:none}img{vertical-align:middle}.container{margin-right:auto;margin-left:auto;padding-left:10px;padding-right:10px}.container:after,.container:before{content:" ";display:table}.container:after{clear:both}@media (min-width:768px){.container{width:1050px}}@media (min-width:992px){.container{width:1050px}}@media (min-width:1200px){.container{width:1050px}}.row{margin-left:-10px;margin-right:-10px}.row:after,.row:before{content:" ";display:table}.row:after{clear:both}.col-md-12,.col-md-6,.col-xs-12,.col-xs-9,.module-1-v4+.board-most-listing-container{position:relative;min-height:1px;padding-left:10px;padding-right:10px}.col-xs-12,.col-xs-9,.module-1-v4+.board-most-listing-container{float:left}.col-xs-9{width:75%}.col-xs-12{width:100%}@media (min-width:992px){.col-md-12,.col-md-6{float:left}.col-md-12{width:100%}}.bg-white{background:#fff}.articleDefault .category,.header-home .time{font-size:11px;font-size:1.1rem;font-weight:400;line-height:1;font-family:Lato,Arial,Helvetica,sans-serif;display:inline-block}.more-columnistas-popup .columnist a,header .header-diamond-zone .diamond-zone,header .header-subscribe .subscribe,nav.sticky .menu-principal .header-subscribe .subscribe{font-size:14px;font-size:1.4rem;font-weight:400;line-height:1;font-family:Lato,Arial,Helvetica,sans-serif;display:inline-block}.articleDefault .epigraph,.menu-principal li>a,.menu-principal li>span,.search-form .search-input{font-size:16px;font-size:1.6rem;font-weight:400;line-height:1.2;font-family:Lato,Arial,Helvetica,sans-serif;display:inline-block}.topics-header .topics-title{font-size:13px;font-size:1.3rem;font-weight:700;line-height:1;font-family:Lato,Arial,Helvetica,sans-serif;display:inline-block}.article-3cols .title,.board-home-secondary .board-most-listing .listing-counter{font-size:20px;font-size:2rem;font-weight:700;line-height:1.2;font-family:Lato,Arial,Helvetica,sans-serif;display:inline-block}.global-arrows .next .title,.global-arrows .prev .title{font-size:18px;font-size:1.8rem;font-weight:900;line-height:1;font-family:Lato,Arial,Helvetica,sans-serif;display:inline-block}.article-9cols .title{font-size:32px;font-size:3.2rem;font-weight:900;line-height:1;font-family:Lato,Arial,Helvetica,sans-serif;display:inline-block}a,article,body,div,form,h1,h2,header,html,i,iframe,img,li,nav,span,ul{margin:0;padding:0;border:0;vertical-align:baseline}body{min-width:1024px;height:100%;font-family:Arial,sans-serif;margin:0 auto}a{text-decoration:none;outline:0}i{font-style:italic}*{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}ul li{list-style:none}.container-full{width:100%}.disabled{display:none}.image{display:block;line-height:1;font-size:0}.round-icons{display:inline-block}.round-icons li{float:left;margin-right:10px}.round-icons .round-icon{font-size:0;display:block;background-repeat:no-repeat;background-position:center}.round-icons .round-icon-30{width:30px;height:30px}.round-icons .round-facebook-30{background-image:url(/images/social/facebook-round-30.png)}.round-icons .round-twitter-30{background-image:url(/images/social/twitter-round-30.png)}.round-icons .round-whatsapp-30{background-image:url(/images/social/whatsapp-logo-black.png);background-size:70%}.round-icons .round-instagram-30{background-image:url(/images/social/instagram-logo-black.png);background-size:70%}.round-icons .round-youtube-30{background-image:url(/images/social/youtube-logo-black.png);background-size:70%}.articleDefault .category a:before,.menu-dropdown-news .menu-news-col a:before,.more-columnistas-popup .columnist a:before{content:'';width:0;height:0;border-top:4px solid transparent;border-left:4px solid #0078cd;border-bottom:4px solid transparent;display:block}.menu-principal .expandable>a:after,.menu-principal .expandable>span:after{content:'';width:0;height:0;border-left:4px solid transparent;border-right:4px solid transparent;border-top:4px solid #0078cd;display:block}.search-icon{background:url(/images/icons/search-blue.png) no-repeat center;width:33px;height:42px;display:inline-block}.user-black-icon{background:url(/images/icons/user-black.png) no-repeat center;width:30px;height:30px;display:inline-block}.share-icon{background:url(/images/icons/share-grey.png) no-repeat center;width:30px;height:30px;display:inline-block}.subscribe-icon{background:url(/images/icons/subscribe-icon.png) no-repeat center;width:18px;height:17px;display:inline-block}.global-arrows{z-index:10;position:fixed;top:600px;margin-top:-37.5px;width:100%}.global-arrows .prev{left:0}.global-arrows .prev .arrow{left:0;margin-left:22px}.global-arrows .prev .arrow:after{content:"";display:block;width:21.98582px;height:21.98582px;border-top:5px solid #0078cd;-webkit-transform:rotate(-45deg);-ms-transform:rotate(-45deg);-o-transform:rotate(-45deg);transform:rotate(-45deg);border-left:5px solid #0078cd;margin-left:8px}.global-arrows .prev .title{margin-left:60px;padding-right:10px}.global-arrows .next,.global-arrows .prev{display:inline-block;position:absolute;width:75px;height:75px;overflow:hidden;background-color:#0078cd;color:#fff}.global-arrows .next .arrow,.global-arrows .prev .arrow{display:inline-block;position:absolute;top:50%;-webkit-transform:translate(0,-50%);-ms-transform:translate(0,-50%);-o-transform:translate(0,-50%);transform:translate(0,-50%)}.global-arrows .next .arrow:after,.global-arrows .prev .arrow:after{border-color:#fff}.global-arrows .next .title,.global-arrows .prev .title{color:#303030;display:none;position:absolute;top:50%;-webkit-transform:translate(0,-50%);-ms-transform:translate(0,-50%);-o-transform:translate(0,-50%);transform:translate(0,-50%);max-height:56px;height:56px;overflow:hidden;opacity:0;width:182px;text-align:center}header .top-content{position:relative;height:49px;border-bottom:1px solid #e7e7e7}header .top-content .divNoLogueado{right:466px;display:none}header .logo-container{position:absolute;left:10px;top:10px;width:215px}header .logo{background:url(/images/logos/logo-small-2022.png) no-repeat center;width:110px;height:27px;display:block;font-size:0}header .social-icons{position:absolute;right:10px;top:0}header .header-subscribe{position:absolute;right:10px;top:6px}header .header-subscribe .subscribe{border:1px solid #d9d9d9;padding:8px 15px 8px 33px;color:#333;background-color:#ffa01c}header .header-subscribe .subscribe .subscribe-icon{position:absolute;left:9px;top:8px}header .header-diamond-zone{position:absolute;right:127px;top:6px}header .header-diamond-zone .diamond-zone{border:1px solid #d9d9d9;padding:8px 15px 8px 5px;color:#333}header .user-details{position:absolute;top:11px;right:130px}header .search-icon{position:absolute;top:0;right:0}.header-search-form{display:none;position:absolute;left:0;right:0;top:42px;height:80px;border-bottom:1px solid #0078cd;z-index:9;background:#fff}nav{position:relative}.nav{margin-bottom:0;z-index:500}.menu-principal{border-bottom:2px solid #0078cd}.menu-principal:after{content:"";display:table;clear:both}.menu-principal li{float:left}.menu-principal li>a,.menu-principal li>span{color:#090909;padding:12px 9px}.menu-principal .expandable{position:relative}.menu-principal .expandable>a:after,.menu-principal .expandable>span:after{display:inline-block;vertical-align:middle;margin-left:5px}.menu-principal .menu_level_1{display:none;position:absolute;top:43px;width:144px;background:#fff;z-index:10;box-shadow:0 5px 5px 1px rgba(0,0,0,.1)}nav.sticky{display:none;position:fixed;top:0;left:0;right:0;background:#fff;z-index:503;border-bottom:2px solid #0078cd;height:45px}nav.sticky .menu-principal{border-bottom:none;position:relative}nav.sticky .menu-principal li>a,nav.sticky .menu-principal li>span{padding:12px 6px}nav.sticky .menu-principal .header-subscribe{display:inline-block;position:relative;top:-14px;left:7px}nav.sticky .menu-principal .header-subscribe .subscribe{border:1px solid #d9d9d9;padding:8px 8px 8px 8px;color:#333;background-color:#ffa01c}nav.sticky .menu-principal .header-subscribe .subscribe .subscribe-icon{position:relative;left:0;top:3px}nav.sticky .logo-sticky{background:url(/images/logos/logo-sticky.png) no-repeat center;width:32px;height:32px;display:inline-block;vertical-align:top;font-size:0;margin-top:4px}nav.sticky .default-menu{display:inline-block;vertical-align:top}nav.sticky .inicio{display:none}nav.sticky .share-icon,nav.sticky .user-black-icon{height:42px}nav.sticky .sticky-share-icons{display:none;position:absolute;top:40px;right:210px;background:#fff;padding:12px 0 12px 8px}nav.sticky .sticky-user-nav{display:none;position:absolute;top:40px;right:110px;background:#fff;padding:12px 8px}ul{margin-top:0}.nav{padding-left:0;margin-bottom:0}.user-area{float:left;position:relative;min-height:1px;padding-right:15px;padding-left:15px;font-family:Lato,Arial,Helvetica,sans-serif;font-size:16px;color:#111;line-height:28px}.user-area a{color:#0078cd;text-decoration:none;outline:0}.user-area .link{font-size:.875em;padding:10px;display:inline-block}.user-area .link.ingresar{padding-left:49px;color:#111;background:transparent url(/images/icons/user-black.png) no-repeat 12px 7px}.user-area .link.registrese{border-left:1px solid #c5c5c5}.user-area ul.nav li ul{list-style:none;margin:0;padding:0;background-color:#fff;display:none;position:absolute;min-width:220px;z-index:99999;-webkit-box-shadow:0 7px 14px #e0e0e0;-moz-box-shadow:0 7px 14px #e0e0e0;box-shadow:0 7px 14px #e0e0e0}.user-area ul.nav>li{float:left;left:285px}.user-area ul.nav a.ingresar:hover{-webkit-box-shadow:0 7px 14px #e0e0e0;-moz-box-shadow:0 7px 14px #e0e0e0;box-shadow:0 7px 14px #e0e0e0;color:#0078cd}.user-area ul.nav li:hover>ul{display:block}.topics-header{margin-top:20px;float:right}.topics-header .topic-item{display:inline-block}.topics-header .topics-title{color:#0078cd;margin-top:4px;text-transform:uppercase}.articleDefault:before{content:'';width:100%;height:1px;display:block;border-top:1px solid #dadada;padding-bottom:20px}.articleDefault .category{display:block}.articleDefault .category a{color:#0078cd}.articleDefault .category a:before{display:inline-block;margin-right:5px}.articleDefault .title a{color:#1c1c1c;display:block;margin-top:14px}.articleDefault .article-details{padding:19px 18px}.articleDefault.details-float-image .article-details,.articleDefault.details-float-image .image-container{float:left}.article-9cols{margin-bottom:19px}.article-9cols .title a{color:#222}.article-9cols.details-float-image .image-container{width:481px}.article-9cols.details-float-image .article-details{width:249px}.category{display:block}.category a{text-transform:uppercase}.tower{position:fixed;top:45px;width:160px}.tower.tower-left{margin-left:-170px}.tower.tower-right{margin-left:990px}body{margin:0;padding:0}
+/** Fin Grid article */
+	</style>
+        
+            
+
+	<link rel="manifest" href="/manifest.json" />
+
+		<script>
+		(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-KHWDX7X');
+	</script>		
+		<!-- Facebook Pixel Code -->
+		<noscript>
+			<img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=380476072777782&ev=PageView&noscript=1"/>
+		</noscript>
+		<!-- End Facebook Pixel Code -->    <script type="text/javascript" src="/static/headerjs/article/valle"></script> 
+                    <link rel="shortcut icon" href="/favicon.ico?1666736883" />
+                    </head>
+    <body class="article-page  section-noticias section-valle">
+
+        	<div id="fb-root"></div>
+		
+		<noscript>
+		<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KHWDX7X" height="0" width="0" class="vision-hidden disabled"></iframe>
+		<style type="text/css">
+	        .article-content {display:none;}
+	    </style>
+	</noscript>
+	
+    <div id="main-container" class="main-container"><div class="module-free-all">
+        
+        
+        
+    <div id="top_banner_feriadecali" class="admanagerspacefixed top_banner"></div>
+<div id="barraflotante_feriadecali" class="admanagerspacefixed Xalok_barra_flotante_320X50" style="width:320px;height:50px;"></div>
+</div>
+	   
+
+    
+            <div class="module-free-all">
+        
+        
+        
+    <div id="div-gpt-ad-Valle_728X90" class="admanagerspacefixed" style=" text-align:center;"></div>
+<div style="width: 500px; margin:0 auto;" id="div-gpt-ad-Layer_Valle" class="admanagerspacefixed"></div>
+<div id="div-gpt-ad-Barra_Flotante" class="admanagerspacefixed Xalok_barra_flotante_1000X50" style=" text-align:center;"></div>
+<div id="div-gpt-ad-Valle_1x1">
+</div>
+</div>
+       
+<header class="container header-category header-valle bg-white">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="top-content">
+                                                            <div class="user-details divNoLogueado">
+                            <div class="contenedor_modulo_user">
+                                <div class="user-area col-md-12">
+                                    <a title="Ingrese" class="link ingresar linkIngresoPID clickPointer">Ingrese</a>
+                                    <a title="Regístrese" class="link registrese linkRegistroPID clickPointer">Regístrese</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="contenedor_modulo_user divLogueado disabled">
+                            <div class="user-area col-md-6">
+                                <ul class="nav">
+                                    <li id="opcionesLogueado">
+                                        <a href="javascript:void(0)" title="Usuario" class="link ingresar active nameUserPID">
+                                            <span class="caret"></span>
+                                        </a>
+                                        <ul>
+                                            <li class="itmMiCuenta"><a href="https://www.elpais.com.co/servicios/mi-cuenta" title="Mi cuenta" target="_parent">Mi cuenta</a></li>
+                                            <li class="itmMiPais"><a href="https://www.elpais.com.co/servicios/mi-pais" title="Personaliza tu contenido" target="_parent">Personaliza tu contenido</a></li>
+                                            <li class="itmNewsletters"><a href="https://www.elpais.com.co/servicios/boletin-informativo" title="Boletín informativo" target="_parent">Bolet&iacute;n informativo</a></li>
+                                            <li class="itmEbooks"><a href="https://www.elpais.com.co/servicios/ebooks" title="Ebooks" target="_parent">Ebooks</a></li>
+                                            <li role="separator" class="divider"></li>
+                                            <li class="itmSalir" id="salir"><a style="cursor:pointer;" title="Salir" class="salir linkSalirPID" target="_parent">Salir</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                                    
+                                    <div class="logo-container">
+                        <a href="/" class="logo" title="El País Cali - Noticias de Cali, Valle y Colombia">El País Cali - Noticias de Cali, Valle y Colombia</a>
+                                            </div>
+                
+                                                            <div class="header-diamond-zone">
+                            <a href="/zona-diamante" target="_blank" class="diamond-zone" title="Zona Diamante"><img src="/images/icons/diamond.svg" width="auto" height="12"> Zona Diamante</a>
+                        </div>
+                        <div class="header-subscribe">
+                            <a href="https://www.elpais.com.co/servicios/suscripciones" class="subscribe" title="Suscríbase"><i class="subscribe-icon"></i> Suscríbase</a>
+                        </div>
+                                                                <div class="social-icons">
+                            <ul class="round-icons">
+                                <li>
+                                    <a title="Facebook" href="https://www.facebook.com/diarioelPaiscali" rel="noopener noreferrer" target="_blank" class="round-icon round-icon-30 round-facebook-30 facebook"></a>
+                                </li>
+                                <li>
+                                    <a title="Twitter" href="https://twitter.com/elPaiscali" rel="noopener noreferrer" target="_blank" class="round-icon round-icon-30 round-twitter-30 twitter"></a>
+                                </li>
+                                <li>
+                                    <a title="Instagram" href="https://www.instagram.com/elPaiscali/" rel="noopener noreferrer" target="_blank" class="round-icon round-icon-30 round-instagram-30 instagram"></a>
+                                </li>
+                                <li>
+                                    <a title="Whatsapp" href="https://dozz.es/jmntj" rel="noopener noreferrer" target="_blank" class="round-icon round-icon-30 round-whatsapp-30 whatsapp"></a>
+                                </li>
+                                <li>
+                                    <a title="YouTube" href="https://www.youtube.com/user/elPaiscali" rel="noopener noreferrer" target="_blank" class="round-icon round-icon-30 round-youtube-30 youtube"></a>
+                                </li>
+                            </ul>
+                        </div>
+                                                </div>
+
+                            <nav itemscope="" itemtype="https://www.schema.org/SiteNavigationElement" class="nav">
+                                            <div class="menu-principal">
+                                <ul class="default-menu">
+  <li class="inicio homepage first">
+    <a href="/">Inicio</a>
+  </li>
+  <li class="link expandable">
+    <span>Noticias</span>
+    <ul class="menu_level_1 noticias-menu">
+      <li class="first last">
+<div class="menu-dropdown-news">
+
+    <div class="menu-news-col menu-news-section">
+        <div class="menu-dropdown-title">Secciones</div>
+
+        
+
+    <ul class="news-section-menu">
+<li class="entretenimiento first">
+    <a href="/entretenimiento">Entretenimiento</a>
+  </li>
+  <li class="judicial">
+    <a href="/judicial">Judicial</a>
+  </li>
+  <li class="economia">
+    <a href="/economia">Economía</a>
+  </li>
+  <li class="valle">
+    <a href="/valle">Valle</a>
+  </li>
+  <li class="colombia">
+    <a href="/colombia">Colombia</a>
+  </li>
+  <li class="sociales">
+    <a href="/sociales">Sociales</a>
+  </li>
+  <li class="mundo">
+    <a href="/mundo">Mundo</a>
+  </li>
+  <li class="politica">
+    <a href="/politica">Política</a>
+  </li>
+  <li class="tecnologia">
+    <a href="/tecnologia">Tecnología</a>
+  </li>
+  <li class="cultura">
+    <a href="/cultura">Cultura</a>
+  </li>
+  <li class="cultura-gaceta">
+    <a href="/cultura/gaceta">Gaceta</a>
+  </li>
+  <li class="salud">
+    <a href="/salud">Salud</a>
+  </li>
+  <li class="educacion">
+    <a href="/educacion">Educación</a>
+  </li>
+  <li class="sexualidad">
+    <a href="/sexualidad">Sexualidad</a>
+  </li>
+  <li class="medio-ambiente">
+    <a href="/medio-ambiente">Medio ambiente</a>
+  </li>
+  <li class="vehiculos">
+    <a href="/vehiculos">Vehículos</a>
+  </li>
+  <li class="cali-pico-y-placa">
+    <a href="/cali/pico-y-placa">Pico y Placa</a>
+  </li>
+  <li class="familia last">
+    <a href="/familia">Familia</a>
+  </li>
+</ul>
+</div>
+
+    <div class="menu-news-col menu-news-multimedia">
+        <div class="menu-dropdown-title">Multimedia</div>
+
+        
+
+    <ul class="news-multimedia-menu">
+<li class="multimedia first">
+    <a href="/multimedia">Destacados</a>
+  </li>
+  <li class="multimedia-videos">
+    <a href="/multimedia/videos">Vídeos</a>
+  </li>
+  <li class="multimedia-fotos">
+    <a href="/multimedia/fotos">Fotos</a>
+  </li>
+  <li class="multimedia-podcast">
+    <a href="/multimedia/podcast">Podcast</a>
+  </li>
+  <li class="multimedia-especiales last">
+    <a href="/multimedia/especiales">Especiales</a>
+  </li>
+</ul>
+</div>
+
+</div>      </li>
+    </ul>
+  </li>
+  <li class="contenido-premium">
+    <a href="/contenido-premium">Contenido Premium</a>
+  </li>
+  <li class="cali">
+    <a href="/cali">Cali</a>
+  </li>
+  <li class="el-corazon-de-la-salud">
+    <a href="/el-corazon-de-la-salud">El Corazón de la Salud</a>
+  </li>
+  <li class="opinion">
+    <a href="/opinion">Opinión</a>
+  </li>
+  <li class="deportes expandable">
+    <a href="/deportes">Deportes</a>
+    <ul class="menu_level_1 deportes-menu">
+      <li class="america-de-cali first">
+        <a href="/america-de-cali">América de Cali</a>
+      </li>
+      <li class="deportivo-cali">
+        <a href="/deportivo-cali">Deportivo Cali</a>
+      </li>
+      <li class="deportes-automovilismo">
+        <a href="/deportes/automovilismo">Automovilismo</a>
+      </li>
+      <li class="deportes-ciclismo">
+        <a href="/deportes/ciclismo">Ciclismo</a>
+      </li>
+      <li class="deportes-tenis">
+        <a href="/deportes/tenis">Tenis</a>
+      </li>
+      <li class="deportes-futbol-colombiano">
+        <a href="/deportes/futbol-colombiano">Fútbol Colombiano</a>
+      </li>
+      <li class="deportes-futbol-internacional last">
+        <a href="/deportes/futbol-internacional">Fútbol Internacional</a>
+      </li>
+    </ul>
+  </li>
+  <li class="expandable last">
+<span>Clasificados</span>    <ul class="menu_level_1 clasificados-menu">
+      <li class="first last">
+<div class="menu-dropdown-clasificados">
+    
+
+    
+<div class="clasificados-menu-container link-color-lightorange" id="p611133-m2491-2490-2492">
+        
+        
+    <a href="https://fincaraiz.elpais.com.co/" class="clasificados-menu-link undefined" id="m2496-2495-2497" title="FINCA RAÍZ" style="width: auto;" target="_blank">FINCA RAÍZ</a>
+</div>
+<div class="clasificados-menu-container link-color-red" id="p611133-m2534-1-2535">
+        
+        
+    <a href="https://vehiculos.elpais.com.co/" class="clasificados-menu-link undefined" id="m2539-2538-2540" title="VEHÍCULOS" style="width: auto;" target="_blank">VEHÍCULOS</a>
+</div>
+<div class="clasificados-menu-container link-color-green" id="p611133-m2570-2-2571">
+        
+        
+    <a href="https://empleos.elpais.com.co/" class="clasificados-menu-link undefined" id="m2575-2574-2576" title="EMPLEOS" target="_blank" style="width: auto;">EMPLEOS</a>
+</div>
+<div class="clasificados-menu-container" id="p611133-m2597-3-2598">
+        
+        
+    <a href="#" class="clasificados-menu-link undefined" id="m2602-2601-2603" title="" style="width: auto;">DIVERSOS</a>
+</div>
+<div class="clasificados-menu-container" id="p611133-m2624-4-2625">
+        
+        
+    <a href="https://www.metroxmetro.com/" class="clasificados-menu-link undefined" id="m2629-2628-2630" title="METROXMETRO" style="width: auto;" target="_blank">METROXMETRO</a>
+</div>
+<div class="clasificados-menu-container" id="p611133-m2504-1-2505">
+        
+    <div class="clasificados-image" id="m2509-2508-2510"><img src="/files/classified_home_client_service/uploads/2022/02/25/62193112e8a11.png" alt="TelefonoElPais" style="display: inline;"></div>
+</div>
+</div>      </li>
+    </ul>
+  </li>
+</ul>
+
+	    <script>
+        var wfMenuCurrentUrl = '/valle';
+    </script>
+
+                        </div>
+                                                                <span class="search-icon"></span>
+                        <div class="header-search-form">
+                            <form class="search-form" method="GET" action="/buscar" name="search_form">
+                                <input class="search-input" id="search_input" type="text" name="q" value="" placeholder="Buscar...">
+                                <button class="search-button" id="search_submit" type="submit" >Buscar</button>
+                            </form>
+                            <span class="close-icon"></span>
+                        </div>
+                                    </nav>
+                    </div>
+    </div>
+</header>
+
+        <div class="free-html-transversal"><div class="module-free-all">
+        
+        
+        
+    </div></div>
+    <div class="container">
+        <div class="row">
+                            <div class="module-free-all">
+        
+        
+        
+    <div id="1000x150_1" class="admanagerspace admanagerspacefixed" style="text-align:center;"></div>
+</div>
+                    </div>
+    </div>
+
+    <div class="container header-category header-bottom-valle">
+        <div class="col-xs-12 header-bottom">
+            <div class="row">
+                                                        <div class="col-xs-4 header-category-left">
+                        <div class="category-path">
+                           <ol  itemscope itemtype="https://schema.org/BreadcrumbList">
+                                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                                    <a itemprop="item" title="Inicio" href="/">
+                                        <span itemprop="name">Inicio</span>
+                                    </a>
+                                    <meta itemprop="position" content="1" />
+                                </li>
+                                
+
+                                                                                                                                                    
+                                                                       
+                                        
+                                    
+                                    <li class="category-breadcrumbList" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">     
+                                      <a  itemprop="item" title="VALLE" href="/valle">
+                                                <span itemprop="name" class="category-name">VALLE</span>
+                                            </a>
+                                            <meta itemprop="position" content="3" />
+                                                                            </li>
+                                
+                                
+                            </ol>
+                        </div>                                      
+                    </div>
+                                <div class="col-xs-8 topics-header text-right">
+        <div class="topics-title topic-item">Hoy:</div>
+        <ul class="topics-list topic-item"><li class="topic-item"><a title="Dilian Francisca Toro" href="/noticias/dilian-francisca-toro">Dilian Francisca Toro</a></li><li class="topic-item"><a title="coronavirus" href="/noticias/coronavirus">coronavirus</a></li></ul>
+    </div>            </div>
+        </div>
+    </div>
+
+    <nav class="sticky">
+        <div class="container">
+            <div class="menu-principal">
+                <a href="/" class="logo-sticky" title="El País Cali - Noticias de Cali, Valle y Colombia">El País Cali - Noticias de Cali, Valle y Colombia</a>
+                    <ul class="default-menu">
+  <li class="inicio homepage first">
+    <a href="/">Inicio</a>
+  </li>
+  <li class="link expandable">
+    <span>Noticias</span>
+    <ul class="menu_level_1 noticias-menu">
+      <li class="first last">
+<div class="menu-dropdown-news">
+
+    <div class="menu-news-col menu-news-section">
+        <div class="menu-dropdown-title">Secciones</div>
+
+        
+
+    <ul class="news-section-menu">
+<li class="entretenimiento first">
+    <a href="/entretenimiento">Entretenimiento</a>
+  </li>
+  <li class="judicial">
+    <a href="/judicial">Judicial</a>
+  </li>
+  <li class="economia">
+    <a href="/economia">Economía</a>
+  </li>
+  <li class="valle">
+    <a href="/valle">Valle</a>
+  </li>
+  <li class="colombia">
+    <a href="/colombia">Colombia</a>
+  </li>
+  <li class="sociales">
+    <a href="/sociales">Sociales</a>
+  </li>
+  <li class="mundo">
+    <a href="/mundo">Mundo</a>
+  </li>
+  <li class="politica">
+    <a href="/politica">Política</a>
+  </li>
+  <li class="tecnologia">
+    <a href="/tecnologia">Tecnología</a>
+  </li>
+  <li class="cultura">
+    <a href="/cultura">Cultura</a>
+  </li>
+  <li class="cultura-gaceta">
+    <a href="/cultura/gaceta">Gaceta</a>
+  </li>
+  <li class="salud">
+    <a href="/salud">Salud</a>
+  </li>
+  <li class="educacion">
+    <a href="/educacion">Educación</a>
+  </li>
+  <li class="sexualidad">
+    <a href="/sexualidad">Sexualidad</a>
+  </li>
+  <li class="medio-ambiente">
+    <a href="/medio-ambiente">Medio ambiente</a>
+  </li>
+  <li class="vehiculos">
+    <a href="/vehiculos">Vehículos</a>
+  </li>
+  <li class="cali-pico-y-placa">
+    <a href="/cali/pico-y-placa">Pico y Placa</a>
+  </li>
+  <li class="familia last">
+    <a href="/familia">Familia</a>
+  </li>
+</ul>
+</div>
+
+    <div class="menu-news-col menu-news-multimedia">
+        <div class="menu-dropdown-title">Multimedia</div>
+
+        
+
+    <ul class="news-multimedia-menu">
+<li class="multimedia first">
+    <a href="/multimedia">Destacados</a>
+  </li>
+  <li class="multimedia-videos">
+    <a href="/multimedia/videos">Vídeos</a>
+  </li>
+  <li class="multimedia-fotos">
+    <a href="/multimedia/fotos">Fotos</a>
+  </li>
+  <li class="multimedia-podcast">
+    <a href="/multimedia/podcast">Podcast</a>
+  </li>
+  <li class="multimedia-especiales last">
+    <a href="/multimedia/especiales">Especiales</a>
+  </li>
+</ul>
+</div>
+
+</div>      </li>
+    </ul>
+  </li>
+  <li class="contenido-premium">
+    <a href="/contenido-premium">Contenido Premium</a>
+  </li>
+  <li class="cali">
+    <a href="/cali">Cali</a>
+  </li>
+  <li class="el-corazon-de-la-salud">
+    <a href="/el-corazon-de-la-salud">El Corazón de la Salud</a>
+  </li>
+  <li class="opinion">
+    <a href="/opinion">Opinión</a>
+  </li>
+  <li class="deportes expandable">
+    <a href="/deportes">Deportes</a>
+    <ul class="menu_level_1 deportes-menu">
+      <li class="america-de-cali first">
+        <a href="/america-de-cali">América de Cali</a>
+      </li>
+      <li class="deportivo-cali">
+        <a href="/deportivo-cali">Deportivo Cali</a>
+      </li>
+      <li class="deportes-automovilismo">
+        <a href="/deportes/automovilismo">Automovilismo</a>
+      </li>
+      <li class="deportes-ciclismo">
+        <a href="/deportes/ciclismo">Ciclismo</a>
+      </li>
+      <li class="deportes-tenis">
+        <a href="/deportes/tenis">Tenis</a>
+      </li>
+      <li class="deportes-futbol-colombiano">
+        <a href="/deportes/futbol-colombiano">Fútbol Colombiano</a>
+      </li>
+      <li class="deportes-futbol-internacional last">
+        <a href="/deportes/futbol-internacional">Fútbol Internacional</a>
+      </li>
+    </ul>
+  </li>
+  <li class="expandable last">
+<span>Clasificados</span>    <ul class="menu_level_1 clasificados-menu">
+      <li class="first last">
+<div class="menu-dropdown-clasificados">
+    
+
+    
+<div class="clasificados-menu-container link-color-lightorange" id="p611133-m2491-2490-2492">
+        
+        
+    <a href="https://fincaraiz.elpais.com.co/" class="clasificados-menu-link undefined" id="m2496-2495-2497" title="FINCA RAÍZ" style="width: auto;" target="_blank">FINCA RAÍZ</a>
+</div>
+<div class="clasificados-menu-container link-color-red" id="p611133-m2534-1-2535">
+        
+        
+    <a href="https://vehiculos.elpais.com.co/" class="clasificados-menu-link undefined" id="m2539-2538-2540" title="VEHÍCULOS" style="width: auto;" target="_blank">VEHÍCULOS</a>
+</div>
+<div class="clasificados-menu-container link-color-green" id="p611133-m2570-2-2571">
+        
+        
+    <a href="https://empleos.elpais.com.co/" class="clasificados-menu-link undefined" id="m2575-2574-2576" title="EMPLEOS" target="_blank" style="width: auto;">EMPLEOS</a>
+</div>
+<div class="clasificados-menu-container" id="p611133-m2597-3-2598">
+        
+        
+    <a href="#" class="clasificados-menu-link undefined" id="m2602-2601-2603" title="" style="width: auto;">DIVERSOS</a>
+</div>
+<div class="clasificados-menu-container" id="p611133-m2624-4-2625">
+        
+        
+    <a href="https://www.metroxmetro.com/" class="clasificados-menu-link undefined" id="m2629-2628-2630" title="METROXMETRO" style="width: auto;" target="_blank">METROXMETRO</a>
+</div>
+<div class="clasificados-menu-container" id="p611133-m2504-1-2505">
+        
+    <div class="clasificados-image" id="m2509-2508-2510"><img src="/files/classified_home_client_service/uploads/2022/02/25/62193112e8a11.png" alt="TelefonoElPais" style="display: inline;"></div>
+</div>
+</div>      </li>
+    </ul>
+  </li>
+</ul>
+
+	    <script>
+        var wfMenuCurrentUrl = '/valle';
+    </script>
+
+
+                <span class="search-icon search-icon-sticky"></span>
+                <span class="user-black-icon"></span>
+
+                <div class="sticky-user-nav">
+                    <div data-id="sticky-user-nav">
+                        <div id="register-sso-sticky-user-nav">
+                            <div class="contenedor_modulo_user divNoLogueado disabled">
+                                <div class="user-area col-md-12">
+                                    <a title="Ingrese" class="link ingresar linkIngresoPID clickPointer">Ingrese</a>
+                                    <a title="Regístrese" class="link registrese linkRegistroPID clickPointer">Regístrese</a>
+                                </div>
+                            </div>
+
+                            <div class="contenedor_modulo_user divLogueado disabled">
+                                <div class="user-area col-md-12">
+                                    <ul class="nav">
+                                        <li>
+                                            <a href="javascript:void(0)" title="Usuario" class="link ingresar active nameUserPID">
+                                                <span class="caret"></span>
+                                            </a>
+                                            <ul>
+                                                <li class="itmMiCuenta"><a href="https://www.elpais.com.co/servicios/mi-cuenta" title="Mi cuenta" target="_parent">Mi cuenta</a></li>
+                                                <li class="itmMiPais"><a href="https://www.elpais.com.co/servicios/mi-pais" title="Personaliza tu contenido" target="_parent">Personaliza tu contenido</a></li>
+                                                <li class="itmNewsletters"><a href="https://www.elpais.com.co/servicios/boletin-informativo" title="Boletín informativo" target="_parent">Bolet&iacute;n informativo</a></li>
+                                                <li class="itmEbooks"><a href="https://www.elpais.com.co/servicios/ebooks" title="Ebooks" target="_parent">Ebooks</a></li>
+                                                <li role="separator" class="divider"></li>
+                                                <li id="salir"><a title="Salir" class="salir linkSalirPID clickPointer" target="_parent">Salir</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <span class="share-icon"></span>
+                <div class="sticky-share-icons">
+                    <ul class="round-icons">
+                        <li>
+                            <a title="Facebook" href="https://www.facebook.com/diarioelPaiscali" rel="noopener noreferrer" target="_blank" class="round-icon round-icon-30 round-facebook-30"></a>
+                        </li>
+                        <li>
+                            <a title="Twitter" href="https://twitter.com/elPaiscali" rel="noopener noreferrer" target="_blank" class="round-icon round-icon-30 round-twitter-30"></a>
+                        </li>
+                        <li>
+                            <a title="Google+" href="https://plus.google.com/115050330500575074656/posts" rel="noopener noreferrer" target="_blank" class="round-icon round-icon-30 round-gplus-30"></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="header-subscribe">
+                    <a href="https://www.elpais.com.co/servicios/suscripciones" class="subscribe" title="Suscríbase"><i class="subscribe-icon"></i> Suscríbase</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+
+    <div class="container">
+        <div class="tower tower-left">
+            <div class="module-free-ads">
+        
+        
+    </div>
+        </div>
+        <div class="tower tower-right">
+            <div class="module-free-ads">
+        
+        
+    </div>
+        </div>
+    </div>
+<div class="piano_wrapper">
+			<div id="showMeterPianoSticky"></div>
+		</div>
+		<div id="registration_wall" class="container" style="display: none;">
+			<div class="row">
+				<div class="col-xs-12 registro-usuario">
+									</div>
+			</div>
+		</div>
+		<span id="blockContentFlag" style="display:none;">((blockContentFlag))</span>
+		<span id="blockContentType" style="display:none;">((blockContentType))</span>	<div class="container" id="tts-buttons">
+		        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-5158970-55"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-5158970-55');
+        </script>
+        
+	</div>
+	
+	
+<div class="global-arrows">
+        </div>
+    <div class="container article default" data-history-state="0" data-scroll-url="https://www.elpais.com.co/valle/alcaldes-y-gobernadores-deben-defender-los-recursos-regionales-dilian-francisca-toro.html" data-title='"Alcaldes y gobernadores deben defender los recursos regionales": Dilian Francisca Toro' id="article-61371138" itemscope itemtype="https://schema.org/NewsArticle" template="default">
+                    <span class="schemeArticle disabled">
+                <meta itemprop="headline" content='"Alcaldes y gobernadores deben defender los recursos regionales": Dilian Francisca Toro'>
+<span itemprop="author" itemscope itemtype="https://schema.org/Person">
+                    <span itemprop="name">Andrés Martínez</span>
+                </span>
+                <meta itemprop="datePublished" content="2020-03-23">
+<meta itemprop="dateModified" content="2020-03-23">
+<meta itemprop="mainEntityOfPage" itemscope itemtype="https://schema.org/WebPage" itemid="https://www.elpais.com.co/valle/alcaldes-y-gobernadores-deben-defender-los-recursos-regionales-dilian-francisca-toro.html">
+<span itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+                    <meta itemprop="name" content="El Pais.com.co">
+<meta itemprop="url" content="https://www.elpais.com.co">
+<span itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+                        <meta itemprop="url" content="https://www.elpais.com.co/images/logos/logo-2022.png">
+<meta itemprop="width" content="439">
+<meta itemprop="height" content="57"></span>
+                </span>
+                                    <span itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+                        <meta itemprop="url" content="https://www.elpais.com.co/files/articleType_breaking_news/uploads/2019/12/14/5df551dda6f31.jpeg">
+<meta itemprop="width" content="647">
+<meta itemprop="height" content="431"></span>
+                            </span>
+                <div class="article-top row">
+                    
+                <div class="col-xs-12 article-title">
+                    
+                         <span itemprop="name"></span>
+
+                                        
+                <h1 class="title" id="p61371138-m961-960-962">"Alcaldes y gobernadores deben defender los recursos regionales": Dilian Francisca Toro</h1>
+</div>
+
+                                    <div class="col-xs-12 article-details">
+                                                                                    <span class="published-at">
+                                    Marzo 23, 2020 - 08:13 p. m.
+                                </span>
+                                <span class="fecha_video vision-hidden">2020-03-23</span>
+                                                                                                                                        <span class="for">
+                                    <b> Por: </b>
+                                </span>
+                                                        <div class="signature-container">
+                                
+                            <span class="signature" id="p61371138-m966-965-967">Redacción de El País</span>
+</div>
+                                            </div>
+                                    </div>
+
+        <div class="article-media ">
+                            
+
+
+                
+
+
+                
+
+
+                
+
+
+                
+
+
+                
+
+
+                
+
+
+                
+
+
+                
+
+
+                
+
+
+                
+
+
+                
+
+
+                
+
+                    <div class="captioned-image media-small" id="p61371138-m971-970-972">
+            
+    
+    
+            <div class="zoom-icon image-icon-zoom zoom-main"></div>
+                
+                
+    <div itemscope="" itemtype="https://schema.org/ImageObject" id="m975-974-976" class="image">
+<div class="lazy-background none" style='background-image: url("data:image/png;base64,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"); width: 100%; height: 100%;'></div>
+<img data-src="/files/article_main_small/uploads/2019/12/14/5df551dda6f31.jpeg" src="/files/article_main_small/uploads/2019/12/14/5df551dda6f31.jpeg" class="img-data noColor" style="display: inline;">
+</div>
+<p id="m981-1-982" class="foto-description">Dilian Francisca Toro, Gobernadora del Valle.</p>
+<p id="m986-2-987" class="foto-credit">Giancarlo Manzano / El País</p>
+</div>
+</div>
+
+        <div class="article-social social-sticky">
+                                                    <div class="mobile-social-share share-icon-mobile"></div>
+    <div class="social-bar left-social-icons">
+        <ul class="square-icons" data-track="https://www.elpais.com.co/track/shares/article-61371138">
+<li>
+                    <div class="square-icon square-comment-34">
+                                                <span class="fb-comments-count" data-href="https://www.elpais.com.co/valle/alcaldes-y-gobernadores-deben-defender-los-recursos-regionales-dilian-francisca-toro.html"></span>
+                                            </div>
+                </li>
+                        <li data-network="facebook">
+                <a href="#" target="_blank" class="square-icon square-icon-34 square-facebook-34 facebook" data-track="https://www.elpais.com.co/track/shares-facebook/article-61371138">
+                   </a>
+                <span></span>
+            </li>
+            <li data-network="twitter">
+                <a href="#" target="_blank" class="square-icon square-icon-34 square-twitter-34 twitter" data-title='"Alcaldes y gobernadores deben defender los recursos regionales": Dilian Francisca Toro' data-track="https://www.elpais.com.co/track/shares-twitter/article-61371138">
+                   </a>
+            </li>
+
+            <li>
+                <a href="mailto:?subject=%22Alcaldes%20y%20gobernadores%20deben%20defender%20los%20recursos%20regionales%22:%20Dilian%20Francisca%20Toro&amp;body=https://www.elpais.com.co/valle/alcaldes-y-gobernadores-deben-defender-los-recursos-regionales-dilian-francisca-toro.html" id="atic_email" class="square-icon square-icon-34 square-mail-34">
+                    <span></span>
+                </a>
+            </li>
+        </ul>
+</div>
+
+                                    </div>
+        <div class="articles">
+            <div class="article-sidebar">
+                                                            <div class="module-free-ads">
+        
+        
+    <div id="div-gpt-ad-Valle_300x600" class="admanagerspace" style="text-align:center;">
+</div>
+</div>
+                    
+                    <div class="board-article-multimedia-related">
+                        <div class="multimedia-related">
+                            
+
+                            
+
+                        <div class="board-title" id="p61371138-m993-992-994">Noticias <span class="label-blue">Relacionadas</span>
+</div>
+<article class="articleDefault article-multimedia-related article-big" itemscope="" itemtype="https://schema.org/NewsArticle" icons="true" id="p61371138-m1003-1-1004"><div class="image-container">
+        
+    <a id="m1007-1006-1008" class="image page-link" href="/colombia/gobierno-dice-que-recursos-del-fome-para-el-coronavirus-no-seran-para-salvar-la-banca.html"><div class="lazy-background none" style='background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPoAAAClCAYAAAB1NOAfAAAEDElEQVR4Xu3TQRHAMAwDwYT/NwVQpO1MYPjWDLyS9nnebzkCBEYLbEMfna/nCFwBQ1cEAgEBQw+E7EUChq4DBAIChh4I2YsEDF0HCAQEDD0QshcJGLoOEAgIGHogZC8SMHQdIBAQMPRAyF4kYOg6QCAgYOiBkL1IwNB1gEBAwNADIXuRgKHrAIGAgKEHQvYiAUPXAQIBAUMPhOxFAoauAwQCAoYeCNmLBAxdBwgEBAw9ELIXCRi6DhAICBh6IGQvEjB0HSAQEDD0QMheJGDoOkAgIGDogZC9SMDQdYBAQMDQAyF7kYCh6wCBgIChB0L2IgFD1wECAQFDD4TsRQKGrgMEAgKGHgjZiwQMXQcIBAQMPRCyFwkYug4QCAgYeiBkLxIwdB0gEBAw9EDIXiRg6DpAICBg6IGQvUjA0HWAQEDA0AMhe5GAoesAgYCAoQdC9iIBQ9cBAgEBQw+E7EUChq4DBAIChh4I2YsEDF0HCAQEDD0QshcJGLoOEAgIGHogZC8SMHQdIBAQMPRAyF4kYOg6QCAgYOiBkL1IwNB1gEBAwNADIXuRgKHrAIGAgKEHQvYiAUPXAQIBAUMPhOxFAoauAwQCAoYeCNmLBAxdBwgEBAw9ELIXCRi6DhAICBh6IGQvEjB0HSAQEDD0QMheJGDoOkAgIGDogZC9SMDQdYBAQMDQAyF7kYCh6wCBgIChB0L2IgFD1wECAQFDD4TsRQKGrgMEAgKGHgjZiwQMXQcIBAQMPRCyFwkYug4QCAgYeiBkLxIwdB0gEBAw9EDIXiRg6DpAICBg6IGQvUjA0HWAQEDA0AMhe5GAoesAgYCAoQdC9iIBQ9cBAgEBQw+E7EUChq4DBAIChh4I2YsEDF0HCAQEDD0QshcJGLoOEAgIGHogZC8SMHQdIBAQMPRAyF4kYOg6QCAgYOiBkL1IwNB1gEBAwNADIXuRgKHrAIGAgKEHQvYiAUPXAQIBAUMPhOxFAoauAwQCAoYeCNmLBAxdBwgEBAw9ELIXCRi6DhAICBh6IGQvEjB0HSAQEDD0QMheJGDoOkAgIGDogZC9SMDQdYBAQMDQAyF7kYCh6wCBgIChB0L2IgFD1wECAQFDD4TsRQKGrgMEAgKGHgjZiwQMXQcIBAQMPRCyFwkYug4QCAgYeiBkLxIwdB0gEBAw9EDIXiRg6DpAICBg6IGQvUjA0HWAQEDA0AMhe5GAoesAgYCAoQdC9iIBQ9cBAgEBQw+E7EUChq4DBAIChh4I2YsEDF0HCAQEDD0QshcJGLoOEAgIGHogZC8SMHQdIBAQMPRAyF4kYOg6QCAgYOiBkL1IwNB1gEBAwNADIXuRgKHrAIGAgKEHQvYiAUPXAQIBAUMPhOxFAoauAwQCAj/1GsxCe9FCggAAAABJRU5ErkJggg=="); width: 100%; height: 100%;'></div>
+<img data-src="/files/multimedia_related_big/uploads/2019/05/14/5cdb437d458b4.jpeg" src="/files/multimedia_related_big/uploads/2019/05/14/5cdb437d458b4.jpeg" class="img-data noColor" style="display: inline;"></a>
+</div>
+            <div class="article-details">
+            <div class="category colombia">
+            
+        <a id="m1013-1-1014" class="page-link category-title" href="/colombia/gobierno-dice-que-recursos-del-fome-para-el-coronavirus-no-seran-para-salvar-la-banca.html">Colombia</a>
+</div>
+        <div class="title">
+            
+        <a id="m1018-2-1019" class="page-link" href="/colombia/gobierno-dice-que-recursos-del-fome-para-el-coronavirus-no-seran-para-salvar-la-banca.html">Gobierno dice que recursos del FOME para el coronavirus no serán para "salvar la banca"</a>
+</div>
+            </div>
+    
+</article><article class="articleDefault article-multimedia-related article-big" itemscope="" itemtype="https://schema.org/NewsArticle" icons="true" id="p61371138-m1058-2-1059"><div class="image-container">
+        
+    <a class="image page-link" id="m1062-1061-1063" href="/colombia/polemica-por-decreto-que-destinaria-recursos-para-el-coronavirus-al-sector-financiero.html"><div class="lazy-background none" style='background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPoAAAClCAYAAAB1NOAfAAAEDUlEQVR4Xu3TQRHAMAwDwQRiHqVQ/gzamcDwrRl4Je33Od9yBAiMFtiGPjpfzxG4AoauCAQCAoYeCNmLBAxdBwgEBAw9ELIXCRi6DhAICBh6IGQvEjB0HSAQEDD0QMheJGDoOkAgIGDogZC9SMDQdYBAQMDQAyF7kYCh6wCBgIChB0L2IgFD1wECAQFDD4TsRQKGrgMEAgKGHgjZiwQMXQcIBAQMPRCyFwkYug4QCAgYeiBkLxIwdB0gEBAw9EDIXiRg6DpAICBg6IGQvUjA0HWAQEDA0AMhe5GAoesAgYCAoQdC9iIBQ9cBAgEBQw+E7EUChq4DBAIChh4I2YsEDF0HCAQEDD0QshcJGLoOEAgIGHogZC8SMHQdIBAQMPRAyF4kYOg6QCAgYOiBkL1IwNB1gEBAwNADIXuRgKHrAIGAgKEHQvYiAUPXAQIBAUMPhOxFAoauAwQCAoYeCNmLBAxdBwgEBAw9ELIXCRi6DhAICBh6IGQvEjB0HSAQEDD0QMheJGDoOkAgIGDogZC9SMDQdYBAQMDQAyF7kYCh6wCBgIChB0L2IgFD1wECAQFDD4TsRQKGrgMEAgKGHgjZiwQMXQcIBAQMPRCyFwkYug4QCAgYeiBkLxIwdB0gEBAw9EDIXiRg6DpAICBg6IGQvUjA0HWAQEDA0AMhe5GAoesAgYCAoQdC9iIBQ9cBAgEBQw+E7EUChq4DBAIChh4I2YsEDF0HCAQEDD0QshcJGLoOEAgIGHogZC8SMHQdIBAQMPRAyF4kYOg6QCAgYOiBkL1IwNB1gEBAwNADIXuRgKHrAIGAgKEHQvYiAUPXAQIBAUMPhOxFAoauAwQCAoYeCNmLBAxdBwgEBAw9ELIXCRi6DhAICBh6IGQvEjB0HSAQEDD0QMheJGDoOkAgIGDogZC9SMDQdYBAQMDQAyF7kYCh6wCBgIChB0L2IgFD1wECAQFDD4TsRQKGrgMEAgKGHgjZiwQMXQcIBAQMPRCyFwkYug4QCAgYeiBkLxIwdB0gEBAw9EDIXiRg6DpAICBg6IGQvUjA0HWAQEDA0AMhe5GAoesAgYCAoQdC9iIBQ9cBAgEBQw+E7EUChq4DBAIChh4I2YsEDF0HCAQEDD0QshcJGLoOEAgIGHogZC8SMHQdIBAQMPRAyF4kYOg6QCAgYOiBkL1IwNB1gEBAwNADIXuRgKHrAIGAgKEHQvYiAUPXAQIBAUMPhOxFAoauAwQCAoYeCNmLBAxdBwgEBAw9ELIXCRi6DhAICBh6IGQvEjB0HSAQEDD0QMheJGDoOkAgIGDogZC9SMDQdYBAQMDQAyF7kYCh6wCBgIChB0L2IgFD1wECAQFDD4TsRQKGrgMEAgKGHgjZiwQMXQcIBAR+ELVRzKa/mRYAAAAASUVORK5CYII="); width: 100%; height: 100%;'></div>
+<img data-src="/files/multimedia_related_big/uploads/2020/03/23/5e78e5890e6e7.jpeg" src="/files/multimedia_related_big/uploads/2020/03/23/5e78e5890e6e7.jpeg" class="img-data noColor" style="display: inline;"></a>
+</div>
+            <div class="article-details">
+            <div class="category colombia">
+            
+        <a class="page-link category-title" id="m1068-1-1069" href="/colombia" title="Colombia">Colombia</a>
+</div>
+        <div class="title">
+            
+        <a class="page-link" id="m1073-2-1074" href="/colombia/polemica-por-decreto-que-destinaria-recursos-para-el-coronavirus-al-sector-financiero.html">Polémica por decreto que destinaría recursos para el coronavirus al sector financiero</a>
+</div>
+            </div>
+    
+</article><article class="articleDefault article-multimedia-related article-big" itemscope="" itemtype="https://schema.org/NewsArticle" icons="true" id="p61371138-m1119-3-1120"><div class="image-container">
+        
+    <a class="image page-link" id="m1123-1122-1124" href="/colombia/listo-decreto-de-cuarentena-nacional-que-entra-en-vigencia-a-la-medianoche-del-martes.html"><div class="lazy-background none" style='background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPoAAAClCAYAAAB1NOAfAAAEDUlEQVR4Xu3TQRHAMAwDwQRgnn2UP5B2JjB8awZeSft9zrccAQKjBbahj87XcwSugKErAoGAgKEHQvYiAUPXAQIBAUMPhOxFAoauAwQCAoYeCNmLBAxdBwgEBAw9ELIXCRi6DhAICBh6IGQvEjB0HSAQEDD0QMheJGDoOkAgIGDogZC9SMDQdYBAQMDQAyF7kYCh6wCBgIChB0L2IgFD1wECAQFDD4TsRQKGrgMEAgKGHgjZiwQMXQcIBAQMPRCyFwkYug4QCAgYeiBkLxIwdB0gEBAw9EDIXiRg6DpAICBg6IGQvUjA0HWAQEDA0AMhe5GAoesAgYCAoQdC9iIBQ9cBAgEBQw+E7EUChq4DBAIChh4I2YsEDF0HCAQEDD0QshcJGLoOEAgIGHogZC8SMHQdIBAQMPRAyF4kYOg6QCAgYOiBkL1IwNB1gEBAwNADIXuRgKHrAIGAgKEHQvYiAUPXAQIBAUMPhOxFAoauAwQCAoYeCNmLBAxdBwgEBAw9ELIXCRi6DhAICBh6IGQvEjB0HSAQEDD0QMheJGDoOkAgIGDogZC9SMDQdYBAQMDQAyF7kYCh6wCBgIChB0L2IgFD1wECAQFDD4TsRQKGrgMEAgKGHgjZiwQMXQcIBAQMPRCyFwkYug4QCAgYeiBkLxIwdB0gEBAw9EDIXiRg6DpAICBg6IGQvUjA0HWAQEDA0AMhe5GAoesAgYCAoQdC9iIBQ9cBAgEBQw+E7EUChq4DBAIChh4I2YsEDF0HCAQEDD0QshcJGLoOEAgIGHogZC8SMHQdIBAQMPRAyF4kYOg6QCAgYOiBkL1IwNB1gEBAwNADIXuRgKHrAIGAgKEHQvYiAUPXAQIBAUMPhOxFAoauAwQCAoYeCNmLBAxdBwgEBAw9ELIXCRi6DhAICBh6IGQvEjB0HSAQEDD0QMheJGDoOkAgIGDogZC9SMDQdYBAQMDQAyF7kYCh6wCBgIChB0L2IgFD1wECAQFDD4TsRQKGrgMEAgKGHgjZiwQMXQcIBAQMPRCyFwkYug4QCAgYeiBkLxIwdB0gEBAw9EDIXiRg6DpAICBg6IGQvUjA0HWAQEDA0AMhe5GAoesAgYCAoQdC9iIBQ9cBAgEBQw+E7EUChq4DBAIChh4I2YsEDF0HCAQEDD0QshcJGLoOEAgIGHogZC8SMHQdIBAQMPRAyF4kYOg6QCAgYOiBkL1IwNB1gEBAwNADIXuRgKHrAIGAgKEHQvYiAUPXAQIBAUMPhOxFAoauAwQCAoYeCNmLBAxdBwgEBAw9ELIXCRi6DhAICBh6IGQvEjB0HSAQEDD0QMheJGDoOkAgIGDogZC9SMDQdYBAQMDQAyF7kYCh6wCBgIChB0L2IgFD1wECAYEfSWBG1+auM4sAAAAASUVORK5CYII="); width: 100%; height: 100%;'></div>
+<img data-src="/files/multimedia_related_big/uploads/2020/03/23/5e78f8c080ebf.jpeg" src="/files/multimedia_related_big/uploads/2020/03/23/5e78f8c080ebf.jpeg" class="img-data noColor" style="display: inline;"></a>
+</div>
+            <div class="article-details">
+            <div class="category colombia">
+            
+        <a class="page-link category-title" id="m1129-1-1130" href="/colombia" title="Colombia">Colombia</a>
+</div>
+        <div class="title">
+            
+        <a class="page-link" id="m1134-2-1135" href="/colombia/listo-decreto-de-cuarentena-nacional-que-entra-en-vigencia-a-la-medianoche-del-martes.html">Listo decreto de cuarentena nacional que entra en vigencia a la medianoche del martes</a>
+</div>
+            </div>
+    
+</article>
+</div>
+                    </div>
+
+                                            
+                    
+                                                                    <div class="module-free-html">
+        
+    <div id="p61215594-m302-301-303" class=""><div id="taboola-right-rail"></div></div>
+</div>
+                
+                <div id="clickioSidebar"></div>
+            </div>
+            <div class="article-content">
+                
+                                    
+                    
+
+                    
+
+                    
+                
+                    
+                    
+
+                    
+
+                    
+
+
+                    
+
+
+                    
+
+
+                    
+
+
+                    
+
+
+                    
+
+
+                    
+
+                    
+
+                    
+                            <p class="epigraph paragraph" id="p61371138-m998-997-999">El Decreto 444 de 2020 del Gobierno Nacional, en el que se dictaron disposiciones para la cuarentena obligatoria que iniciará a la medianoche del 24 de marzo, sigue generando polémica este domingo.<br><br>El punto de la discordia es el Artículo 4 de este decreto, que menciona la creación del Fondo de Mitigación de Emergencias (Fome) para hacerle frente a la contingencia del coronavirus o Covid-19 en el país.<br><br>Este fondo será formado con recursos que serán prestados de otros dos fondos relacionados con las entidades territoriales (Alcaldías y Gobernaciones): el Fondo de Ahorro y Estabilización (FAE) y el Fondo Nacional de Pensiones de las Entidades Territoriales (Fonpet).<br><br>Aunque el Gobierno ha dicho que se trataría de un "préstamo" que no afecta la financiación en las regiones, algunos líderes políticos se han manifestado en contra.<br><br>Una de esas voces ha sido la de la exgobernadora del Valle, Dilian Francisca Toro, quien pidió a los actuales alcaldes y gobernadores defender los recursos que les corresponden.<br><br>"Hago un llamado a gobernadores y alcaldes para que defiendan ante el Gobierno Nacional los recursos regionales que el Decreto 444 destina, inconsultamente, a atender la crisis de la pandemia; momentos para ser solidarios: Sí, pero todos debemos poner, respetando la autonomía regional", escribió Toro en su cuenta de Twitter.<br><br>La polémica por este artículo del decreto presidencial también es porque el texto menciona que parte de los recursos del Fondo que se creará, serán usados para "efectuar operaciones de apoyo de liquidez transitorias al sector financiero a través de transferencia temporal de valores, depósitos a plazo, entre otras". <br><br>Lea aquí: <a href="https://www.elpais.com.co/colombia/gobierno-dice-que-recursos-del-fome-para-el-coronavirus-no-seran-para-salvar-la-banca.html" title='Gobierno dice que recursos del FOME para el coronavirus no serán para "salvar la banca"' target="_blank">'Gobierno dice que recursos del FOME para el coronavirus no serán para "salvar la banca"'.</a><br><br>Esto último ha sido interpretado por los alcaldes como tomar dinero de las regiones para, entre otras cosas, darle a los bancos en el país. Así lo planteó la alcaldesa de Bogotá, Claudia López: "Inaudito que el Gobierno Nacional se aproveche de emergencia económica para autoprestarse recursos de los entes territoriales para dárselos a bancos y empresas. Abuso absurdo que además nos disminuye recursos que deben ser para la salud y el cuidado de la gente y  los hogares".<br><br>El rechazo también vino de parte del alcalde de Cali, Jorge Iván Ospina: "No deben utilizarse esos recursos como fuente de apalancamiento a la gran empresa o sector financiero. Somos los territorios en especial las alcadías quienes estamos en primera línea de atender la crisis del coronavirus".<br><br>Incluso, el mandatario de los caleños solicitó al Gobierno Nacional "que expida normatividad extraordinaria que modifique el decreto 444 de 2020 que permita liberar recursos para afrontar la crisis del Covid 19 desde el territorio".<br><br>Lea también: <a href="https://www.elpais.com.co/colombia/polemica-por-decreto-que-destinaria-recursos-para-el-coronavirus-al-sector-financiero.html" title="Polémica por decreto que destinaría recursos para el coronavirus al sector financiero" target="_blank">'Polémica por decreto que destinaría recursos para el coronavirus al sector financiero'.</a></p>
+<div class="headings-container" id="p61371138-m1025-1-1026">
+    
+    
+    
+    
+    
+<h4 id="m1029-1028-1030" class="headline h4">Respuesta del Gobierno</h4>
+</div>
+<p class="paragraph" id="p61371138-m1035-2-1036">Por su parte, el Gobierno Nacional, a través del Ministerio de Hacienda, aseguró que efectivamente el Fondo que se creará para la contingencia del coronavirus tomará recursos de los dos fondos territoriales mencionados. Sin embargo, dice que se tratará de "préstamos" que serán pagados a tiempo y no afectarán el funcionamiento de las regiones.<br><br>"En el Decreto 444 de 2020 se establecieron los mecanismos de repago de esta deuda, con el fin de garantizar que las entidades territoriales tengan acceso a los mismos en el momento que han sido estipulados por Ley", dijo el Ministerio de Hacienda.<br><br>Y dio explicaciones para cada uno de los dos fondos territoriales:<br><br>"En el caso del préstamo del Fondo de Ahorro y Estabilización, no se comprometen los recursos del Sistema General de Regalías al que tienen derecho las entidades territoriales al momento de ser requerido el desahorro. Estos recursos serán repagados, a partir de la vigencia 2023".<br><br>"Y en el caso del Fonpet, los recursos serán repagados en las próximas 10 vigencias lo que garantiza que las entidades territoriales puedan seguir cumpliendo con el pago de sus obligaciones pensionales".<br><br>"Es importante resaltar que el préstamo de recursos del Fonpet, no compromete los recursos del desahorro al que tienen derecho las entidades territoriales y que se garantizan sus recursos para atender la crisis que vivimos todos los colombianos".</p>
+</div>
+        </div>
+                                            <div id="untilEraseContent" class="disabled"></div>
+                            <div class="free-html-article-under-content">
+                                <div class="module-free-ads">
+        
+        
+    <div class="article-content">
+<a href="https://news.google.com/publications/CAAqBwgKMLGakQswx9-lAw?hl=es-419&amp;gl=CO&amp;ceid=CO%3Aes-419" target="_blank"><img src="https://www.elpais.com.co/assets/servicios/googleNews-button-2.png" width="550"></a>
+</div>
+<div id="Vidoomy" style="float: left; padding: 0 85px;"></div>
+</div>
+                            </div>
+                                                                        <div class="article-comments">
+                    <a class="linkSuscripcion" target="_blank" href="https://suscripciones.elpais.com.co/?utm_source=elpais&amp;utm_medium=Notainterna&amp;utm_campaign=oferta800primermes">¡Hoy! Suscríbete por $37 mil y accede ilimitadamente a El País</a>
+                        
+    <div class="show-hide-comments caret-up">
+        <div class="square-icons">
+            <div class="square-icon square-comment-34">
+                <div class="total-comments" rel="contar-comentarios">
+                                        <span class="fb-comments-count" data-href="https://www.elpais.com.co/valle/alcaldes-y-gobernadores-deben-defender-los-recursos-regionales-dilian-francisca-toro.html"></span>
+                </div>
+            </div>
+        </div>
+        <span class="view-comments-text">VER COMENTARIOS</span>
+    </div>
+    <div class="comments-container hide">
+        <div class="fb-comments" data-href="https://www.elpais.com.co/valle/alcaldes-y-gobernadores-deben-defender-los-recursos-regionales-dilian-francisca-toro.html" data-colorscheme="light" data-width="100%" data-order-by="reverse_time" data-numposts="5">
+        </div>
+    </div>
+
+                    </div>
+                    
+                                        <div align="center">
+                        <div class="container-full free-html-article-under-content">
+                            <div class="module-free-all">
+        
+        
+        
+    </div>
+                        </div>
+                    </div>
+                        
+            </div>
+
+    
+    <div class="container-full">
+			<div class="container">
+				<div class="row">					<div class="container" id="taboola-below-content-thumbnails"></div>
+									</div>
+			</div>
+		</div>
+		<div class="hidden ads-slider-zoom"></div><div class="container-full container-lightgrey3">
+		      <div class="container homepage-news">
+		        <div class="row"><div class="col-xs-12 board-title">
+    AHORA EN
+    <span>PORTADA</span>
+</div>
+            <div class="row">
+	        <div class="col-xs-9 articleDefault article-9cols details-float-image no-before" itemscope itemtype="https://schema.org/NewsArticle">
+	                						        <div class="image-container">
+			            			            <a title="Las denuncias que crearon un manto de duda sobre contrato para el software de Catastro en Cali" href="https://www.elpais.com.co/contenido-premium/las-denuncias-que-crearon-un-manto-de-duda-sobre-contrato-para-el-software-de-catastro-en-cali.html" class="image">
+			                <img alt="Las denuncias que crearon un manto de duda sobre contrato para el software de Catastro en Cali" src="https://www.elpais.com.co/files/articleType_9cols_v1/uploads/2022/10/26/635a045f61562.jpeg" />
+			            </a>
+			        </div>
+
+			        <div class="article-details">
+			            <div class="category contenido-premium">
+			                <a title="Contenido premium" href="https://www.elpais.com.co/contenido-premium">
+			                    Contenido premium
+			                </a>
+			            </div>
+			            <div class="title">
+			                <a title="Las denuncias que crearon un manto de duda sobre contrato para el software de Catastro en Cali" href="https://www.elpais.com.co/contenido-premium/las-denuncias-que-crearon-un-manto-de-duda-sobre-contrato-para-el-software-de-catastro-en-cali.html">
+			                    Las denuncias que crearon un manto de duda sobre contrato para el software de Catastro en Cali
+			                </a>
+			            </div>
+			        </div>
+
+					<span class="schemeArticle disabled">
+						<meta itemprop="headline" content="Las denuncias que crearon un manto de duda sobre contrato para el software de Catastro en Cali">
+						<span itemprop="author" itemscope itemtype="https://schema.org/Person">
+							<span itemprop="name">Gerson David Hincapie Patiño</span>
+						</span>
+						<meta itemprop="datePublished" content="2022-10-26">
+						<meta itemprop="dateModified" content="2022-10-26">
+						<meta itemprop="mainEntityOfPage" itemscope itemtype="https://schema.org/WebPage" itemid="https://www.elpais.com.co/contenido-premium/las-denuncias-que-crearon-un-manto-de-duda-sobre-contrato-para-el-software-de-catastro-en-cali.html">
+						<span itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+							<meta itemprop="name" content="El Pais.com.co">
+							<meta itemprop="url" content="https://www.elpais.com.co">
+							<span itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+								<meta itemprop="url" content="https://www.elpais.com.co/images/logos/logo-2022.png">
+								<meta itemprop="width" content="439">
+								<meta itemprop="height" content="57">
+							</span>
+						</span>
+						<span itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+							<meta itemprop="url" content="https://www.elpais.com.co/files/articleType_breaking_news/uploads/2022/10/26/635a045f61562.jpeg">
+							<meta itemprop="width" content="647">
+							<meta itemprop="height" content="431">
+						</span>
+					</span>
+    
+
+	        </div>
+            
+            	        <div class="col-xs-3 articleDefault article-3cols" itemscope itemtype="https://schema.org/NewsArticle">
+	                						        <div class="image-container">
+			            			            <a title="Emergencia por lluvias en el Valle: hay más de 4500 personas afectadas en Dagua y Buenaventura" href="https://www.elpais.com.co/contenido-premium/emergencia-por-lluvias-en-el-valle-hay-mas-de-4500-personas-afectadas-en-dagua-y-buenaventura.html" class="image">
+			                <img alt="Emergencia por lluvias en el Valle: hay más de 4500 personas afectadas en Dagua y Buenaventura" src="https://www.elpais.com.co/files/articleType_3cols/uploads/2022/10/26/6359efceea9ea.jpeg" />
+			            </a>
+			        </div>
+
+			        <div class="article-details">
+			            <div class="category contenido-premium">
+			                <a title="Contenido premium" href="https://www.elpais.com.co/contenido-premium">
+			                    Contenido premium
+			                </a>
+			            </div>
+			            <div class="title">
+			                <a title="Emergencia por lluvias en el Valle: hay más de 4500 personas afectadas en Dagua y Buenaventura" href="https://www.elpais.com.co/contenido-premium/emergencia-por-lluvias-en-el-valle-hay-mas-de-4500-personas-afectadas-en-dagua-y-buenaventura.html">
+			                    Emergencia por lluvias en el Valle: hay más de 4500 personas afectadas en Dagua y Buenaventura
+			                </a>
+			            </div>
+			        </div>
+
+					<span class="schemeArticle disabled">
+						<meta itemprop="headline" content="Emergencia por lluvias en el Valle: hay más de 4500 personas afectadas en Dagua y Buenaventura">
+						<span itemprop="author" itemscope itemtype="https://schema.org/Person">
+							<span itemprop="name">Gerson David Hincapie Patiño</span>
+						</span>
+						<meta itemprop="datePublished" content="2022-10-26">
+						<meta itemprop="dateModified" content="2022-10-26">
+						<meta itemprop="mainEntityOfPage" itemscope itemtype="https://schema.org/WebPage" itemid="https://www.elpais.com.co/contenido-premium/emergencia-por-lluvias-en-el-valle-hay-mas-de-4500-personas-afectadas-en-dagua-y-buenaventura.html">
+						<span itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+							<meta itemprop="name" content="El Pais.com.co">
+							<meta itemprop="url" content="https://www.elpais.com.co">
+							<span itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+								<meta itemprop="url" content="https://www.elpais.com.co/images/logos/logo-2022.png">
+								<meta itemprop="width" content="439">
+								<meta itemprop="height" content="57">
+							</span>
+						</span>
+						<span itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+							<meta itemprop="url" content="https://www.elpais.com.co/files/articleType_breaking_news/uploads/2022/10/26/6359efceea9ea.jpeg">
+							<meta itemprop="width" content="647">
+							<meta itemprop="height" content="431">
+						</span>
+					</span>
+    
+
+	        </div>
+        </div>
+        
+                        <div class="col-xs-3 articleDefault article-3cols" itemscope itemtype="https://schema.org/NewsArticle">
+                						        <div class="image-container">
+			            			            <a title="Video: Babillas en Jamundí: la comunidad reacciona por la presencia de estos reptiles en su barrio" href="https://www.elpais.com.co/valle/video-babillas-en-jamundi-la-comunidad-reacciona-por-la-presencia-de-estos-reptiles-en-su-barrio.html" class="image">
+			                <img alt="Video: Babillas en Jamundí: la comunidad reacciona por la presencia de estos reptiles en su barrio" src="https://www.elpais.com.co/files/articleType_3cols/uploads/2022/10/26/635a087717aaf.png" />
+			            </a>
+			        </div>
+
+			        <div class="article-details">
+			            <div class="category valle">
+			                <a title="Valle" href="https://www.elpais.com.co/valle">
+			                    Valle
+			                </a>
+			            </div>
+			            <div class="title">
+			                <a title="Video: Babillas en Jamundí: la comunidad reacciona por la presencia de estos reptiles en su barrio" href="https://www.elpais.com.co/valle/video-babillas-en-jamundi-la-comunidad-reacciona-por-la-presencia-de-estos-reptiles-en-su-barrio.html">
+			                    Video: Babillas en Jamundí: la comunidad reacciona por la presencia de estos reptiles en su barrio
+			                </a>
+			            </div>
+			        </div>
+
+					<span class="schemeArticle disabled">
+						<meta itemprop="headline" content="Video: Babillas en Jamundí: la comunidad reacciona por la presencia de estos reptiles en su barrio">
+						<span itemprop="author" itemscope itemtype="https://schema.org/Person">
+							<span itemprop="name">Natalia Londoño</span>
+						</span>
+						<meta itemprop="datePublished" content="2022-10-26">
+						<meta itemprop="dateModified" content="2022-10-26">
+						<meta itemprop="mainEntityOfPage" itemscope itemtype="https://schema.org/WebPage" itemid="https://www.elpais.com.co/valle/video-babillas-en-jamundi-la-comunidad-reacciona-por-la-presencia-de-estos-reptiles-en-su-barrio.html">
+						<span itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+							<meta itemprop="name" content="El Pais.com.co">
+							<meta itemprop="url" content="https://www.elpais.com.co">
+							<span itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+								<meta itemprop="url" content="https://www.elpais.com.co/images/logos/logo-2022.png">
+								<meta itemprop="width" content="439">
+								<meta itemprop="height" content="57">
+							</span>
+						</span>
+						<span itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+							<meta itemprop="url" content="https://www.elpais.com.co/files/articleType_breaking_news/uploads/2022/10/26/635a087717aaf.png">
+							<meta itemprop="width" content="647">
+							<meta itemprop="height" content="431">
+						</span>
+					</span>
+    
+
+        </div>
+    
+                        <div class="col-xs-3 articleDefault article-3cols" itemscope itemtype="https://schema.org/NewsArticle">
+                						        <div class="image-container">
+			            			            <a title="El plan de las autoridades caleñas para controlar las caravanas de motociclistas durante Halloween" href="https://www.elpais.com.co/judicial/el-plan-de-las-autoridades-calenas-para-controlar-las-caravanas-de-motociclistas-durante-halloween.html" class="image">
+			                <img alt="El plan de las autoridades caleñas para controlar las caravanas de motociclistas durante Halloween" src="https://www.elpais.com.co/files/articleType_3cols/uploads/2022/10/26/6359d11aec032.jpeg" />
+			            </a>
+			        </div>
+
+			        <div class="article-details">
+			            <div class="category judicial">
+			                <a title="Judicial" href="https://www.elpais.com.co/judicial">
+			                    Judicial
+			                </a>
+			            </div>
+			            <div class="title">
+			                <a title="El plan de las autoridades caleñas para controlar las caravanas de motociclistas durante Halloween" href="https://www.elpais.com.co/judicial/el-plan-de-las-autoridades-calenas-para-controlar-las-caravanas-de-motociclistas-durante-halloween.html">
+			                    El plan de las autoridades caleñas para controlar las caravanas de motociclistas durante Halloween
+			                </a>
+			            </div>
+			        </div>
+
+					<span class="schemeArticle disabled">
+						<meta itemprop="headline" content="El plan de las autoridades caleñas para controlar las caravanas de motociclistas durante Halloween">
+						<span itemprop="author" itemscope itemtype="https://schema.org/Person">
+							<span itemprop="name">Redacción El País</span>
+						</span>
+						<meta itemprop="datePublished" content="2022-10-26">
+						<meta itemprop="dateModified" content="2022-10-26">
+						<meta itemprop="mainEntityOfPage" itemscope itemtype="https://schema.org/WebPage" itemid="https://www.elpais.com.co/judicial/el-plan-de-las-autoridades-calenas-para-controlar-las-caravanas-de-motociclistas-durante-halloween.html">
+						<span itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+							<meta itemprop="name" content="El Pais.com.co">
+							<meta itemprop="url" content="https://www.elpais.com.co">
+							<span itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+								<meta itemprop="url" content="https://www.elpais.com.co/images/logos/logo-2022.png">
+								<meta itemprop="width" content="439">
+								<meta itemprop="height" content="57">
+							</span>
+						</span>
+						<span itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+							<meta itemprop="url" content="https://www.elpais.com.co/files/articleType_breaking_news/uploads/2022/10/26/6359d11aec032.jpeg">
+							<meta itemprop="width" content="647">
+							<meta itemprop="height" content="431">
+						</span>
+					</span>
+    
+
+        </div>
+    
+                        <div class="col-xs-3 articleDefault article-3cols" itemscope itemtype="https://schema.org/NewsArticle">
+                						        <div class="image-container">
+			            			            <a title="Garantizan recursos para construir sótanos y parque de lectura en la Manzana del Saber" href="https://www.elpais.com.co/cali/garantizan-recursos-para-construir-sotanos-y-parque-de-lectura-en-la-manzana-del-saber.html" class="image">
+			                <img alt="Garantizan recursos para construir sótanos y parque de lectura en la Manzana del Saber" src="https://www.elpais.com.co/files/articleType_3cols/uploads/2022/10/26/6359c1434a6c4.jpeg" />
+			            </a>
+			        </div>
+
+			        <div class="article-details">
+			            <div class="category cali">
+			                <a title="Cali" href="https://www.elpais.com.co/cali">
+			                    Cali
+			                </a>
+			            </div>
+			            <div class="title">
+			                <a title="Garantizan recursos para construir sótanos y parque de lectura en la Manzana del Saber" href="https://www.elpais.com.co/cali/garantizan-recursos-para-construir-sotanos-y-parque-de-lectura-en-la-manzana-del-saber.html">
+			                    Garantizan recursos para construir sótanos y parque de lectura en la Manzana del Saber
+			                </a>
+			            </div>
+			        </div>
+
+					<span class="schemeArticle disabled">
+						<meta itemprop="headline" content="Garantizan recursos para construir sótanos y parque de lectura en la Manzana del Saber">
+						<span itemprop="author" itemscope itemtype="https://schema.org/Person">
+							<span itemprop="name">Juan Camilo Villaquiran</span>
+						</span>
+						<meta itemprop="datePublished" content="2022-10-26">
+						<meta itemprop="dateModified" content="2022-10-26">
+						<meta itemprop="mainEntityOfPage" itemscope itemtype="https://schema.org/WebPage" itemid="https://www.elpais.com.co/cali/garantizan-recursos-para-construir-sotanos-y-parque-de-lectura-en-la-manzana-del-saber.html">
+						<span itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+							<meta itemprop="name" content="El Pais.com.co">
+							<meta itemprop="url" content="https://www.elpais.com.co">
+							<span itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+								<meta itemprop="url" content="https://www.elpais.com.co/images/logos/logo-2022.png">
+								<meta itemprop="width" content="439">
+								<meta itemprop="height" content="57">
+							</span>
+						</span>
+						<span itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+							<meta itemprop="url" content="https://www.elpais.com.co/files/articleType_breaking_news/uploads/2022/10/26/6359c1434a6c4.jpeg">
+							<meta itemprop="width" content="647">
+							<meta itemprop="height" content="431">
+						</span>
+					</span>
+    
+
+        </div>
+    
+                        <div class="col-xs-3 articleDefault article-3cols" itemscope itemtype="https://schema.org/NewsArticle">
+                						        <div class="image-container">
+			            			            <a title="'Peluqueada' de la reforma tributaria pone en riesgo algunos programas clave del Gobierno Petro" href="https://www.elpais.com.co/economia/peluqueada-de-la-reforma-tributaria-pone-en-riesgo-algunos-programas-clave-del-gobierno-petro.html" class="image">
+			                <img alt="'Peluqueada' de la reforma tributaria pone en riesgo algunos programas clave del Gobierno Petro" src="https://www.elpais.com.co/files/articleType_3cols/uploads/2021/04/17/607b0e9d58eb7.png" />
+			            </a>
+			        </div>
+
+			        <div class="article-details">
+			            <div class="category economía">
+			                <a title="Economía" href="https://www.elpais.com.co/economia">
+			                    Economía
+			                </a>
+			            </div>
+			            <div class="title">
+			                <a title="'Peluqueada' de la reforma tributaria pone en riesgo algunos programas clave del Gobierno Petro" href="https://www.elpais.com.co/economia/peluqueada-de-la-reforma-tributaria-pone-en-riesgo-algunos-programas-clave-del-gobierno-petro.html">
+			                    'Peluqueada' de la reforma tributaria pone en riesgo algunos programas clave del Gobierno Petro
+			                </a>
+			            </div>
+			        </div>
+
+					<span class="schemeArticle disabled">
+						<meta itemprop="headline" content="'Peluqueada' de la reforma tributaria pone en riesgo algunos programas clave del Gobierno Petro">
+						<span itemprop="author" itemscope itemtype="https://schema.org/Person">
+							<span itemprop="name">Adriana Maria Becerra</span>
+						</span>
+						<meta itemprop="datePublished" content="2022-10-26">
+						<meta itemprop="dateModified" content="2022-10-26">
+						<meta itemprop="mainEntityOfPage" itemscope itemtype="https://schema.org/WebPage" itemid="https://www.elpais.com.co/economia/peluqueada-de-la-reforma-tributaria-pone-en-riesgo-algunos-programas-clave-del-gobierno-petro.html">
+						<span itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+							<meta itemprop="name" content="El Pais.com.co">
+							<meta itemprop="url" content="https://www.elpais.com.co">
+							<span itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+								<meta itemprop="url" content="https://www.elpais.com.co/images/logos/logo-2022.png">
+								<meta itemprop="width" content="439">
+								<meta itemprop="height" content="57">
+							</span>
+						</span>
+						<span itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+							<meta itemprop="url" content="https://www.elpais.com.co/files/articleType_breaking_news/uploads/2021/04/17/607b0e9d58eb7.png">
+							<meta itemprop="width" content="647">
+							<meta itemprop="height" content="431">
+						</span>
+					</span>
+    
+
+        </div>
+    
+                
+                        <div class="col-xs-12 bottom-articles">
+                    <div class="col-xs-4 articleDefault article-4cols" itemscope itemtype="https://schema.org/NewsArticle">
+                    						        <div class="image-container">
+			            			            <a title="Pico y placa en Cali para este jueves 27 de octubre" href="https://www.elpais.com.co/cali/pico-y-placa-en-para-este-jueves-27-de-octubre.html" class="image">
+			                <img alt="Pico y placa en Cali para este jueves 27 de octubre" src="https://www.elpais.com.co/files/articleType_4cols/uploads/2022/08/23/63054746d165a.jpeg" />
+			            </a>
+			        </div>
+
+			        <div class="article-details">
+			            <div class="category cali">
+			                <a title="Cali" href="https://www.elpais.com.co/cali">
+			                    Cali
+			                </a>
+			            </div>
+			            <div class="title">
+			                <a title="Pico y placa en Cali para este jueves 27 de octubre" href="https://www.elpais.com.co/cali/pico-y-placa-en-para-este-jueves-27-de-octubre.html">
+			                    Pico y placa en Cali para este jueves 27 de octubre
+			                </a>
+			            </div>
+			        </div>
+
+					<span class="schemeArticle disabled">
+						<meta itemprop="headline" content="Pico y placa en Cali para este jueves 27 de octubre">
+						<span itemprop="author" itemscope itemtype="https://schema.org/Person">
+							<span itemprop="name">Natalia Londoño</span>
+						</span>
+						<meta itemprop="datePublished" content="2022-10-26">
+						<meta itemprop="dateModified" content="2022-10-26">
+						<meta itemprop="mainEntityOfPage" itemscope itemtype="https://schema.org/WebPage" itemid="https://www.elpais.com.co/cali/pico-y-placa-en-para-este-jueves-27-de-octubre.html">
+						<span itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+							<meta itemprop="name" content="El Pais.com.co">
+							<meta itemprop="url" content="https://www.elpais.com.co">
+							<span itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+								<meta itemprop="url" content="https://www.elpais.com.co/images/logos/logo-2022.png">
+								<meta itemprop="width" content="439">
+								<meta itemprop="height" content="57">
+							</span>
+						</span>
+						<span itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+							<meta itemprop="url" content="https://www.elpais.com.co/files/articleType_breaking_news/uploads/2022/08/23/63054746d165a.jpeg">
+							<meta itemprop="width" content="647">
+							<meta itemprop="height" content="431">
+						</span>
+					</span>
+    
+
+            </div>
+                        
+                        <div class="col-xs-4 articleDefault article-4cols" itemscope itemtype="https://schema.org/NewsArticle">
+                    						        <div class="image-container">
+			            			            <a title="Rusia efectúa simulacros nucleares ante una posible amenaza de Ucrania" href="https://www.elpais.com.co/mundo/rusia-efectua-simulacros-nucleares-ante-una-posible-amenaza-de-ucrania.html" class="image">
+			                <img alt="Rusia efectúa simulacros nucleares ante una posible amenaza de Ucrania" src="https://www.elpais.com.co/files/articleType_4cols/uploads/2022/10/26/635a0d524050d.jpeg" />
+			            </a>
+			        </div>
+
+			        <div class="article-details">
+			            <div class="category mundo">
+			                <a title="Mundo" href="https://www.elpais.com.co/mundo">
+			                    Mundo
+			                </a>
+			            </div>
+			            <div class="title">
+			                <a title="Rusia efectúa simulacros nucleares ante una posible amenaza de Ucrania" href="https://www.elpais.com.co/mundo/rusia-efectua-simulacros-nucleares-ante-una-posible-amenaza-de-ucrania.html">
+			                    Rusia efectúa simulacros nucleares ante una posible amenaza de Ucrania
+			                </a>
+			            </div>
+			        </div>
+
+					<span class="schemeArticle disabled">
+						<meta itemprop="headline" content="Rusia efectúa simulacros nucleares ante una posible amenaza de Ucrania">
+						<span itemprop="author" itemscope itemtype="https://schema.org/Person">
+							<span itemprop="name">Natalia Londoño</span>
+						</span>
+						<meta itemprop="datePublished" content="2022-10-26">
+						<meta itemprop="dateModified" content="2022-10-26">
+						<meta itemprop="mainEntityOfPage" itemscope itemtype="https://schema.org/WebPage" itemid="https://www.elpais.com.co/mundo/rusia-efectua-simulacros-nucleares-ante-una-posible-amenaza-de-ucrania.html">
+						<span itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+							<meta itemprop="name" content="El Pais.com.co">
+							<meta itemprop="url" content="https://www.elpais.com.co">
+							<span itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+								<meta itemprop="url" content="https://www.elpais.com.co/images/logos/logo-2022.png">
+								<meta itemprop="width" content="439">
+								<meta itemprop="height" content="57">
+							</span>
+						</span>
+						<span itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+							<meta itemprop="url" content="https://www.elpais.com.co/files/articleType_breaking_news/uploads/2022/10/26/635a0d524050d.jpeg">
+							<meta itemprop="width" content="647">
+							<meta itemprop="height" content="431">
+						</span>
+					</span>
+    
+
+            </div>
+        	            <div class="col-xs-4 articleDefault article-4cols">
+	                <div class="module-free-ads">
+        
+        
+    <div id="div-gpt-ad-Ahora_en_Portada_300x250" class="admanagerspace" style="text-align:center;"></div>
+<div class="ads-title" id="p577-m745-1-746">Publicidad</div>
+</div>
+	            </div>
+            </div>
+            </div>
+		      </div>
+		    </div>
+    <img class="img-tracking" src="https://www.elpais.com.co/track/pageviews/article-61371138" width="1" height="1" />
+			<footer>            <div class="top-content container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="sitemap-title">Mapa del Sitio</div>
+                    <div class="sitemap-board">
+                        <div class="col-xs-2 first">
+        
+
+    <div class="sitemap-module bold-text" id="p610917-m3307-3306-3308">
+
+    
+
+    
+
+<a href="#" class="page-link undefined" id="m3312-3311-3313" title="SERVICIO AL CLIENTE">SERVICIO AL CLIENTE</a>
+</div>
+<div class="sitemap-module" id="p610917-m3379-1-3380">
+
+    
+
+    
+
+<a href="https://www.elpais.com.co/servicios/paute-aqui" class="page-link undefined" id="m3384-3383-3385" title="Anuncie">Anuncie</a>
+</div>
+<div class="sitemap-module" id="p610917-m3451-2-3452">
+
+    
+
+    
+
+<a href="https://elpais.com.co/servicios/suscripciones" class="page-link undefined" id="m3456-3455-3457" title="Suscribirse a El País" target="_blank">Suscríbase o renueve su suscripción a El País</a>
+</div>
+<div class="sitemap-module" id="p610917-m3523-3-3524">
+
+    
+
+    
+
+<a href="https://www.elpais.com.co/servicios/faqs" class="page-link undefined" id="m3528-3527-3529" title="Faqs Registro">Faqs Registro</a>
+</div>
+<div class="sitemap-module" id="p610917-m3595-4-3596">
+
+    
+
+    
+
+<a href="https://www.elpais.com.co/servicios/faqs-suscripciones-digitales" class="page-link undefined" id="m3600-3599-3601" title="Faqs suscripciones digitales">Faqs suscripciones digitales</a>
+</div>
+<div class="sitemap-module" id="p610917-m3667-5-3668">
+
+    
+
+    
+
+<a href="https://www.elpais.com.co/servicios/usuarios-registrados-vs-suscriptores-digitales" class="page-link undefined" id="m3672-3671-3673" title="Usuarios registrados vs suscriptores digitales">Usuarios registrados vs suscriptores digitales</a>
+</div>
+<div class="sitemap-module" id="p610917-m3739-6-3740">
+
+    
+
+    
+
+<a href="https://www.elpais.com.co/contactenos" class="page-link undefined" id="m3744-3743-3745" title="Contactar E País Cali">Contáctenos</a>
+</div>
+<div class="sitemap-module" id="p610917-m3811-7-3812">
+
+    
+
+    
+
+<a href="https://elpais.com.co?modal=login" class="page-link undefined" id="m3816-3815-3817" title="Iniciar sesión">Iniciar sesión</a>
+</div>
+<div class="sitemap-module" id="p610917-m3883-8-3884">
+
+    
+
+    
+
+<a href="https://elpais.com.co?modal=register" class="page-link undefined" id="m3888-3887-3889" title="Registrarse a El País">Regístrese</a>
+</div>
+<div class="sitemap-module" id="p610917-m3955-9-3956">
+
+    
+
+    
+
+<a href="https://www.elpais.com.co/servicios/moviles" class="page-link undefined" id="m3960-3959-3961" title="Información de versión móvil">Información de versión móvil</a>
+</div>
+<div class="sitemap-module" id="p610917-m4027-10-4028">
+
+    
+
+    
+
+<a href="https://m.elpais.com.co/" class="page-link undefined" id="m4032-4031-4033" title="Ir a versión móvil">Ir a versión móvil</a>
+</div>
+<div class="sitemap-module" id="p610917-m4099-11-4100">
+
+    
+
+    
+
+<a href="https://www.elpais.com.co/servicios/newsstand" class="page-link undefined" id="m4104-4103-4105" title="Versión iPad">Versión iPad</a>
+</div>
+<div class="sitemap-module" id="p610917-m4171-12-4172">
+
+    
+
+    
+
+<a href="https://www.facebook.com/diarioelpaiscali" class="page-link undefined" id="m4176-4175-4177" title="Síguenos en facebook" target="_blank">Síguenos en facebook</a>
+</div>
+<div class="sitemap-module" id="p610917-m4243-13-4244">
+
+    
+
+    
+
+<a href="https://www.youtube.com/user/elpaiscali" class="page-link undefined" id="m4248-4247-4249" title="Síguenos en Youtube" target="_blank">Síguenos en Youtube</a>
+</div>
+<div class="sitemap-module bold-text" id="p610917-m4303-14-4304">
+
+    
+
+    
+
+<a href="#" class="page-link undefined" id="m4308-4307-4309" title="SERVICIOS">SERVICIOS</a>
+</div>
+<div class="sitemap-module" id="p610917-m4351-15-4352">
+
+    
+
+    
+
+<a href="https://www.elpais.com.co/cali/pico-y-placa" class="page-link undefined" id="m4356-4355-4357" title="Pico y Placa en Cali">Pico y Placa Cali</a>
+</div>
+</div><div class="col-xs-2 second">
+        
+
+    <div class="sitemap-module bold-text" id="p610917-m3319-3318-3320">
+
+    
+
+    
+
+<a href="#" class="page-link undefined" id="m3324-3323-3325" title="">Secciones</a>
+</div>
+<div class="sitemap-module" id="p610917-m3391-1-3392">
+
+    
+
+    
+
+<a href="https://www.elpais.com.co" class="page-link undefined" id="m3396-3395-3397" title="El País Cali">Principal</a>
+</div>
+<div class="sitemap-module" id="p610917-m3463-2-3464">
+
+    
+
+    
+
+<a href="https://www.elpais.com.co/cali" class="page-link undefined" id="m3468-3467-3469" title="Noticias de Cali">Cali</a>
+</div>
+<div class="sitemap-module" id="p610917-m3535-3-3536">
+
+    
+
+    
+
+<a href="https://www.elpais.com.co/valle" class="page-link undefined" id="m3540-3539-3541" title="Noticias Valle del Cauca">Valle </a>
+</div>
+<div class="sitemap-module" id="p610917-m3607-4-3608">
+
+    
+
+    
+
+<a href="https://www.elpais.com.co/opinion" class="page-link undefined" id="m3612-3611-3613" title="Opinión, Columnas, caricaturas">Opinión</a>
+</div>
+<div class="sitemap-module" id="p610917-m3679-5-3680">
+
+    
+
+    
+
+<a href="https://www.elpais.com.co/colombia" class="page-link undefined" id="m3684-3683-3685" title="Colombia">Colombia</a>
+</div>
+<div class="sitemap-module" id="p610917-m3751-6-3752">
+
+    
+
+    
+
+<a href="https://www.elpais.com.co/economia" class="page-link undefined" id="m3756-3755-3757" title="Noticias de economía Colombiana, regional e Internacional">Economía</a>
+</div>
+<div class="sitemap-module" id="p610917-m3823-7-3824">
+
+    
+
+    
+
+<a href="https://www.elpais.com.co/deportes" class="page-link undefined" id="m3828-3827-3829" title="Deportes">Deportes</a>
+</div>
+<div class="sitemap-module" id="p610917-m3895-8-3896">
+
+    
+
+    
+
+<a href="https://www.elpais.com.co/judicial" class="page-link undefined" id="m3900-3899-3901" title="Noticias Judiciales">Judicial</a>
+</div>
+<div class="sitemap-module" id="p610917-m3967-9-3968">
+
+    
+
+    
+
+<a href="https://www.elpais.com.co/mundo" class="page-link undefined" id="m3972-3971-3973" title="Noticias internacionales">Mundos</a>
+</div>
+<div class="sitemap-module bold-text" id="p610917-m4039-10-4040">
+
+    
+
+    
+
+<a href="https://www.metroxmetro.com/" class="page-link undefined" id="m4044-4043-4045" title="">METRO X METRO</a>
+</div>
+<div class="sitemap-module" id="p610917-m4111-11-4112">
+
+    
+
+    
+
+<a href="https://www.metroxmetro.com/" class="page-link undefined" id="m4116-4115-4117" title="Vivienda nueva en Cali" target="_blank">Vivienda nueva</a>
+</div>
+<div class="sitemap-module" id="p610917-m4183-12-4184">
+
+    
+
+    
+
+<a href="https://www.metroxmetro.com/proyectos-de-vivienda/cali" class="page-link undefined" id="m4188-4187-4189" title="Proyectos de vivienda nueva en Cali" target="_blank">Proyectos de vivienda nueva en Cali</a>
+</div>
+<div class="sitemap-module" id="p610917-m4255-13-4256">
+
+    
+
+    
+
+<a href="https://www.metroxmetro.com/proyectos-de-vivienda/jamundi" class="page-link undefined" id="m4260-4259-4261" title="Proyectos de vivienda nueva en Jamundí" target="_blank">Proyectos de vivienda nueva en Jamundí</a>
+</div>
+<div class="sitemap-module" id="p610917-m4315-14-4316">
+
+    
+
+    
+
+<a href="https://www.metroxmetro.com/proyectos-de-vivienda/palmira" class="page-link undefined" id="m4320-4319-4321" title="Proyectos de vivienda nueva en Palmira" target="_blank">Proyectos de vivienda nueva en Palmira</a>
+</div>
+</div><div class="col-xs-2 third">
+        
+
+    <div class="sitemap-module bold-text" id="p610917-m3331-3330-3332">
+
+    
+
+    
+
+<a href="#" class="page-link undefined" id="m3336-3335-3337" title="">TEMAS</a>
+</div>
+<div class="sitemap-module" id="p610917-m3403-1-3404">
+
+    
+
+    
+
+<a href="https://www.elpais.com.co/cali/pico-y-placa" class="page-link undefined" id="m3408-3407-3409" title="Pico y placa en Cali">Pico y Placa en Cali</a>
+</div>
+<div class="sitemap-module" id="p610917-m3475-2-3476">
+
+    
+
+    
+
+<a href="https://www.elpais.com.co/ultimo-minuto/salario-minimo-2022-en-colombia-asi-quedo-definido-el-aumento.html" class="page-link undefined" id="m3480-3479-3481" title="Salario mínimo 2022">Salario mínimo 2022</a>
+</div>
+<div class="sitemap-module" id="p610917-m3547-3-3548">
+
+    
+
+    
+
+<a href="https://www.elpais.com.co/deportivo-cali" class="page-link undefined" id="m3552-3551-3553" title="Deportivo Cali">Deportivo Cali</a>
+</div>
+<div class="sitemap-module" id="p610917-m3619-4-3620">
+
+    
+
+    
+
+<a href="https://www.elpais.com.co/noticias/liga-aguila" class="page-link undefined" id="m3624-3623-3625" title="Liga Águila">Liga Águila</a>
+</div>
+<div class="sitemap-module" id="p610917-m3691-5-3692">
+
+    
+
+    
+
+<a href="https://www.elpais.com.co/deportes/futbol-internacional" class="page-link undefined" id="m3696-3695-3697" title="Fútbol internacional">Fútbol Internacional</a>
+</div>
+<div class="sitemap-module" id="p610917-m3763-6-3764">
+
+    
+
+    
+
+<a href="https://www.elpais.com.co/copa-america/2019/calendario" class="page-link undefined" id="m3768-3767-3769" title="Calendario Copa América">Calendario</a>
+</div>
+<div class="sitemap-module" id="p610917-m3835-7-3836">
+
+    
+
+    
+
+<a href="https://www.elpais.com.co/copa-america/2019/seleccion-colombia" class="page-link undefined" id="m3840-3839-3841" title="Selección Colombia">Selección Colombia</a>
+</div>
+<div class="sitemap-module" id="p610917-m3907-8-3908">
+
+    
+
+    
+
+<a href="https://www.elpais.com.co/copa-america/2019/videos" class="page-link undefined" id="m3912-3911-3913" title="Videos Copa América">Videos de la Copa</a>
+</div>
+<div class="sitemap-module bold-text" id="p610917-m3979-9-3980">
+
+    
+
+    
+
+<a href="#" class="page-link undefined" id="m3984-3983-3985" title="">PLAN CIUDAD</a>
+</div>
+<div class="sitemap-module" id="p610917-m4051-10-4052">
+
+    
+
+    
+
+<a href="https://www.planciudad.com/" class="page-link undefined" id="m4056-4055-4057" title="Eventos en Cali" target="_blank">Eventos en Cali</a>
+</div>
+<div class="sitemap-module" id="p610917-m4123-11-4124">
+
+    
+
+    
+
+<a href="https://www.planciudad.com/restaurantes" class="page-link undefined" id="m4128-4127-4129" title="Restaurantes en Cali" target="_blank">Restaurantes en Cali</a>
+</div>
+<div class="sitemap-module" id="p610917-m4195-12-4196">
+
+    
+
+    
+
+<a href="https://www.planciudad.com/bares-discotecas" class="page-link undefined" id="m4200-4199-4201" title="Bares y discotecas en Cali" target="_blank">Bares y discotecas en Cali</a>
+</div>
+<div class="sitemap-module" id="p610917-m4267-13-4268">
+
+    
+
+    
+
+<a href="https://www.planciudad.com/eventos/conciertos" class="page-link undefined" id="m4272-4271-4273" title="Conciertos en Cali" target="_blank">Conciertos en Cali</a>
+</div>
+</div><div class="col-xs-2 fourth">
+        
+
+    <div class="sitemap-module bold-text" id="p610917-m3343-3342-3344">
+
+    
+
+    
+
+<a href="#" class="page-link undefined" id="m3348-3347-3349" title="">MULTIMEDIA</a>
+</div>
+<div class="sitemap-module" id="p610917-m3415-1-3416">
+
+    
+
+    
+
+<a href="https://www.elpais.com.co/multimedia" class="page-link undefined" id="m3420-3419-3421" title="Multimedia El País">Destacados</a>
+</div>
+<div class="sitemap-module" id="p610917-m3487-2-3488">
+
+    
+
+    
+
+<a href="https://www.elpais.com.co/multimedia/videos" class="page-link undefined" id="m3492-3491-3493" title="Noticias en Videos">Videos</a>
+</div>
+<div class="sitemap-module" id="p610917-m3559-3-3560">
+
+    
+
+    
+
+<a href="https://www.elpais.com.co/multimedia/fotos" class="page-link undefined" id="m3564-3563-3565" title="Galerías Fotograficas">Fotos</a>
+</div>
+<div class="sitemap-module" id="p610917-m3631-4-3632">
+
+    
+
+    
+
+<a href="https://www.elpais.com.co/multimedia/infografias" class="page-link undefined" id="m3636-3635-3637" title="Infografías">Infografías</a>
+</div>
+<div class="sitemap-module" id="p610917-m3703-5-3704">
+
+    
+
+    
+
+<a href="https://www.elpais.com.co/multimedia/especiales" class="page-link undefined" id="m3708-3707-3709" title="Especiales El País">Especiales</a>
+</div>
+<div class="sitemap-module bold-text" id="p610917-m3775-6-3776">
+
+    
+
+    
+
+<a href="https://www.elpais.com.co/multimedia/especiales" class="page-link undefined" id="m3780-3779-3781" title="Especiales El País">ESPECIALES</a>
+</div>
+<div class="sitemap-module" id="p610917-m3847-7-3848">
+
+    
+
+    
+
+<a href="https://www.elpais.com.co/el-corazon-de-la-salud" class="page-link undefined" id="m3852-3851-3853" title="El corazón de la salud" target="_blank">El corazón de la salud</a>
+</div>
+<div class="sitemap-module" id="p610917-m3919-8-3920">
+
+    
+
+    
+
+<a href="https://www.elpais.com.co/especiales/venezuela-crimen-sin-frontera" class="page-link undefined" id="m3924-3923-3925" title="Venezuela, crimen sin frontera" target="_blank">Venezuela, crimen sin frontera</a>
+</div>
+<div class="sitemap-module" id="p610917-m3991-9-3992">
+
+    
+
+    
+
+<a href="https://www.elpais.com.co/elpais/por-cali-lo-hago-bien" class="page-link undefined" id="m3996-3995-3997" title="Por Cali lo Hago Bien" target="_blank">Por Cali lo Hago Bien</a>
+</div>
+<div class="sitemap-module" id="p610917-m4063-10-4064">
+
+    
+
+    
+
+<a href="https://www.elpais.com.co/especiales/cali-sabe-bien" class="page-link undefined" id="m4068-4067-4069" title="Cali Sabe Bien" target="_blank">Cali Sabe Bien</a>
+</div>
+<div class="sitemap-module" id="p610917-m4135-11-4136">
+
+    
+
+    
+
+<a href="https://www.elpais.com.co/especiales/rio-cali/" class="page-link undefined" id="m4140-4139-4141" title="Río Cali">Río Cali</a>
+</div>
+<div class="sitemap-module" id="p610917-m4207-12-4208">
+
+    
+
+    
+
+<a href="https://www.elpais.com.co/500-empresas" class="page-link undefined" id="m4212-4211-4213" title="500 empresas más Exitosas del Valle" target="_blank">500 empresas más Exitosas del Valle</a>
+</div>
+<div class="sitemap-module" id="p610917-m4279-13-4280">
+
+    
+
+    
+
+<a href="https://www.caliseve.com/" class="page-link undefined" id="m4284-4283-4285" title="Cali se Ve" target="_blank">Cali se Ve</a>
+</div>
+<div class="sitemap-module" id="p610917-m4327-14-4328">
+
+    
+
+    
+
+<a href="https://www.elpais.com.co/marcas-de-corazon" class="page-link undefined" id="m4332-4331-4333" title="Marcas de Corazón" target="_blank">Marcas de Corazón</a>
+</div>
+</div><div class="col-xs-2 fifth">
+        
+
+    <div class="sitemap-module bold-text" id="p610917-m3355-3354-3356">
+
+    
+
+    
+
+<a href="#" class="page-link undefined" id="m3360-3359-3361" title="">REPORTAJE 360</a>
+</div>
+<div class="sitemap-module" id="p610917-m3427-1-3428">
+
+    
+
+    
+
+<a href="https://www.elpais.com.co/reportaje360/ediciones/oiga-mire-vea/" class="page-link undefined" id="m3432-3431-3433" title="Oiga mire vea" target="_blank">Oiga mire vea</a>
+</div>
+<div class="sitemap-module" id="p610917-m3499-2-3500">
+
+    
+
+    
+
+<a href="https://www.elpais.com.co/reportaje360/ediciones/industria-salsera/" class="page-link undefined" id="m3504-3503-3505" title="Cali, una industria salsera" target="_blank">Cali, una industria salsera</a>
+</div>
+<div class="sitemap-module" id="p610917-m3571-3-3572">
+
+    
+
+    
+
+<a href="https://www.elpais.com.co/reportaje360/ediciones/cali-ciudad-que-no-duerme/" class="page-link undefined" id="m3576-3575-3577" title="Cali, la ciudad que no duerme" target="_blank">Cali, la ciudad que no duerme</a>
+</div>
+<div class="sitemap-module" id="p610917-m3643-4-3644">
+
+    
+
+    
+
+<a href="https://www.elpais.com.co/reportaje360/ediciones/coca-hoja-sagrada/" class="page-link undefined" id="m3648-3647-3649" title="La Hoja Sagrada" target="_blank">La Hoja Sagrada</a>
+</div>
+<div class="sitemap-module" id="p610917-m3715-5-3716">
+
+    
+
+    
+
+<a href="#" class="page-link undefined" id="m3720-3719-3721" title="">Detrás del camuflado</a>
+</div>
+<div class="sitemap-module bold-text" id="p610917-m3787-6-3788">
+
+    
+
+    
+
+<a href="https://www.clubselecta.com.co/" class="page-link undefined" id="m3792-3791-3793" title="">CLUB SELECTA</a>
+</div>
+<div class="sitemap-module" id="p610917-m3859-7-3860">
+
+    
+
+    
+
+<a href="https://www.clubselecta.com.co/promociones/automotriz" class="page-link undefined" id="m3864-3863-3865" title="Promociones Automotriz" target="_blank">Automotriz</a>
+</div>
+<div class="sitemap-module" id="p610917-m3931-8-3932">
+
+    
+
+    
+
+<a href="https://www.clubselecta.com.co/promociones/calzado-y-ropa" class="page-link undefined" id="m3936-3935-3937" title="Promociones Calzado y Ropa" target="_blank">Calzado y Ropa</a>
+</div>
+<div class="sitemap-module" id="p610917-m4003-9-4004">
+
+    
+
+    
+
+<a href="https://www.clubselecta.com.co/promociones/restaurantes" class="page-link undefined" id="m4008-4007-4009" title="Descuentos en restaurantes" target="_blank">Descuentos en restaurantes</a>
+</div>
+<div class="sitemap-module" id="p610917-m4075-10-4076">
+
+    
+
+    
+
+<a href="#" class="page-link undefined" id="m4080-4079-4081" title="">Descuentos en Entretenimiento</a>
+</div>
+<div class="sitemap-module" id="p610917-m4147-11-4148">
+
+    
+
+    
+
+<a href="https://www.clubselecta.com.co/promociones/salud-y-belleza" class="page-link undefined" id="m4152-4151-4153" title="Descuentos en Salud y Belleza" target="_blank">Descuentos en Salud y Belleza</a>
+</div>
+<div class="sitemap-module" id="p610917-m4219-12-4220">
+
+    
+
+    
+
+<a href="https://www.clubselecta.com.co/promociones/deportivo" class="page-link undefined" id="m4224-4223-4225" title="Descuentos elementos Deportivos" target="_blank">Deportivo</a>
+</div>
+</div><div class="col-xs-2 sixth">
+        
+
+    <div class="sitemap-module bold-text" id="p610917-m3367-3366-3368">
+
+    
+
+    
+
+<a href="#" class="page-link undefined" id="m3372-3371-3373" title="CLASIFICADOS">CLASIFICADOS</a>
+</div>
+<div class="sitemap-module" id="p610917-m3439-1-3440">
+
+    
+
+    
+
+<a href="https://edictos.elpais.com.co/" class="page-link undefined" id="m3444-3443-3445" title="Edictos El País" target="_blank">Edictos El País</a>
+</div>
+<div class="sitemap-module" id="p610917-m3511-2-3512">
+
+    
+
+    
+
+<a href="https://fincaraiz.elpais.com.co/avisos/venta/casas" class="page-link undefined" id="m3516-3515-3517" title="Venta de Casas" target="_blank">Venta de Casas</a>
+</div>
+<div class="sitemap-module" id="p610917-m3583-3-3584">
+
+    
+
+    
+
+<a href="https://fincaraiz.elpais.com.co/avisos/venta/apartamentos/" class="page-link undefined" id="m3588-3587-3589" title="Venta de apartamentos" target="_blank">Venta de Apartamentos</a>
+</div>
+<div class="sitemap-module" id="p610917-m3655-4-3656">
+
+    
+
+    
+
+<a href="https://fincaraiz.elpais.com.co/avisos/alquiler/casas" class="page-link undefined" id="m3660-3659-3661" title="Alquiler de casas" target="_blank">Alquiler de Casas</a>
+</div>
+<div class="sitemap-module" id="p610917-m3727-5-3728">
+
+    
+
+    
+
+<a href="https://fincaraiz.elpais.com.co/avisos/venta/lotes" class="page-link undefined" id="m3732-3731-3733" title="Venta de Lotes" target="_blank">Venta de Lotes</a>
+</div>
+<div class="sitemap-module" id="p610917-m3799-6-3800">
+
+    
+
+    
+
+<a href="https://fincaraiz.elpais.com.co/avisos/alquiler/apartaestudios" class="page-link undefined" id="m3804-3803-3805" title="Alquiler de Apartaestudios" target="_blank">Alquiler de Apartaestudios</a>
+</div>
+<div class="sitemap-module" id="p610917-m3871-7-3872">
+
+    
+
+    
+
+<a href="https://fincaraiz.elpais.com.co/avisos/alquiler/locales-y-bodegas" class="page-link undefined" id="m3876-3875-3877" title="Alquiler de Locales" target="_blank">Alquiler de Locales</a>
+</div>
+<div class="sitemap-module" id="p610917-m3943-8-3944">
+
+    
+
+    
+
+<a href="https://empleos.elpais.com.co/" class="page-link undefined" id="m3948-3947-3949" title="Bolsa de empleos" target="_blank">Bolsa de empleos</a>
+</div>
+<div class="sitemap-module" id="p610917-m4015-9-4016">
+
+    
+
+    
+
+<a href="https://diversos.elpais.com.co/avisos/venta-y-compra/negocios-establecidos" class="page-link undefined" id="m4020-4019-4021" title="Negocios establecidos" target="_blank">Negocios establecidos</a>
+</div>
+<div class="sitemap-module" id="p610917-m4087-10-4088">
+
+    
+
+    
+
+<a href="https://diversos.elpais.com.co/avisos/servicios/prestamos-e-hipotecas" class="page-link undefined" id="m4092-4091-4093" title="Prestamos e hipotecas" target="_blank">Prestamos e hipotecas</a>
+</div>
+<div class="sitemap-module" id="p610917-m4159-11-4160">
+
+    
+
+    
+
+<a href="https://diversos.elpais.com.co/avisos/venta-y-compra/mascotas" class="page-link undefined" id="m4164-4163-4165" title="Perros y mascotas" target="_blank">Perros y mascotas</a>
+</div>
+<div class="sitemap-module" id="p610917-m4231-12-4232">
+
+    
+
+    
+
+<a href="https://clasificados.elpais.com.co/publicarAviso" class="page-link undefined" id="m4236-4235-4237" title="Publicar aviso clasificado" target="_blank">Publicar aviso clasificado</a>
+</div>
+<div class="sitemap-module bold-text" id="p610917-m4291-13-4292">
+
+    
+
+    
+
+<a href="https://www.audiencias.com.co/" class="page-link undefined" id="m4296-4295-4297" title="Audiencias">Audiencias</a>
+</div>
+<div class="sitemap-module" id="p610917-m4339-14-4340">
+
+    
+
+    
+
+<a href="https://www.audiencias.com.co/" class="page-link undefined" id="m4344-4343-4345" title="Audiencias El  País" target="_blank">Audiencias El País</a>
+</div>
+<div class="sitemap-module bold-text" id="p610917-m4363-15-4364">
+
+    
+
+    
+
+<a href="https://servicios.supersociedades.gov.co/barandaVirtual/#!/app/procesos" class="page-link undefined" id="m4368-4367-4369" title="" target="_blank">PROCESO REORGANIZACIÓN</a>
+</div>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    <div class="middle-content">
+        <div class="container social-icons">
+            <ul class="round-icons">
+                <li>
+                    <span>Síguenos en:</span>
+                </li>
+                <li>
+                    <a title="Facebook" href="https://www.facebook.com/diarioelPaiscali" rel="noopener noreferrer" target="_blank" class="round-icon round-icon-46 round-facebook-46 facebook"></a>
+                </li>
+                <li>
+                    <a title="Twitter" href="https://twitter.com/elPaiscali" rel="noopener noreferrer" target="_blank" class="round-icon round-icon-46  round-twitter-46 twitter"></a>
+                </li>
+                <li>
+                    <a title="Google+" href="https://plus.google.com/115050330500575074656/posts" rel="noopener noreferrer" target="_blank" class="round-icon round-icon-46  round-gplus-46 google"></a>
+                </li>
+
+                <li>
+                    <a title="Pinterest" href="https://www.pinterest.com/elPaiscali" rel="noopener noreferrer" target="_blank" class="round-icon round-icon-46 round-pinterest-46 pinterest"></a>
+                </li>
+
+                <li>
+                    <a title="Instragram" href="https://instagram.com/elPaiscali/" rel="noopener noreferrer" target="_blank" class="round-icon round-icon-46 round-instagram-46"></a>
+                </li>
+
+                <li>
+                    <a title="Youtube" href="https://www.youtube.com/user/elPaiscali" rel="noopener noreferrer" target="_blank" class="round-icon round-icon-46 round-youtube-46"></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="bottom-content container-full">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="copyright-text">
+                    <img data-src="/images/logos/logo-footer.png"
+                        src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                        class="lazyload" loading="lazy" />
+                        <div class="copyright-text-content">
+    <div class="text-line line1">
+        
+    <p class="text" id="p61148325-m512-511-513">El País S.A. © 2014 | Cra. 2 No.24-46 Tel. (602) 898 7000 | Cali, Colombia<br><a href="/servicios/politica-y-tratamiento-de-datos">Política y Tratamiento de Datos</a> | <a href="/servicios/aviso-legal">Aviso Legal</a> | <a href="https://www.elpais.com.co/servicios/politica-de-cookies" title="Política de Cookies">Política de Cookies</a> <br><a href="https://www.elpais.com.co/servicios/manual-sagrilaft-el-pais-s-a" title="MANUAL SAGRILAFT EL PAIS S.A.">MANUAL SAGRILAFT</a> | <a href="https://www.elpais.com.co/servicios/programa-de-transparencia-y-etica-empresarial-el-pais-s-a" title="PROGRAMA DE TRANSPARENCIA Y ÉTICA EMPRESARIAL EL PAIS S.A. (PTEE)">PROGRAMA DE TRANSPARENCIA Y ÉTICA EMPRESARIAL (PTEE)</a><br><a href="https://www.sic.gov.co/" target="_blank">​Superintendencia de Industria y Comercio de Colombia<br></a></p>
+</div>
+    <div class="text-line line2">
+        
+    <p class="text" id="p61148325-m518-517-519">Publicidad en Bogotá - Cadenacol<br>Tel. 6420800, Dirección: Carrera 14 # 85 - 68 Ofic 307</p>
+</div>
+    <div class="text-line line3">
+        
+    <p class="text" id="p61148325-m524-523-525"><br></p>
+</div>
+</div>
+                    </div>
+
+                    <div class="logos">
+                        <a title="Andiarios" href="https://www.ami.org.co/" class="logo1">
+                            <img data-src="/images/footer/logo1.png"
+                            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                            class="lazyload" loading="lazy" />
+                        </a>
+
+                        <!--a href="/" class="logo3"></a-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<div class="module-free-all">
+        
+        
+        
+    </div></div>													<script>
+				window.loadCSS = function (hrefCss) {
+			var lastTagInHead, _document = window.document,
+				link = _document.createElement("link");
+
+			var locationInDocument = _document.getElementsByTagName("head")[0].childNodes;
+				lastTagInHead = locationInDocument[ locationInDocument.length - 1 ]
+
+			function setMediaProp() {
+				link.addEventListener && link.removeEventListener("load", setMediaProp), link.media = "all"
+			}
+
+			var stylesTags = _document.styleSheets;
+			link.rel = "stylesheet", 
+			link.href = hrefCss, 
+			link.media = "only x", 
+			
+			lastTagInHead.parentNode.insertBefore(link, lastTagInHead.nextSibling)
+			
+			return link.addEventListener("load", setMediaProp)
+		};
+		
+				window.loadJS = function(src, id, attr, callback,text="") {
+			setTimeout( ()=>{
+				var scriptTag = document.createElement("script"),
+					head = document.querySelector("head");
+				if(src){scriptTag.src = src;}				
+				if(id){ scriptTag.id = id }
+				if(attr){
+					for(var a in attr) {
+						scriptTag.setAttribute(a, attr[a]);
+					}
+				}
+				if(text){scriptTag.text = text;}
+				if(callback != undefined){            
+					scriptTag.onload = () => callback();
+				}        
+				head.appendChild(scriptTag);        
+			},100)
+		};
+		
+		window.nativeLazyLoad = () => {
+				console.log('lazyload nativo');
+				const images = document.querySelectorAll('img[loading="lazy"]');
+				images.forEach(img => {
+					img.src = img.dataset.src;
+					setTimeout(()=>{
+						img.classList.add("no-blur");
+					},800)
+				});
+		};if ('loading' in HTMLImageElement.prototype) {
+				 if ("IntersectionObserver" in window) {
+					console.log('lazyload intersectionObserver');
+					const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+
+					let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+						entries.forEach(function(entry) {
+							if (entry.isIntersecting) {
+								let lazyImage = entry.target;
+								lazyImage.src = lazyImage.dataset.src;
+								lazyImageObserver.unobserve(lazyImage);
+								setTimeout(()=>{
+									lazyImage.classList.add("no-blur");
+								},800)
+							}
+						});
+					});
+
+					lazyImages.forEach(function(lazyImage) {
+						lazyImageObserver.observe(lazyImage);
+					});
+				 }
+				 else{
+				 	window.nativeLazyLoad()
+				 }
+			} 
+			else {
+				console.log('lazyload libreria');
+				!function(a,b){var c=b(a,a.document,Date);a.lazySizes=c,"object"==typeof module&&module.exports&&(module.exports=c)}("undefined"!=typeof window?window:{},function(a,b,c){"use strict";var d,e;if(function(){var b,c={lazyClass:"lazyload",loadedClass:"lazyloaded",loadingClass:"lazyloading",preloadClass:"lazypreload",errorClass:"lazyerror",autosizesClass:"lazyautosizes",srcAttr:"data-src",srcsetAttr:"data-srcset",sizesAttr:"data-sizes",minSize:40,customMedia:{},init:!0,expFactor:1.5,hFac:.8,loadMode:2,loadHidden:!0,ricTimeout:0,throttleDelay:125};e=a.lazySizesConfig||a.lazysizesConfig||{};for(b in c)b in e||(e[b]=c[b])}(),!b||!b.getElementsByClassName)return{init:function(){},cfg:e,noSupport:!0};var f=b.documentElement,g=a.HTMLPictureElement,h="addEventListener",i="getAttribute",j=a[h].bind(a),k=a.setTimeout,l=a.requestAnimationFrame||k,m=a.requestIdleCallback,n=/^picture$/i,o=["load","error","lazyincluded","_lazyloaded"],p={},q=Array.prototype.forEach,r=function(a,b){return p[b]||(p[b]=new RegExp("(\\s|^)"+b+"(\\s|$)")),p[b].test(a[i]("class")||"")&&p[b]},s=function(a,b){r(a,b)||a.setAttribute("class",(a[i]("class")||"").trim()+" "+b)},t=function(a,b){var c;(c=r(a,b))&&a.setAttribute("class",(a[i]("class")||"").replace(c," "))},u=function(a,b,c){var d=c?h:"removeEventListener";c&&u(a,b),o.forEach(function(c){a[d](c,b)})},v=function(a,c,e,f,g){var h=b.createEvent("Event");return e||(e={}),e.instance=d,h.initEvent(c,!f,!g),h.detail=e,a.dispatchEvent(h),h},w=function(b,c){var d;!g&&(d=a.picturefill||e.pf)?(c&&c.src&&!b[i]("srcset")&&b.setAttribute("srcset",c.src),d({reevaluate:!0,elements:[b]})):c&&c.src&&(b.src=c.src)},x=function(a,b){return(getComputedStyle(a,null)||{})[b]},y=function(a,b,c){for(c=c||a.offsetWidth;c<e.minSize&&b&&!a._lazysizesWidth;)c=b.offsetWidth,b=b.parentNode;return c},z=function(){var a,c,d=[],e=[],f=d,g=function(){var b=f;for(f=d.length?e:d,a=!0,c=!1;b.length;)b.shift()();a=!1},h=function(d,e){a&&!e?d.apply(this,arguments):(f.push(d),c||(c=!0,(b.hidden?k:l)(g)))};return h._lsFlush=g,h}(),A=function(a,b){return b?function(){z(a)}:function(){var b=this,c=arguments;z(function(){a.apply(b,c)})}},B=function(a){var b,d=0,f=e.throttleDelay,g=e.ricTimeout,h=function(){b=!1,d=c.now(),a()},i=m&&g>49?function(){m(h,{timeout:g}),g!==e.ricTimeout&&(g=e.ricTimeout)}:A(function(){k(h)},!0);return function(a){var e;(a=!0===a)&&(g=33),b||(b=!0,e=f-(c.now()-d),e<0&&(e=0),a||e<9?i():k(i,e))}},C=function(a){var b,d,e=99,f=function(){b=null,a()},g=function(){var a=c.now()-d;a<e?k(g,e-a):(m||f)(f)};return function(){d=c.now(),b||(b=k(g,e))}},D=function(){var g,m,o,p,y,D,F,G,H,I,J,K,L=/^img$/i,M=/^iframe$/i,N="onscroll"in a&&!/(gle|ing)bot/.test(navigator.userAgent),O=0,P=0,Q=0,R=-1,S=function(a){Q--,(!a||Q<0||!a.target)&&(Q=0)},T=function(a){return null==K&&(K="hidden"==x(b.body,"visibility")),K||!("hidden"==x(a.parentNode,"visibility")&&"hidden"==x(a,"visibility"))},U=function(a,c){var d,e=a,g=T(a);for(G-=c,J+=c,H-=c,I+=c;g&&(e=e.offsetParent)&&e!=b.body&&e!=f;)(g=(x(e,"opacity")||1)>0)&&"visible"!=x(e,"overflow")&&(d=e.getBoundingClientRect(),g=I>d.left&&H<d.right&&J>d.top-1&&G<d.bottom+1);return g},V=function(){var a,c,h,j,k,l,n,o,q,r,s,t,u=d.elements;if((p=e.loadMode)&&Q<8&&(a=u.length)){for(c=0,R++;c<a;c++)if(u[c]&&!u[c]._lazyRace)if(!N||d.prematureUnveil&&d.prematureUnveil(u[c]))ba(u[c]);else if((o=u[c][i]("data-expand"))&&(l=1*o)||(l=P),r||(r=!e.expand||e.expand<1?f.clientHeight>500&&f.clientWidth>500?500:370:e.expand,d._defEx=r,s=r*e.expFactor,t=e.hFac,K=null,P<s&&Q<1&&R>2&&p>2&&!b.hidden?(P=s,R=0):P=p>1&&R>1&&Q<6?r:O),q!==l&&(D=innerWidth+l*t,F=innerHeight+l,n=-1*l,q=l),h=u[c].getBoundingClientRect(),(J=h.bottom)>=n&&(G=h.top)<=F&&(I=h.right)>=n*t&&(H=h.left)<=D&&(J||I||H||G)&&(e.loadHidden||T(u[c]))&&(m&&Q<3&&!o&&(p<3||R<4)||U(u[c],l))){if(ba(u[c]),k=!0,Q>9)break}else!k&&m&&!j&&Q<4&&R<4&&p>2&&(g[0]||e.preloadAfterLoad)&&(g[0]||!o&&(J||I||H||G||"auto"!=u[c][i](e.sizesAttr)))&&(j=g[0]||u[c]);j&&!k&&ba(j)}},W=B(V),X=function(a){var b=a.target;if(b._lazyCache)return void delete b._lazyCache;S(a),s(b,e.loadedClass),t(b,e.loadingClass),u(b,Z),v(b,"lazyloaded")},Y=A(X),Z=function(a){Y({target:a.target})},$=function(a,b){try{a.contentWindow.location.replace(b)}catch(c){a.src=b}},_=function(a){var b,c=a[i](e.srcsetAttr);(b=e.customMedia[a[i]("data-media")||a[i]("media")])&&a.setAttribute("media",b),c&&a.setAttribute("srcset",c)},aa=A(function(a,b,c,d,f){var g,h,j,l,m,p;(m=v(a,"lazybeforeunveil",b)).defaultPrevented||(d&&(c?s(a,e.autosizesClass):a.setAttribute("sizes",d)),h=a[i](e.srcsetAttr),g=a[i](e.srcAttr),f&&(j=a.parentNode,l=j&&n.test(j.nodeName||"")),p=b.firesLoad||"src"in a&&(h||g||l),m={target:a},s(a,e.loadingClass),p&&(clearTimeout(o),o=k(S,2500),u(a,Z,!0)),l&&q.call(j.getElementsByTagName("source"),_),h?a.setAttribute("srcset",h):g&&!l&&(M.test(a.nodeName)?$(a,g):a.src=g),f&&(h||l)&&w(a,{src:g})),a._lazyRace&&delete a._lazyRace,t(a,e.lazyClass),z(function(){var b=a.complete&&a.naturalWidth>1;p&&!b||(b&&s(a,"ls-is-cached"),X(m),a._lazyCache=!0,k(function(){"_lazyCache"in a&&delete a._lazyCache},9)),"lazy"==a.loading&&Q--},!0)}),ba=function(a){if(!a._lazyRace){var b,c=L.test(a.nodeName),d=c&&(a[i](e.sizesAttr)||a[i]("sizes")),f="auto"==d;(!f&&m||!c||!a[i]("src")&&!a.srcset||a.complete||r(a,e.errorClass)||!r(a,e.lazyClass))&&(b=v(a,"lazyunveilread").detail,f&&E.updateElem(a,!0,a.offsetWidth),a._lazyRace=!0,Q++,aa(a,b,f,d,c))}},ca=C(function(){e.loadMode=3,W()}),da=function(){3==e.loadMode&&(e.loadMode=2),ca()},ea=function(){if(!m){if(c.now()-y<999)return void k(ea,999);m=!0,e.loadMode=3,W(),j("scroll",da,!0)}};return{_:function(){y=c.now(),d.elements=b.getElementsByClassName(e.lazyClass),g=b.getElementsByClassName(e.lazyClass+" "+e.preloadClass),j("scroll",W,!0),j("resize",W,!0),j("pageshow",function(a){if(a.persisted){var c=b.querySelectorAll("."+e.loadingClass);c.length&&c.forEach&&l(function(){c.forEach(function(a){a.complete&&ba(a)})})}}),a.MutationObserver?new MutationObserver(W).observe(f,{childList:!0,subtree:!0,attributes:!0}):(f[h]("DOMNodeInserted",W,!0),f[h]("DOMAttrModified",W,!0),setInterval(W,999)),j("hashchange",W,!0),["focus","mouseover","click","load","transitionend","animationend"].forEach(function(a){b[h](a,W,!0)}),/d$|^c/.test(b.readyState)?ea():(j("load",ea),b[h]("DOMContentLoaded",W),k(ea,2e4)),d.elements.length?(V(),z._lsFlush()):W()},checkElems:W,unveil:ba,_aLSL:da}}(),E=function(){var a,c=A(function(a,b,c,d){var e,f,g;if(a._lazysizesWidth=d,d+="px",a.setAttribute("sizes",d),n.test(b.nodeName||""))for(e=b.getElementsByTagName("source"),f=0,g=e.length;f<g;f++)e[f].setAttribute("sizes",d);c.detail.dataAttr||w(a,c.detail)}),d=function(a,b,d){var e,f=a.parentNode;f&&(d=y(a,f,d),e=v(a,"lazybeforesizes",{width:d,dataAttr:!!b}),e.defaultPrevented||(d=e.detail.width)&&d!==a._lazysizesWidth&&c(a,f,e,d))},f=function(){var b,c=a.length;if(c)for(b=0;b<c;b++)d(a[b])},g=C(f);return{_:function(){a=b.getElementsByClassName(e.autosizesClass),j("resize",g)},checkElems:g,updateElem:d}}(),F=function(){!F.i&&b.getElementsByClassName&&(F.i=!0,E._(),D._())};return k(function(){e.init&&F()}),d={cfg:e,autoSizer:E,loader:D,init:F,uP:w,aC:s,rC:t,hC:r,fire:v,gW:y,rAF:z}});
+			}
+				
+						window.addEventListener('DOMContentLoaded', (event) => {
+			//cargar el css
+			loadCSS( "/assets/css-screen.3e4ee5d3bbc9578dacca3b70300df5bd.css");loadJS("/assets/common.js","",{async : "true", loadjs : "itsme"}, ()=>{
+					loadJS("/assets/global-2022-02-11.js","",{async : "true", loadjs : "itsme"})
+					loadJS("/assets/libs.js","",{async : "true", loadjs : "itsme"})
+					    loadJS("/assets/article.js","",{async : "true", loadjs : "itsme"})
+    
+	if(document.querySelector('.slider') !== null){
+        loadJS("/assets/carrousel.js","",{async : "true", loadjs : "itsme"})
+	}
+
+	if(document.querySelector('.pagination') !== null){
+		loadJS("/assets/pagination.js","",{async : "true", loadjs : "itsme"})
+	}loadJS("/assets/article-public.js","",{async : "true", loadjs : "itsme"})				})
+					})
+	</script>    <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"7ef148dbc4","applicationID":"946521853","transactionName":"ZFdTbRMDWkEHUkRRV10dcFoVC1tcSUZWZ0hSVVRmEgpbRQ==","queueTime":0,"applicationTime":1002,"atts":"SBBQG1sZSU8=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

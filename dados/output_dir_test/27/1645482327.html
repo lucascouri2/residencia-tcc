@@ -1,0 +1,1816 @@
+
+
+
+
+	<!DOCTYPE html>
+		<!--[if lt IE 8 ]><html lang="it" class="no-js"><![endif]-->
+		<!--[if IE 8 ]><html lang="it" class="no-js ie8"><![endif]-->
+		<!--[if IE 9 ]><html lang="it" class="no-js ie9"><![endif]-->
+		<!--[if (gt IE 9)|!(IE)]><!--><html lang="it" class="no-js"><!--<![endif]-->
+		<head>
+			<script>
+				
+				var contentType = "article";
+				var categoryName = "salute";
+				var publishDate = "2020-06-26";
+				var tags = "";
+			</script>
+
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon" />
+
+
+<link rel="stylesheet" type="text/css" href="//www.lasicilia.it/assets/css/main.css?v=1.69">
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="//www.lasicilia.it/assets/css/custom.css?v=1.69">
+
+<!-- LS-166 -->
+<meta name="facebook-domain-verification" content="kw9zavfabqsn3xtwmqimska96uitca" />
+
+<meta name="theme-color" content="#125578" />
+<meta name="msapplication-navbutton-color" content="#125578" />
+<meta name="msapplication-TileColor" content="#125578" />
+
+<!-- For Section -->
+<link rel="stylesheet" type="text/css" href="//www.lasicilia.it/assets/css/slick.css?v=1.69">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="//www.lasicilia.it/assets/js/jquery.cookie.js" type="text/javascript"></script>
+<meta name="google-site-verification" content="9oXYouys34aUSPfgnvGXT3KaLd150BtX8zqJ6_wPe4M" />
+<meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+
+<script>
+  function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0; i<ca.length; i++) {
+      var c = ca[i];
+      while (c.charAt(0)==' ') c = c.substring(1);
+      if(c.indexOf(name) == 0)
+        return c.substring(name.length,c.length);
+    }
+    return "";
+  }
+</script>
+<!-- Quantcast Choice. Consent Manager Tag v2.0 (for TCF 2.0) -->
+<script type="text/javascript" async=true>
+  (function() {
+    var host = window.location.hostname;
+    var element = document.createElement('script');
+    var firstScript = document.getElementsByTagName('script')[0];
+    var url = 'https://quantcast.mgr.consensu.org'
+            .concat('/choice/', 'gcQtf37UQQZQp', '/', host, '/choice.js')
+    var uspTries = 0;
+    var uspTriesLimit = 3;
+    element.async = true;
+    element.type = 'text/javascript';
+    element.src = url;
+
+    firstScript.parentNode.insertBefore(element, firstScript);
+
+    function makeStub() {
+      var TCF_LOCATOR_NAME = '__tcfapiLocator';
+      var queue = [];
+      var win = window;
+      var cmpFrame;
+
+      function addFrame() {
+        var doc = win.document;
+        var otherCMP = !!(win.frames[TCF_LOCATOR_NAME]);
+
+        if (!otherCMP) {
+          if (doc.body) {
+            var iframe = doc.createElement('iframe');
+
+            iframe.style.cssText = 'display:none';
+            iframe.name = TCF_LOCATOR_NAME;
+            doc.body.appendChild(iframe);
+          } else {
+            setTimeout(addFrame, 5);
+          }
+        }
+        return !otherCMP;
+      }
+
+      function tcfAPIHandler() {
+        var gdprApplies;
+        var args = arguments;
+
+        if (!args.length) {
+          return queue;
+        } else if (args[0] === 'setGdprApplies') {
+          if (
+                  args.length > 3 &&
+                  args[2] === 2 &&
+                  typeof args[3] === 'boolean'
+          ) {
+            gdprApplies = args[3];
+            if (typeof args[2] === 'function') {
+              args[2]('set', true);
+            }
+          }
+        } else if (args[0] === 'ping') {
+          var retr = {
+            gdprApplies: gdprApplies,
+            cmpLoaded: false,
+            cmpStatus: 'stub'
+          };
+
+          if (typeof args[2] === 'function') {
+            args[2](retr);
+          }
+        } else {
+          queue.push(args);
+        }
+      }
+
+      function postMessageEventHandler(event) {
+        var msgIsString = typeof event.data === 'string';
+        var json = {};
+
+        try {
+          if (msgIsString) {
+            json = JSON.parse(event.data);
+          } else {
+            json = event.data;
+          }
+        } catch (ignore) {}
+
+        var payload = json.__tcfapiCall;
+
+        if (payload) {
+          window.__tcfapi(
+                  payload.command,
+                  payload.version,
+                  function(retValue, success) {
+                    var returnMsg = {
+                      __tcfapiReturn: {
+                        returnValue: retValue,
+                        success: success,
+                        callId: payload.callId
+                      }
+                    };
+                    if (msgIsString) {
+                      returnMsg = JSON.stringify(returnMsg);
+                    }
+                    event.source.postMessage(returnMsg, '*');
+                  },
+                  payload.parameter
+          );
+        }
+      }
+
+      while (win) {
+        try {
+          if (win.frames[TCF_LOCATOR_NAME]) {
+            cmpFrame = win;
+            break;
+          }
+        } catch (ignore) {}
+
+        if (win === window.top) {
+          break;
+        }
+        win = win.parent;
+      }
+      if (!cmpFrame) {
+        addFrame();
+        win.__tcfapi = tcfAPIHandler;
+        win.addEventListener('message', postMessageEventHandler, false);
+      }
+    };
+
+    makeStub();
+
+    var uspStubFunction = function() {
+      var arg = arguments;
+      if (typeof window.__uspapi !== uspStubFunction) {
+        setTimeout(function() {
+          if (typeof window.__uspapi !== 'undefined') {
+            window.__uspapi.apply(window.__uspapi, arg);
+          }
+        }, 500);
+      }
+    };
+
+    var checkIfUspIsReady = function() {
+      uspTries++;
+      if (window.__uspapi === uspStubFunction && uspTries < uspTriesLimit) {
+        console.warn('USP is not accessible');
+      } else {
+        clearInterval(uspInterval);
+      }
+    };
+
+    if (typeof window.__uspapi === 'undefined') {
+      window.__uspapi = uspStubFunction;
+      var uspInterval = setInterval(checkIfUspIsReady, 6000);
+    }
+
+    window.__tcfapi('addEventListener', 2, function(tcData,listenerSuccess) {
+      if (listenerSuccess) {
+        // check the eventstatus
+        if (tcData.eventStatus === 'useractioncomplete' || tcData.eventStatus === 'tcloaded') {
+            const isEmptyCookieConsent = !$.cookie("CookieConsent")
+          console.log("[GDPR APPLIES]",tcData.gdprApplies);
+
+          if ((tcData.purpose.consents[1] === false) || (tcData.purpose.consents[1] === undefined)) {
+            $.cookie("CookieConsent", "00");
+            dataLayer.push({ 'event': 'CookieConsent', 'value':"00" });
+          }else if ((tcData.purpose.consents[3] === false) || (tcData.purpose.consents[4] === false) || (tcData.purpose.consents[5] === false) ||
+                  (tcData.purpose.consents[3] === undefined) || (tcData.purpose.consents[4] === undefined) || (tcData.purpose.consents[5] === undefined)) {
+            $.cookie("CookieConsent", "10");
+            $.cookie("cc_cookie_accept","cc_cookie_accept");
+            dataLayer.push({ 'event': 'CookieConsent', 'value':"10" });
+
+          }else {
+            $.cookie("CookieConsent", "11");
+            $.cookie("cc_cookie_accept","cc_cookie_accept");
+            dataLayer.push({ 'event': 'CookieConsent', 'value':"11" });
+          }
+            isEmptyCookieConsent && window.location.reload()
+        }
+      }
+    });
+
+
+
+  })();
+</script>
+<!-- End Quantcast Choice. Consent Manager Tag v2.0 (for TCF 2.0) -->
+
+<!-- BEGIN CookieConsent" -->
+<script>
+  var dataLayer = [];
+  /*
+    if(!$.cookie("cc_cookie_accept")){
+         $.cookie("CookieConsent", "00");
+         dataLayer.push({ 'event': 'CookieConsent', 'value':'00' });
+     }
+    if($.cookie("cc_cookie_accept") && !$.cookie("CookieConsent"))
+     {
+         var CookieConsent = "00";
+
+         var jsonObject= JSON.parse($.cookie("virtualcms_cookie_law_settings"));
+
+         if(jsonObject[jsonObject.length-1].accepted && jsonObject[1].accepted)
+            CookieConsent = "11";
+         if(!jsonObject[jsonObject.length-1].accepted && jsonObject[1].accepted)
+            CookieConsent = "10";
+         $.cookie("CookieConsent", CookieConsent);
+         dataLayer.push({ 'event': 'CookieConsent', 'value':CookieConsent });
+         console.log("%c SET COOKIECONSENT: " + CookieConsent, "color:red;");
+         console.log("%cCOOKIECONSENT: " +"PUSH DATALAYER","color:red;");
+
+     }else if($.cookie("cc_cookie_accept") && $.cookie("CookieConsent")){
+         var CookieConsent = "00";
+         var jsonObject= JSON.parse($.cookie("virtualcms_cookie_law_settings"));
+         console.log("%cCOOKIECONSENT: " + jsonObject[jsonObject.length-1].accepted +" "+jsonObject[1].accepted, "color:red;");
+         if(jsonObject[jsonObject.length-1].accepted && jsonObject[1].accepted)
+            CookieConsent = "11";
+         if(!jsonObject[jsonObject.length-1].accepted && jsonObject[1].accepted)
+            CookieConsent = "10";
+            console.log("%cCOOKIECONSENT CHECK: " +CookieConsent+" - cookie:"+$.cookie("CookieConsent"),"color:red;");
+         if(CookieConsent !=$.cookie("CookieConsent"))
+         {
+              console.log("%cCOOKIECONSENT: " +"PUSH DATALAYER","color:red;");
+              dataLayer.push({ 'event': 'CookieConsent', 'value':CookieConsent });
+              $.cookie("CookieConsent", CookieConsent);
+              console.log("%c SET COOKIECONSENT: " + CookieConsent, "color:red;");
+         }
+
+     }
+ */
+</script>
+<!-- END CookieConsent" -->
+
+<!-- DATALAYER GTM UTENTE-->
+<script type="text/javascript" >
+  // var CMSsectName = categoryName;
+  var CMSsectName = typeof categoryName!=='undefined'?categoryName:"homepage";
+  var loggedStatusUser="no logged";
+  var page404='False';
+  var vId='';
+  var tagsCms = (typeof tags !== 'undefined') ? tags : '';
+  if (typeof contentType!=='undefined' && contentType == "404"){
+    page404 = 'True';
+  }
+  var userLoggedTop = localStorage.getItem("userLogged");
+  var currentLoggedInVirtualTop = localStorage.getItem("currentLoggedInVirtual");
+  var currentLoggedInFacebookTop = localStorage.getItem("currentLoggedInFacebook");
+  var currentLoggedInGoogleTop = localStorage.getItem("currentLoggedInGoogle");
+
+  console.log("userLogged "+userLoggedTop);
+  console.log("userLogged "+currentLoggedInVirtualTop);
+
+  if(userLoggedTop) {
+    loggedStatusUser = "logged";
+    if($.cookie("vuidjson")){
+      vId=$.cookie("vuidjson");
+    }else{
+      vId = currentLoggedInVirtualTop ? currentLoggedInVirtualTop : (currentLoggedInFacebookTop?currentLoggedInFacebookTop: (currentLoggedInGoogleTop?currentLoggedInGoogleTop: ''))
+    }
+  }
+  if(contentType == "article" || contentType == "video" || contentType == "article-blog"  || contentType == "gallery")
+  {
+
+    /*
+      function check_ga() {
+        if (typeof ga === 'function') {
+          var dimensionValue = 'articolo';
+          ga('set', 'dimension7', dimensionValue);
+        } else {
+          console.log('Not loaded');
+          setTimeout(check_ga,500);
+        }
+      }
+     // check_ga();
+      dataLayer.push({
+        'event' : 'pageview',
+        'dimension7' : 'articolo'
+      });
+      */
+    dataLayer.push({
+      'visitorLoginState':loggedStatusUser ,
+      'visitorId': vId,
+      'pageCategory': CMSsectName,
+      'page404': page404,
+      'contentType' : 'articolo',
+      'datapubblicazione': publishDate ? publishDate : 'none',
+      'tags' : tagsCms
+    });
+  }else{
+    dataLayer.push({
+      'visitorLoginState':loggedStatusUser ,
+      'visitorId': vId,
+      'pageCategory': CMSsectName,
+      'page404': page404,
+      'datapubblicazione': 'none'
+    });
+  }
+
+</script>
+
+<!--END DATALAYER GTM UTENTE-->
+
+<!--START snippet optimize-->
+<!--END snippet optimize-->
+
+<!--
+<script src="//components2.rcsobjects.it/rcs_adv/v1/distro/dfp/common/stickyTools.js"></script>
+<script src="//components2.rcsobjects.it/rcs_adv/v1/distro/dfp/common/rcsad_partner.js"></script>
+-->
+<script type="text/javascript">
+  //wHY JUST NEWS CONTENT?
+  if (window.location.href.indexOf('news') > 0) {
+    document.write('\x3Cscript type="text/javascript" src="https://components2.rcsobjects.it/rcs_data-tracking/v1/distro/dmp/affiliate/us_admantx.js">\x3C/script>');
+  }
+</script>
+
+<!-- www.lasicilia.it -->
+
+<script src="//tags.tiqcdn.com/utag/rcsmedia/partner/prod/utag.sync.js"></script>
+
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MZ53C9R');</script>
+<!-- End Google Tag Manager -->
+
+
+
+<!-- METADATI SEO -->
+<title>Sanità: Usa, Trump chiede a Corte Suprema di invalidare Obamacare | La Sicilia</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Washington, 26 giu. (Adnkronos Salute) - A quattro mesi dalle elezioni presidenziali americane, l&#039;amministrazione Trump tenta l&#039;assalto finale contro l&#039;Obamacar" />
+<meta name="Keywords" content="" />
+<meta name="sections" content="salute" />
+
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+
+<link rel="canonical" href="https://www.lasicilia.it/news/salute/349662/sanita-usa-trump-chiede-a-corte-suprema-di-invalidare-obamacare.html"/>
+<link rel="amphtml" href="https://www.lasicilia.it/news/salute/349662/sanita-usa-trump-chiede-a-corte-suprema-di-invalidare-obamacare.amp"/>
+        <meta property="og:type" content="article">
+<meta property="og:title" content="Sanità: Usa, Trump chiede a Corte Suprema di invalidare Obamacare">
+<meta property="og:description" content="Washington, 26 giu. (Adnkronos Salute) - A quattro mesi dalle elezioni presidenziali americane, l&#039;amministrazione Trump tenta l&#039;assalto finale contro l&#039;Obamacar">
+<meta property="og:image" content="https://binaries.lasicilia.it/2021/04/14/trump_conferenzastampa_due_afp_1200x630_1618393903648.jpg">
+<meta property="og:image:width"  content="1200" >
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://www.lasicilia.it/news/salute/349662/sanita-usa-trump-chiede-a-corte-suprema-di-invalidare-obamacare.html">
+<meta property="fb:app_id" content="306201956387734">
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:site" content="@lasiciliait">
+<meta property="twitter:creator" content="@lasiciliait">
+<meta property="twitter:title" content="Sanità: Usa, Trump chiede a Corte Suprema di invalidare Obamacare">
+<meta property="twitter:description" content="Washington, 26 giu. (Adnkronos Salute) - A quattro mesi dalle elezioni presidenziali americane, l&#039;amministrazione Trump tenta l&#039;assalto finale contro l&#039;Obamacar">
+<meta property="twitter:url" content="https://www.lasicilia.it/news/salute/349662/sanita-usa-trump-chiede-a-corte-suprema-di-invalidare-obamacare.html">
+<meta property="twitter:image" content="https://binaries.lasicilia.it/2021/04/14/trump_conferenzastampa_due_afp_1200x630_1618393903648.jpg">
+<meta property="twitter:image:width"  content="1200">
+<meta property="twitter:image:height" content="630">
+<link rel="image_src" href="https://binaries.lasicilia.it/2021/04/14/trump_conferenzastampa_due_afp_1200x630_1618393903648.jpg" />
+<meta name="publisher" content="La Sicilia" /> 
+<meta name="url" content="https://www.lasicilia.it/news/salute/349662/sanita-usa-trump-chiede-a-corte-suprema-di-invalidare-obamacare.html" />
+<meta property="fb:pages" content="134360066669572" />
+<script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "NewsArticle",
+            "url": "https://www.lasicilia.it/news/salute/349662/sanita-usa-trump-chiede-a-corte-suprema-di-invalidare-obamacare.html",
+            "mainEntityOfPage": "https://www.lasicilia.it/news/salute/349662/sanita-usa-trump-chiede-a-corte-suprema-di-invalidare-obamacare.html",
+            "headline": "Sanità: Usa, Trump chiede a Corte Suprema di invalidare Obamacare",
+            "text": "&lt;![CDATA[ &lt;p&gt;Washington, 26 giu. (Adnkronos Salute) - A quattro mesi dalle elezioni presidenziali americane, l&#039;amministrazione Trump tenta l&#039;assalto finale contro l&#039;Obamacare chiedendo alla Corte Suprema di invalidare l&#039;intera riforma sanitaria varata da Barack Obama. Una richiesta che, se venisse accolta, lascerebbe 20 milioni di americani senza copertura sanitaria proprio nel mezzo dell&#039;epidemia di coronavirus.&lt;/p&gt; &lt;p&gt;Il dipartimento di Giustizia ha presentato la notte scorsa un argomento legale in cui si definisce l&#039;intera legge, detta Aca, incostituzionale perché il Congresso nel 2017 ha fatto decadere l&#039;obbligatorietà del mandato individuale, cioè l&#039;obbligo di avere un&#039;assicurazione sanitaria pena una multa che era alla base dell&#039;Obamacare. Un argomento che già in passato è stato ritenuto debole da esperti legali di entrambi gli schieramenti. Immediata la replica di Nancy Pelosi che ha definito &#034;un&#039;azione di indicibile crudeltà strappare le protezioni ed i benefici dell&#039;Affordable Care Act nel mezzo della crisi del coronavirus&#034;. &lt;/p&gt;",
+            "keywords": "",
+            "articleSection": "Salute",
+            "publisher": {
+                "@type": "Organization",
+                "name": "La Sicilia",
+                "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.lasicilia.it/assets/images/lasicilia-logo.png",
+                "height": "233",
+                "width":"1080"
+                }
+            },
+            "image": {
+                "contentUrl": "https://binaries.lasicilia.it/2021/04/14/trump_conferenzastampa_due_afp_1200x630_1618393903648.jpg",
+                "url": "https://binaries.lasicilia.it/2021/04/14/trump_conferenzastampa_due_afp_1200x630_1618393903648.jpg",
+                "@type": "ImageObject",
+                "width": "1200",
+                "height": "630"
+            },
+            "author": {
+                "@type": "Person",
+                "name": "La Sicilia"
+            },
+            "dateCreated": "2020-06-26T12:47:00Z",
+            "dateModified": "2020-06-26T13:30:02Z",
+            "datePublished": "2020-06-26T15:30:03Z"
+        }
+        </script>
+    </head>
+
+		<body class="article" data-content="article" data-sezione="article">
+			
+<!-- www.lasicilia.it -->
+
+	<script async src="//tags.tiqcdn.com/utag/rcsmedia/partner/prod/utag.js"></script>
+
+
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MZ53C9R"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<div id="adv-video-container"></div>	
+<header>
+	<div class="top-row">
+		<div class="search-wrapper">
+			<div class="search"></div>
+			<form action="/search">
+				<input type="text" name="keyword" class="search-field" placeholder="Cerca" required name="keyword"/>
+				<input type="submit" hidden/>
+			</form>
+		</div>
+		<ul class="social-media">
+			<li><a href="/meteo" class="meteo-icon" title="Meteo"></a></li>
+			<li><a href="https://www.facebook.com/lasiciliait" class="facebook" title="Facebook"></a></li>
+			<li><a href="https://twitter.com/lasiciliait" class="twitter" title="Twitter"></a></li>
+			<li><a href="" class="instagram" title="Instagram"></a></li>
+			<li><a href="https://www.youtube.com/user/GIORNALELASICILIA" class="youtube" title="YouTube"></a></li>
+		</ul>
+	</div>
+	<div class="second-row">
+		<div id="advlocal-manchetteleft"></div>
+		<ul class="actions first">
+			<li><div class="hamburger"></div></li>
+			<li><div class="search"></div></li>
+		</ul>
+		<a href="/" class="logo">
+			<img data-src="//www.lasicilia.it/assets/images/lasicilia-logo.png" src="//www.lasicilia.it/assets/images/lasicilia-logo.png" class="lazy" alt="La Sicilia">
+		</a>
+		<div class="local-news">Notizie locali</div>
+		<ul class="actions last">
+			<li><a href="https://www.lasicilia.it/utility/2022/01/17/html/oggi-in-edicola-1452866/" class="subscribe button">Abbonati</a></li>
+			<li class="login-container" style="display:none"><a href="/sso" class="login" title="Login">Accedi</a></li>
+			<li class="profile-container" style="display:none"><a id="profileText" href="/sso/profile" class="login" title="Profile">Profilo</a></li>
+			<li class="logout-container"  style="display:none"><a href="/sso/logout" class="logout" title="Logout">Esci</a></li>
+		</ul>
+		<div id="advlocal-manchetteright"></div>
+	</div>
+	<div class="third-row">
+		<nav>
+			<ul>
+				<li itemprop="name">
+			<a itemprop="url" href="https://www.lasicilia.it/catania/">Catania</a>
+		</li>
+	<li itemprop="name">
+			<a itemprop="url" href="https://www.lasicilia.it/agrigento/">Agrigento</a>
+		</li>
+	<li itemprop="name">
+			<a itemprop="url" href="https://www.lasicilia.it/caltanissetta/">Caltanissetta</a>
+		</li>
+	<li itemprop="name">
+			<a itemprop="url" href="https://www.lasicilia.it/enna/">Enna</a>
+		</li>
+	<li itemprop="name">
+			<a itemprop="url" href="https://www.lasicilia.it/messina/">Messina</a>
+		</li>
+	<li itemprop="name">
+			<a itemprop="url" href="https://www.lasicilia.it/palermo/">Palermo</a>
+		</li>
+	<li itemprop="name">
+			<a itemprop="url" href="https://www.lasicilia.it/ragusa/">Ragusa</a>
+		</li>
+	<li itemprop="name">
+			<a itemprop="url" href="https://www.lasicilia.it/siracusa/">Siracusa</a>
+		</li>
+	<li itemprop="name">
+			<a itemprop="url" href="https://www.lasicilia.it/trapani/">Trapani</a>
+		</li>
+	
+			</ul>
+		</nav>
+	</div>
+	<div class="bottom-row">
+		<div class="left">
+			<div class="hamburger">
+			</div>
+			<ul class="tags">
+				<li itemprop="name">
+			<a itemprop="url" href="/utility/info/news/lo_dico_a_la_sicilia-1245492/"><span style="color:#06d755;font-weight:bold;">@LoDico</span></a>
+		</li>
+	<li itemprop="name">
+			<a itemprop="url" href="https://www.lasicilia.it/video/">Video</a>
+		</li>
+	<li itemprop="name">
+			<a itemprop="url" href="/search?keyword=buongusto">Buongusto</a>
+		</li>
+	<li itemprop="name">
+			<a itemprop="url" href="https://www.lasicilia.it/viaggi-e-turismo/">Viaggi&Turismo</a>
+		</li>
+	<li itemprop="name">
+			<a itemprop="url" href="https://necrologie.lasicilia.it/">Necrologie</a>
+		</li>
+	<li itemprop="name">
+			<a itemprop="url" href="https://www.lasicilia.it/speciali/">Speciali</a>
+		</li>
+	<li itemprop="name">
+			<a itemprop="url" href="http://inserti.lasicilia.it/">Aste</a>
+		</li>
+	<li itemprop="name">
+			<a itemprop="url" href="https://www.lasicilia.it/utility/2021/11/24/html/faq---frequently-asked-question---libri-online-1401611/"><span style="color:#FFDEAD;font-weight:bold;">Libri</span></a>
+		</li>
+	<li itemprop="name">
+			<a itemprop="url" href="https://www.lasicilia.it/utility/info/news/meteo-1228633/"><span style="color:white;font-weight:bold; width: 17px;height: 13px;padding-left: 26px;height: 13px;background-image: url(https://www.lasicilia.it/upload/meteomenu.png);background-repeat: no-repeat;background-size: contain;">Meteo</span></a>
+		</li>
+	
+			</ul>
+		</div>
+		<div class="right">
+			<ul class="links">
+				<li><a href="https://edicola.lasicilia.it/lasicilia/newsstand">Sfoglia il giornale</a></li>
+				<li class="login-container" style="display:none"><a href="/sso" title="Login">Accedi</a></li>
+		        <li class="profile-container" style="display:none"><a href="/sso/profile" title="Profile">Profilo</a></li>
+		        <li class="logout-container" style="display:none"><a href="/sso/logout" title="Logout">Esci</a></li>
+				<li><a href="https://www.lasicilia.it/utility/2022/01/17/html/oggi-in-edicola-1452866/" class="subscribe button">Abbonati</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="search-container" style="display: none;">
+		<div class="top-wrapper">
+			<span class="close"></span>
+		</div>
+		<div class="search-wrapper">
+			<button class="search-button"></button>
+			<form action="/search">
+				<input type="text" name="keyword" class="search-field" placeholder="Cerca articoli, argomenti, tag…" required name="keyword"/>
+				<input type="submit" hidden/>
+			</form>
+		</div>
+	</div>
+</header><div id="adv-position1"></div><div id="adv-topleft"></div><main>
+				<div class="slide-out-nav">
+	<div class="top-wrapper">
+		<img src="/assets/images/lasicilia-logo.png" class="logo" alt="">
+		<span class="close"></span>
+	</div>
+	<div class="actions">
+		<a href="https://edicola.lasicilia.it/lasicilia/newsstand">Sfoglia il giornale</a>
+		<a href="https://www.lasicilia.it/utility/2022/01/17/html/oggi-in-edicola-1452866/" class="login button">Abbonati</a>
+	</div>
+	<div class="slide">
+		<span>Notizie locali</span>
+		<div class="second-slide">
+			<div class="back-button"></div>
+			<span>Notizie locali</span>
+			<ul class="secondary-nav">
+				<li itemprop="name">
+			<a itemprop="url" href="https://www.lasicilia.it/catania/">Catania</a>
+		</li>
+	<li itemprop="name">
+			<a itemprop="url" href="https://www.lasicilia.it/agrigento/">Agrigento</a>
+		</li>
+	<li itemprop="name">
+			<a itemprop="url" href="https://www.lasicilia.it/caltanissetta/">Caltanissetta</a>
+		</li>
+	<li itemprop="name">
+			<a itemprop="url" href="https://www.lasicilia.it/enna/">Enna</a>
+		</li>
+	<li itemprop="name">
+			<a itemprop="url" href="https://www.lasicilia.it/messina/">Messina</a>
+		</li>
+	<li itemprop="name">
+			<a itemprop="url" href="https://www.lasicilia.it/palermo/">Palermo</a>
+		</li>
+	<li itemprop="name">
+			<a itemprop="url" href="https://www.lasicilia.it/ragusa/">Ragusa</a>
+		</li>
+	<li itemprop="name">
+			<a itemprop="url" href="https://www.lasicilia.it/siracusa/">Siracusa</a>
+		</li>
+	<li itemprop="name">
+			<a itemprop="url" href="https://www.lasicilia.it/trapani/">Trapani</a>
+		</li>
+	
+			</ul>
+		</div>
+	</div>
+	<!--
+	<nav itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+		<ul itemtype="http://schema.org/SiteNavigationElement" itemscope="itemscope">
+			<li itemprop="name">
+			<a itemprop="url" href="">Notizie locali</a>
+		</li>
+	
+		</ul>
+	</nav>
+	-->
+	<ul class="secondary-nav">
+		<li itemprop="name">
+			<a itemprop="url" href="/search">Cerca nel sito</a>
+		</li>
+	<li itemprop="name">
+			<a itemprop="url" href="https://necrologie.lasicilia.it/">Necrologie Online</a>
+		</li>
+	<li itemprop="name">
+			<a itemprop="url" href="https://www.lasicilia.it/lo-dico/"><span style="color:#06d755;font-weight:bold;">@Lo Dico</span></a>
+		</li>
+	<li itemprop="name">
+			<a itemprop="url" href="https://www.lasicilia.it/cronaca/">Cronaca</a>
+		</li>
+	<li itemprop="name">
+			<a itemprop="url" href="https://www.lasicilia.it/editoriali/">Editoriali</a>
+		</li>
+	<li itemprop="name">
+			<a itemprop="url" href="https://www.lasicilia.it/tech/">Tech</a>
+		</li>
+	<li itemprop="name">
+			<a itemprop="url" href="https://www.lasicilia.it/gossip/">Gossip</a>
+		</li>
+	<li itemprop="name">
+			<a itemprop="url" href="https://www.lasicilia.it/sicilians/">Sicilians</a>
+		</li>
+	<li itemprop="name">
+			<a itemprop="url" href="https://www.lasicilia.it/spettacoli/">Spettacoli</a>
+		</li>
+	<li itemprop="name">
+			<a itemprop="url" href="https://www.lasicilia.it/sport/">Sport</a>
+		</li>
+	<li itemprop="name">
+			<a itemprop="url" href="https://www.lasicilia.it/lavoro/">Lavoro</a>
+		</li>
+	<li itemprop="name">
+			<a itemprop="url" href="https://www.lasicilia.it/gallery/">Gallery</a>
+		</li>
+	<li itemprop="name">
+			<a itemprop="url" href="https://www.lasicilia.it/economia/">Economia</a>
+		</li>
+	<li itemprop="name">
+			<a itemprop="url" href="https://www.lasicilia.it/politica/">Politica</a>
+		</li>
+	<li itemprop="name">
+			<a itemprop="url" href="https://www.lasicilia.it/qua-la-zampa/">Qua la zampa</a>
+		</li>
+	<li itemprop="name">
+			<a itemprop="url" href="https://www.lasicilia.it/salute/">Salute</a>
+		</li>
+	<li itemprop="name">
+			<a itemprop="url" href="https://www.lasicilia.it/covid-19/">Covid</a>
+		</li>
+	<li itemprop="name">
+			<a itemprop="url" href="https://www.lasicilia.it/blog/">Blog</a>
+		</li>
+	<li itemprop="name">
+			<a itemprop="url" href="https://www.lasicilia.it/italia/">Italia</a>
+		</li>
+	<li itemprop="name">
+			<a itemprop="url" href="https://www.lasicilia.it/mondo/">Mondo</a>
+		</li>
+	<li itemprop="name">
+			<a itemprop="url" href="https://www.lasicilia.it/italpress-news/">Italpress news</a>
+		</li>
+	<li itemprop="name">
+			<a itemprop="url" href="https://www.lasicilia.it/vivere/">Vivere</a>
+		</li>
+	<li itemprop="name">
+			<a itemprop="url" href="https://www.lasicilia.it/europa/">Europa</a>
+		</li>
+	<li itemprop="name">
+			<a itemprop="url" href="https://www.lasicilia.it/video-dalla-rete/">Video dalla rete</a>
+		</li>
+	<li itemprop="name">
+			<a itemprop="url" href="https://www.lasicilia.it/video/">Video</a>
+		</li>
+	<li itemprop="name">
+			<a itemprop="url" href="https://www.lasicilia.it/tunein/"><span style="color:#00cdff;font-weight:bold;">#TuneIn</span></a>
+		</li>
+	<li itemprop="name">
+			<a itemprop="url" href="https://inserti.lasicilia.it">Aste</a>
+		</li>
+	<li itemprop="name">
+			<a itemprop="url" href="https://www.lasicilia.it/utility/2021/11/24/html/faq---frequently-asked-question---libri-online-1401611/"><span style="color:#6b6656;font-weight:bold;">Libri FaQ</span></a>
+		</li>
+	<li itemprop="name">
+			<a itemprop="url" href="https://fondazionedse.lasicilia.it">Fondazione DSE</a>
+		</li>
+	<li itemprop="name">
+			<a itemprop="url" href="https://www.lasicilia.it/progetti-dse/">Progetti</a>
+		</li>
+	<li itemprop="name">
+			<a itemprop="url" href="https://www.lasicilia.it/blog/spazio-podcast/"><span style="color:#00cdff;font-weight:bold;">#PodCast</span></a>
+		</li>
+	
+	</ul>
+	<ul class="tertiary-nav">
+		<li><a href="https://www.lasicilia.it/sso/signup">Iscriviti alle newsletter</a></li>
+	</ul>
+	<ul class="social-media">
+		<li><a href="https://www.facebook.com/lasiciliait" class="facebook" title="Facebook" target="_blank"></a></li>
+		<li><a href="https://twitter.com/lasiciliait" class="twitter" title="Twitter" target="_blank"></a></li>
+		<li><a href="https://www.instagram.com/lasicilia.it/?hl=it" class="instagram" title="Instagram" target="_blank"></a></li>
+		<li><a href="https://www.youtube.com/c/LASICILIA-VIDEO" class="youtube" title="YouTube" target="_blank"></a></li>
+		<li><a href="/meteo" class="meteo-icon" title="Meteo"></a></li>
+	</ul>
+</div><div class="ad desktop-none">
+    <span>Pubblicità</span>
+    <div id="advlocal-mobile-frame0"></div>
+</div><section class="upper-section">
+					<article>
+						<figure>
+							<img src="https://binaries.lasicilia.it/2021/04/14/trump_conferenzastampa_due_afp_1200x630_1618393903648.jpg" />
+							<figcaption></figcaption>
+						</figure>
+
+						<div class="content-wrapper">
+							<header>
+								<p class="overtitle"><a href="/salute/">Salute</a></p>
+<h1>
+									<span itemprop="headline">
+										Sanità: Usa, Trump chiede a Corte Suprema di invalidare Obamacare</span>
+								</h1>
+								
+							</header>
+							<div class="desc" itemprop="description">
+								<div class="intro">
+									</div>
+
+								<div class="article-data">
+									<span class="author">Di <span class="fieldAuthor">Redazione</span></span>
+										<time>26 giu 2020</time>
+									<ul class="social-media">
+										<li><a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fwww.lasicilia.it%2fnews%2fsalute%2f349662%2fsanita-usa-trump-chiede-a-corte-suprema-di-invalidare-obamacare.html" class="facebook" title="Facebook" target="_blank"></a></li>
+										<li><a href="https://twitter.com/share?text=Sanit%c3%a0%3a%20Usa%2c%20Trump%20chiede%20a%20Corte%20Suprema%20di%20invalidare%20Obamacare&url=https%3a%2f%2fwww.lasicilia.it%2fnews%2fsalute%2f349662%2fsanita-usa-trump-chiede-a-corte-suprema-di-invalidare-obamacare.html&via=lasiciliait" class="twitter" title="Twitter" target="_blank"></a></li>
+										<li><a href="https://www.linkedin.com/sharing/share-offsite?url=https%3a%2f%2fwww.lasicilia.it%2fnews%2fsalute%2f349662%2fsanita-usa-trump-chiede-a-corte-suprema-di-invalidare-obamacare.html" class="linkedin" title="LinkedIn" target="_blank"></a></li>
+                            			<li><a href="mailto:?subject=Sanit%c3%a0%3a%20Usa%2c%20Trump%20chiede%20a%20Corte%20Suprema%20di%20invalidare%20Obamacare&body=https%3a%2f%2fwww.lasicilia.it%2fnews%2fsalute%2f349662%2fsanita-usa-trump-chiede-a-corte-suprema-di-invalidare-obamacare.html" class="email" title="Email" target="_blank"></a></li>
+										<li><a href="" class="share print" title="Print content" target="_blank"></a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</article>
+				</section>
+				<section class="lower-section">
+					<article class="article-content detail_content">
+						<div class="content-wrapper">
+							
+							<![CDATA[
+<p>Washington, 26 giu. (Adnkronos Salute) - A quattro mesi dalle elezioni presidenziali americane, l'amministrazione Trump tenta l'assalto finale contro l'Obamacare chiedendo alla Corte Suprema di invalidare l'intera riforma sanitaria varata da Barack Obama. Una richiesta che, se venisse accolta, lascerebbe 20 milioni di americani senza copertura sanitaria proprio nel mezzo dell'epidemia di coronavirus.</p><div class="ad desktop-none order-4">
+    <span>Pubblicità</span>
+    <div id="adv-mobile-frame1"></div>
+</div><p>Il dipartimento di Giustizia ha presentato la notte scorsa un argomento legale in cui si definisce l'intera legge, detta Aca, incostituzionale perché il Congresso nel 2017 ha fatto decadere l'obbligatorietà del mandato individuale, cioè l'obbligo di avere un'assicurazione sanitaria pena una multa che era alla base dell'Obamacare. Un argomento che già in passato è stato ritenuto debole da esperti legali di entrambi gli schieramenti. Immediata la replica di Nancy Pelosi che ha definito "un'azione di indicibile crudeltà strappare le protezioni ed i benefici dell'Affordable Care Act nel mezzo della crisi del coronavirus". </p><div id="adv-bottom1" class="ad desktop-only"></div><small class="copyright">COPYRIGHT LASICILIA.IT &copy; RIPRODUZIONE RISERVATA</small>
+							
+
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/it_IT/sdk.js#xfbml=1&version=v5.0&appId=306201956387734"></script>
+
+<div class="fb-comments" data-href="https://www.lasicilia.it/news/salute/349662/sanita-usa-trump-chiede-a-corte-suprema-di-invalidare-obamacare.html" data-width="100%" data-numposts="5"></div>
+
+
+
+</div>
+					</article>
+					<div id="adv-taboola" class="ad desktop-only"></div></section>
+
+				<aside>
+
+<!-- START FRAME1 - FRAME2 -->
+<div id="sticky-container-frame1-outer" class="sticky-container-outer">
+<div id="sticky-container-frame1-inner" class="sticky-container-inner">
+    <div class="ad desktop-only">
+        <span>Pubblicità</span>
+        <div id="adv-frame1"></div>
+    </div>  
+<!-- INSERIRE QUI TUTTI GLI EVENTUALI ELEMENTI EDITORIALI SUCCESSIVI A FRAME1 FINO A
+FRAME2 ESCLUSO -->
+    <div class="ad ">
+    <div id="advlocal-newsletter"></div>
+</div>
+        <div class="ad desktop-only">
+        <span>Pubblicità</span>
+        <div id="advlocal-frame1"></div>
+    </div>
+
+</div>
+</div>
+<!-- FINISH FRAME1 - FRAME2 -->
+    <section class="module news-wrapper type-07">
+	<div class="header">
+		<span>Pi&ugrave; letti</span>
+	</div>
+	<article>
+			<figure>
+				<a href="https://www.lasicilia.it/cronaca/news/mafia-a-catania-avviso-di-conclusione-indagini-per-66-persone-coinvolte-nel-blitz-agora-tutti-i-nomi-1921200/" title="">
+							<img src="https://binaries.lasicilia.it/2022/10/21/130007952-727be45a-5982-4374-bbd1-236e2636cf2a.jpg" />
+						</a>
+					</figure>
+
+			<div class="content-wrapper">
+				<header>
+					<p class="overtitle">L'INCHIESTA GIUDIZIARIA</p>
+					<h2>
+						<span>
+						<a  href="https://www.lasicilia.it/cronaca/news/mafia-a-catania-avviso-di-conclusione-indagini-per-66-persone-coinvolte-nel-blitz-agora-tutti-i-nomi-1921200/" title="Mafia, a Catania avviso di conclusione indagini per 66 persone coinvolte nel blitz Agorà: tutti i nomi">Mafia, a Catania avviso di conclusione indagini per 66 persone coinvolte nel blitz Agorà: tutti i nomi</a></span>
+					</h2>
+				</header>
+
+				<div class="desc" >
+
+					<p><a href="https://www.lasicilia.it/cronaca/news/mafia-a-catania-avviso-di-conclusione-indagini-per-66-persone-coinvolte-nel-blitz-agora-tutti-i-nomi-1921200/"><p>Quattro mesi fa&nbsp;il colpo di grazia inferto alla Cupola operativa di Cosa Nostra nella Sicilia orientale</p>
+</a></p>
+
+					<time>21/10/2022</time>
+
+					<span class="author">di <span class="fieldAuthor">Laura Distefano</span></span>
+						</div>
+			</div>
+		</article>
+
+	<article>
+			<figure>
+				<a href="https://www.lasicilia.it/economia/news/bolletta-da-6-000-euro-chiude-dopo-37-anni-storica-pasticceria-di-lentini-non-guadagno-certo-quelle-cifre--1929835/" title="">
+							<img src="https://binaries.lasicilia.it/2022/10/25/130324034-07974f2e-8d72-4cce-894a-9993ae8f93d8.jpg" />
+						</a>
+					</figure>
+
+			<div class="content-wrapper">
+				<header>
+					<p class="overtitle">CARO ENERGIA</p>
+					<h2>
+						<span>
+						<a  href="https://www.lasicilia.it/economia/news/bolletta-da-6-000-euro-chiude-dopo-37-anni-storica-pasticceria-di-lentini-non-guadagno-certo-quelle-cifre--1929835/" title="Bolletta da 6.000 euro, chiude dopo 37 anni storica pasticceria di Lentini: «Non guadagno certo quelle cifre»">Bolletta da 6.000 euro, chiude dopo 37 anni storica pasticceria di Lentini: «Non guadagno certo quelle cifre»</a></span>
+					</h2>
+				</header>
+
+				<div class="desc" >
+
+					<p><a href="https://www.lasicilia.it/economia/news/bolletta-da-6-000-euro-chiude-dopo-37-anni-storica-pasticceria-di-lentini-non-guadagno-certo-quelle-cifre--1929835/"><p>La decisione, suo malgrado, l&rsquo;ha presa il titolare Angelo Pititto Lazzara che ha trascorso buona parte della sua vita in quel laboratorio</p>
+</a></p>
+
+					<time>25/10/2022</time>
+
+					<span class="author">di <span class="fieldAuthor">Rosanna Gimmillaro</span></span>
+						</div>
+			</div>
+		</article>
+
+	<article>
+			<figure>
+				<a href="https://www.lasicilia.it/salute/news/allo-iom-di-viagrande-paziente-salvata-da-un-tumore-al-pancreas-1929452/" title="">
+							<img src="https://binaries.lasicilia.it/2022/10/25/122726918-be81bae6-0ff5-45d6-8763-46146828029d.jpg" />
+						</a>
+					</figure>
+
+			<div class="content-wrapper">
+				<header>
+					<p class="overtitle">Sanità</p>
+					<h2>
+						<span>
+						<a  href="https://www.lasicilia.it/salute/news/allo-iom-di-viagrande-paziente-salvata-da-un-tumore-al-pancreas-1929452/" title="Allo Iom di Viagrande paziente salvata da un tumore al pancreas">Allo Iom di Viagrande paziente salvata da un tumore al pancreas</a></span>
+					</h2>
+				</header>
+
+				<div class="desc" >
+
+					<p><a href="https://www.lasicilia.it/salute/news/allo-iom-di-viagrande-paziente-salvata-da-un-tumore-al-pancreas-1929452/"><p>La neoplasia endocrina all&#39;imaging si trovava in corrispondenza del corpo pancreatico, in stretta contiguit&agrave; con la vena splenica</p>
+</a></p>
+
+					<time>25/10/2022</time>
+
+					<span class="author">di <span class="fieldAuthor">Redazione</span></span>
+						</div>
+			</div>
+		</article>
+
+	<article>
+			<figure>
+				<a href="https://www.lasicilia.it/catania/news/l-enac-ha-scelto-catania-come-aeroporto-hub-del-mediterraneo-insorge-palermo-1930349/" title="">
+							<img src="https://binaries.lasicilia.it/2021/04/20/Nuova-e-pi-lunga-pista-a-Fontanarossa-3b44ff51b08b820eef48cc2c2ffe9909_1618896288896.jpg" />
+						</a>
+					</figure>
+
+			<div class="content-wrapper">
+				<header>
+					<p class="overtitle">la polemica</p>
+					<h2>
+						<span>
+						<a  href="https://www.lasicilia.it/catania/news/l-enac-ha-scelto-catania-come-aeroporto-hub-del-mediterraneo-insorge-palermo-1930349/" title="L'Enac ha scelto Catania come aeroporto hub del Mediterraneo, insorge Palermo">L'Enac ha scelto Catania come aeroporto hub del Mediterraneo, insorge Palermo</a></span>
+					</h2>
+				</header>
+
+				<div class="desc" >
+
+					<p><a href="https://www.lasicilia.it/catania/news/l-enac-ha-scelto-catania-come-aeroporto-hub-del-mediterraneo-insorge-palermo-1930349/"><p>Il sindacato Cisal e il sindaco del capoluogo contro la decisione. Enzo Bianco: &laquo;Fontanarossa ha il doppio del traffico&raquo;</p>
+</a></p>
+
+					<time>25/10/2022</time>
+
+					<span class="author">di <span class="fieldAuthor">Redazione</span></span>
+						</div>
+			</div>
+		</article>
+
+	<article>
+			<figure>
+				<a href="https://www.lasicilia.it/societa/news/benvenuti-ad-aci-bonaccorsi-la-svizzera-di-sicilia-il-sindaco-l-unico-siciliano-in-lizza-fra-i-piu-virtuosi-d-italia-1929312/" title="">
+							<img src="https://binaries.lasicilia.it/2022/10/25/115010845-89632787-29ac-43cc-81c2-b1efe044bbcd.jpg" />
+						</a>
+					</figure>
+
+			<div class="content-wrapper">
+				<header>
+					<p class="overtitle">LA VOTAZIONE</p>
+					<h2>
+						<span>
+						<a  href="https://www.lasicilia.it/societa/news/benvenuti-ad-aci-bonaccorsi-la-svizzera-di-sicilia-il-sindaco-l-unico-siciliano-in-lizza-fra-i-piu-virtuosi-d-italia-1929312/" title="Benvenuti ad Aci Bonaccorsi, la Svizzera di Sicilia: il sindaco l'unico siciliano in lizza fra i più virtuosi d'Italia">Benvenuti ad Aci Bonaccorsi, la Svizzera di Sicilia: il sindaco l'unico siciliano in lizza fra i più virtuosi d'Italia</a></span>
+					</h2>
+				</header>
+
+				<div class="desc" >
+
+					<p><a href="https://www.lasicilia.it/societa/news/benvenuti-ad-aci-bonaccorsi-la-svizzera-di-sicilia-il-sindaco-l-unico-siciliano-in-lizza-fra-i-piu-virtuosi-d-italia-1929312/"><p>Vito Di Mauro in gara con altri&nbsp;10&nbsp;primi cittadini in un concorso dell&#39;Associazione nazionale dei Comuni pi&ugrave; capaci</p>
+</a></p>
+
+					<time>25/10/2022</time>
+
+					<span class="author">di <span class="fieldAuthor">Carmelo Di Mauro</span></span>
+						</div>
+			</div>
+		</article>
+
+	<article>
+			<figure>
+				<a href="https://www.lasicilia.it/cronaca/news/vasto-incendio-a-catania-gigantesca-nube-sulla-citta-e-aria-irrespirabile-1927329/" title="">
+							<img src="https://binaries.lasicilia.it/2022/10/24/125957283-f42f06c7-63f8-4fac-a37d-15a8f50d6fb6.jpg" />
+						</a>
+					</figure>
+
+			<div class="content-wrapper">
+				<header>
+					<p class="overtitle">IL ROGO</p>
+					<h2>
+						<span>
+						<a  href="https://www.lasicilia.it/cronaca/news/vasto-incendio-a-catania-gigantesca-nube-sulla-citta-e-aria-irrespirabile-1927329/" title="Vasto incendio a Catania, gigantesca nube sulla città e aria irrespirabile">Vasto incendio a Catania, gigantesca nube sulla città e aria irrespirabile</a></span>
+					</h2>
+				</header>
+
+				<div class="desc" >
+
+					<p><a href="https://www.lasicilia.it/cronaca/news/vasto-incendio-a-catania-gigantesca-nube-sulla-citta-e-aria-irrespirabile-1927329/"><p>Le fiamme sono&nbsp;scoppiate&nbsp;nel quartiere di Picanello: fumo nero si alzato&nbsp;in cielo diffondendosi in pochi minuti. I vigili del fuoco hanno domato l&#39;incendio dopo ore di lavoro</p>
+</a></p>
+
+					<time>24/10/2022</time>
+
+					<span class="author">di <span class="fieldAuthor">Redazione</span></span>
+						</div>
+			</div>
+		</article>
+
+	<article>
+			<figure>
+				<a href="https://www.lasicilia.it/cronaca/news/errata-diagnosi-il-policlinico-di-catania-condannato-a-risarcire-65-000-agli-eredi-di-una-paziente-deceduta-1928724/" title="">
+							<img src="https://binaries.lasicilia.it/2022/10/25/090350882-0ef2896f-2170-4fad-965f-a98f6e4c8a9a.jpg" />
+						</a>
+					</figure>
+
+			<div class="content-wrapper">
+				<header>
+					<p class="overtitle">LA SENTENZA</p>
+					<h2>
+						<span>
+						<a  href="https://www.lasicilia.it/cronaca/news/errata-diagnosi-il-policlinico-di-catania-condannato-a-risarcire-65-000-agli-eredi-di-una-paziente-deceduta-1928724/" title="Errata diagnosi, il Policlinico di Catania condannato a risarcire 65.000 € agli eredi di una paziente deceduta">Errata diagnosi, il Policlinico di Catania condannato a risarcire 65.000 € agli eredi di una paziente deceduta</a></span>
+					</h2>
+				</header>
+
+				<div class="desc" >
+
+					<p><a href="https://www.lasicilia.it/cronaca/news/errata-diagnosi-il-policlinico-di-catania-condannato-a-risarcire-65-000-agli-eredi-di-una-paziente-deceduta-1928724/"><p>A darne notizie &egrave; l&#39;associazione dei consumatori Centro per i diritti del cittadino - Codici Sicilia, che ha assistito i familiari della donna</p>
+</a></p>
+
+					<time>25/10/2022</time>
+
+					<span class="author">di <span class="fieldAuthor">Redazione</span></span>
+						</div>
+			</div>
+		</article>
+
+	    <div class="ad desktop-only">
+        <span>Pubblicità</span>
+        <div id="advlocal-frame6"></div>
+    </div></section>
+
+
+
+  
+    <div class="ad desktop-none">
+    <span>Pubblicità</span>
+    <div id="advlocal-mobile-frame1"></div>
+</div>
+    <div id="adv-mobile-taboola" class="ad desktop-none"></div>
+
+    <section class="module news-wrapper type-08">
+    <article >
+        <figure >
+            <a href="https://edicola.lasicilia.it/lasicilia/newsstand" title="">
+                <img data-src="https://edicola.lasicilia.it/lasicilia/fpext.jsp?t=catania&h=400" class="lazy" alt="">
+            </a>
+            <meta content="URL IMAGE" itemprop="url">
+            <meta content="644" itemprop="width">
+            <meta content="362" itemprop="height">
+        </figure>
+
+        <div class="content-wrapper">
+            <header>
+                <p class="overtitle">Il giornale di oggi</p>
+            </header>
+        </div>
+        <div class="button-container">
+            <a href="https://edicola.lasicilia.it/lasicilia/newsstand" class="btn">SFOGLIA</a>
+            <a href="https://www.lasicilia.it/utility/2022/01/17/html/oggi-in-edicola-1452866/" class="btn">ABBONATI</a>
+        </div>
+    </article>
+</section>  
+   <!-- START FRAME2 - FRAME3 -->
+<div id="sticky-container-frame2-outer" class="sticky-container-outer">
+<div id="sticky-container-frame2-inner" class="sticky-container-inner">
+<!-- INSERIRE QUI TUTTI GLI EVENTUALI ELEMENTI EDITORIALI SUCCESSIVI A FRAME2 FINO A
+FRAME3 ESCLUSO -->
+        <div class="ad desktop-only">
+        <span>Pubblicità</span>
+        <div id="adv-frame2"></div>
+    </div>
+    <section class="module news-wrapper type-07 video">
+    <div class="header">
+		<span>Video</span>
+			</div>
+
+	<article >
+			<figure >
+				<a href="https://www.lasicilia.it/video-italpress/video/salvini-aumento-del-tetto-a-contante-e-nel-programma-di-centrodestra--1932440/" title="">
+							<img src="https://binaries.lasicilia.it/2022/10/26/zvRq_300x169_1666787972049.jpg" />
+						</a>
+					</figure>
+
+			<div class="content-wrapper">
+				<header>
+					<h2>
+						<span >
+							<a itemprop="mainEntityOfPage" href="https://www.lasicilia.it/video-italpress/video/salvini-aumento-del-tetto-a-contante-e-nel-programma-di-centrodestra--1932440/" title="Salvini "Aumento del tetto a contante è nel programma di centrodestra"">Salvini "Aumento del tetto a contante è nel programma di centrodestra"</a>
+								</span>
+							
+					</h2>
+				</header>
+
+				<div class="desc" >
+            		<p><a href="https://www.lasicilia.it/video-italpress/video/salvini-aumento-del-tetto-a-contante-e-nel-programma-di-centrodestra--1932440/"></a></p>
+				</div>
+			</div>
+		</article>
+
+    <article >
+			<figure >
+				<a href="https://www.lasicilia.it/video/video/operazione-terra-bruciata-contro-il-clan-laudani-il-video-dei-carabinieri-1930875/" title="">
+							<img src="https://binaries.lasicilia.it/2022/10/26/054249372-9f4d02fc-02db-4ac9-9fa5-2f8b69faca8f.jpg" />
+						</a>
+					</figure>
+
+			<div class="content-wrapper">
+				<header>
+					<h2>
+						<span >
+							<a itemprop="mainEntityOfPage" href="https://www.lasicilia.it/video/video/operazione-terra-bruciata-contro-il-clan-laudani-il-video-dei-carabinieri-1930875/" title="Operazione Terra Bruciata contro il clan Laudani: il video dei carabinieri">Operazione Terra Bruciata contro il clan Laudani: il video dei carabinieri</a></span>
+							
+					</h2>
+				</header>
+
+				<div class="desc" >
+            		<p><a href="https://www.lasicilia.it/video/video/operazione-terra-bruciata-contro-il-clan-laudani-il-video-dei-carabinieri-1930875/"></a></p>
+				</div>
+			</div>
+		</article>
+
+    <article >
+			<figure >
+				<a href="https://www.lasicilia.it/video-dalla-rete/video/lotto-10elotto-e-superenalotto-le-estrazioni-di-oggi-25-ottobre-2022-1930631/" title="">
+							<img src="https://binaries.lasicilia.it/2022/10/25/173645121-681be5f8-71e1-483c-aa8a-890ba5899300.jpg" />
+						</a>
+					</figure>
+
+			<div class="content-wrapper">
+				<header>
+					<h2>
+						<span >
+							<a itemprop="mainEntityOfPage" href="https://www.lasicilia.it/video-dalla-rete/video/lotto-10elotto-e-superenalotto-le-estrazioni-di-oggi-25-ottobre-2022-1930631/" title="Lotto, 10eLotto e Superenalotto: le estrazioni di oggi 25 ottobre 2022">Lotto, 10eLotto e Superenalotto: le estrazioni di oggi 25 ottobre 2022</a></span>
+							
+					</h2>
+				</header>
+
+				<div class="desc" >
+            		<p><a href="https://www.lasicilia.it/video-dalla-rete/video/lotto-10elotto-e-superenalotto-le-estrazioni-di-oggi-25-ottobre-2022-1930631/"></a></p>
+				</div>
+			</div>
+		</article>
+
+    <article >
+			<figure >
+				<a href="https://www.lasicilia.it/video/video/governo-tutto-quello-che-ha-detto-giorgia-meloni-in-meno-di-un-minuto-1930214/" title="">
+							<img src="https://binaries.lasicilia.it/2022/10/25/144449958-be6dcb08-eda1-48b2-a820-e7334b0c445f.jpg" />
+						</a>
+					</figure>
+
+			<div class="content-wrapper">
+				<header>
+					<h2>
+						<span >
+							<a itemprop="mainEntityOfPage" href="https://www.lasicilia.it/video/video/governo-tutto-quello-che-ha-detto-giorgia-meloni-in-meno-di-un-minuto-1930214/" title="Tutto quello che ha detto Giorgia Meloni in meno di un minuto">Tutto quello che ha detto Giorgia Meloni in meno di un minuto</a></span>
+							
+					</h2>
+				</header>
+
+				<div class="desc" >
+            		<p><a href="https://www.lasicilia.it/video/video/governo-tutto-quello-che-ha-detto-giorgia-meloni-in-meno-di-un-minuto-1930214/"></a></p>
+				</div>
+			</div>
+		</article>
+
+    </section>  
+</div>
+</div>
+<!-- FINISH FRAME2 - FRAME3 -->
+
+
+        <div class="ad desktop-only">
+        <span>Pubblicità</span>
+        <div id="advlocal-frame2"></div>
+    </div>
+    <div class="ad desktop-none">
+    <span>Pubblicità</span>
+    <div id="advlocal-mobile-frame2"></div>
+</div>
+    <section class="module news-wrapper type-07">
+	<div class="header">
+		<span>Sicilians</span>
+	</div>
+
+	<article>
+    
+    <figure>
+        <a href="https://www.lasicilia.it/sicilians/news/padre-beniamino-sacco-io-prete-di-frontiera-senza-frontiere--1927423/" title="">
+                    <img src="https://binaries.lasicilia.it/2022/10/24/133330650-395ccc0b-32c5-4341-b410-c7dd34eae30b.jpg" title=""/>
+                </a>
+            </figure>
+
+    <div class="content-wrapper">
+        <header>
+            <p class="overtitle">Solidarietà e accoglienza</p>
+            <h2>
+                <span>
+                <a  href="https://www.lasicilia.it/sicilians/news/padre-beniamino-sacco-io-prete-di-frontiera-senza-frontiere--1927423/" title="Padre Beniamino Sacco: «Io prete di frontiera senza frontiere»">Padre Beniamino Sacco: «Io prete di frontiera senza frontiere»</a></span>
+            </h2>
+        </header>
+
+        <div class="desc" >
+
+            <p><a href="https://www.lasicilia.it/sicilians/news/padre-beniamino-sacco-io-prete-di-frontiera-senza-frontiere--1927423/"><p>Siciliano di Enna trapiantato a Vittoria dagli anni Settanta,&nbsp;&egrave; diventato un punto di riferimento storico per chiunque abbia bisogno di aiuto</p>
+</a></p>
+
+            <time>24/10/2022</time>
+
+            <span class="author">di <span class="fieldAuthor">Nadia D'Amato</span></span>
+                </div>
+    </div>
+</article>
+
+<article>
+    
+    <figure>
+        <a href="https://www.lasicilia.it/sicilians/news/l-amore-di-maria-grazia-cucinotta-per-la-sicilia-il-mio-legame-con-l-isola-non-si-spezzera-mai--1925126/" title="">
+                    <img src="https://binaries.lasicilia.it/2022/10/23/141908285-86114174-d3c0-4e8b-ac7f-4a9671805e29.jpg" title=""/>
+                </a>
+            </figure>
+
+    <div class="content-wrapper">
+        <header>
+            <p class="overtitle">Attrici</p>
+            <h2>
+                <span>
+                <a  href="https://www.lasicilia.it/sicilians/news/l-amore-di-maria-grazia-cucinotta-per-la-sicilia-il-mio-legame-con-l-isola-non-si-spezzera-mai--1925126/" title="L'amore di Maria Grazia Cucinotta per la Sicilia: «Il mio legame con l'isola non si spezzerà mai»">L'amore di Maria Grazia Cucinotta per la Sicilia: «Il mio legame con l'isola non si spezzerà mai»</a></span>
+            </h2>
+        </header>
+
+        <div class="desc" >
+
+            <p><a href="https://www.lasicilia.it/sicilians/news/l-amore-di-maria-grazia-cucinotta-per-la-sicilia-il-mio-legame-con-l-isola-non-si-spezzera-mai--1925126/"><p>Protagonista di tanti film di successo, uno su tutti &quot;Il Postino&quot;, adesso sar&agrave; impegnata in un programma di cucina su La 7</p>
+</a></p>
+
+            <time>23/10/2022</time>
+
+            <span class="author">di <span class="fieldAuthor">Ombretta Grasso</span></span>
+                </div>
+    </div>
+</article>
+
+<article>
+    
+    <figure>
+        <a href="https://www.lasicilia.it/sicilians/news/un-20enne-siracusano-e-l-unico-italiano-nel-cast-newsies-della-disney-1921399/" title="">
+                    <img src="https://binaries.lasicilia.it/2022/10/21/135738476-3656fd50-a1b8-4d28-ba72-90813fb23201.jpg" title=""/>
+                </a>
+            </figure>
+
+    <div class="content-wrapper">
+        <header>
+            <p class="overtitle">Musical</p>
+            <h2>
+                <span>
+                <a  href="https://www.lasicilia.it/sicilians/news/un-20enne-siracusano-e-l-unico-italiano-nel-cast-newsies-della-disney-1921399/" title="Un 20enne siracusano è l'unico italiano nel cast "Newsies" della Disney">Un 20enne siracusano è l'unico italiano nel cast "Newsies" della Disney</a></span>
+            </h2>
+        </header>
+
+        <div class="desc" >
+
+            <p><a href="https://www.lasicilia.it/sicilians/news/un-20enne-siracusano-e-l-unico-italiano-nel-cast-newsies-della-disney-1921399/"><p>Arcangelo Ciulla: &laquo;Si &egrave; realizzato un sogno, sono felice&raquo;</p>
+</a></p>
+
+            <time>21/10/2022</time>
+
+            <span class="author">di <span class="fieldAuthor">Titti Cantone</span></span>
+                </div>
+    </div>
+</article>
+
+<article>
+    
+    <figure>
+        <a href="https://www.lasicilia.it/sicilians/news/catania-tatuata-sul-petto-ho-aperto-ora-il-mio-ristorante-perche-credo-nella-mia-citta--1912445/" title="">
+                    <img src="https://binaries.lasicilia.it/2022/10/17/154406609-b64b02ad-5223-4e59-a7c2-2e1b29c0bbf6.jpg" title=""/>
+                </a>
+            </figure>
+
+    <div class="content-wrapper">
+        <header>
+            <p class="overtitle">Catania</p>
+            <h2>
+                <span>
+                <a  href="https://www.lasicilia.it/sicilians/news/catania-tatuata-sul-petto-ho-aperto-ora-il-mio-ristorante-perche-credo-nella-mia-citta--1912445/" title="Catania tatuata sul petto: «Ho aperto ora il mio ristorante perché credo nella mia città»">Catania tatuata sul petto: «Ho aperto ora il mio ristorante perché credo nella mia città»</a></span>
+            </h2>
+        </header>
+
+        <div class="desc" >
+
+            <p><a href="https://www.lasicilia.it/sicilians/news/catania-tatuata-sul-petto-ho-aperto-ora-il-mio-ristorante-perche-credo-nella-mia-citta--1912445/"><p>Manuel Tropea, 29 anni, chef autodidatta: &laquo;Sono nato a&nbsp;Picanello e ne vado orgoglioso&raquo;</p>
+</a></p>
+
+            <time>17/10/2022</time>
+
+            <span class="author">di <span class="fieldAuthor">Carmen Greco</span></span>
+                </div>
+    </div>
+</article>
+
+<article>
+    
+    <figure>
+        <a href="https://www.lasicilia.it/sicilians/news/irene-burgo-la-neo-campionessa-italiana-di-canoa-che-sogna-l-olimpiade-1912215/" title="">
+                    <img src="https://binaries.lasicilia.it/2022/10/17/144353379-c232bf21-df72-497e-84a0-0fb4f4310229.jpg" title=""/>
+                </a>
+            </figure>
+
+    <div class="content-wrapper">
+        <header>
+            <p class="overtitle">Sport</p>
+            <h2>
+                <span>
+                <a  href="https://www.lasicilia.it/sicilians/news/irene-burgo-la-neo-campionessa-italiana-di-canoa-che-sogna-l-olimpiade-1912215/" title="Irene Burgo, la neo campionessa italiana di canoa che sogna l'Olimpiade">Irene Burgo, la neo campionessa italiana di canoa che sogna l'Olimpiade</a></span>
+            </h2>
+        </header>
+
+        <div class="desc" >
+
+            <p><a href="https://www.lasicilia.it/sicilians/news/irene-burgo-la-neo-campionessa-italiana-di-canoa-che-sogna-l-olimpiade-1912215/"><p>&laquo;La deadline sar&agrave; Parigi 2024, dunque un prossimo anno molto impegnativo, poi decider&ograve; cosa fare perch&eacute; si deve pensare al dopo&raquo;</p>
+</a></p>
+
+            <time>17/10/2022</time>
+
+            <span class="author">di <span class="fieldAuthor">Manuel Bisceglie</span></span>
+                </div>
+    </div>
+</article>
+
+<article>
+    
+    <figure>
+        <a href="https://www.lasicilia.it/sicilians/news/chiara-cocchiara-la-gelese-promessa-mondiale-dell-ingegneria-aerospaziale-1909237/" title="">
+                    <img src="https://binaries.lasicilia.it/2022/10/15/144221743-a296ed96-fa34-434d-9712-a5f8d7710efe.jpg" title=""/>
+                </a>
+            </figure>
+
+    <div class="content-wrapper">
+        <header>
+            <p class="overtitle">il personaggio</p>
+            <h2>
+                <span>
+                <a  href="https://www.lasicilia.it/sicilians/news/chiara-cocchiara-la-gelese-promessa-mondiale-dell-ingegneria-aerospaziale-1909237/" title="Chiara Cocchiara, la gelese promessa mondiale dell'ingegneria aerospaziale ">Chiara Cocchiara, la gelese promessa mondiale dell'ingegneria aerospaziale </a></span>
+            </h2>
+        </header>
+
+        <div class="desc" >
+
+            <p><a href="https://www.lasicilia.it/sicilians/news/chiara-cocchiara-la-gelese-promessa-mondiale-dell-ingegneria-aerospaziale-1909237/"><p>Ha ottenuto il Promise Award 2022 durante la Settimana mondiale dello Spazio: &egrave; stata l&#39;unica italiana ed europea sul podio dei tre giovani leader che guideranno il settore nel futuro&nbsp;</p>
+</a></p>
+
+            <time>15/10/2022</time>
+
+            <span class="author">di <span class="fieldAuthor">Maria Concetta Goldini</span></span>
+                </div>
+    </div>
+</article>
+
+</section>  
+    <div class="ad desktop-none">
+    <span>Pubblicità</span>
+    <div id="advlocal-mobile-frame3"></div>
+</div>
+
+    <!-- START FRAME3 - FINE COLONNA -->
+<div id="sticky-container-frame3-outer" class="sticky-container-outer">
+<div id="sticky-container-frame3-inner" class="sticky-container-inner">
+        <div class="ad desktop-only">
+        <span>Pubblicità</span>
+        <div id="adv-frame3"></div>
+    </div>
+    <section class="module news-wrapper type-07 video">
+    <div class="header">
+		<span>Video dalla rete</span>
+			</div>
+
+	<article >
+			<figure >
+				<a href="https://www.lasicilia.it/video-dalla-rete/video/lotto-10elotto-e-superenalotto-le-estrazioni-di-oggi-25-ottobre-2022-1930631/" title="">
+							<img src="https://binaries.lasicilia.it/2022/10/25/173645121-681be5f8-71e1-483c-aa8a-890ba5899300.jpg" />
+						</a>
+					</figure>
+
+			<div class="content-wrapper">
+				<header>
+					<h2>
+						<span >
+							<a itemprop="mainEntityOfPage" href="https://www.lasicilia.it/video-dalla-rete/video/lotto-10elotto-e-superenalotto-le-estrazioni-di-oggi-25-ottobre-2022-1930631/" title="Lotto, 10eLotto e Superenalotto: le estrazioni di oggi 25 ottobre 2022">Lotto, 10eLotto e Superenalotto: le estrazioni di oggi 25 ottobre 2022</a></span>
+							
+					</h2>
+				</header>
+
+				<div class="desc" >
+            		<p><a href="https://www.lasicilia.it/video-dalla-rete/video/lotto-10elotto-e-superenalotto-le-estrazioni-di-oggi-25-ottobre-2022-1930631/"></a></p>
+				</div>
+			</div>
+		</article>
+
+    <article >
+			<figure >
+				<a href="https://www.lasicilia.it/video-dalla-rete/video/piantedosi-non-mi-aspetto-ingerenze-da-salvini-sul-viminale-in-futuro--1930056/" title="">
+							<img src="https://binaries.lasicilia.it/2022/10/25/140858966-4267cabb-62e2-4802-9b4a-8f2e49cb4769.jpg" />
+						</a>
+					</figure>
+
+			<div class="content-wrapper">
+				<header>
+					<h2>
+						<span >
+							<a itemprop="mainEntityOfPage" href="https://www.lasicilia.it/video-dalla-rete/video/piantedosi-non-mi-aspetto-ingerenze-da-salvini-sul-viminale-in-futuro--1930056/" title="Piantedosi: "Non mi aspetto ingerenze da Salvini sul Viminale in futuro"">Piantedosi: "Non mi aspetto ingerenze da Salvini sul Viminale in futuro"</a></span>
+							
+					</h2>
+				</header>
+
+				<div class="desc" >
+            		<p><a href="https://www.lasicilia.it/video-dalla-rete/video/piantedosi-non-mi-aspetto-ingerenze-da-salvini-sul-viminale-in-futuro--1930056/"></a></p>
+				</div>
+			</div>
+		</article>
+
+    <article >
+			<figure >
+				<a href="https://www.lasicilia.it/video-dalla-rete/video/governo-il-discorso-di-giorgia-meloni-alla-camera-per-la-fiducia-1929184/" title="">
+							<img src="https://binaries.lasicilia.it/2022/10/25/110910287-cef821c7-aa89-43fc-8bb1-27380451be32.jpg" />
+						</a>
+					</figure>
+
+			<div class="content-wrapper">
+				<header>
+					<h2>
+						<span >
+							<a itemprop="mainEntityOfPage" href="https://www.lasicilia.it/video-dalla-rete/video/governo-il-discorso-di-giorgia-meloni-alla-camera-per-la-fiducia-1929184/" title="Governo, il discorso di Giorgia Meloni alla Camera per la fiducia">Governo, il discorso di Giorgia Meloni alla Camera per la fiducia</a></span>
+							
+					</h2>
+				</header>
+
+				<div class="desc" >
+            		<p><a href="https://www.lasicilia.it/video-dalla-rete/video/governo-il-discorso-di-giorgia-meloni-alla-camera-per-la-fiducia-1929184/"></a></p>
+				</div>
+			</div>
+		</article>
+
+    <article >
+			<figure >
+				<a href="https://www.lasicilia.it/video-dalla-rete/video/cade-aereo-in-costa-rica-muore-il-re-tedesco-delle-palestre-1927302/" title="">
+							<img src="https://binaries.lasicilia.it/2022/10/24/123255578-4ac41268-2bdd-4bd0-aa52-62591939feca.jpg" />
+						</a>
+					</figure>
+
+			<div class="content-wrapper">
+				<header>
+					<h2>
+						<span >
+							<a itemprop="mainEntityOfPage" href="https://www.lasicilia.it/video-dalla-rete/video/cade-aereo-in-costa-rica-muore-il-re-tedesco-delle-palestre-1927302/" title="Cade aereo in Costa Rica, muore il re tedesco delle palestre">Cade aereo in Costa Rica, muore il re tedesco delle palestre</a></span>
+							
+					</h2>
+				</header>
+
+				<div class="desc" >
+            		<p><a href="https://www.lasicilia.it/video-dalla-rete/video/cade-aereo-in-costa-rica-muore-il-re-tedesco-delle-palestre-1927302/"><p>L&rsquo;imprenditore milionario tedesco Rainer Schaller, 53 anni, fondatore della catena di palestre McFit e Gold&rsquo;s Gym International, era tra i passeggeri di un aereo privato precipitato in Costa Rica. Lo ha riferito il governo locale. ll velivolo, partito dal Messico con cinque cittadini tedeschi a bordo, era scomparso venerd&igrave; nel mar dei Caraibi al largo del Paese dell&rsquo;America centrale.<br />
+&nbsp;</p>
+</a></p>
+				</div>
+			</div>
+		</article>
+
+    </section> 
+</div>
+</div>
+<!-- FINISH FRAME3 - FINE COLONNA-->
+    <section class="module news-wrapper type-07">
+	<div class="header">
+		<span>Adnkronos</span>
+	</div>
+
+	<article>
+    
+    <figure>
+        <img src="/assets/images/placeholder-lasicilia.jpg" />
+            </figure>
+
+    <div class="content-wrapper">
+        <header>
+            <p class="overtitle"></p>
+            <h2>
+                <span>
+                <a  href="https://www.lasicilia.it/adnkronos/news/made-in-italy-glass-group-open-day-con-aziende-vetrarie-e-partner-industriali-1933605/" title="Made in Italy: Glass group, Open day con aziende vetrarie e partner industriali">Made in Italy: Glass group, Open day con aziende vetrarie e partner industriali</a></span>
+            </h2>
+        </header>
+
+        <div class="desc" >
+
+            <p><a href="https://www.lasicilia.it/adnkronos/news/made-in-italy-glass-group-open-day-con-aziende-vetrarie-e-partner-industriali-1933605/"></a></p>
+
+            <time>26/10/2022</time>
+
+            <span class="author">di <span class="fieldAuthor">Redazione</span></span>
+                </div>
+    </div>
+</article>
+
+<article>
+    
+    <figure>
+        <a href="https://www.lasicilia.it/adnkronos/news/ue-appello-euromontana-e-cia-politica-investa-su-smart-mountains-del-futuro-1933474/" title="">
+                    <img src="https://binaries.lasicilia.it/2022/10/26/LAB20221026204822_300x169_1666811298488.jpg" title=""/>
+                </a>
+            </figure>
+
+    <div class="content-wrapper">
+        <header>
+            <p class="overtitle"></p>
+            <h2>
+                <span>
+                <a  href="https://www.lasicilia.it/adnkronos/news/ue-appello-euromontana-e-cia-politica-investa-su-smart-mountains-del-futuro-1933474/" title="Ue: appello Euromontana e Cia, politica investa su 'smart mountains' del futuro">Ue: appello Euromontana e Cia, politica investa su 'smart mountains' del futuro</a></span>
+            </h2>
+        </header>
+
+        <div class="desc" >
+
+            <p><a href="https://www.lasicilia.it/adnkronos/news/ue-appello-euromontana-e-cia-politica-investa-su-smart-mountains-del-futuro-1933474/"></a></p>
+
+            <time>26/10/2022</time>
+
+            <span class="author">di <span class="fieldAuthor">Redazione</span></span>
+                </div>
+    </div>
+</article>
+
+<article>
+    
+    <figure>
+        <a href="https://www.lasicilia.it/adnkronos/news/toti-nave-ingegneri-pronta-a-salpare-da-genova-perche-modello-liguria-esempio--1933329/" title="">
+                    <img src="https://binaries.lasicilia.it/2022/10/26/LAB20221026185647_300x169_1666804107179.jpg" title=""/>
+                </a>
+            </figure>
+
+    <div class="content-wrapper">
+        <header>
+            <p class="overtitle"></p>
+            <h2>
+                <span>
+                <a  href="https://www.lasicilia.it/adnkronos/news/toti-nave-ingegneri-pronta-a-salpare-da-genova-perche-modello-liguria-esempio--1933329/" title="Toti: "Nave ingegneri pronta a salpare da Genova perché modello Liguria esempio"">Toti: "Nave ingegneri pronta a salpare da Genova perché modello Liguria esempio"</a></span>
+            </h2>
+        </header>
+
+        <div class="desc" >
+
+            <p><a href="https://www.lasicilia.it/adnkronos/news/toti-nave-ingegneri-pronta-a-salpare-da-genova-perche-modello-liguria-esempio--1933329/"></a></p>
+
+            <time>26/10/2022</time>
+
+            <span class="author">di <span class="fieldAuthor">Redazione</span></span>
+                </div>
+    </div>
+</article>
+
+<article>
+    
+    <figure>
+        <a href="https://www.lasicilia.it/adnkronos/news/al-via-il-66-congresso-nazionale-degli-ordini-degli-ingegneri-d-italia-1933327/" title="">
+                    <img src="https://binaries.lasicilia.it/2022/10/26/LAB20221026185711_300x169_1666804101418.jpg" title=""/>
+                </a>
+            </figure>
+
+    <div class="content-wrapper">
+        <header>
+            <p class="overtitle"></p>
+            <h2>
+                <span>
+                <a  href="https://www.lasicilia.it/adnkronos/news/al-via-il-66-congresso-nazionale-degli-ordini-degli-ingegneri-d-italia-1933327/" title="Al via il 66° Congresso nazionale degli ordini degli ingegneri d'Italia">Al via il 66° Congresso nazionale degli ordini degli ingegneri d'Italia</a></span>
+            </h2>
+        </header>
+
+        <div class="desc" >
+
+            <p><a href="https://www.lasicilia.it/adnkronos/news/al-via-il-66-congresso-nazionale-degli-ordini-degli-ingegneri-d-italia-1933327/"></a></p>
+
+            <time>26/10/2022</time>
+
+            <span class="author">di <span class="fieldAuthor">Redazione</span></span>
+                </div>
+    </div>
+</article>
+
+<article>
+    
+    <figure>
+        <img src="/assets/images/placeholder-lasicilia.jpg" />
+            </figure>
+
+    <div class="content-wrapper">
+        <header>
+            <p class="overtitle"></p>
+            <h2>
+                <span>
+                <a  href="https://www.lasicilia.it/adnkronos/news/professioni-assessore-scajola-grazie-agli-ingegneri-per-la-scelta-della-liguria-come-location-del-loro-congresso--1933321/" title="Professioni, assessore Scajola: "Grazie agli ingegneri per la scelta della Liguria come location del loro Congresso"">Professioni, assessore Scajola: "Grazie agli ingegneri per la scelta della Liguria come location del loro Congresso"</a></span>
+            </h2>
+        </header>
+
+        <div class="desc" >
+
+            <p><a href="https://www.lasicilia.it/adnkronos/news/professioni-assessore-scajola-grazie-agli-ingegneri-per-la-scelta-della-liguria-come-location-del-loro-congresso--1933321/"></a></p>
+
+            <time>26/10/2022</time>
+
+            <span class="author">di <span class="fieldAuthor">Redazione</span></span>
+                </div>
+    </div>
+</article>
+
+<article>
+    
+    <figure>
+        <img src="/assets/images/placeholder-lasicilia.jpg" />
+            </figure>
+
+    <div class="content-wrapper">
+        <header>
+            <p class="overtitle"></p>
+            <h2>
+                <span>
+                <a  href="https://www.lasicilia.it/adnkronos/news/al-via-il-66-congresso-nazionale-degli-ordini-degli-ingegneri-d-italia-1933303/" title="Al via il 66° Congresso nazionale degli ordini degli ingegneri d'Italia">Al via il 66° Congresso nazionale degli ordini degli ingegneri d'Italia</a></span>
+            </h2>
+        </header>
+
+        <div class="desc" >
+
+            <p><a href="https://www.lasicilia.it/adnkronos/news/al-via-il-66-congresso-nazionale-degli-ordini-degli-ingegneri-d-italia-1933303/"></a></p>
+
+            <time>26/10/2022</time>
+
+            <span class="author">di <span class="fieldAuthor">Redazione</span></span>
+                </div>
+    </div>
+</article>
+
+</section>
+    <!-- Error -->
+        <div class="ad desktop-only">
+        <span>Pubblicità</span>
+        <div id="advlocal-frame3"></div>
+    </div>
+    <div class="ad ">
+<script type="text/javascript">
+
+  document.write('<iframe frameborder="0" scrolling="no" src="htt'+''+'ps://www.centrometeo'+''+'italiano.it/scpsiti/cmi_italia_nano.php" border="0" width="300" height="420" style="border:0px; margin:0px; padding:0px;"></iframe>');
+
+</script>
+</div>
+        <div class="ad ">
+        <span>Pubblicità</span>
+        <div id="adv-frame4"></div>
+    </div>
+    <div class="ad ">
+<a class="twitter-timeline" data-lang="it" data-width="300" data-height="500" data-dnt="true" data-theme="light" href="https://twitter.com/lasiciliait?ref_src=twsrc^tfw"Tweets> by lasiciliait</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>
+        <div class="ad ">
+        <span>Pubblicità</span>
+        <div id="adv-frame5"></div>
+    </div> 
+
+</aside></main>
+			
+			
+<footer>
+	<div class="top-row">
+		<a href="" class="logo"><img data-src="//www.lasicilia.it/assets/images/lasicilia-logo.png" class="lazy" alt="La Sicilia"></a>
+		<ul class="social-media">
+			<li><a href="https://www.facebook.com/lasiciliait" class="facebook" title="Facebook"></a></li>
+			<li><a href="https://twitter.com/lasiciliait" class="twitter" title="Twitter"></a></li>
+			<li><a href="" class="instagram" title="Instagram"></a></li>
+			<li><a href="https://www.youtube.com/user/GIORNALELASICILIA" class="youtube" title="YouTube"></a></li>
+		</ul>
+		<div class="back-to-top">Torna su</div>
+	</div>
+	<div class="bottom-row">
+		<nav>
+			<ul>
+				<li itemprop="name">
+			<a itemprop="url" href="https://news.google.com/publications/CAAqBwgKMNmcoAkwxIdw">Resta aggiornato</a>
+		</li>
+	<li itemprop="name">
+			<a itemprop="url" href="https://api.whatsapp.com/send?phone=393498818870&text=LODICO"><span style="color:#06d755;font-weight:bold;">@WhatsApp</span></a>
+		</li>
+	<li itemprop="name">
+			<a itemprop="url" href="https://www.lasicilia.it/utility/info/news/contatti-1228635/">Contatti</a>
+		</li>
+	<li itemprop="name">
+			<a itemprop="url" href="https://www.lasicilia.it/utility/info/news/privacy-1228625/">Privacy</a>
+		</li>
+	<li itemprop="name">
+			<a itemprop="url" href="https://www.lasicilia.it/utility/info/news/chi_siamo-1228626/">Chi siamo</a>
+		</li>
+	<li itemprop="name">
+			<a itemprop="url" href="https://www.lasicilia.it/utility/info/news/oggi_in_edicola-1238237/">In Edicola</a>
+		</li>
+	<li itemprop="name">
+			<a itemprop="url" href="https://www.dsepubblicita.it/formati-lasicilia-it/">Pubblicità</a>
+		</li>
+	<li itemprop="name">
+			<a itemprop="url" href="https://play.google.com/store/apps/details?id=andr.lasicilia.agrigento&hl=it&gl=US"><span style="color:#125578">App@Android</span></a>
+		</li>
+	<li itemprop="name">
+			<a itemprop="url" href="https://apps.apple.com/it/app/la-sicilia-edicola-digitale/id974567132"><span style="color:#4c4c50">App@IoS</span></a>
+		</li>
+	<li itemprop="name">
+			<a itemprop="url" href="https://www.lasicilia.it/utility/2021/11/24/html/faq---frequently-asked-question---libri-online-1401611/">Libri DSE</a>
+		</li>
+	<li itemprop="name">
+			<a itemprop="url" href="https://www.lasicilia.it/utility/info/news/galateo-comportamentale-social-per-la-community-1423824/">Community</a>
+		</li>
+	<li itemprop="name">
+			<a itemprop="url" href="https://www.lasicilia.it/sponsor/news/progetti-integrati-di-filiera-psr-sicilia-2014-2022--1493071/">PSR-SICILIA</a>
+		</li>
+	
+			</ul>
+		</nav>
+		<small>Copyright &copy; 2020 LASICILIA.IT. Domenico Sanfilippo Editore SOCIETA' PER AZIONI P.I. 03133580872 All rights reserved. Powered by <a href="//www.dshare.com" target="_blank" style="color: #007bff;">D-Share</a></small>
+	</div>
+</footer>
+<script src="//www.lasicilia.it/assets/js/lazyload.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script src="//www.lasicilia.it/assets/js/main.js?v=1.69" type="text/javascript"></script>
+<!-- Quantcast Tag -->
+<script type="text/javascript">
+window._qevents = window._qevents || [];
+
+(function() {
+var elem = document.createElement('script');
+elem.src = (document.location.protocol == "https:" ? "https://secure" : "http://edge") + ".quantserve.com/quant.js";
+elem.async = true;
+elem.type = "text/javascript";
+var scpt = document.getElementsByTagName('script')[0];
+scpt.parentNode.insertBefore(elem, scpt);
+})();
+
+window._qevents.push({
+qacct:"p-gcQtf37UQQZQp",
+uid:"giornale.lasicilia@gmail.com"
+});
+</script>
+
+<noscript>
+<div style="display:none;">
+<img src="//pixel.quantserve.com/pixel/p-gcQtf37UQQZQp.gif" border="0" height="1" width="1" alt="Quantcast"/>
+</div>
+</noscript>
+<!-- End Quantcast tag -->
+
+
+<!-- START Krux Controltag consensi-->
+<script type="text/javascript">
+$(document).ready(function() {
+
+var date = new Date();
+var minutes = 10;
+date.setTime(date.getTime() + (minutes * 60 * 1000));
+
+  var kruxgdpr ="";
+  console.log('Krux - kruxgdpr=' +kruxgdpr);
+  if ($.cookie('kruxgdpr'))
+  {
+    kruxgdpr = $.cookie("kruxgdpr");
+  }
+  else
+  {
+    console.log('Krux - set cookie kruxgdpr');
+    $.cookie("kruxgdpr", "run");
+  }
+
+	if (typeof Krux !== 'undefined' && localStorage.getItem("kxrcs_kuid") != null && kruxgdpr=="" ) {
+		Krux('ns:rcs', 'consent:set', {
+					dc: true,
+					al: true,
+					tg: true,
+					cd: true,
+					sh: false,
+					re: false
+				}, function (errors, body) {
+					if (errors) {
+						console.log('Krux - ' + errors);
+					} else {
+						localStorage.removeItem("krxdLcInWait");
+						console.log('Krux - Successfully set consent flags. time ');
+					}
+		});
+	}
+});
+</script>
+
+
+<!-- END Krux Controltag --></body>
+
+
+
+	</html>
+
+

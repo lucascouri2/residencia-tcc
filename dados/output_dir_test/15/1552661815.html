@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar" class="" data-skin="light" prefix="og: https://ogp.me/ns#">
+<head><meta charset="UTF-8" /><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>class RocketLazyLoadScripts{constructor(e){this.triggerEvents=e,this.eventOptions={passive:!0},this.userEventListener=this.triggerListener.bind(this),this.delayedScripts={normal:[],async:[],defer:[]},this.allJQueries=[]}_addUserInteractionListener(e){this.triggerEvents.forEach((t=>window.addEventListener(t,e.userEventListener,e.eventOptions)))}_removeUserInteractionListener(e){this.triggerEvents.forEach((t=>window.removeEventListener(t,e.userEventListener,e.eventOptions)))}triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}async _loadEverythingNow(){this._delayEventListeners(),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async),await this._triggerDOMContentLoaded(),await this._triggerWindowLoad(),window.dispatchEvent(new Event("rocket-allScriptsLoaded"))}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((e=>{e.hasAttribute("src")?e.hasAttribute("async")&&!1!==e.async?this.delayedScripts.async.push(e):e.hasAttribute("defer")&&!1!==e.defer||"module"===e.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(e):this.delayedScripts.normal.push(e):this.delayedScripts.normal.push(e)}))}async _transformScript(e){return await this._requestAnimFrame(),new Promise((t=>{const n=document.createElement("script");let r;[...e.attributes].forEach((e=>{let t=e.nodeName;"type"!==t&&("data-rocket-type"===t&&(t="type",r=e.nodeValue),n.setAttribute(t,e.nodeValue))})),e.hasAttribute("src")?(n.addEventListener("load",t),n.addEventListener("error",t)):(n.text=e.text,t()),e.parentNode.replaceChild(n,e)}))}async _loadScriptsFromList(e){const t=e.shift();return t?(await this._transformScript(t),this._loadScriptsFromList(e)):Promise.resolve()}_preloadAllScripts(){var e=document.createDocumentFragment();[...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async].forEach((t=>{const n=t.getAttribute("src");if(n){const t=document.createElement("link");t.href=n,t.rel="preload",t.as="script",e.appendChild(t)}})),document.head.appendChild(e)}_delayEventListeners(){let e={};function t(t,n){!function(t){function n(n){return e[t].eventsToRewrite.indexOf(n)>=0?"rocket-"+n:n}e[t]||(e[t]={originalFunctions:{add:t.addEventListener,remove:t.removeEventListener},eventsToRewrite:[]},t.addEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.add.apply(t,arguments)},t.removeEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.remove.apply(t,arguments)})}(t),e[t].eventsToRewrite.push(n)}function n(e,t){let n=e[t];Object.defineProperty(e,t,{get:()=>n||function(){},set(r){e["rocket"+t]=n=r}})}t(document,"DOMContentLoaded"),t(window,"DOMContentLoaded"),t(window,"load"),t(window,"pageshow"),t(document,"readystatechange"),n(document,"onreadystatechange"),n(window,"onload"),n(window,"onpageshow")}_delayJQueryReady(e){let t=window.jQuery;Object.defineProperty(window,"jQuery",{get:()=>t,set(n){if(n&&n.fn&&!e.allJQueries.includes(n)){n.fn.ready=n.fn.init.prototype.ready=function(t){e.domReadyFired?t.bind(document)(n):document.addEventListener("rocket-DOMContentLoaded",(()=>t.bind(document)(n)))};const t=n.fn.on;n.fn.on=n.fn.init.prototype.on=function(){if(this[0]===window){function e(e){return e.split(" ").map((e=>"load"===e||0===e.indexOf("load.")?"rocket-jquery-load":e)).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=e(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach((t=>{delete Object.assign(arguments[0],{[e(t)]:arguments[0][t]})[t]}))}return t.apply(this,arguments),this},e.allJQueries.push(n)}t=n}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._requestAnimFrame(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._requestAnimFrame(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._requestAnimFrame(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._requestAnimFrame(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._requestAnimFrame(),window.dispatchEvent(new Event("rocket-load")),await this._requestAnimFrame(),window.rocketonload&&window.rocketonload(),await this._requestAnimFrame(),this.allJQueries.forEach((e=>e(window).trigger("rocket-jquery-load"))),window.dispatchEvent(new Event("rocket-pageshow")),await this._requestAnimFrame(),window.rocketonpageshow&&window.rocketonpageshow()}_handleDocumentWrite(){const e=new Map;document.write=document.writeln=function(t){const n=document.currentScript,r=document.createRange(),i=n.parentElement;let o=e.get(n);void 0===o&&(o=n.nextSibling,e.set(n,o));const a=document.createDocumentFragment();r.setStart(a,0),a.appendChild(r.createContextualFragment(t)),i.insertBefore(a,o)}}async _requestAnimFrame(){return new Promise((e=>requestAnimationFrame(e)))}static run(){const e=new RocketLazyLoadScripts(["keydown","mousemove","touchmove","touchstart","touchend","wheel"]);e._addUserInteractionListener(e)}}RocketLazyLoadScripts.run();</script>
+	
+	<link rel="profile" href="https://gmpg.org/xfn/11" />
+			<script type="rocketlazyloadscript" data-rocket-type="text/javascript">try{if("undefined"!=typeof localStorage){var tieSkin=localStorage.getItem("tie-skin"),html=document.getElementsByTagName("html")[0].classList,htmlSkin="light";if(html.contains("dark-skin")&&(htmlSkin="dark"),null!=tieSkin&&tieSkin!=htmlSkin){html.add("tie-skin-inverted");var tieSkinInverted=!0}"dark"==tieSkin?html.add("dark-skin"):"light"==tieSkin&&html.remove("dark-skin")}}catch(t){console.log(t)}</script>
+		
+<!-- Search Engine Optimization by Rank Math - https://s.rankmath.com/home -->
+<title>الكشف عن انشاء محجرين صحيين للاستعداد لمواجهة كورونا في صنعاء - موقع يمنات الأخباري</title>
+<meta name="robots" content="index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large"/>
+<link rel="canonical" href="https://yemenat.net/2020/03/366088/" />
+<meta property="og:locale" content="ar_AR" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="الكشف عن انشاء محجرين صحيين للاستعداد لمواجهة كورونا في صنعاء - موقع يمنات الأخباري" />
+<meta property="og:description" content="يمنات &#8211; صنعاء قال مكتب منظمة الصحة العالمية باليمن، انه يدعم إنشاء مرفق للحجر الصحي في مطار صنعاء الدولي، و تجهيز مرفق حجر صحي في مستشفى زايد بمحافظة صنعاء. و أكد المكتب أن ذلك يأتي لضمان أعلى درجات الاستعداد للكشف عن الحالات المحتملة و الاستجابة لها تقوم منظمة الصحة العالمية بتكثيف جهود التأهب و الاستجابة &hellip;" />
+<meta property="og:url" content="https://yemenat.net/2020/03/366088/" />
+<meta property="og:site_name" content="موقع يمنات الأخباري" />
+<meta property="article:tag" content="الصحة العالمية" />
+<meta property="article:tag" content="صنعاء" />
+<meta property="article:tag" content="كورونا" />
+<meta property="article:section" content="أخبار وتقارير" />
+<meta property="og:updated_time" content="2020-03-18T19:35:33+03:00" />
+<meta property="og:image" content="https://yemenat.net/wp-content/uploads/2020/03/محجر-كورونا-بصنعاء.jpg" />
+<meta property="og:image:secure_url" content="https://yemenat.net/wp-content/uploads/2020/03/محجر-كورونا-بصنعاء.jpg" />
+<meta property="og:image:width" content="360" />
+<meta property="og:image:height" content="240" />
+<meta property="og:image:alt" content="الكشف عن انشاء محجرين صحيين للاستعداد لمواجهة كورونا في صنعاء" />
+<meta property="og:image:type" content="image/jpeg" />
+<meta property="article:published_time" content="2020-03-18T19:30:41+03:00" />
+<meta property="article:modified_time" content="2020-03-18T19:35:33+03:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="الكشف عن انشاء محجرين صحيين للاستعداد لمواجهة كورونا في صنعاء - موقع يمنات الأخباري" />
+<meta name="twitter:description" content="يمنات &#8211; صنعاء قال مكتب منظمة الصحة العالمية باليمن، انه يدعم إنشاء مرفق للحجر الصحي في مطار صنعاء الدولي، و تجهيز مرفق حجر صحي في مستشفى زايد بمحافظة صنعاء. و أكد المكتب أن ذلك يأتي لضمان أعلى درجات الاستعداد للكشف عن الحالات المحتملة و الاستجابة لها تقوم منظمة الصحة العالمية بتكثيف جهود التأهب و الاستجابة &hellip;" />
+<meta name="twitter:image" content="https://yemenat.net/wp-content/uploads/2020/03/محجر-كورونا-بصنعاء.jpg" />
+<script type="application/ld+json" class="rank-math-schema">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://yemenat.net/#organization","name":"\u0645\u0648\u0642\u0639 \u064a\u0645\u0646\u0627\u062a \u0627\u0644\u0623\u062e\u0628\u0627\u0631\u064a","logo":{"@type":"ImageObject","@id":"https://yemenat.net/#logo","url":"https://yemenat.net/wp-content/uploads/2022/01/yemenat.jpg","caption":"\u0645\u0648\u0642\u0639 \u064a\u0645\u0646\u0627\u062a \u0627\u0644\u0623\u062e\u0628\u0627\u0631\u064a","inLanguage":"ar","width":"640","height":"489"}},{"@type":"WebSite","@id":"https://yemenat.net/#website","url":"https://yemenat.net","name":"\u0645\u0648\u0642\u0639 \u064a\u0645\u0646\u0627\u062a \u0627\u0644\u0623\u062e\u0628\u0627\u0631\u064a","publisher":{"@id":"https://yemenat.net/#organization"},"inLanguage":"ar"},{"@type":"ImageObject","@id":"https://yemenat.net/wp-content/uploads/2020/03/\u0645\u062d\u062c\u0631-\u0643\u0648\u0631\u0648\u0646\u0627-\u0628\u0635\u0646\u0639\u0627\u0621.jpg","url":"https://yemenat.net/wp-content/uploads/2020/03/\u0645\u062d\u062c\u0631-\u0643\u0648\u0631\u0648\u0646\u0627-\u0628\u0635\u0646\u0639\u0627\u0621.jpg","width":"360","height":"240","inLanguage":"ar"},{"@type":"Person","@id":"https://yemenat.net/author/anas/","name":"\u064a\u0645\u0646\u0627\u062a","url":"https://yemenat.net/author/anas/","image":{"@type":"ImageObject","@id":"https://secure.gravatar.com/avatar/f1f5cb8875d9b52e8e2d84eb0a29f047?s=96&amp;r=g","url":"https://secure.gravatar.com/avatar/f1f5cb8875d9b52e8e2d84eb0a29f047?s=96&amp;r=g","caption":"\u064a\u0645\u0646\u0627\u062a","inLanguage":"ar"},"worksFor":{"@id":"https://yemenat.net/#organization"}},{"@type":"WebPage","@id":"https://yemenat.net/2020/03/366088/#webpage","url":"https://yemenat.net/2020/03/366088/","name":"\u0627\u0644\u0643\u0634\u0641 \u0639\u0646 \u0627\u0646\u0634\u0627\u0621 \u0645\u062d\u062c\u0631\u064a\u0646 \u0635\u062d\u064a\u064a\u0646 \u0644\u0644\u0627\u0633\u062a\u0639\u062f\u0627\u062f \u0644\u0645\u0648\u0627\u062c\u0647\u0629 \u0643\u0648\u0631\u0648\u0646\u0627 \u0641\u064a \u0635\u0646\u0639\u0627\u0621 - \u0645\u0648\u0642\u0639 \u064a\u0645\u0646\u0627\u062a \u0627\u0644\u0623\u062e\u0628\u0627\u0631\u064a","datePublished":"2020-03-18T19:30:41+03:00","dateModified":"2020-03-18T19:35:33+03:00","author":{"@id":"https://yemenat.net/author/anas/"},"isPartOf":{"@id":"https://yemenat.net/#website"},"primaryImageOfPage":{"@id":"https://yemenat.net/wp-content/uploads/2020/03/\u0645\u062d\u062c\u0631-\u0643\u0648\u0631\u0648\u0646\u0627-\u0628\u0635\u0646\u0639\u0627\u0621.jpg"},"inLanguage":"ar"},{"@type":"BlogPosting","headline":"\u0627\u0644\u0643\u0634\u0641 \u0639\u0646 \u0627\u0646\u0634\u0627\u0621 \u0645\u062d\u062c\u0631\u064a\u0646 \u0635\u062d\u064a\u064a\u0646 \u0644\u0644\u0627\u0633\u062a\u0639\u062f\u0627\u062f \u0644\u0645\u0648\u0627\u062c\u0647\u0629 \u0643\u0648\u0631\u0648\u0646\u0627 \u0641\u064a \u0635\u0646\u0639\u0627\u0621 - \u0645\u0648\u0642\u0639 \u064a\u0645\u0646\u0627\u062a \u0627\u0644\u0623\u062e\u0628\u0627\u0631\u064a","datePublished":"2020-03-18T19:30:41+03:00","dateModified":"2020-03-18T19:35:33+03:00","author":{"@id":"https://yemenat.net/author/anas/"},"publisher":{"@id":"https://yemenat.net/#organization"},"description":"\u064a\u0645\u0646\u0627\u062a - \u0635\u0646\u0639\u0627\u0621","name":"\u0627\u0644\u0643\u0634\u0641 \u0639\u0646 \u0627\u0646\u0634\u0627\u0621 \u0645\u062d\u062c\u0631\u064a\u0646 \u0635\u062d\u064a\u064a\u0646 \u0644\u0644\u0627\u0633\u062a\u0639\u062f\u0627\u062f \u0644\u0645\u0648\u0627\u062c\u0647\u0629 \u0643\u0648\u0631\u0648\u0646\u0627 \u0641\u064a \u0635\u0646\u0639\u0627\u0621 - \u0645\u0648\u0642\u0639 \u064a\u0645\u0646\u0627\u062a \u0627\u0644\u0623\u062e\u0628\u0627\u0631\u064a","@id":"https://yemenat.net/2020/03/366088/#richSnippet","isPartOf":{"@id":"https://yemenat.net/2020/03/366088/#webpage"},"image":{"@id":"https://yemenat.net/wp-content/uploads/2020/03/\u0645\u062d\u062c\u0631-\u0643\u0648\u0631\u0648\u0646\u0627-\u0628\u0635\u0646\u0639\u0627\u0621.jpg"},"inLanguage":"ar","mainEntityOfPage":{"@id":"https://yemenat.net/2020/03/366088/#webpage"}}]}</script>
+<!-- /Rank Math WordPress SEO plugin -->
+
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//ajax.googleapis.com' />
+<link rel='dns-prefetch' href='//apis.google.com' />
+
+<link rel="alternate" type="application/rss+xml" title="موقع يمنات الأخباري &laquo; الخلاصة" href="https://yemenat.net/feed/" />
+<link rel="alternate" type="application/rss+xml" title="موقع يمنات الأخباري &laquo; خلاصة التعليقات" href="https://yemenat.net/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="موقع يمنات الأخباري &laquo; الكشف عن انشاء محجرين صحيين للاستعداد لمواجهة كورونا في صنعاء خلاصة التعليقات" href="https://yemenat.net/2020/03/366088/feed/" />
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='wp-block-library-rtl-css'  href='https://yemenat.net/wp-includes/css/dist/block-library/style-rtl.min.css?ver=5.6.10' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-block-library-theme-rtl-css'  href='https://yemenat.net/wp-includes/css/dist/block-library/theme-rtl.min.css?ver=5.6.10' type='text/css' media='all' />
+<link rel='stylesheet' id='tie-css-base-css'  href='https://yemenat.net/wp-content/themes/jannah/assets/css/base.min.css?ver=5.4.10' type='text/css' media='all' />
+<link rel='stylesheet' id='tie-css-styles-css'  href='https://yemenat.net/wp-content/themes/jannah/assets/css/style.min.css?ver=5.4.10' type='text/css' media='all' />
+<link rel='stylesheet' id='tie-css-widgets-css'  href='https://yemenat.net/wp-content/themes/jannah/assets/css/widgets.min.css?ver=5.4.10' type='text/css' media='all' />
+<link rel='stylesheet' id='tie-css-helpers-css'  href='https://yemenat.net/wp-content/themes/jannah/assets/css/helpers.min.css?ver=5.4.10' type='text/css' media='all' />
+<link rel='stylesheet' id='tie-fontawesome5-css'  href='https://yemenat.net/wp-content/themes/jannah/assets/css/fontawesome.css?ver=5.4.10' type='text/css' media='all' />
+<link rel='stylesheet' id='tie-css-ilightbox-css'  href='https://yemenat.net/wp-content/themes/jannah/assets/ilightbox/dark-skin/skin.css?ver=5.4.10' type='text/css' media='all' />
+<link rel='stylesheet' id='tie-css-single-css'  href='https://yemenat.net/wp-content/themes/jannah/assets/css/single.min.css?ver=5.4.10' type='text/css' media='all' />
+<link rel='stylesheet' id='tie-css-print-css'  href='https://yemenat.net/wp-content/themes/jannah/assets/css/print.css?ver=5.4.10' type='text/css' media='print' />
+<style id='tie-css-print-inline-css' type='text/css'>
+.wf-active .logo-text,.wf-active h1,.wf-active h2,.wf-active h3,.wf-active h4,.wf-active h5,.wf-active h6,.wf-active .the-subtitle{font-family: 'Montserrat';}#the-post .entry-content,#the-post .entry-content p{font-size: 17px;font-weight: 800;line-height: 2;}.brand-title,a:hover,.tie-popup-search-submit,#logo.text-logo a,.theme-header nav .components #search-submit:hover,.theme-header .header-nav .components > li:hover > a,.theme-header .header-nav .components li a:hover,.main-menu ul.cats-vertical li a.is-active,.main-menu ul.cats-vertical li a:hover,.main-nav li.mega-menu .post-meta a:hover,.main-nav li.mega-menu .post-box-title a:hover,.search-in-main-nav.autocomplete-suggestions a:hover,#main-nav .menu ul:not(.cats-horizontal) li:hover > a,#main-nav .menu ul li.current-menu-item:not(.mega-link-column) > a,.top-nav .menu li:hover > a,.top-nav .menu > .tie-current-menu > a,.search-in-top-nav.autocomplete-suggestions .post-title a:hover,div.mag-box .mag-box-options .mag-box-filter-links a.active,.mag-box-filter-links .flexMenu-viewMore:hover > a,.stars-rating-active,body .tabs.tabs .active > a,.video-play-icon,.spinner-circle:after,#go-to-content:hover,.comment-list .comment-author .fn,.commentlist .comment-author .fn,blockquote::before,blockquote cite,blockquote.quote-simple p,.multiple-post-pages a:hover,#story-index li .is-current,.latest-tweets-widget .twitter-icon-wrap span,.wide-slider-nav-wrapper .slide,.wide-next-prev-slider-wrapper .tie-slider-nav li:hover span,.review-final-score h3,#mobile-menu-icon:hover .menu-text,body .entry a,.dark-skin body .entry a,.entry .post-bottom-meta a:hover,.comment-list .comment-content a,q a,blockquote a,.widget.tie-weather-widget .icon-basecloud-bg:after,.site-footer a:hover,.site-footer .stars-rating-active,.site-footer .twitter-icon-wrap span,.site-info a:hover{color: ##6dc5f2;}#instagram-link a:hover{color: ##6dc5f2 !important;border-color: ##6dc5f2 !important;}[type='submit'],.button,.generic-button a,.generic-button button,.theme-header .header-nav .comp-sub-menu a.button.guest-btn:hover,.theme-header .header-nav .comp-sub-menu a.checkout-button,nav.main-nav .menu > li.tie-current-menu > a,nav.main-nav .menu > li:hover > a,.main-menu .mega-links-head:after,.main-nav .mega-menu.mega-cat .cats-horizontal li a.is-active,#mobile-menu-icon:hover .nav-icon,#mobile-menu-icon:hover .nav-icon:before,#mobile-menu-icon:hover .nav-icon:after,.search-in-main-nav.autocomplete-suggestions a.button,.search-in-top-nav.autocomplete-suggestions a.button,.spinner > div,.post-cat,.pages-numbers li.current span,.multiple-post-pages > span,#tie-wrapper .mejs-container .mejs-controls,.mag-box-filter-links a:hover,.slider-arrow-nav a:not(.pagination-disabled):hover,.comment-list .reply a:hover,.commentlist .reply a:hover,#reading-position-indicator,#story-index-icon,.videos-block .playlist-title,.review-percentage .review-item span span,.tie-slick-dots li.slick-active button,.tie-slick-dots li button:hover,.digital-rating-static,.timeline-widget li a:hover .date:before,#wp-calendar #today,.posts-list-counter li.widget-post-list:before,.cat-counter a + span,.tie-slider-nav li span:hover,.fullwidth-area .widget_tag_cloud .tagcloud a:hover,.magazine2:not(.block-head-4) .dark-widgetized-area ul.tabs a:hover,.magazine2:not(.block-head-4) .dark-widgetized-area ul.tabs .active a,.magazine1 .dark-widgetized-area ul.tabs a:hover,.magazine1 .dark-widgetized-area ul.tabs .active a,.block-head-4.magazine2 .dark-widgetized-area .tabs.tabs .active a,.block-head-4.magazine2 .dark-widgetized-area .tabs > .active a:before,.block-head-4.magazine2 .dark-widgetized-area .tabs > .active a:after,.demo_store,.demo #logo:after,.demo #sticky-logo:after,.widget.tie-weather-widget,span.video-close-btn:hover,#go-to-top,.latest-tweets-widget .slider-links .button:not(:hover){background-color: ##6dc5f2;color: #FFFFFF;}.tie-weather-widget .widget-title .the-subtitle,.block-head-4.magazine2 #footer .tabs .active a:hover{color: #FFFFFF;}pre,code,.pages-numbers li.current span,.theme-header .header-nav .comp-sub-menu a.button.guest-btn:hover,.multiple-post-pages > span,.post-content-slideshow .tie-slider-nav li span:hover,#tie-body .tie-slider-nav li > span:hover,.slider-arrow-nav a:not(.pagination-disabled):hover,.main-nav .mega-menu.mega-cat .cats-horizontal li a.is-active,.main-nav .mega-menu.mega-cat .cats-horizontal li a:hover,.main-menu .menu > li > .menu-sub-content{border-color: ##6dc5f2;}.main-menu .menu > li.tie-current-menu{border-bottom-color: ##6dc5f2;}.top-nav .menu li.tie-current-menu > a:before,.top-nav .menu li.menu-item-has-children:hover > a:before{border-top-color: ##6dc5f2;}.main-nav .main-menu .menu > li.tie-current-menu > a:before,.main-nav .main-menu .menu > li:hover > a:before{border-top-color: #FFFFFF;}header.main-nav-light .main-nav .menu-item-has-children li:hover > a:before,header.main-nav-light .main-nav .mega-menu li:hover > a:before{border-left-color: ##6dc5f2;}.rtl header.main-nav-light .main-nav .menu-item-has-children li:hover > a:before,.rtl header.main-nav-light .main-nav .mega-menu li:hover > a:before{border-right-color: ##6dc5f2;border-left-color: transparent;}.top-nav ul.menu li .menu-item-has-children:hover > a:before{border-top-color: transparent;border-left-color: ##6dc5f2;}.rtl .top-nav ul.menu li .menu-item-has-children:hover > a:before{border-left-color: transparent;border-right-color: ##6dc5f2;}#footer-widgets-container{border-top: 8px solid ##6dc5f2;-webkit-box-shadow: 0 -5px 0 rgba(0,0,0,0.07); -moz-box-shadow: 0 -8px 0 rgba(0,0,0,0.07); box-shadow: 0 -8px 0 rgba(0,0,0,0.07);}::-moz-selection{background-color: ##6dc5f2;color: #FFFFFF;}::selection{background-color: ##6dc5f2;color: #FFFFFF;}circle.circle_bar{stroke: ##6dc5f2;}#reading-position-indicator{box-shadow: 0 0 10px rgba( 109,197,242,0.7);}#logo.text-logo a:hover,body .entry a:hover,.dark-skin body .entry a:hover,.comment-list .comment-content a:hover,.block-head-4.magazine2 .site-footer .tabs li a:hover,q a:hover,blockquote a:hover{color: #3b93c0;}.button:hover,input[type='submit']:hover,.generic-button a:hover,.generic-button button:hover,a.post-cat:hover,.site-footer .button:hover,.site-footer [type='submit']:hover,.search-in-main-nav.autocomplete-suggestions a.button:hover,.search-in-top-nav.autocomplete-suggestions a.button:hover,.theme-header .header-nav .comp-sub-menu a.checkout-button:hover{background-color: #3b93c0;color: #FFFFFF;}.theme-header .header-nav .comp-sub-menu a.checkout-button:not(:hover),body .entry a.button{color: #FFFFFF;}#story-index.is-compact .story-index-content{background-color: ##6dc5f2;}#story-index.is-compact .story-index-content a,#story-index.is-compact .story-index-content .is-current{color: #FFFFFF;}#tie-body .has-block-head-4,#tie-body .mag-box-title h3,#tie-body .comment-reply-title,#tie-body .related.products > h2,#tie-body .up-sells > h2,#tie-body .cross-sells > h2,#tie-body .cart_totals > h2,#tie-body .bbp-form legend,#tie-body .mag-box-title h3 a,#tie-body .section-title-default a,#tie-body #cancel-comment-reply-link {color: #FFFFFF;}#tie-body .has-block-head-4:before,#tie-body .mag-box-title h3:before,#tie-body .comment-reply-title:before,#tie-body .related.products > h2:before,#tie-body .up-sells > h2:before,#tie-body .cross-sells > h2:before,#tie-body .cart_totals > h2:before,#tie-body .bbp-form legend:before {background-color: ##6dc5f2;}#tie-body .block-more-button{color: ##6dc5f2;}#tie-body .block-more-button:hover{color: #3b93c0;}.brand-title,a:hover,.tie-popup-search-submit,#logo.text-logo a,.theme-header nav .components #search-submit:hover,.theme-header .header-nav .components > li:hover > a,.theme-header .header-nav .components li a:hover,.main-menu ul.cats-vertical li a.is-active,.main-menu ul.cats-vertical li a:hover,.main-nav li.mega-menu .post-meta a:hover,.main-nav li.mega-menu .post-box-title a:hover,.search-in-main-nav.autocomplete-suggestions a:hover,#main-nav .menu ul:not(.cats-horizontal) li:hover > a,#main-nav .menu ul li.current-menu-item:not(.mega-link-column) > a,.top-nav .menu li:hover > a,.top-nav .menu > .tie-current-menu > a,.search-in-top-nav.autocomplete-suggestions .post-title a:hover,div.mag-box .mag-box-options .mag-box-filter-links a.active,.mag-box-filter-links .flexMenu-viewMore:hover > a,.stars-rating-active,body .tabs.tabs .active > a,.video-play-icon,.spinner-circle:after,#go-to-content:hover,.comment-list .comment-author .fn,.commentlist .comment-author .fn,blockquote::before,blockquote cite,blockquote.quote-simple p,.multiple-post-pages a:hover,#story-index li .is-current,.latest-tweets-widget .twitter-icon-wrap span,.wide-slider-nav-wrapper .slide,.wide-next-prev-slider-wrapper .tie-slider-nav li:hover span,.review-final-score h3,#mobile-menu-icon:hover .menu-text,body .entry a,.dark-skin body .entry a,.entry .post-bottom-meta a:hover,.comment-list .comment-content a,q a,blockquote a,.widget.tie-weather-widget .icon-basecloud-bg:after,.site-footer a:hover,.site-footer .stars-rating-active,.site-footer .twitter-icon-wrap span,.site-info a:hover{color: ##6dc5f2;}#instagram-link a:hover{color: ##6dc5f2 !important;border-color: ##6dc5f2 !important;}[type='submit'],.button,.generic-button a,.generic-button button,.theme-header .header-nav .comp-sub-menu a.button.guest-btn:hover,.theme-header .header-nav .comp-sub-menu a.checkout-button,nav.main-nav .menu > li.tie-current-menu > a,nav.main-nav .menu > li:hover > a,.main-menu .mega-links-head:after,.main-nav .mega-menu.mega-cat .cats-horizontal li a.is-active,#mobile-menu-icon:hover .nav-icon,#mobile-menu-icon:hover .nav-icon:before,#mobile-menu-icon:hover .nav-icon:after,.search-in-main-nav.autocomplete-suggestions a.button,.search-in-top-nav.autocomplete-suggestions a.button,.spinner > div,.post-cat,.pages-numbers li.current span,.multiple-post-pages > span,#tie-wrapper .mejs-container .mejs-controls,.mag-box-filter-links a:hover,.slider-arrow-nav a:not(.pagination-disabled):hover,.comment-list .reply a:hover,.commentlist .reply a:hover,#reading-position-indicator,#story-index-icon,.videos-block .playlist-title,.review-percentage .review-item span span,.tie-slick-dots li.slick-active button,.tie-slick-dots li button:hover,.digital-rating-static,.timeline-widget li a:hover .date:before,#wp-calendar #today,.posts-list-counter li.widget-post-list:before,.cat-counter a + span,.tie-slider-nav li span:hover,.fullwidth-area .widget_tag_cloud .tagcloud a:hover,.magazine2:not(.block-head-4) .dark-widgetized-area ul.tabs a:hover,.magazine2:not(.block-head-4) .dark-widgetized-area ul.tabs .active a,.magazine1 .dark-widgetized-area ul.tabs a:hover,.magazine1 .dark-widgetized-area ul.tabs .active a,.block-head-4.magazine2 .dark-widgetized-area .tabs.tabs .active a,.block-head-4.magazine2 .dark-widgetized-area .tabs > .active a:before,.block-head-4.magazine2 .dark-widgetized-area .tabs > .active a:after,.demo_store,.demo #logo:after,.demo #sticky-logo:after,.widget.tie-weather-widget,span.video-close-btn:hover,#go-to-top,.latest-tweets-widget .slider-links .button:not(:hover){background-color: ##6dc5f2;color: #FFFFFF;}.tie-weather-widget .widget-title .the-subtitle,.block-head-4.magazine2 #footer .tabs .active a:hover{color: #FFFFFF;}pre,code,.pages-numbers li.current span,.theme-header .header-nav .comp-sub-menu a.button.guest-btn:hover,.multiple-post-pages > span,.post-content-slideshow .tie-slider-nav li span:hover,#tie-body .tie-slider-nav li > span:hover,.slider-arrow-nav a:not(.pagination-disabled):hover,.main-nav .mega-menu.mega-cat .cats-horizontal li a.is-active,.main-nav .mega-menu.mega-cat .cats-horizontal li a:hover,.main-menu .menu > li > .menu-sub-content{border-color: ##6dc5f2;}.main-menu .menu > li.tie-current-menu{border-bottom-color: ##6dc5f2;}.top-nav .menu li.tie-current-menu > a:before,.top-nav .menu li.menu-item-has-children:hover > a:before{border-top-color: ##6dc5f2;}.main-nav .main-menu .menu > li.tie-current-menu > a:before,.main-nav .main-menu .menu > li:hover > a:before{border-top-color: #FFFFFF;}header.main-nav-light .main-nav .menu-item-has-children li:hover > a:before,header.main-nav-light .main-nav .mega-menu li:hover > a:before{border-left-color: ##6dc5f2;}.rtl header.main-nav-light .main-nav .menu-item-has-children li:hover > a:before,.rtl header.main-nav-light .main-nav .mega-menu li:hover > a:before{border-right-color: ##6dc5f2;border-left-color: transparent;}.top-nav ul.menu li .menu-item-has-children:hover > a:before{border-top-color: transparent;border-left-color: ##6dc5f2;}.rtl .top-nav ul.menu li .menu-item-has-children:hover > a:before{border-left-color: transparent;border-right-color: ##6dc5f2;}#footer-widgets-container{border-top: 8px solid ##6dc5f2;-webkit-box-shadow: 0 -5px 0 rgba(0,0,0,0.07); -moz-box-shadow: 0 -8px 0 rgba(0,0,0,0.07); box-shadow: 0 -8px 0 rgba(0,0,0,0.07);}::-moz-selection{background-color: ##6dc5f2;color: #FFFFFF;}::selection{background-color: ##6dc5f2;color: #FFFFFF;}circle.circle_bar{stroke: ##6dc5f2;}#reading-position-indicator{box-shadow: 0 0 10px rgba( 109,197,242,0.7);}#logo.text-logo a:hover,body .entry a:hover,.dark-skin body .entry a:hover,.comment-list .comment-content a:hover,.block-head-4.magazine2 .site-footer .tabs li a:hover,q a:hover,blockquote a:hover{color: #3b93c0;}.button:hover,input[type='submit']:hover,.generic-button a:hover,.generic-button button:hover,a.post-cat:hover,.site-footer .button:hover,.site-footer [type='submit']:hover,.search-in-main-nav.autocomplete-suggestions a.button:hover,.search-in-top-nav.autocomplete-suggestions a.button:hover,.theme-header .header-nav .comp-sub-menu a.checkout-button:hover{background-color: #3b93c0;color: #FFFFFF;}.theme-header .header-nav .comp-sub-menu a.checkout-button:not(:hover),body .entry a.button{color: #FFFFFF;}#story-index.is-compact .story-index-content{background-color: ##6dc5f2;}#story-index.is-compact .story-index-content a,#story-index.is-compact .story-index-content .is-current{color: #FFFFFF;}#tie-body .has-block-head-4,#tie-body .mag-box-title h3,#tie-body .comment-reply-title,#tie-body .related.products > h2,#tie-body .up-sells > h2,#tie-body .cross-sells > h2,#tie-body .cart_totals > h2,#tie-body .bbp-form legend,#tie-body .mag-box-title h3 a,#tie-body .section-title-default a,#tie-body #cancel-comment-reply-link {color: #FFFFFF;}#tie-body .has-block-head-4:before,#tie-body .mag-box-title h3:before,#tie-body .comment-reply-title:before,#tie-body .related.products > h2:before,#tie-body .up-sells > h2:before,#tie-body .cross-sells > h2:before,#tie-body .cart_totals > h2:before,#tie-body .bbp-form legend:before {background-color: ##6dc5f2;}#tie-body .block-more-button{color: ##6dc5f2;}#tie-body .block-more-button:hover{color: #3b93c0;}#content a:hover{text-decoration: underline !important;}#top-nav a:not(:hover),#top-nav input,#top-nav #search-submit,#top-nav .fa-spinner,#top-nav .dropdown-social-icons li a span,#top-nav .components > li .social-link:not(:hover) span,.search-in-top-nav.autocomplete-suggestions a{color: #000000;}#top-nav .menu-item-has-children > a:before{border-top-color: #000000;}#top-nav li .menu-item-has-children > a:before{border-top-color: transparent;border-left-color: #000000;}.rtl #top-nav .menu li .menu-item-has-children > a:before{border-left-color: transparent;border-right-color: #000000;}#top-nav input::-moz-placeholder{color: #000000;}#top-nav input:-moz-placeholder{color: #000000;}#top-nav input:-ms-input-placeholder{color: #000000;}#top-nav input::-webkit-input-placeholder{color: #000000;}#top-nav .comp-sub-menu .button:hover,#top-nav .checkout-button,.search-in-top-nav.autocomplete-suggestions .button{background-color: #ff0000;}#top-nav a:hover,#top-nav .menu li:hover > a,#top-nav .menu > .tie-current-menu > a,#top-nav .components > li:hover > a,#top-nav .components #search-submit:hover,.search-in-top-nav.autocomplete-suggestions .post-title a:hover{color: #ff0000;}#top-nav .comp-sub-menu .button:hover{border-color: #ff0000;}#top-nav .tie-current-menu > a:before,#top-nav .menu .menu-item-has-children:hover > a:before{border-top-color: #ff0000;}#top-nav .menu li .menu-item-has-children:hover > a:before{border-top-color: transparent;border-left-color: #ff0000;}.rtl #top-nav .menu li .menu-item-has-children:hover > a:before{border-left-color: transparent;border-right-color: #ff0000;}#top-nav .comp-sub-menu .button:hover,#top-nav .comp-sub-menu .checkout-button,.search-in-top-nav.autocomplete-suggestions .button{color: #FFFFFF;}#top-nav .comp-sub-menu .checkout-button:hover,.search-in-top-nav.autocomplete-suggestions .button:hover{background-color: #e10000;}#top-nav,#top-nav .comp-sub-menu,#top-nav .tie-weather-widget{color: #000000;}.search-in-top-nav.autocomplete-suggestions .post-meta,.search-in-top-nav.autocomplete-suggestions .post-meta a:not(:hover){color: rgba( 0,0,0,0.7 );}#top-nav .weather-icon .icon-cloud,#top-nav .weather-icon .icon-basecloud-bg,#top-nav .weather-icon .icon-cloud-behind{color: #000000 !important;}#top-nav .breaking-title{color: #FFFFFF;}#top-nav .breaking-title:before{background-color: #e81700;}#top-nav .breaking-news-nav li:hover{background-color: #e81700;border-color: #e81700;}#the-post .entry-content a:not(.shortc-button):hover{color: #f1c40f !important;}#tie-body .sidebar .widget-title:before{background-color: #0a0900;}#tie-container #tie-wrapper,.post-layout-8 #content{background-color: #f2f2f2;}.tie-cat-82,.tie-cat-item-82 > span{background-color:#003388 !important;color:#FFFFFF !important;}.tie-cat-82:after{border-top-color:#003388 !important;}.tie-cat-82:hover{background-color:#00156a !important;}.tie-cat-82:hover:after{border-top-color:#00156a !important;}.tie-cat-29,.tie-cat-item-29 > span{background-color:#b80606 !important;color:#FFFFFF !important;}.tie-cat-29:after{border-top-color:#b80606 !important;}.tie-cat-29:hover{background-color:#9a0000 !important;}.tie-cat-29:hover:after{border-top-color:#9a0000 !important;}@media (min-width: 1200px){.container{width: auto;}}.boxed-layout #tie-wrapper,.boxed-layout .fixed-nav{max-width: 1330px;}@media (min-width: 1300px){.container,.wide-next-prev-slider-wrapper .slider-main-container{max-width: 1300px;}}
+</style>
+<style id='rocket-lazyload-inline-css' type='text/css'>
+.rll-youtube-player{position:relative;padding-bottom:56.23%;height:0;overflow:hidden;max-width:100%;}.rll-youtube-player:focus-within{outline: 2px solid currentColor;outline-offset: 5px;}.rll-youtube-player iframe{position:absolute;top:0;left:0;width:100%;height:100%;z-index:100;background:0 0}.rll-youtube-player img{bottom:0;display:block;left:0;margin:auto;max-width:100%;width:100%;position:absolute;right:0;top:0;border:none;height:auto;-webkit-transition:.4s all;-moz-transition:.4s all;transition:.4s all}.rll-youtube-player img:hover{-webkit-filter:brightness(75%)}.rll-youtube-player .play{height:100%;width:100%;left:0;top:0;position:absolute;background:url(https://yemenat.net/wp-content/plugins/wp-rocket/assets/img/youtube.png) no-repeat center;background-color: transparent !important;cursor:pointer;border:none;}
+</style>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://yemenat.net/wp-includes/js/jquery/jquery.min.js?ver=3.5.1' id='jquery-core-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://yemenat.net/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2' id='jquery-migrate-js' defer></script>
+<link rel="https://api.w.org/" href="https://yemenat.net/wp-json/" /><link rel="alternate" type="application/json" href="https://yemenat.net/wp-json/wp/v2/posts/366088" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://yemenat.net/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://yemenat.net/wp-includes/wlwmanifest.xml" /> 
+<link rel="stylesheet" href="https://yemenat.net/wp-content/themes/jannah/rtl.css" type="text/css" media="screen" /><meta name="generator" content="WordPress 5.6.10" />
+<link rel='shortlink' href='https://yemenat.net/?p=366088' />
+<link rel="alternate" type="application/json+oembed" href="https://yemenat.net/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fyemenat.net%2F2020%2F03%2F366088%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://yemenat.net/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fyemenat.net%2F2020%2F03%2F366088%2F&#038;format=xml" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"><script type="rocketlazyloadscript" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5145459575609543"
+     crossorigin="anonymous"></script>
+<meta name="theme-color" content="##6dc5f2" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="icon" href="https://yemenat.net/wp-content/uploads/2015/10/yemenat-45x45.png" sizes="32x32" />
+<link rel="icon" href="https://yemenat.net/wp-content/uploads/2015/10/yemenat.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://yemenat.net/wp-content/uploads/2015/10/yemenat.png" />
+<meta name="msapplication-TileImage" content="https://yemenat.net/wp-content/uploads/2015/10/yemenat.png" />
+<noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript>	
+</head>
+
+<body id="tie-body" class="rtl post-template-default single single-post postid-366088 single-format-standard boxed-layout wrapper-has-shadow block-head-4 magazine1 is-thumb-overlay-disabled is-desktop is-header-layout-2 sidebar-right has-sidebar post-layout-1 narrow-title-narrow-media is-standard-format has-mobile-share hide_banner_header hide_banner_top hide_banner_below_header hide_banner_above_content hide_sidebars">
+
+
+
+<div class="background-overlay">
+
+	<div id="tie-container" class="site tie-container">
+
+		
+		<div id="tie-wrapper">
+
+			
+<header id="theme-header" class="theme-header header-layout-2 main-nav-light main-nav-default-light main-nav-below no-stream-item top-nav-active top-nav-light top-nav-default-light top-nav-above has-normal-width-logo mobile-header-centered">
+	
+<nav id="top-nav"  class="has-breaking-menu top-nav header-nav has-breaking-news" aria-label="الشريط العلوي">
+	<div class="container">
+		<div class="topbar-wrapper">
+
+			
+			<div class="tie-alignleft">
+				
+<div class="breaking">
+
+	<span class="breaking-title">
+		<span class="tie-icon-bolt breaking-icon" aria-hidden="true"></span>
+		<span class="breaking-title-text">أخبار عاجلة</span>
+	</span>
+
+	<ul id="breaking-news-in-header" class="breaking-news" data-type="reveal">
+
+		
+							<li class="news-item">
+								<a href="https://yemenat.net/2022/10/395897/">حاشد والزنم يسألان وزير التربية والتعليم عن التغييرات التي طالت المنهج الدراسي</a>
+							</li>
+
+							
+							<li class="news-item">
+								<a href="https://yemenat.net/2022/10/395894/">حملة الشفافية العالمية للصناعات الاستخراجية النجاح الملموس رغم المعوقات</a>
+							</li>
+
+							
+							<li class="news-item">
+								<a href="https://yemenat.net/2022/10/395891/">كلمة النائب حاشد في حفل الاشتراكي بصنعاء</a>
+							</li>
+
+							
+							<li class="news-item">
+								<a href="https://yemenat.net/2022/10/395889/">تغاريد غير مشفرة .. كهرباء مؤمنة بأسعار مضاعفة</a>
+							</li>
+
+							
+							<li class="news-item">
+								<a href="https://yemenat.net/2022/10/395887/">تغاريد غير مشفرة .. هدنة ومعلم واختبار</a>
+							</li>
+
+							
+							<li class="news-item">
+								<a href="https://yemenat.net/2022/10/395885/">تغاريد غير مشفرة .. ضد الفساد والنهب والتقسيم</a>
+							</li>
+
+							
+							<li class="news-item">
+								<a href="https://yemenat.net/2022/10/395882/">تغاريد غير مشفرة .. المجتمع سيبتلع من يحاول ابتلاعه</a>
+							</li>
+
+							
+							<li class="news-item">
+								<a href="https://yemenat.net/2022/10/395880/">تغاريد غير مشفرة .. كذبة جديدة</a>
+							</li>
+
+							
+							<li class="news-item">
+								<a href="https://yemenat.net/2022/09/395878/">تغاريد غير مشفرة .. أنتم لا تبالوا</a>
+							</li>
+
+							
+							<li class="news-item">
+								<a href="https://yemenat.net/2022/09/395875/">تغاريد غير مشفرة .. 26 سبتمبر ثورة مجيدة</a>
+							</li>
+
+							
+	</ul>
+</div><!-- #breaking /-->
+			</div><!-- .tie-alignleft /-->
+
+			<div class="tie-alignright">
+							</div><!-- .tie-alignright /-->
+
+		</div><!-- .topbar-wrapper /-->
+	</div><!-- .container /-->
+</nav><!-- #top-nav /-->
+
+<div class="container header-container">
+	<div class="tie-row logo-row">
+
+		
+		<div class="logo-wrapper">
+			<div class="tie-col-md-4 logo-container clearfix">
+				<div id="mobile-header-components-area_1" class="mobile-header-components"><ul class="components"><li class="mobile-component_menu custom-menu-link"><a href="#" id="mobile-menu-icon" class=""><span class="tie-mobile-menu-icon tie-icon-grid-4"></span><span class="screen-reader-text">القائمة</span></a></li></ul></div>
+		<div id="logo" class="image-logo" style="margin-top: 20px; margin-bottom: 20px;">
+
+			
+			<a title="موقع يمنات الأخباري" href="https://yemenat.net/">
+				
+				<picture id="tie-logo-default" class="tie-logo-default tie-logo-picture">
+					<source class="tie-logo-source-default tie-logo-source" srcset="https://yemenat.net/wp-content/uploads/2015/12/يمنات.jpg">
+					<img class="tie-logo-img-default tie-logo-img" src="https://yemenat.net/wp-content/uploads/2015/12/يمنات.jpg" alt="موقع يمنات الأخباري" width="599" height="98" style="max-height:98px; width: auto;" />
+				</picture>
+			
+					<picture id="tie-logo-inverted" class="tie-logo-inverted tie-logo-picture">
+						<source class="tie-logo-source-inverted tie-logo-source" id="tie-logo-inverted-source" data-lazy-srcset="https://yemenat.net/wp-content/uploads/2015/12/يمنات.jpg">
+						<img class="tie-logo-img-inverted tie-logo-img" id="tie-logo-inverted-img" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20599%2098'%3E%3C/svg%3E" alt="موقع يمنات الأخباري" width="599" height="98" style="max-height:98px; width: auto;" data-lazy-src="https://yemenat.net/wp-content/uploads/2015/12/يمنات.jpg" /><noscript><img class="tie-logo-img-inverted tie-logo-img" id="tie-logo-inverted-img" src="https://yemenat.net/wp-content/uploads/2015/12/يمنات.jpg" alt="موقع يمنات الأخباري" width="599" height="98" style="max-height:98px; width: auto;" /></noscript>
+					</picture>
+							</a>
+
+			
+		</div><!-- #logo /-->
+
+		<div id="mobile-header-components-area_2" class="mobile-header-components"><ul class="components"><li class="mobile-component_search custom-menu-link">
+				<a href="#" class="tie-search-trigger-mobile">
+					<span class="tie-icon-search tie-search-icon" aria-hidden="true"></span>
+					<span class="screen-reader-text">بحث عن</span>
+				</a>
+			</li> <li class="mobile-component_skin custom-menu-link">
+				<a href="#" class="change-skin" title="الوضع المظلم">
+					<span class="tie-icon-moon change-skin-icon" aria-hidden="true"></span>
+					<span class="screen-reader-text">الوضع المظلم</span>
+				</a>
+			</li></ul></div>			</div><!-- .tie-col /-->
+		</div><!-- .logo-wrapper /-->
+
+		
+	</div><!-- .tie-row /-->
+</div><!-- .container /-->
+
+<div class="main-nav-wrapper">
+	<nav id="main-nav" data-skin="search-in-main-nav" class="main-nav header-nav live-search-parent"  aria-label="القائمة الرئيسية">
+		<div class="container">
+
+			<div class="main-menu-wrapper">
+
+				
+				<div id="menu-components-wrap">
+
+					
+					<div class="main-menu main-menu-wrap tie-alignleft">
+						<div id="main-nav-menu" class="main-menu header-menu"><ul id="menu-main-menu" class="menu" role="menubar"><li id="menu-item-176193" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-176193"><a href="https://yemenat.net">الرئيسية</a></li>
+<li id="menu-item-180657" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-180657 tie-current-menu"><a href="https://yemenat.net/category/%d8%a3%d8%ae%d8%a8%d8%a7%d8%b1-%d9%88%d8%aa%d9%82%d8%a7%d8%b1%d9%8a%d8%b1/">أخبار وتقارير</a></li>
+<li id="menu-item-180667" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-180667"><a href="https://yemenat.net/category/%d8%aa%d8%ad%d9%84%d9%8a%d9%84%d8%a7%d8%aa/">تحليلات</a></li>
+<li id="menu-item-180663" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-180663"><a href="https://yemenat.net/category/%d8%a3%d8%b3%d8%b1%d8%a7%d8%b1-%d9%88%d9%88%d8%ab%d8%a7%d8%a6%d9%82/">أسرار ووثائق</a></li>
+<li id="menu-item-180654" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-180654"><a href="https://yemenat.net/category/%d8%b9%d8%b1%d8%a8%d9%8a%d8%a9-%d9%88%d8%af%d9%88%d9%84%d9%8a%d8%a9/">عربية ودولية</a></li>
+<li id="menu-item-180673" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-180673"><a href="https://yemenat.net/category/%d9%85%d9%88%d8%a7%d9%82%d9%81-%d9%88%d8%a3%d9%86%d8%b4%d8%b7%d8%a9/">مواقف وأنشطة</a></li>
+<li id="menu-item-180658" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-180658"><a href="https://yemenat.net/category/%d9%81%d8%b6%d8%a7%d8%a1-%d8%ad%d8%b1/">فضاء حر</a></li>
+<li id="menu-item-394974" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-394974"><a href="https://yemenat.net/category/%d8%b9%d8%b1%d8%a8%d9%8a%d8%a9-%d9%88%d8%af%d9%88%d9%84%d9%8a%d8%a9/">عربية ودولية</a></li>
+<li id="menu-item-394975" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-394975"><a href="https://yemenat.net/category/yemeni-mp/">yemeni-mp</a></li>
+<li id="menu-item-393257-en" class="lang-item lang-item-34 lang-item-en no-translation lang-item-first menu-item menu-item-type-custom menu-item-object-custom menu-item-393257-en"><a href="https://yemenat.net/en/yemenat-en/" hreflang="en-US" lang="en-US"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2016%2011'%3E%3C/svg%3E" alt="English" width="16" height="11" style="width: 16px; height: 11px;" data-lazy-src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAMAAABBPP0LAAAAmVBMVEViZsViZMJiYrf9gnL8eWrlYkjgYkjZYkj8/PujwPybvPz4+PetraBEgfo+fvo3efkydfkqcvj8Y2T8UlL8Q0P8MzP9k4Hz8/Lu7u4DdPj9/VrKysI9fPoDc/EAZ7z7IiLHYkjp6ekCcOTk5OIASbfY/v21takAJrT5Dg6sYkjc3Nn94t2RkYD+y8KeYkjs/v7l5fz0dF22YkjWvcOLAAAAgElEQVR4AR2KNULFQBgGZ5J13KGGKvc/Cw1uPe62eb9+Jr1EUBFHSgxxjP2Eca6AfUSfVlUfBvm1Ui1bqafctqMndNkXpb01h5TLx4b6TIXgwOCHfjv+/Pz+5vPRw7txGWT2h6yO0/GaYltIp5PT1dEpLNPL/SdWjYjAAZtvRPgHJX4Xio+DSrkAAAAASUVORK5CYII=" /><noscript><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAMAAABBPP0LAAAAmVBMVEViZsViZMJiYrf9gnL8eWrlYkjgYkjZYkj8/PujwPybvPz4+PetraBEgfo+fvo3efkydfkqcvj8Y2T8UlL8Q0P8MzP9k4Hz8/Lu7u4DdPj9/VrKysI9fPoDc/EAZ7z7IiLHYkjp6ekCcOTk5OIASbfY/v21takAJrT5Dg6sYkjc3Nn94t2RkYD+y8KeYkjs/v7l5fz0dF22YkjWvcOLAAAAgElEQVR4AR2KNULFQBgGZ5J13KGGKvc/Cw1uPe62eb9+Jr1EUBFHSgxxjP2Eca6AfUSfVlUfBvm1Ui1bqafctqMndNkXpb01h5TLx4b6TIXgwOCHfjv+/Pz+5vPRw7txGWT2h6yO0/GaYltIp5PT1dEpLNPL/SdWjYjAAZtvRPgHJX4Xio+DSrkAAAAASUVORK5CYII=" alt="English" width="16" height="11" style="width: 16px; height: 11px;" /></noscript><span style="margin-right:0.3em;">English</span></a></li>
+</ul></div>					</div><!-- .main-menu.tie-alignleft /-->
+
+					<ul class="components">		<li class="search-compact-icon menu-item custom-menu-link">
+			<a href="#" class="tie-search-trigger">
+				<span class="tie-icon-search tie-search-icon" aria-hidden="true"></span>
+				<span class="screen-reader-text">بحث عن</span>
+			</a>
+		</li>
+			<li class="skin-icon menu-item custom-menu-link">
+		<a href="#" class="change-skin" title="الوضع المظلم">
+			<span class="tie-icon-moon change-skin-icon" aria-hidden="true"></span>
+			<span class="screen-reader-text">الوضع المظلم</span>
+		</a>
+	</li>
+		<li class="side-aside-nav-icon menu-item custom-menu-link">
+		<a href="#">
+			<span class="tie-icon-navicon" aria-hidden="true"></span>
+			<span class="screen-reader-text">إضافة عمود جانبي</span>
+		</a>
+	</li>
+	</ul><!-- Components -->
+				</div><!-- #menu-components-wrap /-->
+			</div><!-- .main-menu-wrapper /-->
+		</div><!-- .container /-->
+	</nav><!-- #main-nav /-->
+</div><!-- .main-nav-wrapper /-->
+
+</header>
+
+		<script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+			try{if("undefined"!=typeof localStorage){var header,mnIsDark=!1,tnIsDark=!1;(header=document.getElementById("theme-header"))&&((header=header.classList).contains("main-nav-default-dark")&&(mnIsDark=!0),header.contains("top-nav-default-dark")&&(tnIsDark=!0),"dark"==tieSkin?(header.add("main-nav-dark","top-nav-dark"),header.remove("main-nav-light","top-nav-light")):"light"==tieSkin&&(mnIsDark||(header.remove("main-nav-dark"),header.add("main-nav-light")),tnIsDark||(header.remove("top-nav-dark"),header.add("top-nav-light"))))}}catch(a){console.log(a)}
+		</script>
+		<div id="content" class="site-content container"><div id="main-content-row" class="tie-row main-content-row">
+
+<div class="main-content tie-col-md-8 tie-col-xs-12" role="main">
+
+	
+	<article id="the-post" class="container-wrapper post-content tie-standard">
+
+		
+<header class="entry-header-outer">
+
+	<nav id="breadcrumb"><a href="https://yemenat.net/"><span class="tie-icon-home" aria-hidden="true"></span> الرئيسية</a><em class="delimiter">/</em><a href="https://yemenat.net/category/%d8%a3%d8%ae%d8%a8%d8%a7%d8%b1-%d9%88%d8%aa%d9%82%d8%a7%d8%b1%d9%8a%d8%b1/">أخبار وتقارير</a><em class="delimiter">/</em><span class="current">الكشف عن انشاء محجرين صحيين للاستعداد لمواجهة كورونا في صنعاء</span></nav><script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"BreadcrumbList","@id":"#Breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"item":{"name":"\u0627\u0644\u0631\u0626\u064a\u0633\u064a\u0629","@id":"https:\/\/yemenat.net\/"}},{"@type":"ListItem","position":2,"item":{"name":"\u0623\u062e\u0628\u0627\u0631 \u0648\u062a\u0642\u0627\u0631\u064a\u0631","@id":"https:\/\/yemenat.net\/category\/%d8%a3%d8%ae%d8%a8%d8%a7%d8%b1-%d9%88%d8%aa%d9%82%d8%a7%d8%b1%d9%8a%d8%b1\/"}}]}</script>
+	<div class="entry-header">
+
+		<span class="post-cat-wrap"><a class="post-cat tie-cat-1" href="https://yemenat.net/category/%d8%a3%d8%ae%d8%a8%d8%a7%d8%b1-%d9%88%d8%aa%d9%82%d8%a7%d8%b1%d9%8a%d8%b1/">أخبار وتقارير</a><a class="post-cat tie-cat-1120" href="https://yemenat.net/category/%d8%a5%d8%ae%d8%aa%d9%8a%d8%a7%d8%b1-%d8%a7%d9%84%d9%85%d8%ad%d8%b1%d8%b1/">إختيار المحرر</a><a class="post-cat tie-cat-23" href="https://yemenat.net/category/featured/">العرض في الرئيسة</a></span>
+		<h1 class="post-title entry-title">الكشف عن انشاء محجرين صحيين للاستعداد لمواجهة كورونا في صنعاء</h1>
+
+		<div id="single-post-meta" class="post-meta clearfix"><span class="date meta-item tie-icon">18 مارس، 2020</span><div class="tie-alignright"><span class="meta-views meta-item very-hot"><span class="tie-icon-fire" aria-hidden="true"></span> 226 </span><span class="meta-reading-time meta-item"><span class="tie-icon-bookmark" aria-hidden="true"></span> دقيقة واحدة</span> </div></div><!-- .post-meta -->	</div><!-- .entry-header /-->
+
+	
+	
+</header><!-- .entry-header-outer /-->
+
+
+		<div id="share-buttons-top" class="share-buttons share-buttons-top">
+			<div class="share-links  icons-text share-pill">
+				
+				<a href="https://www.facebook.com/sharer.php?u=https://yemenat.net/2020/03/366088/" rel="external noopener nofollow" title="فيسبوك" target="_blank" class="facebook-share-btn  large-share-button" data-raw="https://www.facebook.com/sharer.php?u={post_link}">
+					<span class="share-btn-icon tie-icon-facebook"></span> <span class="social-text">فيسبوك</span>
+				</a>
+				<a href="https://twitter.com/intent/tweet?text=%D8%A7%D9%84%D9%83%D8%B4%D9%81%20%D8%B9%D9%86%20%D8%A7%D9%86%D8%B4%D8%A7%D8%A1%20%D9%85%D8%AD%D8%AC%D8%B1%D9%8A%D9%86%20%D8%B5%D8%AD%D9%8A%D9%8A%D9%86%20%D9%84%D9%84%D8%A7%D8%B3%D8%AA%D8%B9%D8%AF%D8%A7%D8%AF%20%D9%84%D9%85%D9%88%D8%A7%D8%AC%D9%87%D8%A9%20%D9%83%D9%88%D8%B1%D9%88%D9%86%D8%A7%20%D9%81%D9%8A%20%D8%B5%D9%86%D8%B9%D8%A7%D8%A1&#038;url=https://yemenat.net/2020/03/366088/" rel="external noopener nofollow" title="تويتر" target="_blank" class="twitter-share-btn  large-share-button" data-raw="https://twitter.com/intent/tweet?text={post_title}&amp;url={post_link}">
+					<span class="share-btn-icon tie-icon-twitter"></span> <span class="social-text">تويتر</span>
+				</a>
+				<a href="https://www.linkedin.com/shareArticle?mini=true&#038;url=https://yemenat.net/2020/03/366088/&#038;title=%D8%A7%D9%84%D9%83%D8%B4%D9%81%20%D8%B9%D9%86%20%D8%A7%D9%86%D8%B4%D8%A7%D8%A1%20%D9%85%D8%AD%D8%AC%D8%B1%D9%8A%D9%86%20%D8%B5%D8%AD%D9%8A%D9%8A%D9%86%20%D9%84%D9%84%D8%A7%D8%B3%D8%AA%D8%B9%D8%AF%D8%A7%D8%AF%20%D9%84%D9%85%D9%88%D8%A7%D8%AC%D9%87%D8%A9%20%D9%83%D9%88%D8%B1%D9%88%D9%86%D8%A7%20%D9%81%D9%8A%20%D8%B5%D9%86%D8%B9%D8%A7%D8%A1" rel="external noopener nofollow" title="لينكدإن" target="_blank" class="linkedin-share-btn  large-share-button" data-raw="https://www.linkedin.com/shareArticle?mini=true&amp;url={post_full_link}&amp;title={post_title}">
+					<span class="share-btn-icon tie-icon-linkedin"></span> <span class="social-text">لينكدإن</span>
+				</a>
+				<a href="https://www.tumblr.com/share/link?url=https://yemenat.net/2020/03/366088/&#038;name=%D8%A7%D9%84%D9%83%D8%B4%D9%81%20%D8%B9%D9%86%20%D8%A7%D9%86%D8%B4%D8%A7%D8%A1%20%D9%85%D8%AD%D8%AC%D8%B1%D9%8A%D9%86%20%D8%B5%D8%AD%D9%8A%D9%8A%D9%86%20%D9%84%D9%84%D8%A7%D8%B3%D8%AA%D8%B9%D8%AF%D8%A7%D8%AF%20%D9%84%D9%85%D9%88%D8%A7%D8%AC%D9%87%D8%A9%20%D9%83%D9%88%D8%B1%D9%88%D9%86%D8%A7%20%D9%81%D9%8A%20%D8%B5%D9%86%D8%B9%D8%A7%D8%A1" rel="external noopener nofollow" title="‏Tumblr" target="_blank" class="tumblr-share-btn  large-share-button" data-raw="https://www.tumblr.com/share/link?url={post_link}&amp;name={post_title}">
+					<span class="share-btn-icon tie-icon-tumblr"></span> <span class="social-text">‏Tumblr</span>
+				</a>
+				<a href="https://pinterest.com/pin/create/button/?url=https://yemenat.net/2020/03/366088/&#038;description=%D8%A7%D9%84%D9%83%D8%B4%D9%81%20%D8%B9%D9%86%20%D8%A7%D9%86%D8%B4%D8%A7%D8%A1%20%D9%85%D8%AD%D8%AC%D8%B1%D9%8A%D9%86%20%D8%B5%D8%AD%D9%8A%D9%8A%D9%86%20%D9%84%D9%84%D8%A7%D8%B3%D8%AA%D8%B9%D8%AF%D8%A7%D8%AF%20%D9%84%D9%85%D9%88%D8%A7%D8%AC%D9%87%D8%A9%20%D9%83%D9%88%D8%B1%D9%88%D9%86%D8%A7%20%D9%81%D9%8A%20%D8%B5%D9%86%D8%B9%D8%A7%D8%A1&#038;media=https://yemenat.net/wp-content/uploads/2020/03/محجر-كورونا-بصنعاء.jpg" rel="external noopener nofollow" title="بينتيريست" target="_blank" class="pinterest-share-btn  large-share-button" data-raw="https://pinterest.com/pin/create/button/?url={post_link}&amp;description={post_title}&amp;media={post_img}">
+					<span class="share-btn-icon tie-icon-pinterest"></span> <span class="social-text">بينتيريست</span>
+				</a>
+				<a href="https://reddit.com/submit?url=https://yemenat.net/2020/03/366088/&#038;title=%D8%A7%D9%84%D9%83%D8%B4%D9%81%20%D8%B9%D9%86%20%D8%A7%D9%86%D8%B4%D8%A7%D8%A1%20%D9%85%D8%AD%D8%AC%D8%B1%D9%8A%D9%86%20%D8%B5%D8%AD%D9%8A%D9%8A%D9%86%20%D9%84%D9%84%D8%A7%D8%B3%D8%AA%D8%B9%D8%AF%D8%A7%D8%AF%20%D9%84%D9%85%D9%88%D8%A7%D8%AC%D9%87%D8%A9%20%D9%83%D9%88%D8%B1%D9%88%D9%86%D8%A7%20%D9%81%D9%8A%20%D8%B5%D9%86%D8%B9%D8%A7%D8%A1" rel="external noopener nofollow" title="‏Reddit" target="_blank" class="reddit-share-btn  large-share-button" data-raw="https://reddit.com/submit?url={post_link}&amp;title={post_title}">
+					<span class="share-btn-icon tie-icon-reddit"></span> <span class="social-text">‏Reddit</span>
+				</a>
+				<a href="https://api.whatsapp.com/send?text=%D8%A7%D9%84%D9%83%D8%B4%D9%81%20%D8%B9%D9%86%20%D8%A7%D9%86%D8%B4%D8%A7%D8%A1%20%D9%85%D8%AD%D8%AC%D8%B1%D9%8A%D9%86%20%D8%B5%D8%AD%D9%8A%D9%8A%D9%86%20%D9%84%D9%84%D8%A7%D8%B3%D8%AA%D8%B9%D8%AF%D8%A7%D8%AF%20%D9%84%D9%85%D9%88%D8%A7%D8%AC%D9%87%D8%A9%20%D9%83%D9%88%D8%B1%D9%88%D9%86%D8%A7%20%D9%81%D9%8A%20%D8%B5%D9%86%D8%B9%D8%A7%D8%A1%20https://yemenat.net/2020/03/366088/" rel="external noopener nofollow" title="واتساب" target="_blank" class="whatsapp-share-btn  large-share-button" data-raw="https://api.whatsapp.com/send?text={post_title}%20{post_link}">
+					<span class="share-btn-icon tie-icon-whatsapp"></span> <span class="social-text">واتساب</span>
+				</a>			</div><!-- .share-links /-->
+		</div><!-- .share-buttons /-->
+
+		<div  class="featured-area"><div class="featured-area-inner"><figure class="single-featured-image"><img width="360" height="240" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20360%20240'%3E%3C/svg%3E" class="attachment-jannah-image-post size-jannah-image-post wp-post-image" alt="محجر كورونا بصنعاء" is_main_img="1" data-lazy-srcset="https://yemenat.net/wp-content/uploads/2020/03/محجر-كورونا-بصنعاء.jpg 360w, https://yemenat.net/wp-content/uploads/2020/03/محجر-كورونا-بصنعاء-300x200.jpg 300w" data-lazy-sizes="(max-width: 360px) 100vw, 360px" title="الكشف عن انشاء محجرين صحيين للاستعداد لمواجهة كورونا في صنعاء 1" data-lazy-src="https://yemenat.net/wp-content/uploads/2020/03/محجر-كورونا-بصنعاء.jpg"><noscript><img width="360" height="240" src="https://yemenat.net/wp-content/uploads/2020/03/محجر-كورونا-بصنعاء.jpg" class="attachment-jannah-image-post size-jannah-image-post wp-post-image" alt="محجر كورونا بصنعاء" is_main_img="1" srcset="https://yemenat.net/wp-content/uploads/2020/03/محجر-كورونا-بصنعاء.jpg 360w, https://yemenat.net/wp-content/uploads/2020/03/محجر-كورونا-بصنعاء-300x200.jpg 300w" sizes="(max-width: 360px) 100vw, 360px" title="الكشف عن انشاء محجرين صحيين للاستعداد لمواجهة كورونا في صنعاء 1"></noscript></figure></div></div>
+		<div class="entry-content entry clearfix">
+
+			
+			<p style="text-align: justify;"><span style="text-decoration: underline; color: #0000ff;"><strong>يمنات &#8211; صنعاء</strong></span></p>
+<p style="text-align: justify;"><span style="color: #000000;"><strong>قال مكتب منظمة الصحة العالمية باليمن، انه يدعم إنشاء مرفق للحجر الصحي في مطار صنعاء الدولي، و تجهيز مرفق حجر صحي في مستشفى زايد بمحافظة صنعاء.</strong></span></p>
+<p style="text-align: justify;"><span style="color: #000000;"><strong>و أكد المكتب أن ذلك يأتي لضمان أعلى درجات الاستعداد للكشف عن الحالات المحتملة و الاستجابة لها تقوم منظمة الصحة العالمية بتكثيف جهود التأهب و الاستجابة في حالة تأكيد الإصابة بفيروس كورونا.</strong></span></p>
+<blockquote class="twitter-tweet" data-width="550" data-dnt="true">
+<p lang="ar" dir="rtl">لضمان أعلى درجات الاستعداد للكشف عن الحالات المحتملة والاستجابة لها تقوم منظمة الصحة العالمية بتكثيف جهود التأهب والاستجابة في حالة تأكيد الإصابة بفيروس كورونا. ندعم إنشاء مرفق للحجر الصحي في مطار صنعاء. وتجهيز مرفق حجر صحي في مستشفى زايد بمحافظة صنعاء.<a href="https://twitter.com/hashtag/COVID19?src=hash&amp;ref_src=twsrc%5Etfw" target="_blank" rel="noopener">#COVID19</a> <a href="https://twitter.com/hashtag/%D8%A7%D9%84%D9%8A%D9%85%D9%86?src=hash&amp;ref_src=twsrc%5Etfw" target="_blank" rel="noopener">#اليمن</a> <a href="https://t.co/328Ce0g6Mf" target="_blank">pic.twitter.com/328Ce0g6Mf</a></p>
+<p>&mdash; WHO Yemen (@WHOYemen) <a href="https://twitter.com/WHOYemen/status/1240238189375356928?ref_src=twsrc%5Etfw" target="_blank" rel="noopener">March 18, 2020</a></p></blockquote>
+<p><script type="rocketlazyloadscript" data-minify="1" async src="https://yemenat.net/wp-content/cache/min/1/widgets.js?ver=1661414366" charset="utf-8"></script></p>
+<p style="text-align: justify;"><span style="color: #000000;"><strong> و لفت إلى تجهيز معدات الحماية الشخصية و غيرها من اللوازم الضرورية للجهات ذات الصلة في صنعاء و عدن.</strong></span></p>
+<p style="text-align: justify;"><span style="color: #000000;"><strong>و نوه إلى تدريب العاملين في مجال الصحة على إدارة الحالات و تمارين المحاكاة و توفير 200 فحص إلى محافظة صنعاء، بينما تم توفير 300 اختبار إلى محافظة عدن و تركيب جهازين </strong><strong>PCR</strong><strong> في مختبرات الصحة المركزية بعدن.</strong></span></p>
+<blockquote class="twitter-tweet" data-width="550" data-dnt="true">
+<p lang="ar" dir="rtl">تم توفير معدات الحماية الشخصية وغيرها من اللوازم الضرورية للجهات ذات الصلة في صنعاء وعدن.<br /> تم تدريب العاملين في مجال الصحة على إدارة الحالات وتمارين المحاكاة وتوفير 200 فحص إلى محافظة صنعاء، بينما تم توفير 300 اختبار إلى عدن وتركيب جهازين PCR في مختبرات الصحة المركزية بعدن.</p>
+<p>&mdash; WHO Yemen (@WHOYemen) <a href="https://twitter.com/WHOYemen/status/1240242125414989825?ref_src=twsrc%5Etfw" target="_blank" rel="noopener">March 18, 2020</a></p></blockquote>
+<p><script type="rocketlazyloadscript" data-minify="1" async src="https://yemenat.net/wp-content/cache/min/1/widgets.js?ver=1661414366" charset="utf-8"></script></p>
+<p style="text-align: justify;"><span style="color: #000000;"><strong><span style="color: #ff00ff;">للاشتراك في قناة موقع يمنات على التليجرام انقر</span> <span style="color: #ff6600;"><a style="color: #ff6600;" href="https://telegram.me/yemenat0" target="_blank" rel="noopener noreferrer">هنا</a></span></strong></span></p>
+<p style="text-align: justify;"><span style="color: #000000;"><strong>لتكن أول من يعرف الخبر .. اشترك في خدمة “<span style="color: #0000ff;">المستقلة موبايل</span>“، لمشتركي “<span style="color: #008000;">يمن موبايل</span>” ارسل رقم (<span style="color: #ff0000;">1</span>) إلى <span style="color: #ff0000;">2520</span>، ولمشتركي “<span style="color: #008000;">ام تي إن</span>” ارسل رقم (<span style="color: #ff0000;">1</span>) إلى <span style="color: #ff0000;">1416</span>.</strong></span></p>
+
+			<div class="post-bottom-meta post-bottom-tags post-tags-modern"><div class="post-bottom-meta-title"><span class="tie-icon-tags" aria-hidden="true"></span> الوسوم</div><span class="tagcloud"><a href="https://yemenat.net/tag/%d8%a7%d9%84%d8%b5%d8%ad%d8%a9-%d8%a7%d9%84%d8%b9%d8%a7%d9%84%d9%85%d9%8a%d8%a9/" rel="tag">الصحة العالمية</a> <a href="https://yemenat.net/tag/%d8%b5%d9%86%d8%b9%d8%a7%d8%a1/" rel="tag">صنعاء</a> <a href="https://yemenat.net/tag/%d9%83%d9%88%d8%b1%d9%88%d9%86%d8%a7/" rel="tag">كورونا</a></span></div>
+		</div><!-- .entry-content /-->
+
+				<div id="post-extra-info">
+			<div class="theiaStickySidebar">
+				<div id="single-post-meta" class="post-meta clearfix"><span class="date meta-item tie-icon">18 مارس، 2020</span><div class="tie-alignright"><span class="meta-views meta-item very-hot"><span class="tie-icon-fire" aria-hidden="true"></span> 226 </span><span class="meta-reading-time meta-item"><span class="tie-icon-bookmark" aria-hidden="true"></span> دقيقة واحدة</span> </div></div><!-- .post-meta -->
+		<div id="share-buttons-top" class="share-buttons share-buttons-top">
+			<div class="share-links  icons-text share-pill">
+				
+				<a href="https://www.facebook.com/sharer.php?u=https://yemenat.net/2020/03/366088/" rel="external noopener nofollow" title="فيسبوك" target="_blank" class="facebook-share-btn  large-share-button" data-raw="https://www.facebook.com/sharer.php?u={post_link}">
+					<span class="share-btn-icon tie-icon-facebook"></span> <span class="social-text">فيسبوك</span>
+				</a>
+				<a href="https://twitter.com/intent/tweet?text=%D8%A7%D9%84%D9%83%D8%B4%D9%81%20%D8%B9%D9%86%20%D8%A7%D9%86%D8%B4%D8%A7%D8%A1%20%D9%85%D8%AD%D8%AC%D8%B1%D9%8A%D9%86%20%D8%B5%D8%AD%D9%8A%D9%8A%D9%86%20%D9%84%D9%84%D8%A7%D8%B3%D8%AA%D8%B9%D8%AF%D8%A7%D8%AF%20%D9%84%D9%85%D9%88%D8%A7%D8%AC%D9%87%D8%A9%20%D9%83%D9%88%D8%B1%D9%88%D9%86%D8%A7%20%D9%81%D9%8A%20%D8%B5%D9%86%D8%B9%D8%A7%D8%A1&#038;url=https://yemenat.net/2020/03/366088/" rel="external noopener nofollow" title="تويتر" target="_blank" class="twitter-share-btn  large-share-button" data-raw="https://twitter.com/intent/tweet?text={post_title}&amp;url={post_link}">
+					<span class="share-btn-icon tie-icon-twitter"></span> <span class="social-text">تويتر</span>
+				</a>
+				<a href="https://www.linkedin.com/shareArticle?mini=true&#038;url=https://yemenat.net/2020/03/366088/&#038;title=%D8%A7%D9%84%D9%83%D8%B4%D9%81%20%D8%B9%D9%86%20%D8%A7%D9%86%D8%B4%D8%A7%D8%A1%20%D9%85%D8%AD%D8%AC%D8%B1%D9%8A%D9%86%20%D8%B5%D8%AD%D9%8A%D9%8A%D9%86%20%D9%84%D9%84%D8%A7%D8%B3%D8%AA%D8%B9%D8%AF%D8%A7%D8%AF%20%D9%84%D9%85%D9%88%D8%A7%D8%AC%D9%87%D8%A9%20%D9%83%D9%88%D8%B1%D9%88%D9%86%D8%A7%20%D9%81%D9%8A%20%D8%B5%D9%86%D8%B9%D8%A7%D8%A1" rel="external noopener nofollow" title="لينكدإن" target="_blank" class="linkedin-share-btn  large-share-button" data-raw="https://www.linkedin.com/shareArticle?mini=true&amp;url={post_full_link}&amp;title={post_title}">
+					<span class="share-btn-icon tie-icon-linkedin"></span> <span class="social-text">لينكدإن</span>
+				</a>
+				<a href="https://www.tumblr.com/share/link?url=https://yemenat.net/2020/03/366088/&#038;name=%D8%A7%D9%84%D9%83%D8%B4%D9%81%20%D8%B9%D9%86%20%D8%A7%D9%86%D8%B4%D8%A7%D8%A1%20%D9%85%D8%AD%D8%AC%D8%B1%D9%8A%D9%86%20%D8%B5%D8%AD%D9%8A%D9%8A%D9%86%20%D9%84%D9%84%D8%A7%D8%B3%D8%AA%D8%B9%D8%AF%D8%A7%D8%AF%20%D9%84%D9%85%D9%88%D8%A7%D8%AC%D9%87%D8%A9%20%D9%83%D9%88%D8%B1%D9%88%D9%86%D8%A7%20%D9%81%D9%8A%20%D8%B5%D9%86%D8%B9%D8%A7%D8%A1" rel="external noopener nofollow" title="‏Tumblr" target="_blank" class="tumblr-share-btn  large-share-button" data-raw="https://www.tumblr.com/share/link?url={post_link}&amp;name={post_title}">
+					<span class="share-btn-icon tie-icon-tumblr"></span> <span class="social-text">‏Tumblr</span>
+				</a>
+				<a href="https://pinterest.com/pin/create/button/?url=https://yemenat.net/2020/03/366088/&#038;description=%D8%A7%D9%84%D9%83%D8%B4%D9%81%20%D8%B9%D9%86%20%D8%A7%D9%86%D8%B4%D8%A7%D8%A1%20%D9%85%D8%AD%D8%AC%D8%B1%D9%8A%D9%86%20%D8%B5%D8%AD%D9%8A%D9%8A%D9%86%20%D9%84%D9%84%D8%A7%D8%B3%D8%AA%D8%B9%D8%AF%D8%A7%D8%AF%20%D9%84%D9%85%D9%88%D8%A7%D8%AC%D9%87%D8%A9%20%D9%83%D9%88%D8%B1%D9%88%D9%86%D8%A7%20%D9%81%D9%8A%20%D8%B5%D9%86%D8%B9%D8%A7%D8%A1&#038;media=https://yemenat.net/wp-content/uploads/2020/03/محجر-كورونا-بصنعاء.jpg" rel="external noopener nofollow" title="بينتيريست" target="_blank" class="pinterest-share-btn  large-share-button" data-raw="https://pinterest.com/pin/create/button/?url={post_link}&amp;description={post_title}&amp;media={post_img}">
+					<span class="share-btn-icon tie-icon-pinterest"></span> <span class="social-text">بينتيريست</span>
+				</a>
+				<a href="https://reddit.com/submit?url=https://yemenat.net/2020/03/366088/&#038;title=%D8%A7%D9%84%D9%83%D8%B4%D9%81%20%D8%B9%D9%86%20%D8%A7%D9%86%D8%B4%D8%A7%D8%A1%20%D9%85%D8%AD%D8%AC%D8%B1%D9%8A%D9%86%20%D8%B5%D8%AD%D9%8A%D9%8A%D9%86%20%D9%84%D9%84%D8%A7%D8%B3%D8%AA%D8%B9%D8%AF%D8%A7%D8%AF%20%D9%84%D9%85%D9%88%D8%A7%D8%AC%D9%87%D8%A9%20%D9%83%D9%88%D8%B1%D9%88%D9%86%D8%A7%20%D9%81%D9%8A%20%D8%B5%D9%86%D8%B9%D8%A7%D8%A1" rel="external noopener nofollow" title="‏Reddit" target="_blank" class="reddit-share-btn  large-share-button" data-raw="https://reddit.com/submit?url={post_link}&amp;title={post_title}">
+					<span class="share-btn-icon tie-icon-reddit"></span> <span class="social-text">‏Reddit</span>
+				</a>
+				<a href="https://api.whatsapp.com/send?text=%D8%A7%D9%84%D9%83%D8%B4%D9%81%20%D8%B9%D9%86%20%D8%A7%D9%86%D8%B4%D8%A7%D8%A1%20%D9%85%D8%AD%D8%AC%D8%B1%D9%8A%D9%86%20%D8%B5%D8%AD%D9%8A%D9%8A%D9%86%20%D9%84%D9%84%D8%A7%D8%B3%D8%AA%D8%B9%D8%AF%D8%A7%D8%AF%20%D9%84%D9%85%D9%88%D8%A7%D8%AC%D9%87%D8%A9%20%D9%83%D9%88%D8%B1%D9%88%D9%86%D8%A7%20%D9%81%D9%8A%20%D8%B5%D9%86%D8%B9%D8%A7%D8%A1%20https://yemenat.net/2020/03/366088/" rel="external noopener nofollow" title="واتساب" target="_blank" class="whatsapp-share-btn  large-share-button" data-raw="https://api.whatsapp.com/send?text={post_title}%20{post_link}">
+					<span class="share-btn-icon tie-icon-whatsapp"></span> <span class="social-text">واتساب</span>
+				</a>			</div><!-- .share-links /-->
+		</div><!-- .share-buttons /-->
+
+					</div>
+		</div>
+
+		<div class="clearfix"></div>
+		<script id="tie-schema-json" type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"NewsArticle","dateCreated":"2020-03-18T19:30:41+03:00","datePublished":"2020-03-18T19:30:41+03:00","dateModified":"2020-03-18T19:35:33+03:00","headline":"\u0627\u0644\u0643\u0634\u0641 \u0639\u0646 \u0627\u0646\u0634\u0627\u0621 \u0645\u062d\u062c\u0631\u064a\u0646 \u0635\u062d\u064a\u064a\u0646 \u0644\u0644\u0627\u0633\u062a\u0639\u062f\u0627\u062f \u0644\u0645\u0648\u0627\u062c\u0647\u0629 \u0643\u0648\u0631\u0648\u0646\u0627 \u0641\u064a \u0635\u0646\u0639\u0627\u0621","name":"\u0627\u0644\u0643\u0634\u0641 \u0639\u0646 \u0627\u0646\u0634\u0627\u0621 \u0645\u062d\u062c\u0631\u064a\u0646 \u0635\u062d\u064a\u064a\u0646 \u0644\u0644\u0627\u0633\u062a\u0639\u062f\u0627\u062f \u0644\u0645\u0648\u0627\u062c\u0647\u0629 \u0643\u0648\u0631\u0648\u0646\u0627 \u0641\u064a \u0635\u0646\u0639\u0627\u0621","keywords":"\u0627\u0644\u0635\u062d\u0629 \u0627\u0644\u0639\u0627\u0644\u0645\u064a\u0629,\u0635\u0646\u0639\u0627\u0621,\u0643\u0648\u0631\u0648\u0646\u0627","url":"https:\/\/yemenat.net\/2020\/03\/366088\/","description":"\u064a\u0645\u0646\u0627\u062a - \u0635\u0646\u0639\u0627\u0621 \u0642\u0627\u0644 \u0645\u0643\u062a\u0628 \u0645\u0646\u0638\u0645\u0629 \u0627\u0644\u0635\u062d\u0629 \u0627\u0644\u0639\u0627\u0644\u0645\u064a\u0629 \u0628\u0627\u0644\u064a\u0645\u0646\u060c \u0627\u0646\u0647 \u064a\u062f\u0639\u0645 \u0625\u0646\u0634\u0627\u0621 \u0645\u0631\u0641\u0642 \u0644\u0644\u062d\u062c\u0631 \u0627\u0644\u0635\u062d\u064a \u0641\u064a \u0645\u0637\u0627\u0631 \u0635\u0646\u0639\u0627\u0621 \u0627\u0644\u062f\u0648\u0644\u064a\u060c \u0648 \u062a\u062c\u0647\u064a\u0632 \u0645\u0631\u0641\u0642 \u062d\u062c\u0631 \u0635\u062d\u064a \u0641\u064a \u0645\u0633\u062a\u0634\u0641\u0649 \u0632\u0627\u064a\u062f \u0628\u0645\u062d\u0627\u0641\u0638\u0629 \u0635\u0646\u0639\u0627\u0621. \u0648 \u0623\u0643\u062f \u0627\u0644\u0645\u0643\u062a\u0628 \u0623\u0646 \u0630\u0644\u0643 \u064a\u0623\u062a\u064a \u0644\u0636\u0645\u0627\u0646 \u0623\u0639\u0644\u0649 \u062f\u0631\u062c\u0627\u062a \u0627","copyrightYear":"2020","articleSection":"\u0623\u062e\u0628\u0627\u0631 \u0648\u062a\u0642\u0627\u0631\u064a\u0631,\u0625\u062e\u062a\u064a\u0627\u0631 \u0627\u0644\u0645\u062d\u0631\u0631,\u0627\u0644\u0639\u0631\u0636 \u0641\u064a \u0627\u0644\u0631\u0626\u064a\u0633\u0629","articleBody":"\u064a\u0645\u0646\u0627\u062a - \u0635\u0646\u0639\u0627\u0621\r\n\u0642\u0627\u0644 \u0645\u0643\u062a\u0628 \u0645\u0646\u0638\u0645\u0629 \u0627\u0644\u0635\u062d\u0629 \u0627\u0644\u0639\u0627\u0644\u0645\u064a\u0629 \u0628\u0627\u0644\u064a\u0645\u0646\u060c \u0627\u0646\u0647 \u064a\u062f\u0639\u0645 \u0625\u0646\u0634\u0627\u0621 \u0645\u0631\u0641\u0642 \u0644\u0644\u062d\u062c\u0631 \u0627\u0644\u0635\u062d\u064a \u0641\u064a \u0645\u0637\u0627\u0631 \u0635\u0646\u0639\u0627\u0621 \u0627\u0644\u062f\u0648\u0644\u064a\u060c \u0648 \u062a\u062c\u0647\u064a\u0632 \u0645\u0631\u0641\u0642 \u062d\u062c\u0631 \u0635\u062d\u064a \u0641\u064a \u0645\u0633\u062a\u0634\u0641\u0649 \u0632\u0627\u064a\u062f \u0628\u0645\u062d\u0627\u0641\u0638\u0629 \u0635\u0646\u0639\u0627\u0621.\r\n\u0648 \u0623\u0643\u062f \u0627\u0644\u0645\u0643\u062a\u0628 \u0623\u0646 \u0630\u0644\u0643 \u064a\u0623\u062a\u064a \u0644\u0636\u0645\u0627\u0646 \u0623\u0639\u0644\u0649 \u062f\u0631\u062c\u0627\u062a \u0627\u0644\u0627\u0633\u062a\u0639\u062f\u0627\u062f \u0644\u0644\u0643\u0634\u0641 \u0639\u0646 \u0627\u0644\u062d\u0627\u0644\u0627\u062a \u0627\u0644\u0645\u062d\u062a\u0645\u0644\u0629 \u0648 \u0627\u0644\u0627\u0633\u062a\u062c\u0627\u0628\u0629 \u0644\u0647\u0627 \u062a\u0642\u0648\u0645 \u0645\u0646\u0638\u0645\u0629 \u0627\u0644\u0635\u062d\u0629 \u0627\u0644\u0639\u0627\u0644\u0645\u064a\u0629 \u0628\u062a\u0643\u062b\u064a\u0641 \u062c\u0647\u0648\u062f \u0627\u0644\u062a\u0623\u0647\u0628 \u0648 \u0627\u0644\u0627\u0633\u062a\u062c\u0627\u0628\u0629 \u0641\u064a \u062d\u0627\u0644\u0629 \u062a\u0623\u0643\u064a\u062f \u0627\u0644\u0625\u0635\u0627\u0628\u0629 \u0628\u0641\u064a\u0631\u0648\u0633 \u0643\u0648\u0631\u0648\u0646\u0627.\r\nhttps:\/\/twitter.com\/WHOYemen\/status\/1240238189375356928\r\n\u00a0\u0648 \u0644\u0641\u062a \u0625\u0644\u0649 \u062a\u062c\u0647\u064a\u0632 \u0645\u0639\u062f\u0627\u062a \u0627\u0644\u062d\u0645\u0627\u064a\u0629 \u0627\u0644\u0634\u062e\u0635\u064a\u0629 \u0648 \u063a\u064a\u0631\u0647\u0627 \u0645\u0646 \u0627\u0644\u0644\u0648\u0627\u0632\u0645 \u0627\u0644\u0636\u0631\u0648\u0631\u064a\u0629 \u0644\u0644\u062c\u0647\u0627\u062a \u0630\u0627\u062a \u0627\u0644\u0635\u0644\u0629 \u0641\u064a \u0635\u0646\u0639\u0627\u0621 \u0648 \u0639\u062f\u0646.\r\n\u0648 \u0646\u0648\u0647 \u0625\u0644\u0649 \u062a\u062f\u0631\u064a\u0628 \u0627\u0644\u0639\u0627\u0645\u0644\u064a\u0646 \u0641\u064a \u0645\u062c\u0627\u0644 \u0627\u0644\u0635\u062d\u0629 \u0639\u0644\u0649 \u0625\u062f\u0627\u0631\u0629 \u0627\u0644\u062d\u0627\u0644\u0627\u062a \u0648 \u062a\u0645\u0627\u0631\u064a\u0646 \u0627\u0644\u0645\u062d\u0627\u0643\u0627\u0629 \u0648 \u062a\u0648\u0641\u064a\u0631 200 \u0641\u062d\u0635 \u0625\u0644\u0649 \u0645\u062d\u0627\u0641\u0638\u0629 \u0635\u0646\u0639\u0627\u0621\u060c \u0628\u064a\u0646\u0645\u0627 \u062a\u0645 \u062a\u0648\u0641\u064a\u0631 300 \u0627\u062e\u062a\u0628\u0627\u0631 \u0625\u0644\u0649 \u0645\u062d\u0627\u0641\u0638\u0629 \u0639\u062f\u0646 \u0648 \u062a\u0631\u0643\u064a\u0628 \u062c\u0647\u0627\u0632\u064a\u0646 PCR \u0641\u064a \u0645\u062e\u062a\u0628\u0631\u0627\u062a \u0627\u0644\u0635\u062d\u0629 \u0627\u0644\u0645\u0631\u0643\u0632\u064a\u0629 \u0628\u0639\u062f\u0646.\r\nhttps:\/\/twitter.com\/WHOYemen\/status\/1240242125414989825\r\n\u0644\u0644\u0627\u0634\u062a\u0631\u0627\u0643 \u0641\u064a \u0642\u0646\u0627\u0629 \u0645\u0648\u0642\u0639 \u064a\u0645\u0646\u0627\u062a \u0639\u0644\u0649 \u0627\u0644\u062a\u0644\u064a\u062c\u0631\u0627\u0645 \u0627\u0646\u0642\u0631 \u0647\u0646\u0627\r\n\u0644\u062a\u0643\u0646 \u0623\u0648\u0644 \u0645\u0646 \u064a\u0639\u0631\u0641 \u0627\u0644\u062e\u0628\u0631 .. \u0627\u0634\u062a\u0631\u0643 \u0641\u064a \u062e\u062f\u0645\u0629 \u201c\u0627\u0644\u0645\u0633\u062a\u0642\u0644\u0629 \u0645\u0648\u0628\u0627\u064a\u0644\u201c\u060c \u0644\u0645\u0634\u062a\u0631\u0643\u064a \u201c\u064a\u0645\u0646 \u0645\u0648\u0628\u0627\u064a\u0644\u201d \u0627\u0631\u0633\u0644 \u0631\u0642\u0645 (1) \u0625\u0644\u0649 2520\u060c \u0648\u0644\u0645\u0634\u062a\u0631\u0643\u064a \u201c\u0627\u0645 \u062a\u064a \u0625\u0646\u201d \u0627\u0631\u0633\u0644 \u0631\u0642\u0645 (1) \u0625\u0644\u0649 1416.","publisher":{"@id":"#Publisher","@type":"Organization","name":"\u0645\u0648\u0642\u0639 \u064a\u0645\u0646\u0627\u062a \u0627\u0644\u0623\u062e\u0628\u0627\u0631\u064a","logo":{"@type":"ImageObject","url":"https:\/\/yemenat.net\/wp-content\/uploads\/2015\/12\/\u064a\u0645\u0646\u0627\u062a.jpg"},"sameAs":["#","#","#","#"]},"sourceOrganization":{"@id":"#Publisher"},"copyrightHolder":{"@id":"#Publisher"},"mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yemenat.net\/2020\/03\/366088\/","breadcrumb":{"@id":"#Breadcrumb"}},"author":{"@type":"Person","name":"\u064a\u0645\u0646\u0627\u062a","url":"https:\/\/yemenat.net\/author\/anas\/"},"image":{"@type":"ImageObject","url":"https:\/\/yemenat.net\/wp-content\/uploads\/2020\/03\/\u0645\u062d\u062c\u0631-\u0643\u0648\u0631\u0648\u0646\u0627-\u0628\u0635\u0646\u0639\u0627\u0621.jpg","width":1200,"height":240}}</script>
+	</article><!-- #the-post /-->
+
+	
+	<div class="post-components">
+
+		<div class="prev-next-post-nav container-wrapper media-overlay">
+			<div class="tie-col-xs-6 prev-post">
+				<a data-bg="https://yemenat.net/wp-content/uploads/2019/09/ميناء-عدن-ج-390x220.jpg" href="https://yemenat.net/2020/03/366078/" style="" class="post-thumb rocket-lazyload" rel="prev">
+					<div class="post-thumb-overlay-wrap">
+						<div class="post-thumb-overlay">
+							<span class="tie-icon tie-media-icon"></span>
+						</div>
+					</div>
+				</a>
+
+				<a href="https://yemenat.net/2020/03/366078/" rel="prev">
+					<h3 class="post-title">حركة السفن في ميناء عدن الأربعاء 18 مارس/آذار 2020</h3>
+				</a>
+			</div>
+
+			
+			<div class="tie-col-xs-6 next-post">
+				<a data-bg="https://yemenat.net/wp-content/uploads/2015/11/عبد-الجبار-الحاج1.jpg" href="https://yemenat.net/2020/03/366091/" style="" class="post-thumb rocket-lazyload" rel="next">
+					<div class="post-thumb-overlay-wrap">
+						<div class="post-thumb-overlay">
+							<span class="tie-icon tie-media-icon"></span>
+						</div>
+					</div>
+				</a>
+
+				<a href="https://yemenat.net/2020/03/366091/" rel="next">
+					<h3 class="post-title">قضية اقبال الحكيمي وقلم حاشد وأمن تعز</h3>
+				</a>
+			</div>
+
+			</div><!-- .prev-next-post-nav /-->
+	</div><!-- .post-components /-->
+
+	
+</div><!-- .main-content -->
+
+
+	<aside class="sidebar tie-col-md-4 tie-col-xs-12 normal-side is-sticky" aria-label="القائمة الجانبية الرئيسية">
+		<div class="theiaStickySidebar">
+			<div id="posts-list-widget-19" class="container-wrapper widget posts-list"><div class="widget-title the-global-title has-block-head-4"><div class="the-subtitle">أخر المقالات<span class="widget-title-icon tie-icon"></span></div></div><div class="widget-posts-list-wrapper"><div class="widget-posts-list-container posts-list-big-first has-first-big-post media-overlay"  data-current="1" data-query="{'number':'5','offset':'','order':'latest','id':['82','1','5','13','80','7','1120','9','19','65','63','94','23','4','12','8','3','21029','6','102','110','140','11','20','36','24','16','108','17','67','61','114','14','18','106','104','10','112','29']}" data-style="{'thumbnail_first':'jannah-image-large','review_first':'large','media_icon':true,'exclude_current':366088}"><ul class="posts-list-items widget-posts-wrapper">
+<li class="widget-single-post-item widget-post-list tie-standard">
+
+			<div class="post-widget-thumbnail">
+
+			
+			<a aria-label="حاشد والزنم يسألان وزير التربية والتعليم عن التغييرات التي طالت المنهج الدراسي" href="https://yemenat.net/2022/10/395897/" class="post-thumb"><span class="post-cat-wrap"><span class="post-cat tie-cat-1">أخبار وتقارير</span></span><img width="390" height="220" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20390%20220'%3E%3C/svg%3E" class="attachment-jannah-image-large size-jannah-image-large wp-post-image" alt="سؤال حاشد والزنم" title="حاشد والزنم يسألان وزير التربية والتعليم عن التغييرات التي طالت المنهج الدراسي 2" data-lazy-src="https://yemenat.net/wp-content/uploads/2022/10/سؤال-حاشد-والزنم-390x220.jpg"><noscript><img width="390" height="220" src="https://yemenat.net/wp-content/uploads/2022/10/سؤال-حاشد-والزنم-390x220.jpg" class="attachment-jannah-image-large size-jannah-image-large wp-post-image" alt="سؤال حاشد والزنم" title="حاشد والزنم يسألان وزير التربية والتعليم عن التغييرات التي طالت المنهج الدراسي 2"></noscript></a>		</div><!-- post-alignleft /-->
+	
+	<div class="post-widget-body ">
+		<a class="post-title the-subtitle" href="https://yemenat.net/2022/10/395897/">حاشد والزنم يسألان وزير التربية والتعليم عن التغييرات التي طالت المنهج الدراسي</a>
+
+		<div class="post-meta">
+			<span class="date meta-item tie-icon">منذ يومين</span>		</div>
+	</div>
+</li>
+
+<li class="widget-single-post-item widget-post-list tie-standard">
+
+			<div class="post-widget-thumbnail">
+
+			
+			<a aria-label="حملة الشفافية العالمية للصناعات الاستخراجية النجاح الملموس رغم المعوقات" href="https://yemenat.net/2022/10/395894/" class="post-thumb"><img width="220" height="150" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20220%20150'%3E%3C/svg%3E" class="attachment-jannah-image-small size-jannah-image-small tie-small-image wp-post-image" alt="عمران الحمادي" title="حملة الشفافية العالمية للصناعات الاستخراجية النجاح الملموس رغم المعوقات 3" data-lazy-src="https://yemenat.net/wp-content/uploads/2021/10/عمران-الحمادي-220x150.jpg"><noscript><img width="220" height="150" src="https://yemenat.net/wp-content/uploads/2021/10/عمران-الحمادي-220x150.jpg" class="attachment-jannah-image-small size-jannah-image-small tie-small-image wp-post-image" alt="عمران الحمادي" title="حملة الشفافية العالمية للصناعات الاستخراجية النجاح الملموس رغم المعوقات 3"></noscript></a>		</div><!-- post-alignleft /-->
+	
+	<div class="post-widget-body ">
+		<a class="post-title the-subtitle" href="https://yemenat.net/2022/10/395894/">حملة الشفافية العالمية للصناعات الاستخراجية النجاح الملموس رغم المعوقات</a>
+
+		<div class="post-meta">
+			<span class="date meta-item tie-icon">منذ 4 أيام</span>		</div>
+	</div>
+</li>
+
+<li class="widget-single-post-item widget-post-list tie-standard">
+
+			<div class="post-widget-thumbnail">
+
+			
+			<a aria-label="كلمة النائب حاشد في حفل الاشتراكي بصنعاء" href="https://yemenat.net/2022/10/395891/" class="post-thumb"><img width="220" height="150" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20220%20150'%3E%3C/svg%3E" class="attachment-jannah-image-small size-jannah-image-small tie-small-image wp-post-image" alt="احمد سيف حاشد في حفل الاشتراكي صنعاء" title="كلمة النائب حاشد في حفل الاشتراكي بصنعاء 4" data-lazy-src="https://yemenat.net/wp-content/uploads/2022/10/احمد-سيف-حاشد-في-حفل-الاشتراكي-صنعاء-220x150.jpg"><noscript><img width="220" height="150" src="https://yemenat.net/wp-content/uploads/2022/10/احمد-سيف-حاشد-في-حفل-الاشتراكي-صنعاء-220x150.jpg" class="attachment-jannah-image-small size-jannah-image-small tie-small-image wp-post-image" alt="احمد سيف حاشد في حفل الاشتراكي صنعاء" title="كلمة النائب حاشد في حفل الاشتراكي بصنعاء 4"></noscript></a>		</div><!-- post-alignleft /-->
+	
+	<div class="post-widget-body ">
+		<a class="post-title the-subtitle" href="https://yemenat.net/2022/10/395891/">كلمة النائب حاشد في حفل الاشتراكي بصنعاء</a>
+
+		<div class="post-meta">
+			<span class="date meta-item tie-icon">منذ أسبوع واحد</span>		</div>
+	</div>
+</li>
+
+<li class="widget-single-post-item widget-post-list tie-standard">
+
+			<div class="post-widget-thumbnail">
+
+			
+			<a aria-label="تغاريد غير مشفرة .. كهرباء مؤمنة بأسعار مضاعفة" href="https://yemenat.net/2022/10/395889/" class="post-thumb"><img width="220" height="150" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20220%20150'%3E%3C/svg%3E" class="attachment-jannah-image-small size-jannah-image-small tie-small-image wp-post-image" alt="أحمد سيف حاشد" title="تغاريد غير مشفرة .. كهرباء مؤمنة بأسعار مضاعفة 5" data-lazy-src="https://yemenat.net/wp-content/uploads/2022/02/GZYoIEaJ-220x150.jpg"><noscript><img width="220" height="150" src="https://yemenat.net/wp-content/uploads/2022/02/GZYoIEaJ-220x150.jpg" class="attachment-jannah-image-small size-jannah-image-small tie-small-image wp-post-image" alt="أحمد سيف حاشد" title="تغاريد غير مشفرة .. كهرباء مؤمنة بأسعار مضاعفة 5"></noscript></a>		</div><!-- post-alignleft /-->
+	
+	<div class="post-widget-body ">
+		<a class="post-title the-subtitle" href="https://yemenat.net/2022/10/395889/">تغاريد غير مشفرة .. كهرباء مؤمنة بأسعار مضاعفة</a>
+
+		<div class="post-meta">
+			<span class="date meta-item tie-icon">منذ أسبوع واحد</span>		</div>
+	</div>
+</li>
+
+<li class="widget-single-post-item widget-post-list tie-standard">
+
+			<div class="post-widget-thumbnail">
+
+			
+			<a aria-label="تغاريد غير مشفرة .. هدنة ومعلم واختبار" href="https://yemenat.net/2022/10/395887/" class="post-thumb"><img width="220" height="150" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20220%20150'%3E%3C/svg%3E" class="attachment-jannah-image-small size-jannah-image-small tie-small-image wp-post-image" alt="أحمد سيف حاشد" title="تغاريد غير مشفرة .. هدنة ومعلم واختبار 6" data-lazy-src="https://yemenat.net/wp-content/uploads/2022/02/11-220x150.jpg"><noscript><img width="220" height="150" src="https://yemenat.net/wp-content/uploads/2022/02/11-220x150.jpg" class="attachment-jannah-image-small size-jannah-image-small tie-small-image wp-post-image" alt="أحمد سيف حاشد" title="تغاريد غير مشفرة .. هدنة ومعلم واختبار 6"></noscript></a>		</div><!-- post-alignleft /-->
+	
+	<div class="post-widget-body ">
+		<a class="post-title the-subtitle" href="https://yemenat.net/2022/10/395887/">تغاريد غير مشفرة .. هدنة ومعلم واختبار</a>
+
+		<div class="post-meta">
+			<span class="date meta-item tie-icon">منذ 3 أسابيع</span>		</div>
+	</div>
+</li>
+</ul></div><div class="widget-pagination-wrapper"><a class="widget-pagination next-posts show-more-button" href="#" data-text="اظهر المزيد">اظهر المزيد</a></div></div><div class="clearfix"></div></div><!-- .widget /-->		</div><!-- .theiaStickySidebar /-->
+	</aside><!-- .sidebar /-->
+	</div><!-- .main-content-row /--></div><!-- #content /-->
+			<div class="container full-width related-posts-full-width">
+			<div class="tie-row">
+				<div class="tie-col-md-12">
+			
+
+				<div id="related-posts" class="container-wrapper">
+
+					<div class="mag-box-title the-global-title">
+						<h3>مقالات ذات صلة</h3>
+					</div>
+
+					<div class="related-posts-list">
+
+					
+							<div class="related-item tie-standard">
+
+								
+			<a aria-label="فلسطيني يشكو من مماطلة سفارة بلاده بصنعاء بشأن منحه شقة سكنية باعتها له قبل أكثر من &#8220;8&#8221; سنوات." href="https://yemenat.net/2018/05/326541/" class="post-thumb"><img width="390" height="220" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20390%20220'%3E%3C/svg%3E" class="attachment-jannah-image-large size-jannah-image-large wp-post-image" alt="عمر حداد 1" title="فلسطيني يشكو من مماطلة سفارة بلاده بصنعاء بشأن منحه شقة سكنية باعتها له قبل أكثر من &quot;8&quot; سنوات. 7" data-lazy-src="https://yemenat.net/wp-content/uploads/2018/05/عمر-حداد-1-390x220.jpg"><noscript><img width="390" height="220" src="https://yemenat.net/wp-content/uploads/2018/05/عمر-حداد-1-390x220.jpg" class="attachment-jannah-image-large size-jannah-image-large wp-post-image" alt="عمر حداد 1" title="فلسطيني يشكو من مماطلة سفارة بلاده بصنعاء بشأن منحه شقة سكنية باعتها له قبل أكثر من &quot;8&quot; سنوات. 7"></noscript></a>
+								<h3 class="post-title"><a href="https://yemenat.net/2018/05/326541/">فلسطيني يشكو من مماطلة سفارة بلاده بصنعاء بشأن منحه شقة سكنية باعتها له قبل أكثر من &#8220;8&#8221; سنوات.</a></h3>
+
+								<div class="post-meta clearfix"><span class="date meta-item tie-icon">27 مايو، 2018</span></div><!-- .post-meta -->							</div><!-- .related-item /-->
+
+						
+							<div class="related-item tie-standard">
+
+								
+			<a aria-label="تغاريد غير مشفرة (213) .. انتهاكات ومظالم (1)" href="https://yemenat.net/2019/06/351135/" class="post-thumb"><img width="334" height="220" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20334%20220'%3E%3C/svg%3E" class="attachment-jannah-image-large size-jannah-image-large wp-post-image" alt="حاشد لبنان" title="تغاريد غير مشفرة (213) .. انتهاكات ومظالم (1) 8" data-lazy-src="https://yemenat.net/wp-content/uploads/2019/05/حاشد-لبنان-334x220.jpg"><noscript><img width="334" height="220" src="https://yemenat.net/wp-content/uploads/2019/05/حاشد-لبنان-334x220.jpg" class="attachment-jannah-image-large size-jannah-image-large wp-post-image" alt="حاشد لبنان" title="تغاريد غير مشفرة (213) .. انتهاكات ومظالم (1) 8"></noscript></a>
+								<h3 class="post-title"><a href="https://yemenat.net/2019/06/351135/">تغاريد غير مشفرة (213) .. انتهاكات ومظالم (1)</a></h3>
+
+								<div class="post-meta clearfix"><span class="date meta-item tie-icon">23 يونيو، 2019</span></div><!-- .post-meta -->							</div><!-- .related-item /-->
+
+						
+							<div class="related-item tie-standard">
+
+								
+			<a aria-label="تغاريد غير مشفرة (214) .. انتهاكات ومظالم (2)" href="https://yemenat.net/2019/06/351276/" class="post-thumb"><img width="243" height="220" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20243%20220'%3E%3C/svg%3E" class="attachment-jannah-image-large size-jannah-image-large wp-post-image" alt="حاشد حقوقي" data-lazy-srcset="https://yemenat.net/wp-content/uploads/2016/05/حاشد-حقوقي.jpg 351w, https://yemenat.net/wp-content/uploads/2016/05/حاشد-حقوقي-300x272.jpg 300w" data-lazy-sizes="(max-width: 243px) 100vw, 243px" title="تغاريد غير مشفرة (214) .. انتهاكات ومظالم (2) 9" data-lazy-src="https://yemenat.net/wp-content/uploads/2016/05/حاشد-حقوقي.jpg"><noscript><img width="243" height="220" src="https://yemenat.net/wp-content/uploads/2016/05/حاشد-حقوقي.jpg" class="attachment-jannah-image-large size-jannah-image-large wp-post-image" alt="حاشد حقوقي" srcset="https://yemenat.net/wp-content/uploads/2016/05/حاشد-حقوقي.jpg 351w, https://yemenat.net/wp-content/uploads/2016/05/حاشد-حقوقي-300x272.jpg 300w" sizes="(max-width: 243px) 100vw, 243px" title="تغاريد غير مشفرة (214) .. انتهاكات ومظالم (2) 9"></noscript></a>
+								<h3 class="post-title"><a href="https://yemenat.net/2019/06/351276/">تغاريد غير مشفرة (214) .. انتهاكات ومظالم (2)</a></h3>
+
+								<div class="post-meta clearfix"><span class="date meta-item tie-icon">25 يونيو، 2019</span></div><!-- .post-meta -->							</div><!-- .related-item /-->
+
+						
+							<div class="related-item tie-standard">
+
+								
+			<a aria-label="صنعاء .. مكتب الرئاسة يوجه الخارجية بمتابعة قضية لاجئ فلسطيني امتنعت سفارة بلاده تسليمه سكن سبق أن دفع ثمنه" href="https://yemenat.net/2018/09/333487/" class="post-thumb"><img width="390" height="220" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20390%20220'%3E%3C/svg%3E" class="attachment-jannah-image-large size-jannah-image-large wp-post-image" alt="عمر عيد حداد" title="صنعاء .. مكتب الرئاسة يوجه الخارجية بمتابعة قضية لاجئ فلسطيني امتنعت سفارة بلاده تسليمه سكن سبق أن دفع ثمنه 10" data-lazy-src="https://yemenat.net/wp-content/uploads/2018/09/عمر-عيد-حداد-390x220.jpg"><noscript><img width="390" height="220" src="https://yemenat.net/wp-content/uploads/2018/09/عمر-عيد-حداد-390x220.jpg" class="attachment-jannah-image-large size-jannah-image-large wp-post-image" alt="عمر عيد حداد" title="صنعاء .. مكتب الرئاسة يوجه الخارجية بمتابعة قضية لاجئ فلسطيني امتنعت سفارة بلاده تسليمه سكن سبق أن دفع ثمنه 10"></noscript></a>
+								<h3 class="post-title"><a href="https://yemenat.net/2018/09/333487/">صنعاء .. مكتب الرئاسة يوجه الخارجية بمتابعة قضية لاجئ فلسطيني امتنعت سفارة بلاده تسليمه سكن سبق أن دفع ثمنه</a></h3>
+
+								<div class="post-meta clearfix"><span class="date meta-item tie-icon">13 سبتمبر، 2018</span></div><!-- .post-meta -->							</div><!-- .related-item /-->
+
+						
+					</div><!-- .related-posts-list /-->
+				</div><!-- #related-posts /-->
+
+						</div><!-- .tie-col-md-12 -->
+		</div><!-- .tie-row -->
+	</div><!-- .container -->
+	
+<footer id="footer" class="site-footer dark-skin dark-widgetized-area">
+
+	
+			<div id="site-info" class="site-info site-info-layout-2">
+				<div class="container">
+					<div class="tie-row">
+						<div class="tie-col-md-12">
+
+							<div class="copyright-text copyright-text-first">Copyright 2021, all rights reserved
+</div><div class="footer-menu"><ul id="menu-auto-menu-from-pages" class="menu"><li id="menu-item-180740" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-180740"><a href="https://yemenat.net/مثال-على-صفحة/">مثال على صفحة</a></li>
+<li id="menu-item-180744" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-180744"><a href="https://yemenat.net/%d8%aa%d9%88%d8%a7%d8%b5%d9%84-%d9%85%d8%b9%d9%86%d8%a7/">تواصل معنا</a></li>
+<li id="menu-item-180756" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-180756"><a href="https://yemenat.net/%d9%85%d9%86-%d9%86%d8%ad%d9%86/">من نحن</a></li>
+</ul></div><ul class="social-icons"><li class="social-icons-item"><a class="social-link facebook-social-icon" rel="external noopener nofollow" target="_blank" href="#"><span class="tie-social-icon tie-icon-facebook"></span><span class="screen-reader-text">فيسبوك</span></a></li><li class="social-icons-item"><a class="social-link twitter-social-icon" rel="external noopener nofollow" target="_blank" href="#"><span class="tie-social-icon tie-icon-twitter"></span><span class="screen-reader-text">تويتر</span></a></li><li class="social-icons-item"><a class="social-link youtube-social-icon" rel="external noopener nofollow" target="_blank" href="#"><span class="tie-social-icon tie-icon-youtube"></span><span class="screen-reader-text">يوتيوب</span></a></li><li class="social-icons-item"><a class="social-link instagram-social-icon" rel="external noopener nofollow" target="_blank" href="#"><span class="tie-social-icon tie-icon-instagram"></span><span class="screen-reader-text">انستقرام</span></a></li></ul> 
+
+						</div><!-- .tie-col /-->
+					</div><!-- .tie-row /-->
+				</div><!-- .container /-->
+			</div><!-- #site-info /-->
+			
+</footer><!-- #footer /-->
+
+
+		<div id="share-buttons-mobile" class="share-buttons share-buttons-mobile">
+			<div class="share-links  icons-only">
+				
+				<a href="https://www.facebook.com/sharer.php?u=https://yemenat.net/2020/03/366088/" rel="external noopener nofollow" title="فيسبوك" target="_blank" class="facebook-share-btn " data-raw="https://www.facebook.com/sharer.php?u={post_link}">
+					<span class="share-btn-icon tie-icon-facebook"></span> <span class="screen-reader-text">فيسبوك</span>
+				</a>
+				<a href="https://twitter.com/intent/tweet?text=%D8%A7%D9%84%D9%83%D8%B4%D9%81%20%D8%B9%D9%86%20%D8%A7%D9%86%D8%B4%D8%A7%D8%A1%20%D9%85%D8%AD%D8%AC%D8%B1%D9%8A%D9%86%20%D8%B5%D8%AD%D9%8A%D9%8A%D9%86%20%D9%84%D9%84%D8%A7%D8%B3%D8%AA%D8%B9%D8%AF%D8%A7%D8%AF%20%D9%84%D9%85%D9%88%D8%A7%D8%AC%D9%87%D8%A9%20%D9%83%D9%88%D8%B1%D9%88%D9%86%D8%A7%20%D9%81%D9%8A%20%D8%B5%D9%86%D8%B9%D8%A7%D8%A1&#038;url=https://yemenat.net/2020/03/366088/" rel="external noopener nofollow" title="تويتر" target="_blank" class="twitter-share-btn " data-raw="https://twitter.com/intent/tweet?text={post_title}&amp;url={post_link}">
+					<span class="share-btn-icon tie-icon-twitter"></span> <span class="screen-reader-text">تويتر</span>
+				</a>
+				<a href="https://api.whatsapp.com/send?text=%D8%A7%D9%84%D9%83%D8%B4%D9%81%20%D8%B9%D9%86%20%D8%A7%D9%86%D8%B4%D8%A7%D8%A1%20%D9%85%D8%AD%D8%AC%D8%B1%D9%8A%D9%86%20%D8%B5%D8%AD%D9%8A%D9%8A%D9%86%20%D9%84%D9%84%D8%A7%D8%B3%D8%AA%D8%B9%D8%AF%D8%A7%D8%AF%20%D9%84%D9%85%D9%88%D8%A7%D8%AC%D9%87%D8%A9%20%D9%83%D9%88%D8%B1%D9%88%D9%86%D8%A7%20%D9%81%D9%8A%20%D8%B5%D9%86%D8%B9%D8%A7%D8%A1%20https://yemenat.net/2020/03/366088/" rel="external noopener nofollow" title="واتساب" target="_blank" class="whatsapp-share-btn " data-raw="https://api.whatsapp.com/send?text={post_title}%20{post_link}">
+					<span class="share-btn-icon tie-icon-whatsapp"></span> <span class="screen-reader-text">واتساب</span>
+				</a>
+				<a href="https://telegram.me/share/url?url=https://yemenat.net/2020/03/366088/&text=%D8%A7%D9%84%D9%83%D8%B4%D9%81%20%D8%B9%D9%86%20%D8%A7%D9%86%D8%B4%D8%A7%D8%A1%20%D9%85%D8%AD%D8%AC%D8%B1%D9%8A%D9%86%20%D8%B5%D8%AD%D9%8A%D9%8A%D9%86%20%D9%84%D9%84%D8%A7%D8%B3%D8%AA%D8%B9%D8%AF%D8%A7%D8%AF%20%D9%84%D9%85%D9%88%D8%A7%D8%AC%D9%87%D8%A9%20%D9%83%D9%88%D8%B1%D9%88%D9%86%D8%A7%20%D9%81%D9%8A%20%D8%B5%D9%86%D8%B9%D8%A7%D8%A1" rel="external noopener nofollow" title="تيلقرام" target="_blank" class="telegram-share-btn " data-raw="https://telegram.me/share/url?url={post_link}&text={post_title}">
+					<span class="share-btn-icon tie-icon-paper-plane"></span> <span class="screen-reader-text">تيلقرام</span>
+				</a>			</div><!-- .share-links /-->
+		</div><!-- .share-buttons /-->
+
+		<div class="mobile-share-buttons-spacer"></div>
+		<a id="go-to-top" class="go-to-top-button" href="#go-to-tie-body">
+			<span class="tie-icon-angle-up"></span>
+			<span class="screen-reader-text">زر الذهاب إلى الأعلى</span>
+		</a>
+	
+		</div><!-- #tie-wrapper /-->
+
+		
+	<aside class=" side-aside normal-side dark-skin dark-widgetized-area slide-sidebar-desktop appear-from-left" aria-label="القائمة الجانبية الثانوية" style="visibility: hidden;">
+		<div data-height="100%" class="side-aside-wrapper has-custom-scroll">
+
+			<a href="#" class="close-side-aside remove big-btn light-btn">
+				<span class="screen-reader-text">إغلاق</span>
+			</a><!-- .close-side-aside /-->
+
+
+			
+				<div id="mobile-container">
+
+											<div id="mobile-search">
+							<form role="search" method="get" class="search-form" action="https://yemenat.net/">
+				<label>
+					<span class="screen-reader-text">البحث عن:</span>
+					<input type="search" class="search-field" placeholder="بحث &hellip;" value="" name="s" />
+				</label>
+				<input type="submit" class="search-submit" value="بحث" />
+			</form>						</div><!-- #mobile-search /-->
+						
+					<div id="mobile-menu" class="">
+											</div><!-- #mobile-menu /-->
+
+											<div id="mobile-social-icons" class="social-icons-widget solid-social-icons">
+							<ul><li class="social-icons-item"><a class="social-link facebook-social-icon" rel="external noopener nofollow" target="_blank" href="#"><span class="tie-social-icon tie-icon-facebook"></span><span class="screen-reader-text">فيسبوك</span></a></li><li class="social-icons-item"><a class="social-link twitter-social-icon" rel="external noopener nofollow" target="_blank" href="#"><span class="tie-social-icon tie-icon-twitter"></span><span class="screen-reader-text">تويتر</span></a></li><li class="social-icons-item"><a class="social-link youtube-social-icon" rel="external noopener nofollow" target="_blank" href="#"><span class="tie-social-icon tie-icon-youtube"></span><span class="screen-reader-text">يوتيوب</span></a></li><li class="social-icons-item"><a class="social-link instagram-social-icon" rel="external noopener nofollow" target="_blank" href="#"><span class="tie-social-icon tie-icon-instagram"></span><span class="screen-reader-text">انستقرام</span></a></li></ul> 
+						</div><!-- #mobile-social-icons /-->
+						
+				</div><!-- #mobile-container /-->
+			
+
+							<div id="slide-sidebar-widgets">
+					<div id="posts-list-widget-19" class="container-wrapper widget posts-list"><div class="widget-title the-global-title has-block-head-4"><div class="the-subtitle">أخر المقالات<span class="widget-title-icon tie-icon"></span></div></div><div class="widget-posts-list-wrapper"><div class="widget-posts-list-container posts-list-big-first has-first-big-post media-overlay"  data-current="1" data-query="{'number':'5','offset':'','order':'latest','id':['82','1','5','13','80','7','1120','9','19','65','63','94','23','4','12','8','3','21029','6','102','110','140','11','20','36','24','16','108','17','67','61','114','14','18','106','104','10','112','29']}" data-style="{'thumbnail_first':'jannah-image-large','review_first':'large','media_icon':true,'exclude_current':366088}"><ul class="posts-list-items widget-posts-wrapper">
+<li class="widget-single-post-item widget-post-list tie-standard">
+
+			<div class="post-widget-thumbnail">
+
+			
+			<a aria-label="حاشد والزنم يسألان وزير التربية والتعليم عن التغييرات التي طالت المنهج الدراسي" href="https://yemenat.net/2022/10/395897/" class="post-thumb"><span class="post-cat-wrap"><span class="post-cat tie-cat-1">أخبار وتقارير</span></span><img width="390" height="220" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20390%20220'%3E%3C/svg%3E" class="attachment-jannah-image-large size-jannah-image-large wp-post-image" alt="سؤال حاشد والزنم" title="حاشد والزنم يسألان وزير التربية والتعليم عن التغييرات التي طالت المنهج الدراسي 11" data-lazy-src="https://yemenat.net/wp-content/uploads/2022/10/سؤال-حاشد-والزنم-390x220.jpg"><noscript><img width="390" height="220" src="https://yemenat.net/wp-content/uploads/2022/10/سؤال-حاشد-والزنم-390x220.jpg" class="attachment-jannah-image-large size-jannah-image-large wp-post-image" alt="سؤال حاشد والزنم" title="حاشد والزنم يسألان وزير التربية والتعليم عن التغييرات التي طالت المنهج الدراسي 11"></noscript></a>		</div><!-- post-alignleft /-->
+	
+	<div class="post-widget-body ">
+		<a class="post-title the-subtitle" href="https://yemenat.net/2022/10/395897/">حاشد والزنم يسألان وزير التربية والتعليم عن التغييرات التي طالت المنهج الدراسي</a>
+
+		<div class="post-meta">
+			<span class="date meta-item tie-icon">منذ يومين</span>		</div>
+	</div>
+</li>
+
+<li class="widget-single-post-item widget-post-list tie-standard">
+
+			<div class="post-widget-thumbnail">
+
+			
+			<a aria-label="حملة الشفافية العالمية للصناعات الاستخراجية النجاح الملموس رغم المعوقات" href="https://yemenat.net/2022/10/395894/" class="post-thumb"><img width="220" height="150" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20220%20150'%3E%3C/svg%3E" class="attachment-jannah-image-small size-jannah-image-small tie-small-image wp-post-image" alt="عمران الحمادي" title="حملة الشفافية العالمية للصناعات الاستخراجية النجاح الملموس رغم المعوقات 12" data-lazy-src="https://yemenat.net/wp-content/uploads/2021/10/عمران-الحمادي-220x150.jpg"><noscript><img width="220" height="150" src="https://yemenat.net/wp-content/uploads/2021/10/عمران-الحمادي-220x150.jpg" class="attachment-jannah-image-small size-jannah-image-small tie-small-image wp-post-image" alt="عمران الحمادي" title="حملة الشفافية العالمية للصناعات الاستخراجية النجاح الملموس رغم المعوقات 12"></noscript></a>		</div><!-- post-alignleft /-->
+	
+	<div class="post-widget-body ">
+		<a class="post-title the-subtitle" href="https://yemenat.net/2022/10/395894/">حملة الشفافية العالمية للصناعات الاستخراجية النجاح الملموس رغم المعوقات</a>
+
+		<div class="post-meta">
+			<span class="date meta-item tie-icon">منذ 4 أيام</span>		</div>
+	</div>
+</li>
+
+<li class="widget-single-post-item widget-post-list tie-standard">
+
+			<div class="post-widget-thumbnail">
+
+			
+			<a aria-label="كلمة النائب حاشد في حفل الاشتراكي بصنعاء" href="https://yemenat.net/2022/10/395891/" class="post-thumb"><img width="220" height="150" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20220%20150'%3E%3C/svg%3E" class="attachment-jannah-image-small size-jannah-image-small tie-small-image wp-post-image" alt="احمد سيف حاشد في حفل الاشتراكي صنعاء" title="كلمة النائب حاشد في حفل الاشتراكي بصنعاء 13" data-lazy-src="https://yemenat.net/wp-content/uploads/2022/10/احمد-سيف-حاشد-في-حفل-الاشتراكي-صنعاء-220x150.jpg"><noscript><img width="220" height="150" src="https://yemenat.net/wp-content/uploads/2022/10/احمد-سيف-حاشد-في-حفل-الاشتراكي-صنعاء-220x150.jpg" class="attachment-jannah-image-small size-jannah-image-small tie-small-image wp-post-image" alt="احمد سيف حاشد في حفل الاشتراكي صنعاء" title="كلمة النائب حاشد في حفل الاشتراكي بصنعاء 13"></noscript></a>		</div><!-- post-alignleft /-->
+	
+	<div class="post-widget-body ">
+		<a class="post-title the-subtitle" href="https://yemenat.net/2022/10/395891/">كلمة النائب حاشد في حفل الاشتراكي بصنعاء</a>
+
+		<div class="post-meta">
+			<span class="date meta-item tie-icon">منذ أسبوع واحد</span>		</div>
+	</div>
+</li>
+
+<li class="widget-single-post-item widget-post-list tie-standard">
+
+			<div class="post-widget-thumbnail">
+
+			
+			<a aria-label="تغاريد غير مشفرة .. كهرباء مؤمنة بأسعار مضاعفة" href="https://yemenat.net/2022/10/395889/" class="post-thumb"><img width="220" height="150" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20220%20150'%3E%3C/svg%3E" class="attachment-jannah-image-small size-jannah-image-small tie-small-image wp-post-image" alt="أحمد سيف حاشد" title="تغاريد غير مشفرة .. كهرباء مؤمنة بأسعار مضاعفة 14" data-lazy-src="https://yemenat.net/wp-content/uploads/2022/02/GZYoIEaJ-220x150.jpg"><noscript><img width="220" height="150" src="https://yemenat.net/wp-content/uploads/2022/02/GZYoIEaJ-220x150.jpg" class="attachment-jannah-image-small size-jannah-image-small tie-small-image wp-post-image" alt="أحمد سيف حاشد" title="تغاريد غير مشفرة .. كهرباء مؤمنة بأسعار مضاعفة 14"></noscript></a>		</div><!-- post-alignleft /-->
+	
+	<div class="post-widget-body ">
+		<a class="post-title the-subtitle" href="https://yemenat.net/2022/10/395889/">تغاريد غير مشفرة .. كهرباء مؤمنة بأسعار مضاعفة</a>
+
+		<div class="post-meta">
+			<span class="date meta-item tie-icon">منذ أسبوع واحد</span>		</div>
+	</div>
+</li>
+
+<li class="widget-single-post-item widget-post-list tie-standard">
+
+			<div class="post-widget-thumbnail">
+
+			
+			<a aria-label="تغاريد غير مشفرة .. هدنة ومعلم واختبار" href="https://yemenat.net/2022/10/395887/" class="post-thumb"><img width="220" height="150" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20220%20150'%3E%3C/svg%3E" class="attachment-jannah-image-small size-jannah-image-small tie-small-image wp-post-image" alt="أحمد سيف حاشد" title="تغاريد غير مشفرة .. هدنة ومعلم واختبار 15" data-lazy-src="https://yemenat.net/wp-content/uploads/2022/02/11-220x150.jpg"><noscript><img width="220" height="150" src="https://yemenat.net/wp-content/uploads/2022/02/11-220x150.jpg" class="attachment-jannah-image-small size-jannah-image-small tie-small-image wp-post-image" alt="أحمد سيف حاشد" title="تغاريد غير مشفرة .. هدنة ومعلم واختبار 15"></noscript></a>		</div><!-- post-alignleft /-->
+	
+	<div class="post-widget-body ">
+		<a class="post-title the-subtitle" href="https://yemenat.net/2022/10/395887/">تغاريد غير مشفرة .. هدنة ومعلم واختبار</a>
+
+		<div class="post-meta">
+			<span class="date meta-item tie-icon">منذ 3 أسابيع</span>		</div>
+	</div>
+</li>
+</ul></div><div class="widget-pagination-wrapper"><a class="widget-pagination next-posts show-more-button" href="#" data-text="اظهر المزيد">اظهر المزيد</a></div></div><div class="clearfix"></div></div><!-- .widget /-->				</div>
+			
+		</div><!-- .side-aside-wrapper /-->
+	</aside><!-- .side-aside /-->
+
+	
+	</div><!-- #tie-container /-->
+</div><!-- .background-overlay /-->
+
+<div id="reading-position-indicator"></div><div id="autocomplete-suggestions" class="autocomplete-suggestions"></div><div id="is-scroller-outer"><div id="is-scroller"></div></div><div id="fb-root"></div>	<div id="tie-popup-search-desktop" class="tie-popup tie-popup-search-wrap" style="display: none;">
+		<a href="#" class="tie-btn-close remove big-btn light-btn">
+			<span class="screen-reader-text">إغلاق</span>
+		</a>
+		<div class="popup-search-wrap-inner">
+			<div class="live-search-parent pop-up-live-search" data-skin="live-search-popup" aria-label="بحث">
+				<form method="get" class="tie-popup-search-form" action="https://yemenat.net/">
+					<input class="tie-popup-search-input is-ajax-search" inputmode="search" type="text" name="s" title="بحث عن" autocomplete="off" placeholder="إكتب كلمة البحث ثم إضغط زر الإدخال" />
+					<button class="tie-popup-search-submit" type="submit">
+						<span class="tie-icon-search tie-search-icon" aria-hidden="true"></span>
+						<span class="screen-reader-text">بحث عن</span>
+					</button>
+				</form>
+			</div><!-- .pop-up-live-search /-->
+		</div><!-- .popup-search-wrap-inner /-->
+	</div><!-- .tie-popup-search-wrap /-->
+		<div id="tie-popup-search-mobile" class="tie-popup tie-popup-search-wrap" style="display: none;">
+		<a href="#" class="tie-btn-close remove big-btn light-btn">
+			<span class="screen-reader-text">إغلاق</span>
+		</a>
+		<div class="popup-search-wrap-inner">
+			<div class="live-search-parent pop-up-live-search" data-skin="live-search-popup" aria-label="بحث">
+				<form method="get" class="tie-popup-search-form" action="https://yemenat.net/">
+					<input class="tie-popup-search-input " inputmode="search" type="text" name="s" title="بحث عن" autocomplete="off" placeholder="بحث عن" />
+					<button class="tie-popup-search-submit" type="submit">
+						<span class="tie-icon-search tie-search-icon" aria-hidden="true"></span>
+						<span class="screen-reader-text">بحث عن</span>
+					</button>
+				</form>
+			</div><!-- .pop-up-live-search /-->
+		</div><!-- .popup-search-wrap-inner /-->
+	</div><!-- .tie-popup-search-wrap /-->
+	<script type="rocketlazyloadscript" data-rocket-type='text/javascript' id='rocket-browser-checker-js-after'>
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+</script>
+<script type='text/javascript' id='rocket-preload-links-js-extra'>
+/* <![CDATA[ */
+var RocketPreloadLinksConfig = {"excludeUris":"\/(.+\/)?feed\/?.+\/?|\/(?:.+\/)?embed\/|\/(index\\.php\/)?wp\\-json(\/.*|$)|\/yemenat\/|\/wp-admin\/|\/logout\/|\/yemenat\/","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|php|pdf|html|htm","siteUrl":"https:\/\/yemenat.net","onHoverDelay":"100","rateThrottle":"3"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' id='rocket-preload-links-js-after'>
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+</script>
+<script type='text/javascript' id='tie-scripts-js-extra'>
+/* <![CDATA[ */
+var tie = {"is_rtl":"1","ajaxurl":"https:\/\/yemenat.net\/wp-admin\/admin-ajax.php","is_taqyeem_active":"","is_sticky_video":"1","mobile_menu_top":"","mobile_menu_active":"area_1","mobile_menu_parent":"","lightbox_all":"true","lightbox_gallery":"true","lightbox_skin":"dark","lightbox_thumb":"horizontal","lightbox_arrows":"true","is_singular":"1","autoload_posts":"","reading_indicator":"true","lazyload":"","select_share":"true","select_share_twitter":"","select_share_facebook":"","select_share_linkedin":"","select_share_email":"","facebook_app_id":"5303202981","twitter_username":"","responsive_tables":"","ad_blocker_detector":"","sticky_behavior":"default","sticky_desktop":"true","sticky_mobile":"true","sticky_mobile_behavior":"default","ajax_loader":"<div class=\"loader-overlay\"><div class=\"spinner-circle\"><\/div><\/div>","type_to_search":"1","lang_no_results":"\u0644\u0645 \u064a\u062a\u0645 \u0627\u0644\u0639\u062b\u0648\u0631 \u0639\u0644\u0649 \u0646\u062a\u0627\u0626\u062c","sticky_share_mobile":"true","sticky_share_post":""};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://yemenat.net/wp-content/themes/jannah/assets/js/scripts.min.js?ver=5.4.10' id='tie-scripts-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' id='tie-scripts-js-after'>window.addEventListener('DOMContentLoaded', function() {
+				jQuery.ajax({
+					type : "GET",
+					url  : "https://yemenat.net/wp-admin/admin-ajax.php",
+					data : "postviews_id=366088&action=tie_postviews",
+					cache: !1,
+					success: function( data ){
+						jQuery("#single-post-meta").find(".meta-views").html( data );
+					}
+				});
+
+			
+});</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://yemenat.net/wp-content/cache/min/1/wp-content/themes/jannah/assets/ilightbox/lightbox.js?ver=1661414271' id='tie-js-ilightbox-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://yemenat.net/wp-content/themes/jannah/assets/js/desktop.min.js?ver=5.4.10' id='tie-js-desktop-js' defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://yemenat.net/wp-content/cache/min/1/wp-content/themes/jannah/assets/js/live-search.js?ver=1661414271' id='tie-js-livesearch-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://yemenat.net/wp-content/themes/jannah/assets/js/single.min.js?ver=5.4.10' id='tie-js-single-js' defer></script>
+<script type='text/javascript' src='https://yemenat.net/wp-includes/js/wp-embed.min.js?ver=5.6.10' id='wp-embed-js' defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://yemenat.net/wp-content/cache/min/1/wp-content/themes/jannah/assets/js/br-news.js?ver=1661414271' id='tie-js-breaking-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript'>
+(function() {
+				var expirationDate = new Date();
+				expirationDate.setTime( expirationDate.getTime() + 31536000 * 1000 );
+				document.cookie = "pll_language=ar; expires=" + expirationDate.toUTCString() + "; path=/; secure; SameSite=Lax";
+			}());
+</script>
+<script type="rocketlazyloadscript">
+				WebFontConfig ={
+					google:{
+						families: [ 'Montserrat:600,regular:latin&display=swap' ]
+					}
+				};
+
+				(function(){
+					var wf   = document.createElement('script');
+					wf.src   = '//ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+					wf.type  = 'text/javascript';
+					wf.defer = 'true';
+					var s = document.getElementsByTagName('script')[0];
+					s.parentNode.insertBefore(wf, s);
+				})();
+			</script><script>window.lazyLoadOptions={elements_selector:"img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}};window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async src="https://yemenat.net/wp-content/plugins/wp-rocket/assets/js/lazyload/17.5/lazyload.min.js"></script><script>function lazyLoadThumb(e){var t='<img data-lazy-src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"><noscript><img src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"></noscript>',a='<button class="play" aria-label="play Youtube video"></button>';return t.replace("ID",e)+a}function lazyLoadYoutubeIframe(){var e=document.createElement("iframe"),t="ID?autoplay=1";t+=0===this.parentNode.dataset.query.length?'':'&'+this.parentNode.dataset.query;e.setAttribute("src",t.replace("ID",this.parentNode.dataset.src)),e.setAttribute("frameborder","0"),e.setAttribute("allowfullscreen","1"),e.setAttribute("allow", "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"),this.parentNode.parentNode.replaceChild(e,this.parentNode)}document.addEventListener("DOMContentLoaded",function(){var e,t,p,a=document.getElementsByClassName("rll-youtube-player");for(t=0;t<a.length;t++)e=document.createElement("div"),e.setAttribute("data-id",a[t].dataset.id),e.setAttribute("data-query", a[t].dataset.query),e.setAttribute("data-src", a[t].dataset.src),e.innerHTML=lazyLoadThumb(a[t].dataset.id),a[t].appendChild(e),p=e.querySelector('.play'),p.onclick=lazyLoadYoutubeIframe});</script>
+</body>
+</html>
+
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me - Debug: cached@1666844680 -->

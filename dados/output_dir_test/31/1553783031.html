@@ -1,0 +1,2506 @@
+<!DOCTYPE HTML>
+			<html><head>
+	
+			
+<script type="text/javascript">
+
+    window.didomiConfig = {
+        app: {
+            vendors: {
+                didomi: [
+                    // Ask Didomi to collect consent for Google
+                    'google'
+                ]
+            }
+        },
+
+        integrations: {
+            vendors: {
+                google: {
+                    enable: true,
+                    refresh: false // Tell the SDK to never load/refresh ads and only share consent with Google
+                }
+            }
+        }
+    };
+
+    window.gdprAppliesGlobally = true;
+    (function () {
+        function n(e) {
+            if (!window.frames[e]) {
+                if (document.body && document.body.firstChild) {
+                    var t = document.body;
+                    var a = document.createElement("iframe");
+                    a.style.display = "none";
+                    a.name = e;
+                    a.title = e;
+                    t.insertBefore(a, t.firstChild)
+                } else {
+                    setTimeout(function () {
+                        n(e)
+                    }, 5)
+                }
+            }
+        }
+
+        function e(a, r, o, s, c) {
+            function e(e, t, a, n) {
+                if (typeof a !== "function") {
+                    return
+                }
+                if (!window[r]) {
+                    window[r] = []
+                }
+                var i = false;
+                if (c) {
+                    i = c(e, t, a)
+                }
+                if (!i) {
+                    window[r].push({
+                        command: e,
+                        parameter: t,
+                        callback: a,
+                        version: n
+                    })
+                }
+            }
+            e.stub = true;
+
+            function t(n) {
+                if (!window[a] || window[a].stub !== true) {
+                    return
+                }
+                if (!n.data) {
+                    return
+                }
+                var i = typeof n.data === "string";
+                var e;
+                try {
+                    e = i ? JSON.parse(n.data) : n.data
+                } catch (t) {
+                    return
+                }
+                if (e[o]) {
+                    var r = e[o];
+                    window[a](r.command, r.parameter, function (e, t) {
+                        var a = {};
+                        a[s] = {
+                            returnValue: e,
+                            success: t,
+                            callId: r.callId
+
+                        };
+                        n.source.postMessage(i ? JSON.stringify(a) : a, "*")
+                    }, r.version)
+                }
+            }
+            if (typeof window[a] !== "function") {
+                window[a] = e;
+                if (window.addEventListener) {
+                    window.addEventListener("message", t, false)
+                } else {
+                    window.attachEvent("onmessage", t)
+                }
+            }
+        }
+
+        e("__uspapi", "__uspapiBuffer", "__uspapiCall", "__uspapiReturn");
+        n("__uspapiLocator");
+        e("__tcfapi", "__tcfapiBuffer", "__tcfapiCall", "__tcfapiReturn");
+        n("__tcfapiLocator");
+
+        (function (e) {
+            var t = document.createElement("script");
+            t.id = "spcloader";
+            t.type = "text/javascript";
+            t.async = true;
+            t.src = "https://sdk.privacy-center.org/" + e + "/loader.js?target=" + document.location.hostname;
+            t.charset = "utf-8";
+            var a = document.getElementsByTagName("script")[0];
+            a.parentNode.insertBefore(t, a)
+        })("7b02b7c5-542b-4e58-be72-3b656a0c4bbe")
+    })();
+
+</script>
+
+<script type="text/javascript">
+    setTimeout(function () {
+        $(function () { $('#footer .b-footer-links .list-inline').append('<li><a href="javascript:Didomi.preferences.show();">Gestion des cookies</a></li>'); });
+    }, 1000);
+</script>
+		
+			
+		
+			<script type="text/javascript">
+			var serverXiti = 'logc1';
+			var serverXitiSSL = 'logs4';
+			var pageContext = {"motsCles":"1|2|3|4|5|6|7|10|97|108|1664|17086","contextLevel":"KEEP_ALL","article_keywords":"#confinement","site":"MT","article_titre_formate":"coronavirus-vers-la-prolongation-du-confinement-en-france","article_source":"INLINE","accessCode":"13768131","idArticle":"3768131","bodyClass":"ripo_generic","commune_insee":"75056","tagsArticle":"#confinement","article_nbPhotos_utilisees":"1","article_chapter_3":"coronavirus","article_chapter_2":"France","article_monetisation":"DEFAULT","article_chapter_1":"Santé","commune_libelle":"Paris","keycloakRealm":"CentreFrance","article_nbMots":"543","departement_libelle":"Paris","departement":"75","article_titre":"Coronavirus : vers la prolongation du confinement en France","sousDomaine":"www","article_datePublication_formated":"20/03/2020","keycloakClientId":"iv3","urlTitle":"coronavirus-vers-la-prolongation-du-confinement-en-france","article_tags":"confinement","article_sitePublication":"MT","article_datePublication":"20/03/2020 09:57:00","gabarit":"generic","userLogged":"2","article_formule":"g","mots_cles":"La Montagne,Le Journal du Centre,Le Populaire du Centre,Le Berry Républicain,L'Yonne Républicaine,La République du Centre,L'Echo Républicain,a la une,Santé,France,L'Eveil,coronavirus","premium":"false","article_hasVideos":"1","keycloakUrl":"https://moncompte.centrefrance.com/auth","article_id":"3768131","idDepartement":"294","commune_cp":"75056","filterMotsCles":"1|2|3|4|5|6|7|10|97|108|1664|17086","code_canton":"99","idZone":"35496","article_nbPhotos_liees":"1","article_type":"TEMPS_FORT"};
+			var siteContext = {
+				"code": 'MT',
+				"nom" : 'La Montagne',						
+				"xitiCode" : '249828'
+			};
+		</script>
+	
+		
+			<!-- Google Tag Manager 
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MMTQ2HD');</script>
+ End Google Tag Manager -->
+<!-- Google Tag Manager -->
+<script>(function (w, d, s, l, i) {
+        w[l] = w[l] || []; w[l].push({
+            'gtm.start':
+                new Date().getTime(), event: 'gtm.js'
+        }); var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl + '&gtm_auth=SOfOzTaW-YSdcZpOo6txLw&gtm_preview=env-20&gtm_cookies_win=x'; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-PQ44X7Q');</script>
+<!-- End Google Tag Manager -->
+		
+			
+		
+			<meta name="robots" content="max-snippet:140, max-image-preview:large, max-video-preview:3">
+		
+			
+		
+			<meta property="fb:pages" content="146949065315655">
+<meta property="fb:pages" content="175216422678228">
+<meta property="fb:pages" content="1249533355115704">
+<meta property="fb:pages" content="683552834990594">
+<meta property="fb:pages" content="173584542815465">
+<meta property="fb:pages" content="523519794328483">
+<meta property="fb:pages" content="881486715232529">
+<meta property="fb:pages" content="866753166716343">
+<meta property="fb:pages" content="634955156571030">
+<meta property="fb:pages" content="201534746554727">
+<meta property="fb:pages" content="592928867453181">
+<meta property="fb:pages" content="1427560167465636">
+<meta property="fb:pages" content="325969884211552">
+<meta property="fb:pages" content="231888483641793">
+<meta property="fb:pages" content="415507755284508">
+<meta property="fb:pages" content="910432965688835">
+
+
+
+		<meta http-equiv="Content-Language" content="fr">
+	<meta content="Centre France" name="author">
+	<meta name="robots" content="index, follow">
+    <meta name="description" content="La porte-parole du gouvernement Sibeth Ndiaye a indiqu&#233;,ce vendredi, qu&apos;il &#233;tait &quot;assez probable&quot; que la p&#233;riode de confinement de quinze jours instaur&#233;e en France pour freiner la propagation du coronavirus soit prolong&#233;e.">
+	<meta name="keywords" content="Paris, 75000, #confinement">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+	<meta name="verify-v1" content="wXHf1ZDLeDBlnB1qp4ao7nMTbII3GCvgDxCcv10M6WE=">
+	<meta name="google-site-verification" content="SOI1aIiQRe3yaKj3Im3jk5M2l-D773BFWQajEbBYqJo">
+	<meta itemprop="name" content="Sant&#233; - Coronavirus : vers la prolongation du confinement en France" />
+   	<meta itemprop="image" content="https://img.lamontagne.fr/9iENCGFeKFQsnkL-pTpHtcUWut6uG22f9hZ8CrqiSV4/fit/657/438/sm/0/bG9jYWw6Ly8vMDAvMDAvMDQvNjkvOTAvMjAwMDAwNDY5OTA1Mw.jpg">
+   	<meta itemprop="description" content="La porte-parole du gouvernement Sibeth Ndiaye a indiqu&#233;,ce vendredi, qu&apos;il &#233;tait &quot;assez probable&quot; que la p&#233;riode de confinement de quinze jours instaur&#233;e en France pour freiner la propagation du coronavirus soit prolong&#233;e.">
+	<meta property="premium" content="false">
+
+    <meta property="og:site_name" content="www.lamontagne.fr">
+	<meta property="og:type" content="article">
+   	<meta property="og:title" content="Sant&#233; - Coronavirus : vers la prolongation du confinement en France">
+    <meta property="og:url" content="https://www.lamontagne.fr/paris-75000/actualites/coronavirus-vers-la-prolongation-du-confinement-en-france_13768131/">
+   	<meta property="og:description" content="La porte-parole du gouvernement Sibeth Ndiaye a indiqu&#233;,ce vendredi, qu&apos;il &#233;tait &quot;assez probable&quot; que la p&#233;riode de confinement de quinze jours instaur&#233;e en France pour freiner la propagation du coronavirus soit prolong&#233;e.">
+   	<meta property="og:image" content="https://img.lamontagne.fr/9iENCGFeKFQsnkL-pTpHtcUWut6uG22f9hZ8CrqiSV4/fit/657/438/sm/0/bG9jYWw6Ly8vMDAvMDAvMDQvNjkvOTAvMjAwMDAwNDY5OTA1Mw.jpg">
+   	<meta property="article:published_time" content="2020-03-20T09:57:00+01:00">
+   	<meta property="article:modified_time" content="2020-03-23T10:09:54+01:00">
+   	<meta property="article:section" content="coronavirus">
+    <meta property="article:tags" content="Santé,France,coronavirusconfinement">
+    <meta property="city" content="75056">
+    <meta property="labelcity" content="Paris">
+    <meta property="area" content="44223">
+    <meta property="fb:app_id" content="1083856288304846">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:site" content="@lamontagne_fr" >
+    <meta name="twitter:url" content="https://www.lamontagne.fr/paris-75000/actualites/coronavirus-vers-la-prolongation-du-confinement-en-france_13768131/">
+   	<meta name="twitter:title" content="Sant&#233; - Coronavirus : vers la prolongation du confinement en France">
+   	<meta name="twitter:description" content="La porte-parole du gouvernement Sibeth Ndiaye a indiqu&#233;,ce vendredi, qu&apos;il &#233;tait &quot;assez probable&quot; que la p&#233;riode de confinement de quinze jours instaur&#233;e en France pour freiner la propagation du coronavirus soit prolong&#233;e." />
+   	<meta name="twitter:image" content="https://img.lamontagne.fr/9iENCGFeKFQsnkL-pTpHtcUWut6uG22f9hZ8CrqiSV4/fit/657/438/sm/0/bG9jYWw6Ly8vMDAvMDAvMDQvNjkvOTAvMjAwMDAwNDY5OTA1Mw.jpg">
+
+	<meta name="iv3:sso" content="true">
+	
+	<meta name="article:content_tier" content="free" />
+	<meta name="article:opinion" content="false" />
+	<meta name="article:location" content="city:paris,france" />
+	<link rel="canonical" href="https://www.lamontagne.fr/paris-75000/actualites/coronavirus-vers-la-prolongation-du-confinement-en-france_13768131/">
+    <link rel="shortcut icon" type="image/x-icon" href="/static/bloc/ripolinage/favicon/favicon_MT/favicon.ico" />
+	<link rel="apple-touch-icon" href="https://www.lamontagne.fr/static/bloc/ripolinage/favicon/favicon_MT/apple-touch-icon.png" >
+
+	<title>Coronavirus : vers la prolongation du confinement en France - Paris (75000)</title>
+
+	<link href='https://fonts.googleapis.com/css?family=Oswald:400,300' rel='stylesheet' type='text/css'>
+
+	<script type="text/javascript">
+		var codeSite = "MT";
+	</script>
+
+	<script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script>
+	<link title="noPack" rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400;1,600&display=swap">
+
+<link rel="stylesheet" type="text/css" href="//static1.lamontagne.fr/pack/391531524.css" charset="UTF-8" ></link> 
+
+
+
+
+
+
+
+
+
+
+
+
+<link type="text/css" rel="stylesheet" href="//static1.lamontagne.fr/assets/ripo/css/print.css" media="print" />
+<link type="text/css" rel="stylesheet" href="//static1.lamontagne.fr/assets/ripo/css/jquery.smartbanner.css" media="screen">
+
+<style>
+/* Needs to be at the bottom not be overriden */
+@media ( min-width : 992px) {
+	.canbehidden {
+		transition: max-height .5s, margin .5s;
+		overflow: hidden;
+	}
+	.hideslow {
+		max-height: 0 !important;
+		margin: 0 !important;
+		transition: max-height .5s, margin .5s;
+	}
+	.notransition {
+		-webkit-transition: none !important;
+		-moz-transition: none !important;
+		-o-transition: none !important;
+		transition: none !important;
+	}
+}
+</style>
+
+<link rel="stylesheet" type="text/css" href="//static1.lamontagne.fr/pack/-1497596341.css" charset="UTF-8" ></link>
+
+
+<style>
+	#ui-datepicker-div { display: none; }
+</style>
+
+<script type="text/javascript" src="//static1.lamontagne.fr/pack/1586397166.js" charset="UTF-8" ></script>
+
+<script title="noPack" type="text/javascript" src="https://www.google.com/jsapi" defer></script>
+
+<script type="text/javascript">
+	var env = {
+		path : "/"	
+	};
+
+	
+	var motsClesOfPage = "PARIS,75056,Santé,France,coronavirus";
+	</script>
+<meta name="apple-itunes-app" content="app-id=395929851" />
+	<meta name="google-play-app" content="app-id=com.centrefrance.lamontagne">
+
+<script title="noPack" type="text/javascript" src="//static1.lamontagne.fr/js/ads/pdt_1.6.js"></script>
+
+<script title="noPack" type="text/javascript" src="//www.googletagservices.com/tag/js/gpt.js"></script>
+
+<!-- Start: GPT Async -->
+<script type="text/javascript">
+	var dads = false || false || false;
+	var googletag = googletag || {};
+	googletag.cmd = googletag.cmd || [];
+	var dataLayer = dataLayer || [];
+	var debugGam = '';
+	var headerBidding = false;
+	window.dlpu = window.dlpu || {};
+	dlpu.sitePage = 'lamontagne.fr/T3';
+	dlpu.gabarit = 'article';
+	dlpu.device = deviceForDFP;
+	
+	if (!dads && dlpu.sitePage != 'boutique' && dlpu.sitePage != 'vide') {
+		googletag.cmd.push(function() {
+			var gptadslots=[];
+			var idx = 0; if(dlpu.device == 'mobile') idx = 1;
+			dlpu.sitePage = dlpu.sitePage.replace('/', '/' + dlpu.device + '/');
+			dlpu.path = '/31755961,22574838513/GCF_' + dlpu.sitePage;
+			
+			if(!isIgnoreSlot('banniere_haute')) {
+				if(adsPosition['banniere_haute'][idx].dim != '' && adsPosition['banniere_haute'][idx].dim.length > 0) {
+					gptadslots[1] = googletag.defineSlot(dlpu.path + '/banniere_haute', adsPosition['banniere_haute'][idx].dim, 'div-gpt--1721442916-banniere_haute').setTargeting('pos',['banniere_haute']).defineSizeMapping().addService(googletag.pubads());
+					
+				} else {
+					gptadslots[1] = googletag.defineOutOfPageSlot(dlpu.path + '/banniere_haute', 'div-gpt--1721442916-banniere_haute').setTargeting('pos',['banniere_haute']).defineSizeMapping().addService(googletag.pubads());
+					
+				}
+			}
+			
+			if(!isIgnoreSlot('article')) {
+				if(adsPosition['article'][idx].dim != '' && adsPosition['article'][idx].dim.length > 0) {
+					gptadslots[2] = googletag.defineSlot(dlpu.path + '/article', adsPosition['article'][idx].dim, 'div-gpt--732377866-article').setTargeting('pos',['article']).defineSizeMapping().addService(googletag.pubads());
+					
+				} else {
+					gptadslots[2] = googletag.defineOutOfPageSlot(dlpu.path + '/article', 'div-gpt--732377866-article').setTargeting('pos',['article']).defineSizeMapping().addService(googletag.pubads());
+					
+				}
+			}
+			
+			if(!isIgnoreSlot('article2')) {
+				if(adsPosition['article2'][idx].dim != '' && adsPosition['article2'][idx].dim.length > 0) {
+					gptadslots[3] = googletag.defineSlot(dlpu.path + '/article2', adsPosition['article2'][idx].dim, 'div-gpt--1228877316-article2').setTargeting('pos',['article2']).defineSizeMapping().addService(googletag.pubads());
+					
+				} else {
+					gptadslots[3] = googletag.defineOutOfPageSlot(dlpu.path + '/article2', 'div-gpt--1228877316-article2').setTargeting('pos',['article2']).defineSizeMapping().addService(googletag.pubads());
+					
+				}
+			}
+			
+			if(!isIgnoreSlot('article3')) {
+				if(adsPosition['article3'][idx].dim != '' && adsPosition['article3'][idx].dim.length > 0) {
+					gptadslots[4] = googletag.defineSlot(dlpu.path + '/article3', adsPosition['article3'][idx].dim, 'div-gpt--1228877315-article3').setTargeting('pos',['article3']).defineSizeMapping().addService(googletag.pubads());
+					
+				} else {
+					gptadslots[4] = googletag.defineOutOfPageSlot(dlpu.path + '/article3', 'div-gpt--1228877315-article3').setTargeting('pos',['article3']).defineSizeMapping().addService(googletag.pubads());
+					
+				}
+			}
+			
+			if(!isIgnoreSlot('droite_haute')) {
+				if(adsPosition['droite_haute'][idx].dim != '' && adsPosition['droite_haute'][idx].dim.length > 0) {
+					gptadslots[5] = googletag.defineSlot(dlpu.path + '/droite_haute', adsPosition['droite_haute'][idx].dim, 'div-gpt--1543026265-droite_haute').setTargeting('pos',['droite_haute']).defineSizeMapping().addService(googletag.pubads());
+					
+				} else {
+					gptadslots[5] = googletag.defineOutOfPageSlot(dlpu.path + '/droite_haute', 'div-gpt--1543026265-droite_haute').setTargeting('pos',['droite_haute']).defineSizeMapping().addService(googletag.pubads());
+					
+				}
+			}
+			
+			if(!isIgnoreSlot('droite_milieu')) {
+				if(adsPosition['droite_milieu'][idx].dim != '' && adsPosition['droite_milieu'][idx].dim.length > 0) {
+					gptadslots[6] = googletag.defineSlot(dlpu.path + '/droite_milieu', adsPosition['droite_milieu'][idx].dim, 'div-gpt--438918609-droite_milieu').setTargeting('pos',['droite_milieu']).defineSizeMapping().addService(googletag.pubads());
+					
+				} else {
+					gptadslots[6] = googletag.defineOutOfPageSlot(dlpu.path + '/droite_milieu', 'div-gpt--438918609-droite_milieu').setTargeting('pos',['droite_milieu']).defineSizeMapping().addService(googletag.pubads());
+					
+				}
+			}
+			
+			if(!isIgnoreSlot('banniere_basse')) {
+				if(adsPosition['banniere_basse'][idx].dim != '' && adsPosition['banniere_basse'][idx].dim.length > 0) {
+					gptadslots[7] = googletag.defineSlot(dlpu.path + '/banniere_basse', adsPosition['banniere_basse'][idx].dim, 'div-gpt--1726985995-banniere_basse').setTargeting('pos',['banniere_basse']).defineSizeMapping().addService(googletag.pubads());
+					
+				} else {
+					gptadslots[7] = googletag.defineOutOfPageSlot(dlpu.path + '/banniere_basse', 'div-gpt--1726985995-banniere_basse').setTargeting('pos',['banniere_basse']).defineSizeMapping().addService(googletag.pubads());
+					
+				}
+			}
+			
+			if(!isIgnoreSlot('flash_trans')) {
+				if(adsPosition['flash_trans'][idx].dim != '' && adsPosition['flash_trans'][idx].dim.length > 0) {
+					gptadslots[8] = googletag.defineSlot(dlpu.path + '/flash_trans', adsPosition['flash_trans'][idx].dim, 'div-gpt-1617727897-flash_trans').setTargeting('pos',['flash_trans']).defineSizeMapping().addService(googletag.pubads());
+					
+				} else {
+					gptadslots[8] = googletag.defineOutOfPageSlot(dlpu.path + '/flash_trans', 'div-gpt-1617727897-flash_trans').setTargeting('pos',['flash_trans']).defineSizeMapping().addService(googletag.pubads());
+					
+				}
+			}
+			
+			if(!isIgnoreSlot('habillage')) {
+				if(adsPosition['habillage'][idx].dim != '' && adsPosition['habillage'][idx].dim.length > 0) {
+					gptadslots[9] = googletag.defineSlot(dlpu.path + '/habillage', adsPosition['habillage'][idx].dim, 'div-gpt--1852629889-habillage').setTargeting('pos',['habillage']).defineSizeMapping().addService(googletag.pubads());
+					
+				} else {
+					gptadslots[9] = googletag.defineOutOfPageSlot(dlpu.path + '/habillage', 'div-gpt--1852629889-habillage').setTargeting('pos',['habillage']).defineSizeMapping().addService(googletag.pubads());
+					
+				}
+			}
+			
+				googletag.pubads().setTargeting("GCF_Departement","99");
+			
+				googletag.pubads().setTargeting("GCF_Insee","75056");
+			
+				googletag.pubads().setTargeting("GCF_Ville","paris");
+			
+				googletag.pubads().setTargeting("GCF_Tag", ["confinement"]);
+			
+				googletag.pubads().setTargeting("GCF_Theme", ["ripo","la-montagne","le-journal-du-centre","le-populaire-du-centre","le-berry-republicain","l-yonne-republicaine","la-republique-du-centre","l-echo-republicain","a-la-une","sante","france","l-eveil","coronavirus","confinement"]);
+			
+			googletag.pubads().enableSingleRequest();
+			googletag.pubads().enableAsyncRendering();
+			googletag.pubads().disableInitialLoad();
+			
+			googletag.pubads().collapseEmptyDivs();
+			
+			googletag.pubads().addEventListener('slotRenderEnded', function(e, level, message, service, slot, reference) {
+				var slotId = e.slot.getSlotElementId(),
+				$slot = $('#' + slotId);
+				const size = e.size;
+				if (size || size[0] !== 1 || size[1] !== 1 || !$slot) {
+					$slot.addClass('removePlaceholder');
+					const link = slotId.replace('gpt','link');
+					console.log("REMOVE : ", link)
+					$('#' + link).addClass('removeLink');
+				}
+
+				//$slot.addClass($slot.find('iframe:not([id*=hidden])').map(function () { return this.contentWindow.document; }).find('body').children().length == 0 ? 'gpt_empty' : 'gpt_rendered');
+				
+			});
+			
+			/*var oldWSize = $(window).width();
+			$(window).resize(function(){
+				clearTimeout(window.resizedFinished);
+				window.resizedFinished = setTimeout(function(){
+					var newWSize = $(window).width();
+					if(newWSize != oldWSize) {
+						oldWSize = $(window).width();
+						console.log('refresh dfp');
+						googletag.pubads().refresh();
+					}
+			    }, 500);
+			});*/	
+			
+			
+			
+		});
+	}
+</script>
+<!-- End: GPT -->
+
+<!-- Start: Smart -->
+<script src="//ced.sascdn.com/tag/3944/smart.js" async></script>
+<script>
+if (!dads && dlpu.sitePage != 'boutique' && dlpu.sitePage != 'vide') {
+	var sas = sas || {};
+	sas.cmd = sas.cmd || [];
+	sas.cmd.push(function () {
+	    sas.setup({ networkid: 3944, domain: "//diff.smartadserver.com", async: true });
+	});
+	sas.adCallConfig = {
+	    siteId: smartPdt['MT'].id,
+	    pageId: smartPdt['MT'].templates['T3'][dlpu.device],
+	    formats: [
+	    	
+		        { id: adsPosition['banniere_haute'][0].smartId, tagId: 'div-gpt--1721442916-banniere_haute' } ,
+		        { id: adsPosition['article'][0].smartId, tagId: 'div-gpt--732377866-article' } ,
+		        { id: adsPosition['article2'][0].smartId, tagId: 'div-gpt--1228877316-article2' } ,
+		        { id: adsPosition['article3'][0].smartId, tagId: 'div-gpt--1228877315-article3' } ,
+		        { id: adsPosition['droite_haute'][0].smartId, tagId: 'div-gpt--1543026265-droite_haute' } ,
+		        { id: adsPosition['droite_milieu'][0].smartId, tagId: 'div-gpt--438918609-droite_milieu' } ,
+		        { id: adsPosition['banniere_basse'][0].smartId, tagId: 'div-gpt--1726985995-banniere_basse' } ,
+		        { id: adsPosition['flash_trans'][0].smartId, tagId: 'div-gpt-1617727897-flash_trans' } ,
+		        { id: adsPosition['habillage'][0].smartId, tagId: 'div-gpt--1852629889-habillage' } 
+	    ],
+	    target: 'GCF_Departement=99;GCF_Insee=75056;GCF_Ville=paris;GCF_Tag=confinement;GCF_Theme=ripo;GCF_Theme=la-montagne;GCF_Theme=le-journal-du-centre;GCF_Theme=le-populaire-du-centre;GCF_Theme=le-berry-republicain;GCF_Theme=l-yonne-republicaine;GCF_Theme=la-republique-du-centre;GCF_Theme=l-echo-republicain;GCF_Theme=a-la-une;GCF_Theme=sante;GCF_Theme=france;GCF_Theme=l-eveil;GCF_Theme=coronavirus;GCF_Theme=confinement'
+	};
+	sas.callSmart = () => {
+		console.log('Call to Smart');
+		
+		sas.cmd.push(function() {
+		    sas.call('onecall', sas.adCallConfig);
+		});
+		
+		if(!isIgnoreSlot('banniere_haute')) {
+			sas.cmd.push(function () {
+			    sas.render('div-gpt--1721442916-banniere_haute');
+				$('#div-gpt--1721442916-banniere_haute').addClass('removePlaceholder');
+				$('#div-link--1721442916-banniere_haute').addClass('removeLink');
+			});
+		}
+		
+		if(!isIgnoreSlot('article')) {
+			sas.cmd.push(function () {
+			    sas.render('div-gpt--732377866-article');
+				$('#div-gpt--732377866-article').addClass('removePlaceholder');
+				$('#div-link--732377866-article').addClass('removeLink');
+			});
+		}
+		
+		if(!isIgnoreSlot('article2')) {
+			sas.cmd.push(function () {
+			    sas.render('div-gpt--1228877316-article2');
+				$('#div-gpt--1228877316-article2').addClass('removePlaceholder');
+				$('#div-link--1228877316-article2').addClass('removeLink');
+			});
+		}
+		
+		if(!isIgnoreSlot('article3')) {
+			sas.cmd.push(function () {
+			    sas.render('div-gpt--1228877315-article3');
+				$('#div-gpt--1228877315-article3').addClass('removePlaceholder');
+				$('#div-link--1228877315-article3').addClass('removeLink');
+			});
+		}
+		
+		if(!isIgnoreSlot('droite_haute')) {
+			sas.cmd.push(function () {
+			    sas.render('div-gpt--1543026265-droite_haute');
+				$('#div-gpt--1543026265-droite_haute').addClass('removePlaceholder');
+				$('#div-link--1543026265-droite_haute').addClass('removeLink');
+			});
+		}
+		
+		if(!isIgnoreSlot('droite_milieu')) {
+			sas.cmd.push(function () {
+			    sas.render('div-gpt--438918609-droite_milieu');
+				$('#div-gpt--438918609-droite_milieu').addClass('removePlaceholder');
+				$('#div-link--438918609-droite_milieu').addClass('removeLink');
+			});
+		}
+		
+		if(!isIgnoreSlot('banniere_basse')) {
+			sas.cmd.push(function () {
+			    sas.render('div-gpt--1726985995-banniere_basse');
+				$('#div-gpt--1726985995-banniere_basse').addClass('removePlaceholder');
+				$('#div-link--1726985995-banniere_basse').addClass('removeLink');
+			});
+		}
+		
+		if(!isIgnoreSlot('flash_trans')) {
+			sas.cmd.push(function () {
+			    sas.render('div-gpt-1617727897-flash_trans');
+				$('#div-gpt-1617727897-flash_trans').addClass('removePlaceholder');
+				$('#div-link-1617727897-flash_trans').addClass('removeLink');
+			});
+		}
+		
+		if(!isIgnoreSlot('habillage')) {
+			sas.cmd.push(function () {
+			    sas.render('div-gpt--1852629889-habillage');
+				$('#div-gpt--1852629889-habillage').addClass('removePlaceholder');
+				$('#div-link--1852629889-habillage').addClass('removeLink');
+			});
+		}
+			
+	}
+	
+	window.didomiOnReady = window.didomiOnReady || [];
+	window.didomiOnReady.push(function(Didomi) {
+	    if (typeof __tcfapi !== 'function') {
+	        console.log('CMP API is unavailable');
+	        sas.callSmart();
+	    } else {
+	        sas.callSmartOnCmpFail = window.setTimeout(sas.callSmart, 3000);
+	        __tcfapi('addEventListener', 2, (tcData, success) => {
+	            window.clearTimeout(sas.callSmartOnCmpFail);
+	            const checkConsent = () => {
+	                return [1, 2, 7, 9, 10].every(consentPurpose => {
+	                    return tcData.publisher.consents[consentPurpose] === true;
+	                });
+	            };
+	            if (success) {
+	                __tcfapi('removeEventListener', 2, success => {
+	                    if (success) {
+	                        // console.log(`event listener  removed`);
+	                    }
+	                }, tcData.listenerId);
+	                if (tcData.eventStatus === 'tcloaded') {
+	                	$.getScript('https://cdn1.366.fr/wrp/lamontagne_fr/lamontagne_fr.js').done(function( script, textStatus ) { console.log( 'HB loaded' ); });
+	                    if (checkConsent()) {
+	                        dlpu.provider = 'gam';
+	                        $('#modeGAM').addClass('active');
+	                        googletag.cmd.push(function() {
+	                            googletag.pubads().setRequestNonPersonalizedAds(0);
+	                            googletag.enableServices();
+	                        });
+	                    } else {
+	                        dlpu.provider = 'smart';
+	                        headerBidding = false;
+	                        sas.callSmart();
+	                    }
+	                } else {
+	                    console.log('En attente du consentement');
+	                }
+	            }
+	        });
+	    }
+	});
+
+	window.didomiEventListeners = window.didomiEventListeners || [];
+	window.didomiEventListeners.push({
+	    event: 'consent.changed',
+	    listener: function(context) {
+	        console.log('Consent changed');
+	        __tcfapi('getTCData', 2, (tcData, success) => {
+	            const checkConsent = () => {
+	                return [1, 2, 7, 9, 10].every(consentPurpose => {
+	                    return tcData.publisher.consents[consentPurpose] === true;
+	                });
+	            };
+            	$.getScript('https://cdn1.366.fr/wrp/lamontagne_fr/lamontagne_fr.js').done(function( script, textStatus ) { console.log( 'HB loaded' ); });
+	            if (checkConsent()) {
+	            	dlpu.provider = 'gam';
+	                $('#modeGAM').addClass('active');
+	                	googletag.cmd.push(function() {
+	                    googletag.pubads().setRequestNonPersonalizedAds(0);
+	                    googletag.enableServices();
+	                });
+	            } else {
+	            	dlpu.provider = 'smart';
+	                headerBidding = false;
+	                sas.callSmart();
+	            }
+	        });
+
+	    }
+	});
+	
+	
+	
+
+}
+</script>
+<!-- End: Smart -->
+
+</head>
+			
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"NewsArticle","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.lamontagne.fr/paris-75000/actualites/coronavirus-vers-la-prolongation-du-confinement-en-france_13768131/"},"headline":"Coronavirus : vers la prolongation du confinement en France","datePublished":"2020-03-20T09:57:00.000Z","dateModified":"2020-03-23T10:09:54.000Z","publisher":{"@type":"Organization","name":"La Montagne","logo":{"@type":"ImageObject","url":"https://www.lamontagne.fr/static/bloc/ripolinage/logos/logo-MT.svg","width":"226","height":"26"}},"articleSection":["Sant\\u00E9","France","coronavirus"],"keywords":["Sant\\u00E9","France","coronavirus","#confinement"],"description":"La porte-parole du gouvernement Sibeth Ndiaye a indiqué,ce vendredi, qu'il était \"assez probable\" que la période de confinement de quinze jours instaurée en France pour freiner la propagation du coronavirus soit prolongée.&nbsp;","author":{"@type":"Organization","name":"La Montagne"},"image":{"@type":"ImageObject","url":"https://img.lamontagne.fr/9iENCGFeKFQsnkL-pTpHtcUWut6uG22f9hZ8CrqiSV4/fit/657/438/sm/0/bG9jYWw6Ly8vMDAvMDAvMDQvNjkvOTAvMjAwMDAwNDY5OTA1Mw.jpg","width":"657","height":"438"},"isAccessibleForFree":true,"publicAccess":true}</script>
+	<body class="MT"><!-- Google Tag Manager (noscript)
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MMTQ2HD"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+End Google Tag Manager (noscript) -->
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-PQ44X7Q&gtm_auth=SOfOzTaW-YSdcZpOo6txLw&gtm_preview=env-20&gtm_cookies_win=x"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) --><div id="main-content" class="container"><header><div id="header" class="b-header">
+
+
+
+<link rel="stylesheet" href="//static1.lamontagne.fr/static/bloc/ripolinage/header/cf-header/v2/styles.min.css" />
+<link rel="stylesheet" href="//static1.lamontagne.fr/static/bloc/ripolinage/header/cf-header/v2/cf.css" />
+<link rel="stylesheet" href="//static1.lamontagne.fr/static/bloc/ripolinage/header/custom.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
+<script src="//static1.lamontagne.fr/static/bloc/ripolinage/header/cf-header/v2/cf.umd.min.js"></script>
+<script src="//static1.lamontagne.fr/static/bloc/ripolinage/header/lodash.debounce/index.min.js"></script>
+
+<script>
+	var headerJsonSite = {"id":"1","code":"MT","domain":"lamontagne.fr","name":"La Montagne","theme":"default"};
+	var headerJsonMenu = [{"id":"19","site":"MT","label":"La Montagne","defaultUrl":"https://www.lamontagne.fr","homeUrl":"/","subscribeUrl":"/abonnement?btn_action=BTN_SABONNER","logoUrl":"/static/bloc/ripolinage/logos/logo-MT.svg","logoPremiumUrl":"/static/bloc/ripolinage/wall/logos/logo-MT.svg","topMenu":[{"id":"926","label":"Météo","url":"/services/meteo.html","external":false,"image":null},{"id":"930","label":"Immo","url":"/immobilier/","external":false,"image":"/static/bloc/ripolinage/header/logo_immo4.svg"},{"id":"932","label":"Emploi","url":"http://www.centremploi.com/","external":true,"image":null},{"id":"935","label":"Obsèques","url":"/services/avis-obseques.html","external":false,"image":null},{"id":"939","label":"Boutique","url":"http://www.centrefranceboutique.fr/","external":true,"image":null},{"id":"942","label":"Jeux","url":"/services/jeux.html","external":false,"image":null},{"id":"947","label":"Points de vente","url":"/services/points-de-vente.html","external":false,"image":null},{"id":"948","label":"Partenaires","url":"/partenaires/","external":false,"image":"/static/bloc/ripolinage/brandcontent/logo_cfpartner_surheader/logo-contenus-partenaires-bouton6.svg"}],"mainMenu":[{"id":"165","label":"À la une","url":"/","external":false,"class":"red","subMenu":[{"id":"1105","label":"ACCUEIL","url":"/","external":false,"image":null},{"id":"1124","label":"Anti(viral)","url":"/theme/antiviral/","external":false,"image":null},{"id":"1131","label":"Coronavirus","url":"/theme/coronavirus/","external":false,"image":null},{"id":"1142","label":"Faits divers - Justice","url":"/theme/faits-divers/","external":false,"image":null},{"id":"1147","label":"France / Monde","url":"/theme/france/","external":false,"image":null},{"id":"1156","label":"Insolite","url":"/theme/insolite/","external":false,"image":null},{"id":"1161","label":"Opinions","url":"/theme/opinions/","external":false,"image":null},{"id":"1172","label":"Environnement","url":"/theme/environnement/","external":false,"image":null},{"id":"1179","label":"Politique","url":"/theme/politique/","external":false,"image":null},{"id":"1185","label":"Nos reportages sur TF1","url":"/theme/reportages-tf1/","external":false,"image":null}]},{"id":"168","label":"Vie locale","url":"/theme/vie-locale/","external":false,"class":"red","subMenu":[{"id":"1194","label":"Ambert","url":"/ambert-63600/","external":false,"image":null},{"id":"1202","label":"Aurillac","url":"/aurillac-15000/","external":false,"image":null},{"id":"1211","label":"Brioude","url":"/brioude-43100/","external":false,"image":null},{"id":"1219","label":"Brive-la-Gaillarde","url":"/brive-la-gaillarde-19100/","external":false,"image":null},{"id":"1231","label":"Clermont-Ferrand","url":"/clermont-ferrand-63000/","external":false,"image":null},{"id":"1238","label":"Guéret","url":"/gueret-23000/","external":false,"image":null},{"id":"1248","label":"Issoire","url":"/issoire-63500/","external":false,"image":null},{"id":"1252","label":"Montluçon","url":"/montlucon-03100/","external":false,"image":null},{"id":"1261","label":"Moulins","url":"/moulins-03000/","external":false,"image":null},{"id":"1282","label":"Le Puy-en-Velay","url":"/puy-en-velay-43000/","external":false,"image":null},{"id":"1286","label":"Riom","url":"/riom-63200/","external":false,"image":null},{"id":"1292","label":"Saint-Flour","url":"/saint-flour-15100/","external":false,"image":null},{"id":"1298","label":"Thiers","url":"/thiers-63300/","external":false,"image":null},{"id":"1320","label":"Tulle","url":"/tulle-19000/","external":false,"image":null},{"id":"1334","label":"Ussel","url":"/ussel-19200/","external":false,"image":null},{"id":"1348","label":"Vichy","url":"/vichy-03200/","external":false,"image":null}],"active":true},{"id":"170","label":"Sports","url":"/theme/sports/","external":false,"class":"green","subMenu":[{"id":"1371","label":"TERRE DE SPORTS","url":"/theme/sports/","external":false,"image":null},{"id":"1927","label":"Résultats/classements","url":"/theme/sports/football/resultats-classements/","external":false,"image":null},{"id":"1385","label":"Chrononews","url":"/theme/sports/chrononews/","external":false,"image":null},{"id":"1400","label":"Matchs en direct","url":"/theme/sports/rugby/matchs-en-direct/","external":false,"image":null},{"id":"1413","label":"ASM Clermont","url":"/theme/sports/rugby/club/asm-clermont/","external":false,"image":null},{"id":"1421","label":"CA Brive","url":"/theme/sports/rugby/club/ca-brive/","external":false,"image":null},{"id":"1429","label":"Clermont Foot","url":"/theme/sports/football/club/clermont-foot/","external":false,"image":null},{"id":"1440","label":"Rugby","url":"/theme/sports/rugby/","external":false,"image":null},{"id":"1462","label":"Football","url":"/theme/sports/football/","external":false,"image":null},{"id":"1475","label":"Basket","url":"/theme/sports/basket/","external":false,"image":null},{"id":"1481","label":"Cyclisme","url":"/theme/sports/cyclisme/","external":false,"image":null},{"id":"1495","label":"Autres sports","url":"/theme/sports/autres/","external":false,"image":null}]},{"id":"173","label":"Loisirs","url":"/theme/loisirs/","external":false,"class":"orange","subMenu":[{"id":"1509","label":"L'ESSENTIEL","url":"/theme/loisirs/","external":false,"image":null},{"id":"1527","label":"Tous les événements","url":"/theme/loisirs/agenda-sorties/","external":false,"image":null},{"id":"1544","label":"Autour de moi","url":"/theme/loisirs/autour-de-moi","external":false,"image":null},{"id":"1564","label":"Spectacles, festivals et concerts","url":"/theme/loisirs/spectacles-festivals-concerts","external":false,"image":null},{"id":"1577","label":"Artscène","url":"/theme/artscene/","external":false,"image":null},{"id":"1593","label":"Sport et nature","url":"/theme/loisirs/sport-nature","external":false,"image":null},{"id":"1604","label":"Culture et patrimoine","url":"/theme/loisirs/culture-patrimoine","external":false,"image":null},{"id":"1612","label":"Gastronomie, terroir et vin","url":"/theme/loisirs/gastronomie-terroir-vins","external":false,"image":null},{"id":"1618","label":"Brocantes, foires et salons","url":"/theme/loisirs/brocantes-salons-foires","external":true,"image":null},{"id":"1627","label":"Bals et fêtes","url":"/theme/loisirs/bals-fetes","external":false,"image":null},{"id":"1631","label":"A la maison","url":"/theme/loisirs/maison","external":false,"image":null}]},{"id":"176","label":"Économie","url":"/theme/economie/","external":false,"class":"blue","subMenu":[{"id":"1640","label":"L'ESSENTIEL","url":"/theme/economie/","external":false,"image":null},{"id":"1647","label":"Commerce","url":"/theme/commerce/","external":false,"image":null},{"id":"1656","label":"Emploi - Formation","url":"/theme/emploi/","external":false,"image":null},{"id":"1672","label":"Agriculture","url":"/theme/agriculture/","external":false,"image":null},{"id":"1686","label":"BTP - Industrie","url":"/theme/btp-industrie/","external":false,"image":null},{"id":"1694","label":"Innovation","url":"/theme/innovation/","external":false,"image":null},{"id":"1699","label":"Tourisme","url":"/theme/tourisme/","external":false,"image":null},{"id":"1714","label":"Social","url":"/theme/social/","external":false,"image":null},{"id":"1728","label":"La Montagne Entreprendre","url":"/theme/entreprendre/","external":false,"image":null}]}],"social":{"facebook":"http://www.facebook.com/pages/LaMontagnefr/146949065315655","instagram":"https://www.instagram.com/lamontagne.fr/","twitter":"https://twitter.com/#!/lamontagne_fr","snapchat":null}}];
+	var headerJsonUser = {"logged":false,"isPremium":false};
+	var headerJsonEssentiel = [];
+</script>
+
+<div id="header-app" class="cf-header">
+		<cf-header :site="site" :menu="menu" :is-logged="user.logged" :is-premium="user.isPremium" :is-fixed="true"
+		:autocomplete-props="{items: cities, textSerializer: item => `${item.nom} (${item.match.slice(-5)})`, urlSerializer: item => `/${item.slug}`, placeholder: 'Saisissez une commune'}"
+		@autocomplete-change="handleChange" ></cf-header>
+	<div class="header-padding">
+		<cf-sub-menu v-if="links.length > 0" :links="links" :is-logged="user.logged" :is-premium="user.isPremium"
+			class="mb-3" ></cf-sub-menu>
+		<b-toaster name="b-toaster-cf" class="m-0"></b-toaster>
+	</div>
+</div>
+
+<script>
+	document.getElementById("header").classList.remove("b-header");
+	new Vue({
+		methods: {
+			handleChange: debounce(function (value) {
+				fetch(`/api/centreref/geo/communes/autocomplete?q=${value}&size=5&boostDepartements=${this.boostDepartements.join()}`)
+					.then(response => response.json())
+					.then(result => {
+						this.cities = result;
+					});
+			}, 500)
+		},
+		store: cf.default.store,
+		created: function () {
+			fetch("/static/bloc/ripolinage/header/boostDepartementsBySite.json")
+				.then(response => response.json())
+				.then(result => {
+					if (result[headerJsonSite.code]) {
+						this.boostDepartements = result[headerJsonSite.code]
+					}
+				});
+		},
+		data: function () {
+			return {
+				user: headerJsonUser,
+				links: headerJsonEssentiel,
+				site: headerJsonSite,
+				menu: headerJsonMenu[0],
+				boostDepartements: [],
+				cities: [],
+			};
+		},
+	}).$mount("#header-app");
+</script>
+<script>
+	$(function(e) {
+		if($('.list-subscribe #s_abonner').length > 0) {
+			$('#header-app .button-subscribe').attr(
+				'href', 
+				$('.list-subscribe #s_abonner').attr('href').replace('BTN_ART_SABONNER', 'BTN_SABONNER')
+			);
+		}
+	});
+</script>
+</div></header><nav>﻿<div id="menu" class="b-menu">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="c-menu-logo">
+				<a href="/"><img class="responsive" src="/static/bloc/ripolinage/logos/logo-MT.svg"
+						alt="La Montagne" /></a>
+			</div>
+		</div>
+		<div class="col-md-12 hidden-md hidden-lg">
+			<div class="o-compte">
+				<a id="menu-connexion-btn" href="#connexion_popup" class="popin-btn">
+					<h3 class="b-titre-bloc">mon compte</h3>
+				</a>
+			</div>
+		</div>
+		<div class="col-md-12 hidden-md hidden-lg">
+			<div class="o-plus-partages">
+				<a href="/accueil/top.html">
+					<h3 class="b-titre-bloc">les + partagés</h3>
+				</a>
+			</div>
+		</div>
+		<div class="col-md-3 c-menu-col">
+			<h3 class="b-titre-bloc u-default">Vie locale</h3>
+			<div>
+				<form action="">
+					<input id="menuSelectorChosenComm" type="hidden" value="" />
+					<select id="menuCommuneSelector" class="form-control" style="width: 100%;"></select>
+				</form>
+				<ul class="liste-fleche" id="menuCommuneZone">
+					<li class="containerCommune"><a href="/ambert-63600/">Ambert</a></li>
+					<li class="containerCommune"><a href="/aurillac-15000/">Aurillac</a></li>
+					<li class="containerCommune"><a href="/brioude-43100/">Brioude</a></li>
+					<li class="containerCommune"><a href="/brive-la-gaillarde-19100/">Brive-la-Gaillarde</a></li>
+					<li class="containerCommune"><a href="/clermont-ferrand-63000/">Clermont-Ferrand</a></li>
+					<li class="containerCommune"><a href="/gueret-23000/">Guéret</a></li>
+					<li class="containerCommune"><a href="/issoire-63500/">Issoire</a></li>
+					<li class="containerCommune"><a href="/montlucon-03100/">Montluçon</a></li>
+					<li class="containerCommune"><a href="/moulins-03000/">Moulins</a></li>
+					<li class="containerCommune"><a href="/puy-en-velay-43000/">Le Puy-en-Velay</a></li>
+					<li class="containerCommune"><a href="/riom-63200/">Riom</a></li>
+					<li class="containerCommune"><a href="/saint-flour-15100/">Saint-Flour</a></li>
+					<li class="containerCommune"><a href="/thiers-63300/">Thiers</a></li>
+					<li class="containerCommune"><a href="/tulle-19000/">Tulle</a></li>
+					<li class="containerCommune"><a href="/ussel-19200/">Ussel</a></li>
+					<li class="containerCommune"><a href="/vichy-03200/">Vichy</a></li>
+					<div style="display:none" id="templateCommuneMenu">
+						<li class="containerCommune favori">
+							<a href="#linkCommune">#nomCommune</a>
+							<a class="remove-commune-menu p-fermer" href="#"></a>
+						</li>
+					</div>
+					<li class="containerDept no-desktop"><a href="/theme/allier/">ALLIER</a></li>
+					<li class="containerDept no-desktop"><a href="/theme/cantal/">CANTAL</a></li>
+					<li class="containerDept no-desktop"><a href="/theme/correze/">CORREZE</a></li>
+					<li class="containerDept no-desktop"><a href="/theme/creuse/">CREUSE</a></li>
+					<li class="containerDept no-desktop"><a href="/theme/haute-loire/">HAUTE-LOIRE</a></li>
+					<li class="containerDept no-desktop"><a href="/theme/puy-de-dome/">PUY-DE-DOME</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="col-md-9">
+			<div class="row">
+				<div class="col-md-12 c-menu-col">
+					<h3 class="b-titre-bloc u-default">à la une</h3>
+					<ul class="liste-fleche">
+						<li class="col-md-3"><a href="/">ACCUEIL</a></li>
+						<li class="col-md-3"><a href="/theme/coronavirus/">Coronavirus</a></li>
+						<li class="col-md-3"><a href="/theme/antiviral/">Antiviral</a></li>
+						<li class="col-md-3"><a href="/theme/nosenquetes/">Nos enquêtes</a></li>
+						<li class="col-md-3"><a href="/theme/faits-divers/">Faits divers - Justice</a></li>
+						<li class="col-md-3"><a href="/theme/france/">France / Monde</a></li>
+						<li class="col-md-3"><a href="/theme/insolite/">Insolite</a></li>
+						<li class="col-md-3"><a href="/theme/opinions/">Opinions</a></li>
+						<li class="col-md-3"><a href="/theme/environnement/">Environnement</a></li>
+						<li class="col-md-3"><a href="/theme/politique/">Politique</a></li>
+						<li class="col-md-3"><a href="/theme/reportages-tf1/">Nos reportages TF1</a></li>
+						<!--<li class="col-md-6"><a href="https://esjmontpellier.com/blogs/campagneauvert/" target="_blank">La campagne passe au vert</a></li>-->
+					</ul>
+				</div>
+
+				<div class="col-md-12 c-menu-col">
+					<h3 class="b-titre-bloc u-sports">sports</h3>
+					<ul class="liste-fleche">
+						<li class="col-md-3"><a href="/theme/sports/">L'ESSENTIEL</a></li>
+						<li class="col-md-3"><a href="/theme/resultats-sportifs/">R&eacute;sultats</a></li>
+						<li class="col-md-3"><a href="/theme/rugby/">Rugby</a></li>
+						<li class="col-md-3"><a href="/theme/asm-clermont/">ASM</a></li>
+						<li class="col-md-3"><a href="/theme/ca-brive/">CA Brive</a></li>
+						<li class="col-md-3"><a href="/theme/stade-aurillacois/">Stade Aurillacois</a></li>
+						<li class="col-md-3"><a href="/theme/football/">Football</a></li>
+						<li class="col-md-3"><a href="/theme/clermont-foot/">Clermont Foot</a></li>
+						<li class="col-md-3"><a href="/theme/javcm/">JAVCM</a></li>
+						<li class="col-md-3"><a href="/theme/cyclisme/">Cyclisme</a></li>
+						<li class="col-md-3"><a href="/theme/running/">Running</a></li>
+						<li class="col-md-3"><a href="/theme/hippisme/">Hippisme</a></li>
+						<li class="col-md-3"><a href="/theme/autres-sports/">Autres sports</a></li>
+					</ul>
+				</div>
+				<div class="col-md-12 c-menu-col">
+					<h3 class="b-titre-bloc u-loisirs">loisirs</h3>
+					<ul class="liste-fleche">
+						<li class="col-md-3"><a href="/theme/loisirs/">L'ESSENTIEL</a></li>
+						<li class="col-md-3"><a href="/theme/loisirs/agenda-sorties/">Tous les événements</a></li>
+						<li class="col-md-3"><a href="/theme/loisirs/autour-de-moi/">Autour de moi</a></li>
+						<li class="col-md-3"><a href="/theme/artscene/">Artscène</a></li>
+						<li class="col-md-3"><a href="/theme/loisirs/spectacles-festivals-concerts/">Spectacles,
+								festivals et concerts</a></li>
+						<li class="col-md-3"><a href="/theme/loisirs/sport-nature/">Sport et nature</a></li>
+						<li class="col-md-3"><a href="/theme/loisirs/culture-patrimoine/">Culture et patrimoine</a></li>
+						<li class="col-md-3"><a href="/theme/loisirs/gastronomie-terroir-vins/">Gastronomie, terroir et
+								vin</a></li>
+						<li class="col-md-3"><a href="/theme/loisirs/brocantes-salons-foires/">Brocantes, foires et
+								salons</a></li>
+						<li class="col-md-3"><a href="/theme/loisirs/bals-fetes/">Bals et fêtes</a></li>
+						<li class="col-md-3"><a href="/theme/loisirs/maison/">A la maison</a></li>
+					</ul>
+				</div>
+				<div class="col-md-12 c-menu-col">
+					<h3 class="b-titre-bloc u-economie">economie</h3>
+					<ul class="liste-fleche">
+						<li class="col-md-3"><a href="/theme/economie/">L'ESSENTIEL</a></li>
+						<li class="col-md-3"><a href="/theme/commerce/">Commerce</a></li>
+						<li class="col-md-3"><a href="/theme/emploi/">Emploi - Formation</a></li>
+						<li class="col-md-3"><a href="/theme/agriculture/">Agriculture</a></li>
+						<li class="col-md-3"><a href="/theme/btp-industrie/">BTP - Industrie</a></li>
+						<li class="col-md-3"><a href="/theme/innovation/">Innovation</a></li>
+						<li class="col-md-3"><a href="/theme/tourisme/">Tourisme</a></li>
+						<li class="col-md-3"><a href="/theme/social/">Social</a></li>
+						<li class="col-md-6"><a class="entreprendre economie" href="/theme/entreprendre/">La Montagne
+								Entreprendre</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-12 hidden-md hidden-lg">
+			<div class="b-header-nav-ext">
+				<ul class="list-inline">
+					<li><a href="/services/meteo.html">Météo</a></li>
+					<li><a id="immobilier" class="eventXiti" href="http://www.centreimmo.com"
+							target="_blank">Immobilier</a></li>
+					<li><a id="emploi" class="eventXiti" href="http://www.centremploi.com" target="_blank">Emploi</a>
+					</li>
+					<li><a href="/services/avis-obseques.html">Obsèques</a></li>
+					<li><a id="boutique" class="eventXiti" href="http://www.centrefranceboutique.fr"
+							target="_blank">Boutique</a></li>
+					<li><a href="/services/jeux.html">Jeux</a></li>
+					<li><a href="/services/points-de-vente.html">Points de vente</a></li>
+					<li><a href="/partenaires/"><img
+								src="/static/bloc/ripolinage/brandcontent/logo_cfpartner_surheader/logo-contenus-partenaires-bouton6.svg"
+								width="85" height="23" alt="Contenus partenaires"></a></li>
+				</ul>
+				<a id="s_abonner" href="/services/abonnement.html?xtor=AD-23" class="btn btn-secondary">s'abonner</a>
+				<a id="lire_le_journal" href="https://portail.centrefrance.com/#/bibliotheque" target="_blank"
+					class="btn btn-secondary btn-kiosque eventXiti" style="display:none;">lire le journal</a>
+				<a id="myAccount-disconnect" class="eventXiti" href="/s/logout"
+					style="display:none; margin-top: 30px; float: left; clear: both; width: 100%;"><span
+						class="glyphicon glyphicon-remove grey" style="margin-right: 5px; top: 3px;"></span>Se
+					déconnecter</a>
+			</div>
+		</div>
+	</div>
+	<a href="" class="fermer p-fermer">fermer le menu</a>
+</div></nav><div id="content">
+
+	<div class="advertise-box publicite_position relative parent_placeholder" ref="banniere_haute">
+		<div class="advertise pub-inner" ref="banniere_haute">
+						<div id='div-gpt--1721442916-banniere_haute' class='placeholder placeholder_banniere_haute'>
+				<script type='text/javascript'>
+					if(!isIgnoreSlot('banniere_haute')) googletag.cmd.push(function() { googletag.display('div-gpt--1721442916-banniere_haute'); });
+				</script>
+				<a id="div-link--1721442916-banniere_haute" href="https://www.centrefrancepub.fr/?utm_source=siteseditos&utm_medium=AP_placeholder" target="_blank" class="link link_banniere_haute"></a>
+			</div>
+		</div>
+	</div>
+<div class="column span-12 last" >
+
+
+
+
+
+    
+            <div class="bloc responsive_article_detail row">
+    <div class="col-md-12">
+        <div class="b-article">
+	<div class="c-titre">
+		<span class="c-motcle">Santé</span>		<h1 detail-id="3768131" data-r="j" data-dep="75" >Coronavirus : vers la prolongation du confinement en France</h1>
+			</div>
+			
+		<div class="c-article-informations clearfix">
+		 						<p>Publié le 20/03/2020 à 09h57</p>
+	    	    	    						</div>
+</div>
+    </div>
+</div>
+
+        
+    
+
+<div class="row responsive_article_detail_body">
+
+            <div class="col-md-8 bloc-article-bottom" url="/paris-75000/actualites/coronavirus-vers-la-prolongation-du-confinement-en-france_13768131/" >
+        
+            <div class="b-article">
+	 	 										<div class="photo-wrapper">
+				<div class="photo-box ">
+					<img src="https://img.lamontagne.fr/9iENCGFeKFQsnkL-pTpHtcUWut6uG22f9hZ8CrqiSV4/fit/657/438/sm/0/bG9jYWw6Ly8vMDAvMDAvMDQvNjkvOTAvMjAwMDAwNDY5OTA1Mw.jpg" alt="Coronavirus : vers la prolongation du confinement en France"/>
+				</div>
+								<span class="c-legende">
+					Photo R&eacute;mi Dugne
+									</span>
+							</div>
+			
+
+			<div class="c-article-actions">
+			<div class="clearfix">
+						        <ul class="c-social list-inline">
+		            <li><a class="p-facebook eventXiti" href='https://www.facebook.com/sharer/sharer.php?u=https://www.lamontagne.fr/paris-75000/actualites/coronavirus-vers-la-prolongation-du-confinement-en-france_13768131/' target="_blank" id="social_media_facebook_partage_3768131" 
+	onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=500,width=700');simpleJsonRPCRequest('rs.incrementNbRecomFacebook', [13768131, 1]); return false;" title="Partager sur Facebook">Facebook</a></li>
+		    		<li><a class="p-twitter eventXiti" href='https://twitter.com/intent/tweet?url=https://www.lamontagne.fr/paris-75000/actualites/coronavirus-vers-la-prolongation-du-confinement-en-france_13768131/&amp;text=Coronavirus+%3A+vers+la+prolongation+du+confinement+en+France' target="_blank" 
+id="social_media_twitter_partage_3768131" onclick="javascript:simpleJsonRPCRequest('rs.incrementNbRecomTwitter', [13768131]); return true;" title="Partager sur Twitter">Twitter</a></li>
+					<li><a id="social_media_mail_partage__3768131" href="#envoyerAmi_popup" class="p-mail popin-btn eventXiti" title="Envoyer par email">Email</a></li>
+		            		            <li><a href="javascript:changeScaleFont(-1);" id="reduire_taille_texte" class="eventXiti p-fontsizedown clair" title="Diminuer la taille du texte">Diminuer la taille du texte</a></li>
+		            <li><a href="javascript:changeScaleFont(1);" id="augmenter_taille_texte" class="eventXiti p-fontsizeup clair" title="Augmenter la taille du texte">Augmenter la taille du texte</a></li>
+		            		            <li><a id="commenter_cet_article_3768131" href="#bloc-commentaires-3768131" class="eventXiti p-commentaires pbadge clair"><span>19</span></a></li>
+		            		            		             		            
+			        <li class="list-subscribe">
+			        	<a id="s_abonner" href="/abonnement/?btn_action=BTN_ART_SABONNER&art_abo=3768131&referer=https://www.lamontagne.fr/paris-75000/actualites/coronavirus-vers-la-prolongation-du-confinement-en-france_13768131/" class="btn btn-secondary btn-kiosque eventXiti">
+			        		<span class="cf-icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 20 20"><g id="icon-plus" transform="translate(-37.25 -463.5)"><path id="Tracé_105953" data-name="Tracé 105953" d="M-11272.75-15774.5v20" transform="translate(11320 16238)" fill="none" stroke="currentColor" stroke-width="1.6"></path><path id="Tracé_105954" data-name="Tracé 105954" d="M-11272.75-15774.5v20" transform="translate(-15717.25 11746.25) rotate(90)" fill="none" stroke="currentColor" stroke-width="1.6"></path></g></svg></span>
+			        	s'abonner</a>
+			        </li>
+			        		        </ul>
+		    </div>
+		</div>
+	
+<div class="contenu">
+			<div class="c-soustitre">
+			La porte-parole du gouvernement Sibeth Ndiaye a indiqué,ce vendredi, qu'il était "assez probable" que la période de confinement de quinze jours instaurée en France pour freiner la propagation du coronavirus soit prolongée.&nbsp;
+		</div>
+	
+	
+			
+					<div class="p402_premium">
+					<!-- YOUR PREMIUM CONTENT HERE -->
+		
+					<div class="texte entry-content">
+															
+								
+				
+								<p><strong>Il "est assez probable que nous soyons obligés de prolonger le confinement"</strong>, a expliqué la porte-parole du gouvernement sur <a href="https://www.bfmtv.com/" target="_blank">BFMTV</a> et <a href="https://rmc.bfmtv.com/" target="_blank">RMC</a>. Mais la mise en place d'un couvre feu n'est "pour l'instant pas envisagée", a-t-elle dit.</p>
+									<div id="pool-content" data-poool="100"><div class="bloc responsive_publicite_position  pub sansFilet">
+
+	<div class="advertise-box publicite_position relative parent_placeholder" ref="article">
+		<div class="advertise pub-inner" ref="article">
+						<div id='div-gpt--732377866-article' class='placeholder placeholder_article'>
+				<script type='text/javascript'>
+					if(!isIgnoreSlot('article')) googletag.cmd.push(function() { googletag.display('div-gpt--732377866-article'); });
+				</script>
+				<a id="div-link--732377866-article" href="https://www.centrefrancepub.fr/?utm_source=siteseditos&utm_medium=AP_placeholder" target="_blank" class="link link_article"></a>
+			</div>
+		</div>
+	</div>
+</div>
+
+												
+				
+				
+																			
+				
+				
+								<div class="c-citation"> 
+ <p>"Il est important qu'il y ait une prise de conscience. Le déclic s'est fait chez une grande majorité de nos concitoyens mais on voit encore des comportements irresponsables. Je dis à chacun : plus on respecte la règle du confinement, moins on y restera longtemps."</p> 
+ <p class="c-citation-source">Sibeth Ndiaye<span> (Porte-parole du gouvernement)</span></p> 
+</div>
+												
+				
+				
+																			
+				
+				
+								<p>&nbsp;</p>
+												
+				
+				
+																			
+				
+								
+				<div class="p402_hide">				<blockquote class="twitter-tweet"> 
+ <p dir="ltr" lang="fr">Protégez-vous. Protégez vos proches. <a href="https://twitter.com/hashtag/JeResteChezMoi?src=hash&amp;ref_src=twsrc%5Etfw">#JeResteChezMoi</a> <a href="https://twitter.com/hashtag/JeSauveDesVies?src=hash&amp;ref_src=twsrc%5Etfw">#JeSauveDesVies</a> <a href="https://t.co/7MiJyBBbxy">pic.twitter.com/7MiJyBBbxy</a></p> — Gouvernement (@gouvernementFR) 
+ <a href="https://twitter.com/gouvernementFR/status/1240324392015597568?ref_src=twsrc%5Etfw">March 18, 2020</a>
+</blockquote>
+													<div class="bloc responsive_publicite_position  pub sansFilet">
+
+	<div class="advertise-box publicite_position relative parent_placeholder" ref="article2">
+		<div class="advertise pub-inner" ref="article2">
+						<div id='div-gpt--1228877316-article2' class='placeholder placeholder_article2'>
+				<script type='text/javascript'>
+					if(!isIgnoreSlot('article2')) googletag.cmd.push(function() { googletag.display('div-gpt--1228877316-article2'); });
+				</script>
+				<a id="div-link--1228877316-article2" href="https://www.centrefrancepub.fr/?utm_source=siteseditos&utm_medium=AP_placeholder" target="_blank" class="link link_article2"></a>
+			</div>
+		</div>
+	</div>
+</div>
+
+								
+				
+				
+				</div>															
+				
+				
+				<div class="p402_hide">				<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+												
+				
+				
+				</div>															
+				
+				
+								<p>&nbsp;</p>
+												
+				
+				
+																			
+				
+				
+								<h3>Conseil de défense</h3>
+												
+				
+				
+																			
+				
+				
+								<p>Emmanuel Macron réunit, ce&nbsp;vendredi matin, un nouveau conseil de défense consacré à la crise du coronavirus, au quatrième jour d'un confinement que les autorités jugent insuffisamment respecté et qui risque fort de se prolonger au-delà des quinze jours prévus initialement.</p>
+												
+				
+				
+																			
+				
+				
+								<p>Avec le Premier ministre Edouard Philippe et les principaux ministres concernés, le président devrait notamment faire le point sur la mise en oeuvre des mesures de restriction de circulation qu'il a annoncées lundi 16 mars.</p>
+												
+				
+				
+																			
+				
+								
+								<p>Le confinement imposé en France pour tenter de ralentir l'épidémie galopante de coronavirus, encore largement transgressé, devrait "très vraisemblablement" être prolongé au-delà des deux semaines initiales, de l'avis des autorités sanitaires.</p>
+																	<div class="bloc responsive_publicite_position  pub sansFilet">
+
+	<div class="advertise-box publicite_position relative parent_placeholder" ref="article3">
+		<div class="advertise pub-inner" ref="article3">
+						<div id='div-gpt--1228877315-article3' class='placeholder placeholder_article3'>
+				<script type='text/javascript'>
+					if(!isIgnoreSlot('article3')) googletag.cmd.push(function() { googletag.display('div-gpt--1228877315-article3'); });
+				</script>
+				<a id="div-link--1228877315-article3" href="https://www.centrefrancepub.fr/?utm_source=siteseditos&utm_medium=AP_placeholder" target="_blank" class="link link_article3"></a>
+			</div>
+		</div>
+	</div>
+</div>
+
+				
+									
+				
+				
+																			
+				
+				
+								<h3>Vers la prolongation&nbsp;selon membre du conseil scientifique&nbsp;</h3>
+												
+				
+				
+																			
+				
+				
+								<p>Sur <a href="https://www.francetvinfo.fr/sante/maladie/coronavirus/le-confinement-durera-six-semaines-voire-plus-selon-le-chef-du-service-des-maladies-infectieuses-a-bichat_3876225.html" target="_blank">France Info</a> ce vendredi matin, le professeur Yazdan Yazanpanah est, lui aussi, allé dans le sens d'une prolongation du confinement. Pour faire face à l'épidémie, selon le médecin chef du service des maladies infectieuses à l'hôpital Bichat à Paris, la durée de confinement sera probablement de "six semaines, voire plus". Le professeur, également membre du conseil scientifique qui oriente le gouvernement, a clairement évoqué une prolongation de la durée de confinement :</p>
+												
+				
+				
+																			
+				
+								
+								<div class="c-citation-deco"> 
+ <p>Je pense que le confinement ne va pas s'arrêter en France dans dix jours. Je pense que ça va être plus long. Cela dépendendra un peu de la courbe d'épidémie, du nombre de nouveaux cas qu'on va avoir (...).</p> 
+</div>
+												
+				
+				
+																			
+				
+				
+								<p>Jeudi 19 mars, Geneviève Chêne, directrice générale de l'agence sanitaire Santé publique France, <a href="https://www.lamontagne.fr/paris-75000/actualites/coronavirus-une-prolongation-du-confinement-tres-vraisemblablement-necessaire-en-france_13767711/" target="_blank">avait déjà déclaré que la prolongation du confinement serait&nbsp;"très vraisemblablement nécessaire"</a>.</p>
+												
+				
+				
+																			
+				
+				
+								<h3>Les internes mobilisés</h3>
+												
+				
+				
+																			
+				
+								
+								<p>Dans un communiqué au chef de l'Etat, l'Intersyndicale nationale des internes (Isni) a appelé les autorités à <strong>"cesser les demi-mesures et les discours équivoques" et réclamé un "confinement total et absolu de l'ensemble de la population"</strong>. "Moins le confinement sera strictement appliqué, plus les réanimations seront saturées, plus nous devrons faire des choix", préviennent-ils.</p>
+												
+				
+				
+																			
+				
+				
+								<p class="c-lireaussi"><a href="https://www.lamontagne.fr/paris-75000/actualites/confinement-francais-italiens-et-espagnols-presque-loges-a-la-meme-enseigne_13766839/">Confinement : Français, Italiens et Espagnols (presque) logés à la même enseigne</a></p>
+												
+				
+				
+																			
+				
+								
+								<div class="c-encadre"> 
+ <p>Le Sénat à majorité de droite a adopté dans la nuit du jeudi 19 au&nbsp;vendredi 20 mars en première lecture le projet de loi permettant l'instauration d'un état d'urgence sanitaire face à l'épidémie de Covid-19. Le texte, voté par 252 voix pour, 2 contre et 90 abstentions, autorise également le gouvernement à prendre des mesures de soutien aux entreprises par ordonnance et acte le report du 2e tour des élections municipales "au plus tard en juin". Il sera examiné dès vendredi par l'Assemblée nationale. Si elle l'adopte sans modifications, il sera considéré comme définitivement adopté. Dans le cas contraire, députés et sénateurs devront trouver un terrain d'entente en commission mixte paritaire.</p> 
+</div>
+												
+				
+				
+																			
+				
+				
+								<p><em><strong>Emilie Zaugg avec AFP</strong></em></p>
+												
+				
+				
+										</div>
+								
+		
+					</div>
+					<script type="text/javascript">
+					if(!dads) { try { _402_Show(); } catch(e) {} }
+					</script></div><div id="poool-widget"></div>
+		
+	</div>
+
+<div style="clear:both"></div>
+
+					<ul class="c-tags list-inline">
+			    <li><a href="/paris-75000/" class="t-simple">Paris</a></li>
+	    	    					    	<li><a href="/theme/sante/" class="t-simple t-sante">Santé</a></li>
+		    						    	<li><a href="/theme/france/" class="t-simple t-france">France</a></li>
+		    						    	<li><a href="/theme/coronavirus/" class="t-simple t-coronavirus">coronavirus</a></li>
+		    														</ul>
+<br/>
+
+	
+
+			<div class="c-article-actions">
+			<div class="clearfix">
+						        <ul class="c-social list-inline">
+		            <li><a class="p-facebook eventXiti" href='https://www.facebook.com/sharer/sharer.php?u=https://www.lamontagne.fr/paris-75000/actualites/coronavirus-vers-la-prolongation-du-confinement-en-france_13768131/' target="_blank" id="social_media_facebook_partage_3768131" 
+	onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=500,width=700');simpleJsonRPCRequest('rs.incrementNbRecomFacebook', [13768131, 1]); return false;" title="Partager sur Facebook">Facebook</a></li>
+		    		<li><a class="p-twitter eventXiti" href='https://twitter.com/intent/tweet?url=https://www.lamontagne.fr/paris-75000/actualites/coronavirus-vers-la-prolongation-du-confinement-en-france_13768131/&amp;text=Coronavirus+%3A+vers+la+prolongation+du+confinement+en+France' target="_blank" 
+id="social_media_twitter_partage_3768131" onclick="javascript:simpleJsonRPCRequest('rs.incrementNbRecomTwitter', [13768131]); return true;" title="Partager sur Twitter">Twitter</a></li>
+					<li><a id="social_media_mail_partage__3768131" href="#envoyerAmi_popup" class="p-mail popin-btn eventXiti" title="Envoyer par email">Email</a></li>
+		            		            <li><a href="javascript:changeScaleFont(-1);" id="reduire_taille_texte" class="eventXiti p-fontsizedown clair" title="Diminuer la taille du texte">Diminuer la taille du texte</a></li>
+		            <li><a href="javascript:changeScaleFont(1);" id="augmenter_taille_texte" class="eventXiti p-fontsizeup clair" title="Augmenter la taille du texte">Augmenter la taille du texte</a></li>
+		            		            <li><a id="commenter_cet_article_3768131" href="#bloc-commentaires-3768131" class="eventXiti p-commentaires pbadge clair"><span>19</span></a></li>
+		            		            		             		            
+			        <li class="list-subscribe">
+			        	<a id="s_abonner" href="/abonnement/?btn_action=BTN_ART_SABONNER&art_abo=3768131&referer=https://www.lamontagne.fr/paris-75000/actualites/coronavirus-vers-la-prolongation-du-confinement-en-france_13768131/" class="btn btn-secondary btn-kiosque eventXiti">
+			        		<span class="cf-icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 20 20"><g id="icon-plus" transform="translate(-37.25 -463.5)"><path id="Tracé_105953" data-name="Tracé 105953" d="M-11272.75-15774.5v20" transform="translate(11320 16238)" fill="none" stroke="currentColor" stroke-width="1.6"></path><path id="Tracé_105954" data-name="Tracé 105954" d="M-11272.75-15774.5v20" transform="translate(-15717.25 11746.25) rotate(90)" fill="none" stroke="currentColor" stroke-width="1.6"></path></g></svg></span>
+			        	s'abonner</a>
+			        </li>
+			        		        </ul>
+		    </div>
+		</div>
+	
+<div id="envoyerAmi_popup" class="popin espace_utilisateur" role="dialog">
+	<div role="document">
+		<h3 class="b-titre-bloc">Envoyer par mail</h3>
+        <p>Vous pouvez envoyer cet article par email à vos amis.</p>
+        <div class="b-inscription">
+        	<h5>Renseignez vos informations et le destinataire</h5>
+        	<form id="formAmi" action="/front/envoyerParMail.html" method="POST" target="javascript:afterPost" target-error="javascript:onErrorPost" before-submit="javascript:beforePost">
+				<input type="hidden" id="amiUidObject" name="uidObject" value="3768131">
+			    <input type="hidden" name="typeObject" value="ARTICLE">
+        		<div class="form-group nom-wrapper">
+					<input type="text" required="required" id="nom" name="nom" class="form-control" placeholder="Votre Nom*">
+				</div>
+        		<div class="form-group emailFrom-wrapper">
+					<input type="email" required="required" id="emailFrom" name="emailFrom" class="form-control" placeholder="Votre email*">
+				</div>
+				<div class="form-group emailTo-wrapper">
+					<input type="email" required="required" id="emailTo" name="emailTo" class="form-control" placeholder="Email de votre ami*">
+				</div>
+								<div class="form-group recaptcha-wrapper">
+					<div id="sendByMailCaptcha" align="center"></div>
+				</div>
+				        		<div class="form-group">
+				    <input id="envoyerAmiBtn" type="submit" class="btn btn-primary" value="Envoyer">
+				</div>
+        	</form>
+        	<div id="errorSendFriend" class="alert alert-danger" style="display:none;">
+        		<span class="glyphicon glyphicon-remove"></span>
+        		<span class="message"></span>
+        	</div>
+        	<div id="successSendFriend" class="alert alert-success" style="display:none;">
+        		<span class="glyphicon glyphicon-ok"></span>
+        		<span class="message"></span>
+        	</div>
+        </div>
+        <a href="" class="p-fermer">fermer</a>
+    </div>
+</div>
+<script type="text/javascript">
+	var captchaSendByMailContainer = null;
+	
+	function afterPost(data) {
+		var jsonRes = data;
+		if(typeof data == 'string') {
+			console.log(data);
+			jsonRes = JSON.parse(data);
+		}
+		if (jsonRes.success) {
+			$("#successSendFriend .message").text(jsonRes.message);
+			$("#successSendFriend").show();
+			setTimeout(resetFields, 2500);
+		} else {
+			$("#errorSendFriend .message").text(jsonRes.message);
+			$("#errorSendFriend").show();
+			for(var k in jsonRes.errors) {
+				var err = jsonRes.errors[k];
+				$("."+err.fieldName+"-wrapper").addClass("has-error");
+				if(err.message) {
+					$("."+err.fieldName+"-wrapper .formErrorMessage").text(err.message);
+				}
+			}
+			$("#envoyerAmiBtn").removeAttr("disabled");
+		}
+	}
+	function beforePost() {
+		$("#envoyerAmiBtn").attr('disabled', 'disabled');
+		hideErrors();
+		return true;
+	}
+	function onErrorPost() {
+		$("#errorSendFriend .message").text("Une erreur est survenue, le contenu n'a pas pu être envoyé au destinataire.");
+		$("#errorSendFriend").show();
+		$("#envoyerAmiBtn").removeAttr("disabled");
+	}
+	function hideErrors() {
+		$("#envoyerAmi_popup .alert").hide();
+		$("#envoyerAmi_popup .has-error").removeClass("has-error");
+		$("#envoyerAmi_popup .formErrorMessage").empty();
+	}
+	function resetFields() {
+		hideErrors();
+		$("#formAmi input").val('');
+		$("#envoyerAmiBtn").removeAttr("disabled");
+	}
+	
+	$(function(){
+		initAjaxForm('#formAmi');
+	});
+</script>
+<script type="text/javascript">
+	function printArticle() {
+		window.print();
+	}
+	function changeScaleFont(toAdd) {
+		var selector = $(".bloc-article-bottom .contenu");
+		curSize= parseInt(selector.css('font-size'));
+		var newValue = curSize+toAdd;
+		if (newValue >= 12 && newValue <= 21) {
+			selector.css('font-size', newValue);
+		}
+	}
+	$(function() {
+		simpleJsonRPCRequest('rs.incrementNbLu', [3768131,'ARTICLE']);
+	});
+</script>
+
+
+	
+
+	<script type="text/javascript">
+	
+	var blocArticle = $('.bloc-article-bottom .b-article');
+	var blocContenu = blocArticle.find('.contenu');
+	
+	$(document).on("mouseup", function (e) {
+    	$('#dummyPopoverPos').popover("destroy").remove();
+	});
+	
+	function replaceTextParamInLink(link, text){
+		var url = link.attr('href');
+		url = url.substring(0, url.indexOf('&text=')+6)+text;
+		link.attr('href', url);
+	}
+	
+	blocContenu.on("mouseup", function (e) {
+		if (!window.getSelection || !window.getSelection().getRangeAt || !window.getSelection().getRangeAt(0).getBoundingClientRect) return;
+		
+		e.stopPropagation();
+    	$('#dummyPopoverPos').popover("destroy").remove();
+		
+		var selection = window.getSelection();
+		var bRect = selection.getRangeAt(0).getBoundingClientRect();
+		
+		var xpos = bRect.left + bRect.width/2;
+		var ypos = bRect.top;
+		
+	    var text = "" + selection;
+	    if (text.length > 4) {
+			var dummyPopoverPos = $('<div id="dummyPopoverPos" ></div>');
+	        blocContenu.after(dummyPopoverPos);
+	        
+	        dummyPopoverPos
+		       .css("position", "absolute")
+		       .css("top", ypos - blocArticle.get(0).getBoundingClientRect().top)
+		       .css("left", xpos - blocArticle.get(0).getBoundingClientRect().left);
+		    
+	        dummyPopoverPos.popover({
+	            html: true,
+			    content: function () {
+			    	var buttons = $('.bloc-article-bottom .c-social.list-inline:first').clone();
+			    	buttons.find(':nth-child(n+4)').remove();
+			    	buttons.css("marginTop", 0);
+			    	
+			    	var textShared = encodeURIComponent(text);
+			    	replaceTextParamInLink(buttons.find('.p-twitter'), textShared);
+			        return buttons;
+			    },
+	            animation: false,
+	            trigger: "manual",
+	            placement: "top"
+	        }).popover('show');
+	        
+	        var popover = dummyPopoverPos.next("div.popover");
+	        popover.on("mouseup", function (e) {
+				e.stopPropagation();
+	        });
+  
+	    }
+	});
+</script></div>
+
+            <script type="text/javascript">
+                                                    dataLayer.push({'pooolPageType': 'premium'});
+                                var authorsOfArticle = "";
+            </script>
+        
+
+    
+
+
+
+
+
+
+<div id="taboola-below-article-thumbnails"></div>
+
+
+<div id="bloc-commentaires-3768131" class="b-commentaires">
+	
+	<h3 class='b-titre-bloc  '>
+		COMMENTEZ CET ARTICLE
+	</h3>
+			<p class="c-commentaires-nombre">
+			<a href="#$("#com-3768131")" class="inherit-color">
+				19 commentaires			</a>
+		</p>
+	
+	
+ 
+<div class="c-commentaires-form">
+    					<div class="row">
+				<div class="col-sm-12">
+					<form id="connectCommentForm-3768131">
+						<div class="form-group">
+							<input type="submit" class="btn btn-primary" value="se connecter" />
+						</div>
+					</form>
+				</div>
+			</div>
+			<script type="text/javascript">
+			$(function() {
+				$("#connectCommentForm-3768131").submit(function(e) {
+					displayLoadingMessage();
+					window.location = "/s/login?r=" + window.location.pathname;
+					return false;
+				});
+			});
+			</script>
+		    </div>
+
+
+			<div id="com-3768131"></div>
+					<div class="b-commentaires-element " id="com-289993" >
+                <div class="row">
+                    <div class="col-md-2 col-xs-3 c-commentaires-element-avatar">
+                       <span class="p-compte avatar-auteur"></span>
+                    </div>
+                    <div class="col-md-10 col-xs-9 c-commentaires-element-texte">
+                        <p class="c-commentaires-element-auteur"><strong>François vall</strong> a posté le 27 mars 2020 à 18h18</p>
+                        <p>oui, elle se la pète un peu et a déjà dit des âneries 
+Née le 13 décembre 1979 à Dakar, Sénégal.
+Formation Universitaire
+DESS d’économie publique, spécialité économie de la santé (2007)......</p>
+                                                <p class="c-commentaires-element-actions">
+                        	<a commentaire-uid="289993" id="commentaires-repondre-289993">Je réponds</a>
+                            <a commentaire-uid="289993" id="commentaires-alert-289993">J'alerte</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+					<div class="b-commentaires-element " id="com-288290" >
+                <div class="row">
+                    <div class="col-md-2 col-xs-3 c-commentaires-element-avatar">
+                       <span class="p-compte avatar-auteur"></span>
+                    </div>
+                    <div class="col-md-10 col-xs-9 c-commentaires-element-texte">
+                        <p class="c-commentaires-element-auteur"><strong>DIDIER bonilla</strong> a posté le 22 mars 2020 à 09h33</p>
+                        <p>a l'évidence "on ne nous dit pas tout", comme en chine, les dirigeants chinois ne disent pas tout et les chiffres qu'ils donnent ne sont certainement pas la réalité. Plus de morts et plus de contaminé, et les dernières images de chinois qui reprennent le chemin de la maison et le travail sont des images de cinéma, regardons bien les images. chez nous c'est pareil c'est la faillite : pas de masque pas produit pour laver les mains, pas assez de confinements, des personnels de soins sont qui sont à bout. On nous fait tout un cinémas sur un hôpital militaire qui va s'installer dans l'Est</p>
+                                                <p class="c-commentaires-element-actions">
+                        	<a commentaire-uid="288290" id="commentaires-repondre-288290">Je réponds</a>
+                            <a commentaire-uid="288290" id="commentaires-alert-288290">J'alerte</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+					<div class="b-commentaires-element  b-commentaires-element-toggable-3768131 " id="com-288021"  style="display: none;" >
+                <div class="row">
+                    <div class="col-md-2 col-xs-3 c-commentaires-element-avatar">
+                       <span class="p-compte avatar-auteur"></span>
+                    </div>
+                    <div class="col-md-10 col-xs-9 c-commentaires-element-texte">
+                        <p class="c-commentaires-element-auteur"><strong>ayez confiance ...</strong> a posté le 21 mars 2020 à 07h29</p>
+                        <p>En réponse à Alberto et à Rosdes : il est évident que la gestion de cette crise est compliquée mais quand on entend des mensonges concernant l'inutilité des masques, les revirements, on ne peut que mettre en doute la parole des gouvernants ! On a pas de test, pas de masque, donc on nous fait croire qu'on en a pas besoin. A vouloir prendre les citoyens pour des idiots, la défiance croit dans la société et entraîne contrairement à l'effet recherché des comportements irrationnels ! On ne peut s'empêcher de penser à l'ex ministre de la santé qui savait mais n'a rien dit !</p>
+                        															<p class="c-commentaires-element-reponse">
+									<span><strong>Jean-Michel Chirac</strong> a répondu le 21 mars 2020 à 13h50</span>
+									Oui, l'ex ministre de la santé n'a rien dit ( tout au moins pas à nous ) peut-être a-t-elle été muselée ? Il a fallu plusieurs jours avant que la polémique n'éclate tant les autorités exercent la censure. Quoi qu'il en soit, j'ai de moins en moins confiance aux politiques qui dirigent la France actuellement, trop d'incohérences, de revirements, de manque de responsabilité car ils martèlent trop qu'ils ''décident'' en fonction de ce que leur disent les scientifiques...............
+								</p>
+													                        <p class="c-commentaires-element-actions">
+                        	<a commentaire-uid="288021" id="commentaires-repondre-288021">Je réponds</a>
+                            <a commentaire-uid="288021" id="commentaires-alert-288021">J'alerte</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+					<div class="b-commentaires-element  b-commentaires-element-toggable-3768131 " id="com-288020"  style="display: none;" >
+                <div class="row">
+                    <div class="col-md-2 col-xs-3 c-commentaires-element-avatar">
+                       <span class="p-compte avatar-auteur"></span>
+                    </div>
+                    <div class="col-md-10 col-xs-9 c-commentaires-element-texte">
+                        <p class="c-commentaires-element-auteur"><strong>pat 007</strong> a posté le 21 mars 2020 à 07h26</p>
+                        <p>On le sait. On va prendre 3 semaines en plus de confinement avec des gens qui font preuve d’incivilité. Et qui viendront pleurer si ils sont contaminés. Soyons sérieux et que l’on sorte de ce moment difficile. </p>
+                                                <p class="c-commentaires-element-actions">
+                        	<a commentaire-uid="288020" id="commentaires-repondre-288020">Je réponds</a>
+                            <a commentaire-uid="288020" id="commentaires-alert-288020">J'alerte</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+					<div class="b-commentaires-element  b-commentaires-element-toggable-3768131 " id="com-287993"  style="display: none;" >
+                <div class="row">
+                    <div class="col-md-2 col-xs-3 c-commentaires-element-avatar">
+                       <span class="p-compte avatar-auteur"></span>
+                    </div>
+                    <div class="col-md-10 col-xs-9 c-commentaires-element-texte">
+                        <p class="c-commentaires-element-auteur"><strong>tirali</strong> a posté le 20 mars 2020 à 21h50</p>
+                        <p>A Rosdes, je suis entièrement d'accord avec vous et ALBERTO. 
+Et, si et si.. parceque critiquer c'est tellement ignoble, on en n'est plus l' heure à la politique. on a à penser à ceux qui œuvrent pour chacun d'entre nous. Nous, les français, dont la devise, est trop souvent " Chacun pour soi" et s'associer à la douleur de la perte d'un être cher...
+il faut faire ce que l'on nous demande de faire avec Sagesse et merci du fond du coeur, de notre âme pour ceux et celles qui sont continuellement en  train de nous aider  nous soigner, qui font tout ce qu'ils peuvent pour nous</p>
+                                                <p class="c-commentaires-element-actions">
+                        	<a commentaire-uid="287993" id="commentaires-repondre-287993">Je réponds</a>
+                            <a commentaire-uid="287993" id="commentaires-alert-287993">J'alerte</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+					<div class="b-commentaires-element  b-commentaires-element-toggable-3768131 " id="com-287881"  style="display: none;" >
+                <div class="row">
+                    <div class="col-md-2 col-xs-3 c-commentaires-element-avatar">
+                       <span class="p-compte avatar-auteur"></span>
+                    </div>
+                    <div class="col-md-10 col-xs-9 c-commentaires-element-texte">
+                        <p class="c-commentaires-element-auteur"><strong>Kin58</strong> a posté le 20 mars 2020 à 15h56</p>
+                        <p>pourquoi  probable
+Soyez ferme et dites réellement les choses....le confinement va continuer et doit continuer... inutile de faire des faux espoirs aux indisciplinés et inconscients.....</p>
+                                                <p class="c-commentaires-element-actions">
+                        	<a commentaire-uid="287881" id="commentaires-repondre-287881">Je réponds</a>
+                            <a commentaire-uid="287881" id="commentaires-alert-287881">J'alerte</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+					<div class="b-commentaires-element  b-commentaires-element-toggable-3768131 " id="com-287864"  style="display: none;" >
+                <div class="row">
+                    <div class="col-md-2 col-xs-3 c-commentaires-element-avatar">
+                       <span class="p-compte avatar-auteur"></span>
+                    </div>
+                    <div class="col-md-10 col-xs-9 c-commentaires-element-texte">
+                        <p class="c-commentaires-element-auteur"><strong>MDS45</strong> a posté le 20 mars 2020 à 14h56</p>
+                        <p>Si la population française était civilisée et ne comprenait
+Pas que ce qui l’arrange on n’aurait pas besoin de durcir les consignes. Appelons un chat un chat, confinement veut dire ne pas sortir de chez soi! Prenez vos responsabilités !!!</p>
+                                                <p class="c-commentaires-element-actions">
+                        	<a commentaire-uid="287864" id="commentaires-repondre-287864">Je réponds</a>
+                            <a commentaire-uid="287864" id="commentaires-alert-287864">J'alerte</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+					<div class="b-commentaires-element  b-commentaires-element-toggable-3768131 " id="com-287843"  style="display: none;" >
+                <div class="row">
+                    <div class="col-md-2 col-xs-3 c-commentaires-element-avatar">
+                       <span class="p-compte avatar-auteur"></span>
+                    </div>
+                    <div class="col-md-10 col-xs-9 c-commentaires-element-texte">
+                        <p class="c-commentaires-element-auteur"><strong>Mike Peyrot</strong> a posté le 20 mars 2020 à 13h51</p>
+                        <p>Plus grave que le virus, à l'allure où vont les choses chez nous, quand les supermarchés vont manquer de personnel, je ne serais pas étonné qu'il s'ensuive une famine ! En tout cas, tous les ingrédients sont là, c'est au gouvernement à prendre des mesures de rationnement en prévention du manque de victuailles ! (Il faut noter aussi que lesdits supermarchés dévalisés n'ont curieusement jamais manqué de... savon !) 
+
+</p>
+                                                <p class="c-commentaires-element-actions">
+                        	<a commentaire-uid="287843" id="commentaires-repondre-287843">Je réponds</a>
+                            <a commentaire-uid="287843" id="commentaires-alert-287843">J'alerte</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+					<div class="b-commentaires-element  b-commentaires-element-toggable-3768131 " id="com-287809"  style="display: none;" >
+                <div class="row">
+                    <div class="col-md-2 col-xs-3 c-commentaires-element-avatar">
+                       <span class="p-compte avatar-auteur"></span>
+                    </div>
+                    <div class="col-md-10 col-xs-9 c-commentaires-element-texte">
+                        <p class="c-commentaires-element-auteur"><strong>dd Ragondin</strong> a posté le 20 mars 2020 à 12h18</p>
+                        <p>héhéhéhé ! quelle aubaine pour notre gouvernement qui subit depuis bientôt 2 ans un Merdier pas possible entre les gilets jaunes, les gréves d'avocats , des urgentistes, et la réforme des retraites ! ........quel calme d'un seul coup ! ...malheureusement je me marre doucement ! lol....on devrait quand même ce poser des questions ! non?</p>
+                                                <p class="c-commentaires-element-actions">
+                        	<a commentaire-uid="287809" id="commentaires-repondre-287809">Je réponds</a>
+                            <a commentaire-uid="287809" id="commentaires-alert-287809">J'alerte</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+					<div class="b-commentaires-element  b-commentaires-element-toggable-3768131 " id="com-287808"  style="display: none;" >
+                <div class="row">
+                    <div class="col-md-2 col-xs-3 c-commentaires-element-avatar">
+                       <span class="p-compte avatar-auteur"></span>
+                    </div>
+                    <div class="col-md-10 col-xs-9 c-commentaires-element-texte">
+                        <p class="c-commentaires-element-auteur"><strong>rosdes</strong> a posté le 20 mars 2020 à 12h16</p>
+                        <p>Je suis d’accord avec Alberto ; il y en a toujours qui savent mieux, qui auraient mieux fait !.....</p>
+                                                <p class="c-commentaires-element-actions">
+                        	<a commentaire-uid="287808" id="commentaires-repondre-287808">Je réponds</a>
+                            <a commentaire-uid="287808" id="commentaires-alert-287808">J'alerte</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+					<div class="b-commentaires-element  b-commentaires-element-toggable-3768131 " id="com-287797"  style="display: none;" >
+                <div class="row">
+                    <div class="col-md-2 col-xs-3 c-commentaires-element-avatar">
+                       <span class="p-compte avatar-auteur"></span>
+                    </div>
+                    <div class="col-md-10 col-xs-9 c-commentaires-element-texte">
+                        <p class="c-commentaires-element-auteur"><strong>Samy Gaouaou</strong> a posté le 20 mars 2020 à 11h29</p>
+                        <p>Complètement pas toujours pas pour tout le monde il a des catégories Pronote pas de ranger ce sont les dealers les racailles des voyous envoie encore circuler dans le quartier</p>
+                        															<p class="c-commentaires-element-reponse">
+									<span><strong>Mike Peyrot</strong> a répondu le 20 mars 2020 à 13h03</span>
+									En français, ça veut dire quoi ?...
+								</p>
+													                        <p class="c-commentaires-element-actions">
+                        	<a commentaire-uid="287797" id="commentaires-repondre-287797">Je réponds</a>
+                            <a commentaire-uid="287797" id="commentaires-alert-287797">J'alerte</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+					<div class="b-commentaires-element  b-commentaires-element-toggable-3768131 " id="com-287790"  style="display: none;" >
+                <div class="row">
+                    <div class="col-md-2 col-xs-3 c-commentaires-element-avatar">
+                       <span class="p-compte avatar-auteur"></span>
+                    </div>
+                    <div class="col-md-10 col-xs-9 c-commentaires-element-texte">
+                        <p class="c-commentaires-element-auteur"><strong>lucastoni</strong> a posté le 20 mars 2020 à 11h18</p>
+                        <p>Nous allons payer très cher les incompétences de ce gouvernement.</p>
+                                                <p class="c-commentaires-element-actions">
+                        	<a commentaire-uid="287790" id="commentaires-repondre-287790">Je réponds</a>
+                            <a commentaire-uid="287790" id="commentaires-alert-287790">J'alerte</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+					<div class="b-commentaires-element  b-commentaires-element-toggable-3768131 " id="com-287789"  style="display: none;" >
+                <div class="row">
+                    <div class="col-md-2 col-xs-3 c-commentaires-element-avatar">
+                       <span class="p-compte avatar-auteur"></span>
+                    </div>
+                    <div class="col-md-10 col-xs-9 c-commentaires-element-texte">
+                        <p class="c-commentaires-element-auteur"><strong>alberto</strong> a posté le 20 mars 2020 à 11h17</p>
+                        <p>C'est évident que chaque français a une haute opinion de ce qu'on aurait dû faire de ce que l'on doit faire de ce que l'on devra faire 
+Nous sommes vraiment un pays ingérable 
+Essayons pour une fois de faire confiance même si des erreurs se produisent face à une situation gravissime et inédite et surtout acceptons les consignes </p>
+                                                <p class="c-commentaires-element-actions">
+                        	<a commentaire-uid="287789" id="commentaires-repondre-287789">Je réponds</a>
+                            <a commentaire-uid="287789" id="commentaires-alert-287789">J'alerte</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+					<div class="b-commentaires-element  b-commentaires-element-toggable-3768131 " id="com-287787"  style="display: none;" >
+                <div class="row">
+                    <div class="col-md-2 col-xs-3 c-commentaires-element-avatar">
+                       <span class="p-compte avatar-auteur"></span>
+                    </div>
+                    <div class="col-md-10 col-xs-9 c-commentaires-element-texte">
+                        <p class="c-commentaires-element-auteur"><strong>Maurice Vizade</strong> a posté le 20 mars 2020 à 11h15</p>
+                        <p>n oubliez surtout pas les auxilliaires de vie sociale qui font des toilettes lever coucher les courses sans protections personnelles se sont les plus agées qui travaillent car les plus jeunes ont des enfants et sont a la maison pfffffffffffff on en parle très peut merci d en parler et d agir pour elles </p>
+                                                <p class="c-commentaires-element-actions">
+                        	<a commentaire-uid="287787" id="commentaires-repondre-287787">Je réponds</a>
+                            <a commentaire-uid="287787" id="commentaires-alert-287787">J'alerte</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+					<div class="b-commentaires-element  b-commentaires-element-toggable-3768131 " id="com-287782"  style="display: none;" >
+                <div class="row">
+                    <div class="col-md-2 col-xs-3 c-commentaires-element-avatar">
+                       <span class="p-compte avatar-auteur"></span>
+                    </div>
+                    <div class="col-md-10 col-xs-9 c-commentaires-element-texte">
+                        <p class="c-commentaires-element-auteur"><strong>Chemins de traverse</strong> a posté le 20 mars 2020 à 10h45</p>
+                        <p>Il faudrait quand même un peu de responsabilité collective !
+En course ce matin , il y en a encore beaucoup trop qui vous serre de très près, bien moins qu’un mètre. </p>
+                                                <p class="c-commentaires-element-actions">
+                        	<a commentaire-uid="287782" id="commentaires-repondre-287782">Je réponds</a>
+                            <a commentaire-uid="287782" id="commentaires-alert-287782">J'alerte</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+					<div class="b-commentaires-element  b-commentaires-element-toggable-3768131 " id="com-287779"  style="display: none;" >
+                <div class="row">
+                    <div class="col-md-2 col-xs-3 c-commentaires-element-avatar">
+                       <span class="p-compte avatar-auteur"></span>
+                    </div>
+                    <div class="col-md-10 col-xs-9 c-commentaires-element-texte">
+                        <p class="c-commentaires-element-auteur"><strong>Eleonore</strong> a posté le 20 mars 2020 à 10h35</p>
+                        <p>la franchise  avant tout il faut cesser de dire probablement,  les français  le savent  très bien,  des le début  de l ' épidémie  il fallait  déjà  stopper l ' arrivée  des personnes  et fermer les frontières !!</p>
+                                                <p class="c-commentaires-element-actions">
+                        	<a commentaire-uid="287779" id="commentaires-repondre-287779">Je réponds</a>
+                            <a commentaire-uid="287779" id="commentaires-alert-287779">J'alerte</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+					<div class="b-commentaires-element  b-commentaires-element-toggable-3768131 " id="com-287773"  style="display: none;" >
+                <div class="row">
+                    <div class="col-md-2 col-xs-3 c-commentaires-element-avatar">
+                       <span class="p-compte avatar-auteur"></span>
+                    </div>
+                    <div class="col-md-10 col-xs-9 c-commentaires-element-texte">
+                        <p class="c-commentaires-element-auteur"><strong>M Khamsin</strong> a posté le 20 mars 2020 à 10h05</p>
+                        <p>Sibeth Ndiaye, porte parole du gouvernement, du grand n'importe quoi.</p>
+                                                <p class="c-commentaires-element-actions">
+                        	<a commentaire-uid="287773" id="commentaires-repondre-287773">Je réponds</a>
+                            <a commentaire-uid="287773" id="commentaires-alert-287773">J'alerte</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+		
+					<div class="c-lien-plus">
+                <a class="eventXiti" id="plus-reactions-3768131">voir plus de réactions</a>
+                <a class="eventXiti" id="moins-reactions-3768131" style="display: none;">voir moins de réactions</a>
+            </div>
+			</div>
+
+<script type="text/javascript">
+    (function() {
+
+        var modeCommsHidden = true;
+
+        function signalerAbus(comment) {
+            console.log(comment);
+            simpleJsonRPCRequest('rs.signalerAbus', [comment, 'MT']);
+            alert('L\'abus a été signalé, merci pour votre collaboration.');
+        }
+
+
+        function repondre(comment) {
+            $('#comm-alert').hide();
+            var commentaireConnectForm = $("#connectCommentForm-3768131");
+            if (commentaireConnectForm.length > 0) {
+                commentaireConnectForm.submit();
+            } else {
+                var commentaireForm = $("#formCommentaire-3768131");
+                if (commentaireForm.length > 0) {
+                    var titre = 'Envoyer mon commentaire';
+                    var uidCom = '-1';
+                    if(comment > uidCom) {
+                        titre = 'Envoyer ma réponse';
+                        uidCom = comment;
+                    }
+                    commentaireForm.find('#uidParentCommentaire').val(uidCom);
+                    commentaireForm.find('#poster-commentaire').val(titre);
+                    $("#formCommentaire-3768131 #texte").focus();
+                }
+            }
+        }
+
+                                    jQuery('#commentaires-alert-289993')
+                        .click(function() {
+                            signalerAbus(jQuery(this).attr('commentaire-uid'))
+                        })
+
+                jQuery('#commentaires-repondre-289993')
+                    .click(function() {
+                        repondre(jQuery(this).attr('commentaire-uid'))
+                    })
+                            jQuery('#commentaires-alert-288290')
+                        .click(function() {
+                            signalerAbus(jQuery(this).attr('commentaire-uid'))
+                        })
+
+                jQuery('#commentaires-repondre-288290')
+                    .click(function() {
+                        repondre(jQuery(this).attr('commentaire-uid'))
+                    })
+                            jQuery('#commentaires-alert-288021')
+                        .click(function() {
+                            signalerAbus(jQuery(this).attr('commentaire-uid'))
+                        })
+
+                jQuery('#commentaires-repondre-288021')
+                    .click(function() {
+                        repondre(jQuery(this).attr('commentaire-uid'))
+                    })
+                            jQuery('#commentaires-alert-288020')
+                        .click(function() {
+                            signalerAbus(jQuery(this).attr('commentaire-uid'))
+                        })
+
+                jQuery('#commentaires-repondre-288020')
+                    .click(function() {
+                        repondre(jQuery(this).attr('commentaire-uid'))
+                    })
+                            jQuery('#commentaires-alert-287993')
+                        .click(function() {
+                            signalerAbus(jQuery(this).attr('commentaire-uid'))
+                        })
+
+                jQuery('#commentaires-repondre-287993')
+                    .click(function() {
+                        repondre(jQuery(this).attr('commentaire-uid'))
+                    })
+                            jQuery('#commentaires-alert-287881')
+                        .click(function() {
+                            signalerAbus(jQuery(this).attr('commentaire-uid'))
+                        })
+
+                jQuery('#commentaires-repondre-287881')
+                    .click(function() {
+                        repondre(jQuery(this).attr('commentaire-uid'))
+                    })
+                            jQuery('#commentaires-alert-287864')
+                        .click(function() {
+                            signalerAbus(jQuery(this).attr('commentaire-uid'))
+                        })
+
+                jQuery('#commentaires-repondre-287864')
+                    .click(function() {
+                        repondre(jQuery(this).attr('commentaire-uid'))
+                    })
+                            jQuery('#commentaires-alert-287843')
+                        .click(function() {
+                            signalerAbus(jQuery(this).attr('commentaire-uid'))
+                        })
+
+                jQuery('#commentaires-repondre-287843')
+                    .click(function() {
+                        repondre(jQuery(this).attr('commentaire-uid'))
+                    })
+                            jQuery('#commentaires-alert-287809')
+                        .click(function() {
+                            signalerAbus(jQuery(this).attr('commentaire-uid'))
+                        })
+
+                jQuery('#commentaires-repondre-287809')
+                    .click(function() {
+                        repondre(jQuery(this).attr('commentaire-uid'))
+                    })
+                            jQuery('#commentaires-alert-287808')
+                        .click(function() {
+                            signalerAbus(jQuery(this).attr('commentaire-uid'))
+                        })
+
+                jQuery('#commentaires-repondre-287808')
+                    .click(function() {
+                        repondre(jQuery(this).attr('commentaire-uid'))
+                    })
+                            jQuery('#commentaires-alert-287797')
+                        .click(function() {
+                            signalerAbus(jQuery(this).attr('commentaire-uid'))
+                        })
+
+                jQuery('#commentaires-repondre-287797')
+                    .click(function() {
+                        repondre(jQuery(this).attr('commentaire-uid'))
+                    })
+                            jQuery('#commentaires-alert-287790')
+                        .click(function() {
+                            signalerAbus(jQuery(this).attr('commentaire-uid'))
+                        })
+
+                jQuery('#commentaires-repondre-287790')
+                    .click(function() {
+                        repondre(jQuery(this).attr('commentaire-uid'))
+                    })
+                            jQuery('#commentaires-alert-287789')
+                        .click(function() {
+                            signalerAbus(jQuery(this).attr('commentaire-uid'))
+                        })
+
+                jQuery('#commentaires-repondre-287789')
+                    .click(function() {
+                        repondre(jQuery(this).attr('commentaire-uid'))
+                    })
+                            jQuery('#commentaires-alert-287787')
+                        .click(function() {
+                            signalerAbus(jQuery(this).attr('commentaire-uid'))
+                        })
+
+                jQuery('#commentaires-repondre-287787')
+                    .click(function() {
+                        repondre(jQuery(this).attr('commentaire-uid'))
+                    })
+                            jQuery('#commentaires-alert-287782')
+                        .click(function() {
+                            signalerAbus(jQuery(this).attr('commentaire-uid'))
+                        })
+
+                jQuery('#commentaires-repondre-287782')
+                    .click(function() {
+                        repondre(jQuery(this).attr('commentaire-uid'))
+                    })
+                            jQuery('#commentaires-alert-287779')
+                        .click(function() {
+                            signalerAbus(jQuery(this).attr('commentaire-uid'))
+                        })
+
+                jQuery('#commentaires-repondre-287779')
+                    .click(function() {
+                        repondre(jQuery(this).attr('commentaire-uid'))
+                    })
+                            jQuery('#commentaires-alert-287773')
+                        .click(function() {
+                            signalerAbus(jQuery(this).attr('commentaire-uid'))
+                        })
+
+                jQuery('#commentaires-repondre-287773')
+                    .click(function() {
+                        repondre(jQuery(this).attr('commentaire-uid'))
+                    })
+                    
+        function plusDeReactions() {
+            $('.b-commentaires-element-toggable-3768131').toggle(modeCommsHidden);
+            $('#plus-reactions-3768131').toggle(!modeCommsHidden);
+            $('#moins-reactions-3768131').toggle(modeCommsHidden);
+
+            modeCommsHidden = !modeCommsHidden;
+        }
+
+        jQuery('#plus-reactions-3768131, #moins-reactions-3768131')
+                .click(function() {
+                    plusDeReactions();
+                })
+    })();
+
+</script>
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.min.js"></script>
+<script src="https://www.lamontagne.fr/static/vue/1.0.1/iv3.umd.min.js"></script>
+<link rel="stylesheet" href="https://www.lamontagne.fr/static/vue/1.0.1/iv3.css">
+<div id="appArticleRelated">
+    <Iv3ArticleRelated article-id="3768131" site-keyword="1" service-url="/api"    />
+</div>
+<script>
+    var appArticleRelated = new Vue({el: '#appArticleRelated'});
+</script></div><div class="col-md-4"><div class="b-journal">
+	<a id="lire_le_journal" class="eventXiti" href="/services/journal.html">
+	    <h2><span class="cf-icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 26.536 20.301"><g id="icon-newspaper" transform="translate(3.08 -7.132)"><g id="Layer_3" data-name="Layer 3" transform="translate(-2.93 7.282)"><path id="Tracé_105942" data-name="Tracé 105942" d="M27.709,7.282H7.529a.6.6,0,0,0-.6.6v2.937H2.669a.6.6,0,0,0-.6.6v12.25a3.622,3.622,0,0,0,3.618,3.618H23.805a4.507,4.507,0,0,0,4.5-4.5V7.88a.6.6,0,0,0-.6-.6ZM3.267,23.665V12.014H6.931V26.087H5.688A2.424,2.424,0,0,1,3.267,23.665Zm23.844-.884a3.309,3.309,0,0,1-3.305,3.305H8.127V8.479H27.11Z" transform="translate(-2.07 -7.282)" fill="currentColor" stroke="currentColor" stroke-width="0.3"></path> <path id="Tracé_105943" data-name="Tracé 105943" d="M17.278,16.44H29.7a.6.6,0,0,0,0-1.2H17.278a.6.6,0,0,0,0,1.2Z" transform="translate(-7.941 -10.481)" fill="currentColor" stroke="currentColor" stroke-width="0.3"></path> <path id="Tracé_105944" data-name="Tracé 105944" d="M17.278,23.663H29.7a.6.6,0,1,0,0-1.2H17.278a.6.6,0,1,0,0,1.2Z" transform="translate(-7.941 -13.383)" fill="currentColor" stroke="currentColor" stroke-width="0.3"></path> <path id="Tracé_105945" data-name="Tracé 105945" d="M17.278,30.886H29.7a.6.6,0,0,0,0-1.2H17.278a.6.6,0,1,0,0,1.2Z" transform="translate(-7.941 -16.286)" fill="currentColor" stroke="currentColor" stroke-width="0.3"></path></g></g></svg></span> Lire le journal</h2>
+	</a>
+</div>
+
+<div class="bloc responsive_publicite_position">
+
+	<div class="advertise-box publicite_position relative parent_placeholder" ref="droite_haute">
+		<div class="advertise pub-inner" ref="droite_haute">
+						<div id='div-gpt--1543026265-droite_haute' class='placeholder placeholder_droite_haute'>
+				<script type='text/javascript'>
+					if(!isIgnoreSlot('droite_haute')) googletag.cmd.push(function() { googletag.display('div-gpt--1543026265-droite_haute'); });
+				</script>
+				<a id="div-link--1543026265-droite_haute" href="https://www.centrefrancepub.fr/?utm_source=siteseditos&utm_medium=AP_placeholder" target="_blank" class="link link_droite_haute"></a>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+					<div class="b-top">
+			
+	<h3 class='b-titre-bloc  '>
+		Les + partagés
+	</h3>
+															<div class="row vertical-align">
+					<div class="col-xs-2 c-top-position">
+						<div>1</div>
+					</div>
+					<div class="col-xs-10 c-top-article">
+						<div class="b-article-simple-h row">
+							<div class="col-xs-12">
+								<div class="c-titre">
+									<span class="c-motcle">Témoignages</span>									<h4 data-id="4206207"
+											data-r="j"
+											data-dep="19">
+										<a class="eventXiti" id="les_plus_partages!témoignages! disparition_de_justine_à_brive_(corrèze)_:_ses_proches_racontent_la_soirée_de_sa_disparition" href="/brive-la-gaillarde-19100/actualites/disparition-de-justine-a-brive-correze-ses-proches-racontent-la-soiree-de-sa-disparition_14206207/" title=" Disparition de Justine à Brive (Corrèze) : ses proches racontent la soirée de sa disparition"> Disparition de Justine à Brive (Corrèze) : ses proches racontent la soirée de sa disparition</a>
+									</h4>
+								</div>
+							</div>
+						</div>
+					</div>
+											<div class="col-xs-10 c-top-image">
+							<a class="eventXiti" id="les_plus_partages!témoignages! disparition_de_justine_à_brive_(corrèze)_:_ses_proches_racontent_la_soirée_de_sa_disparition" href="/brive-la-gaillarde-19100/actualites/disparition-de-justine-a-brive-correze-ses-proches-racontent-la-soiree-de-sa-disparition_14206207/" title=" Disparition de Justine à Brive (Corrèze) : ses proches racontent la soirée de sa disparition"><img src="https://img.centrefrance.com/K4qQ7yBf6WppaoVUAHLRzNOYH6Pq5QsbF5zUfolxpaI/fill/310/140/sm/1/bG9jYWw6Ly8vMDAvMDAvMDYvMzEvODkvMjAwMDAwNjMxODkwNg.jpg" /></a>
+						</div>
+									</div>
+															<div class="row vertical-align">
+					<div class="col-xs-2 c-top-position">
+						<div>2</div>
+					</div>
+					<div class="col-xs-10 c-top-article">
+						<div class="b-article-simple-h row">
+							<div class="col-xs-12">
+								<div class="c-titre">
+									<span class="c-motcle">Faits divers</span>									<h4 data-id="4206313"
+											data-r="j"
+											data-dep="19">
+										<a class="eventXiti" id="les_plus_partages!faits_divers!disparition_inquiétante_à_brive_:_justine_vayrac_n'a_plus_donné_signe_de_vie_depuis_une_sortie_en_discothèque_le_22_octobre" href="/brive-la-gaillarde-19100/actualites/disparition-inquietante-a-brive-justine-vayrac-n-a-plus-donne-signe-de-vie-depuis-une-sortie-en-discotheque-le-22-octobre_14206313/" title="Disparition inquiétante à Brive : Justine Vayrac n'a plus donné signe de vie depuis une sortie en discothèque le 22 octobre">Disparition inquiétante à Brive : Justine Vayrac n'a plus donné signe de vie depuis une sortie en discothèque le 22 octobre</a>
+									</h4>
+								</div>
+							</div>
+						</div>
+					</div>
+											<div class="col-xs-10 c-top-image">
+							<a class="eventXiti" id="les_plus_partages!faits_divers!disparition_inquiétante_à_brive_:_justine_vayrac_n'a_plus_donné_signe_de_vie_depuis_une_sortie_en_discothèque_le_22_octobre" href="/brive-la-gaillarde-19100/actualites/disparition-inquietante-a-brive-justine-vayrac-n-a-plus-donne-signe-de-vie-depuis-une-sortie-en-discotheque-le-22-octobre_14206313/" title="Disparition inquiétante à Brive : Justine Vayrac n'a plus donné signe de vie depuis une sortie en discothèque le 22 octobre"><img src="https://img.centrefrance.com/u4ZS680m1NIFV8h6prGi7DfBHKV8COuJF3li-oJRyHQ/fill/310/140/sm/1/bG9jYWw6Ly8vMDAvMDAvMDYvMzEvOTAvMjAwMDAwNjMxOTAwNg.jpg" /></a>
+						</div>
+									</div>
+															<div class="row vertical-align">
+					<div class="col-xs-2 c-top-position">
+						<div>3</div>
+					</div>
+					<div class="col-xs-10 c-top-article">
+						<div class="b-article-simple-h row">
+							<div class="col-xs-12">
+								<div class="c-titre">
+									<span class="c-motcle">Faits divers</span>									<h4 data-id="4207212"
+											data-r="j"
+											data-dep="19">
+										<a class="eventXiti" id="les_plus_partages!faits_divers!disparition_de_justine_à_brive_:_des_traces_de_sang_découvertes" href="/brive-la-gaillarde-19100/actualites/disparition-de-justine-a-brive-des-traces-de-sang-decouvertes_14207212/" title="Disparition de Justine à Brive : des traces de sang découvertes">Disparition de Justine à Brive : des traces de sang découvertes</a>
+									</h4>
+								</div>
+							</div>
+						</div>
+					</div>
+											<div class="col-xs-10 c-top-image">
+							<a class="eventXiti" id="les_plus_partages!faits_divers!disparition_de_justine_à_brive_:_des_traces_de_sang_découvertes" href="/brive-la-gaillarde-19100/actualites/disparition-de-justine-a-brive-des-traces-de-sang-decouvertes_14207212/" title="Disparition de Justine à Brive : des traces de sang découvertes"><img src="https://img.centrefrance.com/uoHbkxP_a7aq3NTghTxE54Ks54cWwADD0QoYiVcoltg/fill/310/140/sm/1/bG9jYWw6Ly8vMDAvMDAvMDYvMzIvMDIvMjAwMDAwNjMyMDI1OA.jpg" /></a>
+						</div>
+									</div>
+															<div class="row vertical-align">
+					<div class="col-xs-2 c-top-position">
+						<div>4</div>
+					</div>
+					<div class="col-xs-10 c-top-article">
+						<div class="b-article-simple-h row">
+							<div class="col-xs-12">
+								<div class="c-titre">
+									<span class="c-motcle">Insolite</span>									<h4 data-id="4205520"
+											data-r="j"
+											data-dep="19">
+										<a class="eventXiti" id="les_plus_partages!insolite!selon_vous,_quel_est_le_poids_de_ce_cèpe_hors_norme_trouvé_dans_le_sud_de_la_corrèze_?" href="/brive-la-gaillarde-19100/actualites/selon-vous-quel-est-le-poids-de-ce-cepe-hors-norme-trouve-dans-le-sud-de-la-correze_14205520/" title="Selon vous, quel est le poids de ce cèpe hors norme trouvé dans le sud de la Corrèze ?">Selon vous, quel est le poids de ce cèpe hors norme trouvé dans le sud de la Corrèze ?</a>
+									</h4>
+								</div>
+							</div>
+						</div>
+					</div>
+											<div class="col-xs-10 c-top-image">
+							<a class="eventXiti" id="les_plus_partages!insolite!selon_vous,_quel_est_le_poids_de_ce_cèpe_hors_norme_trouvé_dans_le_sud_de_la_corrèze_?" href="/brive-la-gaillarde-19100/actualites/selon-vous-quel-est-le-poids-de-ce-cepe-hors-norme-trouve-dans-le-sud-de-la-correze_14205520/" title="Selon vous, quel est le poids de ce cèpe hors norme trouvé dans le sud de la Corrèze ?"><img src="https://img.centrefrance.com/lx2eCOAfhMGNH3dsQcK_cVlXhVx0tIRhEahDKsa2NfY/fill/310/140/sm/1/bG9jYWw6Ly8vMDAvMDAvMDYvMzEvNzUvMjAwMDAwNjMxNzUyOQ.jpg" /></a>
+						</div>
+									</div>
+															<div class="row vertical-align">
+					<div class="col-xs-2 c-top-position">
+						<div>5</div>
+					</div>
+					<div class="col-xs-10 c-top-article">
+						<div class="b-article-simple-h row">
+							<div class="col-xs-12">
+								<div class="c-titre">
+									<span class="c-motcle">Faits divers</span>									<h4 data-id="4206817"
+											data-r="j"
+											data-dep="19">
+										<a class="eventXiti" id="les_plus_partages!faits_divers!disparition_de_justine_à_brive_:_un_homme_placé_en_garde_à_vue" href="/brive-la-gaillarde-19100/actualites/disparition-de-justine-a-brive-un-homme-place-en-garde-a-vue_14206817/" title="Disparition de Justine à Brive : un homme placé en garde à vue">Disparition de Justine à Brive : un homme placé en garde à vue</a>
+									</h4>
+								</div>
+							</div>
+						</div>
+					</div>
+											<div class="col-xs-10 c-top-image">
+							<a class="eventXiti" id="les_plus_partages!faits_divers!disparition_de_justine_à_brive_:_un_homme_placé_en_garde_à_vue" href="/brive-la-gaillarde-19100/actualites/disparition-de-justine-a-brive-un-homme-place-en-garde-a-vue_14206817/" title="Disparition de Justine à Brive : un homme placé en garde à vue"><img src="https://img.centrefrance.com/0sxYRF2pu-8U2pTsbWubjvLzCaWij6Cdl052ZxngVSk/fill/310/140/sm/1/bG9jYWw6Ly8vMDAvMDAvMDYvMzEvOTcvMjAwMDAwNjMxOTcyNA.jpg" /></a>
+						</div>
+									</div>
+					</div>
+	
+
+
+<div class="bloc responsive_publicite_position">
+
+	<div class="advertise-box publicite_position relative parent_placeholder" ref="droite_milieu">
+		<div class="advertise pub-inner" ref="droite_milieu">
+						<div id='div-gpt--438918609-droite_milieu' class='placeholder placeholder_droite_milieu'>
+				<script type='text/javascript'>
+					if(!isIgnoreSlot('droite_milieu')) googletag.cmd.push(function() { googletag.display('div-gpt--438918609-droite_milieu'); });
+				</script>
+				<a id="div-link--438918609-droite_milieu" href="https://www.centrefrancepub.fr/?utm_source=siteseditos&utm_medium=AP_placeholder" target="_blank" class="link link_droite_milieu"></a>
+			</div>
+		</div>
+	</div>
+</div>
+			
+	<div class="b-jeu">
+				<h3 class="b-titre-bloc">
+			<a href="/services/jeux/match-ca-brive_74306.html">MATCH CA BRIVE</a>
+		</h3>
+
+				<div class="c-photo">
+			<a href="/services/jeux/match-ca-brive_74306.html">
+				<img data-src="https://img.lamontagne.fr/bvuC_sY6Bx85tAlcNrHa5YVQheOPsYkbYXo61rQ1H5U/fill/313/167/sm/0/bG9jYWw6Ly8vMDAvMDAvMDYvMzEvOTUvMjAwMDAwNjMxOTU2NA.jpg" class="responsive lazyload" alt="MATCH CA BRIVE" />
+			</a>
+		</div>
+		
+		<div class="c-jeu-contenu">
+							<p><font color="#ea1418"><b>10 places à gagner !</b></font><br><b>Jouez et gagnez vos places pour le match CA Brive vs Stade Rochelais</b></p>
+						<a href="/services/jeux/match-ca-brive_74306.html" class="btn btn-primary" role="button">JOUEZ & GAGNEZ</a>
+							<div class="c-lien-plus no-padding">
+					<a class="eventXiti" id="voir_tous_les_jeux" href="/services/jeux.html">Voir tous les jeux</a>
+				</div>
+					</div>
+	</div>
+
+
+<style type="text/css">
+.content-feedback-block{box-sizing:border-box;display:flex;background-color:#e8eaea;align-items:center;position:relative;padding:10px;width:100%;margin:0px auto;border-radius:3px}.content-feedback-block.longread{max-width:100%}.content-feedback-block .feedback-wrapper{position:relative;display:flex;flex-direction:row;justify-content:center;margin:0 auto}.content-feedback-block .feedback-wrapper .content-part{z-index:1;margin-left:10px}.content-feedback-block .feedback-wrapper .content-part .hastag{font:700 20px/24px Open Sans}.content-feedback-block .feedback-wrapper .content-part div,.content-feedback-block .feedback-wrapper .content-part p{color:#1e1e1e;font:12px/16px Open Sans;margin:0;width:auto;width:calc(100% - 120px);float:none}.content-feedback-block .feedback-wrapper .content-part a{text-decoration:none;border-bottom:none}.content-feedback-block .feedback-wrapper .content-part .button{box-sizing:border-box;width:140px;height:30px;border-radius:18px;background-color:#BD2B0B;color:#fff;font:12px Open Sans;font-weight:700;line-height:30px;padding:0 13px;margin-top:15px;float: center}.content-feedback-block .feedback-wrapper .content-img{background:url(https://www.lamontagne.fr/static/bloc/ripolinage/nps/feedback-quizz-3862f980f6.png) no-repeat;background-size:100px 100px;width:100px;height:155px;position:absolute;right:5%;bottom:-20px}.amp-container .content-feedback-block,.mobile .content-feedback-block{height:120px;margin:0;border:0}.amp-container .content-feedback-block .feedback-wrapper,.mobile .content-feedback-block .feedback-wrapper{max-width:300px}.amp-container .content-feedback-block .feedback-wrapper .content-part,.mobile .content-feedback-block .feedback-wrapper .content-part{margin-left:0}.amp-container .content-feedback-block .feedback-wrapper .content-part .hastag,.mobile .content-feedback-block .feedback-wrapper .content-part .hastag{font-size:14px}.amp-container .content-feedback-block .feedback-wrapper .content-img,.mobile .content-feedback-block .feedback-wrapper .content-img{background:url(https://www.lamontagne.fr/static/bloc/ripolinage/nps/feedback-quizz-3862f980f6.png) no-repeat;background-size:110px 112px;width:110px;height:112px;right:2%;left:auto;bottom:-8px}.amp-container .content-feedback-block .feedback-wrapper.flowItem,.mobile .content-feedback-block .feedback-wrapper.flowItem{margin:0 auto;border:none}.amp-container .content a:nth-child(7),.mobile .content a:nth-child(7){border:none}.amp-container #longread-container .content-feedback-block,.amp-container .longread-content .content-feedback-block,.mobile #longread-container .content-feedback-block,.mobile .longread-content .content-feedback-block{margin-bottom:60px}.home .content-feedback-block{height:155px}.home .content-feedback-block .content-part{margin-left:0}.home .content-feedback-block .content-part .hastag{font-size:14px;margin: 0 0 10px 0}.home .content-feedback-block .content-part p{width:calc(100% - 150px)}.home .content-feedback-block .content-img{background:url(https://www.lamontagne.fr/static/bloc/ripolinage/nps/feedback-quizz-3862f980f6.png) no-repeat;background-size:127px 125px;width:127px;height:125px;right:5%;left:auto;bottom:-8px}
+</style>
+
+
+<div class="content-feedback-block"><div class="feedback-wrapper"><div class="content-part"><span class="hastag"><font color="#333f48">Votre avis<br>est pr&eacute;cieux !</font></span><p><font color="#333f48">Aidez-nous &agrave; am&eacute;liorer notre site en r&eacute;pondant &agrave; notre questionnaire.</font></p><a href="https://forms.gle/daUBvNCxHnr8eFNJ9" target="_blank"><center><div class="button"><center>Je donne mon avis</center></div></center></a></div><div class="content-img"></div></div></div><br>
+
+
+
+
+   </div></div><style>.contenu .bloc[class*="url_nl_"] { display: none; } .advertise.pub-inner[ref="article"] iframe {border: none;} </style><script>$(function(e){$('.contenu .bloc[class*="url_nl_"]:first').show();})</script><div class="bloc responsive_publicite_position">
+
+	<div class="advertise-box publicite_position relative parent_placeholder" ref="banniere_basse">
+		<div class="advertise pub-inner" ref="banniere_basse">
+						<div id='div-gpt--1726985995-banniere_basse' class='placeholder placeholder_banniere_basse'>
+				<script type='text/javascript'>
+					if(!isIgnoreSlot('banniere_basse')) googletag.cmd.push(function() { googletag.display('div-gpt--1726985995-banniere_basse'); });
+				</script>
+				<a id="div-link--1726985995-banniere_basse" href="https://www.centrefrancepub.fr/?utm_source=siteseditos&utm_medium=AP_placeholder" target="_blank" class="link link_banniere_basse"></a>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+</div>
+
+
+<div id="message_popup" class="popin" role="dialog">
+	<div id="message_popup_wrapper" class="" role="document">
+		<h3 id="message_popup_title" class="b-titre-bloc"></h3>
+		<div class="alert" id="message_popup_status">
+			<span id="message_popup_picto" class="glyphicon status-glyphicon"></span>
+			<span id="message_popup_desc" class="message"></span>
+		</div>
+		<div class="" id="message_popup_loading">
+		</div>
+		<a href="" class="p-fermer">fermer</a>
+	</div>
+</div>
+
+<script type="text/javascript">
+
+function displayErrorMessage(message, time, title) {
+	messageCleanClasses();
+	if (title != null) {
+		$("#message_popup_title").html(title);
+	} else {
+		$("#message_popup_title").html("Erreur survenue");
+	}
+	$("#message_popup_wrapper").addClass("error-popup");
+	$("#message_popup_desc").html(message);
+	if (time != null) {
+		if(time > 0) {
+			setTimeout(hideMessage, time);
+		} else {
+			setTimeout(hideMessage, 5000);
+		}
+	}
+	showPopin($("#message_popup"));
+}
+function displaySuccessMessage(message, time, title) {
+	messageCleanClasses();
+	if (title != null) {
+		$("#message_popup_title").html(title);
+	} else {
+		$("#message_popup_title").html("Traitement effectué");
+	}
+	$("#message_popup_wrapper").addClass("success-popup");
+	$("#message_popup_desc").html(message);
+	if (time != null && time > 0) {
+		setTimeout(hideMessage, time);
+	} else {
+		setTimeout(hideMessage, 5000);
+	}
+	showPopin($("#message_popup"));
+}
+function displayLoadingMessage(message, time, title) {
+	messageCleanClasses();
+	if (title != null) {
+		$("#message_popup_title").html(title);
+	} else {
+		$("#message_popup_title").html("Chargement en cours");
+	}
+	$("#message_popup_wrapper").addClass("loading-popup");
+	if(message == null) {
+		message = "Merci de patienter...";
+	}
+	$("#message_popup_loading").html('<div class="text-center"><img src="/css/theme/images/picto/loader.gif" class="loader"/><p>'+message+'</p></div>')
+	$("#message_popup_desc").html(message);
+	if (time != null && time > 0) {
+		setTimeout(hideMessage, time);
+	}
+	showPopin($("#message_popup"));
+}
+function messageCleanClasses() {
+	$("#message_popup_wrapper").removeClass();
+}
+function hideMessage() {
+	messageCleanClasses();
+	hidePopin($("#message_popup"));
+}
+/* AUTOREFRESH */
+function refreshPage() {
+	if (window.autoRefresh) {
+		if (window.location.href.indexOf("#refresh") < 0) {
+			window.location.href = window.location.href + "#refresh";
+		}
+		window.location.reload();
+	}
+}
+function stopAutoRefresh() {
+	$(document).idleTimer("destroy");
+}
+function initAutoRefresh() {
+	if (window.autoRefresh){
+		$(document).idleTimer(window.autoRefresh);
+		$(document).bind("idle.idleTimer", refreshPage);
+	}
+}
+function goToVieLocale(value) {
+	if (typeof value != 'Object' && value.id != null && value.id != '') {
+		var urlVieLocale = getJsonRPC().rs.getUrlVieLocale(value.id);
+		window.location.href = urlVieLocale;
+	}
+}
+$(function() {
+		//initAutoRefresh();
+		autocompleteCommune('#menuCommuneSelector', '#menuSelectorChosenComm', '/ajax/tree/commune', null, 'Commune', null, goToVieLocale);
+	
+	// workaround problem flex safari
+	if($(".b-liste-simple").length > 0) {
+		if(!!navigator.userAgent.match(/Version\/[\d\.]+.*Safari/) && $(".b-liste-simple .b-article-simple").height() == 0) {
+			$(".b-liste-simple .b-article-simple, .b-liste-simple .b-titre-bloc").height(85).css("display","inline-block");
+		}
+	}
+	
+});
+</script>
+
+<style>
+.b-devup .b-liste-simple.encadre {
+        background: #e8eaea;
+}
+.b-devup .b-liste-simple.encadre .col-md-12 {
+	float: none;
+}
+.b-devup .b-liste-simple.encadre .col-md-12 .c-lien-plus {
+	margin-bottom: 0px;
+}
+</style>
+
+
+	<div class="advertise-box publicite_position relative parent_placeholder" ref="flash_trans">
+		<div class="advertise pub-inner" ref="flash_trans">
+						<div id='div-gpt-1617727897-flash_trans' class='placeholder placeholder_flash_trans'>
+				<script type='text/javascript'>
+					if(!isIgnoreSlot('flash_trans')) googletag.cmd.push(function() { googletag.display('div-gpt-1617727897-flash_trans'); });
+				</script>
+				<a id="div-link-1617727897-flash_trans" href="https://www.centrefrancepub.fr/?utm_source=siteseditos&utm_medium=AP_placeholder" target="_blank" class="link link_flash_trans"></a>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="advertise-box publicite_position relative parent_placeholder" ref="habillage">
+		<div class="advertise pub-inner" ref="habillage">
+						<div id='div-gpt--1852629889-habillage' class='placeholder placeholder_habillage'>
+				<script type='text/javascript'>
+					if(!isIgnoreSlot('habillage')) googletag.cmd.push(function() { googletag.display('div-gpt--1852629889-habillage'); });
+				</script>
+				<a id="div-link--1852629889-habillage" href="https://www.centrefrancepub.fr/?utm_source=siteseditos&utm_medium=AP_placeholder" target="_blank" class="link link_habillage"></a>
+			</div>
+		</div>
+	</div>
+<br/><footer id='footer'><div class="b-footer">
+    <div class="c-footer-contacts">
+        <div>
+            <h3 class="b-titre-bloc">Suivez-nous</h3>
+            <ul class="c-social list-inline">
+            	<li><a href="http://www.facebook.com/pages/LaMontagnefr/146949065315655" class="p-facebook" title="Facebook" target="_blank">Facebook</a>
+				<li><a href="https://twitter.com/#!/lamontagne_fr" class="p-twitter" title="Twitter" target="_blank">Twitter</a>
+				<li><a href="https://www.instagram.com/lamontagne.fr/" class="p-instagram" title="Instagram" target="_blank">Instagram</a>
+            </ul>
+        </div>
+        <div id="formNewsletters">
+            <h3 class="b-titre-bloc">Newsletter</h3>
+            <form id="oldNewsLetter" action="/utilisateur/newsletter.html"  style="display:none">
+                <!--<div class="form-group">
+                    <input class="form-control" type="email" placeholder="Votre email" required />
+                </div>-->
+                <input type="submit" id="newsletter_s_abonner" class="btn btn-primary eventXiti" value="s'abonner" />
+            </form>
+			<form id="newsLetter" action="/newsletters">
+                <!--<div class="form-group">
+                    <input class="form-control" type="email" placeholder="Votre email" required />
+                </div>-->
+                <input type="submit" id="newsletter_s_abonner" class="btn btn-primary eventXiti" value="s'abonner" />
+            </form>
+        </div>
+
+        <div>
+            <h3 class="b-titre-bloc">Contacts</h3>
+            <ul>
+                <li><a href="/pratique/contacts.html#contacts_abonnements">Abonnements</a></li>
+                <li><a href="/pratique/contacts.html#contacts_publicite">Publicit&eacute;</a></li>
+                <li><a href="/pratique/contacts.html#contacts_redactions">R&eacute;daction</a></li>
+		<li><a href="https://www.centrefrance.com/fr/presse/nous-rejoindre/" target="_blank">Nous rejoindre</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="c-footer-links">
+        <h3 class="b-titre-bloc">Annonces</h3>
+        <ul class="liste-fleche">
+			<li><a id="immobilier" class="eventXiti" href="http://www.centreimmo.com" target="_blank">Immobilier</a></li>
+			<li><a id="emploi" class="eventXiti" href="http://www.centremploi.com" target="_blank">Emploi</a></li>
+			<li><a href="/services/annonces-legales.html" target="_blank">Judiciaires et L&eacute;gales</a></li>
+	        <li><a href="/services/avis-obseques.html">Obs&egrave;ques</a></li>
+        </ul>
+        <h3 class="b-titre-bloc">Vie locale</h3>
+        <ul class="liste-fleche">
+			<li class="containerCommune"><a href="/ambert-63600/">Ambert</a></li>
+			<li class="containerCommune"><a href="/aurillac-15000/">Aurillac</a></li>
+			<li class="containerCommune"><a href="/brioude-43100/">Brioude</a></li>
+			<li class="containerCommune"><a href="/brive-la-gaillarde-19100/">Brive-la-Gaillarde</a></li>
+			<li class="containerCommune"><a href="/clermont-ferrand-63000/">Clermont-Ferrand</a></li>
+			<li class="containerCommune"><a href="/gueret-23000/">Guéret</a></li>
+			<li class="containerCommune"><a href="/issoire-63500/">Issoire</a></li>
+			<li class="containerCommune"><a href="/montlucon-03100/">Montluçon</a></li>
+			<li class="containerCommune"><a href="/moulins-03000/">Moulins</a></li>
+			<li class="containerCommune"><a href="/puy-en-velay-43000/">Le Puy-en-Velay</a></li>
+			<li class="containerCommune"><a href="/riom-63200/">Riom</a></li>
+			<li class="containerCommune"><a href="/saint-flour-15100/">Saint-Flour</a></li>
+			<li class="containerCommune"><a href="/thiers-63300/">Thiers</a></li>
+			<li class="containerCommune"><a href="/tulle-19000/">Tulle</a></li>
+			<li class="containerCommune"><a href="/ussel-19200/">Ussel</a></li>
+			<li class="containerCommune"><a href="/vichy-03200/">Vichy</a></li>
+       </ul>
+    </div>
+
+    <div class="c-footer-links">
+        <h3 class="b-titre-bloc">Pratique</h3>
+        <ul class="liste-fleche">
+			<li><a href="/services/jeux.html">Jeux</a></li>
+            <li><a href="/services/abonnement.html?xtor=AD-23">Abonnements</a></li>
+			<li><a href="http://www.centrefranceboutique.fr" target="_blank">La boutique</a></li>
+			<li><a href="http://panel.lamontagne.fr" target="_blank">Le panel</a></li>
+			<li><a href="https://www.centrefrance.com/" target="_blank">Le Groupe Centre France</a></li>
+			<li><a href="https://www.centrefrancepub.fr/" target="_blank">Centre France Publicit&eacute;</a></li>
+	    </ul>
+        <h3 class="b-titre-bloc">Sports</h3>
+        <ul class="liste-fleche">
+		<li><a href="/theme/sports/" class="sports ripo">Terre de Sports</a></li>
+		<li><a href="/theme/sports/football/resultats-classements/" class="resultats sports">Résultats</a></li>
+		<li><a href="/theme/sports/rugby/" class="rugby sports">Rugby</a></li>
+		<li><a href="/theme/sports/rugby/club/asm-clermont/" class="asm sports">ASM</a></li>
+		<li><a href="/theme/sports/rugby/club/ca-brive/" class="ca-brive sports">CA Brive</a></li>
+		<li><a href="/theme/sports/football/" class="football sports">Football</a></li>
+		<li><a href="/theme/sports/football/club/clermont-foot/" class="clermont-foot sports">Clermont Foot</a></li>
+		<li><a href="/theme/sports/basket/" class="basket">Basket</a></li>
+		<li><a href="/theme/sports/cyclisme/" class="cyclisme">Cyclisme</a></li>
+	</ul>
+        <h3 class="b-titre-bloc">Mobiles et tablettes</h3>
+        <ul class="liste-fleche">
+			 Retrouvez lamontagne.fr sur :<br />
+             <li><a id="app_iphone" class="eventXiti" href="http://itunes.apple.com/fr/app/lamontagne-fr/id395929851?mt=8" target="_blank">iPhone</a></li>
+			 <li><a id="app_android" class="eventXiti" href="https://play.google.com/store/apps/details?id=com.centrefrance.lamontagne" target="_blank">Android</a></li>
+        </ul>
+
+    </div>
+</div>
+<div class="b-footer-links">
+    <ul class="list-inline">
+        <li><a href="https://www.centrefrance.com/" target="_blank">Groupe Centre-France</a> &nbsp;&nbsp;&copy; Tous droits r&eacute;serv&eacute;s</a>
+        <li><a href="/mentions_legales.html">Mentions l&eacute;gales</a>
+        <li><a href="/paget/GCF_cgu.html">CGU</a>
+        <li><a href="/paget/MT_cookies.html">Politique de confidentialit&eacute;</a>
+        <li><a href="/paget/GCF_droit_oubli.html">Droit &agrave; l'oubli</a>
+    </ul>
+    <ul class="">
+     </ul>
+</div>
+
+</footer></div><div style="float:right" class="system">
+</div>
+
+<!-- prof : {param.profilJsCss} -->
+<!-- Bootstrap -->
+<script type="text/javascript" src="//static1.lamontagne.fr/pack/148098969.js" charset="UTF-8" ></script>
+
+<!-- Lightslider -->
+
+
+<!-- select2 -->
+
+
+
+
+<!-- bootstrap-datepicker -->
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Google ReCaptcha -->
+<script title="noPack" src="https://www.google.com/recaptcha/api.js?onload=initReCaptcha&render=explicit" defer></script>
+<script type="text/javascript">
+	var initReCaptcha = function() {
+		if (typeof captchaMdpContainer != 'undefined') {
+			captchaMdpContainer = grecaptcha.render('mdpCaptcha', {
+				'sitekey' : '6LfjNwgTAAAAAMtuQ9HvpMX5YsWIHO3PhlRC2McI'
+			});
+		}
+
+		if (typeof inscriptionCaptchaContainer != 'undefined') {
+			inscriptionCaptchaContainer = grecaptcha.render('inscriptionCaptcha', {
+				'sitekey' : '6LfjNwgTAAAAAMtuQ9HvpMX5YsWIHO3PhlRC2McI', 'callback' : activateSubmitInscription
+			});
+		}
+
+		if (typeof jeuCaptchaContainer != 'undefined') {
+			jeuCaptchaContainer = grecaptcha.render('jeuCaptcha', {
+				'sitekey' : '6LfjNwgTAAAAAMtuQ9HvpMX5YsWIHO3PhlRC2McI'
+			});
+		}
+
+		if (typeof captchaSendByMailContainer != 'undefined') {
+			captchaSendByMailContainer = grecaptcha.render('sendByMailCaptcha', {
+				'sitekey' : '6LfjNwgTAAAAAMtuQ9HvpMX5YsWIHO3PhlRC2McI'
+			});
+		}
+
+		if(typeof captchaSignalErrorContainer != 'undefined') {
+			captchaSignalErrorContainer = grecaptcha.render('signalErrorCaptcha', {
+				'sitekey' : '6LfjNwgTAAAAAMtuQ9HvpMX5YsWIHO3PhlRC2McI'
+			});
+		}
+
+	};
+	function loadJS(u){var r=document.getElementsByTagName("script")[0],s=document.createElement("script");s.src=u;r.parentNode.insertBefore(s,r);}
+
+	window.lazySizesConfig = window.lazySizesConfig || {};
+	window.lazySizesConfig.expand = 500;
+	if(!window.HTMLPictureElement || !('sizes' in document.createElement('img'))){
+        loadJS('/assets/ripo/js/lazysizes.respimg.min.js');
+    }
+</script>
+
+<script type="text/javascript" src="//static1.lamontagne.fr/pack/511584443.js" charset="UTF-8" ></script>
+
+
+<!-- IV3 CFC -->
+<!-- DISABLE PACK <script title="noPack" type="text/javascript" src="//static1.lamontagne.fr/js/cfc/cfc-0.3.js" charset="UTF-8"></script>-->
+
+<script type="text/javascript">
+	var jsonrpc = null;
+	function simpleJsonRPCRequest(method, params) {
+		$.ajax({
+            url: '/json-rpc',
+            data: JSON.stringify({id:0, method: method, params:params}),
+            type:"POST",
+            dataType:"json",
+            contentType:"applicaton/json; charset=UTF-8",
+            async:false
+        });
+	}
+	function getJsonRPC() {
+		if (jsonrpc == null) {
+			$.ajax({
+				url: '/js/cfc/jsonrpc-min.js',
+				dataType: "script",
+				async: false,
+				cache: true
+			});
+			try {
+				jsonrpc = new JSONRpcClient('/json-rpc');
+			} catch(err) {
+				jsonrpc = {
+					rs : {
+						signalerAbus : function() { },
+						incrementNbLu : function() { },
+						incrementNbRecomFacebook : function() { },
+						incrementNbPlusOneGoogle : function() { },
+						incrementNbRecomTwitter : function() { },
+						getArticlesInZoneGeographique : function() { }
+					}
+				};
+			}
+		}
+		return jsonrpc;
+	}
+</script>
+
+
+<script type="text/javascript">
+	window.mask = function(input, mask) { $(input).mask(mask); }
+</script>
+
+<link rel="stylesheet" type="text/css" href="//static1.lamontagne.fr/static/bloc/ripolinage/custom-008.css"></body></html>

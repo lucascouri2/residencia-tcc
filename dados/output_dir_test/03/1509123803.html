@@ -1,0 +1,1338 @@
+<!doctype html>
+<html lang="fr-FR">
+<head>
+    <meta charset="UTF-8"><script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"1d8abac7ae",applicationID:"182471793"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(9),c=t(10),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(11);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(8),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],7:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],8:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],9:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],10:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],11:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(9),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!M++){var t=T.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(x,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+T.offset],null,"api"),c("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){c("mark",["domContent",a()+T.offset],null,"api")}var a=t(5),c=t("handle"),f=t(9),u=t("ee"),s=t(7),d=t(2),p=t(3),l=d.getConfiguration("ssl")===!1?"http":"https",v=window,m=v.document,g="addEventListener",y="attachEvent",h=v.XMLHttpRequest,w=h&&h.prototype,b=!1;NREUM.o={ST:setTimeout,SI:v.setImmediate,CT:clearTimeout,XHR:h,REQ:v.Request,EV:v.Event,PR:v.Promise,MO:v.MutationObserver};var E=""+location,x={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1216.min.js"},O=h&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),T=e.exports={offset:a.getLastTimestamp(),now:a,origin:E,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(6),m[g]?(m[g]("DOMContentLoaded",o,p(!1)),v[g]("load",r,p(!1))):(m[y]("onreadystatechange",i),v[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var M=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(10),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="apple-itunes-app" content="app-id=1579705887">
+
+    
+    <link rel="profile" href="https://gmpg.org/xfn/11">
+
+    <script type="text/javascript" src="//s.ntv.io/serve/load.js" async></script>
+    <script type="text/javascript" src="https://rdc.m32.media/m32pixel.min.js" async></script>
+    <script src="https://static.freeskreen.com/ba/178/freeskreen.min.js"></script>
+    <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+		<!-- Meta Tag Manager -->
+		<meta name="facebook-domain-verification" content="i0b0xlm2xg3xn1i1pl79wexe2jk5kb" />
+		<!-- / Meta Tag Manager -->
+
+	<!-- This site is optimized with the Yoast SEO Premium plugin v18.9 (Yoast SEO v19.4) - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>Trump s&#039;en prend à Bolton lors de son procès en destitution</title>
+	<meta name="description" content="Donald Trump s’est déchaîné mercredi contre son ancien conseiller John Bolton, dont les confidences compliquent les appels du président américain à clore au plus vite son procès en destitution par un acquittement, sans s’embarrasser de nouveaux témoins." />
+	<link rel="canonical" href="https://journalmetro.com/monde/2415863/trump-sen-prend-a-bolton-lors-de-son-proces-en-destitution/" />
+	<meta property="og:locale" content="fr_FR" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="Trump s&#039;en prend à Bolton lors de son procès en destitution" />
+	<meta property="og:description" content="Donald Trump s’est déchaîné mercredi contre son ancien conseiller John Bolton, dont les confidences compliquent les appels du président américain à clore au plus vite son procès en destitution par un acquittement, sans s’embarrasser de nouveaux témoins." />
+	<meta property="og:url" content="https://journalmetro.com/monde/2415863/trump-sen-prend-a-bolton-lors-de-son-proces-en-destitution/" />
+	<meta property="og:site_name" content="Journal Métro" />
+	<meta property="article:publisher" content="http://facebook.com/journalmetro/" />
+	<meta property="article:published_time" content="2020-01-29T16:31:36+00:00" />
+	<meta property="og:image" content="https://journalmetro.com/wp-content/uploads/2020/01/GettyImages-1202597261-e1580315054307.jpg?fit=2929%2C1647&resize=1200,630" />
+	<meta property="og:image:width" content="2929" />
+	<meta property="og:image:height" content="1647" />
+	<meta property="og:image:type" content="image/jpeg" />
+	<meta name="author" content="Rédaction" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:label1" content="Written by" />
+	<meta name="twitter:data1" content="Rédaction" />
+	<meta name="twitter:label2" content="Est. reading time" />
+	<meta name="twitter:data2" content="4 minutes" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://journalmetro.com/#website","url":"https://journalmetro.com/","name":"Journal Métro","description":"Le site web du quotidien gratuit Métro Montréal","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://journalmetro.com/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"fr-FR"},{"@type":"ImageObject","inLanguage":"fr-FR","@id":"https://journalmetro.com/monde/2415863/trump-sen-prend-a-bolton-lors-de-son-proces-en-destitution/#primaryimage","url":"https://journalmetro.com/wp-content/uploads/2020/01/GettyImages-1202597261-e1580315054307.jpg?fit=2929%2C1647","contentUrl":"https://journalmetro.com/wp-content/uploads/2020/01/GettyImages-1202597261-e1580315054307.jpg?fit=2929%2C1647","width":2929,"height":1647,"caption":"Donald Trump"},{"@type":"WebPage","@id":"https://journalmetro.com/monde/2415863/trump-sen-prend-a-bolton-lors-de-son-proces-en-destitution/","url":"https://journalmetro.com/monde/2415863/trump-sen-prend-a-bolton-lors-de-son-proces-en-destitution/","name":"Trump s'en prend à Bolton lors de son procès en destitution","isPartOf":{"@id":"https://journalmetro.com/#website"},"primaryImageOfPage":{"@id":"https://journalmetro.com/monde/2415863/trump-sen-prend-a-bolton-lors-de-son-proces-en-destitution/#primaryimage"},"image":{"@id":"https://journalmetro.com/monde/2415863/trump-sen-prend-a-bolton-lors-de-son-proces-en-destitution/#primaryimage"},"thumbnailUrl":"https://journalmetro.com/wp-content/uploads/2020/01/GettyImages-1202597261-e1580315054307.jpg?fit=2929%2C1647","datePublished":"2020-01-29T16:31:36+00:00","dateModified":"2020-01-29T16:31:36+00:00","author":{"@id":"https://journalmetro.com/#/schema/person/4d7d98d54d4418aca95b9a31e86639b5"},"description":"Donald Trump s’est déchaîné mercredi contre son ancien conseiller John Bolton, dont les confidences compliquent les appels du président américain à clore au plus vite son procès en destitution par un acquittement, sans s’embarrasser de nouveaux témoins.","breadcrumb":{"@id":"https://journalmetro.com/monde/2415863/trump-sen-prend-a-bolton-lors-de-son-proces-en-destitution/#breadcrumb"},"inLanguage":"fr-FR","potentialAction":[{"@type":"ReadAction","target":["https://journalmetro.com/monde/2415863/trump-sen-prend-a-bolton-lors-de-son-proces-en-destitution/"]}]},{"@type":"BreadcrumbList","@id":"https://journalmetro.com/monde/2415863/trump-sen-prend-a-bolton-lors-de-son-proces-en-destitution/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://journalmetro.com/"},{"@type":"ListItem","position":2,"name":"Monde","item":"/monde/"},{"@type":"ListItem","position":3,"name":"Trump s&rsquo;en prend à Bolton lors de son procès en destitution"}]},{"@type":"Person","@id":"https://journalmetro.com/#/schema/person/4d7d98d54d4418aca95b9a31e86639b5","name":"Rédaction","image":{"@type":"ImageObject","inLanguage":"fr-FR","@id":"https://journalmetro.com/#/schema/person/image/","url":"https://secure.gravatar.com/avatar/4638370ab716729a67164510eb2aa188?s=96&d=blank&r=g","contentUrl":"https://secure.gravatar.com/avatar/4638370ab716729a67164510eb2aa188?s=96&d=blank&r=g","caption":"Rédaction"},"url":"https://journalmetro.com/auteur/autres/"}]}</script>
+	<!-- / Yoast SEO Premium plugin. -->
+
+
+<link rel='dns-prefetch' href='//cdn.parsely.com' />
+<link rel='dns-prefetch' href='//api.dmcdn.net' />
+<link rel='dns-prefetch' href='//rdc.m32.media' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Journal Métro &raquo; Flux" href="https://journalmetro.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Journal Métro &raquo; Flux des commentaires" href="https://journalmetro.com/comments/feed/" />
+<link rel="alternate" type="text/calendar" title="Journal Métro &raquo; Flux iCal" href="https://journalmetro.com/evenements/?ical=1" />
+<script>
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/journalmetro.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.0.3"}};
+/*! This file is auto-generated */
+!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode,e=(p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0),i.toDataURL());return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([129777,127995,8205,129778,127999],[129777,127995,8203,129778,127999])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(e=t.source||{}).concatemoji?c(e.concatemoji):e.wpemoji&&e.twemoji&&(c(e.twemoji),c(e.wpemoji)))}(window,document,window._wpemojiSettings);
+</script>
+<style>
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='screen-css-0' href='https://journalmetro.com/wp-content/plugins/metro-blocks/assets/blocks/metro-blocks.css?m=1666701390g' type='text/css' media='screen' />
+<link rel='stylesheet' id='all-css-0' href='https://journalmetro.com/_static/??/wp-content/plugins/events-calendar-pro/src/resources/css/tribe-events-pro-mini-calendar-block.min.css,/wp-includes/css/dist/block-library/style.min.css?m=1666701390' type='text/css' media='all' />
+<style id='wp-block-library-inline-css'>
+.has-text-align-justify{text-align:justify;}
+</style>
+<style id='wp-block-library-theme-inline-css'>
+.wp-block-audio figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-audio figcaption{color:hsla(0,0%,100%,.65)}.wp-block-code{border:1px solid #ccc;border-radius:4px;font-family:Menlo,Consolas,monaco,monospace;padding:.8em 1em}.wp-block-embed figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-embed figcaption{color:hsla(0,0%,100%,.65)}.blocks-gallery-caption{color:#555;font-size:13px;text-align:center}.is-dark-theme .blocks-gallery-caption{color:hsla(0,0%,100%,.65)}.wp-block-image figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-image figcaption{color:hsla(0,0%,100%,.65)}.wp-block-pullquote{border-top:4px solid;border-bottom:4px solid;margin-bottom:1.75em;color:currentColor}.wp-block-pullquote__citation,.wp-block-pullquote cite,.wp-block-pullquote footer{color:currentColor;text-transform:uppercase;font-size:.8125em;font-style:normal}.wp-block-quote{border-left:.25em solid;margin:0 0 1.75em;padding-left:1em}.wp-block-quote cite,.wp-block-quote footer{color:currentColor;font-size:.8125em;position:relative;font-style:normal}.wp-block-quote.has-text-align-right{border-left:none;border-right:.25em solid;padding-left:0;padding-right:1em}.wp-block-quote.has-text-align-center{border:none;padding-left:0}.wp-block-quote.is-large,.wp-block-quote.is-style-large,.wp-block-quote.is-style-plain{border:none}.wp-block-search .wp-block-search__label{font-weight:700}:where(.wp-block-group.has-background){padding:1.25em 2.375em}.wp-block-separator.has-css-opacity{opacity:.4}.wp-block-separator{border:none;border-bottom:2px solid;margin-left:auto;margin-right:auto}.wp-block-separator.has-alpha-channel-opacity{opacity:1}.wp-block-separator:not(.is-style-wide):not(.is-style-dots){width:100px}.wp-block-separator.has-background:not(.is-style-dots){border-bottom:none;height:1px}.wp-block-separator.has-background:not(.is-style-wide):not(.is-style-dots){height:2px}.wp-block-table thead{border-bottom:3px solid}.wp-block-table tfoot{border-top:3px solid}.wp-block-table td,.wp-block-table th{padding:.5em;border:1px solid;word-break:normal}.wp-block-table figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-table figcaption{color:hsla(0,0%,100%,.65)}.wp-block-video figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-video figcaption{color:hsla(0,0%,100%,.65)}.wp-block-template-part.has-background{padding:1.25em 2.375em;margin-top:0;margin-bottom:0}
+</style>
+<style id='wp-parsely-recommendations-style-inline-css'>
+.parsely-recommendations-list-title{font-size:1.2em}.parsely-recommendations-list{list-style:none;padding:unset}.parsely-recommendations-cardbody{overflow:hidden;padding:.8em;text-overflow:ellipsis;white-space:nowrap}.parsely-recommendations-cardmedia{padding:.8em .8em 0}
+
+</style>
+<link rel='stylesheet' id='all-css-4' href='https://journalmetro.com/_static/??-eJx9jdsKwjAQRH/IdBWh2AfxW+JmqdHNhcyG0r+3CIJ98fHMcGZoqS5m1h4E9AQlCdGLSpJsO6jqV2lOZfa8DinmgYED/dO37pd3Epdsn4vuqvY5ZhDEN36QqIdFrk0AChFGm0Nti02CqwUGd9fCLwdbVfCdvaXraRzH4zRdztMbkzJQRw==' type='text/css' media='all' />
+<style id='global-styles-inline-css'>
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--color--beige: #EFCEB3;--wp--preset--color--beige-pale: #F9F1E4;--wp--preset--color--bleu-fonce: #072943;--wp--preset--color--bleu-pale: #97A8BB;--wp--preset--color--corail: #E07666;--wp--preset--color--jaune: #F0B648;--wp--preset--color--vert-vif: #74C099;--wp--preset--color--vert-moyen: #45846C;--wp--preset--color--vert-fonce: #1D443E;--wp--preset--color--gris-tres-pale: #F7F7F7;--wp--preset--color--gris-pale: #ECECEC;--wp--preset--color--gris-moyen: #ADADAD;--wp--preset--color--gris-fonce: #757575;--wp--preset--color--gris-tres-fonce: #424242;--wp--preset--color--blanc: #FFFFFF;--wp--preset--color--rouge: #FD675E;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;}body { margin: 0; }.wp-site-blocks > .alignleft { float: left; margin-right: 2em; }.wp-site-blocks > .alignright { float: right; margin-left: 2em; }.wp-site-blocks > .aligncenter { justify-content: center; margin-left: auto; margin-right: auto; }.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-beige-color{color: var(--wp--preset--color--beige) !important;}.has-beige-pale-color{color: var(--wp--preset--color--beige-pale) !important;}.has-bleu-fonce-color{color: var(--wp--preset--color--bleu-fonce) !important;}.has-bleu-pale-color{color: var(--wp--preset--color--bleu-pale) !important;}.has-corail-color{color: var(--wp--preset--color--corail) !important;}.has-jaune-color{color: var(--wp--preset--color--jaune) !important;}.has-vert-vif-color{color: var(--wp--preset--color--vert-vif) !important;}.has-vert-moyen-color{color: var(--wp--preset--color--vert-moyen) !important;}.has-vert-fonce-color{color: var(--wp--preset--color--vert-fonce) !important;}.has-gris-tres-pale-color{color: var(--wp--preset--color--gris-tres-pale) !important;}.has-gris-pale-color{color: var(--wp--preset--color--gris-pale) !important;}.has-gris-moyen-color{color: var(--wp--preset--color--gris-moyen) !important;}.has-gris-fonce-color{color: var(--wp--preset--color--gris-fonce) !important;}.has-gris-tres-fonce-color{color: var(--wp--preset--color--gris-tres-fonce) !important;}.has-blanc-color{color: var(--wp--preset--color--blanc) !important;}.has-rouge-color{color: var(--wp--preset--color--rouge) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-beige-background-color{background-color: var(--wp--preset--color--beige) !important;}.has-beige-pale-background-color{background-color: var(--wp--preset--color--beige-pale) !important;}.has-bleu-fonce-background-color{background-color: var(--wp--preset--color--bleu-fonce) !important;}.has-bleu-pale-background-color{background-color: var(--wp--preset--color--bleu-pale) !important;}.has-corail-background-color{background-color: var(--wp--preset--color--corail) !important;}.has-jaune-background-color{background-color: var(--wp--preset--color--jaune) !important;}.has-vert-vif-background-color{background-color: var(--wp--preset--color--vert-vif) !important;}.has-vert-moyen-background-color{background-color: var(--wp--preset--color--vert-moyen) !important;}.has-vert-fonce-background-color{background-color: var(--wp--preset--color--vert-fonce) !important;}.has-gris-tres-pale-background-color{background-color: var(--wp--preset--color--gris-tres-pale) !important;}.has-gris-pale-background-color{background-color: var(--wp--preset--color--gris-pale) !important;}.has-gris-moyen-background-color{background-color: var(--wp--preset--color--gris-moyen) !important;}.has-gris-fonce-background-color{background-color: var(--wp--preset--color--gris-fonce) !important;}.has-gris-tres-fonce-background-color{background-color: var(--wp--preset--color--gris-tres-fonce) !important;}.has-blanc-background-color{background-color: var(--wp--preset--color--blanc) !important;}.has-rouge-background-color{background-color: var(--wp--preset--color--rouge) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-beige-border-color{border-color: var(--wp--preset--color--beige) !important;}.has-beige-pale-border-color{border-color: var(--wp--preset--color--beige-pale) !important;}.has-bleu-fonce-border-color{border-color: var(--wp--preset--color--bleu-fonce) !important;}.has-bleu-pale-border-color{border-color: var(--wp--preset--color--bleu-pale) !important;}.has-corail-border-color{border-color: var(--wp--preset--color--corail) !important;}.has-jaune-border-color{border-color: var(--wp--preset--color--jaune) !important;}.has-vert-vif-border-color{border-color: var(--wp--preset--color--vert-vif) !important;}.has-vert-moyen-border-color{border-color: var(--wp--preset--color--vert-moyen) !important;}.has-vert-fonce-border-color{border-color: var(--wp--preset--color--vert-fonce) !important;}.has-gris-tres-pale-border-color{border-color: var(--wp--preset--color--gris-tres-pale) !important;}.has-gris-pale-border-color{border-color: var(--wp--preset--color--gris-pale) !important;}.has-gris-moyen-border-color{border-color: var(--wp--preset--color--gris-moyen) !important;}.has-gris-fonce-border-color{border-color: var(--wp--preset--color--gris-fonce) !important;}.has-gris-tres-fonce-border-color{border-color: var(--wp--preset--color--gris-tres-fonce) !important;}.has-blanc-border-color{border-color: var(--wp--preset--color--blanc) !important;}.has-rouge-border-color{border-color: var(--wp--preset--color--rouge) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+</style>
+<link rel='stylesheet' id='all-css-6' href='https://journalmetro.com/_static/??-eJx1jcEOgjAQRH/IsjYxJR6Mn0Jq2UCB3TbtNv19FeFg0OubmTdQo3KBBVkgLmXwnKHGbqIuWZ4xQSyPxTtw+ZurD29e/AR/HdWKG/swHC17snkUeT64ZETCDISSAmPN0Pssq4PsjzoVtb9PKNG6WWndXNbBBt6bO920MabV56tun/bZXts=' type='text/css' media='all' />
+<script id='mo-social-login-script-js-extra'>
+var my_ajax_object = {"ajax_url":"https:\/\/journalmetro.com\/wp-admin\/admin-ajax.php"};
+</script>
+<script type="text/javascript" src="https://journalmetro.com/_static/??-eJyljNsKwjAQRH/IZFuESB9KP0VCuoSNyW6aC+LfG8QHQfBFGBiYMxy4Z0XsYt+xQhg5OpbHu3Qi1qGe4NdJJfLFNvw8O+GG3CDH7okrDERSLHtUUcaiJCPTDt9S7URu9LesiiMbry8+PFtaZ2PMZZrPyxSeXLFbLg==" ></script><script src='https://rdc.m32.media/madops.js?ver=6.0.3' id='met-ads-js'></script>
+<link rel="https://api.w.org/" href="https://journalmetro.com/wp-json/" /><link rel="alternate" type="application/json" href="https://journalmetro.com/wp-json/wp/v2/posts/2415863" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://journalmetro.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://journalmetro.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 6.0.3" />
+<link rel='shortlink' href='https://journalmetro.com/?p=2415863' />
+<link rel="alternate" type="application/json+oembed" href="https://journalmetro.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fjournalmetro.com%2Fmonde%2F2415863%2Ftrump-sen-prend-a-bolton-lors-de-son-proces-en-destitution%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://journalmetro.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fjournalmetro.com%2Fmonde%2F2415863%2Ftrump-sen-prend-a-bolton-lors-de-son-proces-en-destitution%2F&#038;format=xml" />
+        <!-- Flipp Controller Tag-->
+        <script async
+                src="https://cdn-gateflipp.flippback.com/tag/js/flipptag.js?site_id=1193436"></script>
+        <script>
+            window.flippxp = window.flippxp || {run: []};
+            if (document.documentElement.clientWidth < 500) {
+                window.flippxp.run.push(function() {
+                    window.flippxp.registerSlot("#flipp-ux-slot-nc73hds", "Journal_Metro", 1193436, [ 262871 ]);
+                });
+            } else {
+                window.flippxp.run.push(function() {
+                    window.flippxp.registerSlot("#flipp-ux-slot-kih2s7e", "Journal_Metro", 1193436, [ 262872 ]);
+                });
+            }
+        </script>
+
+
+    <style id="global-css-editors-metro-blocks">has-beige-colorcolorEFCEB3importanthas-beige-background-colorbackground-colorEFCEB3has-beige-pale-colorcolorF9F1E4importanthas-beige-pale-background-colorbackground-colorF9F1E4has-bleu-fonce-colorcolor072943importanthas-bleu-fonce-background-colorbackground-color072943has-bleu-pale-colorcolor97A8BBimportanthas-bleu-pale-background-colorbackground-color97A8BBhas-corail-colorcolorE07666importanthas-corail-background-colorbackground-colorE07666has-jaune-colorcolorF0B648importanthas-jaune-background-colorbackground-colorF0B648has-vert-vif-colorcolor74C099importanthas-vert-vif-background-colorbackground-color74C099has-vert-moyen-colorcolor45846Cimportanthas-vert-moyen-background-colorbackground-color45846Chas-vert-fonce-colorcolor1D443Eimportanthas-vert-fonce-background-colorbackground-color1D443Ehas-gris-tres-pale-colorcolorF7F7F7importanthas-gris-tres-pale-background-colorbackground-colorF7F7F7has-gris-pale-colorcolorECECECimportanthas-gris-pale-background-colorbackground-colorECECEChas-gris-moyen-colorcolorADADADimportanthas-gris-moyen-background-colorbackground-colorADADADhas-gris-fonce-colorcolor757575importanthas-gris-fonce-background-colorbackground-color757575has-gris-tres-fonce-colorcolor424242importanthas-gris-tres-fonce-background-colorbackground-color424242has-blanc-colorcolorFFFFFFimportanthas-blanc-background-colorbackground-colorFFFFFFhas-rouge-colorcolorFD675Eimportanthas-rouge-background-colorbackground-colorFD675E</style><meta name="tec-api-version" content="v1"><meta name="tec-api-origin" content="https://journalmetro.com"><link rel="alternate" href="https://journalmetro.com/wp-json/tribe/events/v1/" /><script type="application/ld+json">{"@context":"https:\/\/schema.org","@type":"NewsArticle","headline":"Trump s&rsquo;en prend \u00e0 Bolton lors de son proc\u00e8s en destitution","url":"http:\/\/journalmetro.com\/monde\/2415863\/trump-sen-prend-a-bolton-lors-de-son-proces-en-destitution\/","mainEntityOfPage":{"@type":"WebPage","@id":"http:\/\/journalmetro.com\/monde\/2415863\/trump-sen-prend-a-bolton-lors-de-son-proces-en-destitution\/"},"thumbnailUrl":"https:\/\/journalmetro.com\/wp-content\/uploads\/2020\/01\/GettyImages-1202597261-e1580315054307.jpg?fit=150%2C84","image":{"@type":"ImageObject","url":"https:\/\/journalmetro.com\/wp-content\/uploads\/2020\/01\/GettyImages-1202597261-e1580315054307.jpg?fit=2929%2C1647"},"articleSection":"Monde","author":[{"@type":"Person","name":"R\u00e9daction"}],"creator":["R\u00e9daction"],"publisher":{"@type":"Organization","name":"Journal M\u00e9tro","logo":"https:\/\/journalmetro.com\/wp-content\/uploads\/2019\/02\/cropped-journal-metro.png"},"keywords":["agence france-presse","donald trump","\u00e9tats-unis","justice"],"dateCreated":"2020-01-29T16:31:36Z","datePublished":"2020-01-29T16:31:36Z","dateModified":"2020-01-29T16:31:36Z"}</script><style>img#wpstats{display:none}</style>
+	            <meta name="author" content="Rédaction">
+            <link rel="amphtml" href="https://journalmetro.com/monde/2415863/trump-sen-prend-a-bolton-lors-de-son-proces-en-destitution/amp/"><link rel="icon" href="https://journalmetro.com/wp-content/uploads/2021/09/cropped-cropped-metro_android-chrome-512x512-1.png?fit=32%2C32" sizes="32x32" />
+<link rel="icon" href="https://journalmetro.com/wp-content/uploads/2021/09/cropped-cropped-metro_android-chrome-512x512-1.png?fit=192%2C192" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://journalmetro.com/wp-content/uploads/2021/09/cropped-cropped-metro_android-chrome-512x512-1.png?fit=180%2C180" />
+<meta name="msapplication-TileImage" content="https://journalmetro.com/wp-content/uploads/2021/09/cropped-cropped-metro_android-chrome-512x512-1.png?fit=270%2C270" />
+
+    <script>
+        window.dataLayer = window.dataLayer || [];
+                window.dataLayer.push({
+            'event': 'viewedContent',
+            'author': decodeURIComponent( 'R%C3%A9daction' ),
+            'section': JSON.parse( decodeURIComponent( '%5B%22Monde%22%5D' ) ),
+            'tag': JSON.parse( decodeURIComponent( '%22%22' ) )
+        });
+    </script>
+
+            <!-- Google Tag Manager -->
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer', "GTM-PKJL6LH");</script>
+        <!-- End Google Tag Manager -->
+        
+    <script id="DI-Journey-TgYAAHJXZTdvUzcrAABIbjg5bjTMBwAA" type="text/javascript" src="https://t.ofsys.com/js/Journey/1/TgYAAHJXZTdvUzcrAABIbjg5bjTMBwAA/DI.Journey-min.js"></script>
+</head>
+<body class="post-template-default single single-post postid-2415863 single-format-standard ranker-plugin tribe-no-js tribe-theme-metronews theme-metronews">
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PKJL6LH"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-dark-grayscale"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 0.49803921568627" /><feFuncG type="table" tableValues="0 0.49803921568627" /><feFuncB type="table" tableValues="0 0.49803921568627" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-grayscale"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 1" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0 1" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-purple-yellow"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.54901960784314 0.98823529411765" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0.71764705882353 0.25490196078431" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-blue-red"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 1" /><feFuncG type="table" tableValues="0 0.27843137254902" /><feFuncB type="table" tableValues="0.5921568627451 0.27843137254902" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-midnight"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 0" /><feFuncG type="table" tableValues="0 0.64705882352941" /><feFuncB type="table" tableValues="0 1" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-magenta-yellow"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.78039215686275 1" /><feFuncG type="table" tableValues="0 0.94901960784314" /><feFuncB type="table" tableValues="0.35294117647059 0.47058823529412" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-purple-green"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.65098039215686 0.40392156862745" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0.44705882352941 0.4" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-blue-orange"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.098039215686275 1" /><feFuncG type="table" tableValues="0 0.66274509803922" /><feFuncB type="table" tableValues="0.84705882352941 0.41960784313725" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><div id="page" class="site">
+    <a class="skip-link screen-reader-text" href="#primary">Skip to content</a>
+        <header id="masthead" class="site-header">
+            <div class="nav">
+                <div class="nav__menu nav-col">
+                    <div id="masthead-height"></div>
+                    <!-- <a id="menu-toggle" role="button" href="" class="nav__burger">
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                    </a> -->
+
+                    <button id="menu-toggle" class="hamburger hamburger--slider" type="button">
+                        <span class="hamburger-box">
+                            <span class="hamburger-inner"></span>
+                        </span>
+                    </button>
+                    <a href="https://journalmetro.com/zone-membre/inscription/" class="nav__metro-login ">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                            <path d="M272 304h-96C78.8 304 0 382.8 0 480c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32C448 382.8 369.2 304 272 304zM48.99 464C56.89 400.9 110.8 352 176 352h96c65.16 0 119.1 48.95 127 112H48.99zM224 256c70.69 0 128-57.31 128-128c0-70.69-57.31-128-128-128S96 57.31 96 128C96 198.7 153.3 256 224 256zM224 48c44.11 0 80 35.89 80 80c0 44.11-35.89 80-80 80S144 172.1 144 128C144 83.89 179.9 48 224 48z"/>
+                        </svg>
+                    </a>
+                    <div id="header-search-row">
+                        <form id="searchform" action="/" method="get">
+                            <a id="cross-close-search">
+                            <svg width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                    <path d="M7,-2 C7.55228475,-2 8,-1.55228475 8,-1 C8,-0.977895007 7.99928277,-0.955957531 7.99787032,-0.934209575 L7.99702056,-0.934421539 L7.99702056,6.00297944 L14.961,6.002 L15,6 C15.5128358,6 15.9355072,6.38604019 15.9932723,6.88337887 L16,7 C16,7.55228475 15.5522847,8 15,8 C14.9831415,8 14.9663804,7.99958283 14.9497265,7.99875825 L7.99702056,7.99702056 L7.997,14.95 L8,15 C8,15.5128358 7.61395981,15.9355072 7.11662113,15.9932723 L7,16 C6.44771525,16 6,15.5522847 6,15 C6,14.9868504 6.00025381,14.97376 6.00075679,14.9607336 L6.00297944,7.99702056 L-0.95,7.997 L-1,8 C-1.51283584,8 -1.93550716,7.61395981 -1.99327227,7.11662113 L-2,7 C-2,6.44771525 -1.55228475,6 -1,6 C-0.986737004,6 -0.973534315,6.0002582 -0.960396684,6.00076985 L6.00297944,6.00297944 L6.00297944,-0.934421539 L6.003,-0.935 L6,-1 C6,-1.51283584 6.38604019,-1.93550716 6.88337887,-1.99327227 Z" id="Combined-Shape" fill="#1D443E" fill-rule="nonzero" transform="translate(7.000000, 7.000000) rotate(-45.000000) translate(-7.000000, -7.000000) "></path>
+                                </g>
+                            </svg>
+                            </a>
+                            <div id="searchform-input">
+                                <input type="text" id="s" name="s" class="no-outline" placeholder="Que cherchez-vous ?" autocomplete="off"/>
+                            </div>
+                            <div id="searchform-button">
+                                <button><img src="https://journalmetro.com/wp-content/themes/metronews/assets/images/cross.svg"/></button>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+                                <div class="nav__brand nav-col">
+                    <a href="/" class="nav-item">
+                        <img src="https://journalmetro.com/wp-content/uploads/2022/10/logo-metro.svg" width="200" height="50">
+                    </a>
+                </div>
+                                <div class="nav__links nav-col">
+                    <a href="https://journalmetro.com/zone-membre/connexion/" class="local-meta ">
+                        <span>Mon Métro</span>
+                    </a>
+                    <p class="local-meta">
+                        <span class="local-date">26 Oct 2022</span> <span class="local-weather"><i class="fal fa-clouds"></i> <strong>15</strong> &#xb0;C</span>
+                    </p>
+                    <!-- <a href="#" class="nav-item">Soutenez Métro</a>
+                    <a href="#" class="nav-item">Se connecter</a>
+                    <a href="#" class="nav-compte-button">Créer un compte</a> -->
+                </div>
+                <div id="nav__links-phantom" class="nav-col"></div>
+            </div>
+
+            
+        </header>
+                									<div class="subnav">
+					<a href="/actualites/" class="subnav-item">Actualités</a><a href="/local/" class="subnav-item">M Local</a><a href="/environnement/" class="subnav-item">Environnement</a><a href="/inspiration/habitation-et-immobilier/" class="subnav-item">Immobilier</a><a href="/culture/" class="subnav-item">Culture</a><a href="/parlons-cash/" class="subnav-item">Parlons cash</a><a href="/inspiration/" class="subnav-item">Inspiration</a>					</div>
+					                <div id="bg"></div><!-- this is the gray element over page when side menu is open -->
+                <nav id="main-nav">
+    <div id="main-nav-inner">
+        <ul class="primaire">
+          <li id="menu-item-2687862" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-2687862"><a href="/actualites/">Actualités</a>
+<ul class="sub-menu">
+	<li id="menu-item-2687864" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2687864"><a href="/actualites/montreal/">Montréal</a></li>
+	<li id="menu-item-2687865" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2687865"><a href="/actualites/national/">National</a></li>
+	<li id="menu-item-2687866" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2687866"><a href="/actualites/politique/">Politique</a></li>
+</ul>
+</li>
+<li id="menu-item-2687899" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-2687899"><a href="/local/">M Local</a>
+<ul class="sub-menu">
+	<li id="menu-item-2687900" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2687900"><a href="/local/ahuntsic-cartierville/">Ahuntsic-Cartierville</a></li>
+	<li id="menu-item-2687901" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2687901"><a href="/local/cote-des-neiges-ndg/">Côte-des-Neiges &amp; NDG</a></li>
+	<li id="menu-item-2687902" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2687902"><a href="/local/hochelaga-maisonneuve/">Hochelaga-Maisonneuve</a></li>
+	<li id="menu-item-2687903" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2687903"><a href="/local/ids-verdun/">IDS-Verdun</a></li>
+	<li id="menu-item-2687904" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2687904"><a href="/local/lachine-dorval/">Lachine &amp; Dorval</a></li>
+	<li id="menu-item-2687905" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2687905"><a href="/local/lasalle/">LaSalle</a></li>
+	<li id="menu-item-2687906" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2687906"><a href="/local/le-plateau-mont-royal/">Le Plateau-Mont-Royal</a></li>
+	<li id="menu-item-2687907" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2687907"><a href="/local/mercier-anjou/">Mercier &amp; Anjou</a></li>
+	<li id="menu-item-2687908" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2687908"><a href="/local/montreal-nord/">Montréal-Nord</a></li>
+	<li id="menu-item-2687909" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2687909"><a href="/local/ouest-de-lile/">Ouest-de-l’Île</a></li>
+	<li id="menu-item-2687910" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2687910"><a href="/local/outremont-mont-royal/">Outremont &amp; Mont-Royal</a></li>
+	<li id="menu-item-2687911" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2687911"><a href="/local/pointe-aux-trembles-montreal-est/">Pointe-aux-Trembles &amp; Montréal-Est</a></li>
+	<li id="menu-item-2687912" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2687912"><a href="/local/riviere-des-prairies/">Rivière-des-Prairies</a></li>
+	<li id="menu-item-2687913" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2687913"><a href="/local/rosemont-la-petite-patrie/">Rosemont–La Petite-Patrie</a></li>
+	<li id="menu-item-2687914" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2687914"><a href="/local/saint-laurent/">Saint-Laurent</a></li>
+	<li id="menu-item-2687915" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2687915"><a href="/local/saint-leonard/">Saint-Léonard</a></li>
+	<li id="menu-item-2687916" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2687916"><a href="/local/sud-ouest/">Sud-Ouest</a></li>
+	<li id="menu-item-2687953" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2687953"><a href="/local/ville-marie/">Ville-Marie</a></li>
+	<li id="menu-item-2687954" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2687954"><a href="/local/villeray-st-michel-parc-extension/">Villeray–Saint-Michel–Parc-Extension</a></li>
+</ul>
+</li>
+<li id="menu-item-2687867" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2687867"><a href="/debats/">Débats</a></li>
+<li id="menu-item-2687871" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2687871"><a href="/environnement/">Environnement</a></li>
+<li id="menu-item-2806974" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2806974"><a href="/inspiration/habitation-et-immobilier/">Immobilier</a></li>
+<li id="menu-item-2687869" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-2687869"><a href="/societe/">Société</a>
+<ul class="sub-menu">
+	<li id="menu-item-2734626" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2734626"><a href="/m-jeunes/">M jeunes</a></li>
+	<li id="menu-item-2687870" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2687870"><a href="/societe/education/">Éducation</a></li>
+	<li id="menu-item-2687872" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2687872"><a href="/societe/mobilite/">Mobilité</a></li>
+	<li id="menu-item-2687873" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2687873"><a href="/societe/techno/">Techno</a></li>
+	<li id="menu-item-2687955" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2687955"><a href="/societe/vivre-ensemble/">Vivre ensemble</a></li>
+</ul>
+</li>
+<li id="menu-item-2687880" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-2687880"><a href="/culture/">Culture</a>
+<ul class="sub-menu">
+	<li id="menu-item-2687881" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2687881"><a href="/culture/arts-et-spectacles/">Arts et spectacles</a></li>
+	<li id="menu-item-2687882" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2687882"><a href="/culture/ecrans/">Écrans</a></li>
+	<li id="menu-item-2687883" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2687883"><a href="/culture/rencontres/">Rencontres</a></li>
+</ul>
+</li>
+<li id="menu-item-2687884" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-2687884"><a href="/inspiration/">Inspiration</a>
+<ul class="sub-menu">
+	<li id="menu-item-2687885" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2687885"><a href="/inspiration/trouvailles-dici/">Trouvailles d’ici</a></li>
+	<li id="menu-item-2687886" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2687886"><a href="/inspiration/evasion/">Évasion</a></li>
+	<li id="menu-item-2687887" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2687887"><a href="/inspiration/habitation-et-immobilier/">Habitation et immobilier</a></li>
+	<li id="menu-item-2687888" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2687888"><a href="/inspiration/a-table/">À table</a></li>
+	<li id="menu-item-2910205" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2910205"><a href="/inspiration/sorties/">Sorties</a></li>
+</ul>
+</li>
+<li id="menu-item-2742929" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-2742929"><a href="/parlons-cash/">Parlons cash</a>
+<ul class="sub-menu">
+	<li id="menu-item-2742931" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2742931"><a href="/parlons-cash/parlons-bacon/">Parlons bacon</a></li>
+	<li id="menu-item-2742930" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2742930"><a href="/parlons-cash/finances-personnelles/">Finances personnelles</a></li>
+	<li id="menu-item-2687891" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2687891"><a href="/entrepreneuriat/">Entrepreneuriat</a></li>
+	<li id="menu-item-2687895" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2687895"><a href="/entrepreneuriat/formation-et-emplois/">Formation et emplois</a></li>
+</ul>
+</li>
+<li id="menu-item-2829076" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2829076"><a href="/sports/">Sports</a></li>
+<li id="menu-item-2887222" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2887222"><a href="https://journalmetro.com/evenements/">Événements</a></li>
+<li id="menu-item-2687956" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2687956"><a href="https://journalmetro.com/videos/">Vidéos</a></li>
+<li id="menu-item-2687897" class="vedette menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2687897"><a href="/explorez/">Explorez</a></li>
+<li id="menu-item-2842100" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2842100"><a href="https://www.mboutiquemetro.com/">M Boutique &#8211; Découvrez les offres</a></li>
+        </ul>
+        <ul class="secondaire">
+        <li id="menu-item-2687929" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2687929"><a href="https://journalmetro.com/metro-emplois/">Emplois</a></li>
+<li id="menu-item-2687961" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2687961"><a href="https://journalmetro.com/vote-populaire/">Vote populaire</a></li>
+<li id="menu-item-2687963" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2687963"><a href="https://journalmetro.com/metro-a-loeil/">Métro à l&rsquo;oeil</a></li>
+<li id="menu-item-2704099" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2704099"><a href="https://journalmetro.com/infolettres/">Infolettres</a></li>
+<li id="menu-item-2934709" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2934709"><a href="https://journalmetro.com/concours/">Concours</a></li>
+<li id="menu-item-2910654" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2910654"><a href="https://journalmetro.com/soutenez-metro/">Soutenez Métro</a></li>
+<li id="menu-item-2910655" class="nav-mon-metro-link menu-item menu-item-type-post_type menu-item-object-page menu-item-2910655"><a href="https://journalmetro.com/zone-membre/">Mon Métro</a></li>
+        </ul>
+        <ul class="tertiaire">
+        <li id="menu-item-2687975" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2687975"><a href="https://journalmetro.com/annoncez-avec-nous/">Annoncez avec nous</a></li>
+<li id="menu-item-2687977" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2687977"><a href="https://journalmetro.com/conditions-dutilisation/">Conditions d’utilisation</a></li>
+        </ul>
+    </div>
+</nav>
+    
+    
+                                <div data-sticky-ad-container>
+                <section class="section section-pub m-container section-pub--under-header pub-sticky" data-sticky-ad>
+                    				<div class="center" data-m32-ad data-options='{&quot;sizes&quot;:&quot;[[728,90],[970,250],[320,50]]&quot;,&quot;dfpId&quot;:&quot;21658289790,22389335471&quot;,&quot;dfpAdUnitPath&quot;:&quot;journalmetro/monde&quot;,&quot;sizeMapping&quot;:[{&quot;viewport&quot;:{&quot;min_width&quot;:0, &quot;min_height&quot;:0}, &quot;sizes&quot;:[[320,50]]}, {&quot;viewport&quot;:{&quot;min_width&quot;:768, &quot;min_height&quot;:0}, &quot;sizes&quot;:[[728,90]]}, {&quot;viewport&quot;:{&quot;min_width&quot;:1024, &quot;min_height&quot;:0}, &quot;sizes&quot;:[[728,90], [970,250]]}]}'></div>
+			                </section>
+            </div>
+        
+<section id="entry-content-container" class="wp-block-columns">
+  <div id="single-metro-share-icons" class="wp-block-column is-1 metro-share-icons">
+    
+<nav class="metro-share-icons">
+	<a class="metro-share-icons__facebook" href="https://journalmetro.com/monde/2415863/trump-sen-prend-a-bolton-lors-de-son-proces-en-destitution/?share=facebook&nb=1">
+		<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+			<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+				<g id="facebook-24px">
+					<polygon id="Path" points="0 0 24 0 24 24 0 24"></polygon>
+					<path fill="#4267B2" d="M17.0097656,13.25 L17.5652344,9.63046875 L14.0921875,9.63046875 L14.0921875,7.28164063 C14.0921875,6.29140625 14.5773437,5.32617188 16.1328125,5.32617188 L17.7117187,5.32617188 L17.7117187,2.24453125 C17.7117187,2.24453125 16.2789062,2 14.9089844,2 C12.0488281,2 10.1792969,3.73359375 10.1792969,6.871875 L10.1792969,9.63046875 L7,9.63046875 L7,13.25 L10.1792969,13.25 L10.1792969,22 L14.0921875,22 L14.0921875,13.25 L17.0097656,13.25 Z" id="Path" fill="#000000" fill-rule="nonzero"></path>
+				</g>
+			</g>
+		</svg>
+	</a>
+	<a class="metro-share-icons__twitter" href="https://journalmetro.com/monde/2415863/trump-sen-prend-a-bolton-lors-de-son-proces-en-destitution/?share=twitter&nb=1">
+		<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+			<g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+				<g id="twitter-24px">
+					<polygon id="Path" points="0 0 24 0 24 24 0 24"></polygon>
+					<path fill="#1DA1F2" d="M19.9442107,8.04821894 C19.9569061,8.22587588 19.9569061,8.40357189 19.9569061,8.58122883 C19.9569061,14 15.832554,20.2436963 8.29443865,20.2436963 C5.97208583,20.2436963 3.81473365,19.5710764 2,18.403611 C2.32996223,18.441658 2.64719003,18.4543533 2.98984762,18.4543533 C4.90606604,18.4543533 6.6700573,17.8071633 8.07869562,16.7030965 C6.27665733,16.6650104 4.76649518,15.4848105 4.24618065,13.8604291 C4.5,13.8984762 4.75379982,13.9238669 5.0203243,13.9238669 C5.38833355,13.9238669 5.75638186,13.8730854 6.09900039,13.784296 C4.22082899,13.4035524 2.81215161,11.7538194 2.81215161,9.76142876 L2.81215161,9.71068637 C3.3578178,10.0152579 3.9923906,10.2056102 4.66493228,10.2309618 C3.56086547,9.49490428 2.83754233,8.23857124 2.83754233,6.81723757 C2.83754233,6.05582834 3.04055094,5.35785687 3.39590389,4.74871386 C5.41368521,7.23602827 8.44670487,8.86037055 11.8476947,9.03806655 C11.784257,8.73349505 11.7461709,8.41626725 11.7461709,8.09900039 C11.7461709,5.84008531 13.5735999,4 15.8451713,4 C17.0253712,4 18.0913519,4.49492381 18.8401048,5.29441912 C19.7664757,5.11676217 20.6547994,4.77410459 21.4416384,4.3045715 C21.1370279,5.2563721 20.4898379,6.05586741 19.6396002,6.56344751 C20.4644862,6.4746581 21.2639815,6.24618065 22,5.92895285 C21.4417166,6.74110446 20.743706,7.4644276 19.9442107,8.04821894 Z" id="Path" fill="#000000" fill-rule="nonzero"></path>
+				</g>
+			</g>
+		</svg>
+	</a>
+	<a class="metro-share-icons__linkedin" href="https://journalmetro.com/monde/2415863/trump-sen-prend-a-bolton-lors-de-son-proces-en-destitution/?share=linkedin&nb=1">
+		<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+			<g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+				<g id="Icons-/-LinkedIn" transform="translate(-2.000000, -2.000000)" fill="#2867B2" fill-rule="nonzero">
+					<path d="M6.47678571,22 L2.33035714,22 L2.33035714,8.64702335 L6.47678571,8.64702335 L6.47678571,22 Z M4.40133929,6.82555411 C3.07544643,6.82555411 2,5.72731531 2,4.40139286 C2,3.0751402 3.07511623,2 4.40133929,2 C5.72756234,2 6.80267857,3.0751402 6.80267857,4.40139286 C6.80267857,5.72731531 5.72678571,6.82555411 4.40133929,6.82555411 Z M21.9955357,22 L17.8580357,22 L17.8580357,15.4998549 C17.8580357,13.9507132 17.8267857,11.9640617 15.7022321,11.9640617 C13.5464286,11.9640617 13.2160714,13.647135 13.2160714,15.3882453 L13.2160714,22 L9.07410714,22 L9.07410714,8.64702335 L13.0508929,8.64702335 L13.0508929,10.4684926 L13.1089286,10.4684926 C13.6625,9.41936202 15.0147321,8.31219444 17.0321429,8.31219444 C21.2285714,8.31219444 22,11.075649 22,14.6650148 L22,22 L21.9955357,22 Z" id="Shape"></path>
+				</g>
+			</g>
+		</svg>
+	</a>
+	<a class="metro-share-icons__copy" href="https://journalmetro.com/monde/2415863/trump-sen-prend-a-bolton-lors-de-son-proces-en-destitution/">
+		<svg width="20px" height="10px" viewBox="0 0 20 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+			<g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+				<g id="Icons-/-Link" transform="translate(-2.000000, -7.000000)" fill="#45846C" fill-rule="nonzero">
+					<path d="M3.9,12 C3.9,10.29 5.29,8.9 7,8.9 L11,8.9 L11,7 L7,7 C4.24,7 2,9.24 2,12 C2,14.76 4.24,17 7,17 L11,17 L11,15.1 L7,15.1 C5.29,15.1 3.9,13.71 3.9,12 Z M8,13 L16,13 L16,11 L8,11 L8,13 Z M17,7 L13,7 L13,8.9 L17,8.9 C18.71,8.9 20.1,10.29 20.1,12 C20.1,13.71 18.71,15.1 17,15.1 L13,15.1 L13,17 L17,17 C19.76,17 22,14.76 22,12 C22,9.24 19.76,7 17,7 Z" id="Shape"></path>
+				</g>
+			</g>
+		</svg>
+		<span class="tooltip">Copié</span>
+	</a>
+</nav>
+  </div>
+  <main id="primary" class="site-main wp-block-column is-7">
+		
+<article id="post-2415863" class="post-2415863 post type-post status-publish format-standard has-post-thumbnail hentry category-monde tag-agence-france-presse tag-donald-trump tag-etats-unis tag-justice">
+    <header class="entry-header">
+                            <nav class="breadcrumb" aria-label="breadcrumbs">
+                <span><span><a href="https://journalmetro.com/">Accueil</a> » <span><a href="/monde/">Monde</a> » <span class="breadcrumb_last" aria-current="page">Trump s&rsquo;en prend à Bolton lors de son procès en destitution</span></span></span></span>            </nav>
+                        <div class="entry-header__bar">
+                            <div>
+                    <span class="listing__category"><a href="/monde/">Monde</a></span>                </div>
+                        <div class="entry-header__actions">
+                
+                                                    <a href="https://journalmetro.com/soutenez-metro/" class="c-favorite c-favorite--inline">
+                        <svg class="c-favorite__ribbon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 13">
+                            <path d="M11.4382 1.19027C10.7873 0.135296 9.53052 -0.201397 8.36349 0.112849C7.03935 0.471988 6.27629 1.52696 5.69277 2.69416C4.1442 1.10048 1.56326 -0.291182 0.284015 2.33502C-0.344388 3.6369 0.1718 5.00612 0.845089 6.15087C2.14678 8.39549 3.83 10.5054 5.31124 12.6378C5.64788 13.1092 6.18652 12.997 6.50072 12.6603C6.61293 12.5929 6.7027 12.5256 6.77003 12.3909C8.20638 10.0565 9.75495 7.74455 11.0791 5.34281C11.7748 4.10827 12.2686 2.51459 11.4382 1.19027Z" fill="#FE153D"/>
+                        </svg>
+                        <span class="c-favorite__label">
+                            Soutenez
+                        </span>
+                    </a>
+                            </div>
+        </div>
+        <h1 class="entry-title">Trump s&rsquo;en prend à Bolton lors de son procès en destitution</h1>
+        <div id="anchor-to-align-shares-and-aside"></div>
+                                 <figure class="post-thumbnail ">
+            <img width="1051" height="591" src="https://journalmetro.com/wp-content/uploads/2020/01/GettyImages-1202597261-e1580315054307.jpg?resize=1051%2C591" class="attachment-metro-single-featured size-metro-single-featured wp-post-image" alt="Trump s&#039;en prend à Bolton lors de son procès en destitution" srcset="https://journalmetro.com/wp-content/uploads/2020/01/GettyImages-1202597261-e1580315054307.jpg?w=2929 2929w, https://journalmetro.com/wp-content/uploads/2020/01/GettyImages-1202597261-e1580315054307.jpg?w=150 150w, https://journalmetro.com/wp-content/uploads/2020/01/GettyImages-1202597261-e1580315054307.jpg?w=242 242w, https://journalmetro.com/wp-content/uploads/2020/01/GettyImages-1202597261-e1580315054307.jpg?w=768 768w, https://journalmetro.com/wp-content/uploads/2020/01/GettyImages-1202597261-e1580315054307.jpg?w=470 470w, https://journalmetro.com/wp-content/uploads/2020/01/GettyImages-1202597261-e1580315054307.jpg?w=1536 1536w, https://journalmetro.com/wp-content/uploads/2020/01/GettyImages-1202597261-e1580315054307.jpg?w=2048 2048w, https://journalmetro.com/wp-content/uploads/2020/01/GettyImages-1202597261-e1580315054307.jpg?w=980 980w, https://journalmetro.com/wp-content/uploads/2020/01/GettyImages-1202597261-e1580315054307.jpg?w=1051 1051w, https://journalmetro.com/wp-content/uploads/2020/01/GettyImages-1202597261-e1580315054307.jpg?w=2600 2600w" sizes="(max-width: 1051px) 100vw, 1051px" data-photo-credit="Alex Wong/Getty Images" />                            <figcaption>
+                <span class="post-thumbnail-legend">Donald Trump </span>                <span class="photo-credit">Photo: <strong>Alex Wong/Getty Images</strong></span>                </figcaption>
+                        </figure><!-- .post-thumbnail -->
+           
+        
+        <!-- Vast Tag -->
+        
+                <div class="listing is-style__author">
+            <div class="listing__content">
+                <a class="listing__left">
+                                    <figure class="image">
+                        <img src="">
+                    </figure>
+                                </a>
+                <div class="listing__right">
+                                            <h5 class="listing__title">Rédaction - Agence France-Presse</h5>
+                                        <div class="listing__meta">
+                        <a class="listing__date"><span>29 janvier  2020  à 11h31 </span></a>
+                        <a class="listing__date">4 minutes de lecture</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    </header><!-- .entry-header -->
+
+    <div class="metro-entry-content">
+        <p>Donald Trump s’est déchaîné mercredi contre son ancien conseiller John Bolton, dont les confidences compliquent les appels du président américain à clore au plus vite son <a href="https://journalmetro.com/monde/2414909/trump-na-rien-fait-de-mal-les-avocats-du-president-entrent-en-scene/" target="_blank" rel="noopener noreferrer">procès en destitution</a> par un acquittement, sans s’embarrasser de nouveaux témoins.</p>
+<p>Avant que les sénateurs chargés de le juger n’entament un exercice de questions-réponses très codifié, le locataire de la Maison-Blanche a taxé d’ingratitude son ex-conseiller à la sécurité nationale, l’accusant d’avoir multiplié les «erreurs de jugement».</p>
+<p>Il «m’a « supplié » pour que je lui donne» ce poste et «il s’est fait virer parce que franchement, si je l’écoutais, on en serait à la Sixième Guerre mondiale», a assené Donald Trump dans un tweet matinal. «Il s’en va et immédiatement il écrit un livre faux et méchant», s’est-il encore indigné.</p>
+<h3>Bolton dénonce Trump</h3>
+<p>Limogé en septembre, John Bolton, un néoconservateur connu pour ses positions belliqueuses, s’apprête à publier un livre-témoignage qui met à mal l’une des principales lignes de défense du 45e président des États-Unis.</p>
+<p>Dans cet ouvrage, il affirme que Donald Trump lui a dit en août ne pas vouloir débloquer une aide destinée à l’Ukraine tant que ce pays n’enquêterait pas sur le démocrate Joe Biden, bien placé pour l’affronter lors de l’élection présidentielle du 3 novembre.</p>
+<p>Ces allégations, rendues publiques dimanche soir, ont fait l’effet d’une bombe car elles touchent au coeur du dossier d’accusation contre le président, jugé pour «abus de pouvoir» et «entrave au travail du Congrès».</p>
+<p>Elles ont également renforcé les démocrates, qui réclament depuis des semaines la convocation de plusieurs haut responsables de la Maison-Blanche devant les sénateurs. John Bolton a fait savoir qu’il était prêt à témoigner si le Sénat lui adressait une assignation à comparaître.</p>
+<p>L’opposition sait qu’elle n’a quasiment aucune chance d’obtenir la destitution du président, la Constitution imposant une majorité des deux tiers (soit 67 voix) pour y parvenir. À moins de 300 jours du scrutin présidentiel, elle espère toutefois obtenir des informations embarrassantes contre le candidat à sa réélection.</p>
+<p>Pour éviter un déballage dangereux, Donald Trump et ses partisans s’opposent eux avec vigueur à la convocation de nouveaux témoins.</p>
+<p>En conclusion de leur plaidoirie, les avocats du président ont demandé mardi aux cent élus de la chambre haute du Congrès de l’aquitter «aussi vite que possible». «Il est temps d’en finir», a estimé Pat Cipollone.</p>
+<h3>Le Sénat décisif</h3>
+<p>Les 53 sénateurs républicains ont jusqu’ici fait bloc autour de leur président, mais les révélations de John Bolton ont fait bouger les lignes et leur leader Mitch McConnell a reconnu mardi ne pas avoir suffisamment de voix à l’heure actuelle pour bloquer la demande de témoins.</p>
+<p>Il reste trois jours à ce stratège expérimenté pour essayer de faire rentrer dans le rang les quelques sénateurs républicains modérés, dont Mitt Romney, Susan Collins ou encore Lisa Murkowski, susceptibles d’apporter leur soutien aux 47 sénateurs de la minorité lors d’un vote vendredi en fin de journée.</p>
+<p>«Républicains, rappelez-vous que les démocrates ont déjà eu 17 témoins et nous AUCUN!», leur a lancé mercredi Donald Trump. «Ne laissez pas les démocrates se jouer de vous», a-t-il encore tweeté.</p>
+<p>En écho, le sénateur républicain John Cornyn a jugé «inutile» de convoquer plus de témoins.</p>
+<p>«Cela paralyserait le Sénat pour un temps indéfini avec des batailles judiciaires sur les privilèges du pouvoir exécutif», a-t-il mis en garde, laissant entendre que la Maison-Blanche s’opposerait à l’audition de ses conseillers au nom de la confidentialité des échanges en son sein.</p>
+<p>En attendant de se prononcer sur le sujet, les sénateurs, contraints depuis huit jours de suivre les débats sans intervenir, vont pouvoir poser mercredi et jeudi leurs questions à l’accusation et à la défense.</p>
+<p>Selon les règles strictes du Sénat, ils devront formuler leurs demandes par écrit et elles seront lues par le président de la Cour suprême John Roberts qui préside ce procès exceptionnel. Celui-ci a souhaité mardi que les parties ne prennent pas plus de 5 minutes pour répondre, mais rien ne leur impose de s’y tenir.</p>
+<p>Lors du procès en destitution de Bill Clinton, jugé en 1999 pour avoir menti sur sa liaison avec la stagiaire de la Maison-Blanche Monica Lewinsky, les sénateurs avaient posé plus de 150 questions.</p>
+    </div><!-- .entry-content -->
+
+    <footer class="entry-footer">
+    </footer><!-- .entry-footer -->
+</article><!-- #post-2415863 -->
+            <div class="headline-border">
+                <h4>Articles récents du même sujet</h4>
+            </div>
+
+            <div class="two-column-related-post">
+        
+                    <div class="col">
+            <article class="listing">
+  <a href="https://journalmetro.com/monde/2238918/usa-une-tornade-a-endommage-au-moins-21-maisons-jeudi-soir-au-michigan/" class="image">
+    <figure class="figure">
+      <img loading="lazy" src="https://journalmetro.com/wp-content/uploads/2019/03/ee200d227aeb4876827ab06c99b9b43d-ee200d227aeb4876827ab06c99b9b43d-0.CPT636882362723275522.jpg?resize=640,360" width="640" height="360" data-recalc-dims="1">
+    </figure>
+  </a>
+  <div class="listing__content">
+            <a href="https://journalmetro.com/environnement/" class="listing__category">Environnement</a>
+            <h3 class="listing__title">
+        <a href="https://journalmetro.com/monde/2238918/usa-une-tornade-a-endommage-au-moins-21-maisons-jeudi-soir-au-michigan/">Une tornade a endommagé au moins 21 maisons jeudi soir au Michigan</a>
+      </h3>
+      <p class="listing__excerpt">
+        <a href="https://journalmetro.com/monde/2238918/usa-une-tornade-a-endommage-au-moins-21-maisons-jeudi-soir-au-michigan/">
+        VERNON TOWNSHIP, Mich. — Les services météorologiques des États-Unis confirment qu&rsquo;une tornade a déferlé jeudi soir dans l&rsquo;État du&nbsp;Michigan, sans faire de blessés apparents. La police de l&rsquo;État du Michigan</a>
+      </p>
+      <div class="listing__meta">
+        <p class="listing__author">15 mars 2019  à 4h05</p> –
+                  <span class="listing__author">Rédaction - La Presse canadienne</span>
+                </div>
+      <!-- listing__meta -->
+      </div>
+  <!-- listing__content -->
+</article>
+                    </div>
+
+            
+                    <div class="col">
+            <article class="listing">
+  <a href="https://journalmetro.com/monde/2784176/pourquoi-il-faut-prendre-les-menaces-nucleaires-russes-au-serieux/" class="image">
+    <figure class="figure">
+      <img loading="lazy" src="https://journalmetro.com/wp-content/uploads/2022/03/iStock-1146907091.jpg?resize=640,360" width="640" height="360" data-recalc-dims="1">
+    </figure>
+  </a>
+  <div class="listing__content">
+            <a href="https://journalmetro.com/monde/" class="listing__category">Monde</a>
+            <h3 class="listing__title">
+        <a href="https://journalmetro.com/monde/2784176/pourquoi-il-faut-prendre-les-menaces-nucleaires-russes-au-serieux/">Pourquoi il faut prendre les menaces nucléaires russes au sérieux</a>
+      </h3>
+      <p class="listing__excerpt">
+        <a href="https://journalmetro.com/monde/2784176/pourquoi-il-faut-prendre-les-menaces-nucleaires-russes-au-serieux/">
+        Alors que les violences se poursuivent en Ukraine, la tension augmente sur la scène internationale. Les sanctions économiques contre la Russie se multiplient, incluant le retrait de produits russes des étagères, et Vladimir Poutine brandit la menace nucléaire. Mais cette menace est-elle sérieuse? </a>
+      </p>
+      <div class="listing__meta">
+        <p class="listing__author">1 mars 2022  à 12h20</p> –
+                  <span class="listing__author">Cyrille Bret - Géopoliticien, Sciences Po</span>
+                </div>
+      <!-- listing__meta -->
+      </div>
+  <!-- listing__content -->
+</article>
+                    </div>
+
+            
+                    <div class="col">
+            <article class="listing">
+  <a href="https://journalmetro.com/monde/2688767/covid-19-la-4e-vague-ralentit-dans-le-monde-mais-pas-au-canada/" class="image">
+    <figure class="figure">
+      <img loading="lazy" src="https://journalmetro.com/wp-content/uploads/2021/07/GettyImages-1324026302-e1625663494609.jpeg?resize=640,360" width="640" height="360" data-recalc-dims="1">
+    </figure>
+  </a>
+  <div class="listing__content">
+            <a href="https://journalmetro.com/monde/" class="listing__category">Monde</a>
+            <h3 class="listing__title">
+        <a href="https://journalmetro.com/monde/2688767/covid-19-la-4e-vague-ralentit-dans-le-monde-mais-pas-au-canada/">COVID-19: la 4e vague ralentit dans le monde, mais pas au Canada</a>
+      </h3>
+      <p class="listing__excerpt">
+        <a href="https://journalmetro.com/monde/2688767/covid-19-la-4e-vague-ralentit-dans-le-monde-mais-pas-au-canada/">
+        La quatrième vague de COVID-19 semble ralentir à travers la planète après plus de deux mois de hausse continue, si l’on se fie à la dernière mise à jour hebdomadaire</a>
+      </p>
+      <div class="listing__meta">
+        <p class="listing__author">1 septembre 2021  à 8h51</p> –
+                  <a href="https://journalmetro.com/auteur/mnolibe/" class="listing__author">Martin Nolibé - Métro</a>
+                </div>
+      <!-- listing__meta -->
+      </div>
+  <!-- listing__content -->
+</article>
+                    </div>
+
+            
+                    <div class="col">
+            <article class="listing">
+  <a href="https://journalmetro.com/monde/2676747/passeport-vaccinal-ou-est-il-instaure-ailleurs-dans-le-monde/" class="image">
+    <figure class="figure">
+      <img loading="lazy" src="https://journalmetro.com/wp-content/uploads/2021/05/165078058_m.jpg?resize=640,360" width="640" height="360" data-recalc-dims="1">
+    </figure>
+  </a>
+  <div class="listing__content">
+            <a href="https://journalmetro.com/monde/" class="listing__category">Monde</a>
+            <h3 class="listing__title">
+        <a href="https://journalmetro.com/monde/2676747/passeport-vaccinal-ou-est-il-instaure-ailleurs-dans-le-monde/">Passeport vaccinal: où a-t-il déjà été instauré?</a>
+      </h3>
+      <p class="listing__excerpt">
+        <a href="https://journalmetro.com/monde/2676747/passeport-vaccinal-ou-est-il-instaure-ailleurs-dans-le-monde/">
+        Québec instaurera bel et bien un passeport vaccinal à la grandeur de la province, a confirmé jeudi le premier ministre François Legault. Si elle n’a pas le même nom partout,</a>
+      </p>
+      <div class="listing__meta">
+        <p class="listing__author">5 août 2021  à 13h03</p> –
+                  <a href="https://journalmetro.com/auteur/ngelper/" class="listing__author">Naomie Gelper - Métro Média</a>
+                </div>
+      <!-- listing__meta -->
+      </div>
+  <!-- listing__content -->
+</article>
+                    </div>
+
+                    </div>
+        				<div class="center bottom fluid-ad-container" data-m32-ad data-options='{&quot;sizes&quot;:&quot;[\&quot;fluid\&quot;]&quot;,&quot;dfpId&quot;:&quot;21658289790,22389335471&quot;,&quot;dfpAdUnitPath&quot;:&quot;journalmetro/monde&quot;,&quot;sizeMapping&quot;:[{&quot;viewport&quot;:{&quot;min_width&quot;:0, &quot;min_height&quot;:0}, &quot;sizes&quot;:[[0,0]]}, {&quot;viewport&quot;:{&quot;min_width&quot;:768, &quot;min_height&quot;:0}, &quot;sizes&quot;:[&quot;[\&quot;fluid\&quot;]&quot;]}]}'></div>
+			  </main><!-- #main -->
+  
+<aside id="secondary" class="widget-area wp-block-column is-4">
+	<div class="cell widget-container"><div id="met_ads-20" class="widget widget_met_ads">        <div class="flex-container align-center align-middle" data-m32-ad data-options='{&quot;sizes&quot;:&quot;[\&quot;fluid\&quot;]&quot;,&quot;dfpId&quot;:&quot;21658289790,22389335471&quot;,&quot;dfpAdUnitPath&quot;:&quot;journalmetro/monde&quot;}'></div>
+        </div></div><div class="cell widget-container"><div id="met_dailymotion_video-6" class="widget widget_met_dailymotion_video">
+        <h2 class="widget-title">Grande marche à Montréal en soutien au peuple Iranien</h2>
+                    <div class="textwidget">
+                <div class="responsive-embed">
+                    <iframe src="https://www.dailymotion.com/embed/video/x8etezq?autoPlay=0&mute=0" allow="autoplay" frameborder="0" allowfullscreen=""></iframe>
+                </div>
+            </div>
+            
+        </div></div><div class="cell widget-container"><div id="most_read_stories-4" class="widget widget_most_read_stories">
+        <h2 class="widget-title">Les plus consultés</h2>
+        <div class="grid-x grid-padding-y">
+
+                        <div class="cell">
+            
+<article class="listing is-style__media">
+            <a href="https://journalmetro.com/local/sud-ouest/2935205/des-normes-environnementales-plus-strictes-dans-le-sud-ouest/" class="image">
+            <figure class="figure">
+        <img width="980" height="552" src="https://journalmetro.com/wp-content/uploads/2022/10/VP-AC-Breve-Sud-Ouest-plus-vert-1.jpg?resize=980%2C552" class="attachment-metro-list-image size-metro-list-image" alt="" loading="lazy" srcset="https://journalmetro.com/wp-content/uploads/2022/10/VP-AC-Breve-Sud-Ouest-plus-vert-1.jpg?w=980 980w, https://journalmetro.com/wp-content/uploads/2022/10/VP-AC-Breve-Sud-Ouest-plus-vert-1.jpg?w=1051 1051w" sizes="(max-width: 980px) 100vw, 980px" data-photo-credit="Gracieuseté de l&#039;Arrondissement du Sud-Ouest" />            </figure>
+        </a>
+            <div class="listing__content">
+        <a href="https://journalmetro.com/local/sud-ouest/" class="listing__category">Sud-Ouest</a>        <h3 class="listing__title"><a href="https://journalmetro.com/local/sud-ouest/2935205/des-normes-environnementales-plus-strictes-dans-le-sud-ouest/">Des normes environnementales plus strictes dans le Sud-Ouest</a></h3>
+        <div class="listing__meta">
+            <a class="listing__date">26 octobre 2022  à 17h44</a> - <a href="https://journalmetro.com/auteur/nmonet/" class="listing__author">Nicolas Monet</a>        </div>
+    </div>
+</article>
+                </div>
+                        <div class="cell">
+            
+<article class="listing is-style__media">
+            <a href="https://journalmetro.com/local/ahuntsic-cartierville/2935175/vers-nouveau-centre-art-rue-port-royal/" class="image">
+            <figure class="figure">
+        <img width="980" height="552" src="https://journalmetro.com/wp-content/uploads/2022/10/PCV-CA-Nouveau-centre-dart.jpg?resize=980%2C552" class="attachment-metro-list-image size-metro-list-image" alt="Le bâtiment situé au 333, de Port-Royal." loading="lazy" srcset="https://journalmetro.com/wp-content/uploads/2022/10/PCV-CA-Nouveau-centre-dart.jpg?w=1200 1200w, https://journalmetro.com/wp-content/uploads/2022/10/PCV-CA-Nouveau-centre-dart.jpg?w=150 150w, https://journalmetro.com/wp-content/uploads/2022/10/PCV-CA-Nouveau-centre-dart.jpg?w=242 242w, https://journalmetro.com/wp-content/uploads/2022/10/PCV-CA-Nouveau-centre-dart.jpg?w=768 768w, https://journalmetro.com/wp-content/uploads/2022/10/PCV-CA-Nouveau-centre-dart.jpg?w=470 470w, https://journalmetro.com/wp-content/uploads/2022/10/PCV-CA-Nouveau-centre-dart.jpg?w=980 980w, https://journalmetro.com/wp-content/uploads/2022/10/PCV-CA-Nouveau-centre-dart.jpg?w=1051 1051w" sizes="(max-width: 980px) 100vw, 980px" data-photo-credit="Olivier Boivin/Métro" />            </figure>
+        </a>
+            <div class="listing__content">
+        <a href="https://journalmetro.com/local/ahuntsic-cartierville/" class="listing__category">Ahuntsic-Cartierville</a>        <h3 class="listing__title"><a href="https://journalmetro.com/local/ahuntsic-cartierville/2935175/vers-nouveau-centre-art-rue-port-royal/">Vers un nouveau centre d’art sur la rue Port-Royal</a></h3>
+        <div class="listing__meta">
+            <a class="listing__date">26 octobre 2022  à 17h37</a> - <a href="https://journalmetro.com/auteur/oboivin/" class="listing__author">Olivier Boivin</a>        </div>
+    </div>
+</article>
+                </div>
+                        <div class="cell">
+            
+<article class="listing is-style__media">
+            <a href="https://journalmetro.com/local/le-plateau-mont-royal/2935221/un-concours-de-chiens-deguises-a-montreal/" class="image">
+            <figure class="figure">
+        <img width="980" height="552" src="https://journalmetro.com/wp-content/uploads/2022/10/iStock-1353587449-e1666819359520.jpg?resize=980%2C552" class="attachment-metro-list-image size-metro-list-image" alt="" loading="lazy" srcset="https://journalmetro.com/wp-content/uploads/2022/10/iStock-1353587449-e1666819359520.jpg?w=1254 1254w, https://journalmetro.com/wp-content/uploads/2022/10/iStock-1353587449-e1666819359520.jpg?w=150 150w, https://journalmetro.com/wp-content/uploads/2022/10/iStock-1353587449-e1666819359520.jpg?w=242 242w, https://journalmetro.com/wp-content/uploads/2022/10/iStock-1353587449-e1666819359520.jpg?w=768 768w, https://journalmetro.com/wp-content/uploads/2022/10/iStock-1353587449-e1666819359520.jpg?w=470 470w, https://journalmetro.com/wp-content/uploads/2022/10/iStock-1353587449-e1666819359520.jpg?w=980 980w, https://journalmetro.com/wp-content/uploads/2022/10/iStock-1353587449-e1666819359520.jpg?w=1051 1051w" sizes="(max-width: 980px) 100vw, 980px" data-photo-credit="Firn, iStock" />            </figure>
+        </a>
+            <div class="listing__content">
+        <a href="https://journalmetro.com/local/le-plateau-mont-royal/" class="listing__category">Le Plateau-Mont-Royal</a>        <h3 class="listing__title"><a href="https://journalmetro.com/local/le-plateau-mont-royal/2935221/un-concours-de-chiens-deguises-a-montreal/">Un concours de chiens déguisés à Montréal </a></h3>
+        <div class="listing__meta">
+            <a class="listing__date">26 octobre 2022  à 17h26</a> - <a href="https://journalmetro.com/auteur/jpare/" class="listing__author">Jason Paré</a>        </div>
+    </div>
+</article>
+                </div>
+                        <div class="cell">
+            
+<article class="listing is-style__media">
+            <a href="https://journalmetro.com/local/rosemont-la-petite-patrie/2935185/pilki-des-tisanes-boreales-au-commerce-daromates-sauvages/" class="image">
+            <figure class="figure">
+        <img width="980" height="552" src="https://journalmetro.com/wp-content/uploads/2022/10/Pilki-WEB.jpg?resize=980%2C552" class="attachment-metro-list-image size-metro-list-image" alt="" loading="lazy" srcset="https://journalmetro.com/wp-content/uploads/2022/10/Pilki-WEB.jpg?w=1200 1200w, https://journalmetro.com/wp-content/uploads/2022/10/Pilki-WEB.jpg?w=150 150w, https://journalmetro.com/wp-content/uploads/2022/10/Pilki-WEB.jpg?w=242 242w, https://journalmetro.com/wp-content/uploads/2022/10/Pilki-WEB.jpg?w=768 768w, https://journalmetro.com/wp-content/uploads/2022/10/Pilki-WEB.jpg?w=470 470w, https://journalmetro.com/wp-content/uploads/2022/10/Pilki-WEB.jpg?w=980 980w, https://journalmetro.com/wp-content/uploads/2022/10/Pilki-WEB.jpg?w=1051 1051w" sizes="(max-width: 980px) 100vw, 980px" data-photo-credit="Gracieuseté, Pilki" />            </figure>
+        </a>
+            <div class="listing__content">
+        <a href="https://journalmetro.com/local/rosemont-la-petite-patrie/" class="listing__category">Rosemont–La Petite-Patrie</a>        <h3 class="listing__title"><a href="https://journalmetro.com/local/rosemont-la-petite-patrie/2935185/pilki-des-tisanes-boreales-au-commerce-daromates-sauvages/">PilKi: des tisanes boréales au commerce d’aromates sauvages  </a></h3>
+        <div class="listing__meta">
+            <a class="listing__date">26 octobre 2022  à 17h15</a> - <a href="https://journalmetro.com/auteur/jpare/" class="listing__author">Jason Paré</a>        </div>
+    </div>
+</article>
+                </div>
+                        <div class="cell">
+            
+<article class="listing is-style__media">
+            <a href="https://journalmetro.com/actualites/national/2934990/pauvrete-le-600-et-les-baisses-dimpot-naideront-pas-vraiment-dit-un-collectif/" class="image">
+            <figure class="figure">
+        <img width="980" height="552" src="https://journalmetro.com/wp-content/uploads/2022/01/IMG_4808.jpg?resize=980%2C552" class="attachment-metro-list-image size-metro-list-image" alt="Banque alimentaire" loading="lazy" srcset="https://journalmetro.com/wp-content/uploads/2022/01/IMG_4808.jpg?w=1200 1200w, https://journalmetro.com/wp-content/uploads/2022/01/IMG_4808.jpg?w=150 150w, https://journalmetro.com/wp-content/uploads/2022/01/IMG_4808.jpg?w=242 242w, https://journalmetro.com/wp-content/uploads/2022/01/IMG_4808.jpg?w=768 768w, https://journalmetro.com/wp-content/uploads/2022/01/IMG_4808.jpg?w=470 470w, https://journalmetro.com/wp-content/uploads/2022/01/IMG_4808.jpg?w=980 980w, https://journalmetro.com/wp-content/uploads/2022/01/IMG_4808.jpg?w=1051 1051w" sizes="(max-width: 980px) 100vw, 980px" data-photo-credit="Félix Hurtubise, Métro" />            </figure>
+        </a>
+            <div class="listing__content">
+        <a href="https://journalmetro.com/actualites/national/" class="listing__category">National</a>        <h3 class="listing__title"><a href="https://journalmetro.com/actualites/national/2934990/pauvrete-le-600-et-les-baisses-dimpot-naideront-pas-vraiment-dit-un-collectif/">Pauvreté: le 600 $ et les baisses d&rsquo;impôt n&rsquo;aideront pas vraiment, dit un collectif</a></h3>
+        <div class="listing__meta">
+            <a class="listing__date">26 octobre 2022  à 17h11</a> - <a href="https://journalmetro.com/auteur/cbolano/" class="listing__author">Clément Bolano</a>        </div>
+    </div>
+</article>
+                </div>
+                
+        </div>
+
+        </div></div><div class="cell widget-container"><div id="met_ads-2" class="widget widget_met_ads">        <div class="flex-container align-center align-middle" data-m32-ad data-options='{&quot;sizes&quot;:&quot;[[300,250], [300,600]]&quot;,&quot;dfpId&quot;:&quot;21658289790,22389335471&quot;,&quot;dfpAdUnitPath&quot;:&quot;journalmetro/monde&quot;}'></div>
+        </div></div><div class="cell widget-container"><div id="met_ads-3" class="widget widget_met_ads">        <div class="flex-container align-center align-middle" data-m32-ad data-options='{&quot;sizes&quot;:&quot;[[300,250], [300,600]]&quot;,&quot;dfpId&quot;:&quot;21658289790,22389335471&quot;,&quot;dfpAdUnitPath&quot;:&quot;journalmetro/monde&quot;}'></div>
+        </div></div><div class="cell widget-container"><div id="explorez_posts-2" class="widget widget_explorez_posts">
+        <h2 class="widget-title">            <a href="/explorez/" title="">
+                Explorez            </a>
+            </h2>
+        <div class="grid-x grid-padding-y">
+
+                        <div class="cell">
+            
+<article class="listing is-style-is-title">
+        <div class="listing__content">
+        <a href="https://journalmetro.com/explorez/" class="listing__category">Explorez</a>        <h3 class="listing__title"><a href="https://journalmetro.com/explorez/2932016/rosemont-la-petite-patrie-loasis-au-coeur-de-la-ville/">Rosemont – La Petite-Patrie : l’oasis au cœur de la ville</a></h3>
+        <div class="listing__meta">
+            <a class="listing__date">25 octobre 2022  à 13h30</a> - <a href="https://journalmetro.com/auteur/webjournalmetro/" class="listing__author">Web Métro</a>        </div>
+    </div>
+</article>
+                </div>
+                        <div class="cell">
+            
+<article class="listing is-style-is-title">
+        <div class="listing__content">
+        <a href="https://journalmetro.com/explorez/" class="listing__category">Explorez</a>        <h3 class="listing__title"><a href="https://journalmetro.com/explorez/2930940/ils-etaient-dans-loeil-du-dragon-retrouvez-les-en-2022-partie-3/">Ils étaient dans l’œil du dragon, retrouvez-les en 2022! – Partie 3</a></h3>
+        <div class="listing__meta">
+            <a class="listing__date">25 octobre 2022  à 8h58</a> - <a href="https://journalmetro.com/auteur/webjournalmetro/" class="listing__author">Web Métro</a>        </div>
+    </div>
+</article>
+                </div>
+                        <div class="cell">
+            
+<article class="listing is-style-is-title">
+        <div class="listing__content">
+        <a href="https://journalmetro.com/explorez/" class="listing__category">Explorez</a>        <h3 class="listing__title"><a href="https://journalmetro.com/explorez/2930944/ils-etaient-dans-loeil-du-dragon-retrouvez-les-en-2022-partie-2/">Ils étaient dans l’œil du dragon, retrouvez-les en 2022! – Partie 2</a></h3>
+        <div class="listing__meta">
+            <a class="listing__date">25 octobre 2022  à 8h58</a> - <a href="https://journalmetro.com/auteur/webjournalmetro/" class="listing__author">Web Métro</a>        </div>
+    </div>
+</article>
+                </div>
+                
+        </div>
+
+        </div></div><div class="cell widget-container"><div id="met_ads-27" class="widget widget_met_ads">        <div class="flex-container align-center align-middle" data-m32-ad data-options='{&quot;sizes&quot;:&quot;[[300,250], [300,600]]&quot;,&quot;dfpId&quot;:&quot;21658289790,22389335471&quot;,&quot;dfpAdUnitPath&quot;:&quot;journalmetro/monde&quot;}'></div>
+        </div></div><div class="cell widget-container"><div id="media_image-97" class="widget widget_media_image"><a href="https://journalmetro.com/le-mot-cache-antidote/"><img width="470" height="136" src="https://journalmetro.com/wp-content/uploads/2021/08/mot-cache.gif?fit=470%2C136" class="image wp-image-2688252  attachment-full size-full" alt="" loading="lazy" style="max-width: 100%; height: auto;" /></a></div></div></aside><!-- #secondary -->
+</section>
+
+				<div class="center bottom-ad-container" data-m32-ad data-options='{&quot;sizes&quot;:&quot;[[728,90],[970,250]]&quot;,&quot;dfpId&quot;:&quot;21658289790,22389335471&quot;,&quot;dfpAdUnitPath&quot;:&quot;journalmetro/monde&quot;,&quot;sizeMapping&quot;:[{&quot;viewport&quot;:{&quot;min_width&quot;:768, &quot;min_height&quot;:0}, &quot;sizes&quot;:[[728,90]]}, {&quot;viewport&quot;:{&quot;min_width&quot;:1024, &quot;min_height&quot;:0}, &quot;sizes&quot;:[[728,90], [970,250]]}]}'></div>
+			        <div class="bottom-ad-container">
+            <div class="container-entry">
+                <!-- Flipp Mobile Anchor Tag-->
+                <div id="flipp-ux-slot-nc73hds">
+                    <div class="flipp-ux-header" style="display: none">
+                        <h3 class="cb-sidebar-widget-title cb-widget-title">Circulaire en ligne</h3>
+                    </div>
+                </div>
+                <!-- Flipp Desktop Anchor Tag-->
+                <div id="flipp-ux-slot-kih2s7e">
+                    <div class="flipp-ux-header" style="display: none">
+                        <h3 class="cb-sidebar-widget-title cb-widget-title">Circulaire en ligne</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div><!-- #page -->
+
+<footer id="footer">
+        <div class="site-footer">
+           <div class="footer-column">
+                <h4>Services</h4>
+                <ul id="menu-new-footer-1-services" class="menu"><li id="menu-item-2684767" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2684767"><a href="https://journalmetro.com/metro-emplois/">Emplois</a></li>
+<li id="menu-item-2859505" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2859505"><a href="https://journalmetro.com/concours/">Concours</a></li>
+<li id="menu-item-2687937" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2687937"><a href="https://journalmetro.com/le-mot-cache-antidote/">Jeux</a></li>
+<li id="menu-item-2684779" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2684779"><a href="https://journalmetro.com/videos/">Vidéos</a></li>
+</ul>           </div>
+           <div class="footer-column">
+              <h4>Abonnement</h4>
+            <ul id="menu-new-footer-2-abonnement" class="menu"><li id="menu-item-2702673" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2702673"><a href="https://journalmetro.com/infolettres/">Infolettres</a></li>
+<li id="menu-item-2684786" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2684786"><a href="https://journalmetro.com/feed/">Flux RSS</a></li>
+</ul>           </div>
+           <div class="footer-column">
+                <h4>À propos</h4>
+                <ul id="menu-new-footer-3-a-propos" class="menu"><li id="menu-item-2684810" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2684810"><a href="https://journalmetro.com/editions-virtuelles/">Éditions virtuelles</a></li>
+<li id="menu-item-2687939" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2687939"><a href="https://metromedia.ca/">Métro Média</a></li>
+<li id="menu-item-2687943" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2687943"><a href="https://www.quebechebdo.com/">Métro Québec</a></li>
+<li id="menu-item-2687944" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2687944"><a href="https://www.corriereitaliano.com/">Corriere Italiano</a></li>
+</ul>           </div>
+           <div class="footer-column">
+                <h4>Contact</h4>
+                <ul id="menu-new-footer-4-contactez-nous" class="menu"><li id="menu-item-2684815" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2684815"><a href="https://journalmetro.com/contactez-nous/">Nous joindre</a></li>
+<li id="menu-item-2684816" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2684816"><a href="https://journalmetro.com/annoncez-avec-nous/">Annoncez avec nous</a></li>
+<li id="menu-item-2909070" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2909070"><a href="https://journalmetro.com/centre-publicitaire/">Centre publicitaire</a></li>
+<li id="menu-item-2684830" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2684830"><a href="https://journalmetro.com/conditions-dutilisation/">Conditions d’utilisation</a></li>
+<li id="menu-item-2848545" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2848545"><a href="https://journalmetro.com/politique-de-confidentialite/">Politique de confidentialité</a></li>
+</ul>           </div>
+           <div class="footer-column">
+                <h4>Réseaux sociaux</h4>
+                <ul id="menu-new-footer-5-reseaux-sociaux" class="menu"><li id="menu-item-2684832" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2684832"><a href="https://www.facebook.com/journalmetro/">Facebook</a></li>
+<li id="menu-item-2684834" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2684834"><a href="https://twitter.com/journalmetro">Twitter</a></li>
+<li id="menu-item-2684836" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2684836"><a href="https://www.instagram.com/journalmetro/">Instagram</a></li>
+<li id="menu-item-2684837" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2684837"><a href="https://www.tiktok.com/@journalmetro?">TikTok</a></li>
+<li id="menu-item-2684839" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2684839"><a href="https://www.linkedin.com/company/journalmetro/">LinkedIn</a></li>
+</ul>           </div>
+        </div><!-- .site-info -->
+
+                <div class="grid-container store-logos">
+            <p>Télécharger notre app</p>
+           <div class="grid-x grid-padding-x align-center">
+               <div class="cell small-6 medium-2">
+                 <a href="https://apps.apple.com/ca/app/m%C3%A9tro/id1579705887" target="_blank"><img src="https://journalmetro.com/wp-content/themes/metronews/assets/images/app-store-logo.svg" alt="logo from apple store"></a>
+               </div>
+               <div class="cell small-6 medium-2">
+                <a href="https://play.google.com/store/apps/details?id=com.journalmetro.app" target="_blank"><img src="https://journalmetro.com/wp-content/themes/metronews/assets/images/google-play-logo.svg" alt="logo from google play"></a>
+               </div>
+           </div>
+        </div>
+        
+        <div class="footer-signature">
+            <div class="footer-signature--inner">
+                <figure id="metro-logo-circle--footer">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 148 148" ><circle fill="#FFFFFF" cx="74" cy="74" r="74"/><polyline fill="#0E3A34" points="119,41.6 119,39.5 112,39.5 92.5,39.5 76.3,70.2 58.9,39.5 29,39.5 29,41.6 36.1,48.3 36.1,99.7 29,106.4 29,108.5 49.9,108.5 49.9,106.4 42.8,99.6 42.8,56.2 64.8,95.6 70,95.6 90.6,56.5 90.6,99.6 83.5,106.4 83.5,108.5 119,108.5 119,106.4 112,99.6 112,48.4 119,41.6 "/></svg>
+                </figure>
+                <span>&copy; Metro Media 2022 - Tous droits réservés</span>
+            </div>
+            <!-- footer-signature--inner -->
+        </div>
+        <!-- footer-signature -->
+    </footer><!-- #colophon -->
+
+    <script> try { window._FskKeyValues = %%PATTERN:TARGETINGMAP%%; } catch(e) {} </script>
+
+    
+<div class="c-banner-subscribe"
+    data-banner-subscribe
+    data-banner-subscribe-active="1"
+    data-banner-subscribe-views="5"
+    data-banner-subscribe-post="1"
+>
+    <div class="c-banner-subscribe__body">
+        <h3 class="c-banner-subscribe__title">
+            Mon <div>Métro</div>
+        </h3>
+        <div class="c-banner-subscribe__content">
+            <div class="c-banner-subscribe__text">
+                <h4>Toute l&#039;actualité locale au même endroit.</h4>
+                <p>En vous inscrivant à Mon Métro, vous manifestez votre engagement envers la presse locale.    +  Profitez d’une expérience numérique personnalisée en fonction de vos champs d’intérêt et du quartier où vous résidez.   +  Sélectionnez vos articles favoris pour une lecture en différé. </p>
+            </div>
+            <div class="c-banner-subscribe__btn">
+                <a href="https://journalmetro.com/zone-membre/inscription/" class="button-metro is-style__button-primary is-style__button-accent-dark">
+                    Inscrivez-vous gratuitement!                </a>
+            </div>
+        </div>
+    </div>
+    <button class="c-banner-subscribe__close" data-banner-subscribe-trigger>
+        <svg width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink">
+            <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <path
+                    d="M7,-2 C7.55228475,-2 8,-1.55228475 8,-1 C8,-0.977895007 7.99928277,-0.955957531 7.99787032,-0.934209575 L7.99702056,-0.934421539 L7.99702056,6.00297944 L14.961,6.002 L15,6 C15.5128358,6 15.9355072,6.38604019 15.9932723,6.88337887 L16,7 C16,7.55228475 15.5522847,8 15,8 C14.9831415,8 14.9663804,7.99958283 14.9497265,7.99875825 L7.99702056,7.99702056 L7.997,14.95 L8,15 C8,15.5128358 7.61395981,15.9355072 7.11662113,15.9932723 L7,16 C6.44771525,16 6,15.5522847 6,15 C6,14.9868504 6.00025381,14.97376 6.00075679,14.9607336 L6.00297944,7.99702056 L-0.95,7.997 L-1,8 C-1.51283584,8 -1.93550716,7.61395981 -1.99327227,7.11662113 L-2,7 C-2,6.44771525 -1.55228475,6 -1,6 C-0.986737004,6 -0.973534315,6.0002582 -0.960396684,6.00076985 L6.00297944,6.00297944 L6.00297944,-0.934421539 L6.003,-0.935 L6,-1 C6,-1.51283584 6.38604019,-1.93550716 6.88337887,-1.99327227 Z"
+                    id="Combined-Shape" fill="#1D443E" fill-rule="nonzero"
+                    transform="translate(7.000000, 7.000000) rotate(-45.000000) translate(-7.000000, -7.000000) "></path>
+            </g>
+        </svg>
+    </button>
+</div>
+
+    <script type="application/javascript">
+    'use strict';
+    var homeBlockGrid = document.getElementsByClassName("grid-wrapper-a-la-une")[0];
+
+    if (homeBlockGrid != undefined) {
+        var metroWindowWidth = window.innerWidth;
+        var widthIsOver1280 = false;
+        var homeCarrouselExist = false;
+        // if (metroWindowWidth < 768) {
+        //     homeCarrouselExist = !homeCarrouselExist;
+        // }
+        var is_7,is_5,is_5b,is_4,is_3,is_2,is_row_7,is_row_7b;
+        const part1 = homeBlockGrid.getElementsByClassName("part-1")[0];
+        const part2 = homeBlockGrid.getElementsByClassName("part-2")[0];
+        const part3 = homeBlockGrid.getElementsByClassName("part-3")[0];
+        const part4 = homeBlockGrid.getElementsByClassName("part-4")[0];
+        const part5 = homeBlockGrid.getElementsByClassName("part-5")[0];
+        const part6 = homeBlockGrid.getElementsByClassName("part-6")[0];
+        const part7 = homeBlockGrid.getElementsByClassName("part-7")[0];
+
+        const deleteCarrouselOnMobile= () => {
+            const divCarrousel = document.getElementById("caroussel-home");
+            while (divCarrousel.firstChild) homeBlockGrid.insertBefore(divCarrousel.firstChild, divCarrousel);
+            homeBlockGrid.removeChild(divCarrousel);
+            homeCarrouselExist = false;
+        }
+        const createCarrouselOnMobile = () => {
+            const divCarrousel = document.createElement("div");
+            divCarrousel.setAttribute("id","caroussel-home");
+            homeBlockGrid.appendChild(divCarrousel);
+            divCarrousel.appendChild(part6);
+            divCarrousel.appendChild(part7);
+            homeCarrouselExist = true;
+        }
+        function metroBlockGrid() {
+            metroWindowWidth = window.innerWidth;
+            if (metroWindowWidth > 1279 && !widthIsOver1280){
+                create_flex();
+            }
+            if (metroWindowWidth < 1279 && widthIsOver1280){
+                destroy_flex();
+            }
+            if (metroWindowWidth > 768 && homeCarrouselExist) {
+                deleteCarrouselOnMobile();
+            }
+            if (metroWindowWidth < 768 && !homeCarrouselExist) {
+                createCarrouselOnMobile();
+            }
+        }
+        function create_flex(){
+            homeBlockGrid.classList.add("wp-block-columns");
+            homeBlockGrid.classList.remove("wp-block-group");
+            is_7 = document.createElement("div");
+                is_7.classList.add("wp-block-column","is-7");
+            is_5 = document.createElement("div");
+                is_5.classList.add("wp-block-column","is-5");
+            is_5b = document.createElement("div");
+                is_5b.classList.add("wp-block-column","is-5");
+            is_4 = document.createElement("div");
+                is_4.classList.add("wp-block-column","is-4");
+            is_3 = document.createElement("div");
+                is_3.classList.add("wp-block-column","is-3");
+            is_2 = document.createElement("div");
+                is_2.classList.add("wp-block-column","is-2");
+            is_row_7 = document.createElement("div");
+                is_row_7.classList.add("row-is-7");
+            is_row_7b = document.createElement("div");
+                is_row_7b.classList.add("row-is-7");
+            is_5.appendChild(part1);
+            is_5.appendChild(part2);
+            is_5.appendChild(part3);
+            is_4.appendChild(part4);
+            is_3.appendChild(part5);
+            is_2.appendChild(part6);
+            is_5b.appendChild(part7);
+            is_row_7.appendChild(is_4);
+            is_row_7.appendChild(is_3);
+            is_row_7b.appendChild(is_2);
+            is_row_7b.appendChild(is_5b);
+            is_7.appendChild(is_row_7);
+            is_7.appendChild(is_row_7b);
+            is_5.style.display = 'block';
+            is_4.style.display = 'block';
+            is_3.style.display = 'block';
+            is_2.style.display = 'block';
+            is_5b.style.display = 'block';
+            is_row_7.style.display = 'flex';
+            is_row_7b.style.display = 'flex';
+            is_7.style.display = 'block';
+            homeBlockGrid.appendChild(is_5);
+            homeBlockGrid.appendChild(is_7);
+            widthIsOver1280 = true;
+        }
+        function destroy_flex(){
+            homeBlockGrid.classList.remove("wp-block-columns");
+            homeBlockGrid.classList.add("wp-block-group");
+            homeBlockGrid.appendChild(part1);
+            homeBlockGrid.appendChild(part2);
+            homeBlockGrid.appendChild(part3);
+            homeBlockGrid.appendChild(part4);
+            homeBlockGrid.appendChild(part5);
+            homeBlockGrid.appendChild(part6);
+            homeBlockGrid.appendChild(part7);
+            is_5.style.display = 'none';
+            is_4.style.display = 'none';
+            is_3.style.display = 'none';
+            is_2.style.display = 'none';
+            is_5b.style.display = 'none';
+            is_row_7.style.display = 'none';
+            is_row_7b.style.display = 'none';
+            is_7.style.display = 'none';
+            widthIsOver1280 = false;
+        }
+        window.addEventListener('resize', metroBlockGrid);
+        metroBlockGrid();
+    }
+</script>
+        <script type="application/javascript">
+    'use strict';
+    var cultureBlocksGrid = document.getElementsByClassName("thema-culture-grid");
+    if (cultureBlocksGrid != undefined) {
+        [].forEach.call(cultureBlocksGrid, function (el) {
+            var metroWindowWidth = window.innerWidth;
+            var cultureCarrouselExist = false;
+
+            const partsToCopy = el.querySelectorAll(".wp-block-group:nth-child(n+3)");
+            const carrousselContent = [];
+            for (var i = 0; i < partsToCopy.length; i++) {
+                var clone = partsToCopy[i].cloneNode(true);
+                carrousselContent.push(clone)
+            }
+            const divCarrousel = document.createElement("div");
+                  divCarrousel.setAttribute("class","caroussel-culture");
+            //const divCarrouselInner = document.createElement("div");
+
+            for (var i = 0; i < carrousselContent.length; i++) {
+                divCarrousel.appendChild(carrousselContent[i])
+            }
+            //divCarrousel.appendChild(divCarrouselInner);
+            el.appendChild(divCarrousel);
+            divCarrousel.style.display = "none";
+
+            /**
+             *
+             * Bordures haute et basse du carrousel
+             *
+             */
+            const topBorder = document.createElement("div");
+                  topBorder.setAttribute("class","border-carrousel");
+            const bottomBorder = document.createElement("div");
+                  bottomBorder.setAttribute("class","border-carrousel");
+                  el.insertBefore(topBorder,divCarrousel);
+                  el.insertBefore(bottomBorder,null);
+                  topBorder.style.display = "none";
+                  bottomBorder.style.display = "none";
+                  divCarrousel.style.display = "none";
+
+            const createCulturearrouelonMobile = () => {
+                for (var i = 0; i < partsToCopy.length; i++) {
+                    partsToCopy[i].style.display = "none";
+                }
+                topBorder.style.display = "block";
+                bottomBorder.style.display = "block";
+                divCarrousel.style.display = "flex";
+                cultureCarrouselExist = true;
+            }
+
+            const deleteCultureCarrouselOnMobile= () => {
+                divCarrousel.style.display='none';
+                for (var i = 0; i < partsToCopy.length; i++) {
+                    partsToCopy[i].style.display = "block";
+                }
+                topBorder.style.display = "none";
+                bottomBorder.style.display = "none";
+                cultureCarrouselExist = false;
+            }
+
+            function cultureBlockGridOnResize(){
+
+                metroWindowWidth = window.innerWidth;
+                if (metroWindowWidth > 768 && cultureCarrouselExist) {
+                    deleteCultureCarrouselOnMobile();
+                }
+                if (metroWindowWidth < 768 && !cultureCarrouselExist) {
+                    createCulturearrouelonMobile();
+                }
+            }
+            window.addEventListener('resize', cultureBlockGridOnResize);
+            cultureBlockGridOnResize();
+        });
+
+    }
+
+    </script>
+        <script type="application/javascript">
+    'use strict';
+    var inspirationBlocksGrid = document.getElementsByClassName("thema-plus-inspiration");
+    if (inspirationBlocksGrid != undefined) {
+        [].forEach.call(inspirationBlocksGrid, function (el) {
+            var metroWindowWidth = window.innerWidth;
+            var inspirationCarrouselExist = false;
+
+            const partsToCopy = el.querySelectorAll(".wp-block-group:nth-child(n+4)");
+            const carrousselContent = [];
+            for (var i = 0; i < partsToCopy.length; i++) {
+                var clone = partsToCopy[i].cloneNode(true);
+                carrousselContent.push(clone)
+            }
+            const divCarrousel = document.createElement("div");
+            divCarrousel.setAttribute("class","caroussel-culture");
+            const divCarrouselInner = document.createElement("div");
+            for (var i = 0; i < carrousselContent.length; i++) {
+                divCarrouselInner.appendChild(carrousselContent[i])
+            }
+            divCarrousel.appendChild(divCarrouselInner);
+            el.appendChild(divCarrousel);
+            divCarrousel.style.display = "none";
+
+            /**
+             *
+             * Bordures haute et basse du carrousel
+             *
+             */
+            const topBorder = document.createElement("div");
+                  topBorder.setAttribute("class","border-carrousel");
+            const bottomBorder = document.createElement("div");
+                  bottomBorder.setAttribute("class","border-carrousel");
+                  el.insertBefore(topBorder,divCarrousel);
+                  el.insertBefore(bottomBorder,null);
+                  topBorder.style.display = "none";
+                  bottomBorder.style.display = "none";
+
+            const createInspirationCarrouelonMobile = () => {
+                for (var i = 0; i < partsToCopy.length; i++) {
+                    partsToCopy[i].style.display = "none";
+                }
+                topBorder.style.display = "block";
+                bottomBorder.style.display = "block";
+                divCarrousel.style.display = "flex";
+                inspirationCarrouselExist = true;
+            }
+
+            const deleteInspirationCarrouselOnMobile= () => {
+                divCarrousel.style.display = "none";
+                for (var i = 0; i < partsToCopy.length; i++) {
+                    partsToCopy[i].style.display = "block";
+                }
+                topBorder.style.display = "none";
+                bottomBorder.style.display = "none";
+                inspirationCarrouselExist = false;
+            }
+
+            function inspirationBlockGridOnResize(){
+                metroWindowWidth = window.innerWidth;
+                if (metroWindowWidth > 768 && inspirationCarrouselExist) {
+                    deleteInspirationCarrouselOnMobile();
+                }
+                if (metroWindowWidth < 768 && !inspirationCarrouselExist) {
+                    createInspirationCarrouelonMobile();
+                }
+            }
+            window.addEventListener('resize', inspirationBlockGridOnResize);
+            inspirationBlockGridOnResize();
+        });
+
+    }
+
+    </script>
+    <script type="application/javascript">
+    'use strict';
+    const specialBlocksGridParent = document.getElementsByClassName("metro-thema-special");
+    [].forEach.call(specialBlocksGridParent, function (el) {
+        const manchette = el.getElementsByClassName("manchette")[0];
+            const blockGroup = manchette.getElementsByClassName("wp-block-group")[0];
+
+            if (blockGroup != undefined) {
+                var metroWindowWidth = window.innerWidth;
+                var specialCarrouselExist = false;
+                const specialBlockGridOnResize = () => {
+                    metroWindowWidth = window.innerWidth;
+                    console.log(metroWindowWidth);
+                    if (metroWindowWidth >= 768 && metroWindowWidth < 1280) {
+                        blockGroup.classList.add("caroussel-culture");
+                        specialCarrouselExist = true;
+                    } else {
+                        blockGroup.classList.remove("caroussel-culture");
+                        specialCarrouselExist = false;
+                    }
+                }
+                window.addEventListener('resize', specialBlockGridOnResize);
+                specialBlockGridOnResize();
+            }
+    });
+    </script>
+    <script type="application/javascript">
+    'use strict';
+    const societeBlocksGridParent = document.getElementsByClassName("metro-block-thema-3-col");
+
+    [].forEach.call(societeBlocksGridParent, function (el) {
+        var metroWindowWidth = window.innerWidth;
+        var societeCarrouselExist = false;
+        const columns =  el.querySelectorAll(".wp-block-columns")[0];
+        const lastCol = el.querySelectorAll(".is-4:last-child")[0];
+        const lastColContent = lastCol.innerHTML;
+        const divCarrousel = document.createElement("div");
+        const divCarrouselInner = document.createElement("div");
+              divCarrouselInner.innerHTML = lastColContent;
+              divCarrousel.setAttribute("class","caroussel-culture");
+              divCarrousel.appendChild(divCarrouselInner);
+              columns.appendChild(divCarrousel);
+              divCarrousel.style.display='none';
+        /**
+         *
+         * Bordures haute et basse du carrousel
+         *
+         */
+        const topBorder = document.createElement("div");
+              topBorder.setAttribute("class","border-carrousel");
+        const bottomBorder = document.createElement("div");
+              bottomBorder.setAttribute("class","border-carrousel");
+              columns.insertBefore(topBorder,divCarrousel);
+              columns.insertBefore(bottomBorder,null);
+              topBorder.style.display = "none";
+              bottomBorder.style.display = "none";
+
+        const createSocieteCarrouselonMobile = () => {
+
+            divCarrousel.style.display='flex';
+            lastCol.style.display = 'none';
+            topBorder.style.display='block';
+            bottomBorder.style.display='block';
+            societeCarrouselExist = true;
+        }
+
+        const deleteSocieteCarrouselOnMobile= () => {
+            //const divCarrousel = columns.querySelectorAll(".caroussel-culture")[0];
+            divCarrousel.style.display='none';
+            lastCol.style.display = 'block';
+            topBorder.style.display='none';
+            bottomBorder.style.display='none';
+            societeCarrouselExist = false;
+        }
+
+        function societeBlockGridOnResize(){
+            metroWindowWidth = window.innerWidth;
+            if (metroWindowWidth > 768 && societeCarrouselExist) {
+                deleteSocieteCarrouselOnMobile();
+            }
+            if (metroWindowWidth < 768 && !societeCarrouselExist) {
+                createSocieteCarrouselonMobile();
+            }
+        }
+        window.addEventListener('resize', societeBlockGridOnResize);
+        societeBlockGridOnResize();
+
+    });
+    </script>
+        <script type="application/javascript">
+        'use strict';
+        const mlocalBlocksGridParent = document.getElementsByClassName("thema-m-local");
+
+        [].forEach.call(mlocalBlocksGridParent, function (el) {
+            var metroWindowWidth = window.innerWidth;
+            var mlocalCarrouselExist = false;
+
+            const secondCol = el.querySelectorAll(".is-4:nth-child(2)")[0];
+            const lastCol =  el.querySelectorAll(".is-4:last-child")[0];
+            const carrousselContent = secondCol.innerHTML + lastCol.innerHTML;
+
+            const divCarrousel = document.createElement("div");
+            const divCarrouselInner = document.createElement("div");
+            divCarrousel.setAttribute("class","caroussel-culture");
+            divCarrousel.appendChild(divCarrouselInner);
+            divCarrouselInner.innerHTML = carrousselContent;
+            divCarrousel.style.display='none';
+
+            const divCarrouselInnerArr = divCarrouselInner.querySelectorAll(".listing:nth-child(n+2)");
+            const carrouselTitle = divCarrouselInner.querySelectorAll(".caroussel-title")[0];
+
+            divCarrouselInner.innerHTML = '';
+            divCarrouselInner.appendChild(carrouselTitle);
+            for (var i = 0; i < divCarrouselInnerArr.length; i++) {
+                divCarrouselInner.appendChild(divCarrouselInnerArr[i])
+            }
+
+            el.appendChild(divCarrousel);
+
+            /**
+             *
+             * Bordures haute et basse du carrousel
+             *
+             */
+            const topBorder = document.createElement("div");
+                  topBorder.setAttribute("class","border-carrousel");
+            const bottomBorder = document.createElement("div");
+                  bottomBorder.setAttribute("class","border-carrousel");
+                  el.insertBefore(topBorder,divCarrousel);
+                  el.insertBefore(bottomBorder,null);
+                  topBorder.style.display = "none";
+                  bottomBorder.style.display = "none";
+            const createLocalCarrouselonMobile = () => {
+
+                divCarrousel.style.display='flex';
+                lastCol.style.display = 'none';
+                topBorder.style.display='block';
+                bottomBorder.style.display='block';
+                mlocalCarrouselExist = true;
+            }
+
+            const deleteLocalCarrouselOnMobile= () => {
+                //const divCarrousel = columns.querySelectorAll(".caroussel-culture")[0];
+                divCarrousel.style.display='none';
+                lastCol.style.display = 'block';
+                topBorder.style.display='none';
+                bottomBorder.style.display='none';
+                mlocalCarrouselExist = false;
+            }
+            function mlocalBlockGridOnResize(){
+                metroWindowWidth = window.innerWidth;
+                if (metroWindowWidth > 768 && mlocalCarrouselExist) {
+                    deleteLocalCarrouselOnMobile();
+                }
+                if (metroWindowWidth < 768 && !mlocalCarrouselExist) {
+                    createLocalCarrouselonMobile();
+                }
+            }
+
+
+            window.addEventListener('resize', mlocalBlockGridOnResize);
+            mlocalBlockGridOnResize();
+
+        });
+    </script>
+        <script id="metronews-nav" src="https://journalmetro.com/wp-content/themes/metronews/js/nav.js"></script>
+    <script type="application/javascript">
+        'use strict';
+        const mainHeader = document.getElementById("masthead");
+        const navDiv = mainHeader.getElementsByClassName("nav")[0];
+        const menuToggle = document.getElementById("menu-toggle");
+        const bg = document.getElementById("bg");
+        const mainNav = document.getElementById("main-nav");
+        const mainNavInner = document.getElementById("main-nav-inner");
+        var mainNavOpen = false;
+        //hcOffcanvasNav
+        var Nav = new hcOffcanvasNav(mainNavInner, {
+            disableAt: 481,
+            customToggle: menuToggle,
+            disableBody: true,
+            levelSpacing: 40,
+            navTitle: ' ',
+            levelTitles: false,
+            levelTitleAsBack: true,
+            pushContent: '#page',
+            labelClose: false,
+            position:'left',
+            swipeGestures: false
+        });
+        const openMenu = () => {
+            bg.style.visibility = "visible";
+            mainNav.style.transform = "none";
+            mainNav.style.height = "100%";
+            menuToggle.classList.add("is-active");
+            // fix body when menu open
+            const scrollY = document.documentElement.style.getPropertyValue('--scroll-y');
+            const body = document.body;
+            body.style.top = `-${scrollY}`;
+            body.style.position = 'fixed';
+        }
+        const closeMenu = () => {
+            bg.style.visibility = "hidden";
+            mainNav.style.transform = "translateX(-100%)";
+            menuToggle.classList.remove("is-active");
+            // fix body when menu open
+            const body = document.body;
+            const scrollY = body.style.top;
+            body.style.position = '';
+            body.style.top = '';
+            window.scrollTo(0, parseInt(scrollY || '0') * -1);
+        }
+        function styckyHeaderFunction() {
+            // if (hamburger.classList.contains("is-active")) {
+            //     masterHead.classList.add("sticky");
+            //     return;
+            // }
+            document.documentElement.style.setProperty('--scroll-y', `${window.scrollY}px`);
+            let scrollPosition = Math.round(window.pageYOffset);
+            if (scrollPosition > 100) {
+                navDiv.classList.add("sticky");
+            } else {
+                navDiv.classList.remove("sticky");
+            }
+        }
+        menuToggle.addEventListener("click", function(e){
+            if (!mainNavOpen) {
+                openMenu();
+            } else {
+                closeMenu();
+                //styckyHeaderFunction();
+            }
+            mainNavOpen = !mainNavOpen;
+        }, true);
+
+        document.addEventListener('click', function(event) {
+            if (!mainNavOpen) return;
+            var isClickInside = mainNavInner.contains(event.target);
+
+            if (!isClickInside) {
+                //the click was outside the specifiedElement, do something
+                closeMenu();
+                mainNavOpen = !mainNavOpen;
+            }
+        });
+
+        window.addEventListener('scroll',styckyHeaderFunction);
+    </script>
+    		<script>
+		( function ( body ) {
+			'use strict';
+			body.className = body.className.replace( /\btribe-no-js\b/, 'tribe-js' );
+		} )( document.body );
+		</script>
+		<script> /* <![CDATA[ */var tribe_l10n_datatables = {"aria":{"sort_ascending":": activer pour trier la colonne ascendante","sort_descending":": activer pour trier la colonne descendante"},"length_menu":"Afficher les saisies _MENU_","empty_table":"Aucune donn\u00e9e disponible sur le tableau","info":"Affichant_START_ \u00e0 _END_ du _TOTAL_ des saisies","info_empty":"Affichant 0 \u00e0 0 de 0 saisies","info_filtered":"(filtr\u00e9 \u00e0 partir du total des saisies _MAX_ )","zero_records":"Aucun enregistrement correspondant trouv\u00e9","search":"Rechercher :","all_selected_text":"Tous les \u00e9l\u00e9ments de cette page ont \u00e9t\u00e9 s\u00e9lectionn\u00e9s. ","select_all_link":"S\u00e9lectionner toutes les pages","clear_selection":"Effacer la s\u00e9lection.","pagination":{"all":"Tout","next":"Suivant","previous":"Pr\u00e9c\u00e9dent"},"select":{"rows":{"0":"","_":": a s\u00e9lectionn\u00e9 %d rang\u00e9es","1":": a s\u00e9lectionn\u00e9 une rang\u00e9e"}},"datepicker":{"dayNames":["dimanche","lundi","mardi","mercredi","jeudi","vendredi","samedi"],"dayNamesShort":["dim","lun","mar","mer","jeu","ven","sam"],"dayNamesMin":["D","L","M","M","J","V","S"],"monthNames":["janvier","f\u00e9vrier","mars","avril","mai","juin","juillet","ao\u00fbt","septembre","octobre","novembre","d\u00e9cembre"],"monthNamesShort":["janvier","f\u00e9vrier","mars","avril","mai","juin","juillet","ao\u00fbt","septembre","octobre","novembre","d\u00e9cembre"],"monthNamesMin":["Jan","F\u00e9v","Mar","Avr","Mai","Juin","Juil","Ao\u00fbt","Sep","Oct","Nov","D\u00e9c"],"nextText":"Suivant","prevText":"Pr\u00e9c\u00e9dent","currentText":"Aujourd\u2019hui ","closeText":"Termin\u00e9","today":"Aujourd\u2019hui ","clear":"Effac\u00e9"}};/* ]]> */ </script><script id='tk-favorites-js-extra'>
+var TKF = {"nonce":"3042666130","admin_url":"https:\/\/journalmetro.com\/wp-admin\/admin-ajax.php","is_my_account":""};
+</script>
+<script type="text/javascript" src="https://journalmetro.com/_static/??-eJx9j8FuwzAMQ39ojmZgSLDDsE8Z3FhplSiSYckp+vdNixboZT3xQPKJgnMJo4qjOKwtFG5HEoMZvaRxCTF2X/BHMsKhEWcoJ3WVh3QrSTfbB7wwngBfwpQ2reRokMzQd6hBaQem8Vnaudwy3p1M5rChZK1Q8YiCNbnWUJs4rfh667/abhXly0TMb+Mn1cXejb+BUjXky+Nt1pSx7vHf9Sf2fT/Ez+84zFdyFnT/" ></script><script data-parsely-site="journalmetro.com" src='https://cdn.parsely.com/keys/journalmetro.com/p.js?ver=3.4.2' id="parsely-cfg"></script>
+<script src='https://api.dmcdn.net/all.js?ver=6.0.3' id='met-daily-motion-js'></script>
+<script id='metronews-main-js-extra'>
+var MET = {"ajax_url":"https:\/\/journalmetro.com\/wp-admin\/admin-ajax.php","subscribed_thank_you":" Tu es bien inscrit, merci !","subscribed_thank_you_newsletter_page":" Nous confirmons votre abonnement \u00e0","subscribion_updated_newsletter_page":" Vos abonnements ont bien \u00e9t\u00e9 mis \u00e0 jour.","subscribed_failed":" Le courriel n'est pas valide ou l'inscription a \u00e9chou\u00e9. Veuillez r\u00e9essayer. ","is_mobile":""};
+</script>
+<script type="text/javascript" src="https://journalmetro.com/wp-content/themes/metronews/dist/js/main.js?m=1666701391g" ></script><script src='https://stats.wp.com/e-202243.js' defer></script>
+<script>
+	_stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:11.4',blog:'157296718',post:'2415863',tz:'-4',srv:'journalmetro.com',hp:'vip'} ]);
+	_stq.push([ 'clickTrackerInit', '157296718', '2415863' ]);
+</script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"1d8abac7ae","applicationID":"182471793","transactionName":"ZgBQMBZXDUpTV0BYVl9KcwcQXwxXHUddX15dAA==","queueTime":0,"applicationTime":992,"atts":"SkdHRl5NHhUQVRYLQkwY","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

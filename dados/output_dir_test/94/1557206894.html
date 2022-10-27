@@ -1,0 +1,2704 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"2936f620a2",applicationID:"120935489"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(9),c=t(10),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(11);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(8),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],7:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],8:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],9:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],10:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],11:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(9),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!M++){var t=T.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(x,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+T.offset],null,"api"),c("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){c("mark",["domContent",a()+T.offset],null,"api")}var a=t(5),c=t("handle"),f=t(9),u=t("ee"),s=t(7),d=t(2),p=t(3),l=d.getConfiguration("ssl")===!1?"http":"https",v=window,m=v.document,g="addEventListener",y="attachEvent",h=v.XMLHttpRequest,w=h&&h.prototype,b=!1;NREUM.o={ST:setTimeout,SI:v.setImmediate,CT:clearTimeout,XHR:h,REQ:v.Request,EV:v.Event,PR:v.Promise,MO:v.MutationObserver};var E=""+location,x={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1216.min.js"},O=h&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),T=e.exports={offset:a.getLastTimestamp(),now:a,origin:E,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(6),m[g]?(m[g]("DOMContentLoaded",o,p(!1)),v[g]("load",r,p(!1))):(m[y]("onreadystatechange",i),v[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var M=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(10),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script type="text/javascript">
+  window._taboola = window._taboola || [];
+  _taboola.push({article:'auto'});
+  !function (e, f, u, i) {
+    if (!document.getElementById(i)){
+      e.async = 1;
+      e.src = u;
+      e.id = i;
+      f.parentNode.insertBefore(e, f);
+    }
+  }(document.createElement('script'),
+  document.getElementsByTagName('script')[0],
+  '//cdn.taboola.com/libtrc/inquirernet-inquirernet/loader.js',
+  'tb_loader_script');
+  if(window.performance && typeof window.performance.mark == 'function')
+    {window.performance.mark('tbl_ic');}
+</script>
+
+<meta property="og:ttl" content="345600" />
+<meta property="fb:app_id" content="175228195865217" />
+<meta property="og:title" content="First 2 COVID-19 cases detected in Myanmar" />
+<meta property="og:description" content="YANGON — Two persons who returned from the U.S and the UK tested positive for the COVID-19 on 23 March, according to a statement by the Ministry of Health and Sports.
+
+A 36-year-old Green Card" />
+<meta property="og:url" content="https://newsinfo.inquirer.net/1247627/first-2-covid-19-cases-detected-in-myanmar" />
+<meta property="og:site_name" content="INQUIRER.net" />
+<meta property="article:published_time" content="Tue, 24 Mar 2020 15:49:20 PST" />
+<meta property="og:image" content="https://newsinfo.inquirer.net/files/2020/03/90236173_614123912768255_2832423097968099328_n-620x416.jpg" />
+<meta property="og:type" content="article" />
+<meta name="author" content="Eleven Media/Asia News Network" />
+<script>
+			eval(function(p,a,c,k,e,d){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--){d[e(c)]=k[c]||e(c)}k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1};while(c--){if(k[c]){p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c])}}return p}('w k(m){2 b=m+"=";2 e=9.8.q(";");2 i=0;n(;i<e.c;i++){2 4=e[i];n(;4.u(0)==" ";){4=4.l(1)}3(4.y(b)==0){j 4.l(b.c,4.c)}}j""}2 g=k("6");2 a=o.a;2 d=o.d;2 7=v C(s.p.A);2 f=7.x("6");2 t=s.p.B;2 z=t.q("?")[1];3(a==0||d==0){3(g==".r.1"){}5{9.8="6=.r.1"}3(7==""){}5{3(f){}5{}}}5{3(g==".h.1"){}5{9.8="6=.h.1"}9.8="6=.h.1";3(7==""){}5{3(f){}5{}}}',39,39,'||var|if|chips|else|utm_expid|urlParams|cookie|document|width|name|length|height|cookieJar|isRedirected|zerozero|XqNwTug2W6nwDVUSgFJXed||return|getCookie_nameRd|substring|cname|for|screen|location|split|rEktTVn4Q5qLHXH4ke4yfg|window|url_host|charAt|new|function|get|indexOf|split_param|search|href|URLSearchParams'.split('|'),0,{}))
+	</script>
+
+<link rel="shortcut icon" href="https://newsinfo.inquirer.net/icon/images/favicon.ico" type="image/x-icon">
+<link rel="apple-touch-icon" sizes="180x180" href="https://newsinfo.inquirer.net/icon/images/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://newsinfo.inquirer.net/icon/images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://newsinfo.inquirer.net/icon/images/favicon-16x16.png">
+<link rel="manifest" href="https://newsinfo.inquirer.net/icon/images/site.webmanifest">
+<link rel="stylesheet" href="https://newsinfo.inquirer.net/single2017/global.css">
+<link rel="stylesheet" href="https://newsinfo.inquirer.net/single2017/style-article38.css">
+<link rel="alternate" media="only screen and (max-width: 640px)" href="//m.inquirer.net/newsinfo/1247627">
+
+<script src="https://use.typekit.net/ymb2ppk.js"></script>
+<script>try{Typekit.load({ async: true });}catch(e){}</script>
+<style id="" media="all">@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(/fonts.gstatic.com/s/oswald/v49/TK3_WkUHHAIjg75cFRf3bXL8LICs1xZosUZiYA.ttf) format('truetype');
+}
+</style>
+<style id="" media="all">@font-face {
+  font-family: 'Noto Serif';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/fonts.gstatic.com/s/notoserif/v21/ga6Kaw1J5X9T9RW6j9bNfFImajC-.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Noto Serif';
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url(/fonts.gstatic.com/s/notoserif/v21/ga6Vaw1J5X9T9RW6j9bNfFIu0RWuc-VJ.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Noto Serif';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/fonts.gstatic.com/s/notoserif/v21/ga6Iaw1J5X9T9RW6j9bNfFcWbQ.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Noto Serif';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(/fonts.gstatic.com/s/notoserif/v21/ga6Law1J5X9T9RW6j9bNdOwzfReedA.ttf) format('truetype');
+}
+</style>
+<style id="" media="all">@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu4mxP.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(/fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmWUlfBBc9.ttf) format('truetype');
+}
+</style>
+<link rel="stylesheet" href="https://newsinfo.inquirer.net/single2017/inq-cta-2020.css">
+
+<style id="" media="all">@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/fonts.gstatic.com/s/materialicons/v139/flUhRq6tzZclQEJ-Vdg-IuiaDsNZ.ttf) format('truetype');
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+}
+</style>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://newsinfo.inquirer.net/inq2016/nav2022/global.css">
+<link rel="stylesheet" href="https://newsinfo.inquirer.net/inq2016/nav2022/nav-style-channel-b.css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/css/swiper.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.min.js"></script>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script src="https://newsinfo.inquirer.net/single2017/script-5.js"></script>
+
+<script type="text/javascript" async src="//www.googletagservices.com/tag/js/gpt.js"></script>
+<script type="text/javascript"> 
+      var channel = "NEWS" || ""; 
+      var page_category = "uncategorized"  || "";    
+      var category = [ "Latest News Stories","World" ] || [];
+      var keyword = ["Asia","Coronavirus","coronavirus outbreak","coronavirus pandemic","COVID19","Myanmar"] || [];
+      var post_url_sha1 = "a5c80624e50fb0661e68cf84b380fd126308d722" || "";
+	  var article_id = "1247627";
+      var inskin_mobile_yes = "true" || ""; 
+      var inskin_yes = "true" || "";      
+	  var blogname = "inquirer-news"; 
+   </script>
+<script type="text/javascript">
+    /* googletag */ 
+    var googletag = window.googletag || {};
+    googletag.cmd = googletag.cmd || [];
+    window.googletag = googletag;
+    googletag.cmd.push(function() {
+        googletag.pubads().disableInitialLoad();  
+    });
+    function detectWidth(){
+        return window.screen.width || window.innerWidth && document.documentElement.clientWidth ? Math.min(window.innerWidth, document.documentElement.clientWidth) : window.innerWidth || document.documentElement.clientWidth || document.getElementsByTagName('body')[0].clientWidth;
+    }
+    var dfpNetwork =  21631601933;      
+    var parentAdPrefix = '/inqphv1.newsinfo';                               
+    var pagekey = 'main'; 
+    if(window.page_category && window.page_category.length > 0){
+        pagekey = window.page_category.toString()
+    } 
+    var deviceWidth = detectWidth(); 
+    var deviceName = "Desktop";
+    if( deviceWidth < 1025) deviceName = "Tablet";
+    if( deviceWidth < 768) deviceName = "Mobile";  
+    // Size Mapping
+    var adSizes = []; var page_slots = []; 
+    adSizes["mrec"] = [[300,250],[250,250]];      
+    adSizes["lb1"] = [[728,90],[970,250],[970,90]];  
+    adSizes["ss"] = [[300,250]];  
+    adSizes["skin"] = [[160,600]]; 
+    if(deviceName == 'Tablet') {      
+        adSizes["lb1"] = [[728,90]];  
+    }
+    if(deviceName == 'Mobile') {   
+			adSizes["lb1"] = [[320,50],[320,100]]; 
+	    } 
+    var adUnits = [{
+        code: "div-gpt-ad-mrec1",
+        device: ["Desktop", "Tablet", "Mobile"],
+        addSuffix: 'mrec1',
+        sizes: adSizes["mrec"],
+    }, {
+        code: "div-gpt-ad-mrec2",
+        device: ["Desktop", "Tablet", "Mobile"],
+        addSuffix: 'mrec2',
+        sizes: adSizes["mrec"],
+    }, {
+        code: "div-gpt-ad-mrec3",
+        device: ["Desktop", "Tablet", "Mobile"],
+        addSuffix: 'mrec3',
+        sizes: adSizes["mrec"],
+    }, {
+        code: "div-gpt-ad-mrec4",
+        device: ["Desktop", "Tablet", "Mobile"],
+        addSuffix: 'mrec4',
+        sizes: adSizes["mrec"],
+    }, {
+        code: "div-gpt-ad-mrec5",
+        device: ["Desktop", "Tablet", "Mobile"],
+        addSuffix: 'mrec5',
+        sizes: adSizes["mrec"],
+    }, {
+        code: "div-gpt-ad-mrec6-left",
+        device: ["Desktop", "Tablet", "Mobile"],
+        addSuffix: 'mrec6-left',
+        sizes: [[300, 250]],
+    }, {
+        code: "div-gpt-ad-mrec6-right",
+        device: ["Desktop", "Tablet", "Mobile"],
+        addSuffix: 'mrec6-right',
+        sizes: [[300, 250]],
+    }, {
+        code: "div-gpt-ad-lb1",
+        device: ["Desktop", "Tablet", "Mobile"],
+        addSuffix: 'lb1',
+        sizes: adSizes["lb1"],
+    }, {
+        code: "div-gpt-ad-ss1",
+        device: ["Desktop", "Tablet", "Mobile"],
+        addSuffix: 'ss1',
+        sizes: adSizes["ss"],
+    }, {
+        code: "div-gpt-ad-ss2",
+        device: ["Desktop", "Tablet", "Mobile"],
+        addSuffix: 'ss2',
+        sizes: adSizes["ss"]
+    }, {
+        code: "div-gpt-ad-left_skin",
+        device: ["Desktop", "Tablet"],
+        addSuffix: 'left_skin',
+        sizes: adSizes["skin"],
+    }, {
+        code: "div-gpt-ad-right_skin",
+        device: ["Desktop", "Tablet"],
+        addSuffix: 'right_skin',
+        sizes: adSizes["skin"],
+    }, {
+        code: "div-gpt-ad-oop1",
+        device: ["Desktop", "Tablet", "Mobile"],
+        addSuffix: 'oop1',
+        sizes: [[1, 1]],
+    }, {
+        code: "div-gpt-ad-oop2",
+        device: ["Desktop", "Tablet", "Mobile"],
+        addSuffix: 'oop2',
+        sizes: [[1, 1]],
+    }, {
+        code: "div-gpt-ad-pixel1",
+        device: ["Desktop", "Tablet", "Mobile"],
+        addSuffix: 'pixel1',
+        sizes: [[1, 1]],
+    }
+    ];
+
+    console.log(" AdUnits ", adUnits);
+
+    for (var i = 0, len = adUnits.length; i < len; i++) {
+        if (adUnits[i].device.indexOf(deviceName) >= 0) {
+            adUnits[i].adunit = '/' + dfpNetwork + parentAdPrefix + '/' + pagekey + '_' + adUnits[i].addSuffix;
+            adUnits[i].display = true;
+        }
+    }
+
+    googletag.cmd.push(function () {
+        if (adUnits) {
+            for (var i = 0, len = adUnits.length; i < len; i++) {
+                if (!adUnits[i].display) continue;
+                var defineslot = null;
+                if (adUnits[i].addSuffix === "oop1" || adUnits[i].addSuffix === "oop2") {
+                    defineslot = googletag.defineOutOfPageSlot(adUnits[i].adunit, adUnits[i].code).setTargeting('pos', adUnits[i].addSuffix.toString()).addService(googletag.pubads());
+                }
+                else {
+                    defineslot = googletag.defineSlot(adUnits[i].adunit, adUnits[i].sizes, adUnits[i].code).addService(googletag.pubads());
+                    if (adUnits[i].addSuffix === "lb1") {
+                        defineslot.setTargeting('pos', ['top']);
+                    } else if (adUnits[i].addSuffix === "mrec1") {
+                        defineslot.setTargeting('pos', ['middle'])
+                    } else if (adUnits[i].addSuffix === "mrec2") {
+                        defineslot.setTargeting('pos', ['middle2']);
+                    } else if (adUnits[i].addSuffix === "mrec3") {
+                        defineslot.setTargeting('pos', ['middle3']);
+                    } else if (adUnits[i].addSuffix === "mrec4") {
+                        defineslot.setTargeting('pos', ['middle4']);
+                    } else if (adUnits[i].addSuffix === "mrec5") {
+                        defineslot.setTargeting('pos', ['middle5']);
+                    } else if (adUnits[i].addSuffix === "ss1") {
+                        defineslot.setTargeting('pos', ['right']);
+                    } else if (adUnits[i].addSuffix === "ss2") {
+                        defineslot.setTargeting('pos', ['right2']);
+                    } else if (adUnits[i].addSuffix === "left_skin") {
+                        defineslot.setTargeting('pos', ['left-skin']);
+                    } else if (adUnits[i].addSuffix === "right_skin") {
+                        defineslot.setTargeting('pos', ['right-skin']);
+                    }else if (adUnits[i].addSuffix === "mrec6-right") {
+                        defineslot.setTargeting('pos', ['mrec6-right']);
+                    } else if (adUnits[i].addSuffix === "mrec6-left") {
+                        defineslot.setTargeting('pos', ['mrec6-left']);
+                    }
+                }
+                defineslot.setTargeting('refreshIteration', "0".toString());
+                page_slots.push({ slot: defineslot, code: adUnits[i].code, rf: 0 });
+            }
+        }
+        googletag.pubads().enableSingleRequest();
+        googletag.pubads().collapseEmptyDivs();
+        googletag.enableServices();
+    });
+
+</script>
+<script type="text/javascript" defer src="https://newsinfo.inquirer.net/ascendeum/split/10112022/asc_prebid_newsinfo.js"></script>
+
+
+<script>
+(function(o,n,e,p,l,u,s){o[l]=o[l]||function(){(o[l].q=o[l].q||[]).push(arguments);};
+u=n.createElement(e);u.async=1;u.src=p;s=n.getElementsByTagName(e)[0];s.parentNode.insertBefore(u,s);
+}(window,document,"script","https://cdn.opecloud.com/ope-inquirer.js","ope"));
+
+ope("inquirer", "init", "implied");
+ope("inquirer", "send", "articleRead", {  
+  tags: "Asia,Coronavirus,coronavirus outbreak,coronavirus pandemic,COVID-19,Myanmar"
+}); 
+ 
+ 
+ ope("inquirer", "onProfile", function(error, profile) {
+  if(error){
+    console.log("Failed to load profile: " + error);
+  } else {	  
+	  
+	  
+	var googletag = window.googletag || {};
+    googletag.cmd = googletag.cmd || [];
+    googletag.cmd.push(function() {
+     googletag.pubads().setTargeting("1plusX", profile.s);  
+     googletag.pubads().setTargeting("opectx", profile.t);  
+    });   
+	  
+	  
+    console.log("User segments: " + profile.s);
+    console.log("Contextual topics: " + profile.t);
+	//console.log(JSON.stringify(profile));
+  }
+});
+ 
+</script>
+
+<meta name="referrer" content="no-referrer-when-downgrade">
+<script>
+    window._newsroom = window._newsroom || [];
+ 
+    !function (e, f, u) {
+        e.async = 1;
+        e.src = u;
+        f.parentNode.insertBefore(e, f);
+    }(document.createElement('script'),
+            document.getElementsByTagName('script')[0], '//c2.taboola.com/nr/inquirernet-inquirernet/newsroom.js');
+</script>
+
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-P4BV2XR');</script>
+
+<script>
+document.cookie = 'same-site-cookie=foo; SameSite=Lax';
+document.cookie = 'cross-site-cookie=bar; SameSite=None; Secure';
+ 
+</script>
+<meta property="fb:pages" content="142802334452" />
+<style type="text/css">	
+	#paginav_custome { float:right; width:300px;}
+	#paginav_custom_left { float:left;width:300px;}
+
+.rsv-era{width:100%;height:auto;text-align:center;}.rsv-era img{margin:0 auto;}.rsv-era .mobile,.rsv-era .mobile-landscape,.rsv-era .tablet-beyond{display:none;}@media all and (min-width:0px) and (max-width:467px){.rsv-era .mobile{display:block;}}@media all and (min-width:468px) and (max-width:719px){.rsv-era .mobile-landscape{display:block;}}@media all and (min-width:720px) and (max-width:979px){.rsv-era .tablet-beyond{display:block;width:700px;height:auto;}}@media all and (min-width:980px){.rsv-era .tablet-beyond{display:block;width:960px;height:auto;}}
+.al-elb-frame .main{ z-index: 0!important; }
+.google-auto-placed.ap_container {
+    margin-bottom: 20px;
+}
+  </style>
+
+<script>
+var Tynt=Tynt||[];Tynt.push('bSAw-mF-0r4Q-4acwqm_6r');
+(function(){var h,s=document.createElement('script');
+s.src=(window.location.protocol==='https:'?
+'https':'http')+'://cdn.tynt.com/ti.js';
+h=document.getElementsByTagName('script')[0];
+h.parentNode.insertBefore(s,h);})();
+</script>
+
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window,document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+ fbq('init', '2004610026278274'); 
+fbq('track', 'PageView');
+</script>
+<noscript>
+ <img height="1" width="1" 
+src="https://www.facebook.com/tr?id=2004610026278274&ev=PageView 
+&noscript=1"/>
+</noscript>
+
+
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '767727496894134');
+  fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=767727496894134&ev=PageView&noscript=1"
+/></noscript>
+
+<script type="text/javascript">
+(function(document, window){
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "https://api.pushnami.com/scripts/v1/pushnami-adv/5f85b8d1931e9a0010c6d0c2";
+    script.onload = function() {
+				
+        Pushnami
+            .update({
+                "category": "newsinfo",
+				"articlecat": "Latest News Stories,Uncategorized,World"
+            })
+            .prompt();
+    };
+    document.getElementsByTagName("head")[0].appendChild(script);
+})(document, window);
+</script>
+<script>
+(function(){function D(){for(var a=[8],c=1;2>=c;c++)a.push(8+c),a.push(8-c);a=a[Math.floor(Math.random()*a.length)];return{b:a,a:0==Math.floor(Math.random()*a)}}function l(a){var c=a=a.replace(":","");try{for(var d=0;100>d&&(a=decodeURIComponent(a),c!=a)&&!a.match(/^http(s)?\:/);d++)c=a}catch(b){}return a.replace(/(^\s+|\s+$)/g,"")}try{var z=function(a,c,d,b){return a[c]===b&&0===d||a[d]===b&&0===c};if(!location||!location.hostname||!location.pathname)return!1;var e=document.location.hostname.replace(/^www\./,
+""),t=function(){for(var a,c=document.getElementsByTagName("meta"),d,b=0,e=c.length;b<e;b++)if(d=c[b],"og:title"===d.getAttribute("property")){a=d.getAttribute("content");break}a||(a=document.title||"Untitled");return a}(),b={},b=function(a,c,b){a.l1=c;a.l2=b;a.l3="__page__";a.l4="-";return a}(b,e,t),m=(new Date).getTime(),n=Math.floor(Math.random()*Math.pow(10,12)),p,f;f=D();p=f.a?f.b:0;b.zmoatab_cm=p;b.t=m;b.de=n;b.zMoatAB_SNPT=!0;var q;q=p?p:1;var u;u=f?f.a?!0:!1:!0;var e=[],v=(new Date).getTime().toString(35),
+w=[l(b.l1),l(b.l2),l(b.l3),l(b.l4)].join(":"),t=/zct[a-z0-9]+/i,g="",h;for(h in b)b.hasOwnProperty(h)&&h.match(t)&&(g+="&"+h+"="+b[h]);var A=document.referrer.match(/^([^:]{2,}:\/\/[^\/]*)/),r=A?A[1]:document.referrer,x=["e=17","d="+encodeURIComponent(w),"de="+n,"t="+m,"i=INQUIRER_CONTENT1","cm="+q,String("j="+encodeURIComponent(r)+g),"mp=1","ac=1","pl=1","bq=10","vc=2"],v="https://pnekru6pxrum-a.akamaihd.net/"+v+".gif?",y=function(a){for(var c="",b=0;b<a.length;b++)c+=(0===b?"":"&")+a[b];return c}(function(a){for(var b=
+0;b<a.length;b++){var d=Math.floor(Math.random()*(a.length-b)+b),e=a[b],f=z(a,b,d,x[1]);z(a,b,d,x[0])||f?b--:(a[b]=a[d],a[d]=e)}return a}(x)),y=v+y+"&cs=0",E="https://px.moatads.com/pixel.gif?e=17&d="+encodeURIComponent(w)+"&de="+n+"&t="+m+"&i=INQUIRER_CONTENT1&cm="+q+"&j="+encodeURIComponent(r)+g+"&mp=0&ac=1&pl=1&bq=10&ad_type=img&vc=2&cs=0",F="https://px.moatads.com/pixel.gif?e=17&d="+encodeURIComponent(w)+"&de="+n+"&t="+m+"&i=INQUIRER_CONTENT1&cm="+q+"&j="+encodeURIComponent(r)+g+"&ku=1&ac=1&pl=1&bq=10&ad_type=img&vc=2&cs=0";
+u&&((new Image).src=y,(new Image).src=E);for(var B in b)e.push(B+"="+encodeURIComponent(b[B]));var e=e.join("&"),e=e+"&vc=2",k=document.createElement("script");k.type="text/javascript";k.async=!0;u&&(k.onerror=function(){(new Image).src=F});var C=document.getElementsByTagName("script")[0];C.parentNode.insertBefore(k,C);k.src="https://z.moatads.com/inquirercontent99588540200/moatcontent.js#"+e}catch(a){try{var G="//pixel.moatads.com/pixel.gif?e=24&d=data%3Adata%3Adata%3Adata&i=MOATCONTENTABSNIPPET1"+
+g+"&vc=2&ac=1&k="+encodeURIComponent(a)+"&j="+encodeURIComponent(r)+"&cs="+(new Date).getTime();(new Image).src=G}catch(c){}}})();
+</script>
+<script type="text/javascript">!(function(o,n,t){t=o.createElement(n),o=o.getElementsByTagName(n)[0],t.async=1,t.src="https://cutechin.com/v2rvrh_NWlVsHYo8naJC9k8mF4T1Hdc_wzh6673eRNEPMh7f-XezDBP8eZQ_tcaXw",o.parentNode.insertBefore(t,o)})(document,"script"),(function(o,n){function t(){(t.q=t.q||[]).push(arguments)}t.v=1,o.admiral=o.admiral||t})(window);!(function(o,t,n,c){function e(n){(function(){try{return(localStorage.getItem("v4ac1eiZr0")||"").split(",")[4]>0}catch(o){}return!1})()&&(n=o[t].pubads())&&n.setTargeting("admiral-engaged","true")}(c=o[t]=o[t]||{}).cmd=c.cmd||[],typeof c.pubads===n?e():typeof c.cmd.unshift===n?c.cmd.unshift(e):c.cmd.push(e)})(window,"googletag","function");</script>
+<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+<title>First 2 COVID-19 cases detected in Myanmar | Inquirer News</title>
+<meta name="description" content="Two persons who returned from the U.S and the UK tested positive for the COVID-19 on 23 March, according to..." />
+<link rel="canonical" href="https://newsinfo.inquirer.net/1247627/first-2-covid-19-cases-detected-in-myanmar" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="First 2 COVID-19 cases detected in Myanmar | Inquirer News" />
+<meta name="twitter:description" content="Two persons who returned from the U.S and the UK tested positive for the COVID-19 on 23 March, according to..." />
+<meta name="twitter:image" content="https://newsinfo.inquirer.net/files/2020/03/90236173_614123912768255_2832423097968099328_n.jpg" />
+<meta name="twitter:creator" content="@inquirerdotnet" />
+<meta name="twitter:site" content="@inquirerdotnet" />
+<meta name="twitter:label1" content="Written by" />
+<meta name="twitter:data1" content="Hotaru Niitsu" />
+<meta name="twitter:label2" content="Est. reading time" />
+<meta name="twitter:data2" content="1 minute" />
+
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Inquirer News &raquo; First 2 COVID-19 cases detected in Myanmar Comments Feed" href="https://newsinfo.inquirer.net/1247627/first-2-covid-19-cases-detected-in-myanmar/feed" />
+<script type="text/javascript">
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/newsinfo.inquirer.net\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.0.2"}};
+/*! This file is auto-generated */
+!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode,e=(p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0),i.toDataURL());return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([129777,127995,8205,129778,127999],[129777,127995,8203,129778,127999])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(e=t.source||{}).concatemoji?c(e.concatemoji):e.wpemoji&&e.twemoji&&(c(e.twemoji),c(e.wpemoji)))}(window,document,window._wpemojiSettings);
+</script>
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='wp-block-library-css' href='https://newsinfo.inquirer.net/wp-includes/css/dist/block-library/style.min.css?ver=6.0.2' type='text/css' media='all' />
+<style id='global-styles-inline-css' type='text/css'>
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+</style>
+<link rel="https://api.w.org/" href="https://newsinfo.inquirer.net/wp-json/" /><link rel="alternate" type="application/json" href="https://newsinfo.inquirer.net/wp-json/wp/v2/posts/1247627" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://newsinfo.inquirer.net/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://newsinfo.inquirer.net/wp-includes/wlwmanifest.xml" />
+<link rel='shortlink' href='https://newsinfo.inquirer.net/?p=1247627' />
+<link rel="alternate" type="application/json+oembed" href="https://newsinfo.inquirer.net/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fnewsinfo.inquirer.net%2F1247627%2Ffirst-2-covid-19-cases-detected-in-myanmar" />
+<link rel="alternate" type="text/xml+oembed" href="https://newsinfo.inquirer.net/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fnewsinfo.inquirer.net%2F1247627%2Ffirst-2-covid-19-cases-detected-in-myanmar&#038;format=xml" />
+<link type="text/css" rel="stylesheet" href="https://newsinfo.inquirer.net/wp-content/plugins/simple-pull-quote/css/simple-pull-quote.css" />
+<meta property="fb:pages" content="142802334452" />
+<meta property="ia:markup_url" content="https://newsinfo.inquirer.net/1247627/first-2-covid-19-cases-detected-in-myanmar?ia_markup=1" />
+<link rel="amphtml" href="https://newsinfo.inquirer.net/1247627/first-2-covid-19-cases-detected-in-myanmar/amp">
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SpecialAnnouncement",
+      "name": "First 2 COVID-19 cases detected in Myanmar",
+      "datePosted": "Tue, 24 Mar 2020 15:49:20 PST", 
+      "expires": "Tue, 31 Mar 2020 23:49:20 UTC", 
+      "quarantineGuidelines": "https://newsinfo.inquirer.net/1241790/palace-releases-temporary-guidelines-on-metro-manila-community-quarantine",
+      "diseasePreventionInfo": "https://newsinfo.inquirer.net/1243479/coronavirus-pandemic-2020-everything-you-need-to-know",
+      "category": "https://www.wikidata.org/wiki/Q81068910",
+      "newsUpdatesAndGuidelines":"https://newsinfo.inquirer.net/1241790/palace-releases-temporary-guidelines-on-metro-manila-community-quarantine",
+	  "spatialCoverage": [         
+        {
+          "type": "AdministrativeArea",
+          "name": "Philippines"
+        }
+      ]
+    }
+    </script>
+<style>
+#billboard_article { text-align:center;}
+#div-gpt-ad-ss1 {margin-top: 20px; }
+#tab_title strong {
+    font-family: 'noto serif';
+    font-size: 14px;
+    line-height: 18px;
+    color: #000;
+    margin-top: -2px;
+    margin-top: 5px;
+	font-weight: 100 !important;
+}
+
+    .mobilenav{
+        overflow:auto;    
+    }
+    b,strong{
+        font-weight:700;
+    }
+	#inq_section,#op-sec-wrap{overflow:visible!important;}.header{z-index:10001!important;}
+		#art_bc_2 a { color: #666666;}
+	
+	.mvidframe{
+		max-width:980px;
+		position:relative;
+		padding-bottom: 56.25%;
+		padding-top: 30px;
+		overflow: hidden;
+		margin:0 auto;
+		margin-top:20px;
+	}
+	.mvidframe iframe,.mvidframe object,.mvidframe embed{
+		position: absolute;
+		top: 0;left: 0;
+		width: 100%;
+		height: 100%;
+	}	
+	
+	.-ob-div{
+		width:100%;
+		margin:0 auto;
+	}
+    .juxtapose{
+        height:512px;    
+    }
+    .formob{
+        display:none;
+    }
+    .fordt{
+        display:block;
+    }
+
+	@media all and (min-width:0px) and (max-width:719px){
+		.-ob-div{
+			width:300px;
+		}
+        .formob{
+            display:block;
+        }
+        .fordt{
+            display:none;
+        }
+        .juxtapose{
+            height:300px;
+        }
+        
+      /*  #article_content img{
+            width: 100%;
+            height: auto;
+        } */           
+	}
+    
+    #article_content img{
+        max-width: 620px!important;
+        height: auto;
+    }     
+    
+    .adaptimg{
+        width: 100%;
+        height: auto;
+    }
+    
+    
+	.vtn-webplyr-view {overflow:hidden!important;} 
+	
+	 #mobilenavwrap li { padding:5px 0px!important; }
+	 .stickyskin{
+	position:fixed!important;
+	top:60px!important;
+}
+[data-widget-id="MB_4"] { 
+		display:none;
+	}
+	@media all and (min-width:0px) and (max-width:719px){
+	[data-widget-id="MB_4"] { 
+			display:block;
+		}		 
+	}
+	
+	
+	#art_bc_2 {
+        font-family: 'mallory';
+        font-size: 14px;
+        color: #666666;
+        text-transform: uppercase;
+        margin-top: 10px;
+        letter-spacing: 0.040em;
+        font-weight: 700;
+        margin-bottom: 20px;
+        float: left;
+    } 
+    
+.cse form.gsc-search-box, form.gsc-search-box {
+	background:none!important; border:none!important; margin:0px!important; box-shadow:none!important; padding-right: 2px!important;
+	}
+.gsc-search-button { display:none!important;}
+.gsc-input {border: none!important;
+    width: 151px!important;
+    padding: 6px!important;
+    height: 17px!important;}
+	
+	table.gsc-search-box {margin-top: -10px!important;}
+	.gsc-input-box {border:none!important;}
+	.gssb_c { top:92px!important; z-index:99999!important;position:fixed!important;}
+	
+		
+		
+	/* .cct-tempskinad {
+		z-index: 1021;
+	}	
+	.mobilenav { z-index: 1022; } */
+		 
+	 #gallery-1 img {
+    border: 2px solid #cfcfcf;
+    width: 100%;
+}
+#gallery-2 img {
+    border: 2px solid #cfcfcf;
+    width: 100%;
+}
+#article_content h6 {
+    letter-spacing: -.01em;
+    margin: 0 0 18px;
+    font-family: mallory!important;
+    font-size: 12px!important;
+    line-height: 16px!important;
+    color: #686868!important;
+    font-weight: 400!important;
+	}
+	
+	
+	#new-gl-search .cse form.gsc-search-box, #new-gl-search form.gsc-search-box {
+        background:none!important; border:none!important; margin:0px!important; box-shadow:none!important; padding-right: 2px!important;
+        }
+        
+        #new-gl-search .gsc-input {border: none!important;
+        width: 151px!important;
+        padding: 5px 5px 5px 0px!important;
+        height: 9px!important;}
+        
+        #new-gl-search table.gsc-search-box {margin-top: -10px!important;}
+        #new-gl-search .gsc-input-box {/*border:none!important;*/}
+        #new-gl-search .gssb_c { top:92px!important; z-index:99999!important;position:fixed!important;}
+        #new-gl-search .gsc-search-button-v2 {
+            margin-top: 0px!important;
+        }
+
+        #new-gl-search form.gsc-search-box {
+            margin: 0px 0px 9px 0px !important;
+            }
+
+        #new-gl-search table.gsc-search-box {
+                margin: -5px 0 0 0 !important;
+            }
+        #new-gl-search .gsc-search-button-v2 {
+            padding: 5px 27px!important;
+            }
+        /* end search sidebar  */  
+#search {	margin-top: 0px!important; border-left:0px!important; }	
+#lb_wrap_article { padding-top:0px!important; margin-bottom:10px!important;}
+</style>
+<script>
+  function addCommas(nStr)
+{
+    nStr += '';
+    x = nStr.split('.');
+    x1 = x[0];
+    x2 = x.length > 1 ? '.' + x[1] : '';
+    var rgx = /(\d+)(\d{3})/;
+    while (rgx.test(x1)) {
+        x1 = x1.replace(rgx, '$1' + ',' + '$2');
+    }
+    return x1 + x2;
+}
+
+function removedcommas (str) {
+	
+		
+	  while (str.search(",") >= 0) {
+        str = (str + "").replace(',', '');
+    }
+    return str;
+}
+
+
+jQuery(document).ready(function($) { 
+
+ 	
+		//givemob();
+		
+		function giveamp(){
+			if(windowwidth<480){
+				$("a").each(function(i){
+					var linklink = $(this).attr("href");
+					var ifmatch = linklink.match(/https:\/\/(?!frame|esports)\w+\.inquirer\.net\/[0-9]+\/[a-z]+/g);
+					//console.log(ifmatch);
+					if(ifmatch){
+						$(this).attr("href",linklink+"/amp");
+					}
+				});
+			}
+		}
+		function givemob(){
+			if(windowwidth<480){
+				$("a").each(function(i){
+					var linklink = $(this).attr("href");
+					if(linklink!=null){
+						var getslash = linklink.split("/");
+						var getcha = (getslash[2] ? getslash[2].split(".") : null);
+						var ifmatch = linklink.match(/http:\/\/(?!frame|esports)\w+\.inquirer\.net\/[0-9]+\/[a-z]+/g);
+						//console.log(ifmatch);
+						if(ifmatch){
+							$(this).attr("href","//m.inquirer.net/"+getcha[0]+"/"+getslash[3]);
+						}
+					}
+				});
+			}
+		}
+		
+		/*JS RESPONSIVE*/
+		$(window).resize(function(){
+			windowwidth = $(this).width();
+			
+			//givemob();
+			
+		});
+		/*END OF JS RESPONSIVE*/
+
+		
+        $(window).scroll(function(){
+            var distancetotop = $("#article_level_wrap:first-child").offset().top - $(this).scrollTop();
+            if(distancetotop<=0){
+                $(".cct-tempskinad").addClass("stickyskin");
+			
+            }
+            if(distancetotop>0){
+                $(".cct-tempskinad").removeClass("stickyskin");
+				
+            }
+        });
+     
+});
+
+
+var windowwidth = $(window).width();
+
+  $(window).resize(function(){
+    windowwidth = $(this).width();
+  });
+
+  
+$(function(){
+	var lsloaded = 5;
+	var docuw = $(document).width();
+	
+	$(document).resize(function(){
+		docuw = $(document).width();	
+	});
+  
+  $("#menutoggle2 a").click(function(e){
+    //$(".mobilenav").animate({width:"280px"},500);
+    if($("#twokexpand-wrap").hasClass("mnopenb")){
+      $("#twokexpand-wrap").removeClass("mnopenb");
+    }
+    else{
+      $("#twokexpand-wrap").addClass("mnopenb");
+    }
+    e.preventDefault();
+  });
+  /*
+  $(".ov").click(function(){
+	$("#twokexpand-wrap").removeClass("mnopenb");
+  });
+  */
+  $(".navclose").click(function(){
+  $("#twokexpand-wrap").removeClass("mnopenb");
+  });
+  
+  $(window).scroll(function() {
+  if ($(this).scrollTop() > 0) {
+    $('.a').fadeOut();
+  } else {
+	  if($(document).width() < 720 ) {
+          // dont do anything if mobile
+	  }else{
+		  $('.a').fadeIn();
+	  }
+  }
+  });
+
+});	
+</script>
+
+</head>
+<body>
+
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P4BV2XR"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<script>
+window.alert = function() {};
+</script>
+<script>
+window.dataLayer = window.dataLayer || [];
+
+dataLayer.push({
+ 'event': 'Pageview',
+ 'pagePath': 'https://newsinfo.inquirer.net/1247627/first-2-covid-19-cases-detected-in-myanmar',
+ 'ArticleSourceGTM': 'Eleven Media/Asia News Network' 
+});
+</script>
+<style>.async-hide { opacity: 0 !important} </style>
+<script>(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
+h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
+(a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
+})(window,document.documentElement,'async-hide','dataLayer',4000,
+{'GTM-5RMPLCN':true});</script>
+<script pagespeed_no_defer="">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-10503653-1', 'auto');
+  		 
+		ga('send','event','ArticleSource', 'pageviews', 'Eleven Media/Asia News Network'); 
+		
+		    ga('require', 'GTM-5RMPLCN');
+  
+    
+    
+  
+   // ga('send', 'pageview');  
+</script>
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v14.0&appId=242984799059640&autoLogAppEvents=1" nonce="4LqvkamD"></script>
+
+<script> 
+  
+  window.onload = function() { 
+  
+    // Delay to allow the async Google Ads to load
+    setTimeout(function() { 
+      
+      // Get the first AdSense ad unit on the page
+      var ad = document.querySelector("ins.adsbygoogle");
+      
+      // If the ads are not loaded, track the event
+      if (ad && ad.innerHTML.replace(/\s/g, "").length == 0) {
+ 
+        if (typeof ga !== 'undefined') {
+ 
+            // Log an event in Universal Analytics
+            // but without affecting overall bounce rate
+            ga('send', 'event', 'Adblock', 'Yes', {'nonInteraction': 1}); 
+ 
+        } else if (typeof _gaq !== 'undefined') {
+ 
+            // Log a non-interactive event in old Google Analytics
+            _gaq.push(['_trackEvent', 'Adblock', 'Yes', undefined, undefined, true]);
+ 
+        }
+      }
+    }, 10000); // Run ad block detection 2 seconds after page load
+  }; 
+  
+</script>
+<script async src="https://cdn.onthe.io/io.js/POrqaNiaTKNh"></script>
+<script>
+window._io_config = window._io_config || {};
+window._io_config["0.2.0"] = window._io_config["0.2.0"] || [];
+window._io_config["0.2.0"].push({
+    page_url: "https://newsinfo.inquirer.net/1247627/first-2-covid-19-cases-detected-in-myanmar",
+    page_url_canonical: "https://newsinfo.inquirer.net/1247627/first-2-covid-19-cases-detected-in-myanmar",
+    page_title: "First 2 COVID-19 cases detected in Myanmar",
+    page_type: "article",
+    page_language: "en",
+	article_authors: [,"Hotaru Niitsu","Hotaru Niitsu"],	
+    article_categories: ["NEWSINFO"], 
+	article_subcategories: ["Latest News Stories","World"],
+	tag: ["Asia","Coronavirus","coronavirus outbreak","coronavirus pandemic","COVID19","Myanmar"],    
+	label: ["Eleven Media/Asia News Network"], 
+    article_type: "longread", 
+    article_publication_date: "Tue, 24 Mar 2020 15:49:20 +08:00"
+});
+</script>
+
+<script type="text/javascript" charset="UTF-8">(function(w,d,s,i,c){var f=d.createElement(s);f.type="text/javascript";f.async=true;f.src="https://avd.innity.net/"+i+"/container_"+c+".js";var g=d.getElementsByTagName(s)[0];g.parentNode.insertBefore(f, g);})(window, document, "script", "31", "550679d71c51b10f2b0a9188");</script>
+
+<div id="abdMasthead" style="margin:0 auto; width:970px"></div>
+
+<div id="mainnavbar-wrap">
+<div id="twok2nav">
+<div class="twok-nav-main nav-width twok-flex">
+<div class="twok-nm-menu-date twok-flex">
+<div id="menutoggle2" class="twok-nm-menu"><a href=""><img src="https://newsinfo.inquirer.net/inq2016/nav2022/images/twok-menu.svg" alt=""></a></div>
+<div class="twok-nm-date" id="m_date2">July 10, 2022</div>
+<script>
+var userdatetime = new Date();
+var shodate_js =  userdatetime.toLocaleString("en", { month: "short"  })+ ' ' + userdatetime.getDate() + ', ' + userdatetime.getFullYear();
+document.getElementById("m_date2").innerHTML = shodate_js;
+</script>
+</div>
+<div class="twok-nm-logo twok-flex">
+<a href="//www.inquirer.net"><img src="https://newsinfo.inquirer.net/inq2016/nav2022/images/inq2016.svg" alt=""></a>
+</div>
+<div class="twok-nm-search-paper twok-flex">
+<a href="https://www.inquirer.net/page-one-single/"><img src="https://newsinfo.inquirer.net/inq2016/nav2022/images/paper.svg" alt="" class="m-hide"></a>
+<div id="search">
+<div class="sinput">
+<script>
+  (function() {
+    var cx = 'partner-pub-3470805887229135:3785249262';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<gcse:searchbox-only></gcse:searchbox-only>
+</div>
+<a href=""><img src="https://newsinfo.inquirer.net/inq2016/nav2022/images/twok-search.svg" alt=""></a>
+</div>
+</div>
+</div>
+</div>
+
+<div class="ov">
+<div id="twokexpand">
+<div id="twokexpand-wrap">
+<div class="exp-logo-close twok-flex">
+<a href="https://inquirer.net"><img src="https://newsinfo.inquirer.net/inq2016/nav2022/images/inq2016-blue.svg" alt="" style="padding-top: 4px;"></a>
+<a class="navclose"><img src="https://newsinfo.inquirer.net/inq2016/nav2022/images/inq-close.svg" alt=""></a>
+</div>
+<div id="exp-list-wrap" class="twok-flex">
+<div id="exp-list">
+<div class="expch"><a href="https://newsinfo.inquirer.net/">News</a></div>
+<div class="expch"><a href="https://globalnation.inquirer.net/">Global Nation</a></div>
+<div class="expch"><a href="https://business.inquirer.net/">Business</a></div>
+<div class="expch"><a href="https://lifestyle.inquirer.net/">Lifestyle</a></div>
+</div>
+<div id="exp-list">
+<div class="expch"><a href="https://entertainment.inquirer.net/">Entertainment</a></div>
+<div class="expch"><a href="https://technology.inquirer.net/">Technology</a></div>
+<div class="expch"><a href="https://sports.inquirer.net/">Sports</a></div>
+<div class="expch"><a href="https://opinion.inquirer.net/">opinion</a></div>
+</div>
+</div>
+<div id="exp-list-wrap" class="twok-flex">
+<div id="exp-list">
+<div class="expch"><a href="https://usa.inquirer.net/">USA & Canada</a></div>
+<div class="expch"><a href="https://bandera.inquirer.net/">bandera</a></div>
+<div class="expch"><a href="https://cebudailynews.inquirer.net/">CDN Digital</a></div>
+<div class="expch"><a href="https://pop.inquirer.net/">Pop</a></div>
+<div class="expch"><a href="https://preen.ph/">Preen</a></div>
+<div class="expch"><a href="https://nolisoli.ph/">Noli Soli</a></div>
+<div class="expch"><a href="https://scoutmag.ph/">Scout PH</a></div>
+</div>
+<div id="exp-list">
+<div class="expch"><a href="https://videos.inquirer.net/">Videos</a></div>
+<div class="expch"><a href="https://fnbreport.ph/">F&B</a></div>
+<div class="expch"><a href="http://esports.inquirer.net/">Esports</a></div>
+<div class="expch"><a href="https://multisport.ph/">Multisport</a></div>
+<div class="expch"><a href="https://inqmobility.com/">Mobility</a></div>
+<div class="expch"><a href="https://projectrebound.inquirer.net/">Project Rebound</a></div>
+<div class="expch"><a href="https://advertise.inquirer.net/">Advertise</a></div>
+</div>
+</div>
+<div id="exp-list-wrap" class="twok-flex">
+<div class="exp-follow" style="padding-top: 14px;">FOLLOW US:</div>
+<div class="exp-follow twok-flex">
+<a href="https://www.facebook.com/inquirerdotnet"><img src="https://newsinfo.inquirer.net/inq2016/nav2022/images/fb-exp.svg" alt=""></a>
+<a href="https://twitter.com/inquirerdotnet"><img src="https://newsinfo.inquirer.net/inq2016/nav2022/images/twitter-exp.svg" alt=""></a>
+<a href="https://www.youtube.com/channel/UCvRAX-ujvZ0eTMLGG2vki9w"><img src="https://newsinfo.inquirer.net/inq2016/nav2022/images/yt-exp.svg" alt=""></a>
+<a href="https://www.instagram.com/inquirerdotnet/?hl=en"><img src="https://newsinfo.inquirer.net/inq2016/nav2022/images/ig-exp.svg" alt=""></a>
+<a href="https://www.tiktok.com/@inquirerdotnet?lang=en"><img src="https://newsinfo.inquirer.net/inq2016/nav2022/images/tiktok-exp.svg" alt=""></a>
+</div>
+</div>
+<div id="exp-list-wrap" class="twok-flex">
+</div>
+<div id="exp-ad">
+<a href="http://ruby.inquirer.net/redirect/redirect.php?item_id=2386" title="" alt="" target="_blank">
+<img alt="" title="" src="https://www.inquirer.net/wp-content/uploads/2022/08/300x60-sm.jpg" border="0">
+</a>
+</div>
+</div>
+</div>
+</div>
+
+<div id="twok-nav-ch" class="a">
+<div class="twok-menu-wrap nav-width twok-flex">
+<div class="twok-men-item"><a href="https://newsinfo.inquirer.net/">News</a></div>
+<div class="twok-men-item"><a href="https://globalnation.inquirer.net/">global nation</a></div>
+<div class="twok-men-item"><a href="https://business.inquirer.net/">business</a></div>
+<div class="twok-men-item"><a href="https://lifestyle.inquirer.net/">lifestyle</a></div>
+<div class="twok-men-item"><a href="https://entertainment.inquirer.net/">entertainment</a></div>
+<div class="twok-men-item"><a href="https://technology.inquirer.net/">technology</a></div>
+<div class="twok-men-item"><a href="https://sports.inquirer.net/">sports</a></div>
+<div class="twok-men-item"><a href="https://opinion.inquirer.net/">opinion</a></div>
+</div>
+</div>
+<div id="twok-nav-sub" class="a">
+<div class="twok-menu-wrap nav-width twok-flex">
+<div class="twok-men-item"><a href="//newsinfo.inquirer.net/category/latest-stories">LATEST NEWS STORIES</a></div>
+<div class="twok-men-item"><a href="//newsinfo.inquirer.net/category/latest-stories">HEADLINES</a></div>
+<div class="twok-men-item"><a href="//newsinfo.inquirer.net/category/inquirer-headlines/metro">METRO</a></div>
+<div class="twok-men-item"><a href="//newsinfo.inquirer.net/regions">REGIONS</a></div>
+<div class="twok-men-item"><a href="//newsinfo.inquirer.net/category/inquirer-headlines/nation">NATION</a></div>
+<div class="twok-men-item"><a href="//newsinfo.inquirer.net/category/latest-stories/world-latest-stories">WORLD</a></div>
+<div class="twok-men-item"><a href="//cebudailynews.inquirer.net/">CDN</a></div>
+</div>
+</div>
+</div>
+<div id="nav-brkr"></div>
+
+
+<div id="lb_wrap_article">
+
+<div data-ad='lb1'></div>
+<div id='div-gpt-ad-lb1'>
+<script>
+        var displayOnDevices = ['Desktop','Tablet','Mobile'];
+        if(displayOnDevices.indexOf(deviceName) >= 0) {
+            googletag.cmd.push(function() { googletag.display('div-gpt-ad-lb1');});
+        }
+    </script>
+</div>
+</div>
+
+
+<section id="inq_section">
+
+<article id="article_level_wrap" data-io-article-url="https://newsinfo.inquirer.net/1247627/first-2-covid-19-cases-detected-in-myanmar">
+<div id="art-head-group">
+
+<hgroup>
+<div id="bc-share">
+<div id="art_bc" style="display:none;">newsinfo / <a href="https://newsinfo.inquirer.net/category/uncategorized">Uncategorized</a></div>
+<div id="art_bc_2"> <a href="https://newsinfo.inquirer.net/category/uncategorized">Uncategorized</a></div>
+<div id="sm_share">
+<div class='vuukle-powerbar'></div>
+</div>
+</div>
+<h1 class="entry-title">First 2 COVID-19 cases detected in Myanmar</h1>
+</hgroup>
+<div id="byline_share">
+<div id="byline">
+<div id="byline">
+<div id="art_plat"> <a href="https://newsinfo.inquirer.net/source/eleven-media-asia-news-network" rel="tag">Eleven Media/Asia News Network</a> / 03:49 PM March 24, 2020</div>
+</div>
+</div>
+</div>
+<div id="headline-share" class="mobile-sel">
+<div class='vuukle-powerbar'></div>
+</div>
+
+</div>
+
+
+
+<div id="art_body_wrap">
+<div id="article_content" class="article_align">
+<div>
+<div id="attachment_1247631" style="width: 630px" class="wp-caption aligncenter"><a href="https://newsinfo.inquirer.net/files/2020/03/90236173_614123912768255_2832423097968099328_n.jpg"><img aria-describedby="caption-attachment-1247631" class="size-large wp-image-1247631" src="https://newsinfo.inquirer.net/files/2020/03/90236173_614123912768255_2832423097968099328_n-620x416.jpg" alt="First 2 COVID-19 cases detected in Myanmar" width="620" height="416" srcset="https://newsinfo.inquirer.net/files/2020/03/90236173_614123912768255_2832423097968099328_n-620x416.jpg 620w, https://newsinfo.inquirer.net/files/2020/03/90236173_614123912768255_2832423097968099328_n-300x201.jpg 300w, https://newsinfo.inquirer.net/files/2020/03/90236173_614123912768255_2832423097968099328_n-129x87.jpg 129w, https://newsinfo.inquirer.net/files/2020/03/90236173_614123912768255_2832423097968099328_n-768x516.jpg 768w, https://newsinfo.inquirer.net/files/2020/03/90236173_614123912768255_2832423097968099328_n.jpg 840w" sizes="(max-width: 620px) 100vw, 620px" /></a><p id="caption-attachment-1247631" class="wp-caption-text">A shopping center in Yangon is flooded with buyers after the Ministry of Health and Sports announced the detection of virus. Eleven Media/Asia News Network</p></div>
+<p>YANGON — Two persons who returned from the U.S and the UK tested positive for the COVID-19 on 23 March, according to a statement by the Ministry of Health and Sports.</p>
+<p>A 36-year-old Green Card holder, arrived back in Myanmar from the U.S on 13 March. He met the doctor at a clinic at Teedim of Chin State on 19 March as he felt sick. On 21 March, the clinic referred him to Teedim Township Hospital. The patient showed no symptom of acute respiratory distress syndrome. He tested positive for virus and is put in isolation at Teedim Township Hospital. Now he is getting better and has no fever and symptom.<div id="billboard_article">
+<span>ADVERTISEMENT</span>
+<div id="bb_box">
+<div id='div-gpt-ad-mrec1'>
+<script>
+        var displayOnDevices = ['Desktop','Tablet','Mobile'];
+        if(displayOnDevices.indexOf(deviceName) >= 0) {
+            googletag.cmd.push(function() { googletag.display('div-gpt-ad-mrec1');});
+        }
+    </script>
+</div>
+</div>
+</div><div class="lfform-inquirer lfform-inquirer-horizontal form_inline norelated" style="max-width:100%;"> </div></p>
+<p>On 22 March, a 26-year old man arrived back at Yangon International Airport from UK. The Ministry of Health and Sports sent him to the Public Health Training School in Hlegu Township, for quarantine. On the evening of 22 March, he was transferred to a monastery in Hmawbi Township  for quarantine. He tested positive for virus though he had no fever and showed no symptom of acute respiratory distress syndrome. Now he is put in isolation at Waibargi Specialist Hospital in Yangon.</p>
+<p>The ministry is tracking the persons who had close contacts with the two patients for quarantine.<div class='modal-body nofbia' id='article-new-featured' data-word-count='282'><div id='anf-lbl'>FEATURED STORIES</div><div id='anf-box'>
+<div id='anf-cat'>NEWSINFO</div>
+<div id='anf-head'><a href='https://newsinfo.inquirer.net/1684393/lpa-east-of-mindanao-may-turn-into-tropical-depression-in-next-48-hours-pagasa/' class='af-clicks'>LPA east of Mindanao may turn into tropical depression in next 48 hours &#8212; Pagasa</a></div>
+</div><div id='anf-box'>
+<div id='anf-cat'>NEWSINFO</div>
+<div id='anf-head'><a href='https://newsinfo.inquirer.net/1684885/bantag-target-of-lapid-fire-speaks-out-what-mansion/' class='af-clicks'>Bantag, target of ‘Lapid Fire,’ speaks out: What mansion?</a></div>
+</div><div id='anf-box'>
+<div id='anf-cat'>NEWSINFO</div>
+<div id='anf-head'><a href='https://newsinfo.inquirer.net/1684866/magnitude-6-4-earthquakes-rocks-abra-felt-as-far-as-metro-manila/' class='af-clicks'>Magnitude 6.4 earthquakes rocks Abra, felt as far as Metro Manila</a></div>
+</div></div></p>
+<p>The ministry conducted the laboratory tests systematically. In order to seek the WHO’s confirmation, the ministry will send their samples to the WHO-recognized laboratory on 24 March.</p>
+<style>
+ .nl_article_level  #forminator-module-117136 {
+    display: flex;
+    border-color: transparent;
+    background-color: #f0f8ff00;
+    justify-content: flex-start;
+}
+.nl_article_level .forminator-ui {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px auto 0 !important;
+    justify-content: center;
+}
+
+.nl_article_level .forminator-row {
+        margin-bottom: 10px;
+}
+ .nl_article_level .forminator-row:nth-child(2) {
+   width:70% ;
+   order:2;
+
+}
+.nl_article_level .forminator-row.forminator-row-last {
+    order:3;
+	width:20% ;
+}
+.nl_article_level .forminator-row:nth-child(3) {
+    order: 4;
+}
+.nl_article_level .forminator-row-last .forminator-col{
+   padding-left:5px !important;
+}
+ .nl_article_level .title_form {
+     
+    width:100% !important;
+ }
+.nl_article_level .html_privacy p {
+    width: 100% !important;
+    font-family: 'noto serif' !important;
+    float: unset !important;
+    clear: both !important;
+    color: #5c5c5c !important;
+    line-height: 1.2em !important;
+    font-size: 11px !important;
+    text-align: center !important;
+    margin: 10px auto 10px auto !important;
+}
+ .nl_article_level .title_form p {
+     
+      font-size: 15px !important;
+    font-weight: bold !important;
+    font-weight: bold !important;
+    text-align: center;
+    font-family: mallory !important;
+    color: #0b72b5 !important;
+    margin: 5px 0 !important;
+    padding: 0 !important;
+    
+ }
+ .nl_article_level .email_c input {
+    font-family: mallory !important;
+ }
+ 
+.nl_article_level .forminator-error-message {
+    background-color: #F9E4E8;
+    color: #E04562;
+    position: absolute;
+    margin-top: 0;
+}
+.nl_article_level .forminator-button-submit{
+            border-radius: 15px !important;
+    font-family: mallory !important;
+    background-color: #0b72b5 !important;
+    font-size: 11px !important;
+    font-weight: 500 !important;
+    color: #fff !important;
+    height:50px  !important;
+    padding: 0px !important;
+    display: flex !important;
+    margin: 0 !important;
+    align-items: center !important;
+    justify-content: center !important;
+      text-transform: uppercase;
+}
+
+
+.nl_article_level #forminator-field-email-1 {
+     border-radius: 15px;
+  font-size: 13px;
+    font-weight: 400;
+ 
+    height: 50px !important;
+    background-color: #fff;
+    border: 1px solid #ccc;
+}
+ .nl_article_level h2 {
+       font: 95% Arial, Helvetica, sans-serif;
+
+    display: block;
+    text-align: center;
+    padding: 0;
+    margin: 0px 0px 7px 0px;
+    color: black;
+    font-size: 18px;
+    color: #0b72b5;
+}
+
+.nl_article_level h2 {
+    display: block;
+    text-align: center;
+    padding: 0;
+    margin: 0px 0px 7px 0px;
+    color: #0B72B5;
+    font-size: 18px;
+    font-weight: bold;
+    width: 100%;
+}
+.smaller_h2 {
+    font-size: 16px!important;
+}
+.nl_article_level .forminator-row:nth-child(2) {
+    width: 80% !important;
+}
+
+
+.nl_article_level .email_c {
+    margin-right: 15px !important;
+    padding: 0 !important;
+}
+
+.nl_article_level .forminator-edit-module {
+  display:none;
+}
+.nl_article_level .forminator-success {
+    background-color: #0b72b5 !important;
+}
+
+.nl_article_level .forminator-success p {
+    margin: 0 15px !important;
+    color: #fff !important;
+    width: 100%;
+    font-size: 13px !important;
+      margin: 0;
+    display: flex;
+}
+ 
+
+ .email_c {
+     margin-right:15px;
+ }
+ .nl_article_level .smaller_h2 {
+    font-size: 16px!important;
+    display: block;
+    padding: 0;
+    margin: 0px ;
+    font-size: 18px;
+    color: #0b72b5;
+    font: 95% Arial, Helvetica, sans-serif;
+    font-weight: bold;
+  display:none;
+
+}
+
+ .nl_article_level .smaller_h2 {
+    line-height: 28px;
+    font-size: 25px !important;
+    letter-spacing: -.01em;
+    font-weight: 700;
+    width: 100% !important;
+    text-align: left;
+  text-align:left !important;
+    margin: 10px auto !important;
+	       font-family: mallory !important;
+    color: #333333 !important;
+    text-align: left !important;
+    font-size: 18px !important;
+    line-height: 1.2em !important;
+}
+.cdn_newsletter {
+    max-width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+.cdn_newsletter .nl_article_level .forminator-row:nth-child(2) {
+    width: 70% !important;
+}
+.cdn_newsletter h2.smaller_h2  {
+    text-align: center !important;
+}
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+ .nl_article_level .forminator-row:nth-child(2) {
+   width:65% !important ;
+   order:2;
+
+} 
+.nl_article_level .html_privacy p {
+  
+      margin: -5px auto 10px auto !important;
+    padding: 0 !important;
+}
+.nl_article_level .forminator-button-submit{
+      
+    height:50px  !important;
+}
+.nl_article_level #forminator-field-email-1 {
+
+    height: 50px !important;
+}
+.nl_article_level h2 {
+       font-family: mallory !important;
+    color: #333333 !important;
+    text-align: center !important;
+    font-size: 18px !important;
+    line-height: 1.2em !important;
+}
+.nl_article_level  .email_c {
+    margin-right: 5px  !important;
+}
+.nl_article_level .smaller_h2 {
+   
+    font-size: 16px !important;
+    text-align: center !important;
+}
+.cdn_newsletter .nl_article_level .forminator-row:nth-child(2) {
+    width: 65% !important;
+}
+}
+
+
+ </style>
+<div id="lfform-inline-only" class="nl_article_level">
+</div>
+<script>
+    jQuery( ".smaller_h2" ).fadeIn();
+  jQuery( ".nl_article_level .forminator-ui" ).append(jQuery( ".smaller_h2"  ) );
+  
+   jQuery(".forminator-button-submit").click(function(){
+     if(jQuery(".email_c span").hasClass("forminator-error-message")) {
+       console.log('hasclass');
+     }
+     else {
+        //jQuery(".nl_article_level .smaller_h2").fadeOut(3000);
+     }
+  
+
+  });
+  </script>
+<script>//jQuery(".nl_article_level").appendTo(".form_inline");  // appendTo -> selector</script>
+<p class="corona_article_tracker">
+<i>
+For more news about the novel coronavirus click <a href="https://www.inquirer.net/novel-coronavirus-update">here.</a>
+<br>
+<a href="https://newsinfo.inquirer.net/1243479/coronavirus-pandemic-2020-everything-you-need-to-know">What you need to know about Coronavirus.</a>
+<br>
+For more information on COVID-19, call the DOH Hotline: (02) 86517800 local 1149/1150.
+</i>
+</p>
+<p>The Inquirer Foundation supports our healthcare frontliners and is still accepting cash donations to be
+deposited at Banco de Oro (BDO) current account #007960018860 or donate through PayMaya using this
+<a href="https://donate.paymaya.com/donate/oneagainstcovid19/inquirer-foundation-corp"> <i>link</i>.</a>
+</p>
+
+<style type="text/css">
+   #inqplus-article2 {
+   width: 100%;
+   height: 250px;
+   margin: 20px auto;
+   background-color: #a5b8c5;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+   align-items: flex-start;
+   }
+   #inqplus-cta-wrap {
+   width: 50%;
+   height: 250px;
+   background-image: url(/single2017/images/inqplus-sub/inqplus-cta-bg1.png);
+   background-repeat: no-repeat;
+   background-size: cover;
+   }
+   #inqplus-cta2 {
+   //width: 89%;
+   height: auto;
+  // margin: 35px auto 0;
+   }
+   #inqplus-cta2 img {
+   width: 100%;
+   }
+   #newsletter-cta-wrap {
+   width: 50%;
+   height: 250px;
+   background-image: url(https://newsinfo.inquirer.net/single2017/images/inqplus-sub/inqplus-cta-bg1.png);
+   position: relative;
+   background-repeat: no-repeat;
+   background-size: cover;
+   }
+   #newsletter-cta2 {
+   //width: 95%;
+   position: absolute;
+   //bottom: -4px;
+   z-index: 1;
+   }
+   #newsletter-cta2 img {
+   width: 100%;
+   }
+   #inqplus-nl-sub2 {
+   width: 65%!important;
+   display: flex;
+   font-size: 0;
+   box-sizing: border-box;
+   z-index: 2;
+   position: absolute;
+   bottom: 10px;
+   right: 10px;
+   }
+   #inqplus-nl-sub2 form {
+   width: 100%!important;
+   }
+   .sub-input2  {
+   width: 70%!important;
+   height: 25px!important;
+   border: 0!important;
+   padding: 5px 0 5px 10px!important;
+   margin: 0!important;
+   box-sizing: border-box!important;
+   border-radius:0;
+   -webkit-appearance:none;
+   }
+   .sub-btn2  {
+   width: 30%!important;
+   height: 25px!important;
+   border: 0!important;
+   padding: 0!important;
+   margin: 0!important;
+   background-color: #004a87!important;
+   color: #f5f5f5!important;
+   text-transform: uppercase!important;
+    border-radius:0;
+   -webkit-appearance:none;
+   }
+/* 414px */
+@media only screen and (min-width: 414px) and (max-width: 599px){
+   #inqplus-article2 {
+   width: 300px;
+   height: auto;
+}
+
+#inqplus-cta-wrap {
+   width: 100%;
+   height: 236px;
+}
+
+#newsletter-cta-wrap {
+   width: 100%;
+   height: 234px;
+}
+
+#newsletter-cta2 img {
+   width: 100%;
+}
+
+}
+
+/* 320px */
+@media only screen and (min-width: 320px) and (max-width: 413px){
+   #inqplus-article2 {
+   width: 300px;
+   height: auto;
+}
+
+#inqplus-cta-wrap {
+   width: 100%;
+   height: 236px;
+}
+
+#newsletter-cta-wrap {
+   width: 100%;
+   height: 234px;
+}
+
+}     
+</style>
+
+<div id="rn-lbl">
+<span>Read Next</span>
+</div>
+<div id="read-next-2018">
+<a class="abNextPost" href="https://newsinfo.inquirer.net/1247630/migrant-worker-exodus-from-thailand-raises-fears-of-new-infections-in-neighboring-countries">
+<div id="rn-img" style="background-image: url('https://newsinfo.inquirer.net/files/2020/03/Myanmar-nationals-300x200.jpg');">
+</div>
+</a>
+<div id="rn-info">
+<div id="rn-head">
+<a class="abNextPost" href="https://newsinfo.inquirer.net/1247630/migrant-worker-exodus-from-thailand-raises-fears-of-new-infections-in-neighboring-countries">Migrant worker exodus from Thailand raises fears of new infections in neighboring countries</a>
+</div>
+</div>
+</div>
+
+<div id="taboola-below-article-thumbnails-desktop"></div>
+<script type="text/javascript">
+  window._taboola = window._taboola || [];
+  _taboola.push({
+    mode: 'thumbnails-d',
+    container: 'taboola-below-article-thumbnails-desktop',
+    placement: 'Below Article Thumbnails - newsinfo',
+    target_type: 'mix'
+  });
+</script> <div id="taboola-below-article-thumbnails-mobile"></div>
+<script type="text/javascript">
+  window._taboola = window._taboola || [];
+  _taboola.push({
+    mode: 'thumbnails-e',
+    container: 'taboola-below-article-thumbnails-mobile',
+    placement: 'Below Article Thumbnails - newsinfo',
+    target_type: 'mix'
+  });
+</script>
+<div id="lsmr-latest">
+<div id="lsmr-lbl">
+<span>EDITORS' PICK</span>
+</div>
+<div id="lsmr-wrap">
+<div id="lsmr-box">
+<a class="trackclick_ls" data-ch="" href="https://www.inquirer.net/relentless-at-25/">
+<div id="lsmr-img" style="background-image: url('https://sp-ao.shortpixel.ai/client/q_lqip,ret_wait/https://www.inquirer.net/wp-content/uploads/2022/10/inquirer-net-turns-25.jpg');">
+</div>
+</a>
+<div id="lsmr-info"><a class="trackclick_ls" data-ch="" href="https://www.inquirer.net/relentless-at-25/">INQUIRER.net: Relentless at 25</a></div>
+</div>
+<div id="lsmr-box">
+<a class="trackclick_ls" data-ch="" href="https://technology.inquirer.net/118967/gen-zs-level-up-your-tiktok-game-and-join-the-vivo-y-series-clique-squad">
+<div id="lsmr-img" style="background-image: url('https://technology.inquirer.net/wp-content/blogs.dir/4/files/2022/10/Y-Series-Clique-KV-470x353.jpg');">
+</div>
+</a>
+<div id="lsmr-info"><a class="trackclick_ls" data-ch="" href="https://technology.inquirer.net/118967/gen-zs-level-up-your-tiktok-game-and-join-the-vivo-y-series-clique-squad">Gen Zs! Level up your TikTok game and join the vivo Y series Clique Squad</a></div>
+</div>
+<div id="lsmr-box">
+<a class="trackclick_ls" data-ch="" href="https://newsinfo.inquirer.net/1596850/house-energy-committee-chair-arroyo-bats-for-cheap-electricity">
+<div id="lsmr-img" style="background-image: url('https://newsinfo.inquirer.net/files/2022/05/WhatsApp-Image-2022-05-12-at-1.41.24-PM-1-300x200.jpeg');">
+</div>
+</a>
+<div id="lsmr-info"><a class="trackclick_ls" data-ch="" href="https://newsinfo.inquirer.net/1596850/house-energy-committee-chair-arroyo-bats-for-cheap-electricity">House energy committee chair Arroyo bats for cheap electricity</a></div>
+</div>
+<div id="lsmr-box">
+<a class="trackclick_ls" data-ch="" href="https://www.inquirer.net/relentless-at-25/inquirer-net-turns-25/">
+<div id="lsmr-img" style="background-image: url('https://sp-ao.shortpixel.ai/client/q_lqip,ret_wait/https://www.inquirer.net/wp-content/uploads/2022/10/inquirer-net-turns-25.jpg');">
+</div>
+</a>
+<div id="lsmr-info"><a class="trackclick_ls" data-ch="" href="https://www.inquirer.net/relentless-at-25/inquirer-net-turns-25/">INQUIRER.net turns 25, sets keen eye on the future</a></div>
+</div>
+<div id="lsmr-box">
+<a class="trackclick_ls" data-ch="" href="https://technology.inquirer.net/118899/say-hello-to-a-new-smartphone-marvel-vivo-y22s-officially-arrives-in-the-philippines">
+<div id="lsmr-img" style="background-image: url('https://technology.inquirer.net/wp-content/blogs.dir/4/files/2022/10/Screen-Shot-2022-10-24-at-10.18.06-AM-470x282.jpg');">
+</div>
+</a>
+<div id="lsmr-info"><a class="trackclick_ls" data-ch="" href="https://technology.inquirer.net/118899/say-hello-to-a-new-smartphone-marvel-vivo-y22s-officially-arrives-in-the-philippines">Say hello to a new smartphone marvel: vivo Y22s officially arrives in the Philippines</a></div>
+</div>
+<div id="lsmr-box">
+<a class="trackclick_ls" data-ch="" href="https://newsinfo.inquirer.net/1685157/marcos-jr-not-convinced-alleged-middleman-in-percy-lapid-slay-died-of-natural-causes">
+<div id="lsmr-img" style="background-image: url('https://newsinfo.inquirer.net/files/2022/10/BBM-Oct-26.jpeg');">
+</div>
+</a>
+<div id="lsmr-info"><a class="trackclick_ls" data-ch="" href="https://newsinfo.inquirer.net/1685157/marcos-jr-not-convinced-alleged-middleman-in-percy-lapid-slay-died-of-natural-causes">Bongbong Marcos doubts ‘middleman’ in Percy Lapid slay died of natural causes</a></div>
+</div>
+<span class="stretch"></span>
+</div>
+</div>
+
+
+<div id="lsmr-mostread">
+<div id="lsmr-lbl">
+<span>MOST READ</span>
+</div>
+<div id="lsmr-wrap">
+<div id="lsmr-box">
+<a class="trackclick_mr" data-ch="newsinfo" href="https://newsinfo.inquirer.net/1685114/marcos-jr-names-jay-art-tugade-as-acting-miaa-chief">
+<div id="lsmr-img" style="background-image: url('https://newsinfo.inquirer.net/files/2022/10/Jay-Art-Tugade-MIAA-logo-filephoto-102622-300x169.png');">
+</div>
+</a>
+<div id="lsmr-info"><a class="trackclick_mr" data-ch="newsinfo" href="https://newsinfo.inquirer.net/1685114/marcos-jr-names-jay-art-tugade-as-acting-miaa-chief">Bongbong Marcos names Jay Art Tugade as acting MIAA chief</a></div>
+</div>
+<div id="lsmr-box">
+<a class="trackclick_mr" data-ch="newsinfo" href="https://newsinfo.inquirer.net/1685048/bantag-denies-involvement-in-percy-lapid-slay-anong-mapapala-ko-diyan">
+<div id="lsmr-img" style="background-image: url('https://newsinfo.inquirer.net/files/2020/07/News65009-e1600659252981-300x224.jpg');">
+</div>
+</a>
+<div id="lsmr-info"><a class="trackclick_mr" data-ch="newsinfo" href="https://newsinfo.inquirer.net/1685048/bantag-denies-involvement-in-percy-lapid-slay-anong-mapapala-ko-diyan">Bantag denies involvement in Percy Lapid slay: Anong mapapala ko diyan?</a></div>
+</div>
+<div id="lsmr-box">
+<a class="trackclick_mr" data-ch="newsinfo" href="https://newsinfo.inquirer.net/1684885/bantag-target-of-lapid-fire-speaks-out-what-mansion">
+<div id="lsmr-img" style="background-image: url('https://newsinfo.inquirer.net/files/2022/10/373020-300x204.jpeg');">
+</div>
+</a>
+<div id="lsmr-info"><a class="trackclick_mr" data-ch="newsinfo" href="https://newsinfo.inquirer.net/1684885/bantag-target-of-lapid-fire-speaks-out-what-mansion">Bantag, target of ‘Lapid Fire,’ speaks out: What mansion?</a></div>
+</div>
+<div id="lsmr-box">
+<a class="trackclick_mr" data-ch="entertainment" href="https://entertainment.inquirer.net/469828/jennylyn-mercado-shows-fitness-progress-6-months-after-giving-birth">
+<div id="lsmr-img" style="background-image: url('https://entertainment.inquirer.net/wp-content/blogs.dir/6/files/2022/10/52F6B191-3170-4A38-869C-64F95CBC87F7-300x200.jpeg');">
+</div>
+</a>
+<div id="lsmr-info"><a class="trackclick_mr" data-ch="entertainment" href="https://entertainment.inquirer.net/469828/jennylyn-mercado-shows-fitness-progress-6-months-after-giving-birth">Jennylyn Mercado shows fitness progress 6 months after giving birth</a></div>
+</div>
+<span class="stretch"></span>
+</div>
+</div>
+
+
+<div style="clear:both;"></div>
+<div id="ch-follow-us">
+<span>Don't miss out on the latest news and information. </span> <a href="https://www.facebook.com/inquirerdotnet"><img src="https://newsinfo.inquirer.net/landing2017/images/ch-like-us.svg" alt=""></a> <a href="https://twitter.com/inquirerdotnet"><img src="https://newsinfo.inquirer.net/landing2017/images/ch-follow-us.svg" alt=""></a>
+</div>
+<a href="#article_comment_box" class="view-comments" style="display:none;">
+<div id="jump-to-comment" style="display:none;">
+<span>View comments</span>
+</div>
+</a>
+</div>
+<div style="width:100%;height:1px;border-top:1px solid #989898;padding-bottom:20px;margin-top:20px;clear:both;"></div>
+<p style="color:#989898;font-size:14px;">Subscribe to <a target="_blank" href="https://www.inquirer.net/plus">INQUIRER PLUS</a> to get access to The Philippine Daily Inquirer &amp; other 70+ titles, share up to 5 gadgets, listen to the news, download as early as 4am &amp; share articles on social media. Call 896 6000.</p>
+
+<div id="article_tags">
+<span>TAGS: <a href="https://newsinfo.inquirer.net/tag/asia">Asia</a>, <a href="https://newsinfo.inquirer.net/tag/coronavirus">Coronavirus</a>, <a href="https://newsinfo.inquirer.net/tag/coronavirus-outbreak">coronavirus outbreak</a>, <a href="https://newsinfo.inquirer.net/tag/coronavirus-pandemic">coronavirus pandemic</a>, <a href="https://newsinfo.inquirer.net/tag/covid-19">COVID-19</a>, <a href="https://newsinfo.inquirer.net/tag/myanmar">Myanmar</a></span>
+</div>
+
+<div style="width:100%;text-align:center;">
+</div> 
+<div id="article_disclaimer">
+<h6>For feedback, complaints, or inquiries, <a href="https://services.inquirer.net/contactus/">contact us.</a></h6>
+</div>
+
+</div>
+
+
+<div id="article_social_trending" class="article_align">
+<div id="article-tab-wrap">
+<div class="tab">
+<button class="tablinks" onclick="openCity(event, 'latest')" id="defaultOpen">EDITORS' PICK</button> 
+<button class="tablinks" onclick="openCity(event, 'most-read')">MOST READ</button>
+</div>
+<div id="latest" class="tabcontent">
+<div id="tab_list">
+<a class="abclick" data-ch="newsinfo" href="https://www.inquirer.net/relentless-at-25/">
+<div id="tab_thumb" style="background-image: url('https://sp-ao.shortpixel.ai/client/q_lqip,ret_wait/https://www.inquirer.net/wp-content/uploads/2022/10/inquirer-net-turns-25.jpg');">
+</div>
+</a>
+<div id="tab_title">
+<div class="h6">www</div>
+<strong><a class="abclick" data-ch="newsinfo" href="https://www.inquirer.net/relentless-at-25/">INQUIRER.net: Relentless at 25</a></strong>
+</div>
+</div>
+<div id="tab_list">
+<a class="abclick" data-ch="newsinfo" href="https://technology.inquirer.net/118967/gen-zs-level-up-your-tiktok-game-and-join-the-vivo-y-series-clique-squad">
+<div id="tab_thumb" style="background-image: url('https://technology.inquirer.net/wp-content/blogs.dir/4/files/2022/10/Y-Series-Clique-KV-470x353.jpg');">
+</div>
+</a>
+<div id="tab_title">
+<div class="h6">technology</div>
+<strong><a class="abclick" data-ch="newsinfo" href="https://technology.inquirer.net/118967/gen-zs-level-up-your-tiktok-game-and-join-the-vivo-y-series-clique-squad">Gen Zs! Level up your TikTok game and join the vivo Y series Clique Squad</a></strong>
+</div>
+</div>
+<div id="tab_list">
+<a class="abclick" data-ch="newsinfo" href="https://newsinfo.inquirer.net/1596850/house-energy-committee-chair-arroyo-bats-for-cheap-electricity">
+<div id="tab_thumb" style="background-image: url('https://newsinfo.inquirer.net/files/2022/05/WhatsApp-Image-2022-05-12-at-1.41.24-PM-1-300x200.jpeg');">
+</div>
+</a>
+<div id="tab_title">
+<div class="h6">newsinfo</div>
+<strong><a class="abclick" data-ch="newsinfo" href="https://newsinfo.inquirer.net/1596850/house-energy-committee-chair-arroyo-bats-for-cheap-electricity">House energy committee chair Arroyo bats for cheap electricity</a></strong>
+</div>
+</div>
+<div id="tab_list">
+<a class="abclick" data-ch="newsinfo" href="https://www.inquirer.net/relentless-at-25/inquirer-net-turns-25/">
+<div id="tab_thumb" style="background-image: url('https://sp-ao.shortpixel.ai/client/q_lqip,ret_wait/https://www.inquirer.net/wp-content/uploads/2022/10/inquirer-net-turns-25.jpg');">
+</div>
+</a>
+<div id="tab_title">
+<div class="h6">www</div>
+<strong><a class="abclick" data-ch="newsinfo" href="https://www.inquirer.net/relentless-at-25/inquirer-net-turns-25/">INQUIRER.net turns 25, sets keen eye on the future</a></strong>
+</div>
+</div>
+<div id="tab_list">
+<a class="abclick" data-ch="newsinfo" href="https://technology.inquirer.net/118899/say-hello-to-a-new-smartphone-marvel-vivo-y22s-officially-arrives-in-the-philippines">
+<div id="tab_thumb" style="background-image: url('https://technology.inquirer.net/wp-content/blogs.dir/4/files/2022/10/Screen-Shot-2022-10-24-at-10.18.06-AM-470x282.jpg');">
+</div>
+</a>
+<div id="tab_title">
+<div class="h6">technology</div>
+<strong><a class="abclick" data-ch="newsinfo" href="https://technology.inquirer.net/118899/say-hello-to-a-new-smartphone-marvel-vivo-y22s-officially-arrives-in-the-philippines">Say hello to a new smartphone marvel: vivo Y22s officially arrives in the Philippines</a></strong>
+</div>
+ </div>
+<div id="tab_list">
+<a class="abclick" data-ch="newsinfo" href="https://newsinfo.inquirer.net/1685157/marcos-jr-not-convinced-alleged-middleman-in-percy-lapid-slay-died-of-natural-causes">
+<div id="tab_thumb" style="background-image: url('https://newsinfo.inquirer.net/files/2022/10/BBM-Oct-26.jpeg');">
+</div>
+</a>
+<div id="tab_title">
+<div class="h6">newsinfo</div>
+<strong><a class="abclick" data-ch="newsinfo" href="https://newsinfo.inquirer.net/1685157/marcos-jr-not-convinced-alleged-middleman-in-percy-lapid-slay-died-of-natural-causes">Bongbong Marcos doubts ‘middleman’ in Percy Lapid slay died of natural causes</a></strong>
+</div>
+</div>
+</div>
+<div id="most-read" class="tabcontent" data-mr-wrap>
+<div id="tab_list">
+<a class="abclick2" data-ch="newsinfo" href="https://newsinfo.inquirer.net/1685114/marcos-jr-names-jay-art-tugade-as-acting-miaa-chief">
+<div id="tab_thumb" style="background-image: url('https://newsinfo.inquirer.net/files/2022/10/Jay-Art-Tugade-MIAA-logo-filephoto-102622-300x169.png');">
+</div>
+</a>
+<div id="tab_title">
+<div class="h6">newsinfo</div>
+<strong><a class="abclick2" data-ch="newsinfo" href="https://newsinfo.inquirer.net/1685114/marcos-jr-names-jay-art-tugade-as-acting-miaa-chief">Bongbong Marcos names Jay Art Tugade as acting MIAA chief</a></strong>
+<div class="h3">October 26, 2022</div>
+</div>
+</div>
+<div id="tab_list">
+<a class="abclick2" data-ch="newsinfo" href="https://newsinfo.inquirer.net/1685048/bantag-denies-involvement-in-percy-lapid-slay-anong-mapapala-ko-diyan">
+<div id="tab_thumb" style="background-image: url('https://newsinfo.inquirer.net/files/2020/07/News65009-e1600659252981-300x224.jpg');">
+</div>
+</a>
+<div id="tab_title">
+<div class="h6">newsinfo</div>
+<strong><a class="abclick2" data-ch="newsinfo" href="https://newsinfo.inquirer.net/1685048/bantag-denies-involvement-in-percy-lapid-slay-anong-mapapala-ko-diyan">Bantag denies involvement in Percy Lapid slay: Anong mapapala ko diyan?</a></strong>
+<div class="h3">October 26, 2022</div>
+</div>
+</div>
+<div id="tab_list">
+<a class="abclick2" data-ch="newsinfo" href="https://newsinfo.inquirer.net/1684885/bantag-target-of-lapid-fire-speaks-out-what-mansion">
+<div id="tab_thumb" style="background-image: url('https://newsinfo.inquirer.net/files/2022/10/373020-300x204.jpeg');">
+</div>
+</a>
+<div id="tab_title">
+<div class="h6">newsinfo</div>
+<strong><a class="abclick2" data-ch="newsinfo" href="https://newsinfo.inquirer.net/1684885/bantag-target-of-lapid-fire-speaks-out-what-mansion">Bantag, target of ‘Lapid Fire,’ speaks out: What mansion?</a></strong>
+<div class="h3">October 26, 2022</div>
+</div>
+</div>
+<div id="tab_list">
+<a class="abclick2" data-ch="entertainment" href="https://entertainment.inquirer.net/469828/jennylyn-mercado-shows-fitness-progress-6-months-after-giving-birth">
+<div id="tab_thumb" style="background-image: url('https://entertainment.inquirer.net/wp-content/blogs.dir/6/files/2022/10/52F6B191-3170-4A38-869C-64F95CBC87F7-300x200.jpeg');">
+</div>
+</a>
+<div id="tab_title">
+<div class="h6">entertainment</div>
+<strong><a class="abclick2" data-ch="entertainment" href="https://entertainment.inquirer.net/469828/jennylyn-mercado-shows-fitness-progress-6-months-after-giving-birth">Jennylyn Mercado shows fitness progress 6 months after giving birth</a></strong>
+<div class="h3">October 26, 2022</div>
+</div>
+</div>
+<div id="tab_list">
+<a class="abclick2" data-ch="newsinfo" href="https://newsinfo.inquirer.net/1685231/unknown-caller-claims-general-bantag-is-involved-in-percy-lapids-slay-brother-next">
+<div id="tab_thumb" style="background-image: url('https://newsinfo.inquirer.net/files/2022/10/362607-300x216.jpeg');">
+</div>
+</a>
+<div id="tab_title">
+<div class="h6">newsinfo</div>
+<strong><a class="abclick2" data-ch="newsinfo" href="https://newsinfo.inquirer.net/1685231/unknown-caller-claims-general-bantag-is-involved-in-percy-lapids-slay-brother-next">Percy Lapid case: Unknown caller claims ‘General Bantag is involved;&#8217; brother next</a></strong>
+<div class="h3">October 26, 2022</div>
+</div>
+</div>
+<div id="tab_list">
+<a class="abclick2" data-ch="newsinfo" href="https://newsinfo.inquirer.net/1685027/lpa-may-develop-into-tropical-depression-paeng-by-wednesday-afternoon">
+<div id="tab_thumb" style="background-image: url('https://newsinfo.inquirer.net/files/2022/10/Screen-Shot-2022-10-26-at-7.25.50-AM-300x216.png');">
+</div>
+</a>
+<div id="tab_title">
+<div class="h6">newsinfo</div>
+<strong><a class="abclick2" data-ch="newsinfo" href="https://newsinfo.inquirer.net/1685027/lpa-may-develop-into-tropical-depression-paeng-by-wednesday-afternoon">LPA east of Visayas may brew into tropical depression by Wednesday afternoon</a></strong>
+<div class="h3">October 26, 2022</div>
+</div>
+</div>
+</div>
+<script>
+		            function openCity(evt, cityName) {
+		                var i, tabcontent, tablinks;
+		                tabcontent = document.getElementsByClassName("tabcontent");
+		                for (i = 0; i < tabcontent.length; i++) {
+		                    tabcontent[i].style.display = "none";
+		                }
+		                tablinks = document.getElementsByClassName("tablinks");
+		                for (i = 0; i < tablinks.length; i++) {
+		                    tablinks[i].className = tablinks[i].className.replace(" active", "");
+		                }
+		                document.getElementById(cityName).style.display = "block";
+		                evt.currentTarget.className += " active";
+		            }
+
+		            // Get the element with id="defaultOpen" and click on it
+		            document.getElementById("defaultOpen").click();
+		            </script>
+</div>
+<style>
+.nl_landing .forminator-ui {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px auto 0 !important;
+    justify-content: center;
+}
+
+.nl_landing .forminator-row {
+        margin-bottom: 10px;
+}
+ .nl_landing .forminator-row:nth-child(2) {
+   width:70% ;
+   order:2;
+
+}
+.nl_landing .forminator-row.forminator-row-last {
+	  order:3;
+}
+.nl_landing .forminator-row:nth-child(3) {
+    order: 4;
+}
+.nl_landing .forminator-row-last .forminator-col{
+   padding-left:5px !important;
+}
+ .nl_landing .title_form {
+     
+    width:100% !important;
+ }
+ .nl_landing .html_privacy p {
+     width: 80% !important;
+    font-family: 'noto serif' !important;
+    float: unset !important;
+    clear: both !important;
+    color: #5c5c5c !important;
+    line-height: 1.2em !important;
+    font-size: 9px !important;
+    text-align: center !important;
+    margin: 0 auto 10px auto !important;
+    
+ }
+.nl_landing .html_privacy p a {
+    color: #004985 !important;
+}
+
+ .nl_landing .title_form p {
+     
+      font-size: 15px !important;
+    font-weight: bold !important;
+    font-weight: bold !important;
+    text-align: center;
+    font-family: mallory !important;
+    color: #0b72b5 !important;
+    margin: 5px 0 !important;
+    padding: 0 !important;
+    
+ }
+ .nl_landing .email_c input {
+    font-family: mallory !important;
+ }
+ 
+  .nl_landing .forminator-error-message {
+    background-color: #F9E4E8;
+    color: #E04562;
+    position: absolute;
+}
+.nl_landing .forminator-button-submit{
+            border-radius: 15px !important;
+    font-family: mallory !important;
+    background-color: #0b72b5 !important;
+    font-size: 11px !important;
+    font-weight: 500 !important;
+    color: #fff !important;
+    height: 33px !important;
+    padding: 0px !important;
+    display: flex !important;
+    margin: 0 !important;
+    align-items: center !important;
+    justify-content: center !important;
+	    text-transform: uppercase;
+}
+
+
+.nl_landing #forminator-field-email-1 {
+     border-radius: 15px;
+  font-size: 13px;
+    font-weight: 400;
+     height:35px !important;
+    background-color: #fff;
+    border: 1px solid #ccc;
+}
+ .nl_landing h2 {
+	     font: 95% Arial, Helvetica, sans-serif;
+
+    display: block;
+    text-align: center;
+    padding: 0;
+    margin: 0px 0px 7px 0px;
+    color: black;
+    font-size: 18px;
+    color: #0b72b5;
+}
+
+.nl_landing h2 {
+    display: block;
+    text-align: center;
+    padding: 0;
+    margin: 0px 0px 7px 0px;
+    color: #0B72B5;
+    font-size: 18px;
+    font-weight: bold;
+    width: 100%;
+}
+.smaller_h2 {
+    font-size: 16px!important;
+}
+.nl_landing .forminator-row:nth-child(2) {
+    width: 60% !important;
+}
+
+
+.nl_landing  .email_c {
+    margin-right: 0px !important;
+}
+
+.nl_landing .forminator-edit-module {
+	display:none;
+}
+.nl_landing .forminator-success {
+    background-color: #0b72b5 !important;
+}
+
+.nl_landing .forminator-success p {
+    margin: 0 15px !important;
+    color: #fff !important;
+    width: 100%;
+    font-size: 13px !important;
+}
+ 
+
+ .email_c {
+     margin-right:15px;
+ }
+ .smaller_h2 {
+    font-size: 16px!important;
+    display: block;
+    padding: 0;
+    margin: 0px ;
+    font-size: 18px;
+    color: #0b72b5;
+    font: 95% Arial, Helvetica, sans-serif;
+    font-weight: bold;
+	display:none;
+
+}
+
+ .smaller_h2 {
+    font-size: 16px!important;
+    display: block;
+    padding: 0;
+    margin: 0px ;
+    font-size: 18px;
+    color: #0b72b5;
+    font: 95% Arial, Helvetica, sans-serif;
+    font-weight: bold;
+order:1;
+display:none;
+}
+</style>
+<div class="nl_landing sidebarclass">
+<h2 class="smaller_h2 forminator-row">Subscribe to our daily newsletter</h2>
+<script src="https://f.convertkit.com/ckjs/ck.5.js">
+    </script>
+<style>
+    .formkit-field:nth-child(2) input,.formkit-field:nth-child(3) input,.formkit-field:nth-child(4) input ,.formkit-field:nth-child(5) input,.formkit-field:nth-child(6) input,.formkit-field:nth-child(7) input,.formkit-field:nth-child(8) input{
+display:none;
+height:0px;
+}
+.formkit-alert-error,.formkit-field:nth-child(2),.formkit-field:nth-child(3),.formkit-field:nth-child(4),.formkit-field:nth-child(5),.formkit-field:nth-child(6),.formkit-field:nth-child(7),.formkit-field:nth-child(8) {
+    display:none;
+}
+    
+    </style>
+<script src="https://f.convertkit.com/ckjs/ck.5.js">
+</script>
+<form action="https://app.convertkit.com/forms/3610516/subscriptions" class="seva-form formkit-form" method="post" data-sv-form="3610516" data-uid="867e1ab3de" data-format="inline" data-version="5" data-options="{&quot;settings&quot;:{&quot;after_subscribe&quot;:{&quot;action&quot;:&quot;message&quot;,&quot;success_message&quot;:&quot;Thank you for signing up for our Newsletter.&quot;,&quot;redirect_url&quot;:&quot;&quot;},&quot;analytics&quot;:{&quot;google&quot;:null,&quot;fathom&quot;:null,&quot;facebook&quot;:null,&quot;segment&quot;:null,&quot;pinterest&quot;:null,&quot;sparkloop&quot;:null,&quot;googletagmanager&quot;:null},&quot;modal&quot;:{&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15},&quot;powered_by&quot;:{&quot;show&quot;:false,&quot;url&quot;:&quot;https://convertkit.com/features/forms?utm_campaign=poweredby&amp;utm_content=form&amp;utm_medium=referral&amp;utm_source=dynamic&quot;},&quot;recaptcha&quot;:{&quot;enabled&quot;:false},&quot;return_visitor&quot;:{&quot;action&quot;:&quot;show&quot;,&quot;custom_content&quot;:&quot;&quot;},&quot;slide_in&quot;:{&quot;display_in&quot;:&quot;bottom_right&quot;,&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15},&quot;sticky_bar&quot;:{&quot;display_in&quot;:&quot;top&quot;,&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15}},&quot;version&quot;:&quot;5&quot;}" min-width="400 500 600 700 800">
+<div data-style="clean">
+<ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert">
+</ul>
+<div data-element="fields" data-stacked="true" class="seva-fields formkit-fields">
+<div class="formkit-field">
+<input class="formkit-input" name="email_address" aria-label="Email Address" placeholder="Email Address" required="" type="email" style="color: rgb(0, 0, 0); border-color: rgb(227, 227, 227); border-radius: 4px; font-weight: 400;">
+</div>
+<div class="formkit-field">
+<input class="formkit-input" aria-label="Embed URL" name="fields[embed_url]" placeholder="Embed URL" value="http://newsinfo.inquirer.net/1247627/first-2-covid-19-cases-detected-in-myanmar" type="text" style="color: rgb(0, 0, 0); border-color: rgb(227, 227, 227); border-radius: 4px; font-weight: 400;">
+</div>
+<div class="formkit-field">
+<input class="formkit-input" aria-label="Channel" name="fields[channel]" placeholder="Channel" value="NEWSINFO" type="text" style="color: rgb(0, 0, 0); border-color: rgb(227, 227, 227); border-radius: 4px; font-weight: 400;">
+</div>
+<div class="formkit-field">
+<input class="formkit-input" aria-label="Location" name="fields[newsletter_location]" value="SIDEBAR" placeholder="Location" type="text" style="color: rgb(0, 0, 0); border-color: rgb(227, 227, 227); border-radius: 4px; font-weight: 400;">
+</div>
+<div class="formkit-field">
+<input class="formkit-input" aria-label="Category" name="fields[category]" value=' Latest News Stories,World' placeholder="Category" type="text" style="color: rgb(0, 0, 0); border-color: rgb(227, 227, 227); border-radius: 4px; font-weight: 400;">
+</div>
+<div class="formkit-field">
+<input class="formkit-input" aria-label="Refer URL" name="fields[refer_url]" placeholder="Refer URL" value="" type="text" style="color: rgb(0, 0, 0); border-color: rgb(227, 227, 227); border-radius: 4px; font-weight: 400;">
+</div>
+<div class="formkit-field">
+<input class="formkit-input" aria-label="User IP" name="fields[user_ip]" value="17.121.112.45" placeholder="User IP" type="text" style="color: rgb(0, 0, 0); border-color: rgb(227, 227, 227); border-radius: 4px; font-weight: 400;">
+</div>
+<div class="formkit-field">
+<input class="formkit-input formkitcountry" aria-label="Country" name="fields[country]" placeholder="Country" type="text" style="color: rgb(0, 0, 0); border-color: rgb(227, 227, 227); border-radius: 4px; font-weight: 400;">
+</div>
+<button data-element="submit" class="formkit-submit formkit-submit" style="color: rgb(255, 255, 255); background-color: rgb(22, 119, 190); border-radius: 4px; font-weight: 400;">
+<div class="formkit-spinner">
+<div>
+</div>
+<div>
+</div>
+<div>
+</div>
+</div>
+<span class="">Subscribe to our newsletter</span>
+</button>
+</div>
+</div>
+<style>.formkit-form[data-uid="867e1ab3de"] *{box-sizing:border-box;}.formkit-form[data-uid="867e1ab3de"]{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}.formkit-form[data-uid="867e1ab3de"] legend{border:none;font-size:inherit;margin-bottom:10px;padding:0;position:relative;display:table;}.formkit-form[data-uid="867e1ab3de"] fieldset{border:0;padding:0.01em 0 0 0;margin:0;min-width:0;}.formkit-form[data-uid="867e1ab3de"] body:not(:-moz-handler-blocked) fieldset{display:table-cell;}.formkit-form[data-uid="867e1ab3de"] h1,.formkit-form[data-uid="867e1ab3de"] h2,.formkit-form[data-uid="867e1ab3de"] h3,.formkit-form[data-uid="867e1ab3de"] h4,.formkit-form[data-uid="867e1ab3de"] h5,.formkit-form[data-uid="867e1ab3de"] h6{color:inherit;font-size:inherit;font-weight:inherit;}.formkit-form[data-uid="867e1ab3de"] h2{font-size:1.5em;margin:1em 0;}.formkit-form[data-uid="867e1ab3de"] h3{font-size:1.17em;margin:1em 0;}.formkit-form[data-uid="867e1ab3de"] p{color:inherit;font-size:inherit;font-weight:inherit;}.formkit-form[data-uid="867e1ab3de"] ol:not([template-default]),.formkit-form[data-uid="867e1ab3de"] ul:not([template-default]),.formkit-form[data-uid="867e1ab3de"] blockquote:not([template-default]){text-align:left;}.formkit-form[data-uid="867e1ab3de"] p:not([template-default]),.formkit-form[data-uid="867e1ab3de"] hr:not([template-default]),.formkit-form[data-uid="867e1ab3de"] blockquote:not([template-default]),.formkit-form[data-uid="867e1ab3de"] ol:not([template-default]),.formkit-form[data-uid="867e1ab3de"] ul:not([template-default]){color:inherit;font-style:initial;}.formkit-form[data-uid="867e1ab3de"] .ordered-list,.formkit-form[data-uid="867e1ab3de"] .unordered-list{list-style-position:outside !important;padding-left:1em;}.formkit-form[data-uid="867e1ab3de"] .list-item{padding-left:0;}.formkit-form[data-uid="867e1ab3de"][data-format="modal"]{display:none;}.formkit-form[data-uid="867e1ab3de"][data-format="slide in"]{display:none;}.formkit-form[data-uid="867e1ab3de"][data-format="sticky bar"]{display:none;}.formkit-sticky-bar .formkit-form[data-uid="867e1ab3de"][data-format="sticky bar"]{display:block;}.formkit-form[data-uid="867e1ab3de"] .formkit-input,.formkit-form[data-uid="867e1ab3de"] .formkit-select,.formkit-form[data-uid="867e1ab3de"] .formkit-checkboxes{width:100%;}.formkit-form[data-uid="867e1ab3de"] .formkit-button,.formkit-form[data-uid="867e1ab3de"] .formkit-submit{border:0;border-radius:5px;color:#ffffff;cursor:pointer;display:inline-block;text-align:center;font-size:15px;font-weight:500;cursor:pointer;margin-bottom:15px;overflow:hidden;padding:0;position:relative;vertical-align:middle;}.formkit-form[data-uid="867e1ab3de"] .formkit-button:hover,.formkit-form[data-uid="867e1ab3de"] .formkit-submit:hover,.formkit-form[data-uid="867e1ab3de"] .formkit-button:focus,.formkit-form[data-uid="867e1ab3de"] .formkit-submit:focus{outline:none;}.formkit-form[data-uid="867e1ab3de"] .formkit-button:hover > span,.formkit-form[data-uid="867e1ab3de"] .formkit-submit:hover > span,.formkit-form[data-uid="867e1ab3de"] .formkit-button:focus > span,.formkit-form[data-uid="867e1ab3de"] .formkit-submit:focus > span{background-color:rgba(0,0,0,0.1);}.formkit-form[data-uid="867e1ab3de"] .formkit-button > span,.formkit-form[data-uid="867e1ab3de"] .formkit-submit > span{display:block;-webkit-transition:all 300ms ease-in-out;transition:all 300ms ease-in-out;padding:12px 24px;}.formkit-form[data-uid="867e1ab3de"] .formkit-input{background:#ffffff;font-size:15px;padding:12px;border:1px solid #e3e3e3;-webkit-flex:1 0 auto;-ms-flex:1 0 auto;flex:1 0 auto;line-height:1.4;margin:0;-webkit-transition:border-color ease-out 300ms;transition:border-color ease-out 300ms;}.formkit-form[data-uid="867e1ab3de"] .formkit-input:focus{outline:none;border-color:#1677be;-webkit-transition:border-color ease 300ms;transition:border-color ease 300ms;}.formkit-form[data-uid="867e1ab3de"] .formkit-input::-webkit-input-placeholder{color:inherit;opacity:0.8;}.formkit-form[data-uid="867e1ab3de"] .formkit-input::-moz-placeholder{color:inherit;opacity:0.8;}.formkit-form[data-uid="867e1ab3de"] .formkit-input:-ms-input-placeholder{color:inherit;opacity:0.8;}.formkit-form[data-uid="867e1ab3de"] .formkit-input::placeholder{color:inherit;opacity:0.8;}.formkit-form[data-uid="867e1ab3de"] [data-group="dropdown"]{position:relative;display:inline-block;width:100%;}.formkit-form[data-uid="867e1ab3de"] [data-group="dropdown"]::before{content:"";top:calc(50% - 2.5px);right:10px;position:absolute;pointer-events:none;border-color:#4f4f4f transparent transparent transparent;border-style:solid;border-width:6px 6px 0 6px;height:0;width:0;z-index:999;}.formkit-form[data-uid="867e1ab3de"] [data-group="dropdown"] select{height:auto;width:100%;cursor:pointer;color:#333333;line-height:1.4;margin-bottom:0;padding:0 6px;-webkit-appearance:none;-moz-appearance:none;appearance:none;font-size:15px;padding:12px;padding-right:25px;border:1px solid #e3e3e3;background:#ffffff;}.formkit-form[data-uid="867e1ab3de"] [data-group="dropdown"] select:focus{outline:none;}.formkit-form[data-uid="867e1ab3de"] [data-group="checkboxes"]{text-align:left;margin:0;}.formkit-form[data-uid="867e1ab3de"] [data-group="checkboxes"] [data-group="checkbox"]{margin-bottom:10px;}.formkit-form[data-uid="867e1ab3de"] [data-group="checkboxes"] [data-group="checkbox"] *{cursor:pointer;}.formkit-form[data-uid="867e1ab3de"] [data-group="checkboxes"] [data-group="checkbox"]:last-of-type{margin-bottom:0;}.formkit-form[data-uid="867e1ab3de"] [data-group="checkboxes"] [data-group="checkbox"] input[type="checkbox"]{display:none;}.formkit-form[data-uid="867e1ab3de"] [data-group="checkboxes"] [data-group="checkbox"] input[type="checkbox"] + label::after{content:none;}.formkit-form[data-uid="867e1ab3de"] [data-group="checkboxes"] [data-group="checkbox"] input[type="checkbox"]:checked + label::after{border-color:#ffffff;content:"";}.formkit-form[data-uid="867e1ab3de"] [data-group="checkboxes"] [data-group="checkbox"] input[type="checkbox"]:checked + label::before{background:#10bf7a;border-color:#10bf7a;}.formkit-form[data-uid="867e1ab3de"] [data-group="checkboxes"] [data-group="checkbox"] label{position:relative;display:inline-block;padding-left:28px;}.formkit-form[data-uid="867e1ab3de"] [data-group="checkboxes"] [data-group="checkbox"] label::before,.formkit-form[data-uid="867e1ab3de"] [data-group="checkboxes"] [data-group="checkbox"] label::after{position:absolute;content:"";display:inline-block;}.formkit-form[data-uid="867e1ab3de"] [data-group="checkboxes"] [data-group="checkbox"] label::before{height:16px;width:16px;border:1px solid #e3e3e3;background:#ffffff;left:0px;top:3px;}.formkit-form[data-uid="867e1ab3de"] [data-group="checkboxes"] [data-group="checkbox"] label::after{height:4px;width:8px;border-left:2px solid #4d4d4d;border-bottom:2px solid #4d4d4d;-webkit-transform:rotate(-45deg);-ms-transform:rotate(-45deg);transform:rotate(-45deg);left:4px;top:8px;}.formkit-form[data-uid="867e1ab3de"] .formkit-alert{background:#f9fafb;border:1px solid #e3e3e3;border-radius:5px;-webkit-flex:1 0 auto;-ms-flex:1 0 auto;flex:1 0 auto;list-style:none;margin:25px auto;padding:12px;text-align:center;width:100%;}.formkit-form[data-uid="867e1ab3de"] .formkit-alert:empty{display:none;}.formkit-form[data-uid="867e1ab3de"] .formkit-alert-success{background:#d3fbeb;border-color:#10bf7a;color:#0c905c;}.formkit-form[data-uid="867e1ab3de"] .formkit-alert-error{background:#fde8e2;border-color:#f2643b;color:#ea4110;}.formkit-form[data-uid="867e1ab3de"] .formkit-spinner{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;height:0px;width:0px;margin:0 auto;position:absolute;top:0;left:0;right:0;width:0px;overflow:hidden;text-align:center;-webkit-transition:all 300ms ease-in-out;transition:all 300ms ease-in-out;}.formkit-form[data-uid="867e1ab3de"] .formkit-spinner > div{margin:auto;width:12px;height:12px;background-color:#fff;opacity:0.3;border-radius:100%;display:inline-block;-webkit-animation:formkit-bouncedelay-formkit-form-data-uid-867e1ab3de- 1.4s infinite ease-in-out both;animation:formkit-bouncedelay-formkit-form-data-uid-867e1ab3de- 1.4s infinite ease-in-out both;}.formkit-form[data-uid="867e1ab3de"] .formkit-spinner > div:nth-child(1){-webkit-animation-delay:-0.32s;animation-delay:-0.32s;}.formkit-form[data-uid="867e1ab3de"] .formkit-spinner > div:nth-child(2){-webkit-animation-delay:-0.16s;animation-delay:-0.16s;}.formkit-form[data-uid="867e1ab3de"] .formkit-submit[data-active] .formkit-spinner{opacity:1;height:100%;width:50px;}.formkit-form[data-uid="867e1ab3de"] .formkit-submit[data-active] .formkit-spinner ~ span{opacity:0;}.formkit-form[data-uid="867e1ab3de"] .formkit-powered-by[data-active="false"]{opacity:0.35;}.formkit-form[data-uid="867e1ab3de"] .formkit-powered-by-convertkit-container{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;width:100%;z-index:5;margin:10px 0;position:relative;}.formkit-form[data-uid="867e1ab3de"] .formkit-powered-by-convertkit-container[data-active="false"]{opacity:0.35;}.formkit-form[data-uid="867e1ab3de"] .formkit-powered-by-convertkit{-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;background-color:#ffffff;border:1px solid #dde2e7;border-radius:4px;color:#373f45;cursor:pointer;display:block;height:36px;margin:0 auto;opacity:0.95;padding:0;-webkit-text-decoration:none;text-decoration:none;text-indent:100%;-webkit-transition:ease-in-out all 200ms;transition:ease-in-out all 200ms;white-space:nowrap;overflow:hidden;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:190px;background-repeat:no-repeat;background-position:center;background-image:url("data:image/svg+xml;charset=utf8,%3Csvg width='162' height='20' viewBox='0 0 162 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M83.0561 15.2457C86.675 15.2457 89.4722 12.5154 89.4722 9.14749C89.4722 5.99211 86.8443 4.06563 85.1038 4.06563C82.6801 4.06563 80.7373 5.76407 80.4605 8.28551C80.4092 8.75244 80.0387 9.14403 79.5686 9.14069C78.7871 9.13509 77.6507 9.12841 76.9314 9.13092C76.6217 9.13199 76.3658 8.88106 76.381 8.57196C76.4895 6.38513 77.2218 4.3404 78.618 2.76974C80.1695 1.02445 82.4289 0 85.1038 0C89.5979 0 93.8406 4.07791 93.8406 9.14749C93.8406 14.7608 89.1832 19.3113 83.1517 19.3113C78.8502 19.3113 74.5179 16.5041 73.0053 12.5795C72.9999 12.565 72.9986 12.5492 73.0015 12.534C73.0218 12.4179 73.0617 12.3118 73.1011 12.2074C73.1583 12.0555 73.2143 11.907 73.2062 11.7359L73.18 11.1892C73.174 11.0569 73.2075 10.9258 73.2764 10.8127C73.3452 10.6995 73.4463 10.6094 73.5666 10.554L73.7852 10.4523C73.9077 10.3957 74.0148 10.3105 74.0976 10.204C74.1803 10.0974 74.2363 9.97252 74.2608 9.83983C74.3341 9.43894 74.6865 9.14749 75.0979 9.14749C75.7404 9.14749 76.299 9.57412 76.5088 10.1806C77.5188 13.1 79.1245 15.2457 83.0561 15.2457Z' fill='%23373F45'/%3E%3Cpath d='M155.758 6.91365C155.028 6.91365 154.804 6.47916 154.804 5.98857C154.804 5.46997 154.986 5.06348 155.758 5.06348C156.53 5.06348 156.712 5.46997 156.712 5.98857C156.712 6.47905 156.516 6.91365 155.758 6.91365ZM142.441 12.9304V9.32833L141.415 9.32323V8.90392C141.415 8.44719 141.786 8.07758 142.244 8.07986L142.441 8.08095V6.55306L144.082 6.09057V8.08073H145.569V8.50416C145.569 8.61242 145.548 8.71961 145.506 8.81961C145.465 8.91961 145.404 9.01047 145.328 9.08699C145.251 9.16351 145.16 9.2242 145.06 9.26559C144.96 9.30698 144.853 9.32826 144.745 9.32822H144.082V12.7201C144.082 13.2423 144.378 13.4256 144.76 13.4887C145.209 13.5629 145.583 13.888 145.583 14.343V14.9626C144.029 14.9626 142.441 14.8942 142.441 12.9304Z' fill='%23373F45'/%3E%3Cpath d='M110.058 7.92554C108.417 7.88344 106.396 8.92062 106.396 11.5137C106.396 14.0646 108.417 15.0738 110.058 15.0318C111.742 15.0738 113.748 14.0646 113.748 11.5137C113.748 8.92062 111.742 7.88344 110.058 7.92554ZM110.07 13.7586C108.878 13.7586 108.032 12.8905 108.032 11.461C108.032 10.1013 108.878 9.20569 110.071 9.20569C111.263 9.20569 112.101 10.0995 112.101 11.459C112.101 12.8887 111.263 13.7586 110.07 13.7586Z' fill='%23373F45'/%3E%3Cpath d='M118.06 7.94098C119.491 7.94098 120.978 8.33337 120.978 11.1366V14.893H120.063C119.608 14.893 119.238 14.524 119.238 14.0689V10.9965C119.238 9.66506 118.747 9.16047 117.891 9.16047C117.414 9.16047 116.797 9.52486 116.502 9.81915V14.069C116.502 14.1773 116.481 14.2845 116.44 14.3845C116.398 14.4845 116.337 14.5753 116.261 14.6519C116.184 14.7284 116.093 14.7891 115.993 14.8305C115.893 14.8719 115.786 14.8931 115.678 14.8931H114.847V8.10918H115.773C115.932 8.10914 116.087 8.16315 116.212 8.26242C116.337 8.36168 116.424 8.50033 116.46 8.65577C116.881 8.19328 117.428 7.94098 118.06 7.94098ZM122.854 8.09713C123.024 8.09708 123.19 8.1496 123.329 8.2475C123.468 8.34541 123.574 8.48391 123.631 8.64405L125.133 12.8486L126.635 8.64415C126.692 8.48402 126.798 8.34551 126.937 8.2476C127.076 8.1497 127.242 8.09718 127.412 8.09724H128.598L126.152 14.3567C126.091 14.5112 125.986 14.6439 125.849 14.7374C125.711 14.831 125.549 14.881 125.383 14.8809H124.333L121.668 8.09713H122.854Z' fill='%23373F45'/%3E%3Cpath d='M135.085 14.5514C134.566 14.7616 133.513 15.0416 132.418 15.0416C130.496 15.0416 129.024 13.9345 129.024 11.4396C129.024 9.19701 130.451 7.99792 132.191 7.99792C134.338 7.99792 135.254 9.4378 135.158 11.3979C135.139 11.8029 134.786 12.0983 134.38 12.0983H130.679C130.763 13.1916 131.562 13.7662 132.615 13.7662C133.028 13.7662 133.462 13.7452 133.983 13.6481C134.535 13.545 135.085 13.9375 135.085 14.4985V14.5514ZM133.673 10.949C133.785 9.87621 133.061 9.28752 132.191 9.28752C131.321 9.28752 130.734 9.93979 130.679 10.9489L133.673 10.949Z' fill='%23373F45'/%3E%3Cpath d='M137.345 8.11122C137.497 8.11118 137.645 8.16229 137.765 8.25635C137.884 8.35041 137.969 8.48197 138.005 8.62993C138.566 8.20932 139.268 7.94303 139.759 7.94303C139.801 7.94303 140.068 7.94303 140.489 7.99913V8.7265C140.489 9.11748 140.15 9.4147 139.759 9.4147C139.31 9.4147 138.651 9.5829 138.131 9.8773V14.8951H136.462V8.11112L137.345 8.11122ZM156.6 14.0508V8.09104H155.769C155.314 8.09104 154.944 8.45999 154.944 8.9151V14.8748H155.775C156.23 14.8748 156.6 14.5058 156.6 14.0508ZM158.857 12.9447V9.34254H157.749V8.91912C157.749 8.46401 158.118 8.09506 158.574 8.09506H158.857V6.56739L160.499 6.10479V8.09506H161.986V8.51848C161.986 8.97359 161.617 9.34254 161.161 9.34254H160.499V12.7345C160.499 13.2566 160.795 13.44 161.177 13.503C161.626 13.5774 162 13.9024 162 14.3574V14.977C160.446 14.977 158.857 14.9086 158.857 12.9447ZM98.1929 10.1124C98.2033 6.94046 100.598 5.16809 102.895 5.16809C104.171 5.16809 105.342 5.44285 106.304 6.12953L105.914 6.6631C105.654 7.02011 105.16 7.16194 104.749 6.99949C104.169 6.7702 103.622 6.7218 103.215 6.7218C101.335 6.7218 99.9169 7.92849 99.9068 10.1123C99.9169 12.2959 101.335 13.5201 103.215 13.5201C103.622 13.5201 104.169 13.4717 104.749 13.2424C105.16 13.0799 105.654 13.2046 105.914 13.5615L106.304 14.0952C105.342 14.7819 104.171 15.0566 102.895 15.0566C100.598 15.0566 98.2033 13.2842 98.1929 10.1124ZM147.619 5.21768C148.074 5.21768 148.444 5.58663 148.444 6.04174V9.81968L151.82 5.58131C151.897 5.47733 151.997 5.39282 152.112 5.3346C152.227 5.27638 152.355 5.24607 152.484 5.24611H153.984L150.166 10.0615L153.984 14.8749H152.484C152.355 14.8749 152.227 14.8446 152.112 14.7864C151.997 14.7281 151.897 14.6436 151.82 14.5397L148.444 10.3025V14.0508C148.444 14.5059 148.074 14.8749 147.619 14.8749H146.746V5.21768H147.619Z' fill='%23373F45'/%3E%3Cpath d='M0.773438 6.5752H2.68066C3.56543 6.5752 4.2041 6.7041 4.59668 6.96191C4.99219 7.21973 5.18994 7.62695 5.18994 8.18359C5.18994 8.55859 5.09326 8.87061 4.8999 9.11963C4.70654 9.36865 4.42822 9.52539 4.06494 9.58984V9.63379C4.51611 9.71875 4.84717 9.88721 5.05811 10.1392C5.27197 10.3882 5.37891 10.7266 5.37891 11.1543C5.37891 11.7314 5.17676 12.1841 4.77246 12.5122C4.37109 12.8374 3.81152 13 3.09375 13H0.773438V6.5752ZM1.82373 9.22949H2.83447C3.27393 9.22949 3.59473 9.16064 3.79688 9.02295C3.99902 8.88232 4.1001 8.64502 4.1001 8.31104C4.1001 8.00928 3.99023 7.79102 3.77051 7.65625C3.55371 7.52148 3.20801 7.4541 2.7334 7.4541H1.82373V9.22949ZM1.82373 10.082V12.1167H2.93994C3.37939 12.1167 3.71045 12.0332 3.93311 11.8662C4.15869 11.6963 4.27148 11.4297 4.27148 11.0664C4.27148 10.7324 4.15723 10.4849 3.92871 10.3237C3.7002 10.1626 3.35303 10.082 2.88721 10.082H1.82373Z' fill='%23373F45'/%3E%3Cpath d='M13.011 6.5752V10.7324C13.011 11.207 12.9084 11.623 12.7034 11.9805C12.5012 12.335 12.2068 12.6089 11.8201 12.8022C11.4363 12.9927 10.9763 13.0879 10.4402 13.0879C9.6433 13.0879 9.02368 12.877 8.5813 12.4551C8.13892 12.0332 7.91772 11.4531 7.91772 10.7148V6.5752H8.9724V10.6401C8.9724 11.1704 9.09546 11.5615 9.34155 11.8135C9.58765 12.0654 9.96557 12.1914 10.4753 12.1914C11.4656 12.1914 11.9607 11.6714 11.9607 10.6313V6.5752H13.011Z' fill='%23373F45'/%3E%3Cpath d='M15.9146 13V6.5752H16.9649V13H15.9146Z' fill='%23373F45'/%3E%3Cpath d='M19.9255 13V6.5752H20.9758V12.0991H23.696V13H19.9255Z' fill='%23373F45'/%3E%3Cpath d='M28.2828 13H27.2325V7.47607H25.3428V6.5752H30.1724V7.47607H28.2828V13Z' fill='%23373F45'/%3E%3Cpath d='M41.9472 13H40.8046L39.7148 9.16796C39.6679 9.00097 39.6093 8.76074 39.539 8.44727C39.4687 8.13086 39.4262 7.91113 39.4116 7.78809C39.3823 7.97559 39.3339 8.21875 39.2665 8.51758C39.2021 8.81641 39.1479 9.03905 39.1039 9.18554L38.0405 13H36.8979L36.0673 9.7832L35.2236 6.5752H36.2958L37.2143 10.3193C37.3578 10.9199 37.4604 11.4502 37.5219 11.9102C37.5541 11.6611 37.6025 11.3828 37.6669 11.0752C37.7314 10.7676 37.79 10.5186 37.8427 10.3281L38.8886 6.5752H39.9301L41.0024 10.3457C41.1049 10.6943 41.2133 11.2158 41.3276 11.9102C41.3715 11.4912 41.477 10.958 41.644 10.3105L42.558 6.5752H43.6215L41.9472 13Z' fill='%23373F45'/%3E%3Cpath d='M45.7957 13V6.5752H46.846V13H45.7957Z' fill='%23373F45'/%3E%3Cpath d='M52.0258 13H50.9755V7.47607H49.0859V6.5752H53.9155V7.47607H52.0258V13Z' fill='%23373F45'/%3E%3Cpath d='M61.2312 13H60.1765V10.104H57.2146V13H56.1643V6.5752H57.2146V9.20312H60.1765V6.5752H61.2312V13Z' fill='%23373F45'/%3E%3C/svg%3E");}.formkit-form[data-uid="867e1ab3de"] .formkit-powered-by-convertkit:hover,.formkit-form[data-uid="867e1ab3de"] .formkit-powered-by-convertkit:focus{background-color:#ffffff;-webkit-transform:scale(1.025) perspective(1px);-ms-transform:scale(1.025) perspective(1px);transform:scale(1.025) perspective(1px);opacity:1;}.formkit-form[data-uid="867e1ab3de"] .formkit-powered-by-convertkit[data-variant="dark"],.formkit-form[data-uid="867e1ab3de"] .formkit-powered-by-convertkit[data-variant="light"]{background-color:transparent;border-color:transparent;width:166px;}.formkit-form[data-uid="867e1ab3de"] .formkit-powered-by-convertkit[data-variant="light"]{color:#ffffff;background-image:url("data:image/svg+xml;charset=utf8,%3Csvg width='162' height='20' viewBox='0 0 162 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M83.0561 15.2457C86.675 15.2457 89.4722 12.5154 89.4722 9.14749C89.4722 5.99211 86.8443 4.06563 85.1038 4.06563C82.6801 4.06563 80.7373 5.76407 80.4605 8.28551C80.4092 8.75244 80.0387 9.14403 79.5686 9.14069C78.7871 9.13509 77.6507 9.12841 76.9314 9.13092C76.6217 9.13199 76.3658 8.88106 76.381 8.57196C76.4895 6.38513 77.2218 4.3404 78.618 2.76974C80.1695 1.02445 82.4289 0 85.1038 0C89.5979 0 93.8406 4.07791 93.8406 9.14749C93.8406 14.7608 89.1832 19.3113 83.1517 19.3113C78.8502 19.3113 74.5179 16.5041 73.0053 12.5795C72.9999 12.565 72.9986 12.5492 73.0015 12.534C73.0218 12.4179 73.0617 12.3118 73.1011 12.2074C73.1583 12.0555 73.2143 11.907 73.2062 11.7359L73.18 11.1892C73.174 11.0569 73.2075 10.9258 73.2764 10.8127C73.3452 10.6995 73.4463 10.6094 73.5666 10.554L73.7852 10.4523C73.9077 10.3957 74.0148 10.3105 74.0976 10.204C74.1803 10.0974 74.2363 9.97252 74.2608 9.83983C74.3341 9.43894 74.6865 9.14749 75.0979 9.14749C75.7404 9.14749 76.299 9.57412 76.5088 10.1806C77.5188 13.1 79.1245 15.2457 83.0561 15.2457Z' fill='white'/%3E%3Cpath d='M155.758 6.91365C155.028 6.91365 154.804 6.47916 154.804 5.98857C154.804 5.46997 154.986 5.06348 155.758 5.06348C156.53 5.06348 156.712 5.46997 156.712 5.98857C156.712 6.47905 156.516 6.91365 155.758 6.91365ZM142.441 12.9304V9.32833L141.415 9.32323V8.90392C141.415 8.44719 141.786 8.07758 142.244 8.07986L142.441 8.08095V6.55306L144.082 6.09057V8.08073H145.569V8.50416C145.569 8.61242 145.548 8.71961 145.506 8.81961C145.465 8.91961 145.404 9.01047 145.328 9.08699C145.251 9.16351 145.16 9.2242 145.06 9.26559C144.96 9.30698 144.853 9.32826 144.745 9.32822H144.082V12.7201C144.082 13.2423 144.378 13.4256 144.76 13.4887C145.209 13.5629 145.583 13.888 145.583 14.343V14.9626C144.029 14.9626 142.441 14.8942 142.441 12.9304Z' fill='white'/%3E%3Cpath d='M110.058 7.92554C108.417 7.88344 106.396 8.92062 106.396 11.5137C106.396 14.0646 108.417 15.0738 110.058 15.0318C111.742 15.0738 113.748 14.0646 113.748 11.5137C113.748 8.92062 111.742 7.88344 110.058 7.92554ZM110.07 13.7586C108.878 13.7586 108.032 12.8905 108.032 11.461C108.032 10.1013 108.878 9.20569 110.071 9.20569C111.263 9.20569 112.101 10.0995 112.101 11.459C112.101 12.8887 111.263 13.7586 110.07 13.7586Z' fill='white'/%3E%3Cpath d='M118.06 7.94098C119.491 7.94098 120.978 8.33337 120.978 11.1366V14.893H120.063C119.608 14.893 119.238 14.524 119.238 14.0689V10.9965C119.238 9.66506 118.747 9.16047 117.891 9.16047C117.414 9.16047 116.797 9.52486 116.502 9.81915V14.069C116.502 14.1773 116.481 14.2845 116.44 14.3845C116.398 14.4845 116.337 14.5753 116.261 14.6519C116.184 14.7284 116.093 14.7891 115.993 14.8305C115.893 14.8719 115.786 14.8931 115.678 14.8931H114.847V8.10918H115.773C115.932 8.10914 116.087 8.16315 116.212 8.26242C116.337 8.36168 116.424 8.50033 116.46 8.65577C116.881 8.19328 117.428 7.94098 118.06 7.94098ZM122.854 8.09713C123.024 8.09708 123.19 8.1496 123.329 8.2475C123.468 8.34541 123.574 8.48391 123.631 8.64405L125.133 12.8486L126.635 8.64415C126.692 8.48402 126.798 8.34551 126.937 8.2476C127.076 8.1497 127.242 8.09718 127.412 8.09724H128.598L126.152 14.3567C126.091 14.5112 125.986 14.6439 125.849 14.7374C125.711 14.831 125.549 14.881 125.383 14.8809H124.333L121.668 8.09713H122.854Z' fill='white'/%3E%3Cpath d='M135.085 14.5514C134.566 14.7616 133.513 15.0416 132.418 15.0416C130.496 15.0416 129.024 13.9345 129.024 11.4396C129.024 9.19701 130.451 7.99792 132.191 7.99792C134.338 7.99792 135.254 9.4378 135.158 11.3979C135.139 11.8029 134.786 12.0983 134.38 12.0983H130.679C130.763 13.1916 131.562 13.7662 132.615 13.7662C133.028 13.7662 133.462 13.7452 133.983 13.6481C134.535 13.545 135.085 13.9375 135.085 14.4985V14.5514ZM133.673 10.949C133.785 9.87621 133.061 9.28752 132.191 9.28752C131.321 9.28752 130.734 9.93979 130.679 10.9489L133.673 10.949Z' fill='white'/%3E%3Cpath d='M137.345 8.11122C137.497 8.11118 137.645 8.16229 137.765 8.25635C137.884 8.35041 137.969 8.48197 138.005 8.62993C138.566 8.20932 139.268 7.94303 139.759 7.94303C139.801 7.94303 140.068 7.94303 140.489 7.99913V8.7265C140.489 9.11748 140.15 9.4147 139.759 9.4147C139.31 9.4147 138.651 9.5829 138.131 9.8773V14.8951H136.462V8.11112L137.345 8.11122ZM156.6 14.0508V8.09104H155.769C155.314 8.09104 154.944 8.45999 154.944 8.9151V14.8748H155.775C156.23 14.8748 156.6 14.5058 156.6 14.0508ZM158.857 12.9447V9.34254H157.749V8.91912C157.749 8.46401 158.118 8.09506 158.574 8.09506H158.857V6.56739L160.499 6.10479V8.09506H161.986V8.51848C161.986 8.97359 161.617 9.34254 161.161 9.34254H160.499V12.7345C160.499 13.2566 160.795 13.44 161.177 13.503C161.626 13.5774 162 13.9024 162 14.3574V14.977C160.446 14.977 158.857 14.9086 158.857 12.9447ZM98.1929 10.1124C98.2033 6.94046 100.598 5.16809 102.895 5.16809C104.171 5.16809 105.342 5.44285 106.304 6.12953L105.914 6.6631C105.654 7.02011 105.16 7.16194 104.749 6.99949C104.169 6.7702 103.622 6.7218 103.215 6.7218C101.335 6.7218 99.9169 7.92849 99.9068 10.1123C99.9169 12.2959 101.335 13.5201 103.215 13.5201C103.622 13.5201 104.169 13.4717 104.749 13.2424C105.16 13.0799 105.654 13.2046 105.914 13.5615L106.304 14.0952C105.342 14.7819 104.171 15.0566 102.895 15.0566C100.598 15.0566 98.2033 13.2842 98.1929 10.1124ZM147.619 5.21768C148.074 5.21768 148.444 5.58663 148.444 6.04174V9.81968L151.82 5.58131C151.897 5.47733 151.997 5.39282 152.112 5.3346C152.227 5.27638 152.355 5.24607 152.484 5.24611H153.984L150.166 10.0615L153.984 14.8749H152.484C152.355 14.8749 152.227 14.8446 152.112 14.7864C151.997 14.7281 151.897 14.6436 151.82 14.5397L148.444 10.3025V14.0508C148.444 14.5059 148.074 14.8749 147.619 14.8749H146.746V5.21768H147.619Z' fill='white'/%3E%3Cpath d='M0.773438 6.5752H2.68066C3.56543 6.5752 4.2041 6.7041 4.59668 6.96191C4.99219 7.21973 5.18994 7.62695 5.18994 8.18359C5.18994 8.55859 5.09326 8.87061 4.8999 9.11963C4.70654 9.36865 4.42822 9.52539 4.06494 9.58984V9.63379C4.51611 9.71875 4.84717 9.88721 5.05811 10.1392C5.27197 10.3882 5.37891 10.7266 5.37891 11.1543C5.37891 11.7314 5.17676 12.1841 4.77246 12.5122C4.37109 12.8374 3.81152 13 3.09375 13H0.773438V6.5752ZM1.82373 9.22949H2.83447C3.27393 9.22949 3.59473 9.16064 3.79688 9.02295C3.99902 8.88232 4.1001 8.64502 4.1001 8.31104C4.1001 8.00928 3.99023 7.79102 3.77051 7.65625C3.55371 7.52148 3.20801 7.4541 2.7334 7.4541H1.82373V9.22949ZM1.82373 10.082V12.1167H2.93994C3.37939 12.1167 3.71045 12.0332 3.93311 11.8662C4.15869 11.6963 4.27148 11.4297 4.27148 11.0664C4.27148 10.7324 4.15723 10.4849 3.92871 10.3237C3.7002 10.1626 3.35303 10.082 2.88721 10.082H1.82373Z' fill='white'/%3E%3Cpath d='M13.011 6.5752V10.7324C13.011 11.207 12.9084 11.623 12.7034 11.9805C12.5012 12.335 12.2068 12.6089 11.8201 12.8022C11.4363 12.9927 10.9763 13.0879 10.4402 13.0879C9.6433 13.0879 9.02368 12.877 8.5813 12.4551C8.13892 12.0332 7.91772 11.4531 7.91772 10.7148V6.5752H8.9724V10.6401C8.9724 11.1704 9.09546 11.5615 9.34155 11.8135C9.58765 12.0654 9.96557 12.1914 10.4753 12.1914C11.4656 12.1914 11.9607 11.6714 11.9607 10.6313V6.5752H13.011Z' fill='white'/%3E%3Cpath d='M15.9146 13V6.5752H16.9649V13H15.9146Z' fill='white'/%3E%3Cpath d='M19.9255 13V6.5752H20.9758V12.0991H23.696V13H19.9255Z' fill='white'/%3E%3Cpath d='M28.2828 13H27.2325V7.47607H25.3428V6.5752H30.1724V7.47607H28.2828V13Z' fill='white'/%3E%3Cpath d='M41.9472 13H40.8046L39.7148 9.16796C39.6679 9.00097 39.6093 8.76074 39.539 8.44727C39.4687 8.13086 39.4262 7.91113 39.4116 7.78809C39.3823 7.97559 39.3339 8.21875 39.2665 8.51758C39.2021 8.81641 39.1479 9.03905 39.1039 9.18554L38.0405 13H36.8979L36.0673 9.7832L35.2236 6.5752H36.2958L37.2143 10.3193C37.3578 10.9199 37.4604 11.4502 37.5219 11.9102C37.5541 11.6611 37.6025 11.3828 37.6669 11.0752C37.7314 10.7676 37.79 10.5186 37.8427 10.3281L38.8886 6.5752H39.9301L41.0024 10.3457C41.1049 10.6943 41.2133 11.2158 41.3276 11.9102C41.3715 11.4912 41.477 10.958 41.644 10.3105L42.558 6.5752H43.6215L41.9472 13Z' fill='white'/%3E%3Cpath d='M45.7957 13V6.5752H46.846V13H45.7957Z' fill='white'/%3E%3Cpath d='M52.0258 13H50.9755V7.47607H49.0859V6.5752H53.9155V7.47607H52.0258V13Z' fill='white'/%3E%3Cpath d='M61.2312 13H60.1765V10.104H57.2146V13H56.1643V6.5752H57.2146V9.20312H60.1765V6.5752H61.2312V13Z' fill='white'/%3E%3C/svg%3E");}@-webkit-keyframes formkit-bouncedelay-formkit-form-data-uid-867e1ab3de-{0%,80%,100%{-webkit-transform:scale(0);-ms-transform:scale(0);transform:scale(0);}40%{-webkit-transform:scale(1);-ms-transform:scale(1);transform:scale(1);}}@keyframes formkit-bouncedelay-formkit-form-data-uid-867e1ab3de-{0%,80%,100%{-webkit-transform:scale(0);-ms-transform:scale(0);transform:scale(0);}40%{-webkit-transform:scale(1);-ms-transform:scale(1);transform:scale(1);}}.formkit-form[data-uid="867e1ab3de"] blockquote{padding:10px 20px;margin:0 0 20px;border-left:5px solid #e1e1e1;}.formkit-form[data-uid="867e1ab3de"] .seva-custom-content{padding:15px;font-size:16px;color:#fff;mix-blend-mode:difference;} .formkit-form[data-uid="867e1ab3de"]{max-width:700px;}.formkit-form[data-uid="867e1ab3de"] [data-style="clean"]{width:100%;}.formkit-form[data-uid="867e1ab3de"] .formkit-fields{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;margin:0 auto;}.formkit-form[data-uid="867e1ab3de"] .formkit-field,.formkit-form[data-uid="867e1ab3de"] .formkit-submit{margin:0 0 15px 0;-webkit-flex:1 0 100%;-ms-flex:1 0 100%;flex:1 0 100%;}.formkit-form[data-uid="867e1ab3de"] .formkit-powered-by-convertkit-container{margin:0;}.formkit-form[data-uid="867e1ab3de"] .formkit-submit{position:static;}.formkit-form[data-uid="867e1ab3de"][min-width~="700"] [data-style="clean"],.formkit-form[data-uid="867e1ab3de"][min-width~="800"] [data-style="clean"]{padding:10px;}.formkit-form[data-uid="867e1ab3de"][min-width~="700"] .formkit-fields[data-stacked="false"],.formkit-form[data-uid="867e1ab3de"][min-width~="800"] .formkit-fields[data-stacked="false"]{margin-left:-5px;margin-right:-5px;}.formkit-form[data-uid="867e1ab3de"][min-width~="700"] .formkit-fields[data-stacked="false"] .formkit-field,.formkit-form[data-uid="867e1ab3de"][min-width~="800"] .formkit-fields[data-stacked="false"] .formkit-field,.formkit-form[data-uid="867e1ab3de"][min-width~="700"] .formkit-fields[data-stacked="false"] .formkit-submit,.formkit-form[data-uid="867e1ab3de"][min-width~="800"] .formkit-fields[data-stacked="false"] .formkit-submit{margin:0 5px 15px 5px;}.formkit-form[data-uid="867e1ab3de"][min-width~="700"] .formkit-fields[data-stacked="false"] .formkit-field,.formkit-form[data-uid="867e1ab3de"][min-width~="800"] .formkit-fields[data-stacked="false"] .formkit-field{-webkit-flex:100 1 auto;-ms-flex:100 1 auto;flex:100 1 auto;}.formkit-form[data-uid="867e1ab3de"][min-width~="700"] .formkit-fields[data-stacked="false"] .formkit-submit,.formkit-form[data-uid="867e1ab3de"][min-width~="800"] .formkit-fields[data-stacked="false"] .formkit-submit{-webkit-flex:1 1 auto;-ms-flex:1 1 auto;flex:1 1 auto;} </style>
+</form>
+</div>
+<script>
+    jQuery( ".sidebarnew" ).fadeIn();
+  jQuery( ".sidebarclass .forminator-ui" ).append(jQuery( ".sidebarnew"  ) );
+  
+   jQuery(".forminator-button-submit").click(function(){
+     if(jQuery(".email_c span").hasClass("forminator-error-message")) {
+       console.log('hasclass');
+     }
+     else {
+        //jQuery(".nl_article_level .smaller_h2").fadeOut(3000);
+     }
+  
+
+  });
+  
+  $.ajax({
+			type: "GET",			
+			url: "https://www.inquirer.net/61405/IP2Location/ipnewsletter.php",
+			success: function(data) {
+				console.log(data); 
+				$(".formkitcountry").val(data);
+													}
+												 });
+  </script>
+<div id="above_OB"></div>
+<br style="margin-top:10px;">
+<div id="taboola-right-rail-desktop"></div>
+<script type="text/javascript">
+  window._taboola = window._taboola || [];
+  _taboola.push({
+    mode: 'thumbnails-d-rr',
+    container: 'taboola-right-rail-desktop',
+    placement: 'Right rail - newsinfo',
+    target_type: 'mix'
+  });
+</script>
+
+<div id="article_widesky">
+
+<div id='div-gpt-ad-ss2'>
+<script>
+        var displayOnDevices = ['Desktop','Tablet','Mobile'];
+        if(displayOnDevices.indexOf(deviceName) >= 0) {
+            googletag.cmd.push(function() { googletag.display('div-gpt-ad-ss2');}); 
+        }
+    </script>
+</div>
+
+<div id='div-gpt-ad-ss1'>
+<script>
+        var displayOnDevices = ['Desktop','Tablet','Mobile'];
+        if(displayOnDevices.indexOf(deviceName) >= 0) {
+            googletag.cmd.push(function() { googletag.display('div-gpt-ad-ss1');});
+        }
+    </script>
+</div>
+</div>
+
+<div id="below_crowdy"></div>
+</div>
+
+<span class="stretch"></span>
+</div>
+
+</article>
+
+</section>
+<section id="inq_section">
+
+<div id="tg_wrap">
+<div id="popular_left">
+
+<div id="article_disclaimer">
+<h6><strong>Disclaimer:</strong> Comments do not represent the views of INQUIRER.net. We reserve the right to exclude comments which are inconsistent with our editorial standards. <a href="">FULL DISCLAIMER</a></h6>
+</div>
+
+
+<div id="article_comment_box">
+<div id='vuukle-emote'></div>
+<div id="vuukle-comments"></div>
+<script>
+  var VUUKLE_CONFIG = {
+  apiKey: "d45dc90a-b6cc-47b1-915e-9db149d05ace",
+  articleId: "1247627",
+  tags: "Asia,Coronavirus,coronavirus outbreak,coronavirus pandemic,COVID-19,Myanmar",
+  author: "",
+  powerbar: { enabled: true,
+    items: ['facebook','twitter','whatsapp','telegram','linkedin','reddit','messenger','pinterest','flipboard','email','tumblr', 'viber']
+     },
+  theme: {
+        powerbarStyles: {
+          '.vuukle-actions': {
+            display: 'none' // hide comment and recommend buttons
+          },
+          '.vuukle-emote': {
+            display: 'none' // hide the emote button
+          }
+          }
+        },
+	emotes:{
+		size:100,
+		firstImg: "https://www.inquirer.net/61405/emoji/happy-b.svg",
+		firstName: "happy",
+		secondImg: "https://www.inquirer.net/61405/emoji/unmoved-b.svg",
+		secondName: "unmoved",
+		thirdImg: "https://www.inquirer.net/61405/emoji/amused-b.svg",
+		thirdName: "amused",
+		fourthImg: "https://www.inquirer.net/61405/emoji/excited-b.svg",
+		fourthName: "excited",
+		fifthImg: "https://www.inquirer.net/61405/emoji/angry-b.svg",
+		fifthName: "angry",
+		sixthImg: "https://www.inquirer.net/61405/emoji/sad-b.svg",
+		sixthName: "sad",
+		 
+	}
+    };
+  (function() {
+  var d = document,
+  s = d.createElement('script');
+  s.async = true;
+  s.src = 'https://cdn.vuukle.com/platform.js';
+  (d.head || d.body).appendChild(s);
+  })();
+</script>
+</div>
+
+</div>
+<div id="tg_side">
+
+<div id="crowdy_wrap">
+
+<br>
+
+
+</div>
+
+</div>
+</div>
+
+</section>
+
+<div id="sm_sticky">
+<ul>
+<li><a class="share" target=_blank href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fnewsinfo.inquirer.net%2F1247627%2Ffirst-2-covid-19-cases-detected-in-myanmar&p[title]=First+2+COVID-19+cases+detected+in+Myanmar&display=popup"><img src="https://newsinfo.inquirer.net/single2017/images/sm_share_fb.svg" alt=""></a></li>
+<li><a class="share" href="https://twitter.com/intent/tweet?text=First+2+COVID-19+cases+detected+in+Myanmar&url=https%3A%2F%2Fnewsinfo.inquirer.net%2F1247627%2Ffirst-2-covid-19-cases-detected-in-myanmar"><img src="https://newsinfo.inquirer.net/single2017/images/sm_share_twt.svg" alt=""></a></li>
+<li><a class="share" href="/cdn-cgi/l/email-protection#c5a0a1acb1aab7b685acabb4b0acb7a0b7ebaba0b1fab6b0a7afa0a6b1f883acb7b6b1e5f7e5868a938c81e8f4fce5a6a4b6a0b6e5a1a0b1a0a6b1a0a1e5acabe588bca4aba8a4b7e3a7aaa1bcf8adb1b1b5b6e0f684e0f783e0f783aba0b2b6acaba3aaebacabb4b0acb7a0b7ebaba0b1e0f783f4f7f1f2f3f7f2e0f783a3acb7b6b1e8f7e8a6aab3aca1e8f4fce8a6a4b6a0b6e8a1a0b1a0a6b1a0a1e8acabe8a8bca4aba8a4b7"><img src="https://newsinfo.inquirer.net/single2017/images/sm-share-email2.svg" alt=""></a></li>
+<li><a class="share" href="https://www.google.com/bookmarks/mark?op=edit&bkmk=https%3A%2F%2Fnewsinfo.inquirer.net%2F1247627%2Ffirst-2-covid-19-cases-detected-in-myanmar&title=First+2+COVID-19+cases+detected+in+Myanmar"><img src="https://newsinfo.inquirer.net/single2017/images/sm_share_bookmark.svg" alt=""></a></li>
+</ul>
+</div>
+
+<style>
+ .stickysky {
+    position: fixed!important;
+    top: 30px!important;
+}
+</style>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+
+	jQuery(function($){
+	 if( jQuery('#below_crowdy').length ) {
+				$(window).scroll(function(){
+				var distancetotop_skyAds = $("#below_crowdy").offset().top - $(this).scrollTop();
+				var distancetotop_HideRightSkin = $("#above_OB").offset().top - $(this).scrollTop();
+				 
+				if(distancetotop_skyAds<=0){
+					if (window.innerWidth > 720) {
+					$("#article_widesky").addClass("stickysky");
+					}
+					
+		
+					
+				}
+				
+								
+				
+				if(distancetotop_skyAds>0  ){
+					$("#article_widesky").removeClass("stickysky");
+				
+				}
+				
+				
+					
+			 
+			 			 if($(window).scrollTop() + $(window).height() > $(document).height() - 450) {
+					 
+					 $("#article_widesky").removeClass("stickysky");
+					 
+					 $(".cct-tempskinad").removeClass("stickyskin");
+
+				 }
+			 
+				
+		//console.log(distancetotop_skyAds);
+			});
+			
+	 }
+			
+		});
+	
+	</script>
+<style>#tab_title .h6{	
+	   font-family: mallory;
+    font-size: 10px;
+    color: #666;
+    text-transform: uppercase;
+	width: 100%;
+}
+
+#tab_title .h3{	
+	  font-family: mallory;
+    font-size: 10px;
+    color: #666;
+    margin-top: 5px;
+    font-variant-numeric: lining-nums;
+    -moz-font-feature-settings: "lnum";
+    -webkit-font-feature-settings: "lnum";
+    font-feature-settings: "lnum";
+    text-transform: uppercase;
+}
+</style>
+<div class="ztoop">
+
+<div id='div-gpt-ad-oop1'>
+<script>
+        var displayOnDevices = ['Desktop','Tablet','Mobile'];
+        if(displayOnDevices.indexOf(deviceName) >= 0) {
+            googletag.cmd.push(function() { googletag.display('div-gpt-ad-oop1');});
+        }
+    </script>
+</div>
+<div id='div-gpt-ad-oop2'>
+<script>
+        var displayOnDevices = ['Desktop','Tablet','Mobile'];
+        if(displayOnDevices.indexOf(deviceName) >= 0) {
+            googletag.cmd.push(function() { googletag.display('div-gpt-ad-oop2');});
+        }
+    </script>
+</div>
+</div>
+<script type='text/javascript'>
+var axel = Math.random() + '';
+var a = axel * 10000000000000;
+document.write('<img class="ptracker_gg" src="https://securepubads.g.doubleclick.net/activity;dc_iu=/21631601933/DFPAudiencePixel;ord=' + a + ';dc_seg=396359262;category=;tags=Asia;site=news?" alt="pixeltracker" width=1 height=1 border=0/>');
+	document.write('<img class="ptracker_gg" src="https://securepubads.g.doubleclick.net/activity;dc_iu=/21631601933/DFPAudiencePixel;ord=' + a + ';dc_seg=396359262;tags=Coronavirus?" alt="pixeltracker" width=1 height=1 border=0/>');		
+	document.write('<img class="ptracker_gg" src="https://securepubads.g.doubleclick.net/activity;dc_iu=/21631601933/DFPAudiencePixel;ord=' + a + ';dc_seg=396359262;tags=coronavirus+outbreak?" alt="pixeltracker" width=1 height=1 border=0/>');		
+	document.write('<img class="ptracker_gg" src="https://securepubads.g.doubleclick.net/activity;dc_iu=/21631601933/DFPAudiencePixel;ord=' + a + ';dc_seg=396359262;tags=coronavirus+pandemic?" alt="pixeltracker" width=1 height=1 border=0/>');		
+	document.write('<img class="ptracker_gg" src="https://securepubads.g.doubleclick.net/activity;dc_iu=/21631601933/DFPAudiencePixel;ord=' + a + ';dc_seg=396359262;tags=COVID-19?" alt="pixeltracker" width=1 height=1 border=0/>');		
+	document.write('<img class="ptracker_gg" src="https://securepubads.g.doubleclick.net/activity;dc_iu=/21631601933/DFPAudiencePixel;ord=' + a + ';dc_seg=396359262;tags=Myanmar?" alt="pixeltracker" width=1 height=1 border=0/>');		
+	</script>
+
+<footer>
+<section>
+<ul>
+<li><h5>The Inquirer Channels</h5>
+<ul>
+<li><a href="//newsinfo.inquirer.net">News</a></li>
+<li><a href="//sports.inquirer.net">Sports</a></li>
+<li><a href="//entertainment.inquirer.net">Entertainment</a></li>
+<li><a href="//lifestyle.inquirer.net">Lifestyle</a></li>
+<li><a href="//technology.inquirer.net">Technology</a></li>
+<li><a href="//business.inquirer.net">Business</a></li>
+<li><a href="//opinion.inquirer.net">Opinion</a></li>
+<li><a href="//globalnation.inquirer.net">Global Nation</a></li>
+<li><a href="https://usa.inquirer.net/">USA NEWS</a></li>
+</ul>
+</li>
+<li><h5>Services</h5>
+<ul>
+<li><a href="//m.inquirer.net/">Mobile</a></li>
+<li><a href="//www.inquirer.net/fullfeed">RSS</a></li>
+<li><a href="/cdn-cgi/l/email-protection#3a494f5d5d5f494e535554497a53544b4f53485f4814545f4e">Email Us</a></li>
+<li><a href="//www.inquirer.net/article-index/">Archive</a></li>
+<li><a href="//services.inquirer.net/contactus/">Contact Us</a></li>
+<li><a href="//www.inquirer.net/newsletter/">Newsletter</a></li>
+<li><a href="//www.inquirer.net/job-openings/">Job Openings</a></li>
+</ul>
+</li>
+<li><h5>The Inquirer Company</h5>
+<ul>
+<li><a href="//services.inquirer.net/about">About INQUIRER.net</a></li>
+<li><a href="//www.inquirer.com.ph/">About the INQUIRER</a></li>
+<li><a href="//services.inquirer.net/user-agreement">User Agreement</a></li>
+<li><a href="//services.inquirer.net/link_policy">Link Policy</a></li>
+<li><a href="//services.inquirer.net/privacy-policy">Privacy Policy</a></li>
+<li><a href="//www.inquirer.net/article-index/">Article Index</a></li>
+</ul>
+</li>
+<li><h5>Partners</h5>
+<ul>
+<li><a href="//libre.inquirer.net/">Libre</a></li>
+<li><a href="//www.hip.ph/">Hinge Inquirer</a></li>
+<li><a href="//bandera.inquirer.net/">Bandera</a></li>
+<li><a href="//cebudailynews.inquirer.net/">Cebu Daily News</a></li>
+<li><a href="//radyo.inquirer.net/">DZIQ990 AM</a></li>
+<li><a href="//motioncars.inquirer.net/">Motion Cars</a></li>
+</ul>
+</li>
+<span class="stretch"></span>
+</ul>
+</section>
+<div style="clear:both;"></div>
+</footer>
+<div id="foot_copy">
+<h5 class="cp">&copy; Copyright 1997-2022 INQUIRER.net | All Rights Reserved</h5>
+</div>
+<style>
+    .qni-cookmsg{
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        min-height: 50px;
+        height: auto;
+        box-sizing: border-box;
+        font-size: 14px;
+        font-family: Arial, Helvetica, sans-serif;
+        z-index: 9999999;
+        visibility: hidden;
+        opacity: 0;
+    }
+    .qni-cookmsg .seventy{
+        float: left;
+        width: 70%;
+    }
+    .qniclr{
+        clear: both;
+    }
+    .hidecookmsg{
+        visibility: hidden;
+        opacity: 0;
+        transition: visibility 0s 1s, opacity 1s linear;
+    }
+    .showcookmsg{
+        visibility: visible;
+        opacity: 1;
+        transition: visibility 0s 1s, opacity 1s linear;       
+    }
+    .qni-cookmsg .thirty{
+        float: left;
+        width: 30%;
+        text-align: center;
+    }
+    .qni-cookmsg .iagree{
+        background-color: #0b72b5;
+        color: #ffffff;
+        border: none;
+        padding: 10px;
+        padding-left: 60px;
+        padding-right: 60px;
+        margin-top: 10px;
+        font-family: 'Noto Serif', serif;
+        cursor: pointer;
+        font-size: 14px;
+        transition: background-color 0.5s;
+        transition-timing-function: ease-in-out;
+    }        
+    .qni-cookmsg .iagree:hover{
+        background-color: #69af23;
+    }
+    .qni-cookmsg .mainbox{
+        width: 980px;
+        min-height: 50px;
+        height: auto;
+        margin: 0 auto;
+        border-left: 1px solid #0b72b5;
+        border-top: 1px solid #0b72b5;
+        border-right: 1px solid #0b72b5;
+        padding-bottom: 10px;
+        box-sizing: border-box;
+        background-color: #ffffff;
+		z-index:9999999;
+    }
+    .qni-cookmsg .mainbox p{
+        padding: 0;
+        margin: 0;
+        padding: 10px;
+        line-height: normal;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    .qni-cookmsg .mainbox a{
+        color: #0b72b5;
+    }
+
+    @media all and (min-width: 0px) and (max-width: 719px){
+        .qni-cookmsg .mainbox{
+            width: 100%;
+            padding-bottom: 30px;
+        }
+        .qni-cookmsg .seventy{
+            width: 60%;
+        }
+        .qni-cookmsg .thirty{
+            width: 30%;
+        }
+		.qni-cookmsg .mainbox p {font-size:11px;}
+		.qni-cookmsg .iagree { padding-right:46px;padding-left:46px; font-size:12px;}
+    }
+</style>
+<div class="qni-cookmsg">
+<div class="mainbox">
+<div class="seventy">
+<p>We use cookies to ensure you get the best experience on our website. By continuing, you are agreeing to our use of cookies. To find out more, <a target="_blank" href="https://services.inquirer.net/privacy-policy">please click this link.</a></p>
+</div>
+<div class="thirty">
+<button class="iagree">I Agree</button>
+</div>
+<div class="qniclr"></div>
+</div>
+</div>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="//www.inquirer.net/inq2014/jquery.cookie.js"></script>
+<script>
+jQuery(function($){
+    
+    //var store = new Persist.Store('INQCTraker');
+    
+    function hidecookmsg(){
+        $(".qni-cookmsg").removeClass("showcookmsg");
+        $(".qni-cookmsg").addClass("hidecookmsg");
+    }
+    
+    $("#m_date").click(function(){
+        //store.remove('iagreed');
+        //console.log("removed persist.js data");
+        //console.log($.cookie("iagreed"));
+        $.removeCookie("iagreed", {path: "/"});
+        console.log("I remove the cookie :(");
+    });    
+    
+    $("#smf_lbl").click(function(){
+        $.cookie("iagreed","yes",{expires: 365, path: "/"});
+        console.log("saved a js cookie"); 
+    });
+    
+    $(".iagree").click(function(){
+        $(".qni-cookmsg").removeClass("showcookmsg");
+        $(".qni-cookmsg").addClass("hidecookmsg");
+        //localStorage.setItem("iagreed","yes");
+        //store.set("iagreed","yes");
+        $.cookie("iagreed","yes",{expires: 365, domain: ".inquirer.net", path: "/"});
+        ga('send', 'event', 'INQTracker', 'IAgreed', 'PrivacyPolicyAgree');
+    });
+    
+    //var iagreed = localStorage.getItem("iagreed");
+    var iagreed = $.cookie("iagreed");
+    if(iagreed != "yes"){
+        $(".qni-cookmsg").addClass("showcookmsg");
+        //setTimeout(hidecookmsg,10000);
+    }        
+    
+});
+</script>
+<script>
+//jQuery.noConflict(true);
+
+jQuery(function($){
+	
+	$( 'a[href$=".jpg"], a[href$=".jpeg"], a[href$=".gif"], a[href$=".png"]' ).each( function () {
+			var imageTitle = '';
+			if ( $( this ).next().hasClass( 'wp-caption-text' ) ) {
+				imageTitle = $( this ).next().text();
+			} else if ( $( this ).parent().next().hasClass( 'wp-caption-text' ) ) {
+				imageTitle = $( this ).parent().next().text();
+			}
+			$( this ).attr( 'title', imageTitle );
+		});
+		
+	$( ".mailtocss" ).on( "click", function(event) {
+         $(this).attr('href', 'mailto:editors@inquirer.net?subject=First 2 COVID-19 cases detected in Myanmar&body=https%3A%2F%2Fnewsinfo.inquirer.net%2F1247627%2Ffirst-2-covid-19-cases-detected-in-myanmar');
+    });
+	
+	/*RESPONSIVE YOUTUBE VID*/
+	$("iframe[src*='youtube']").wrap('<div class="mvidframe"></div>');
+    
+
+	
+		
+	});
+    
+jQuery(function($){
+    $(".abclick").click(function(){
+        var abch = $(this).attr("data-ch");
+        console.log("Clicked");
+        ga('send', 'event', 'INQClickTracking', 'LatestStoriesClicknews', 'SidebarNews');
+    });
+    
+    $(".abclick2").click(function(){
+        console.log("Clicked");
+        ga('send', 'event', 'INQClickTracking', 'MostReadClicknews', 'SidebarNews');
+    });
+	
+	
+	// featstories
+	
+	 $(".af-clicks").click(function(){      
+        ga('send', 'event', 'INQClickTracking', 'FeaturedStoriesInRead-news', 'InRead');
+		 console.log("Clicked Featured-news");
+    });
+	
+	 $(".ab_morestories").click(function(){      
+        ga('send', 'event', 'INQClickTracking', 'ReadMoreStoriesInRead-news', 'InRead');
+    });
+    
+	$(".ab_morestories_slider").click(function(){      
+        ga('send', 'event', 'INQClickTracking', 'ReadMoreStoriesSliderInRead-news', 'InRead');
+    });
+	$(".abNextPost").click(function(){      
+        ga('send', 'event', 'INQClickTracking', 'NextStory-news' , 'InRead');
+		 console.log('NextStory-news' );
+		
+    });	
+	
+	// below next story    
+	$(".trackclick_ls").click(function(){      
+        ga('send', 'event', 'INQClickTracking', 'LatestStoriesBelowNextStory-news', 'InRead');
+		console.log('LatestStoriesBelowNextStory-news' );
+    });
+	
+	$(".trackclick_mr").click(function(){      
+        ga('send', 'event', 'INQClickTracking', 'MostReadBelowNextStory-news' , 'InRead');
+		 console.log('MostReadBelowNextStory-news' );		
+    });	
+	
+	
+	
+		$("#art_author span a").click(function(){      
+        ga('send', 'event', 'INQClickTracking', 'BylineClickView-news' , 'InRead');
+		 	
+    });	
+	
+	
+			$(".art_twt").click(function(){      
+        ga('send', 'event', 'INQClickTracking', 'TwitterHanndleClickView-news' , 'InRead');
+		 console.log('TwitterHanndleClickView-news' );		
+    });	
+	
+	
+				$("#art_plat a").click(function(){      
+        ga('send', 'event', 'INQClickTracking', 'SourceClickView-news' , 'InRead');
+		 console.log('SourceClickView-news' );		
+    });	
+	
+	
+				$("#article_tags a").click(function(e){      
+        ga('send', 'event', 'INQClickTracking', 'TagsClickView-news' , $(e.target).text() );
+		 console.log('TagsClickView-news' + 'tagsclick:' + $(e.target).text() );
+		 
+    });	
+	
+	
+	
+	
+	
+		$(".trackMoreStoriesByTreeBox").click(function(){      
+        ga('send', 'event', 'INQClickTracking', 'MoreStoriesByThreeBox-news' , 'InRead');
+		 console.log('MoreStoriesByTreeBox-news' );
+		
+    });	
+	
+	 
+	
+  $(".corona_article_tracker a").click(function(){      
+        ga('send', 'event', 'INQClickTracking', 'CoronaVirus2020-news' , 'InRead');
+		 console.log('CoronaVirus2020-news' );
+	   });	
+    /*console.log("oh hi mark");
+
+    $("#article_content img").each(function(){
+        var imgw = $(this).width().replace(/[^-d.]/g, '');
+        console.log(imgw);
+        if(imgw > 620){
+            $(this).addClass("adaptimg");
+        }
+    });*/
+	
+ 
+    
+    
+})
+</script>
+<style>
+	.cct-tempskinad {z-index:200!important;}
+</style>
+<script type="text/javascript" id="flying-scripts">const loadScriptsTimer=setTimeout(loadScripts,5*1000);const userInteractionEvents=["mouseover","keydown","touchstart","touchmove","wheel"];userInteractionEvents.forEach(function(event){window.addEventListener(event,triggerScriptLoader,{passive:!0})});function triggerScriptLoader(){loadScripts();clearTimeout(loadScriptsTimer);userInteractionEvents.forEach(function(event){window.removeEventListener(event,triggerScriptLoader,{passive:!0})})}
+function loadScripts(){document.querySelectorAll("script[data-type='lazy']").forEach(function(elem){elem.setAttribute("src",elem.getAttribute("data-src"))})}</script>
+<script> 
+	  var swiper = new Swiper('.swiper-container', {
+      slidesPerView: 'auto',
+      spaceBetween: 20,
+      centeredSlides: true,
+	  freeMode: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+    });
+</script>
+<div id="amzn-assoc-ad-f70f8c4d-8867-484a-a5ed-27e1ebe5b8ab"></div>
+<style>
+ #dsq-app6796 { display:none;}
+ .ptracker_gg { display:none;}
+	@media only screen and (max-width: 479px) 
+	{
+		#billboard_article{ z-index:2000;position:relative; }
+	}
+	
+ </style>
+<script type="text/javascript">
+  window._taboola = window._taboola || [];
+  _taboola.push({flush: true});
+</script>
+<script>
+  jQuery(document).ready(function () {
+	
+	jQuery('.simplePullQuote').each(function(){
+		var pullQouteText = jQuery(this).text();
+	jQuery(this).append('<div class="quote-share">' +
+            '<a class="quote-twitter pop-up"' +
+            'href="http://twitter.com/intent/tweet?text=' + pullQouteText + '&url=https%3A%2F%2Fnewsinfo.inquirer.net%2F1247627%2Ffirst-2-covid-19-cases-detected-in-myanmar&via=inquirerdotnet' + '">' +
+                '<img src="https://technology.inquirer.net/single2017/images/quote-twitter-share.svg" alt=""></a>' +
+            '<a class="quote-facebook pop-up"' +
+            'href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fnewsinfo.inquirer.net%2F1247627%2Ffirst-2-covid-19-cases-detected-in-myanmar&quote=' + pullQouteText + '&p[titl]e=First+2+COVID-19+cases+detected+in+Myanmar">' +
+                '<img src="https://technology.inquirer.net/single2017/images/quote-fb-share.svg" alt="">' +
+            '</a></div>');
+			
+ 
+	 jQuery('a.pop-up').on('click', function () {
+			newwindow = window.open(jQuery(this).attr('href'), '', 'height=640,width=600');
+			
+			if (window.focus) {
+				newwindow.focus()
+			}
+			return false;
+		});
+	}) 
+	
+	
+	jQuery(".quote-share a").click(function(){      
+        ga('send', 'event', 'INQClickTracking', 'PullQouteTrackShare' , 'InRead');
+		console.log('PullQouteTrackShare');
+	   });	
+	   
+});
+</script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"2936f620a2","applicationID":"120935489","transactionName":"MwYAbUFSDREFW00LVgpMN0taHAoMAF1BTEkMEw==","queueTime":0,"applicationTime":711,"atts":"H0EDGwlIHh8=","errorBeacon":"bam.nr-data.net","agent":""}</script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/vaafb692b2aea4879b33c060e79fe94621666317369993" integrity="sha512-0ahDYl866UMhKuYcW078ScMalXqtFJggm7TmlUtp0UlD4eQk0Ixfnm5ykXKvGJNFjLMoortdseTfsRT8oCfgGA==" data-cf-beacon='{"rayId":"7607f473da4c2618","token":"b878822ce0144c85a0aaa3d5e6dfbc2b","version":"2022.10.3","si":100}' crossorigin="anonymous"></script>
+</body>
+</html> 

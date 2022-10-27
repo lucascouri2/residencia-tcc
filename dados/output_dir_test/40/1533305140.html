@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="es-MX" prefix="og: https://ogp.me/ns#">
+<head><meta charset='UTF-8'><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>class RocketLazyLoadScripts{constructor(){this.triggerEvents=["keydown","mousedown","mousemove","touchmove","touchstart","touchend","wheel"],this.userEventHandler=this._triggerListener.bind(this),this.touchStartHandler=this._onTouchStart.bind(this),this.touchMoveHandler=this._onTouchMove.bind(this),this.touchEndHandler=this._onTouchEnd.bind(this),this.clickHandler=this._onClick.bind(this),this.interceptedClicks=[],window.addEventListener("pageshow",(e=>{this.persisted=e.persisted})),window.addEventListener("DOMContentLoaded",(()=>{this._preconnect3rdParties()})),this.delayedScripts={normal:[],async:[],defer:[]},this.allJQueries=[]}_addUserInteractionListener(e){document.hidden?e._triggerListener():(this.triggerEvents.forEach((t=>window.addEventListener(t,e.userEventHandler,{passive:!0}))),window.addEventListener("touchstart",e.touchStartHandler,{passive:!0}),window.addEventListener("mousedown",e.touchStartHandler),document.addEventListener("visibilitychange",e.userEventHandler))}_removeUserInteractionListener(){this.triggerEvents.forEach((e=>window.removeEventListener(e,this.userEventHandler,{passive:!0}))),document.removeEventListener("visibilitychange",this.userEventHandler)}_onTouchStart(e){"HTML"!==e.target.tagName&&(window.addEventListener("touchend",this.touchEndHandler),window.addEventListener("mouseup",this.touchEndHandler),window.addEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.addEventListener("mousemove",this.touchMoveHandler),e.target.addEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"onclick","rocket-onclick"))}_onTouchMove(e){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler),e.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"rocket-onclick","onclick")}_onTouchEnd(e){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler)}_onClick(e){e.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"rocket-onclick","onclick"),this.interceptedClicks.push(e),e.preventDefault(),e.stopPropagation(),e.stopImmediatePropagation()}_replayClicks(){window.removeEventListener("touchstart",this.touchStartHandler,{passive:!0}),window.removeEventListener("mousedown",this.touchStartHandler),this.interceptedClicks.forEach((e=>{e.target.dispatchEvent(new MouseEvent("click",{view:e.view,bubbles:!0,cancelable:!0}))}))}_renameDOMAttribute(e,t,n){e.hasAttribute&&e.hasAttribute(t)&&(event.target.setAttribute(n,event.target.getAttribute(t)),event.target.removeAttribute(t))}_triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}_preconnect3rdParties(){let e=[];document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((t=>{if(t.hasAttribute("src")){const n=new URL(t.src).origin;n!==location.origin&&e.push({src:n,crossOrigin:t.crossOrigin||"module"===t.getAttribute("data-rocket-type")})}})),e=[...new Map(e.map((e=>[JSON.stringify(e),e]))).values()],this._batchInjectResourceHints(e,"preconnect")}async _loadEverythingNow(){this.lastBreath=Date.now(),this._delayEventListeners(),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async);try{await this._triggerDOMContentLoaded(),await this._triggerWindowLoad()}catch(e){}window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this._replayClicks()}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((e=>{e.hasAttribute("src")?e.hasAttribute("async")&&!1!==e.async?this.delayedScripts.async.push(e):e.hasAttribute("defer")&&!1!==e.defer||"module"===e.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(e):this.delayedScripts.normal.push(e):this.delayedScripts.normal.push(e)}))}async _transformScript(e){return await this._littleBreath(),new Promise((t=>{const n=document.createElement("script");[...e.attributes].forEach((e=>{let t=e.nodeName;"type"!==t&&("data-rocket-type"===t&&(t="type"),n.setAttribute(t,e.nodeValue))})),e.hasAttribute("src")?(n.addEventListener("load",t),n.addEventListener("error",t)):(n.text=e.text,t());try{e.parentNode.replaceChild(n,e)}catch(e){t()}}))}async _loadScriptsFromList(e){const t=e.shift();return t?(await this._transformScript(t),this._loadScriptsFromList(e)):Promise.resolve()}_preloadAllScripts(){this._batchInjectResourceHints([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}_batchInjectResourceHints(e,t){var n=document.createDocumentFragment();e.forEach((e=>{if(e.src){const i=document.createElement("link");i.href=e.src,i.rel=t,"preconnect"!==t&&(i.as="script"),e.getAttribute&&"module"===e.getAttribute("data-rocket-type")&&(i.crossOrigin=!0),e.crossOrigin&&(i.crossOrigin=e.crossOrigin),n.appendChild(i)}})),document.head.appendChild(n)}_delayEventListeners(){let e={};function t(t,n){!function(t){function n(n){return e[t].eventsToRewrite.indexOf(n)>=0?"rocket-"+n:n}e[t]||(e[t]={originalFunctions:{add:t.addEventListener,remove:t.removeEventListener},eventsToRewrite:[]},t.addEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.add.apply(t,arguments)},t.removeEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.remove.apply(t,arguments)})}(t),e[t].eventsToRewrite.push(n)}function n(e,t){let n=e[t];Object.defineProperty(e,t,{get:()=>n||function(){},set(i){e["rocket"+t]=n=i}})}t(document,"DOMContentLoaded"),t(window,"DOMContentLoaded"),t(window,"load"),t(window,"pageshow"),t(document,"readystatechange"),n(document,"onreadystatechange"),n(window,"onload"),n(window,"onpageshow")}_delayJQueryReady(e){let t=window.jQuery;Object.defineProperty(window,"jQuery",{get:()=>t,set(n){if(n&&n.fn&&!e.allJQueries.includes(n)){n.fn.ready=n.fn.init.prototype.ready=function(t){e.domReadyFired?t.bind(document)(n):document.addEventListener("rocket-DOMContentLoaded",(()=>t.bind(document)(n)))};const t=n.fn.on;n.fn.on=n.fn.init.prototype.on=function(){if(this[0]===window){function e(e){return e.split(" ").map((e=>"load"===e||0===e.indexOf("load.")?"rocket-jquery-load":e)).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=e(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach((t=>{delete Object.assign(arguments[0],{[e(t)]:arguments[0][t]})[t]}))}return t.apply(this,arguments),this},e.allJQueries.push(n)}t=n}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._littleBreath(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._littleBreath(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._littleBreath(),window.dispatchEvent(new Event("rocket-load")),await this._littleBreath(),window.rocketonload&&window.rocketonload(),await this._littleBreath(),this.allJQueries.forEach((e=>e(window).trigger("rocket-jquery-load"))),await this._littleBreath();const e=new Event("rocket-pageshow");e.persisted=this.persisted,window.dispatchEvent(e),await this._littleBreath(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted})}_handleDocumentWrite(){const e=new Map;document.write=document.writeln=function(t){const n=document.currentScript,i=document.createRange(),r=n.parentElement;let o=e.get(n);void 0===o&&(o=n.nextSibling,e.set(n,o));const s=document.createDocumentFragment();i.setStart(s,0),s.appendChild(i.createContextualFragment(t)),r.insertBefore(s,o)}}async _littleBreath(){Date.now()-this.lastBreath>45&&(await this._requestAnimFrame(),this.lastBreath=Date.now())}async _requestAnimFrame(){return document.hidden?new Promise((e=>setTimeout(e))):new Promise((e=>requestAnimationFrame(e)))}static run(){const e=new RocketLazyLoadScripts;e._addUserInteractionListener(e)}}RocketLazyLoadScripts.run();</script>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<link rel='profile' href="https://gmpg.org/xfn/11">
+<link rel='pingback' href='https://eljacaguero.com.do/xmlrpc.php'>
+
+<title>Serulle Realiza Exitosa Caminata En Barrios Zona Norte De Santiago - El Jacaguero</title><link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Muli%3A400%2C300%7CLibre%20Baskerville&#038;display=swap" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Muli%3A400%2C300%7CLibre%20Baskerville&#038;display=swap" media="print" onload="this.media='all'" /><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Muli%3A400%2C300%7CLibre%20Baskerville&#038;display=swap" /></noscript>
+<meta name="description" content="Santiago, RD.- El candidato a Alcalde por el Partido Revolucionario Dominicano (PRD) Gilberto Serulle, realizó este martes 25 de febrero una exitosa caminata" />
+<meta name="robots" content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large" />
+<link rel="canonical" href="https://eljacaguero.com.do/serulle-realiza-exitosa-caminata-en-barrios-zona-norte-de-santiago/" />
+<meta property="og:locale" content="es_MX" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Serulle Realiza Exitosa Caminata En Barrios Zona Norte De Santiago - El Jacaguero" />
+<meta property="og:description" content="Santiago, RD.- El candidato a Alcalde por el Partido Revolucionario Dominicano (PRD) Gilberto Serulle, realizó este martes 25 de febrero una exitosa caminata" />
+<meta property="og:url" content="https://eljacaguero.com.do/serulle-realiza-exitosa-caminata-en-barrios-zona-norte-de-santiago/" />
+<meta property="og:site_name" content="El Jacaguero" />
+<meta property="article:publisher" content="https://www.facebook.com/eljacaguero" />
+<meta property="article:author" content="https://www.facebook.com/engel.garcia/" />
+<meta property="article:section" content="Nacionales" />
+<meta property="fb:admins" content="10161246782940710" />
+<meta property="og:image" content="https://i0.wp.com/eljacaguero.com.do/wp-content/uploads/2020/02/Gilberto-Serulle.jpg" />
+<meta property="og:image:secure_url" content="https://i0.wp.com/eljacaguero.com.do/wp-content/uploads/2020/02/Gilberto-Serulle.jpg" />
+<meta property="og:image:width" content="640" />
+<meta property="og:image:height" content="300" />
+<meta property="og:image:alt" content="Serulle realiza exitosa caminata en barrios zona norte de Santiago" />
+<meta property="og:image:type" content="image/jpeg" />
+<meta property="article:published_time" content="2020-02-27T18:07:48-04:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Serulle Realiza Exitosa Caminata En Barrios Zona Norte De Santiago - El Jacaguero" />
+<meta name="twitter:description" content="Santiago, RD.- El candidato a Alcalde por el Partido Revolucionario Dominicano (PRD) Gilberto Serulle, realizó este martes 25 de febrero una exitosa caminata" />
+<meta name="twitter:site" content="@eljacaguero" />
+<meta name="twitter:creator" content="@eljacaguero" />
+<meta name="twitter:image" content="https://i0.wp.com/eljacaguero.com.do/wp-content/uploads/2020/02/Gilberto-Serulle.jpg" />
+<meta name="twitter:label1" content="Written by" />
+<meta name="twitter:data1" content="El Jacaguero" />
+<meta name="twitter:label2" content="Time to read" />
+<meta name="twitter:data2" content="1 minuto" />
+<script type="application/ld+json" class="rank-math-schema">{"@context":"https://schema.org","@graph":[{"@type":"Place","@id":"https://eljacaguero.com.do/#place","geo":{"@type":"GeoCoordinates","latitude":"19\u00b031'05.8\"N 70\u00b040'42.2\"W 19.518289","longitude":" -70.678392"},"hasMap":"https://www.google.com/maps/search/?api=1&amp;query=19\u00b031'05.8\"N 70\u00b040'42.2\"W 19.518289, -70.678392","address":{"@type":"PostalAddress","streetAddress":"Jacagua al medio","addressRegion":"Santiago","postalCode":"51000","addressCountry":"Rep\u00fablica Dominicana"}},{"@type":["NewsMediaOrganization","Organization"],"@id":"https://eljacaguero.com.do/#organization","name":"El Jacaguero","url":"https://eljacaguero.com.do","email":"engel.garcia7@gmail.com","address":{"@type":"PostalAddress","streetAddress":"Jacagua al medio","addressRegion":"Santiago","postalCode":"51000","addressCountry":"Rep\u00fablica Dominicana"},"logo":{"@type":"ImageObject","@id":"https://eljacaguero.com.do/#logo","url":"https://eljacaguero.com.do/wp-content/uploads/2020/05/logo-eljacaguero.png","contentUrl":"https://eljacaguero.com.do/wp-content/uploads/2020/05/logo-eljacaguero.png","caption":"El Jacaguero","inLanguage":"es-MX","width":"287","height":"63"},"contactPoint":[{"@type":"ContactPoint","telephone":"(809) 855-1455","contactType":"customer support"}],"location":{"@id":"https://eljacaguero.com.do/#place"}},{"@type":"WebSite","@id":"https://eljacaguero.com.do/#website","url":"https://eljacaguero.com.do","name":"El Jacaguero","publisher":{"@id":"https://eljacaguero.com.do/#organization"},"inLanguage":"es-MX"},{"@type":"ImageObject","@id":"https://i0.wp.com/eljacaguero.com.do/wp-content/uploads/2020/02/Gilberto-Serulle.jpg?fit=640%2C300&amp;ssl=1","url":"https://i0.wp.com/eljacaguero.com.do/wp-content/uploads/2020/02/Gilberto-Serulle.jpg?fit=640%2C300&amp;ssl=1","width":"640","height":"300","inLanguage":"es-MX"},{"@type":"WebPage","@id":"https://eljacaguero.com.do/serulle-realiza-exitosa-caminata-en-barrios-zona-norte-de-santiago/#webpage","url":"https://eljacaguero.com.do/serulle-realiza-exitosa-caminata-en-barrios-zona-norte-de-santiago/","name":"Serulle Realiza Exitosa Caminata En Barrios Zona Norte De Santiago - El Jacaguero","datePublished":"2020-02-27T18:07:48-04:00","dateModified":"2020-02-27T18:07:48-04:00","isPartOf":{"@id":"https://eljacaguero.com.do/#website"},"primaryImageOfPage":{"@id":"https://i0.wp.com/eljacaguero.com.do/wp-content/uploads/2020/02/Gilberto-Serulle.jpg?fit=640%2C300&amp;ssl=1"},"inLanguage":"es-MX"},{"@type":"Person","@id":"https://eljacaguero.com.do/serulle-realiza-exitosa-caminata-en-barrios-zona-norte-de-santiago/#author","name":"El Jacaguero","image":{"@type":"ImageObject","@id":"https://secure.gravatar.com/avatar/c5ba7caac1325b1e9cf48ae1b7749acf?s=96&amp;d=identicon&amp;r=g","url":"https://secure.gravatar.com/avatar/c5ba7caac1325b1e9cf48ae1b7749acf?s=96&amp;d=identicon&amp;r=g","caption":"El Jacaguero","inLanguage":"es-MX"},"worksFor":{"@id":"https://eljacaguero.com.do/#organization"}},{"@type":"Article","headline":"Serulle Realiza Exitosa Caminata En Barrios Zona Norte De Santiago - El Jacaguero","datePublished":"2020-02-27T18:07:48-04:00","dateModified":"2020-02-27T18:07:48-04:00","articleSection":"Nacionales","author":{"@id":"https://eljacaguero.com.do/serulle-realiza-exitosa-caminata-en-barrios-zona-norte-de-santiago/#author"},"publisher":{"@id":"https://eljacaguero.com.do/#organization"},"description":"Santiago, RD.- El candidato a Alcalde por el Partido Revolucionario Dominicano (PRD) Gilberto Serulle, realiz\u00f3 este martes 25 de febrero una exitosa caminata","name":"Serulle Realiza Exitosa Caminata En Barrios Zona Norte De Santiago - El Jacaguero","@id":"https://eljacaguero.com.do/serulle-realiza-exitosa-caminata-en-barrios-zona-norte-de-santiago/#richSnippet","isPartOf":{"@id":"https://eljacaguero.com.do/serulle-realiza-exitosa-caminata-en-barrios-zona-norte-de-santiago/#webpage"},"image":{"@id":"https://i0.wp.com/eljacaguero.com.do/wp-content/uploads/2020/02/Gilberto-Serulle.jpg?fit=640%2C300&amp;ssl=1"},"inLanguage":"es-MX","mainEntityOfPage":{"@id":"https://eljacaguero.com.do/serulle-realiza-exitosa-caminata-en-barrios-zona-norte-de-santiago/#webpage"}}]}</script>
+
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//i0.wp.com' />
+<link rel='dns-prefetch' href='//c0.wp.com' />
+<link href='https://fonts.gstatic.com' crossorigin rel='preconnect' />
+<link rel="alternate" type="application/rss+xml" title="El Jacaguero &raquo; Feed" href="https://eljacaguero.com.do/feed/" />
+<link rel="alternate" type="application/rss+xml" title="El Jacaguero &raquo; RSS de los comentarios" href="https://eljacaguero.com.do/comments/feed/" />
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link data-minify="1" rel='stylesheet' id='wp-block-library-css' href='https://eljacaguero.com.do/wp-content/cache/min/1/c/6.0.3/wp-includes/css/dist/block-library/style.min.css?ver=1666047380' type='text/css' media='all' />
+<style id='wp-block-library-inline-css' type='text/css'>
+.has-text-align-justify{text-align:justify;}
+</style>
+<style id='global-styles-inline-css' type='text/css'>
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+</style>
+<link data-minify="1" rel='stylesheet' id='wpra-front-css' href='https://eljacaguero.com.do/wp-content/cache/min/1/wp-content/plugins/wpreactions-pro/assets/css/front.css?ver=1664369421' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='wpra-fontawesome-css' href='https://eljacaguero.com.do/wp-content/cache/min/1/wp-content/plugins/wpreactions-pro/assets/vendor/fontawesome/css/all.min.css?ver=1664369421' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='ez-icomoon-css' href='https://eljacaguero.com.do/wp-content/cache/min/1/wp-content/plugins/easy-table-of-contents/vendor/icomoon/style.min.css?ver=1664369421' type='text/css' media='all' />
+<link rel='stylesheet' id='ez-toc-css' href='https://eljacaguero.com.do/wp-content/plugins/easy-table-of-contents/assets/css/screen.min.css?ver=2.0.34' type='text/css' media='all' />
+<style id='ez-toc-inline-css' type='text/css'>
+div#ez-toc-container p.ez-toc-title {font-size: 120%;}div#ez-toc-container p.ez-toc-title {font-weight: 500;}div#ez-toc-container ul li {font-size: 95%;}div#ez-toc-container nav ul ul li ul li {font-size: 90%!important;}
+.ez-toc-container-direction {
+    direction: ltr;
+}
+
+	.ez-toc-counter ul {
+	    counter-reset: item;
+	}
+
+
+	
+	.ez-toc-counter nav ul li a::before {
+	    content: counters(item, ".", decimal) ". ";
+	    display: inline-block;
+	    counter-increment: item;
+	    margin-right: .2em; 
+
+	    float: left;
+	}
+
+
+.ez-toc-widget-direction {
+    direction: ltr;
+}
+
+	.ez-toc-widget-container ul {
+	    counter-reset: item;
+	}
+
+
+	
+	.ez-toc-widget-container nav ul li a::before {
+	    content: counters(item, ".", decimal) ". ";
+	    display: inline-block;
+	    counter-increment: item;
+	    margin-right: .2em; 
+
+	    float: left;
+	}
+
+
+</style>
+<link data-minify="1" rel='stylesheet' id='maxima-style-css' href='https://eljacaguero.com.do/wp-content/cache/min/1/wp-content/themes/maxima/style.css?ver=1664369421' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='jetpack_css-css' href='https://eljacaguero.com.do/wp-content/cache/min/1/p/jetpack/11.4/css/jetpack.css?ver=1664972378' type='text/css' media='all' />
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://eljacaguero.com.do/wp-content/plugins/wpreactions-pro/assets/vendor/lottie/lottie.min.js?v=3.0.20&#038;ver=6.0.3' id='wpra-lottie-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://c0.wp.com/c/6.0.3/wp-includes/js/jquery/jquery.min.js' id='jquery-core-js' defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://eljacaguero.com.do/wp-content/cache/min/1/c/6.0.3/wp-includes/js/jquery/jquery-migrate.min.js?ver=1666047380' id='jquery-migrate-js' defer></script>
+<script type='text/javascript' id='wpra-front-js-extra'>
+/* <![CDATA[ */
+var wpreactions = {"ajaxurl":"https:\/\/eljacaguero.com.do\/wp-admin\/admin-ajax.php","emojis_base_url":{"builtin":"https:\/\/eljacaguero.com.do\/wp-content\/plugins\/wpreactions-pro\/assets\/emojis\/","custom":"https:\/\/eljacaguero.com.do\/wp-content\/uploads\/wpreactions\/emojis\/"},"social_platforms":{"facebook":{"label":"Facebook","color":"#3b5998","url":{"desktop":"https:\/\/www.facebook.com\/sharer\/sharer.php?u="}},"twitter":{"label":"Twitter","color":"#00acee","url":{"desktop":"https:\/\/twitter.com\/intent\/tweet?text="}},"whatsapp":{"label":"Whatsapp","color":"#25d366","url":{"desktop":"https:\/\/api.whatsapp.com\/send?text=","mobile":"whatsapp:\/\/send?text="}},"linkedin":{"label":"Linkedin","color":"#0077b5","url":{"desktop":"https:\/\/www.linkedin.com\/shareArticle?url="}},"pinterest":{"label":"Pinterest","color":"#bd081c","url":{"desktop":"https:\/\/pinterest.com\/pin\/create\/link\/?url="}},"messenger":{"label":"Messenger","color":"#0078FF","url":{"desktop":"https:\/\/www.facebook.com\/dialog\/send?app_id=140586622674265&redirect_uri=https:\/\/facebook.com&link=","mobile":"fb-messenger:\/\/share?link="}},"reddit":{"label":"Reddit","color":"#ff4500","url":{"desktop":"https:\/\/reddit.com\/submit?url="}},"telegram":{"label":"Telegram","color":"#0088cc","url":{"desktop":"https:\/\/t.me\/share\/url?url="}},"tumblr":{"label":"Tumblr","color":"#001935","url":{"desktop":"https:\/\/tumblr.com\/widgets\/share\/tool?canonicalUrl="}},"vkontakte":{"label":"VKontakte","color":"#5181B8","url":{"desktop":"https:\/\/vk.com\/share.php?url="}},"gmail":{"label":"Gmail","color":"#EA4335","url":{"desktop":"https:\/\/mail.google.com\/mail\/?view=cm&su=Shared%20with%20wpreactions&body=","mobile":"mailto:?Subject=Shared%20with%20wpreactions&body="}},"email":{"label":"Email","color":"#424242","url":{"desktop":"mailto:?Subject=Shared%20with%20wpreactions&body="}}},"version":"3.0.20","user_reaction_limitation":"1"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://eljacaguero.com.do/wp-content/cache/min/1/wp-content/plugins/wpreactions-pro/assets/js/front.js?ver=1664369421' id='wpra-front-js' defer></script>
+<link rel="https://api.w.org/" href="https://eljacaguero.com.do/wp-json/" /><link rel="alternate" type="application/json" href="https://eljacaguero.com.do/wp-json/wp/v2/posts/447848" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://eljacaguero.com.do/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://eljacaguero.com.do/wp-includes/wlwmanifest.xml" />
+<meta name="generator" content="WordPress 6.0.3" />
+<link rel='shortlink' href='https://eljacaguero.com.do/?p=447848' />
+<link rel="alternate" type="application/json+oembed" href="https://eljacaguero.com.do/wp-json/oembed/1.0/embed?url=https%3A%2F%2Feljacaguero.com.do%2Fserulle-realiza-exitosa-caminata-en-barrios-zona-norte-de-santiago%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://eljacaguero.com.do/wp-json/oembed/1.0/embed?url=https%3A%2F%2Feljacaguero.com.do%2Fserulle-realiza-exitosa-caminata-en-barrios-zona-norte-de-santiago%2F&#038;format=xml" />
+<style id="wpreactions-style-sgc-1">.wpra-plugin-container[data-sgc_id="1"] .arrow-badge {background-color: #ff0015;top: -12px;min-width: 27px;height: 16px;border-radius: 3px;} .wpra-plugin-container[data-sgc_id="1"] .arrow-badge > .tail {border-top-color: #ff0015;} .wpra-plugin-container[data-sgc_id="1"] .arrow-badge > .count-num {color: #ffffff;font-size: 12px;font-weight: 300;} .wpra-plugin-container[data-sgc_id="1"]  {justify-content: center;} .wpra-plugin-container[data-sgc_id="1"] .wpra-call-to-action {color: #000000;font-size: 25px;font-weight: 600;display: none;} .wpra-plugin-container[data-sgc_id="1"] .wpra-reactions {border-color: #ffffff;border-width: 0px;border-radius: 50px;border-style: solid;background: #ffffff;} .wpra-plugin-container[data-sgc_id="1"] .wpra-flying {color: #000000;font-size: 16px;font-weight: 300;} .wpra-plugin-container[data-sgc_id="1"] .wpra-reaction-animation-holder {width: 30px;height: 30px;margin: 0px;padding: 0px;} .wpra-plugin-container[data-sgc_id="1"] .wpra-reaction-static-holder {width: 56px;height: 56px;margin: 3px;padding: 3px;} .wpra-plugin-container[data-sgc_id="1"] .wpra-share-expandable-more {border-radius: 5px;} .wpra-plugin-container[data-sgc_id="1"] .wpra-share-expandable-counts {font-size: 30px;font-weight: 700;color: #000000;} .wpra-plugin-container[data-sgc_id="1"] .share-btn {border-radius: 5px;} </style><style id="wpreactions-style-global">.wpra-plugin-container[data-source="global"] .arrow-badge {background-color: #ff0015;top: -12px;min-width: 27px;height: 16px;border-radius: 3px;} .wpra-plugin-container[data-source="global"] .arrow-badge > .tail {border-top-color: #ff0015;} .wpra-plugin-container[data-source="global"] .arrow-badge > .count-num {color: #ffffff;font-size: 12px;font-weight: 300;} .wpra-plugin-container[data-source="global"]  {justify-content: center;} .wpra-plugin-container[data-source="global"] .wpra-call-to-action {color: #000000;font-size: 11px;font-weight: 600;display: none;} .wpra-plugin-container[data-source="global"] .wpra-reactions {border-color: #ffffff;border-width: 0px;border-radius: 50px;border-style: solid;background: #ffffff;} .wpra-plugin-container[data-source="global"] .wpra-flying {color: #000000;font-size: 16px;font-weight: 300;} .wpra-plugin-container[data-source="global"] .wpra-reaction-animation-holder {width: 30px;height: 30px;margin: 0px;padding: 0px;} .wpra-plugin-container[data-source="global"] .wpra-reaction-static-holder {width: 56px;height: 56px;margin: 3px;padding: 3px;} .wpra-plugin-container[data-source="global"] .wpra-share-expandable-more {border-radius: 5px;} .wpra-plugin-container[data-source="global"] .wpra-share-expandable-counts {font-size: 30px;font-weight: 700;color: #000000;} .wpra-plugin-container[data-source="global"] .share-btn {border-radius: 5px;} </style><style>img#wpstats{display:none}</style>
+<style type="text/css">
+				/* If html does not have either class, do not show lazy loaded images. */
+				html:not( .jetpack-lazy-images-js-enabled ):not( .js ) .jetpack-lazy-image {
+					display: none;
+				}
+			</style>
+<script>
+				document.documentElement.classList.add(
+					'jetpack-lazy-images-js-enabled'
+				);
+			</script>
+<script type="rocketlazyloadscript" id="google_gtagjs" src="https://www.googletagmanager.com/gtag/js?id=UA-71818611-1" async="async" data-rocket-type="text/javascript"></script>
+<script type="rocketlazyloadscript" id="google_gtagjs-inline" data-rocket-type="text/javascript">
+window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'UA-71818611-1', {} );
+</script>
+<link rel="icon" href="https://i0.wp.com/eljacaguero.com.do/wp-content/uploads/2022/07/cropped-favicon.png?fit=32%2C32&#038;ssl=1" sizes="32x32" />
+<link rel="icon" href="https://i0.wp.com/eljacaguero.com.do/wp-content/uploads/2022/07/cropped-favicon.png?fit=192%2C192&#038;ssl=1" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://i0.wp.com/eljacaguero.com.do/wp-content/uploads/2022/07/cropped-favicon.png?fit=180%2C180&#038;ssl=1" />
+<meta name="msapplication-TileImage" content="https://i0.wp.com/eljacaguero.com.do/wp-content/uploads/2022/07/cropped-favicon.png?fit=270%2C270&#038;ssl=1" />
+<style type="text/css" id="wp-custom-css">
+			.c-post-card__title {
+	font-weight: bold;
+	line-height: 30px !important;
+}
+
+.c-post__title {
+	font-weight: bold;
+	line-height: 35px;
+}
+
+.c-post__head {
+	text-align: left;
+}
+
+.author_container {
+	display: flex;
+}
+
+.c-post__date {
+	font-size: 12px;
+	padding: 6px;
+}
+
+.authorImage {
+    border-radius: 100%;
+    border: 1px solid #ffffff;
+		width: 32px;
+		margin-right: 5px;
+}
+
+.subtitle {
+	font-family: 'Trebuchet MS', sans-serif;
+  font-style: normal;
+}
+
+@media only screen and (max-width: 600px) { 
+	
+	.foto_destacada {
+		width: 100vw;
+		position: relative;
+		left: calc(-50vw + 50%);
+		margin-bottom: 20px;
+		padding: 0px;
+	}
+
+}
+
+@media only screen and (min-width: 768px) {
+  .foto_destacada {
+		width: 100vw;
+		position: block !important;
+		margin-bottom: 20px;
+		padding: 0px;
+		left: none;
+	}
+}
+
+.image_caption {
+	width: 100%;
+	margin-bottom: 20px;
+	margin-top: -15px;
+}
+
+.image_caption p {
+	font-family: "Georgia",serif;
+	font-size: 12px;
+	color: #999;
+	margin-bottom: 5px;
+}
+
+.scroll {
+	width: 100%;
+  white-space: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+	padding-left: 10px;
+	margin-top: 10px;
+	text-align: center;
+}
+
+.scroll a {
+	margin-right: 10px;
+}
+
+.scroll::-webkit-scrollbar {
+  display: none; 
+}
+
+.wpra-reactions-wrap {
+    display: inline-block;
+    width: auto;
+    margin-left: 20px;
+	  padding-top: 0px;
+    padding-bottom: 0px;
+}		</style>
+<noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript>
+
+<script type="rocketlazyloadscript" async src="https://www.googletagmanager.com/gtag/js?id=AW-1012738529"></script>
+<script type="rocketlazyloadscript">
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'AW-1012738529');
+	</script>
+
+<script type="rocketlazyloadscript">
+	  gtag('event', 'conversion', {'send_to': 'AW-1012738529/OAkSCIT6nMwBEOHT9OID'});
+	</script>
+<meta name="facebook-domain-verification" content="hmjfjiqo1v6g2kf94le82zf5564fbx" />
+</head>
+<body class="post-template-default single single-post postid-447848 single-format-standard wp-custom-logo">
+<a class='skip-link screen-reader-text' href='#content'>Skip to content</a>
+<div class='js-off-canvas-content c-off-canvas-content'>
+<label class='js-off-canvas-toggle c-off-canvas-toggle c-off-canvas-toggle--close'>
+<span class='c-off-canvas-toggle__icon'></span>
+</label>
+<aside id="nav_menu-2" class="widget widget--sidebar widget_nav_menu"><div class="menu-primary-navigation-container"><ul id="menu-primary-navigation" class="menu"><li id="menu-item-456521" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-456521"><a href="https://eljacaguero.com.do/">Inicio</a></li>
+<li id="menu-item-458186" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-458186"><a href="https://eljacaguero.com.do/category/internacionales/">Mundo</a></li>
+<li id="menu-item-458180" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-458180"><a href="https://eljacaguero.com.do/category/deportes/">Deporte</a></li>
+<li id="menu-item-458182" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-458182"><a href="https://eljacaguero.com.do/category/espectaculos/">Espectáculos</a></li>
+<li id="menu-item-458185" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-458185"><a href="https://eljacaguero.com.do/category/tecnologias/">Tecnología &amp; Ciencia</a></li>
+<li id="menu-item-514099" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-514099"><a href="https://eljacaguero.com.do/category/opiniones/">Opiniones</a></li>
+<li id="menu-item-534711" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-534711"><a href="https://eljacaguero.com.do/category/nacionales/">Nacionales</a></li>
+<li id="menu-item-458181" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-458181"><a href="https://eljacaguero.com.do/category/economicas/">Economía</a></li>
+<li id="menu-item-534712" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-534712"><a href="https://eljacaguero.com.do/category/salud/">Salud</a></li>
+<li id="menu-item-546048" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-546048"><a href="https://eljacaguero.com.do/contactos/">Contactos</a></li>
+<li id="menu-item-546049" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-546049"><a href="https://eljacaguero.com.do/politica-de-privacidad/">Política de Privacidad</a></li>
+</ul></div></aside><aside id="custom_html-6" class="widget_text widget widget--sidebar widget_custom_html"><div class="textwidget custom-html-widget"><h2>
+Noticias de Republica Dominicana
+</h2>
+<h1>
+Noticias de Republica Dominicana
+</h1></div></aside> </div>
+<div class='js-off-canvas-container c-off-canvas-container'>
+<span class='js-off-canvas-container__close c-off-canvas-container__close'></span>
+<header class='c-header'>
+<div class='o-grid'>
+<div class='o-grid__col o-grid__col--full'>
+<div class='c-header__inner'>
+<div class='o-grid'>
+<div class='o-grid__col o-grid__col--1-4-s o-grid__col--1-12-m'>
+<label class='js-off-canvas-toggle c-off-canvas-toggle'>
+<span class='c-off-canvas-toggle__icon'></span>
+</label>
+</div>
+<div class='o-grid__col o-grid__col--2-4-s o-grid__col--10-12-m'>
+<a href="https://eljacaguero.com.do/" class="c-logo-link" rel="home"><img width="287" height="63" src="https://i0.wp.com/eljacaguero.com.do/wp-content/uploads/2020/05/logo-eljacaguero.png?fit=287%2C63&amp;ssl=1" class="c-logo jetpack-lazy-image" alt="El Jacaguero" data-lazy-src="https://i0.wp.com/eljacaguero.com.do/wp-content/uploads/2020/05/logo-eljacaguero.png?fit=287%2C63&amp;ssl=1&amp;is-pending-load=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" /></a> </div>
+<div class='o-grid__col o-grid__col--1-4-s o-grid__col--1-12-m'>
+<div class='u-text-right'>
+<a class="toggle-search-button js-search-toggle" href="#">
+<span class='c-header__icon' data-icon="ei-search" data-size="s"></span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="scroll">
+<nav>
+<a href="https://eljacaguero.com.do/">Actualidad</a>
+<a href="https://eljacaguero.com.do/category/internacionales/">Mundo</a>
+<a href="https://eljacaguero.com.do/category/deportes/">Deporte</a>
+<a href="https://eljacaguero.com.do/category/salud/">Salud</a>
+<a href="https://eljacaguero.com.do/category/tecnologias/">Novedades</a>
+<a href="https://eljacaguero.com.do/category/espectaculos/">Espectáculo</a>
+<a href="https://eljacaguero.com.do/category/opiniones/">Opinión</a>
+<a href="https://eljacaguero.com.do/category/economicas/">Economía</a>
+</nav>
+</div>
+
+</div>
+</header>
+<div class='c-search js-search'>
+<div class='o-grid'>
+<div class='o-grid__col o-grid__col--4-4-s o-grid__col--3-4-m o-grid__col--2-4-l o-grid__col--center'>
+<form class='c-search__form' method='get' action='https://eljacaguero.com.do/'>
+<span class='c-search__icon' data-icon='ei-search' data-size='m'></span>
+<input class='c-search__input js-search-input' placeholder='Escribe y presiona enter' type='search' name='s'>
+</form>
+</div>
+</div>
+<div class='c-search__close js-search-close'>
+<div data-icon='ei-close' data-size='s'></div>
+</div>
+</div>
+<div class='o-wrapper' id='content'>
+<style>
+		
+		.banner_cabecera {
+			display: block;
+			margin-bottom: 50px;
+			padding-left: 10px;
+			padding-right: 10px;
+		}
+		
+		@media only screen and (min-width: 768px) {
+			.banner_cabecera {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				margin-bottom: 20px;
+			}
+		}
+		
+	</style>
+<div class='o-grid'>
+<div class='o-grid__col o-grid__col--4-4-s o-grid__col--3-4-m o-grid__col--center'>
+<article id='post-447848' class="c-post entry post-447848 post type-post status-publish format-standard has-post-thumbnail hentry category-nacionales">
+<div class='c-post__head'>
+<h1 class='c-post__title'>Serulle realiza exitosa caminata en barrios zona norte de Santiago</h1>
+<div class="subtitle">
+<p>
+</p>
+</div>
+<div class="author_container">
+<div class="authorImage">
+<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3C/svg%3E" alt="Redaccion" width="32" height="32" data-lazy-src="https://eljacaguero.files.wordpress.com/2022/07/icon.webp" /><noscript><img src="https://eljacaguero.files.wordpress.com/2022/07/icon.webp" alt="Redaccion" width="32" height="32" /></noscript>
+</div>
+<time class='c-post__date' datetime='2020-02-27T18:07:48-04:00'>27 febrero, 2020</time>
+<span class='c-post__cats'>
+<a href="https://eljacaguero.com.do/category/nacionales/" rel="category tag">Nacionales</a> </span>
+</div>
+</div>
+<div class="foto_destacada">
+<img width="450" height="211" src="https://i0.wp.com/eljacaguero.com.do/wp-content/uploads/2020/02/Gilberto-Serulle.jpg?fit=450%2C211&amp;ssl=1" class="attachment-450x300 size-450x300 wp-post-image jetpack-lazy-image" alt="Gilberto Serulle" data-lazy-srcset="https://i0.wp.com/eljacaguero.com.do/wp-content/uploads/2020/02/Gilberto-Serulle.jpg?w=640&amp;ssl=1 640w, https://i0.wp.com/eljacaguero.com.do/wp-content/uploads/2020/02/Gilberto-Serulle.jpg?resize=600%2C281&amp;ssl=1 600w, https://i0.wp.com/eljacaguero.com.do/wp-content/uploads/2020/02/Gilberto-Serulle.jpg?resize=580%2C272&amp;ssl=1 580w" data-lazy-sizes="(max-width: 450px) 100vw, 450px" data-lazy-src="https://i0.wp.com/eljacaguero.com.do/wp-content/uploads/2020/02/Gilberto-Serulle.jpg?fit=450%2C211&amp;ssl=1&amp;is-pending-load=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" title="Serulle realiza exitosa caminata en barrios zona norte de Santiago"> </div>
+<div class="image_caption">
+<p>
+</p>
+</div>
+<div class='c-content'>
+<div class="wpra-reactions-wrap wpra-plugin-container wpra-regular" data-ver="3.0.20" data-layout="regular" data-bind_id="447848" data-show_count="true" data-count_percentage="false" data-enable_share="false" data-animation="true" data-align="center" data-flying_type="count" data-react_secure="bdfa95c94f" data-source="shortcode" data-sgc_id="1" data-format="svg/json"> <div class="wpra-reactions-container"> <div class="wpra-call-to-action">What’s your Reaction?</div> <div class="wpra-reactions wpra-animated-emojis wpra-shadow-light"> <div class="emoji-11 wpra-reaction" data-count="0" data-emoji_id="11"> <div class="wpra-flying"></div> <div class="arrow-badge hide-count"> <span class="tail"></span> <span class="count-num">0</span> </div> <div class="wpra-reaction-emoji"> <div class="wpra-reaction-emoji-holder wpra-reaction-animation-holder" data-emoji_id="11"></div> </div> </div> <div class="emoji-4 wpra-reaction" data-count="0" data-emoji_id="4"> <div class="wpra-flying"></div> <div class="arrow-badge hide-count"> <span class="tail"></span> <span class="count-num">0</span> </div> <div class="wpra-reaction-emoji"> <div class="wpra-reaction-emoji-holder wpra-reaction-animation-holder" data-emoji_id="4"></div> </div> </div> <div class="emoji-26 wpra-reaction" data-count="0" data-emoji_id="26"> <div class="wpra-flying"></div> <div class="arrow-badge hide-count"> <span class="tail"></span> <span class="count-num">0</span> </div> <div class="wpra-reaction-emoji"> <div class="wpra-reaction-emoji-holder wpra-reaction-animation-holder" data-emoji_id="26"></div> </div> </div> <div class="emoji-132 wpra-reaction" data-count="0" data-emoji_id="132"> <div class="wpra-flying"></div> <div class="arrow-badge hide-count"> <span class="tail"></span> <span class="count-num">0</span> </div> <div class="wpra-reaction-emoji"> <div class="wpra-reaction-emoji-holder wpra-reaction-animation-holder" data-emoji_id="132"></div> </div> </div> <div class="emoji-65 wpra-reaction" data-count="0" data-emoji_id="65"> <div class="wpra-flying"></div> <div class="arrow-badge hide-count"> <span class="tail"></span> <span class="count-num">0</span>  </div> <div class="wpra-reaction-emoji"> <div class="wpra-reaction-emoji-holder wpra-reaction-animation-holder" data-emoji_id="65"></div> </div> </div> <div class="emoji-29 wpra-reaction" data-count="0" data-emoji_id="29"> <div class="wpra-flying"></div> <div class="arrow-badge hide-count"> <span class="tail"></span> <span class="count-num">0</span> </div> <div class="wpra-reaction-emoji"> <div class="wpra-reaction-emoji-holder wpra-reaction-animation-holder" data-emoji_id="29"></div> </div> </div> </div> </div> </div>  <p><strong>Santiago, RD.-</strong> El candidato a Alcalde por el Partido Revolucionario Dominicano (PRD) Gilberto Serulle, realizó este martes 25 de febrero una exitosa caminata por barrios de la zona norte de esta ciudad.</p>
+<p>La actividad partió de la intersección de la Av. Estrella Sadhalá con la Carretera de Jacagua, y se desplazó por los barrios Buenos Aires y Los Salados, hasta culminar frente a la empresa BALDOM.</p>
+<p>Serulle, al hablar brevemente a los presentes, ratificó su compromiso por el rescate y la dignificación de los excluidos sociales, al tiempo de asegurar que en una nueva gestión suya, traería consigo las transformaciones que amerita la ciudad, sin abusos ni atropellos contra los ciudadanos.</p>
+<p>“El respaldo recibido en esta actividad nos estimula, y es una señal inequívoca de que junto a nuestro querido pueblo, estaremos al frente de los destinos municipales en el período 2020 – 2024, para que vuelva a reinar la paz y el amor en nuestro pueblo”, indicó el candidato a Alcalde.</p>
+<p>A su paso por los barrios recorridos, Serulle recibía muestras de apoyo de los ciudadanos, destacándose principalmente las expresiones de adhesión a su candidatura de jóvenes y mujeres, quienes coreaban las siguientes consignas: ¡¡¡SE ACABÓ EL ABUSO, VUELVE SERULLE!!! .</p>
+<p>En la actividad, el ex alcalde estuvo acompañado de la candidata a Vicealcaldesa Denise Llaverías, candidatos a regidores, así como dirigentes políticos y comunitarios.</p>
+<div class="wpra-reactions-wrap wpra-plugin-container wpra-regular" data-ver="3.0.20" data-layout="regular" data-bind_id="447848" data-show_count="true" data-count_percentage="false" data-enable_share="false" data-animation="true" data-align="center" data-flying_type="count" data-react_secure="bdfa95c94f" data-source="shortcode" data-sgc_id="1" data-format="svg/json"> <div class="wpra-reactions-container"> <div class="wpra-call-to-action">What’s your Reaction?</div> <div class="wpra-reactions wpra-animated-emojis wpra-shadow-light"> <div class="emoji-11 wpra-reaction" data-count="0" data-emoji_id="11"> <div class="wpra-flying"></div> <div class="arrow-badge hide-count"> <span class="tail"></span> <span class="count-num">0</span> </div> <div class="wpra-reaction-emoji"> <div class="wpra-reaction-emoji-holder wpra-reaction-animation-holder" data-emoji_id="11"></div> </div> </div> <div class="emoji-4 wpra-reaction" data-count="0" data-emoji_id="4"> <div class="wpra-flying"></div> <div class="arrow-badge hide-count"> <span class="tail"></span> <span class="count-num">0</span> </div> <div class="wpra-reaction-emoji"> <div class="wpra-reaction-emoji-holder wpra-reaction-animation-holder" data-emoji_id="4"></div> </div> </div> <div class="emoji-26 wpra-reaction" data-count="0" data-emoji_id="26"> <div class="wpra-flying"></div> <div class="arrow-badge hide-count"> <span class="tail"></span> <span class="count-num">0</span> </div> <div class="wpra-reaction-emoji"> <div class="wpra-reaction-emoji-holder wpra-reaction-animation-holder" data-emoji_id="26"></div> </div> </div> <div class="emoji-132 wpra-reaction" data-count="0" data-emoji_id="132"> <div class="wpra-flying"></div> <div class="arrow-badge hide-count"> <span class="tail"></span> <span class="count-num">0</span> </div> <div class="wpra-reaction-emoji"> <div class="wpra-reaction-emoji-holder wpra-reaction-animation-holder" data-emoji_id="132"></div> </div> </div> <div class="emoji-65 wpra-reaction" data-count="0" data-emoji_id="65"> <div class="wpra-flying"></div> <div class="arrow-badge hide-count"> <span class="tail"></span> <span class="count-num">0</span> </div> <div class="wpra-reaction-emoji"> <div class="wpra-reaction-emoji-holder wpra-reaction-animation-holder" data-emoji_id="65"></div> </div> </div> <div class="emoji-29 wpra-reaction" data-count="0" data-emoji_id="29"> <div class="wpra-flying"></div> <div class="arrow-badge hide-count"> <span class="tail"></span> <span class="count-num">0</span> </div> <div class="wpra-reaction-emoji"> <div class="wpra-reaction-emoji-holder wpra-reaction-animation-holder" data-emoji_id="29"></div> </div> </div> </div> </div> </div> 
+</div>
+<div class='o-grid'>
+<div class='o-grid__col o-grid__col--4-4-s o-grid__col--1-4-m'>
+<ul class='c-share o-plain-list'>
+<li class='c-share__item'>
+<a class='c-share__link' title='Share on Twitter' href='https://twitter.com/share?text=Serulle+realiza+exitosa+caminata+en+barrios+zona+norte+de+Santiago+-+&amp;url=https://eljacaguero.com.do/serulle-realiza-exitosa-caminata-en-barrios-zona-norte-de-santiago/' onclick="window.open(this.href, 'twitter-share', 'width=550, height=235'); return false;">
+<div data-icon='ei-sc-twitter' data-size='s' class='c-share__icon c-share__icon--twitter'></div>
+</a>
+</li>
+<li class='c-share__item'>
+<a class='c-share__link' title='Share on Facebook' href='https://www.facebook.com/sharer/sharer.php?u=https://eljacaguero.com.do/serulle-realiza-exitosa-caminata-en-barrios-zona-norte-de-santiago/' onclick="window.open(this.href, 'facebook-share', 'width=580, height=296'); return false;">
+<div data-icon='ei-sc-facebook' data-size='s' class='c-share__icon c-share__icon--facebook'></div>
+</a>
+</li>
+</ul> </div>
+</div>
+<hr>
+</article> </div>
+</div>
+</div>
+<footer class='c-footer'>
+<div class='o-grid'>
+<div class='o-grid__col o-grid__col--full'>
+<div class='c-footer__top'>
+<div class='o-grid'>
+<div class='o-grid__col o-grid__col--full'>
+<aside id="pages-2" class="widget widget_pages"><h2 class="widget__title">Enlaces Importantes</h2>
+<ul>
+<li class="page_item page-item-25"><a href="https://eljacaguero.com.do/contactos/">Contactos</a></li>
+<li class="page_item page-item-439970"><a href="https://eljacaguero.com.do/politica-de-privacidad/">Política de Privacidad</a></li>
+</ul>
+</aside> </div>
+</div>
+</div>
+</div>
+<div class='o-grid__col o-grid__col--full'>
+<div class='o-grid'>
+<div class='o-grid__col o-grid__col--4-4-s o-grid__col--2-4-m'>
+<div class='u-font-small c-footer__copyright'>
+El Jacaguero. Sitio realizado por <a href="https://codemasters.dev">Codemasters.dev</a> </div>
+</div>
+<div class='o-grid__col o-grid__col--4-4-s o-grid__col--2-4-m'>
+</div>
+</div>
+</div>
+</div>
+</footer>
+</div>
+
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://eljacaguero.com.do/wp-content/cache/min/1/p/jetpack/11.4/_inc/build/photon/photon.min.js?ver=1664972378' id='jetpack-photon-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' id='rocket-browser-checker-js-after'>
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+</script>
+<script type='text/javascript' id='rocket-preload-links-js-extra'>
+/* <![CDATA[ */
+var RocketPreloadLinksConfig = {"excludeUris":"\/(?:.+\/)?feed(?:\/(?:.+\/?)?)?$|\/(?:.+\/)?embed\/|\/(index\\.php\/)?wp\\-json(\/.*|$)|\/refer\/|\/go\/|\/recommend\/|\/recommends\/","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php|html|htm","siteUrl":"https:\/\/eljacaguero.com.do","onHoverDelay":"100","rateThrottle":"3"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' id='rocket-preload-links-js-after'>
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+</script>
+<script type='text/javascript' id='maxima-main-script-js-extra'>
+/* <![CDATA[ */
+var lang_direction = {"rtl":""};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://eljacaguero.com.do/wp-content/cache/min/1/wp-content/themes/maxima/js/app.js?ver=1664369421' id='maxima-main-script-js' defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://eljacaguero.com.do/wp-content/cache/min/1/wp-content/plugins/jetpack-boost/jetpack_vendor/automattic/jetpack-lazy-images/dist/intersection-observer.js?ver=1666720678' id='jetpack-lazy-images-polyfill-intersectionobserver-js' defer></script>
+<script type='text/javascript' id='jetpack-lazy-images-js-extra'>
+/* <![CDATA[ */
+var jetpackLazyImagesL10n = {"loading_warning":"Images are still loading. Please cancel your print and try again."};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://eljacaguero.com.do/wp-content/cache/min/1/wp-content/plugins/jetpack-boost/jetpack_vendor/automattic/jetpack-lazy-images/dist/lazy-images.js?ver=1666720678' id='jetpack-lazy-images-js' defer></script>
+<script src='https://stats.wp.com/e-202243.js' defer></script>
+<script>
+	_stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:11.4',blog:'36808227',post:'447848',tz:'-4',srv:'eljacaguero.com.do'} ]);
+	_stq.push([ 'clickTrackerInit', '36808227', '447848' ]);
+</script>
+<script>window.lazyLoadOptions=[{elements_selector:"img[data-lazy-src],.rocket-lazyload",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}},{elements_selector:".rocket-lazyload",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,}];window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async src="https://eljacaguero.com.do/wp-content/plugins/wp-rocket/assets/js/lazyload/17.5/lazyload.min.js"></script>
+</body>
+</html>

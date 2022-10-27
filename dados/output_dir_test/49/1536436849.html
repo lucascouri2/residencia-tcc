@@ -1,0 +1,988 @@
+<!doctype html>
+<html lang="es" class="">
+<head>
+	<meta charset="UTF-8"><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"53cef82690",applicationID:"189190456"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[u.now()].concat(f(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(8),f=t(9),c=t("ee").get("tracer"),u=t("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){s[e]=i(p+e,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){function r(){return f.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,f=t(10);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],4:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],5:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof m&&!g){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),g=!0,d("timing",["fi",e,n])}}function f(t){"hidden"===t&&d("pageHide",[p.now()])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,u,s,d=t("handle"),p=t("loader"),l=t(7),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,h=["click","keydown","mousedown","pointerdown","touchstart"];h.forEach(function(t){document.addEventListener(t,a,!1)})}l(f)}},{}],6:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],7:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],8:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],9:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],10:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var f=e(i),c=v(n),u=c.length,s=0;s<u;s++)c[s].apply(f,r);var p=d[w[n]];return p&&p.push([b,n,r,f]),f}}function o(t,e){y[t]=v(t).concat(e)}function m(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function v(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:e,buffer:h,abort:f,aborted:!1};return b}function o(t){return u(t,c,a)}function a(){return new r}function f(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",u=t("gos"),s=t(8),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!R++){var t=M.info=NREUM.info,e=v.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();f("mark",["onload",n+M.offset],null,"api"),f("timing",["load",n]);var r=v.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===v.readyState&&o()}function o(){f("mark",["domContent",a()+M.offset],null,"api")}var a=t(3),f=t("handle"),c=t(8),u=t("ee"),s=t(6),d=t(4),p=t(2),l=p.getConfiguration("ssl")===!1?"http":"https",m=window,v=m.document,g="addEventListener",h="attachEvent",y=m.XMLHttpRequest,w=y&&y.prototype,b=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:y,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1210.min.js"},O=y&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(5),v[g]?(v[g]("DOMContentLoaded",o,!1),m[g]("load",r,!1)):(v[h]("onreadystatechange",i),m[h]("onload",r)),f("mark",["firstbyte",a.getLastTimestamp()],null,"api");var R=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,c],s],t)}f(n+"start",[o,a,c],s,u);try{return p=e.apply(a,o)}catch(m){throw f(n+"err",[o,a,m],s,u),m}finally{f(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var f,c,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)c=e[u],f=t[c],a(f)||(t[c]=n(f,s?c+r:r,i,c,o))}function f(n,r,o,a){if(!m||e){var f=m;m=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}m=f}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function f(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function c(t,e,n){var r=t[e];t[e]=f(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(9),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;e.exports=r,e.exports.wrapFunction=f,e.exports.wrapInPlace=c,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+	<link rel="profile" href="https://gmpg.org/xfn/11">
+		<title>Biden se anota Maine y cierra un Supermartes de ensueño, mientras Sanders se apunta California &#8211; Telemundo 62</title>
+<link rel="preload" href="https://www.telemundo62.com/wp-content/themes/nbc-station/client/build/media/ArthouseOwned-Black.woff2" as="font" crossorigin /><link rel="preload" href="https://www.telemundo62.com/wp-content/themes/nbc-station/client/build/media/ArthouseOwned-Bold.woff2" as="font" crossorigin /><link rel="preload" href="https://www.telemundo62.com/wp-content/themes/nbc-station/client/build/media/ArthouseOwned-Medium.woff2" as="font" crossorigin /><link rel="preload" href="https://www.telemundo62.com/wp-content/themes/nbc-station/client/build/media/ArthouseOwned-Light.woff2" as="font" crossorigin /><link rel="preload" href="https://www.telemundo62.com/wp-content/themes/nbc-station/client/build/media/Roboto-Flex.woff2" as="font" crossorigin /><link rel='dns-prefetch' href='//ak.sail-horizon.com' />
+<link rel='dns-prefetch' href='//native.sharethrough.com' />
+<link rel='dns-prefetch' href='//js-sec.indexww.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Telemundo 62 &raquo; Feed" href="https://www.telemundo62.com/?rss=y" />
+<link rel='stylesheet' id='all-css-0' href='https://www.telemundo62.com/_static/??-eJylz01OAzEMBeAL0SSeTJLJAiHEQarEdmik/FSTVKi3Bwrsoay88POnZ/l2PmBvk9uU88SVh2wRD2OGmXuTWPLnJl5yIYljSOy19iYWo4AwsiVjgwFQ5LWouYmPzIP8o/laegxFeGWSw02zTUkDbI5pvdsM+8xYWEBKjJ7RGWDvtfORw91o4jAvO9PzN05+UV45GykZRcwGN/Vb/Dbxxp5LuPJ+HLX3efrPty9fJ8IirKuNKTkdkJzWeoWfXk/1EezirF+sUe/tzLQH' type='text/css' media='all' />
+<script id='ad-layers-dfp-js-extra'>
+var adLayersDFP = {"layerDebugLabel":"Current ad layer","consoleDebugLabel":"Switch to Google console","adUnitPrefix":"div-gpt-ad-"};
+</script>
+<script src='https://www.telemundo62.com/wp-content/plugins/ad-layers-nbc/js/ad-layers-dfp.js?ver=0.0.9' id='ad-layers-dfp-js'></script>
+<script id='ad-layers-js-extra'>
+var adLayersAdServer = {"jsAPIClass":"AdLayersDFPAPI"};
+</script>
+<script src='https://www.telemundo62.com/wp-content/plugins/ad-layers-nbc/js/ad-layers.js?ver=0.0.9' id='ad-layers-js'></script>
+<script src='https://www.telemundo62.com/wp-includes/js/jquery/jquery.js?ver=1.12.4-wp' id='jquery-core-js'></script>
+<link rel="https://api.w.org/" href="https://www.telemundo62.com/wp-json/" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.telemundo62.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.telemundo62.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 5.5.5" />
+<link rel="canonical" href="https://www.telemundo47.com/telemundo/noticias/decision/super-tuesday-resultados-primarias-democratas-republicanas-2020/1873173/" />
+<link rel="alternate" type="application/json+oembed" href="https://www.telemundo62.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.telemundo62.com%2Fnoticias%2Fdecision%2Fsuper-tuesday-resultados-primarias-democratas-republicanas-2020%2F2029693%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://www.telemundo62.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.telemundo62.com%2Fnoticias%2Fdecision%2Fsuper-tuesday-resultados-primarias-democratas-republicanas-2020%2F2029693%2F&#038;format=xml" />
+		<style>
+		.getty.aligncenter {
+			text-align: center;
+		}
+		.getty.alignleft {
+			float: none;
+			margin-right: 0;
+		}
+		.getty.alignleft > div {
+			float: left;
+			margin-right: 5px;
+		}
+		.getty.alignright {
+			float: none;
+			margin-left: 0;
+		}
+		.getty.alignright > div {
+			float: right;
+			margin-left: 5px;
+		}
+		</style>
+		<style type='text/css'>img#wpstats{display:none}</style><style type="text/css">
+	.hero-background:empty { background-image: linear-gradient(to bottom, rgba(0,0,0,0.55) 0%,rgba(0,0,0,0) 20%), url('https://media.telemundo62.com/2019/09/telemundo-super-tuesday-2.jpg?quality=85&strip=all&resize=1440%2C415'); }
+</style>
+<script>var nbc = {"brand":"telemundo","callLetters":"WWSI","env":"production","fullDomain":"telemundo62.com","globalSiteKey":"tlmd-phi","comscore_c4":"TELEMUNDO 62","on_air_name":"Telemundo 62","host":"telemundo62.com","market":"telemundo62","pdkAcct":"TQboeC","sensitive":"","siteKey":"tlmd-phi","themeUrl":"https:\/\/www.telemundo62.com\/wp-content\/themes\/nbc-station","twitterVia":"Telemundo62","zipCode":"19113","dataLayer":{"adobe":{"prop1":"noticias","eVar1":"noticias","prop2":"article - featured","prop3":"decision","eVar3":"decision","prop4":"","eVar4":"","eVar8":"telemundo","prop8":"telemundo","prop9":"D=v9","eVar9":"TLMD-PHI","prop10":"D=v10","eVar10":"WWSI","prop20":"nbcuotstelemundodivision","prop21":"10031873173","eVar21":"10031873173","prop22":"Biden se anota Maine y cierra un Supermartes de ensue\u00f1o, mientras Sanders se apunta California","eVar22":"Biden se anota Maine y cierra un Supermartes de ensue\u00f1o, mientras Sanders se apunta California","prop28":"","eVar28":"","prop29":"noticias, decision, donald-trump, elecciones-2020, internas-democratas","prop32":"no keyword","prop57":"Historias Destacadas","eVar57":"Historias Destacadas","eVar59":"Mar 12, 2020 17:57:39 pm EDT","prop59":"D=v59","eVar68":"","eVar70":"Mar 02, 2020 19:00:00 pm EST","prop74":"D=v74","eVar74":"page not sponsored","eVar76":"page not sponsored","eVar80":"article - featured","eVar81":"10282029693","eVar90":"elecciones 2020","list2":"noticias, decision, donald-trump, elecciones-2020, internas-democratas","attrs":[],"contextData":{"pagename":"","events":"","rsid":"nbcuotstelemundodivision","callsign":"WWSI","businessunit":"telemundo62","division":"telemundo","sitekey":"tlmd-phi","section":"noticias","subsection":"decision","subsubsection":"","exitlink":"","url":"https:\/\/www.telemundo62.com\/noticias\/decision\/super-tuesday-resultados-primarias-democratas-republicanas-2020\/2029693\/","contentid":2029693,"localid":"1:28:2029693","contenttitle":"Biden se anota Maine y cierra un Supermartes de ensue\u00f1o, mientras Sanders se apunta California","contenttype":"article","nationalized":true,"byline_authors":"EFE \/ AP \/ TELEMUNDO LOCAL","date":"","sourceid":"","source":"","pageName":"decision:detail content page","collections":"Historias Destacadas"},"prop30":"NATIONALTLMD","prop18":"scandido","pageName":"decision:detail content page","pageType":"","prop23":"article inline video embed ","eVar23":"article inline video embed ","prop19":"true","prop25":"EFE \/ AP \/ TELEMUNDO LOCAL","eVar25":"D=c25"},"page_name":["decision:detail","content","page"],"site_events":{},"division":"telemundo","market":"WWSI","sitekey":"tlmd-phi","type":"post","network_id":"1:28:2029693","id":2029693,"source":"","title":"Biden se anota Maine y cierra un Supermartes de ensue\u00f1o, mientras Sanders se apunta California","summary":"<p>Todo apunta a que la disputa por la nominaci\u00f3n del Partido Dem\u00f3crata ser\u00e1 entre Sanders y Biden.<\/p>\n","link":"https:\/\/www.telemundo62.com\/noticias\/decision\/super-tuesday-resultados-primarias-democratas-republicanas-2020\/2029693\/","date":"","subtitle":"Todo apunta a que la disputa por la nominaci\u00f3n del Partido Dem\u00f3crata ser\u00e1 entre Sanders y Biden.","sponsor":"","sst_source_id":"","linkout":"","linkout_url":"","syndicated":true,"nationalized":true,"linkout_excerpt_url":"","originating_market":"NATIONALTLMD","content_tag":"donald-trump|elecciones-2020|internas-democratas","section":"noticias","subsection":"decision","subsubsection":"","all_sections":"noticias|decision","primary_tag":"elecciones 2020","sponsored":false,"contentid":"10031873173","localid":"1:28:2029693","localid_combined":"10282029693","contenttitle":"Biden se anota Maine y cierra un Supermartes de ensue\u00f1o, mientras Sanders se apunta California","contenttype":"article inline video embed ","syndicatedid":"1:3:1873173","byline_authors":"EFE \/ AP \/ TELEMUNDO LOCAL","sourceid":"","pageName":"decision:detail content page","collections":"Historias Destacadas","uri":"\/noticias\/decision\/super-tuesday-resultados-primarias-democratas-republicanas-2020\/2029693\/","uri_length":6,"section_name":"noticias","detail_section_name":"decision","detail_subsection_name":"","this_contenttype":"article inline video embed ","template":"article - featured","this_request_type":"singular","video_collections":[]},"browserTitle":"%s - Telemundo 62","pageType":"article","locale":"es_ES","video":{"bitrate":50000,"playerType":"articleplayer","fwSSID":"tlmd_wwsi_noticias_decision","fwSSID_liveNoPre":"tlmd_live_nopreroll","fwNetworkID":"382114","fwManager":{"network":"_live","siteKey":"_telemundo"},"config":{"volume":100,"htmlPreRoll":true,"htmlOmniture":false,"tremorFlashKey":"52289094b872c","tremorFlashSyndKey":"5239b2feaee2e","tremorHTMLKey":"5239c44e7e9e1","tremorHTMLSyndKey":"5239c4849009"},"htmlOmniture":false,"pdkPath":"\/assets\/pdk587","plugins":["akamaiHD","FreeWheel","comscore","captions","capcon","liveCaptions","streamsense","chartbeat"]},"adobe":{"rsid":"nbcuotstelemundodivision","link_internal_filters":"javascript:,telemundo62.com,media.telemundo62.com,events.telemundo62.com,tsn.telemundo62.com,autos.telemundo62.com"},"weather":{"weather_url":"https:\/\/www.telemundo62.com\/el-tiempo\/","alerts_url":"https:\/\/www.telemundo62.com\/el-tiempo\/alertas-del-tiempo\/","closings_url":"https:\/\/www.telemundo62.com\/el-tiempo\/cierre-de-escuelas\/"},"sharethrough_codes":["nP3EagztciAhUuFBbE24BQsi"],"param_zipcode":"","appleStoreUrl":"https:\/\/ad.apps.fm\/XzPvJ3hCUB_2j9Ankwe6ZLmEqdAzHrteUpaQzsBej-3EdpzUzkhZS-Oq4HQnTyHFlmts_yvkswejq-LuNSpS8w","androidStoreUrl":"https:\/\/ad.apps.fm\/kUi3KNbOgnxYXAc4eBDuol5KLoEjTszcQMJsV6-2VnHFDLXitVHB6BlL95nuoNYfD4DN9cA_K7isGKodpGGvS_rgon8r1m-R4drqTrpwEu8MQGgUZuZ3PliBtosA_UTd0EBbbxphpu_GHoB5DVgsXw","facebookAppId":"472398166231410"};</script><meta property="og:site_name" content="Telemundo 62" /><meta name="google-site-verification" content="lwSQ84Zbphu8_om3-3Pqukb9edoOdouap7qZtp7BbZI" /><meta property="fb:app_id" content="472398166231410" /><meta name="twitter:card" content="summary_large_image" /><meta name="twitter:site" content="@Telemundo62" /><meta name="twitter:creator" content="@Telemundo62" /><meta property="og:type" content="article" /><meta property="article:opinion" content="false" /><meta property="article:content_tier" content="free" /><meta name="article:publisher" content="https://www.facebook.com/Telemundo62" /><meta name="description" content="Todo apunta a que la disputa por la nominación del Partido Demócrata será entre Sanders y Biden." /><meta property="og:description" content="Todo apunta a que la disputa por la nominación del Partido Demócrata será entre Sanders y Biden." /><meta name="twitter:description" content="Todo apunta a que la disputa por la nominación del Partido Demócrata será entre Sanders y Biden." /><meta property="og:title" content="Biden se anota Maine y cierra un Supermartes de ensueño, mientras Sanders se apunta California" /><meta name="twitter:title" content="Biden se anota Maine y cierra un Supermartes de ensueño, mientras Sanders se apunta California" /><meta name="keywords" content="Estados Unidos, Massachusetts, Carolina del Norte, California, Virginia, Colorado, Minnesota, Tennessee, Maine, territorio, Alaska, Samoa Americana, oeste, sur, SÚPER, lugares&amp;, mundo, Georgia, Nueva York, favorito, Partido Republicano, Partido Demócrata, favorito, cadena, PRIMARIAS, CNN, BLOOMBERG, convención, contienda, elecciones, campaña, partido, victoria, triunfo, entrevista, retirada, partido, primarias, partido, contienda, victoria, victoria, triunfo, debate, actuación, ascenso, Súper Martes, candidatura, WASHINGTON &amp;#8211, convención, fase, miradas, encuestas, favor, impulso, juego, candidatura, Súper Martes porque &amp;#8220, pregunta, estados, peso, premios, parte, ninguno, apoyo, asambleas, parte, juego, Guía, nominación, votos, total, infraestructura, fin, tercio, opciones, montón, recursos, campañas, opciones, PREMIO, opción, opciones, claridad, llamado, rumbo, opción, ENTRADA, juego, entrada, impulso, impulso, éxito, estrategia, plazo, anuncios, cadenas, alternativa, total, talones, alternativa, papeletas, torno, interrogante, fortuna, una, posibilidades, comprar&amp;, cifra, resultado, resto, apoyos, perspectivas, luchas, anuncio, liza, mínimo, decisión, sorpresa, escenarios, Donald Trump, elecciones 2020, Internas demócratas" /><meta property="og:url" content="https://www.telemundo62.com/noticias/decision/super-tuesday-resultados-primarias-democratas-republicanas-2020/2029693/" /><meta name="twitter:url" content="https://www.telemundo62.com/noticias/decision/super-tuesday-resultados-primarias-democratas-republicanas-2020/2029693/" /><meta name="sailthru.title" content="Biden se anota Maine y cierra un Supermartes de ensueño, mientras Sanders se apunta California" /><meta name="sailthru.description" content="Todo apunta a que la disputa por la nominación del Partido Demócrata será entre Sanders y Biden." /><meta name="sailthru.tags" content="Estados Unidos, Massachusetts, Carolina del Norte, California, Virginia, Colorado, Minnesota, Tennessee, Maine, territorio, Alaska, Samoa Americana, oeste, sur, SÚPER, lugares&amp;, mundo, Georgia, Nueva York, favorito, Partido Republicano, Partido Demócrata, favorito, cadena, PRIMARIAS, CNN, BLOOMBERG, convención, contienda, elecciones, campaña, partido, victoria, triunfo, entrevista, retirada, partido, primarias, partido, contienda, victoria, victoria, triunfo, debate, actuación, ascenso, Súper Martes, candidatura, WASHINGTON &amp;#8211, convención, fase, miradas, encuestas, favor, impulso, juego, candidatura, Súper Martes porque &amp;#8220, pregunta, estados, peso, premios, parte, ninguno, apoyo, asambleas, parte, juego, Guía, nominación, votos, total, infraestructura, fin, tercio, opciones, montón, recursos, campañas, opciones, PREMIO, opción, opciones, claridad, llamado, rumbo, opción, ENTRADA, juego, entrada, impulso, impulso, éxito, estrategia, plazo, anuncios, cadenas, alternativa, total, talones, alternativa, papeletas, torno, interrogante, fortuna, una, posibilidades, comprar&amp;, cifra, resultado, resto, apoyos, perspectivas, luchas, anuncio, liza, mínimo, decisión, sorpresa, escenarios, Donald Trump, elecciones 2020, Internas demócratas" /><meta name="sailthru.tags" content="Estados Unidos, Massachusetts, Carolina del Norte, California, Virginia, Colorado, Minnesota, Tennessee, Maine, territorio, Alaska, Samoa Americana, oeste, sur, SÚPER, lugares&amp;, mundo, Georgia, Nueva York, favorito, Partido Republicano, Partido Demócrata, favorito, cadena, PRIMARIAS, CNN, BLOOMBERG, convención, contienda, elecciones, campaña, partido, victoria, triunfo, entrevista, retirada, partido, primarias, partido, contienda, victoria, victoria, triunfo, debate, actuación, ascenso, Súper Martes, candidatura, WASHINGTON &amp;#8211, convención, fase, miradas, encuestas, favor, impulso, juego, candidatura, Súper Martes porque &amp;#8220, pregunta, estados, peso, premios, parte, ninguno, apoyo, asambleas, parte, juego, Guía, nominación, votos, total, infraestructura, fin, tercio, opciones, montón, recursos, campañas, opciones, PREMIO, opción, opciones, claridad, llamado, rumbo, opción, ENTRADA, juego, entrada, impulso, impulso, éxito, estrategia, plazo, anuncios, cadenas, alternativa, total, talones, alternativa, papeletas, torno, interrogante, fortuna, una, posibilidades, comprar&amp;, cifra, resultado, resto, apoyos, perspectivas, luchas, anuncio, liza, mínimo, decisión, sorpresa, escenarios, Donald Trump, elecciones 2020, Internas demócratas" /><meta name="sailthru.type" content="article" /><meta name="sailthru.date" content="2020-03-02T19:00:00+00:00" /><meta property="og:image:width" content="1200" /><meta property="og:image:height" content="675" /><meta property="og:image" content="https://media.telemundo62.com/2019/09/Supermiercoles-foto-telemundo-1234.png?resize=1200%2C675&#038;quality=85&#038;strip=all" /><meta name="twitter:image" content="https://media.telemundo62.com/2019/09/Supermiercoles-foto-telemundo-1234.png?resize=1200%2C675&#038;quality=85&#038;strip=all" /><script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"NewsArticle","mainEntityOfPage":"https:\/\/www.telemundo62.com\/noticias\/decision\/super-tuesday-resultados-primarias-democratas-republicanas-2020\/2029693\/","headline":"Biden se anota Maine y cierra un Supermartes de ensue\u00f1o, mientras Sanders se apunta California","datePublished":"2020-03-02T19:00:00","dateModified":"2020-03-12T17:57:39","description":"Todo apunta a que la disputa por la nominaci\u00f3n del Partido Dem\u00f3crata ser\u00e1 entre Sanders y Biden.","speakable":{"@type":"SpeakableSpecification","cssSelector":[".article-headline",".article-subtitle"]},"keywords":"Estados Unidos, Massachusetts, Carolina del Norte, California, Virginia, Colorado, Minnesota, Tennessee, Maine, territorio, Alaska, Samoa Americana, oeste, sur, S\u00daPER, lugares&, mundo, Georgia, Nueva York, favorito, Partido Republicano, Partido Dem\u00f3crata, favorito, cadena, PRIMARIAS, CNN, BLOOMBERG, convenci\u00f3n, contienda, elecciones, campa\u00f1a, partido, victoria, triunfo, entrevista, retirada, partido, primarias, partido, contienda, victoria, victoria, triunfo, debate, actuaci\u00f3n, ascenso, S\u00faper Martes, candidatura, WASHINGTON &#8211, convenci\u00f3n, fase, miradas, encuestas, favor, impulso, juego, candidatura, S\u00faper Martes porque &#8220, pregunta, estados, peso, premios, parte, ninguno, apoyo, asambleas, parte, juego, Gu\u00eda, nominaci\u00f3n, votos, total, infraestructura, fin, tercio, opciones, mont\u00f3n, recursos, campa\u00f1as, opciones, PREMIO, opci\u00f3n, opciones, claridad, llamado, rumbo, opci\u00f3n, ENTRADA, juego, entrada, impulso, impulso, \u00e9xito, estrategia, plazo, anuncios, cadenas, alternativa, total, talones, alternativa, papeletas, torno, interrogante, fortuna, una, posibilidades, comprar&, cifra, resultado, resto, apoyos, perspectivas, luchas, anuncio, liza, m\u00ednimo, decisi\u00f3n, sorpresa, escenarios, Donald Trump, elecciones 2020, Internas dem\u00f3cratas","publisher":{"@type":"Organization","name":"Telemundo 62","logo":{"@type":"ImageObject","height":60,"url":"https:\/\/media.telemundo62.com\/wp-content\/uploads\/2019\/09\/light_amp_wwsi.png","width":160}},"image":{"@type":"ImageObject","height":675,"url":"https:\/\/media.telemundo62.com\/2019\/09\/Supermiercoles-foto-telemundo-1234.png?resize=1200%2C675&quality=85&strip=all","width":1200},"author":{"@type":"Person","name":"EFE \/ AP \/ TELEMUNDO LOCAL"}}</script>							<script type='text/javascript'>
+				var dfpAdUnits = {};
+				var googletag = googletag || {};
+				googletag.cmd = googletag.cmd || [];
+				(function() {
+				var gads = document.createElement('script');
+				gads.async = true;
+				gads.type = 'text/javascript';
+				var useSSL = 'https:' == document.location.protocol;
+				gads.src = (useSSL ? 'https:' : 'http:') +
+				'//www.googletagservices.com/tag/js/gpt.js';
+				var node = document.getElementsByTagName('script')[0];
+				node.parentNode.insertBefore(gads, node);
+				})();
+				</script>
+												<script type="text/javascript">
+			var dfpBuiltMappings = {}, dfpAdUnits = {};
+
+			if (768 <= window.innerWidth) {									googletag.cmd.push(function() {
+					dfpBuiltMappings["bottombox"] = googletag.sizeMapping().addSize([768,1],[[300,250]]).build();
+dfpBuiltMappings["topbox"] = googletag.sizeMapping().addSize([768,1],[[300,250],[300,600]]).build();
+dfpBuiltMappings["topbanner"] = googletag.sizeMapping().addSize([768,1],[[970,90],[970,66],[970,250],[728,90]]).build();
+dfpBuiltMappings["logo"] = googletag.sizeMapping().addSize([768,1],[[88,31],[120,60]]).build();
+dfpBuiltMappings["interstitial"] = googletag.sizeMapping().addSize([768,1],[[1,1]]).build();
+dfpBuiltMappings["olympicsbox"] = googletag.sizeMapping().addSize([768,1],[[300,250]]).build();
+					});
+					var dfpAdDetails = {"topbox":{"path":"\/2620\/otstm_web\/wwsi\/noticias\/decision","sizes":[[300,250],[300,600]],"targeting":[]},"bottombox":{"path":"\/2620\/otstm_web\/wwsi\/noticias\/decision","sizes":[[300,250]],"targeting":[]},"logo":{"path":"\/2620\/otstm_web\/wwsi\/noticias\/decision","sizes":[[88,31],[120,60]],"targeting":[]},"topbanner":{"path":"\/2620\/otstm_web\/wwsi\/noticias\/decision","sizes":[[970,90],[970,66],[970,250],[728,90]],"targeting":[]},"interstitial":{"path":"\/2620\/otstm_web\/wwsi\/noticias\/decision","sizes":[[1,1]],"targeting":[]},"olympicsbox":{"path":"\/2620\/otstm_web\/wwsi\/noticias\/decision","sizes":[[300,250]],"targeting":[]}};
+					var dfpSizeMapping = {"bottombox":[[[768,1],[[300,250]]]],"topbox":[[[768,1],[[300,250],[300,600]]]],"topbanner":[[[768,1],[[970,90],[970,66],[970,250],[728,90]]]],"logo":[[[768,1],[[88,31],[120,60]]]],"interstitial":[[[768,1],[[1,1]]]],"olympicsbox":[[[768,1],[[300,250]]]]};
+
+					 } else { 									googletag.cmd.push(function() {
+					dfpBuiltMappings["mobiletopbanner"] = googletag.sizeMapping().addSize([1,1],[[320,50]]).build();
+dfpBuiltMappings["mobilemultibox"] = googletag.sizeMapping().addSize([1,1],[[300,250],[300,100],[320,50]]).build();
+dfpBuiltMappings["mobilebackstage"] = googletag.sizeMapping().addSize([1,1],[[1,1]]).build();
+dfpBuiltMappings["olympicsbox"] = googletag.sizeMapping().addSize([1,1],[[300,250]]).build();
+					});
+					var dfpAdDetails = {"mobiletopbanner":{"path":"\/2620\/otstm_mobile\/wwsi_mobileweb\/noticias\/decision","sizes":[[320,50]],"targeting":[]},"mobilemultibox":{"path":"\/2620\/otstm_mobile\/wwsi_mobileweb\/noticias\/decision","sizes":[[300,250],[300,100],[320,50]],"targeting":[]},"mobilebackstage":{"path":"\/2620\/otstm_mobile\/wwsi_mobileweb\/noticias\/decision","sizes":[[1,1]],"targeting":[]},"olympicsbox":{"path":"\/2620\/otstm_mobile\/wwsi_mobileweb\/noticias\/decision","sizes":[[300,250]],"targeting":[]}};
+					var dfpSizeMapping = {"mobiletopbanner":[[[1,1],[[320,50]]]],"mobilemultibox":[[[1,1],[[300,250],[300,100],[320,50]]]],"mobilebackstage":[[[1,1],[[1,1]]]],"olympicsbox":[[[1,1],[[300,250]]]]};
+
+													}					googletag.cmd.push(function() {
+					googletag.pubads().enableAsyncRendering();
+googletag.pubads().collapseEmptyDivs();
+					googletag.pubads().addEventListener('slotRenderEnded', function(event) {
+						var slotElementId = event.slot.getSlotElementId();
+						if (false === event.isEmpty) {
+							if (0 <= slotElementId.indexOf('topbanner')) {
+								document.body.classList.add("topbanner");
+							}
+							if (0 <= slotElementId.indexOf('logo')) {
+								document.querySelector('#' + slotElementId).classList.add('logo-rendered');
+							} else {
+								document.querySelector('#' + slotElementId).classList.add('ad-rendered');
+							}
+						}
+					});
+						googletag.pubads().setTargeting("zipcode", localStorage.getItem("zipCode") || nbc.zipCode );
+
+	var isMobile = window.matchMedia('screen and (max-width: 767px)').matches;
+	googletag.pubads().setTargeting("gpt1", isMobile ? "ots_mobile" : "ots_web");
+	googletag.pubads().setTargeting("platform", isMobile ? "mobile" : "desktop");
+			googletag.pubads().setTargeting("source", "www.telemundo62.com");
+				googletag.pubads().setTargeting("pageid", "10282029693");
+				googletag.pubads().setTargeting("pageid2", "10031873173");
+				googletag.pubads().setTargeting("sect", "noticias");
+				googletag.pubads().setTargeting("sub", "decision");
+				googletag.pubads().setTargeting("call", "WWSI");
+				googletag.pubads().setTargeting("region", "filadelfia");
+				googletag.pubads().setTargeting("stationtype", "telemundo");
+				googletag.pubads().setTargeting("tags", "noticias,decision,donald-trump,elecciones-2020,internas-democratas");
+				googletag.pubads().setTargeting("gpt2", "WWSI");
+				googletag.pubads().setTargeting("station", "ots");
+				googletag.pubads().setTargeting("sponsor", "");
+				googletag.pubads().setTargeting("excl_cat", "noticias,decision");
+		
+					googletag.enableServices();
+				});
+								var dfpAdLayer = {"post_id":1907064,"title":"Article Ad Layer"};
+
+			</script>
+			<link rel="amphtml" href="https://www.telemundo62.com/noticias/decision/super-tuesday-resultados-primarias-democratas-republicanas-2020/2029693/?amp"><link rel="icon" href="https://media.telemundo62.com/2019/09/cropped-TLMD_62_Phildelphia.png?fit=32%2C32&#038;quality=85&#038;strip=all" sizes="32x32" />
+<link rel="icon" href="https://media.telemundo62.com/2019/09/cropped-TLMD_62_Phildelphia.png?fit=192%2C192&#038;quality=85&#038;strip=all" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://media.telemundo62.com/2019/09/cropped-TLMD_62_Phildelphia.png?fit=180%2C180&#038;quality=85&#038;strip=all" />
+<meta name="msapplication-TileImage" content="https://media.telemundo62.com/2019/09/cropped-TLMD_62_Phildelphia.png?fit=270%2C270&#038;quality=85&#038;strip=all" />
+</head>
+
+<body class="post-template post-template-template-featured-article post-template-template-featured-article-php single single-post postid-2029693 single-format-standard station-telemundo wwsi featured-article featured-article--title-below">
+	<div class="leaderboard_ad">
+		<div id="div-gpt-ad-topbanner_" class=" gpt-topbanner" data-beforetext="" data-fallbacktext=""></div><script style="text/javascript">
+				if (typeof adInstance === 'undefined') {
+					adInstance = new AdLayersAPI();
+				}
+				adInstance.lazyLoadAd({ slotName: 'topbanner_', format: 'topbanner', targeting: {"slot":"topbanner","pos":"topbanner"} });
+			</script><div id="div-gpt-ad-mobiletopbanner_" class=" gpt-mobiletopbanner" data-beforetext="" data-fallbacktext=""></div><script style="text/javascript">
+				if (typeof adInstance === 'undefined') {
+					adInstance = new AdLayersAPI();
+				}
+				adInstance.lazyLoadAd({ slotName: 'mobiletopbanner_', format: 'mobiletopbanner', targeting: {"slot":"mobiletopbanner","pos":"mobiletopbanner"} });
+			</script>	</div>
+	<div id="page" class="site" data-component="wrapper">
+	
+<a class="skip-link screen-reader-text" href="#content">Saltar al contenido</a>
+<header id="masthead" class="site-header site-header--featured" role="banner" data-component="siteHeader">
+		<div class="site-header__primary">
+		<div class="site-header__wrap">
+							<div class="site-header__logo">
+					<a href="https://www.telemundo62.com/">
+						<img
+							src="https://media.telemundo62.com/2021/04/62@3x-1.png?fit=129%2C120&#038;quality=85&#038;strip=all"
+							alt="Telemundo 62"
+							loading="lazy"
+						/>
+					</a>
+				</div>
+						<div class="site-header__nav-search">
+				<div class="site-header__nav-main">
+					<button class="site-header__nav-main-toggle">
+						<span class="site-header__nav-main-toggle-text">Navegación principal</span>
+					</button>
+				</div>
+				<div class="site-header__search" data-component="headerSearch">
+					<button class="site-header__search-toggle">
+						<span class="site-header__search-toggle-text">Buscar</span>
+					</button>
+					<div class="site-header__search-form">
+						
+<form class="search-form" role="search" method="get" action="https://www.telemundo62.com/" >
+	<label>
+		<span class="screen-reader-text">Búsqueda por:</span>
+		<input type="search" value="" name="s" placeholder="Buscar" />
+	</label>
+	<input type="submit" class="search-submit" value="Buscar" />
+</form>
+					</div>
+				</div>
+			</div>
+			<div class="site-header__animated-section">
+				<nav class="site-header__nav-sections">
+					<div class="menu-top-navigation-container"><nav id="primary-menu" class="menu"><a data-lid="Local" data-lpos="primary-menu" class=" menu-item menu-item-type-taxonomy menu-item-object-category" href="/noticias/local/">Local</a></li>
+<a data-lid="El tiempo" data-lpos="primary-menu" class=" menu-item menu-item-type-custom menu-item-object-custom" href="https://www.telemundo62.com/el-tiempo/">El tiempo</a></li>
+<a data-lid="Telemundo 62 Responde" data-lpos="primary-menu" class=" menu-item menu-item-type-taxonomy menu-item-object-category" href="/responde/">Telemundo 62 Responde</a></li>
+<a data-lid="Videos" data-lpos="primary-menu" class=" menu-item menu-item-type-custom menu-item-object-custom" href="/videos/">Videos</a></li>
+<a data-lid="Entretenimiento" data-lpos="primary-menu" class=" menu-item menu-item-type-taxonomy menu-item-object-category" href="/entretenimiento/">Entretenimiento</a></li>
+<a data-lid="Coronavirus" data-lpos="primary-menu" class=" menu-item menu-item-type-taxonomy menu-item-object-category" href="/noticias/salud/coronavirus/">Coronavirus</a></li>
+</nav></div>				</nav>
+				<div class="site-header__weather-tv">
+					<div
+						class="site-header__local-weather"
+						data-react-component="NBCWeather"
+						data-view="conditions"
+					>
+					</div>
+										<a class="site-header__live-tv" href="https://www.telemundo62.com/en-vivo">En Vivo</a>
+									</div>
+				<button class="site-header__mobile-share-toggle">
+					<span class="text-share">Comparte</span>
+					<span class="text-close">Cerrar</span>
+				</button>
+			</div>
+		</div> <!-- site-header__wrap -->
+	</div> <!-- site-header__primary -->
+	<div class="site-header__secondary">
+		<div class="site-header__wrap">
+							<div class="site-header__trending">
+					<span class="site-header__trending-label">Tendencias</span>
+											<nav class="site-header__trending-nav">
+												<a data-lid="Juegos Olímpicos Tokyo 2020" data-lpos="trending-stories-module" href="https://www.telemundo62.com/deportes/juegos-olimpicos-tokio-2020/" class="site-header__trending-nav-item">Juegos Olímpicos Tokyo 2020</a>
+					<a data-lid="T62 Al Momento" data-lpos="trending-stories-module" href="https://www.telemundo62.com/tag/t62-al-momento/" class="site-header__trending-nav-item">T62 Al Momento</a>
+					<a data-lid="Decisión Local" data-lpos="trending-stories-module" href="/noticias/decision/local-decision/" class="site-header__trending-nav-item">Decisión Local</a>
+					<a data-lid="Descarga T62 APP" data-lpos="trending-stories-module" href="https://www.telemundo62.com/plataformas/" class="site-header__trending-nav-item">Descarga T62 APP</a>
+		
+							</nav>
+										<div class="site-header__trending-toggle">
+						<button class="trending-toggle"><span class="screen-reader-text">Ampliar</span></button>
+					</div>
+				</div>
+
+				
+<div class="site-header__alerts">
+	<div
+		class="site-header__weather "
+		data-react-component="NBCWeather"
+		data-view="alerts"
+		data-alert-singular="Alerta meteorológica"
+		data-alert-plural="Alertas de El Tiempo"
+		data-zip-code="19113">
+	</div>
+	</div> <!-- site-header__wrap -->
+					</div> <!-- site-header__secondary -->
+	</div>
+</header>
+	<div id="content" class="site-content " data-component="formsContainer">
+		<div id="primary" class="content-area">
+			<main id="main" class="site-main">
+				
+<article id="post-2029693" data-component="article">
+
+	<div
+			id="template-hero"
+		class="template-hero "
+		data-component="templateHero"
+	>
+			<div class="hero-background"></div>
+	
+	
+	
+							<div class="section-content--full hero-wrap">
+		<div class="section-content--primary">
+	<div class="article-header--wrap ">
+	<h1 class="article-headline">
+		Biden se anota Maine y cierra un Supermartes de ensueño, mientras Sanders se apunta California	</h1>
+			<h2 class="article-subtitle">
+			Todo apunta a que la disputa por la nominación del Partido Demócrata será entre Sanders y Biden.		</h2>
+				
+<div class="article-meta" data-component="articleMeta">
+	<h4 class="article-byline">
+					Por EFE / AP / TELEMUNDO LOCAL					
+							<span class="time-wrap">
+				<time class="entry-date published" datetime="2020-03-03T00:00:00-05:00">Publicado el 02 de marzo del 2020</time>					<span class="meta-dot">&bull;</span>
+				<time class="entry-date updated" datetime="2020-03-12T17:57:39-04:00">Actualizado a las <span class="time">5:57 pm</span> del <span class="date">12 de marzo del 2020</span></time>			</span>
+			</h4>
+	<div
+	class="share-buttons"
+	data-component="sharingBar"
+>
+			<a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.telemundo62.com%2Fnoticias%2Fdecision%2Fsuper-tuesday-resultados-primarias-democratas-republicanas-2020%2F2029693%2F&#038;Biden%20se%20anota%20Maine%20y%20cierra%20un%20Supermartes%20de%20ensue%C3%B1o%2C%20mientras%20Sanders%20se%20apunta%20California?_osource=db_npd_tlmd_wwsi_fb_shr" data-service="facebook" target="_blank">
+			<span class="icon icon-facebook-f"></span>
+		</a>
+	
+			<a href="https://twitter.com/intent/tweet?text=Biden%20se%20anota%20Maine%20y%20cierra%20un%20Supermartes%20de%20ensue%C3%B1o%2C%20mientras%20Sanders%20se%20apunta%20California&#038;url=https%3A%2F%2Fwww.telemundo62.com%2Fnoticias%2Fdecision%2Fsuper-tuesday-resultados-primarias-democratas-republicanas-2020%2F2029693%2F?_osource=db_npd_tlmd_wwsi_twt_shr" data-service="twitter" target="_blank">
+			<span class="icon icon-twitter"></span>
+		</a>
+	
+			<a href="mailto:?body=Biden%20se%20anota%20Maine%20y%20cierra%20un%20Supermartes%20de%20ensue%C3%B1o%2C%20mientras%20Sanders%20se%20apunta%20California%0D%0A%0D%0Ahttps%3A%2F%2Fwww.telemundo62.com%2Fnoticias%2Fdecision%2Fsuper-tuesday-resultados-primarias-democratas-republicanas-2020%2F2029693%2F?_osource=db_npd_tlmd_wwsi_eml_shr" data-service="email" target="_blank">
+			<span class="icon icon-envelope"></span>
+		</a>
+	
+	</div>
+</div>
+		</div>
+	</div>
+</div>
+	
+	
+	
+	
+	
+	
+	
+	</div>
+	
+	<div class="section-content--full below-hero">
+		<div class="section-content--primary">
+			<div class="article-content--wrap">
+				
+				
+<div class="article-meta" data-component="articleMeta">
+	<h4 class="article-byline">
+					Por EFE / AP / TELEMUNDO LOCAL					
+							<span class="time-wrap">
+				<time class="entry-date published" datetime="2020-03-03T00:00:00-05:00">Publicado el 02 de marzo del 2020</time>					<span class="meta-dot">&bull;</span>
+				<time class="entry-date updated" datetime="2020-03-12T17:57:39-04:00">Actualizado a las <span class="time">5:57 pm</span> del <span class="date">12 de marzo del 2020</span></time>			</span>
+			</h4>
+	<div
+	class="share-buttons"
+	data-component="sharingBar"
+>
+			<a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.telemundo62.com%2Fnoticias%2Fdecision%2Fsuper-tuesday-resultados-primarias-democratas-republicanas-2020%2F2029693%2F&#038;Biden%20se%20anota%20Maine%20y%20cierra%20un%20Supermartes%20de%20ensue%C3%B1o%2C%20mientras%20Sanders%20se%20apunta%20California?_osource=db_npd_tlmd_wwsi_fb_shr" data-service="facebook" target="_blank">
+			<span class="icon icon-facebook-f"></span>
+		</a>
+	
+			<a href="https://twitter.com/intent/tweet?text=Biden%20se%20anota%20Maine%20y%20cierra%20un%20Supermartes%20de%20ensue%C3%B1o%2C%20mientras%20Sanders%20se%20apunta%20California&#038;url=https%3A%2F%2Fwww.telemundo62.com%2Fnoticias%2Fdecision%2Fsuper-tuesday-resultados-primarias-democratas-republicanas-2020%2F2029693%2F?_osource=db_npd_tlmd_wwsi_twt_shr" data-service="twitter" target="_blank">
+			<span class="icon icon-twitter"></span>
+		</a>
+	
+			<a href="mailto:?body=Biden%20se%20anota%20Maine%20y%20cierra%20un%20Supermartes%20de%20ensue%C3%B1o%2C%20mientras%20Sanders%20se%20apunta%20California%0D%0A%0D%0Ahttps%3A%2F%2Fwww.telemundo62.com%2Fnoticias%2Fdecision%2Fsuper-tuesday-resultados-primarias-democratas-republicanas-2020%2F2029693%2F?_osource=db_npd_tlmd_wwsi_eml_shr" data-service="email" target="_blank">
+			<span class="icon icon-envelope"></span>
+		</a>
+	
+	</div>
+</div>
+
+				<div class="article-content rich-text">
+					
+<figure class="wp-block-image alignfull size-large nbcnewsmarquee"><div style="padding: 0 15px"><iframe src="https://www.nbcnews.com/politics/2020-primary-elections/marquee/partner" height="105"></iframe></figure>
+
+<p>WASHINGTON - El exvicepresidente Joe Biden volvió a la vida este Supermartes, acumulando victorias en las primarias de al menos siete estados sureños, uno del Centro y dos del Este del país, mientras el senador Bernie Sanders se quedó con California, el premio gordo de la jornada.</p>
+
+<p>Las primarias de Maine fueron las últimas en las que Biden se coronó victorioso, con los resultados confirmados llegando este miércoles por la tarde.  </p>
+
+<p>Sanders, por su parte, ganó en California, el estado que más reparte delegados en todo el país con 415, Vermont, Colorado y Utah. Sin embargo, no logró consolidarse en Texas, el segundo estado que más delegados repartía en la jornada. </p>
+
+<p>Bloomberg sorprendió derrotando a Tulsi Gabbard para ganar el pequeño caucus de Samoa Americana, pero <a href="/noticias/decision/pete-buttigieg-klobuchar-beto-orourke-respaldan-exvicepresidente-joe-biden-en-campana-democrata">decidió la mañana del miércoles retirarse de la contienda</a> tras los decepcionantes resultados en los otros estados.</p>
+
+<p>La senadora Elizabeth Warren no logró ganar ni siquiera las primarias en su estado, Massachusetts, y <a href="/noticias/decision/elizabeth-warren-supermartes">terminó suspendiendo su campaña el jueves</a>. </p>
+
+<p>Catorce estados participaron de la megavotación de primarias que repartía el 34% de los delegados para lograr la candidatura del partido; el senador progresista Bernie Sanders llegaba a la cita como gran favorito.</p>
+
+<p>La jornada fue crucial y no es para menos: 1,344 delegados estaban en disputa y son un paso clave hacia definir al futuro candidato, que deberá sumar 1,991 delegados del total de 3,979 en juego para alzarse con la nominación demócrata.</p>
+
+<p>Las primarias del Supermartes otorgaron más de un tercio del total de delegados en juego antes de la convención del partido en julio.  </p>
+
+<p>Los precandidatos demócratas que siguen en la contienda son el senador Bernie Sanders, el exvicepresidente Joe Biden, y la congresista Tulsi Gabbard.</p>
+
+<h3 class="image-with-text-block__headline">Los que siguen en la contienda</h3>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<iframe id="mycon" src="https://data.nbcstations.com/national/2019/whos-running-2020/v2/index-esp.html" height="460" frameborder="0"></iframe>
+
+<p>La atención estuvo concentrada en estados como California, que con sus casi 40 millones de habitantes reparte 415 delegados en el proceso demócrata, y Texas, que otorga 228.</p>
+
+<p>También se votó, bien sea primarias o caucus, en Colorado, Carolina del Norte, Virginia, Alabama, Arkansas, Maine, Massachusetts, Minnesota, Oklahoma, Tennessee, Utah, Vermont y en el territorio de la Samoa estadounidense.</p>
+
+<p>Los votantes republicanos también votaron en todos los estados del Supermartes, excepto Virginia, donde el Partido Republicano estatal canceló sus elecciones primarias para respaldar al presidente Donald Trump.</p>
+
+<p>El único republicano con una campaña seria es el exgobernador de Massachusetts Bill Weld. </p>
+
+<p>NBC News le daba al presidente estadounidense una victoria anticipada en todos los estados con primarias republicanas. </p>
+
+<h2 class="wp-block-nbc-section-heading">LOS 14 ESTADOS Y LO QUE REPARTE CADA UNO </h2>
+
+<p>El Partido Demócrata asigna delegados a nivel de distrito, proporcionalmente en función de la cantidad de votos que recibe un candidato en las primarias o el comité de ese distrito. </p>
+
+<p><strong>CALIFORNIA: 415 DELEGADOS.</strong> Cuando las primarias de hace cuatro años llegaron en junio a California, todo el pescado estaba ya vendido. De irrelevante a valiosísima, California es el premio gordo del Supermartes.</p>
+
+<p><strong>TEXAS: 228 DELEGADOS.</strong> Biden gana las primarias en esta reina del Sur,  según NBC News. </p>
+
+<p><strong>CAROLINA DEL NORTE: 110 DELEGADOS.</strong> Biden gana las primarias en Carolina del Norte, según NBC News.</p>
+
+<p><strong>VIRGINIA: 99 DELEGADOS.</strong> Biden gana las primarias en Virginia, según NBC News.</p>
+
+<p><strong>MASSACHUSETTS: 91 DELEGADOS.</strong> Biden gana las primarias en Massachusetts, según NBC News.</p>
+
+<p><strong>MINNESOTA: 75 DELEGADOS.</strong> Biden gana las primarias en Minnesota, según NBC News.</p>
+
+<p><strong>COLORADO: 67 DELEGADOS.</strong> Sanders gana las primarias en Colorado, según NBC News.</p>
+<div data-react-component="VideoPlayer" data-meta="{&quot;amp_status&quot;:&quot;&quot;,&quot;spay_email&quot;:&quot;&quot;,&quot;syndicated_id&quot;:&quot;1:22:2059300&quot;,&quot;should_nationalize&quot;:false,&quot;nbc_first_published_date&quot;:&quot;&quot;,&quot;nbc_prevent_modified_update&quot;:false,&quot;nbc_linkout_title&quot;:&quot;&quot;,&quot;nbc_linkout_url&quot;:&quot;&quot;,&quot;nbc_linkout_excerpt_link&quot;:&quot;&quot;,&quot;nbc_primary_category_id&quot;:37677,&quot;nbc_primary_tag_id&quot;:11889,&quot;nbc_social_page_title&quot;:&quot;&quot;,&quot;nbc_page_title&quot;:&quot;&quot;,&quot;nbc_seo_description&quot;:&quot;&quot;,&quot;nbc_social_description&quot;:&quot;&quot;,&quot;nbc_national_headline&quot;:&quot;&quot;,&quot;entities&quot;:&quot;CALIFORNIA, estados, CONDADO, TARRANT, CAMPA\u00d1A, BATALLA, JUEGO, VOTOS, ATENCI\u00d3N, primarias, PANTALLA, ESTADOS, EJEMPLO, TRIPLE, SANDERS, TODO, CALIDAD, PERSPECTIVA, DEM\u00d3CRATAS., BUEN, CARRERA, RITOS, URNAS, HISTORIAS, RECINTOS, SUR, COLOR, MAPA, LATINOS, PROYECCIONES, OTRO, CERCA., COOL&quot;,&quot;nbc_canonical_market&quot;:&quot;&quot;,&quot;nbc_canonical_url&quot;:&quot;&quot;,&quot;nbc_hide_from_recirculation&quot;:&quot;&quot;,&quot;nbc_hide_from_search&quot;:&quot;&quot;,&quot;nbc_syndication_category&quot;:&quot;1:22:37677&quot;,&quot;nbc_national_collections&quot;:[],&quot;nopreroll&quot;:false,&quot;video_copyright&quot;:&quot;Telemundo&quot;,&quot;sst_source_id&quot;:&quot;&quot;,&quot;nbc_disable_legacy_embeds&quot;:false,&quot;nbc_feed_loader_prevent_updates&quot;:&quot;&quot;,&quot;post_video_prompt&quot;:&quot;&quot;,&quot;nbc_checkout_experience_enabled&quot;:false,&quot;desktopFlashPid&quot;:&quot;&quot;,&quot;mpx_dfxp_url&quot;:&quot;https:\/\/media.telemundo51.com\/videos\/NBCU_TLM_-_KBLR\/979\/906\/El_mapa_politico_del_Supermartes.dfxp&quot;,&quot;mp4_url&quot;:&quot;http:\/\/tlmdstationgroup.edgesuite.net\/videos\/NBCU_TLM_-_KBLR\/979\/906\/El_mapa_politico_del_Supermartes__945497.mp4&quot;,&quot;mpx_download_pid&quot;:&quot;hcLcuTgdYshv&quot;,&quot;mpx_download_pid_high&quot;:&quot;&quot;,&quot;mpx_high_id&quot;:&quot;&quot;,&quot;mpx_high_url&quot;:&quot;&quot;,&quot;mpx_is_livestream&quot;:&quot;&quot;,&quot;mpx_m3upid&quot;:&quot;&quot;,&quot;mpx_pid&quot;:&quot;tYlrbfi7I2fk&quot;,&quot;mpx_thumbnail_url&quot;:&quot;https:\/\/media.telemundo62.com\/2019\/09\/El_mapa_politico_del_Supermartes.jpg?quality=85&amp;strip=all&amp;resize=850%2C478&quot;,&quot;pid_streaming_web_high&quot;:&quot;&quot;,&quot;pid_streaming_web_medium&quot;:&quot;tYlrbfi7I2fk&quot;,&quot;subtitle&quot;:&quot;Los estados con primarias empezaban la noche del martes a inclinarse por Biden o Sanders.&quot;,&quot;dfxp_url&quot;:&quot;&quot;,&quot;video_call_letter&quot;:&quot;KBLR&quot;,&quot;video_captions&quot;:&quot;PUEDE GASTAR EL DOBLE O EL TRIPLE PARA GANAR JULIO CU\u00c9NTANOS C\u00d3MO ES LA CAMPA\u00d1A HASTA ESTE MOMENTO Y LA BATALLA PARA PODER ENTENDER MEJOR LO QUE EST\u00c1 EN JUEGO PARA LOS CALIDAD O DEM\u00d3CRATAS. &gt;&gt; MUY BUENAS NOCHES JOS\u00c9 LO QUE QUEREMOS ES TRATAR DE PONERLO TODO EN PERSPECTIVA CON LA AYUDA DE ESTA PANTALLA. SON MIS RECINTOS FRENTE CUATRO DELEGADOS EN JUEGO YA L DEC\u00cdAMOS ALGUNOS COMIENZAN A REPARTIRSE COMO SE VE EN EL MAPA DE QU\u00c9 COLOR SE PINTA LOS ESTADOS UNIDOS TODO EL SUR LE PERTENECE YA A JOE BIDEN INCLUSO OKLAHOMA QUE LOS 1016 LO GAN\u00d3 BERNIE SANDERS HOY ES DE JOE BIDEN ATENCI\u00d3N EN ESTA ZONA SOLAMENTE 390 DELEGADOS EST\u00c1N AQU\u00cd SON 1991 LO QUE SE NECESITA PARA GANAR CONFORME AVANZA LA NOCHE LOS ESTADOS M\u00c1S RITOS TODAV\u00cdA EST\u00c1N EN JUEGO, CALIFORNIA POR EJEMPLO QUE OTORGA 415 DELEGADOS, NO SABEMOS TODAV\u00cdA CU\u00c1LES SON LAS PROYECCIONES PORQUE NO HAN CERRADO AH\u00cd LAS URNAS Y TODAV\u00cdA NO SE COMIENZAN A CONTAR LOS VOTOS, EST\u00c1N POR AHORA PUESTOS EN TEXAS, EL 40 DE LOS VOTOS EST\u00c1N REPORTADOS Y YA SE CONTARON LA CARRERA ES CERRADA BERNIE SANDERS LLEVA UN BUEN RITMO 29% CON EL 40% REPORTADO HAY HISTORIAS INTERESANTES AQU\u00cd EN TEXAS. LA ZONA POR EJEMPLO METROPOLITANA DE DALLAS CON EL CONDADO DE TARRANT Y DALLAS UNO ES PARA SANDERS EL OTRO ES PARA BIDEN HARRIS CON 2 MILLONES DE LATINOS VIVIENDO EN ESTA ZONA METROPOLITANA DE HOUSTON EL 25.8% DE LOS VOTOS ESTE BIDEN EL 25.6% ESTE SANDERS ES MUY CERRADO LO QUE OCURRE EN TEXAS POR ESO NOSOTROS LO VIVIMOS DE CERCA. &gt;&gt; COOL ES IMPORTANTE RECALCAR&quot;,&quot;video_id&quot;:&quot;1706128451548_757&quot;,&quot;video_length&quot;:&quot;113580&quot;,&quot;video_provider&quot;:&quot;mpx&quot;,&quot;alleypack_schedule_unpublish&quot;:&quot;&quot;,&quot;feed_remote_id&quot;:&quot;mpx_1706128451548&quot;,&quot;feed_thumbnail_url&quot;:&quot;&quot;}" data-livestream="false" data-title="El mapa político del Supermartes" data-vidcid="1:3:1873919" data-vidurl="https://ots.nbcwpshield.com/telemundo/videos/videos-noticias/el-mapa-politico-del-supermartes/1873919/" data-islead="false" data-catnames="{&quot;903&quot;:&quot;Videos&quot;,&quot;8535&quot;:&quot;Videos Noticias&quot;}" data-tagnames="{&quot;10916&quot;:&quot;dem\u00f3cratas&quot;,&quot;11889&quot;:&quot;elecciones 2020&quot;}" data-customdata="{}" data-autoplay="false" data-cplay="true"></div>
+<div class="video_caption" data-react-component="NBCTruncate" data-maxlines="2" data-maxlinesmobile="4" data-readmore="Read more" data-text="Los estados con primarias empezaban la noche del martes a inclinarse por Biden o Sanders." data-ellipsis="false">
+							Los estados con primarias empezaban la noche del martes a inclinarse por Biden o Sanders.
+						</div>
+<p><strong>TENNESSEE: 64 DELEGADOS.</strong> Biden gana las primarias en Tennessee, según NBC News.</p>
+
+<p><strong>ALABAMA: 52 DELEGADOS.</strong> Biden gana las primarias en Alabama, según NBC News.</p>
+
+<p><strong>OKLAHOMA: 37 DELEGADOS.</strong> Biden gana las primarias de Oklahoma, según NBC News.</p>
+
+<p><strong>ARKANSAS: 31 DELEGADOS.</strong> Biden gana las primarias en Arkansas, según NBC News.</p>
+
+<p><strong>UTAH: 29 DELEGADOS.</strong> Sanders gana las primarias en Utah, según NBC News.</p>
+
+<p><strong>MAINE: 24 DELEGADOS.</strong> Biden gana las primarias en Maine, según NBC News. </p>
+
+<p><strong>VERMONT: 16 DELEGADOS.</strong> Sanders gana las primarias en Vermont, según NBC News.</p>
+
+<h3 class="image-with-text-block__headline">Los delegados que acumula cada precandidato</h3>
+<p></p>
+<p></p>
+<p></p>
+<iframe id="trackercon" src="https://data.nbcstations.com/national/2020/delegates-tracker/index-mini.html" width="100%" height="970px" frameborder="0"></iframe>
+
+<p> <strong>SAMOA AMERICANA: 6 DELEGADOS.</strong> Bloomberg gana el caucus de Samoa Americana, según NBC News. </p>
+
+<h2 class="wp-block-nbc-section-heading">BIDEN REVIVE</h2>
+
+<figure class="wp-block-image forceratio size-large"><div class="imagewrap1">
+				<div class="imagewrap2">
+					<div class="imagewrap1">
+					<div class="imagewrap2">
+						<div class="imagewrap1">
+					<div class="imagewrap2">
+						<img src="https://ots.nbcwpshield.com/wp-content/uploads/2019/09/biden-perfil-internas.jpg?w=1024" loading="lazy" alt="" class="wp-image-4855101" />
+						<span class="placeholder"></span>
+					</div>
+				</div>
+				<cite></cite><div class="caption"></div></figcaption>
+						<span class="placeholder"></span>
+					</div>
+				</div>
+				<cite>GETTY IMAGES</cite><div class="caption"></div></figcaption>
+					<span class="placeholder"></span>
+				</div>
+			</div></figure>
+
+<p>Es difícil exagerar la velocidad y la magnitud del repunte de Biden. </p>
+
+<p>Después de las humillaciones de Iowa, New Hampshire y Nevada, muchos demócratas empezaron a buscar una alternativa.</p>
+
+<p>La victoria contundente en Carolina del Sur mejoró sus perspectivas, pero llegó al Supermartes, cuando 14 estados realizaban sus primarias, con pocos fondos y escasa infraestructura.</p>
+<div data-react-component="VideoPlayer" data-meta="{&quot;amp_status&quot;:&quot;&quot;,&quot;spay_email&quot;:&quot;&quot;,&quot;syndicated_id&quot;:&quot;1:22:2059277&quot;,&quot;should_nationalize&quot;:false,&quot;nbc_first_published_date&quot;:&quot;&quot;,&quot;nbc_prevent_modified_update&quot;:false,&quot;nbc_linkout_title&quot;:&quot;&quot;,&quot;nbc_linkout_url&quot;:&quot;&quot;,&quot;nbc_linkout_excerpt_link&quot;:&quot;&quot;,&quot;nbc_primary_category_id&quot;:37677,&quot;nbc_primary_tag_id&quot;:11889,&quot;nbc_social_page_title&quot;:&quot;&quot;,&quot;nbc_page_title&quot;:&quot;&quot;,&quot;nbc_seo_description&quot;:&quot;&quot;,&quot;nbc_social_description&quot;:&quot;&quot;,&quot;nbc_national_headline&quot;:&quot;&quot;,&quot;entities&quot;:&quot;estados, CALIFORNIA, pa\u00eds, TERRENO, CENTROS, COLORADO, CAROLINA DEL NORTE, PARTIDO, TELEMUNDO, BATALLA, VICTORIAS, CAMBIO, GANADORA, ESTADOS, ESTADO, PASO A PASO, SUR, UNA, COBERTURA, MARTES, ESTADO., NOMINACI\u00d3N, HORA, VOTACI\u00d3N, EXCEPCI\u00d3N, EMBARGO, GANADOR, DEM\u00d3CRATA., GANADO, VOTOS, DESILUSI\u00d3N, EX, SAMOA, VERMONT BERNIE ANDERS., CUANTO, AMPLIO, NOTICIAS, TENNESSEE BIDEN&quot;,&quot;nbc_canonical_market&quot;:&quot;&quot;,&quot;nbc_canonical_url&quot;:&quot;&quot;,&quot;nbc_hide_from_recirculation&quot;:&quot;&quot;,&quot;nbc_hide_from_search&quot;:&quot;&quot;,&quot;nbc_syndication_category&quot;:&quot;1:22:37677&quot;,&quot;nbc_national_collections&quot;:[],&quot;nopreroll&quot;:false,&quot;video_copyright&quot;:&quot;Telemundo&quot;,&quot;sst_source_id&quot;:&quot;&quot;,&quot;nbc_disable_legacy_embeds&quot;:false,&quot;nbc_feed_loader_prevent_updates&quot;:&quot;&quot;,&quot;post_video_prompt&quot;:&quot;&quot;,&quot;nbc_checkout_experience_enabled&quot;:false,&quot;desktopFlashPid&quot;:&quot;&quot;,&quot;mpx_dfxp_url&quot;:&quot;https:\/\/media.telemundo51.com\/videos\/NBCU_TLM_-_KBLR\/969\/647\/Biden_arranca_con_el_pie_derecho_el_Supermartes.dfxp&quot;,&quot;mp4_url&quot;:&quot;http:\/\/tlmdstationgroup.edgesuite.net\/videos\/NBCU_TLM_-_KBLR\/969\/647\/Biden_arranca_con_el_pie_derecho_el_Supermartes__473445.mp4&quot;,&quot;mpx_download_pid&quot;:&quot;qzv9kbUmlGdu&quot;,&quot;mpx_download_pid_high&quot;:&quot;&quot;,&quot;mpx_high_id&quot;:&quot;&quot;,&quot;mpx_high_url&quot;:&quot;&quot;,&quot;mpx_is_livestream&quot;:&quot;&quot;,&quot;mpx_m3upid&quot;:&quot;&quot;,&quot;mpx_pid&quot;:&quot;qx0mTcgU_ZJr&quot;,&quot;mpx_thumbnail_url&quot;:&quot;https:\/\/media.telemundo62.com\/2019\/09\/Biden_arranca_con_el_pie_derecho_el_Supermartes.jpg?quality=85&amp;strip=all&amp;resize=850%2C478&quot;,&quot;pid_streaming_web_high&quot;:&quot;AtcB68Gnn1FO&quot;,&quot;pid_streaming_web_medium&quot;:&quot;qx0mTcgU_ZJr&quot;,&quot;subtitle&quot;:&quot;El exvicepresidente domin\u00f3 en los estados sure\u00f1os del pa\u00eds.&quot;,&quot;dfxp_url&quot;:&quot;&quot;,&quot;video_call_letter&quot;:&quot;KBLR&quot;,&quot;video_captions&quot;:&quot;TENEMOS UNA ANTE COBERTURA EN ESTE S\u00daPER MARTES Y LES IREMOS CONTANDO PASO A PASO QUI\u00c9N GANA Y QUI\u00c9N PIERDE TERRENO EN ESTA BATALLA PARA LA NOMINACI\u00d3N DEL PARTIDO DEM\u00d3CRATA. &gt;&gt; A ESTA HORA DE LA NOCHE EL EXVICEPRESIDENTE BIDEN LE VA MUY BIEN, HASTA EL MOMENTO VARIAS VICTORIAS EN LOS ESTADOS DEL SUR SE PERFILA COMO EL GRAN GANADOR DE LA NOCHE AUNQUE TODAV\u00cdA HAY MUCHO POR RECORRER MIENTRAS QUE LA GRAN DESILUSI\u00d3N ES EL EX ALCALDE DE NUEVA YORK HASTA AHORA MICHAEL BLOOMBERG, QUE APARECE EN EL SAMOA AMERICANO, GAN\u00d3 ESE ESTADO. &gt;&gt; DE LOS CENTROS DE VOTACI\u00d3N HAN CERRADO EN CASI TODOS LOS ESTADOS CON EXCEPCI\u00d3N DE CALIFORNIA QUE TODAV\u00cdA LE QUEDA UNA HORA M\u00c1S SIN EMBARGO EN EL GRAN ESTADO DE TEXAS, DONDE YA COMIENZAN A CONTARSE LOS VOTOS, QUIEN LLEVA LA DELANTERA ES EL SENADOR DE VERMONT BERNIE ANDERS. &gt;&gt; HASTA Y 29 A 28 EN OKLAHOMA NOTICIAS TELEMUNDO PROYECTA GANADORA EL EXVICEPRESIDENTE BIDEN UN CAMBIO DE LO QUE PAS\u00d3 HACE CUATRO A\u00d1OS CUANDO LUGANO SANDERS EN TENNESSEE BIDEN SERIA EL GANADO . &gt;&gt; EN ALABAMA MIREN POR CUANTO, NOTICIAS TELEMUNDO PROYECTA DE GANADORA BIDEN . &gt;&gt; EN CAROLINA DEL NORTE, NOTICIAS TELEMUNDO PROYECTA GANADORA AL EXVICEPRESIDENTE JOE BIDEN. &gt;&gt; Y EN VIRGINIA, EL \u00daLTIMO ESTADO DEL SUR, NOTICIAS TELEMUNDO PROYECTA COMO GANADORA JOE BIDEN . &gt;&gt; Y POR UN AMPLIO MARGEN JOS\u00c9 MIENTRAS TANTO EN COLORADO NOTICIAS TELEMUNDO PROYECTA COMO GANADORA EL SENADOR DE VERMON BERNIE SANDERS-. &gt;&gt; EN VERMONT SU ESTADO EL&quot;,&quot;video_id&quot;:&quot;1706117699669_766&quot;,&quot;video_length&quot;:&quot;102869&quot;,&quot;video_provider&quot;:&quot;mpx&quot;,&quot;alleypack_schedule_unpublish&quot;:&quot;&quot;,&quot;feed_remote_id&quot;:&quot;mpx_1706117699669&quot;,&quot;feed_thumbnail_url&quot;:&quot;&quot;}" data-livestream="false" data-title="Biden arranca con el pie derecho el Supermartes" data-vidcid="1:3:1873902" data-vidurl="https://ots.nbcwpshield.com/telemundo/videos/videos-noticias/biden-arranca-con-el-pie-derecho-el-supermartes/1873902/" data-islead="false" data-catnames="{&quot;903&quot;:&quot;Videos&quot;,&quot;8535&quot;:&quot;Videos Noticias&quot;}" data-tagnames="{&quot;10916&quot;:&quot;dem\u00f3cratas&quot;,&quot;11889&quot;:&quot;elecciones 2020&quot;,&quot;9233&quot;:&quot;Joe Biden&quot;}" data-customdata="{}" data-autoplay="false" data-cplay="true"></div>
+<div class="video_caption" data-react-component="NBCTruncate" data-maxlines="2" data-maxlinesmobile="4" data-readmore="Read more" data-text="El exvicepresidente dominó en los estados sureños del país." data-ellipsis="false">
+							El exvicepresidente dominó en los estados sureños del país.
+						</div>
+<p>Pero la fuerza aparente de Sanders y la debilidad de Bloomberg lanzó a muchos demócratas a los brazos de Biden, quien en 24 horas obtuvo el respaldo de tres antiguos rivales. Con ellos pudo atrapar ese fenómeno esquivo llamado impulso.</p>
+
+<p>La contienda parece estar destinada a una definición estado por estado, basada en sus visiones contrapuestas de lo que deben hacer los demócratas para vencer a Trump en noviembre.</p>
+
+<h2 class="wp-block-nbc-section-heading">CALIFORNIA SALVARÍA A SANDERS</h2>
+
+<figure class="wp-block-image forceratio size-large"><div class="imagewrap1">
+				<div class="imagewrap2">
+					<div class="imagewrap1">
+					<div class="imagewrap2">
+						<div class="imagewrap1">
+					<div class="imagewrap2">
+						<img src="https://ots.nbcwpshield.com/wp-content/uploads/2019/09/tlmd-efe-Bernie-sanders.jpg?w=900" loading="lazy" alt="" class="wp-image-4816674" />
+						<span class="placeholder"></span>
+					</div>
+				</div>
+				<cite></cite><div class="caption"></div></figcaption>
+						<span class="placeholder"></span>
+					</div>
+				</div>
+				<cite>EFE</cite><div class="caption"></div></figcaption>
+					<span class="placeholder"></span>
+				</div>
+			</div></figure>
+
+<p>Todo apuntaba a que el senador izquierdista se quedaría con el premio gordo de las primarias: California, que reparte 415 delegados, más que cualquier otro estado. NBC News no ha confirmado hasta el momento la victoria de Sanders en ese estado. </p>
+
+<p>Sanders ya se llevó el Supermartes las primarias de Vermont, Colorado y Utah. En Texas, donde resultó segundo, supo armar una coalición que incluyó a votantes jóvenes y latinos. </p>
+
+<p>California sería una victoria crucial para Sanders. El senador perdió en varios estados donde su campaña pensó que ganaría, de Minnesota a Massachusetts. La campaña de Sanders apuesta a que, con un electorado dividido, su base acérrima lo lleve a una serie de victorias en todo el país.</p>
+<div data-react-component="VideoPlayer" data-meta="{&quot;amp_status&quot;:&quot;&quot;,&quot;spay_email&quot;:&quot;&quot;,&quot;syndicated_id&quot;:&quot;1:22:2059273&quot;,&quot;should_nationalize&quot;:false,&quot;nbc_first_published_date&quot;:&quot;&quot;,&quot;nbc_prevent_modified_update&quot;:false,&quot;nbc_linkout_title&quot;:&quot;&quot;,&quot;nbc_linkout_url&quot;:&quot;&quot;,&quot;nbc_linkout_excerpt_link&quot;:&quot;&quot;,&quot;nbc_primary_category_id&quot;:99,&quot;nbc_primary_tag_id&quot;:12181,&quot;nbc_social_page_title&quot;:&quot;&quot;,&quot;nbc_page_title&quot;:&quot;&quot;,&quot;nbc_seo_description&quot;:&quot;&quot;,&quot;nbc_social_description&quot;:&quot;&quot;,&quot;nbc_national_headline&quot;:&quot;&quot;,&quot;entities&quot;:&quot;resultados, Supermartes, historia, EEUU&amp;&quot;,&quot;nbc_canonical_market&quot;:&quot;&quot;,&quot;nbc_canonical_url&quot;:&quot;&quot;,&quot;nbc_hide_from_recirculation&quot;:&quot;&quot;,&quot;nbc_hide_from_search&quot;:&quot;&quot;,&quot;nbc_syndication_category&quot;:&quot;&quot;,&quot;nbc_national_collections&quot;:[],&quot;nopreroll&quot;:false,&quot;video_copyright&quot;:&quot;Telemundo&quot;,&quot;sst_source_id&quot;:&quot;&quot;,&quot;nbc_disable_legacy_embeds&quot;:false,&quot;nbc_feed_loader_prevent_updates&quot;:&quot;&quot;,&quot;post_video_prompt&quot;:&quot;&quot;,&quot;nbc_checkout_experience_enabled&quot;:false,&quot;desktopFlashPid&quot;:&quot;&quot;,&quot;mpx_dfxp_url&quot;:&quot;https:\/\/media.telemundo51.com\/videos\/NBCU_TLM_-_KBLR\/967\/195\/Bernie_Sanders_reacciona_a_sus_resultados_en_primarias.dfxp&quot;,&quot;mp4_url&quot;:&quot;http:\/\/tlmdstationgroup.edgesuite.net\/videos\/NBCU_TLM_-_KBLR\/967\/195\/Bernie_Sanders_reacciona_a_sus_resultados_en_primarias__222984.mp4&quot;,&quot;mpx_download_pid&quot;:&quot;m_PMaYaExSim&quot;,&quot;mpx_download_pid_high&quot;:&quot;&quot;,&quot;mpx_high_id&quot;:&quot;&quot;,&quot;mpx_high_url&quot;:&quot;&quot;,&quot;mpx_is_livestream&quot;:&quot;&quot;,&quot;mpx_m3upid&quot;:&quot;&quot;,&quot;mpx_pid&quot;:&quot;DP5Y0r0wh5Uy&quot;,&quot;mpx_thumbnail_url&quot;:&quot;https:\/\/media.telemundo62.com\/2019\/09\/Bernie_Sanders_reacciona_a_sus_resultados_en_primarias.jpg?quality=85&amp;strip=all&amp;crop&amp;resize=850%2C478&quot;,&quot;pid_streaming_web_high&quot;:&quot;b1XjDID634co&quot;,&quot;pid_streaming_web_medium&quot;:&quot;DP5Y0r0wh5Uy&quot;,&quot;subtitle&quot;:&quot;&quot;,&quot;dfxp_url&quot;:&quot;&quot;,&quot;video_call_letter&quot;:&quot;KBLR&quot;,&quot;video_captions&quot;:&quot;&quot;,&quot;video_id&quot;:&quot;1706115139960_804&quot;,&quot;video_length&quot;:&quot;148715&quot;,&quot;video_provider&quot;:&quot;mpx&quot;,&quot;alleypack_schedule_unpublish&quot;:&quot;&quot;,&quot;feed_remote_id&quot;:&quot;mpx_1706115139960&quot;,&quot;feed_thumbnail_url&quot;:&quot;&quot;}" data-livestream="false" data-title="Bernie Sanders reacciona a sus resultados en el Supermartes" data-vidcid="1:3:1873900" data-vidurl="https://ots.nbcwpshield.com/telemundo/historias-archivo/sanders-reacciona-a-sus-resultados-en-el-supermartes/1873900/" data-islead="false" data-catnames="{}" data-tagnames="{&quot;2612&quot;:&quot;Bernie Sanders&quot;,&quot;12181&quot;:&quot;Decisi\u00f3n 2020&quot;}" data-customdata="{}" data-autoplay="false" data-cplay="true"></div>
+<div class="video_caption" data-react-component="NBCTruncate" data-maxlines="2" data-maxlinesmobile="4" data-readmore="Read more" data-text="El senador Bernie Sanders se pronunció luego de los resultados preliminares en el Supermartes y dijo estar confiado en que &quot;derrotará al presidente más peligroso en la historia de EEUU&quot;." data-ellipsis="false">
+							El senador Bernie Sanders se pronunció luego de los resultados preliminares en el Supermartes y dijo estar confiado en que &quot;derrotará al presidente más peligroso en la historia de EEUU&quot;.
+						</div>
+<p>Las flaquezas de esa teoría salieron a la luz el Supermartes</p>
+
+<p>Perdió en Minnesota y Oklahoma, dos estados de mayoría blanca en los que venció a Hillary Clinton en 2016. Esto es un indicio de erosión de la base blanca de sus campañas anteriores. En su propio estado de Vermont, ganó por una diferencia menor a la prevista.</p>
+
+<p>Su situación es similar a la de hace cuatro años: un retador insurgente con una base incondicional contra el favorito del establishment partidario.</p>
+
+<p>Su presencia nacional, la lealtad de su base y su buena recaudación de fondos indican que su posición sigue siendo sólida después de los reveses del Supermartes. Pero tal vez deba cambiar de enfoque en lugar de seguir despotricando contra los líderes del partido cuyos votantes decidirán si es su candidato.</p>
+
+<h2 class="wp-block-nbc-section-heading">BLOOMBERG SE RETIRA</h2>
+
+<figure class="wp-block-image forceratio size-large"><div class="imagewrap1">
+				<div class="imagewrap2">
+					<div class="imagewrap1">
+					<div class="imagewrap2">
+						<div class="imagewrap1">
+					<div class="imagewrap2">
+						<img src="https://ots.nbcwpshield.com/wp-content/uploads/2019/09/mar-1-20-bloomberg.jpg?w=1024" loading="lazy" alt="" class="wp-image-4946535" />
+						<span class="placeholder"></span>
+					</div>
+				</div>
+				<cite></cite><div class="caption"></div></figcaption>
+						<span class="placeholder"></span>
+					</div>
+				</div>
+				<cite>GETTY IMAGES</cite><div class="caption"></div></figcaption>
+					<span class="placeholder"></span>
+				</div>
+			</div></figure>
+
+<p>El exalcalde de Nueva York decidió el miércoles no continuar en la contienda tras sus decepcionantes resultados en las primarias del Supermartes a pesar de que había gastado más de $500 millones en su campaña.</p>
+
+<p>En un comunicado de su oficina de campaña, el multimillonario dijo que ahora apoyaría a Biden. </p>
+<div data-react-component="VideoPlayer" data-meta="{&quot;amp_status&quot;:&quot;&quot;,&quot;spay_email&quot;:&quot;&quot;,&quot;syndicated_id&quot;:&quot;1:22:2059293&quot;,&quot;should_nationalize&quot;:false,&quot;nbc_first_published_date&quot;:&quot;&quot;,&quot;nbc_prevent_modified_update&quot;:false,&quot;nbc_linkout_title&quot;:&quot;&quot;,&quot;nbc_linkout_url&quot;:&quot;&quot;,&quot;nbc_linkout_excerpt_link&quot;:&quot;&quot;,&quot;nbc_primary_category_id&quot;:0,&quot;nbc_primary_tag_id&quot;:0,&quot;nbc_social_page_title&quot;:&quot;&quot;,&quot;nbc_page_title&quot;:&quot;&quot;,&quot;nbc_seo_description&quot;:&quot;&quot;,&quot;nbc_social_description&quot;:&quot;&quot;,&quot;nbc_national_headline&quot;:&quot;&quot;,&quot;entities&quot;:&quot;Nueva York, TERRITORIO, ELECCIONES, CAMPA\u00d1A, campa\u00f1a, FIESTA, CONDENA, C\u00d3MO, PUBLICIDAD, VEZ, WEST, RESULTADO, VOTOS, N\u00daMERO, JOS\u00c9., PRIMEROS, VEZ, CLARIDAD, GRACIAS, GANADO, DICE, J\u00daBILO, REALIDAD, ACTO, SAMOA, CORRESPONDIENTES, VEZ, RESIDENCIA, ESTADOS, \u00c1NIMO, BOLSILLO, DISCURSO, IMPOSIBLE, INVERSI\u00d3N, EMBARGO, PAPELETA, MARCA, TAGLE.&quot;,&quot;nbc_canonical_market&quot;:&quot;&quot;,&quot;nbc_canonical_url&quot;:&quot;&quot;,&quot;nbc_hide_from_recirculation&quot;:&quot;&quot;,&quot;nbc_hide_from_search&quot;:&quot;&quot;,&quot;nbc_syndication_category&quot;:&quot;1:22:37677&quot;,&quot;nbc_national_collections&quot;:[],&quot;nopreroll&quot;:false,&quot;video_copyright&quot;:&quot;Telemundo&quot;,&quot;sst_source_id&quot;:&quot;&quot;,&quot;nbc_disable_legacy_embeds&quot;:false,&quot;nbc_feed_loader_prevent_updates&quot;:&quot;&quot;,&quot;post_video_prompt&quot;:&quot;&quot;,&quot;nbc_checkout_experience_enabled&quot;:false,&quot;desktopFlashPid&quot;:&quot;&quot;,&quot;mpx_dfxp_url&quot;:&quot;https:\/\/media.telemundo51.com\/videos\/NBCU_TLM_-_KBLR\/976\/479\/Bloomberg_gana_Samoa_Americana_pero_no_mucho_mas.dfxp&quot;,&quot;mp4_url&quot;:&quot;http:\/\/tlmdstationgroup.edgesuite.net\/videos\/NBCU_TLM_-_KBLR\/976\/479\/Bloomberg_gana_Samoa_Americana_pero_no_mucho_mas__024814.mp4&quot;,&quot;mpx_download_pid&quot;:&quot;U_ecrv2QSKxb&quot;,&quot;mpx_download_pid_high&quot;:&quot;&quot;,&quot;mpx_high_id&quot;:&quot;&quot;,&quot;mpx_high_url&quot;:&quot;&quot;,&quot;mpx_is_livestream&quot;:&quot;&quot;,&quot;mpx_m3upid&quot;:&quot;&quot;,&quot;mpx_pid&quot;:&quot;oJXEF3lawR4K&quot;,&quot;mpx_thumbnail_url&quot;:&quot;https:\/\/media.telemundo62.com\/2019\/09\/Bloomberg_gana_Samoa_Americana_pero_no_mucho_mas.jpg?quality=85&amp;strip=all&amp;crop&amp;resize=850%2C478&quot;,&quot;pid_streaming_web_high&quot;:&quot;&quot;,&quot;pid_streaming_web_medium&quot;:&quot;oJXEF3lawR4K&quot;,&quot;subtitle&quot;:&quot;El exalcalde de Nueva York est\u00e1 gastando millones de d\u00f3lares para financiar su campa\u00f1a.&quot;,&quot;dfxp_url&quot;:&quot;&quot;,&quot;video_call_letter&quot;:&quot;KBLR&quot;,&quot;video_captions&quot;:&quot;VEZ EN LAS PRIMARIAS ESTE N\u00daMERO IR\u00c1 INCREMENTANDO DURANTE TODA LA NOCHE A MEDIDA QUE SIGAN SUM\u00c1NDOSE VOTOS, JOS\u00c9. &gt;&gt; MUCHAS GRACIAS VANESSA COMO DEC\u00cdAMOS ES LA PRIMERA VEZ EN ESTA CONDENA DEM\u00d3CRATA QUE SE PUEDE VOTAR POR MICHAEL BLOOMBERG, EL DICE QUE YA HA GANADO TRES ELECCIONES Y QUE NO PLANEA COMENZAR A PERDER ESTA NOCHE EN ESTA CAMPA\u00d1A DONDE EL PERSONALMENTE INVERTIDO M\u00c1S D $500,000,000 DE SU PROPIO BOLSILLO EN PUBLICIDAD VAMOS A VER C\u00d3MO EST\u00c1 EL \u00c1NIMO ALL\u00c1 EN SU CUARTEL EN WEST AL PALM BEACH ROGELIO MORA TAGLE. &gt;&gt; BUENAS NOCHES JOS\u00c9 LA FIESTA TERMINADOS ES QUE SE LE PUEDE LLAMAR AS\u00cd EN REALIDAD FUE UN ACTO DE CAMPA\u00d1A DE MICHAEL BLOOMBERG QUE COMO DICE VANESSA SUM\u00d3 NUEVE DELEGADOS PERO CUANDO SUM\u00d3 LOS PRIMEROS CUATRO CORRESPONDIENTES AL TERRITORIO DE LA SAMOA AMERICANA AS\u00cd ESTALL\u00d3 EL J\u00daBILO ENTRE SUS SEGUIDORES SIN EMBARGO NO SE PUDO VOLVER A CELEBRAR EN TODA LA NOCHE NO VOLVER\u00c1N A PONER NING\u00daN TRIUNFO O NING\u00daN RESULTADO FAVORECEDOR PARA MICHAEL BLOOMBERG QUE BIEN COMENTABAN USTEDES ES LA PRIMERA VEZ QUE APARECE LA PAPELETA NO ESTUVO EN LAS CUATRO ANTERIORES ELECCIONES HOY DEBUT\u00d3 ADEM\u00c1S CON UNA INVERSI\u00d3N MULTIMILLONARIA DE $200,000,000 PARA ESTE S\u00daPER MARTES HA VENIDO AQU\u00cd A LA CLARIDAD JOS\u00c9 PORQUE DENTRO DE DOS SEMANAS HABR\u00c1N PRIMARIAS EN ESTE ESTADO Y UNO DE LOS ESTADOS M\u00c1S IMPORTANTES TIENE DOS CENTO 19 DELEGADOS Y MICHAEL BLOOMBERG TRATA DE SEDUCIR A LAS PERSONAS QUE VIVEN JUSTAMENTE EN ESTE ESTADO, NO MUY LEJOS DE DONDE TIENE SU RESIDENCIA PERSONAL DEL PRESIDENTE DE LOS ESTADOS UNIDOS DE MARCA LAGO EST\u00c1 A CUATRO MILLAS Y MICHAEL BLOOMBERG EN ESTE DISCURSO SE PRONUNCIE QUE DUR\u00d3 UNOS 10 MINUTOS, DIJO QUE MANDARA A DONALD TRUMP A DESCANSAR DEFINITIVAMENTE AH\u00cd, DICE QUE SU CAMPA\u00d1A LOGRADO LO IMPOSIBLE QUE CUANDO COMENZ\u00d3&quot;,&quot;video_id&quot;:&quot;1706124867925_114&quot;,&quot;video_length&quot;:&quot;113480&quot;,&quot;video_provider&quot;:&quot;mpx&quot;,&quot;alleypack_schedule_unpublish&quot;:&quot;&quot;,&quot;feed_remote_id&quot;:&quot;mpx_1706124867925&quot;,&quot;feed_thumbnail_url&quot;:&quot;&quot;}" data-livestream="false" data-title="Bloomberg gana Samoa Americana pero no mucho más" data-vidcid="1:3:1873914" data-vidurl="https://ots.nbcwpshield.com/telemundo/videos/videos-noticias/bloomberg-gana-samoa-americana-pero-no-mucho-mas/1873914/" data-islead="false" data-catnames="{&quot;903&quot;:&quot;Videos&quot;,&quot;8535&quot;:&quot;Videos Noticias&quot;}" data-tagnames="{&quot;10916&quot;:&quot;dem\u00f3cratas&quot;,&quot;11889&quot;:&quot;elecciones 2020&quot;,&quot;22386&quot;:&quot;Mike Bloomberg&quot;}" data-customdata="{}" data-autoplay="false" data-cplay="true"></div>
+<div class="video_caption" data-react-component="NBCTruncate" data-maxlines="2" data-maxlinesmobile="4" data-readmore="Read more" data-text="El exalcalde de Nueva York está gastando millones de dólares para financiar su campaña." data-ellipsis="false">
+							El exalcalde de Nueva York está gastando millones de dólares para financiar su campaña.
+						</div>
+<p>Bloomberg, un multimillonario empresario y exalcalde de Nueva York,  gastó sumas sin precedente en la historia de las campañas políticas desde que ingresó a la contienda en noviembre. Destinó millones de dólares a estados como Virginia, Carolina del Norte y Tennessee, donde el exvicepresidente Joe Biden ganó el martes fácilmente gracias a la inercia de su decisiva victoria en Carolina del Sur.</p>
+
+<p>Bloomberg, el noveno hombre más rico del mundo, posee una fortuna neta de $61,000 millones.</p>
+
+<p>El exalcalde de Nueva York acumulaba 18 delegados: cinco del territorio de Samoa estadounidense; uno de Texas, uno de Carolina del Norte; cuatro de Tennessee y siete de Colorado.</p>
+
+<h2 class="wp-block-nbc-section-heading">WARREN DICE ADIÓS </h2>
+
+<figure class="wp-block-image forceratio size-large"><div class="imagewrap1">
+				<div class="imagewrap2">
+					<div class="imagewrap1">
+					<div class="imagewrap2">
+						<div class="imagewrap1">
+					<div class="imagewrap2">
+						<img src="https://ots.nbcwpshield.com/wp-content/uploads/2019/09/GettyImages-1188098339.jpg?w=1024" loading="lazy" alt="" class="wp-image-4563036" />
+						<span class="placeholder"></span>
+					</div>
+				</div>
+				<cite></cite><div class="caption"></div></figcaption>
+						<span class="placeholder"></span>
+					</div>
+				</div>
+				<cite>GETTY IMAGES</cite><div class="caption"></div></figcaption>
+					<span class="placeholder"></span>
+				</div>
+			</div></figure>
+
+<p>La senadora Elizabeth Warren no ganó un solo estado el Supermartes y acabó en un humillante tercer puesto en su estado de Massachusetts, algo que influyó fuertemente en su decisión de abandonar la contienda el jueves. </p>
+
+<p>Su campaña, antes ascendente, pasó los últimos meses a estar en trayectoria descendente e incluso quedó última en varios estados.</p>
+<div data-react-component="VideoPlayer" data-meta="{&quot;amp_status&quot;:&quot;&quot;,&quot;spay_email&quot;:&quot;&quot;,&quot;syndicated_id&quot;:&quot;1:22:2059307&quot;,&quot;should_nationalize&quot;:false,&quot;nbc_first_published_date&quot;:&quot;&quot;,&quot;nbc_prevent_modified_update&quot;:false,&quot;nbc_linkout_title&quot;:&quot;&quot;,&quot;nbc_linkout_url&quot;:&quot;&quot;,&quot;nbc_linkout_excerpt_link&quot;:&quot;&quot;,&quot;nbc_primary_category_id&quot;:37677,&quot;nbc_primary_tag_id&quot;:11889,&quot;nbc_social_page_title&quot;:&quot;&quot;,&quot;nbc_page_title&quot;:&quot;&quot;,&quot;nbc_seo_description&quot;:&quot;&quot;,&quot;nbc_social_description&quot;:&quot;&quot;,&quot;nbc_national_headline&quot;:&quot;&quot;,&quot;entities&quot;:&quot;MICHIGAN, WARREN, TELEMUNDO, PARTIDO, EQUIPO, CAMPA\u00d1A, CONTIENDA, INDEPENDENCIA, n\u00fameros, N\u00daMEROS, TODO, SUPER, ESTADOS, ESTADO, FINAL, RESULTADOS, MASAS, MARTES., CONTRADICCIONES, EMBARGO, CONVENCI\u00d3N, JULIO, CORAZ\u00d3N, ACTO, PLANES, PROMESAS, OTRO, PASADO, ESTRATEGIA, PLAZO, RECAUDACI\u00d3N&quot;,&quot;nbc_canonical_market&quot;:&quot;&quot;,&quot;nbc_canonical_url&quot;:&quot;&quot;,&quot;nbc_hide_from_recirculation&quot;:&quot;&quot;,&quot;nbc_hide_from_search&quot;:&quot;&quot;,&quot;nbc_syndication_category&quot;:&quot;1:22:37677&quot;,&quot;nbc_national_collections&quot;:[],&quot;nopreroll&quot;:false,&quot;video_copyright&quot;:&quot;Telemundo&quot;,&quot;sst_source_id&quot;:&quot;&quot;,&quot;nbc_disable_legacy_embeds&quot;:false,&quot;nbc_feed_loader_prevent_updates&quot;:&quot;&quot;,&quot;post_video_prompt&quot;:&quot;&quot;,&quot;nbc_checkout_experience_enabled&quot;:false,&quot;desktopFlashPid&quot;:&quot;&quot;,&quot;mpx_dfxp_url&quot;:&quot;https:\/\/media.telemundo51.com\/videos\/NBCU_TLM_-_KBLR\/981\/859\/Warren_asegura_que_seguira_su_campana_pese_a_resultados.dfxp&quot;,&quot;mp4_url&quot;:&quot;http:\/\/tlmdstationgroup.edgesuite.net\/videos\/NBCU_TLM_-_KBLR\/981\/859\/Warren_asegura_que_seguira_su_campana_pese_a_resultados__157747.mp4&quot;,&quot;mpx_download_pid&quot;:&quot;1OKCbSUkslEn&quot;,&quot;mpx_download_pid_high&quot;:&quot;&quot;,&quot;mpx_high_id&quot;:&quot;&quot;,&quot;mpx_high_url&quot;:&quot;&quot;,&quot;mpx_is_livestream&quot;:&quot;&quot;,&quot;mpx_m3upid&quot;:&quot;&quot;,&quot;mpx_pid&quot;:&quot;E_wFLxz1_3oH&quot;,&quot;mpx_thumbnail_url&quot;:&quot;https:\/\/media.telemundo62.com\/2019\/09\/Warren_asegura_que_seguira_su_campana_pese_a_resultados.jpg?quality=85&amp;strip=all&amp;crop&amp;resize=850%2C478&quot;,&quot;pid_streaming_web_high&quot;:&quot;yQrdGdLW4djX&quot;,&quot;pid_streaming_web_medium&quot;:&quot;E_wFLxz1_3oH&quot;,&quot;subtitle&quot;:&quot;Los n\u00fameros del Supermartes no favorec\u00edan a la senadora.&quot;,&quot;dfxp_url&quot;:&quot;&quot;,&quot;video_call_letter&quot;:&quot;KBLR&quot;,&quot;video_captions&quot;:&quot;ENUNCIANDO TODOS LOS ESTADOS QUE NOTICIAS TELEMUNDO LE PROYECTA QUE EST\u00c1 GANANDO A ESTA HORA LA NOCHE DE SUPER MARTES. &gt;&gt; DEBE DE ESTAR MUY CONTENTO CON TODOS ESOS ESTADOS LA SENADORA ELIZABETH WARREN DICE QUE CONTINUAR\u00c1 SU CAMPA\u00d1A HASTA EL FINAL DE LA CONTIENDA, SIN EMBARGO ESTA NOCHE PUEDE CAMBIARLO TODO, JAVIER VEGA ES\u00c1A EN MICHIGAN EN LA SEDE DE CAMPA\u00d1A DE WARREN VAMOS CONTIGO JAVIER ADELANTE. &gt;&gt; BUENAS NOCHES QUE TAL COMO ELIZABETH WARREN HABL\u00d3 Y LO HIZO CON INDEPENDENCIA DE LOS RESULTADOS PORQUE TODO INDICA QUE LOS N\u00daMEROS NO LE FAVORECEN, INCLUSO EN SU ESTADO EN MASAS AQU\u00cd SE VIVI\u00d3 UN ACTO DE CAMPA\u00d1A COMO EN CUALQUIER OTRO CON PROMESAS Y PLANES MUY LEJOS DE QUE LE PIDE QUE SE RETIREN DE LA CONTIENDA DENTRO EL PARTIDO ES QUE YA DICE QUE LOS EXPERTOS Y QUIENES PLANEAN CON N\u00daMEROS Y CONTRADICCIONES PUEDEN EQUIVOCARSE POR ESO LE PIDI\u00d3 A SUS SIMPATIZANTES QUE VOTEN CON EL CORAZ\u00d3N, Y SU EQUIPO DE CAMPA\u00d1A SE SOSTIENE, LE CAIGO BIEN EN LA RECAUDACI\u00d3N, $29,000,000 DESDE EL MES PASADO Y QUE SU ESTRATEGIA IR\u00c1 A LARGO PLAZO PENSANDO LA CONVENCI\u00d3N DEM\u00d3CRATA DE JULIO Y QUE ELLOS VAN PARA ALL\u00c1, POR LO TANTO ESTO ES LO QUE DICE ELIZABETH WARREN ESTA NOCHE QUE EN DETROIT&quot;,&quot;video_id&quot;:&quot;1706130499939_584&quot;,&quot;video_length&quot;:&quot;72739&quot;,&quot;video_provider&quot;:&quot;mpx&quot;,&quot;alleypack_schedule_unpublish&quot;:&quot;&quot;,&quot;feed_remote_id&quot;:&quot;mpx_1706130499939&quot;,&quot;feed_thumbnail_url&quot;:&quot;&quot;}" data-livestream="false" data-title="Warren asegura que seguirá su campaña pese a resultados" data-vidcid="1:3:1873927" data-vidurl="https://ots.nbcwpshield.com/telemundo/videos/videos-noticias/warren-asegura-que-seguira-su-campana-pese-a-resultados/1873927/" data-islead="false" data-catnames="{&quot;903&quot;:&quot;Videos&quot;,&quot;8535&quot;:&quot;Videos Noticias&quot;}" data-tagnames="{&quot;10916&quot;:&quot;dem\u00f3cratas&quot;,&quot;11889&quot;:&quot;elecciones 2020&quot;,&quot;16277&quot;:&quot;Elizabeth Warren&quot;}" data-customdata="{}" data-autoplay="false" data-cplay="true"></div>
+<div class="video_caption" data-react-component="NBCTruncate" data-maxlines="2" data-maxlinesmobile="4" data-readmore="Read more" data-text="Los números del Supermartes no favorecían a la senadora." data-ellipsis="false">
+							Los números del Supermartes no favorecían a la senadora.
+						</div>
+<p>El martes por la noche hizo su discurso habitual en Michigan como si nada hubiera cambiado, pero la senadora se dio cuenta rápidamente que no podría consolidar el apoyo del ala liberal de su partido. </p>
+
+<p>La salida de Warren se dio un día después de que Bloomberg anunciara su retiro. </p>
+
+<h2 class="wp-block-nbc-section-heading">EL PREMIO DE LAS PRIMARIAS </h2>
+
+<p>El llamado Supermartes siempre ha sido una fecha crucial para consolidar o derrumbar campañas y para aportar claridad al rumbo de las primarias, pero este año ha cobrado todavía más peso por incluir entre los estados que votan a California, el territorio más poblado del país y de fuerte mayoría demócrata.</p>
+
+<p>Junto a California, votaron otros estados importantes por su población y peso en las elecciones generales de noviembre como Texas, Colorado, Carolina del Norte y Virginia; además de Alabama, Arkansas, Maine, Massachusetts, Minnesota, Oklahoma, Tennessee, Utah, Vermont y el territorio de la Samoa Estadounidense.</p>
+
+<h3 class="image-with-text-block__headline">Los delegados que reparte cada estado</h3>
+<p></p>
+<p></p>
+<p></p><iframe id="tuesdaycon" src="https://data.nbcstations.com/national/2020/super-tuesday-guide/" width="100%" height="660px" frameborder="0"></iframe>
+
+<p>Sanders partía como favorito en las encuestas en al menos ocho de esos estados, incluidos los grandes premios de California y Texas, además de en otros importantes del oeste como Colorado y Utah.</p>
+
+<h2 class="wp-block-nbc-section-heading">MÁS ALLÁ DEL SUPERMARTES </h2>
+
+<p>Dado que los precandidatos deben obtener un mínimo del 15% de los apoyos en cada estado para llevarse algún delegado (es decir, representantes de los votantes que les apoyarán en la convención demócrata), es posible que después del Supermartes alguno más de los cinco aspirantes todavía en liza ponga fin a su campaña.</p>
+
+<p>Precisamente, las pocas perspectivas de arañar delegados que tenía el exalcalde Pete Buttigieg contribuyeron a su decisión de poner fin a su campaña el domingo, un anuncio que llegó por sorpresa y que benefició el martes a Biden.</p>
+<div class="recirc-module">
+	<h3 class="recirc__heading"></h3>
+	<p class="recirc__subheading"></p>
+					<div class="recirc__post">
+			<div class="post__wrap">
+				<div class="post__image-wrapper">
+											<a data-lpos="inline-recirc-module" data-lid="Guía del Súper Martes para las primarias 2020" href="https://www.telemundo62.com/noticias/decision/guia-del-super-martes-para-las-primarias-2020/2029345/">
+							<img class="post__image" srcset="https://media.telemundo62.com/2019/09/tlmd-getty-votacion-super-martes-1234.jpg?quality=85&amp;strip=all&amp;resize=200%2C113 200w, https://media.telemundo62.com/2019/09/tlmd-getty-votacion-super-martes-1234.jpg?quality=85&amp;strip=all&amp;resize=400%2C225 400w, https://media.telemundo62.com/2019/09/tlmd-getty-votacion-super-martes-1234.jpg?quality=85&amp;strip=all&amp;resize=600%2C338 600w, " src="https://media.telemundo62.com/2019/09/tlmd-getty-votacion-super-martes-1234.jpg?quality=85&#038;strip=all&#038;resize=600%2C338" alt="" sizes="200px" loading="lazy" />
+						</a>
+
+						
+															</div>
+
+				<div class="post__text">
+					<div class="post__meta">
+													<a data-lpos="inline-recirc-module" data-lid="Primarias 2020" class="post__tag" href="https://www.telemundo62.com/tag/primarias-2020/">Primarias 2020</a>
+																			<span class="post__date post__date--has-category">
+								29 Feb, 2020							</span>
+											</div>
+
+											<h3 class="post__title">
+							<a data-lpos="inline-recirc-module" data-lid="Guía del Súper Martes para las primarias 2020" class="post__title--link" href="https://www.telemundo62.com/noticias/decision/guia-del-super-martes-para-las-primarias-2020/2029345/">
+								Guía del Súper Martes para las primarias 2020							</a>
+						</h3>
+									</div>
+			</div>
+		</div>
+					<div class="recirc__post">
+			<div class="post__wrap">
+				<div class="post__image-wrapper">
+											<a data-lpos="inline-recirc-module" data-lid="Klobuchar se retira de la contienda por la nominación demócrata" href="https://www.telemundo62.com/noticias/decision/klobuchar-se-retira-de-la-contienda-por-la-nominacion-democrata/2029683/">
+							<img class="post__image" srcset="https://media.telemundo62.com/2019/09/tlmd-Amy-Klobuchatlmd-r.jpg?quality=85&amp;strip=all&amp;resize=200%2C113 200w, https://media.telemundo62.com/2019/09/tlmd-Amy-Klobuchatlmd-r.jpg?quality=85&amp;strip=all&amp;resize=400%2C225 400w, https://media.telemundo62.com/2019/09/tlmd-Amy-Klobuchatlmd-r.jpg?quality=85&amp;strip=all&amp;resize=600%2C338 600w, " src="https://media.telemundo62.com/2019/09/tlmd-Amy-Klobuchatlmd-r.jpg?quality=85&#038;strip=all&#038;resize=600%2C338" alt="" sizes="200px" loading="lazy" />
+						</a>
+
+						
+															</div>
+
+				<div class="post__text">
+					<div class="post__meta">
+													<a data-lpos="inline-recirc-module" data-lid="elecciones 2020" class="post__tag" href="https://www.telemundo62.com/tag/elecciones-2020/">elecciones 2020</a>
+																			<span class="post__date post__date--has-category">
+								2 Mar, 2020							</span>
+											</div>
+
+											<h3 class="post__title">
+							<a data-lpos="inline-recirc-module" data-lid="Klobuchar se retira de la contienda por la nominación demócrata" class="post__title--link" href="https://www.telemundo62.com/noticias/decision/klobuchar-se-retira-de-la-contienda-por-la-nominacion-democrata/2029683/">
+								Klobuchar se retira de la contienda por la nominación demócrata							</a>
+						</h3>
+									</div>
+			</div>
+		</div>
+					<div class="recirc__post">
+			<div class="post__wrap">
+				<div class="post__image-wrapper">
+											<a data-lpos="inline-recirc-module" data-lid="Sin apoyo de los hispanos o afroamericanos, Buttigieg se retira de la contienda" href="https://www.telemundo62.com/noticias/decision/nbc-news-pete-buttigieg-se-retira-de-la-contienda/2029507/">
+							<img class="post__image" srcset="https://media.telemundo62.com/2019/09/tlmd-getty-buttigieg-archivo-1234.jpg?quality=85&amp;strip=all&amp;resize=200%2C113 200w, https://media.telemundo62.com/2019/09/tlmd-getty-buttigieg-archivo-1234.jpg?quality=85&amp;strip=all&amp;resize=400%2C225 400w, https://media.telemundo62.com/2019/09/tlmd-getty-buttigieg-archivo-1234.jpg?quality=85&amp;strip=all&amp;resize=600%2C338 600w, " src="https://media.telemundo62.com/2019/09/tlmd-getty-buttigieg-archivo-1234.jpg?quality=85&#038;strip=all&#038;resize=600%2C338" alt="" sizes="200px" loading="lazy" />
+						</a>
+
+													<span class="format-icon format-icon--video"></span>
+						
+															</div>
+
+				<div class="post__text">
+					<div class="post__meta">
+													<a data-lpos="inline-recirc-module" data-lid="elecciones 2020" class="post__tag" href="https://www.telemundo62.com/tag/elecciones-2020/">elecciones 2020</a>
+																			<span class="post__date post__date--has-category">
+								1 Mar, 2020							</span>
+											</div>
+
+											<h3 class="post__title">
+							<a data-lpos="inline-recirc-module" data-lid="Sin apoyo de los hispanos o afroamericanos, Buttigieg se retira de la contienda" class="post__title--link" href="https://www.telemundo62.com/noticias/decision/nbc-news-pete-buttigieg-se-retira-de-la-contienda/2029507/">
+								Sin apoyo de los hispanos o afroamericanos, Buttigieg se retira de la contienda							</a>
+						</h3>
+									</div>
+			</div>
+		</div>
+	</div>
+
+<p>Hay, básicamente, dos escenarios posibles después del Supermartes: o bien un ascenso imparable de Sanders hacia la candidatura demócrata si logra un triunfo decisivo y logra mantener el impulso en las semanas siguientes, o bien un resultado más repartido entre el senador y el resto de precandidatos.</p>
+
+<p>Con las victorias de Biden, todo apunta hacia lo segundo.</p>
+
+<p>Esa segunda opción podría aumentar las opciones de que ninguno de los aspirantes logre la cifra mágica de 1,991 delegados - del total de 3,979 en juego - que se necesitan para asegurarse la candidatura demócrata, y que se llegue a una "convención rota" en la que el candidato dependa de las luchas internas del partido.</p>
+
+<p>La campaña de Biden confía en una tercera opción en la que él logre emerger como una alternativa contundente a Sanders, pero está por ver si logra el impulso suficiente más allá de Carolina del Sur para lograrlo. </p>
+<div data-react-component="VideoPlayer" data-meta="{&quot;amp_status&quot;:&quot;&quot;,&quot;spay_email&quot;:&quot;&quot;,&quot;syndicated_id&quot;:&quot;1:22:2059314&quot;,&quot;should_nationalize&quot;:false,&quot;nbc_first_published_date&quot;:&quot;&quot;,&quot;nbc_prevent_modified_update&quot;:false,&quot;nbc_linkout_title&quot;:&quot;&quot;,&quot;nbc_linkout_url&quot;:&quot;&quot;,&quot;nbc_linkout_excerpt_link&quot;:&quot;&quot;,&quot;nbc_primary_category_id&quot;:37677,&quot;nbc_primary_tag_id&quot;:11889,&quot;nbc_social_page_title&quot;:&quot;&quot;,&quot;nbc_page_title&quot;:&quot;&quot;,&quot;nbc_seo_description&quot;:&quot;&quot;,&quot;nbc_social_description&quot;:&quot;&quot;,&quot;nbc_national_headline&quot;:&quot;&quot;,&quot;entities&quot;:&quot;CALIFORNIA, SUPER, ZAR, NBC NEWS, VERDAD, SALUD P\u00daBLICA, ENCUESTA, salud, temas, cuidado, ELECTORADO, D\u00cdA, CUIDADO, CUERPO, prioridad, SUPER, URNA, AN\u00c1LISIS, BAQUEIRO., TIROTEO, ORIGEN, CADENA, BLOQUE, SALARIO, RELACIONES, PROBADO, DESIGUALDAD, INGRESOS, TEMAS, URNAS, TEMA, BOCA, TODO, CUENTA, COSAS, ESO, VOZ, CORDEROS, VOTOS, CLAVE&quot;,&quot;nbc_canonical_market&quot;:&quot;&quot;,&quot;nbc_canonical_url&quot;:&quot;&quot;,&quot;nbc_hide_from_recirculation&quot;:&quot;&quot;,&quot;nbc_hide_from_search&quot;:&quot;&quot;,&quot;nbc_syndication_category&quot;:&quot;1:22:37677&quot;,&quot;nbc_national_collections&quot;:[],&quot;nopreroll&quot;:false,&quot;video_copyright&quot;:&quot;Telemundo&quot;,&quot;sst_source_id&quot;:&quot;&quot;,&quot;nbc_disable_legacy_embeds&quot;:false,&quot;nbc_feed_loader_prevent_updates&quot;:&quot;&quot;,&quot;post_video_prompt&quot;:&quot;&quot;,&quot;nbc_checkout_experience_enabled&quot;:false,&quot;desktopFlashPid&quot;:&quot;&quot;,&quot;mpx_dfxp_url&quot;:&quot;https:\/\/media.telemundo51.com\/videos\/NBCU_TLM_-_KBLR\/985\/763\/Temas_importantes_para_los_hispanos_en_el_Supermartes.dfxp&quot;,&quot;mp4_url&quot;:&quot;http:\/\/tlmdstationgroup.edgesuite.net\/videos\/NBCU_TLM_-_KBLR\/985\/763\/Temas_importantes_para_los_hispanos_en_el_Supermartes__491264.mp4&quot;,&quot;mpx_download_pid&quot;:&quot;ebQPA4kljEiT&quot;,&quot;mpx_download_pid_high&quot;:&quot;&quot;,&quot;mpx_high_id&quot;:&quot;&quot;,&quot;mpx_high_url&quot;:&quot;&quot;,&quot;mpx_is_livestream&quot;:&quot;&quot;,&quot;mpx_m3upid&quot;:&quot;&quot;,&quot;mpx_pid&quot;:&quot;IXE6z0TEbbcG&quot;,&quot;mpx_thumbnail_url&quot;:&quot;https:\/\/media.telemundo62.com\/2019\/09\/Temas_importantes_para_los_hispanos_en_el_Supermartes.jpg?quality=85&amp;strip=all&amp;resize=850%2C478&quot;,&quot;pid_streaming_web_high&quot;:&quot;cO7tciFaxeTh&quot;,&quot;pid_streaming_web_medium&quot;:&quot;IXE6z0TEbbcG&quot;,&quot;subtitle&quot;:&quot;Los votantes hispanos le dan prioridad a temas como el cuidado de la salud.&quot;,&quot;dfxp_url&quot;:&quot;&quot;,&quot;video_call_letter&quot;:&quot;KBLR&quot;,&quot;video_captions&quot;:&quot;EN ESTA NOCHE DE SUPER MARTES REGRESAMOS A EL AN\u00c1LISIS DE NUESTRA PLANTILLA INTERACTIVA CON EL ZAR JULIO BAQUEIRO. &gt;&gt; HABLAMOS DE LOS DOS PROTAGONISTAS DEL D\u00cdA JOE BIDEN Y BERNIE SANDERS PERO OTRO AGONISTA DEL D\u00cdA DE HOY ES EL ELECTORADO LATINO ES VERDAD QUE NO SE DEBE DE METER EN UN SOLO BLOQUE NUESTRA CADENA HERMANA NBC NEWS HIZO UNA ENCUESTA SALIDA DE URNA, A BOCA DE URNA DONDE ENCUENTRA LOS TEMAS QUE M\u00c1S LES IMPORTAN A LOS VOTANTES HISPANOS. EL CUERPO POR CIENTO LA MAYOR\u00cdA PIENSE QUE EL CUIDADO DE LA SALUD ES EL TEMA M\u00c1S IMPORTANTE, LA DESIGUALDAD DE INGRESOS UNO DE CADA CUATRO ESTA PROBADO POR SU SALARIO, POR SU TRABAJO 16% LA EMERGENCIA DEL CAMBIO CLIM\u00c1TICO Y EL 13% LAS RELACIONES RACIALES INTERESANTE EN TEXAS EL ELECTORADO LATINO EXTRAYENDO VOTAR APENAS SIETE MESES DESPU\u00c9S DEL TIROTEO EN EL PASO DONDE LAS V\u00cdCTIMAS ERAN JUSTAMENTE VOTANTES LATINOS EL 40% EST\u00c1 PREOCUPADO POR EL CUIDADO DE LA SALUD MIRENEL 65% APOYA EL UN PLAN DE SALUD P\u00daBLICA COMO EL QUE PROPONE BERNIE SANDERS ESO HAY QUE TENERLO EN CUENTA SOBRE TODO PORQUE ESTA MISMA ENCUESTA ENCONTR\u00d3 QUE UNO DE CADA CINCO VOTANTES. EN ESTE SUPER MARTES ERA HISPANO Y POR ESO LO QUE OCURRA EN CALIFORNIA EN TEXAS ES CLAVE, PORQUE LOS RESIDENTES DE ESTE ESTADO, SON CERCA DEL 40% TANTO EN TEXAS, CALIFORNIA SON DE ORIGEN HISPANO, SON DE ORIGEN LATINO, Y SU VOZ SER\u00c1 IMPORTANTE, COMO ES QUE VAN LAS COSAS EN TEXAS DONDE YA CERRARON LAS URNAS? ESTAR CORDEROS POR CIENTO DE LOS VOTOS CONTADOS, TODAV\u00cdA EST\u00c1 MUY CERRADO CON EL 29% PARA BERNIE SANDERS, 24% PARA BIDEN&quot;,&quot;video_id&quot;:&quot;1706134595673_946&quot;,&quot;video_length&quot;:&quot;111712&quot;,&quot;video_provider&quot;:&quot;mpx&quot;,&quot;alleypack_schedule_unpublish&quot;:&quot;&quot;,&quot;feed_remote_id&quot;:&quot;mpx_1706134595673&quot;,&quot;feed_thumbnail_url&quot;:&quot;&quot;}" data-livestream="false" data-title="Temas importantes para los hispanos en el Supermartes" data-vidcid="1:3:1873934" data-vidurl="https://ots.nbcwpshield.com/telemundo/videos/videos-noticias/temas-importantes-para-los-hispanos-en-el-supermartes/1873934/" data-islead="false" data-catnames="{&quot;903&quot;:&quot;Videos&quot;,&quot;8535&quot;:&quot;Videos Noticias&quot;}" data-tagnames="{&quot;12181&quot;:&quot;Decisi\u00f3n 2020&quot;,&quot;10916&quot;:&quot;dem\u00f3cratas&quot;,&quot;11889&quot;:&quot;elecciones 2020&quot;}" data-customdata="{}" data-autoplay="false" data-cplay="true"></div>
+<div class="video_caption" data-react-component="NBCTruncate" data-maxlines="2" data-maxlinesmobile="4" data-readmore="Read more" data-text="Los votantes hispanos le dan prioridad a temas como el cuidado de la salud." data-ellipsis="false">
+							Los votantes hispanos le dan prioridad a temas como el cuidado de la salud.
+						</div>				</div>
+					<div class="article-footer article-footer--featured rich-text">
+	</div>
+							</div>
+		</div>
+	</div>
+</article>
+
+			</main>
+		</div>
+
+		
+	</div><!-- #content -->
+	
+<footer role="contentinfo" class="site-footer">
+	<div class="site-footer__wrapper">
+		<div class="site-footer__identity">
+							<a href="https://www.telemundo62.com/" class="site-footer__logo">
+					<img
+						src="https://media.telemundo62.com/2021/04/62@3x.png?fit=129%2C120&#038;quality=85&#038;strip=all"
+						alt="Telemundo 62"
+						loading="lazy"
+					/>
+				</a>
+			
+			<ul class="site-footer__social-list">
+				
+									<li class="site-footer__social-list-item facebook">
+						<a href="https://www.facebook.com/Telemundo62" target="_blank" rel="noopener noreferrer">
+							<span class="screen-reader-text">Facebook</span>
+							<span class="icon icon-facebook-f"></span>
+						</a>
+					</li>
+				
+									<li class="site-footer__social-list-item twitter">
+						<a href="https://twitter.com/Telemundo62" target="_blank" rel="noopener noreferrer">
+							<span class="screen-reader-text">Twitter</span>
+							<span class="icon icon-twitter"></span>
+						</a>
+					</li>
+				
+									<li class="site-footer__social-list-item instagram">
+						<a href="https://instagram.com/Telemundo62" target="_blank" rel="noopener noreferrer">
+							<span class="screen-reader-text">Instagram</span>
+							<span class="icon icon-instagram"></span>
+						</a>
+					</li>
+							</ul>
+		</div>
+
+		<ul id="menu-primary-footer" class="footer-menu site-footer__menu-primary"><li id="menu-item-2012416" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2012416"><a href="/noticias/local/">Noticias Locales</a></li>
+<li id="menu-item-2012417" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2012417"><a href="/noticias/eeuu/">EEUU</a></li>
+<li id="menu-item-2012418" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2012418"><a href="/noticias/mexico/">México</a></li>
+<li id="menu-item-2012419" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2012419"><a href="/noticias/inmigracion/">Inmigración</a></li>
+<li id="menu-item-2012420" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2012420"><a href="/entretenimiento/">Entretenimiento</a></li>
+<li id="menu-item-2012421" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2012421"><a href="/entretenimiento/acceso-total/">Acceso Total</a></li>
+<li id="menu-item-2012422" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2012422"><a href="/noticias/salud/">Salud</a></li>
+<li id="menu-item-2012423" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2012423"><a href="/noticias/mundo/">Mundo</a></li>
+<li id="menu-item-2017284" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2017284"><a href="/responde/">Telemundo 62 Responde</a></li>
+</ul><ul id="menu-secondary-footer-menu" class="footer-menu-secondary site-footer__menu-secondary"><li id="menu-item-1871262" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1871262"><a href="https://publicfiles.fcc.gov/tv-profile/wwsi/">WWSI Public Inspection File</a></li>
+<li id="menu-item-1871276" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1871276"><a href="https://www.nbcuniversal.com/privacy-policies/privacy-latinamerica?brandA=Owned_Stations&#038;intake=Telemundo_62/">Política de Privacidad</a></li>
+<li id="menu-item-2006192" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2006192"><a href="https://www.nbcuniversal.com/privacy/notrtoo-spanish?brandA=Owned_Stations&#038;intake=Telemundo_62/">No venda mi información personal</a></li>
+<li id="menu-item-1871266" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1871266"><a href="https://www.telemundo62.com/wwsi-informacion-de-empleos/">Empleos</a></li>
+<li id="menu-item-2084863" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2084863"><a href="https://www.telemundo62.com/aplicaciones-de-la-fcc/">Aplicaciones de la FCC</a></li>
+<li id="menu-item-1871275" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1871275"><a href="https://www.telemundo62.com/terminos-de-servicio/">Términos de Servicio</a></li>
+<li id="menu-item-1953877" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1953877"><a href="mailto:WWSIViewerMail.Advertising@nbcuni.com?subject=Advertise%20with%20Us%20HP/">Publicidad con nosotros</a></li>
+<li id="menu-item-1871271" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1871271"><a href="https://www.telemundo62.com/envia-tus-comentarios/">Envía tus comentarios</a></li>
+<li id="menu-item-2063471" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2063471"><a href="https://www.nbcuniversal.com/privacy-policy/aviso-de-california?intake=Telemundo_62">Aviso de California</a></li>
+<li id="menu-item-1871267" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1871267"><a href="https://info.evidon.com/pub_info/209?v=1&#038;nt=0&#038;nw=false/">AdChoices</a></li>
+</ul>
+				<div class="site-footer__corporate">
+			
+			<span class="site-footer__corporate-copyright">
+				Copyright © 2021 NBCUniversal Media, LLC. Derechos Reservados.			</span>
+		</div>
+	</div><!-- wrapper -->
+</footer><!-- #colophon -->
+</div><!-- #page -->
+
+		<script type="text/javascript">
+		(function() {
+						var _sf_async_config      = window._sf_async_config = (window._sf_async_config || {});
+			_sf_async_config.domain   = "telemundo62.com";
+			_sf_async_config.uid      = 61937;
+			_sf_async_config.sections = "decision";
+			_sf_async_config.authors  = "EFE \/ AP \/ TELEMUNDO LOCAL";
+			_sf_async_config.title    = "Biden se anota Maine y cierra un Supermartes de ensue\u00f1o, mientras Sanders se apunta California";
+			
+			function loadChartbeat() {
+				var e = document.createElement('script');
+				var n = document.getElementsByTagName('script')[0];
+				e.type = 'text/javascript';
+				e.async = true;
+				e.src = '//static.chartbeat.com/js/chartbeat.js';
+				n.parentNode.insertBefore(e, n);
+			}
+			loadChartbeat();
+		})();
+		</script>
+				<!-- Begin comScore Tag -->
+		<script>
+		var _comscore = _comscore || [];
+		_comscore.push({ c1: "2", c2: "6035083" });
+		(function() {
+			var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true;
+			s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";
+			el.parentNode.insertBefore(s, el);
+		})();
+		</script>
+		<noscript>
+			<img src="https://sb.scorecardresearch.com/p?c1=2&c2=6035083&cv=2.0&cj=1" />
+		</noscript>
+		<!-- End comScore Tag -->
+				<script type="text/javascript">
+		(function() {
+			window._taboola = window._taboola || [];
+			window._newsroom = window._newsroom || [];
+			var loaderUrl = 'https://cdn.taboola.com/libtrc/nbcots-network/loader.js';
+			const taboola_config = {};
+
+			taboola_config[decodeURIComponent( 'article' )] = decodeURIComponent( '2029693' );
+			taboola_config['url'] = document.URL;
+			taboola_config['tracking'] = '_osource=taboola-recirc';
+			_taboola.push(taboola_config);
+
+			
+			!function (e, f, u, i) {
+				e.async = 1;
+				e.src = u;
+				e.id = i;
+				f.parentNode.insertBefore(e, f);
+			}(document.createElement('script'),
+			document.getElementsByTagName('script')[0],
+			loaderUrl,
+			'tb_loader_script');
+
+			!function (e, f, u) {
+				e.async = 1;
+				e.src = u;
+				f.parentNode.insertBefore(e, f);
+			}(document.createElement('script'),
+			document.getElementsByTagName('script')[0],
+			"\/\/c2.taboola.com\/nr\/nbcots-wwsi\/newsroom.js");
+		}());
+		</script>
+				<div class="facebook-comments">
+			<button class="facebook-comments__close"><span class="icon icon-chevron-left"></span> Volver al artículo</button>
+			<div class="fb-comments" data-href="https://www.telemundo62.com/noticias/decision/super-tuesday-resultados-primarias-democratas-republicanas-2020/2029693/" data-width="100%"></div>
+		</div>
+		<div class="flyout-nav" data-component="flyoutNav">
+	<button class="flyout-nav__close"><span class="icon icon-times"></span> <span class="screen-reader-text">Cerrar menú</span></button>
+	<div class="flyout-nav__logo">
+		<a href="https://www.telemundo62.com/">
+					<img
+						src="https://media.telemundo62.com/2021/04/62@3x.png?fit=129%2C120&#038;quality=85&#038;strip=all"
+						alt="Telemundo 62"
+					/>
+		</a>
+	</div>
+	<div class="flyout-nav__search">
+<form class="search-form" role="search" method="get" action="https://www.telemundo62.com/" >
+	<label>
+		<span class="screen-reader-text">Búsqueda por:</span>
+		<input type="search" value="" name="s" placeholder="Buscar" />
+	</label>
+	<input type="submit" class="search-submit" value="Buscar" />
+</form>
+</div>
+	<div class="flyout-nav__menu">
+		<div class="flyout-nav__menu--upper">
+							<a data-lid="Local" data-lpos="hamburger-menu" class="flyout-nav__menu-item parent-item" href="/noticias/local/">
+					Local				</a>
+							<a data-lid="Más Noticias" data-lpos="hamburger-menu" class="flyout-nav__menu-item parent-item" href="/noticias/">
+					Más Noticias				</a>
+							<a data-lid="Decisión" data-lpos="hamburger-menu" class="flyout-nav__menu-item child-item" href="/noticias/decision/">
+					Decisión				</a>
+							<a data-lid="EEUU" data-lpos="hamburger-menu" class="flyout-nav__menu-item child-item" href="/noticias/eeuu/">
+					EEUU				</a>
+							<a data-lid="Puerto Rico" data-lpos="hamburger-menu" class="flyout-nav__menu-item child-item" href="/noticias/puerto-rico/">
+					Puerto Rico				</a>
+							<a data-lid="Mundo" data-lpos="hamburger-menu" class="flyout-nav__menu-item child-item" href="/noticias/mundo/">
+					Mundo				</a>
+							<a data-lid="Inmigración" data-lpos="hamburger-menu" class="flyout-nav__menu-item child-item" href="/noticias/inmigracion/">
+					Inmigración				</a>
+							<a data-lid="Salud" data-lpos="hamburger-menu" class="flyout-nav__menu-item child-item" href="/noticias/salud/">
+					Salud				</a>
+							<a data-lid="Juegos Olímpicos de Tokyo 2020" data-lpos="hamburger-menu" class="flyout-nav__menu-item parent-item" href="/deportes/juegos-olimpicos-tokio-2020/">
+					Juegos Olímpicos de Tokyo 2020				</a>
+							<a data-lid="Telemundo 62 Responde" data-lpos="hamburger-menu" class="flyout-nav__menu-item parent-item" href="/responde/">
+					Telemundo 62 Responde				</a>
+							<a data-lid="Videos" data-lpos="hamburger-menu" class="flyout-nav__menu-item parent-item" href="https://www.telemundo62.com/category/videos/">
+					Videos				</a>
+							<a data-lid="El tiempo" data-lpos="hamburger-menu" class="flyout-nav__menu-item parent-item" href="https://www.telemundo62.com/el-tiempo/">
+					El tiempo				</a>
+							<a data-lid="Cierre de escuelas" data-lpos="hamburger-menu" class="flyout-nav__menu-item child-item" href="https://www.telemundo62.com/el-tiempo/cierre-de-escuelas/">
+					Cierre de escuelas				</a>
+							<a data-lid="Hazte Contar" data-lpos="hamburger-menu" class="flyout-nav__menu-item parent-item" href="/especiales/censo-2020/">
+					Hazte Contar				</a>
+							<a data-lid="Entretenimiento" data-lpos="hamburger-menu" class="flyout-nav__menu-item parent-item" href="/entretenimiento/">
+					Entretenimiento				</a>
+							<a data-lid="Lotería" data-lpos="hamburger-menu" class="flyout-nav__menu-item parent-item" href="https://www.telemundo62.com/loteria/">
+					Lotería				</a>
+							<a data-lid="Tráfico" data-lpos="hamburger-menu" class="flyout-nav__menu-item parent-item" href="https://www.telemundo62.com/trafico/">
+					Tráfico				</a>
+							<a data-lid="Comunidad" data-lpos="hamburger-menu" class="flyout-nav__menu-item parent-item" href="/comunidad/">
+					Comunidad				</a>
+							<a data-lid="Míralo y compártelo" data-lpos="hamburger-menu" class="flyout-nav__menu-item parent-item" href="https://www.telemundo62.com/ugc/">
+					Míralo y compártelo				</a>
+							<a data-lid="Boletín Electrónico" data-lpos="hamburger-menu" class="flyout-nav__menu-item parent-item" href="/boletin-electronico/">
+					Boletín Electrónico				</a>
+					</div>
+		<div class="flyout-nav__menu--lower">
+							<a data-lid="WWSI Public Inspection File" data-lpos="hamburger-menu" class="flyout-nav__menu-item child-item" href="https://publicfiles.fcc.gov/tv-profile/wwsi/">
+					WWSI Public Inspection File				</a>
+							<a data-lid="Política de Privacidad" data-lpos="hamburger-menu" class="flyout-nav__menu-item child-item" href="https://www.nbcuniversal.com/privacy-policies/privacy-latinamerica?brandA=Owned_Stations&#038;intake=Telemundo_62/">
+					Política de Privacidad				</a>
+							<a data-lid="No venda mi información personal" data-lpos="hamburger-menu" class="flyout-nav__menu-item child-item" href="https://www.nbcuniversal.com/privacy/notrtoo-spanish?brandA=Owned_Stations&#038;intake=Telemundo_62/">
+					No venda mi información personal				</a>
+							<a data-lid="Empleos" data-lpos="hamburger-menu" class="flyout-nav__menu-item child-item" href="https://www.telemundo62.com/wwsi-informacion-de-empleos/">
+					Empleos				</a>
+							<a data-lid="Aplicaciones de la FCC" data-lpos="hamburger-menu" class="flyout-nav__menu-item child-item" href="https://www.telemundo62.com/aplicaciones-de-la-fcc/">
+					Aplicaciones de la FCC				</a>
+							<a data-lid="Términos de Servicio" data-lpos="hamburger-menu" class="flyout-nav__menu-item child-item" href="https://www.telemundo62.com/terminos-de-servicio/">
+					Términos de Servicio				</a>
+							<a data-lid="Publicidad con nosotros" data-lpos="hamburger-menu" class="flyout-nav__menu-item child-item" href="mailto:WWSIViewerMail.Advertising@nbcuni.com?subject=Advertise%20with%20Us%20HP/">
+					Publicidad con nosotros				</a>
+							<a data-lid="Envía tus comentarios" data-lpos="hamburger-menu" class="flyout-nav__menu-item child-item" href="https://www.telemundo62.com/envia-tus-comentarios/">
+					Envía tus comentarios				</a>
+							<a data-lid="Aviso de California" data-lpos="hamburger-menu" class="flyout-nav__menu-item child-item" href="https://www.nbcuniversal.com/privacy-policy/aviso-de-california?intake=Telemundo_62">
+					Aviso de California				</a>
+							<a data-lid="AdChoices" data-lpos="hamburger-menu" class="flyout-nav__menu-item child-item" href="https://info.evidon.com/pub_info/209?v=1&#038;nt=0&#038;nw=false/">
+					AdChoices				</a>
+					</div>
+	</div>
+	<div class="flyout-nav__social">
+		<h4 class="flyout-nav__social-heading">Síguenos</h4>
+		<ul class="flyout-nav__social-list">
+			
+							<li class="site-footer__social-list-item facebook" rel="noopener noreferrer">
+					<a href="https://www.facebook.com/Telemundo62" target="_blank">
+						<span class="screen-reader-text">Facebook</span>
+						<span class="icon icon-facebook-f"></span>
+					</a>
+				</li>
+			
+							<li class="site-footer__social-list-item twitter" rel="noopener noreferrer">
+					<a href="https://twitter.com/Telemundo62" target="_blank">
+						<span class="screen-reader-text">Twitter</span>
+						<span class="icon icon-twitter"></span>
+					</a>
+				</li>
+			
+							<li class="site-footer__social-list-item instagram" rel="noopener noreferrer">
+					<a href="https://instagram.com/Telemundo62" target="_blank">
+						<span class="screen-reader-text">Instagram</span>
+						<span class="icon icon-instagram"></span>
+					</a>
+				</li>
+					</ul>
+	</div>
+</div>
+<a class="flyout-contact-button" data-lid="Contáctanos" data-lpos="hamburger-menu"
+			href="/conectate"
+	>
+	Contáctanos</a>
+<link rel='stylesheet' id='all-css-0' href='https://www.telemundo62.com/_static/??-eJyVzE0OwiAQQOELWYYihbIwvYF3YMYhkvBjZKrx9urCA7h+Lx88bxP1JtwE5MqVBzSkaUiU3BtQyd+Cey4XoDEg9S58VxxiSjExacLkV/TBGlVzU5/nAP+a5dV3OceHYgwzOiId7XHRK2tL7sdu9TQ7410wbtFv9bs/uQ==' type='text/css' media='all' />
+<script src='https://www.telemundo62.com/wp-content/mu-plugins/jetpack-9.4/_inc/build/photon/photon.min.js?ver=20191001' id='jetpack-photon-js'></script>
+<script src='https://www.telemundo62.com/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=7.4.4' id='wp-polyfill-js'></script>
+<script id='wp-polyfill-js-after'>
+( 'fetch' in window ) || document.write( '<script src="https://www.telemundo62.com/wp-includes/js/dist/vendor/wp-polyfill-fetch.min.js?ver=3.0.0"></scr' + 'ipt>' );( document.contains ) || document.write( '<script src="https://www.telemundo62.com/wp-includes/js/dist/vendor/wp-polyfill-node-contains.min.js?ver=3.42.0"></scr' + 'ipt>' );( window.DOMRect ) || document.write( '<script src="https://www.telemundo62.com/wp-includes/js/dist/vendor/wp-polyfill-dom-rect.min.js?ver=3.42.0"></scr' + 'ipt>' );( window.URL && window.URL.prototype && window.URLSearchParams ) || document.write( '<script src="https://www.telemundo62.com/wp-includes/js/dist/vendor/wp-polyfill-url.min.js?ver=3.6.4"></scr' + 'ipt>' );( window.FormData && window.FormData.prototype.keys ) || document.write( '<script src="https://www.telemundo62.com/wp-includes/js/dist/vendor/wp-polyfill-formdata.min.js?ver=3.0.12"></scr' + 'ipt>' );( Element.prototype.matches && Element.prototype.closest ) || document.write( '<script src="https://www.telemundo62.com/wp-includes/js/dist/vendor/wp-polyfill-element-closest.min.js?ver=2.0.2"></scr' + 'ipt>' );
+</script>
+<script src='https://www.telemundo62.com/wp-includes/js/dist/i18n.min.js?ver=772b1b30d38ec9ba77ae8ae1a39b232a' id='wp-i18n-js'></script>
+<script src='https://www.telemundo62.com/wp-includes/js/dist/vendor/lodash.min.js?ver=4.17.15' id='lodash-js'></script>
+<script id='lodash-js-after'>
+window.lodash = _.noConflict();
+</script>
+<script src='https://www.telemundo62.com/wp-includes/js/dist/url.min.js?ver=961fb5d5da74eb34194394dfed1abce3' id='wp-url-js'></script>
+<script src='https://www.telemundo62.com/wp-includes/js/dist/hooks.min.js?ver=fd4cfce4ee6f38b4c8fb837fa537df14' id='wp-hooks-js'></script>
+<script id='wp-api-fetch-js-translations'>
+( function( domain, translations ) {
+	var localeData = translations.locale_data[ domain ] || translations.locale_data.messages;
+	localeData[""].domain = domain;
+	wp.i18n.setLocaleData( localeData, domain );
+} )( "default", {"translation-revision-date":"2019-03-08 20:25:53+0000","generator":"GlotPress\/2.4.0-alpha","domain":"messages","locale_data":{"messages":{"":{"domain":"messages","plural-forms":"nplurals=2; plural=n != 1;","lang":"es"},"The response is not a valid JSON response.":["Las respuesta no es una respuesta JSON v\u00e1lida."],"An unknown error occurred.":["Ocurri\u00f3 un error desconocido."]}}} );
+</script>
+<script src='https://www.telemundo62.com/wp-includes/js/dist/api-fetch.min.js?ver=e2b9d6fc95f6390f25385ee45795c3e3' id='wp-api-fetch-js'></script>
+<script id='wp-api-fetch-js-after'>
+wp.apiFetch.use( wp.apiFetch.createRootURLMiddleware( "https://www.telemundo62.com/wp-json/" ) );
+wp.apiFetch.nonceMiddleware = wp.apiFetch.createNonceMiddleware( "c6dffb779d" );
+wp.apiFetch.use( wp.apiFetch.nonceMiddleware );
+wp.apiFetch.use( wp.apiFetch.mediaUploadMiddleware );
+wp.apiFetch.nonceEndpoint = "https://www.telemundo62.com/wp-admin/admin-ajax.php?action=rest-nonce";
+wp.apiFetch.use( wp.apiFetch.createPreloadingMiddleware( {"\/nbc\/v1\/weather-alerts":{"body":[],"headers":[]}} ) );
+</script>
+<script src='https://www.telemundo62.com/wp-content/themes/nbc-station/client/build/js/common.215a25418205fc654d59.bundle.min.js?ver=1.0.2' id='nbc-common-js-js'></script>
+<script async src='https://www.telemundo62.com/wp-content/themes/nbc-station/client/build/js/weatherConditions.87a2ab5dafb347c6e53b.bundle.min.js?ver=1.0.2' id='nbc-weather-conditions-js'></script>
+<script async src='https://www.telemundo62.com/wp-content/themes/nbc-station/client/build/js/global.2b72efdb0b0e8e85179b.bundle.min.js?ver=1.0.2' id='nbc-global-js-js'></script>
+<script async src='https://www.telemundo62.com/wp-content/themes/nbc-station/client/build/js/article.c6ece82c340eba7b57e5.bundle.min.js?ver=1.0.2' id='nbc-article-js-js'></script>
+<script src='https://www.telemundo62.com/wp-content/themes/nbc-station/client/build/js/analytics.37a755a6d88530f7c27a.bundle.min.js?ver=1.0.2' id='nbc-analytics-js-js'></script>
+<script id='nbc-analytics-js-js-after'>
+( function( domain, translations ) {
+	var localeData = translations.locale_data[ domain ] || translations.locale_data.messages;
+	localeData[""].domain = domain;
+	wp.i18n.setLocaleData( localeData, domain );
+} )( 'nbc', {"domain":"messages","locale_data":{"messages":{"":{"domain":"messages","plural_forms":"nplurals=2; plural=(n != 1);","lang":"es_US"},"New Comment":["Nuevo comentario"],"Submit Comment":["Enviar comentario"],"Type provider name to search":["Escribe el nombre del proveedor para buscar"],"For your local NBC live stream, select your TV provider and sign in.":["Para tu transmisión en vivo de Telemundo, selecciona tu proveedor de televisión por cable e inicia sesión."],"Don't see your provider? Search below":["¿No ves a tu proveedor? Busca a continuación"],"Need help signing in?":["¿Necesitas ayuda para iniciar sesión?"],"See our FAQ":["Consulta nuestras preguntas frecuentes"],"For technical issues email:":["Para problemas técnicos escribe al correo electrónico:"],"Sign Out":["Cerrar sesión"],"TV Schedule":["Programación de TV"],"NEED HELP?":["¿NECESITAS AYUDA?"],"Live Stream":["En Vivo"],"Live stream video support":["Soporte de transmisión de vídeo en directo"],"Email":["Correo electrónico"],"FAQ":["Preguntas más frecuentes"],"Live TV":["TV en vivo"],"#":["#"],"NOW":["Ahora"],"Jan":["Enero"],"Feb":["Febrero"],"Mar":["Marzo"],"Apr":["Abril"],"May":["Mayo"],"Jun":["Junio"],"Jul":["Julio"],"Aug":["Agosto"],"Sep":["Septiembre"],"Oct":["Octubre"],"Nov":["Noviembre"],"Dec":["Diciembre"],"Visit Site":["Visita el sitio"],"Horoscopo":["Horóscopo"],"Sponsored":["Auspiciado"],"Enter your email":["Ingresa tu correo electrónico"],"Sign up":["Regístrate"],"Privacy Policy":["Política de privacidad"],"More Newsletters":["Más boletines"],"Sign up successful!":["¡Registro completado con éxito!"],"Male":["Masculino"],"Female":["Femenino"],"Cannot be blank":["No puede estar en blanco"],"Sign in / Sign up":["Iniciar sesión / Registrarse"],"ex: mailAddress@client.com":["por ejemplo: mailAddress@client.com"],"Sign up / Sign in":["Regístrate / Inicia sesión"],"First name":["Nombre."],"Last name":["Apellido."],"Zip code":["Código postal."],"Finish sign up":["Terminar el registro"],"Choose the newsletters you'd like to receive.":["Elija los boletines que le gustaría recibir."],"Log out":["Cerrar sesión"],"Close success message":["Mensaje de cierre exitoso"],"Submitting...":["Enviando "],"Save Changes":["Guardar Cambios"],"Sign in to view":["Inicia sesión para ver"],"Full Schedule":["Horario completo"],"ex: mailAdress@client.com":["por ejemplo: mailAdress@client.com"],"Phone number":["Número de teléfono"],"+1 (555)-555-5555)":["+1 (555)-555-5555)"],"Choose files to upload":["Elige los archivos que deseas cargar"],"File is too large":["El archivo es muy pesado"],"No file chosen":["No se ha elegido ningún archivo"],"Submit":["Enviar"],"On a desktop computer? Hold “Ctrl\" on PC or “command\" on Mac to select multiple files. Up to 5 files will be accepted. Zip and all common image, video, and document formats are accepted. Any documents or images submitted could be used for broadcast or digital use.":["¿En un ordenador de sobremesa? Mantenga presionada la tecla \"Ctrl\" en el PC o \"comando\" en Mac para seleccionar varios archivos. Se aceptarán hasta 5 archivos. Zip y se aceptan todos los formatos comunes de imagen, vídeo y documentos. Cualquier documento o imagen presentada podría utilizarse para difusión o uso digital."],"Required Fields":["Campos requeridos"],"Subject":["Asunto"],"Use a short descriptive subject":["Utilice un breve tema descriptivo"],"Describe your tip in detail":["Describa su información en detalle"],"Please type in complete sentences":["Por favor escriba oraciones completas"],"Tags":["Etiquetas"],"comma separated - ex: hurricane, weather":["Separado por comas - por ejemplo: huracán, tiempo"],"Your Name":["Tu nombre"],"First & last name":["Nombre y apellido"],"I agree to the ":["Estoy de acuerdo con "],"terms of service":["Condiciones de servicio de configuración"]," and ":["Y"],"privacy policy":["Política de privacidad"],"Submit Your Media":["Envía tus fotos o videos"],"Thanks for submitting your media.":["Gracias por enviar tu material"],"Choose a file to upload":["Elige un archivo para cargar"],"Title":["Título"],"Use a short descriptive title":["Utilice un breve título descriptivo"],"Description":["Descripción"],"Images must be at least 800 x 800 pixels.":["Elija una imagen para cargar con un tamaño mínimo de 800 x 800 pixeles."],"Please type in a description":["Por favor, escriba una descripción"],"Select a Category":["Seleccionar categoría"],"Choose a file to upload. Images must be at least 800 x 800 pixels.":["Elija una imagen para cargar con un tamaño mínimo de 800 x 800 pixeles."],"Videos":["Videos"],"More Videos":["Más videos"],"More":["Más Videos"],"More %s Videos":["Más videos de %s"],"Search Videos:":["Buscar vídeos"],"Search Videos":["Buscar vídeos"],"Search":["Buscar "],"Show More":["Mostrar más"],"Search Results":["Resultado de la Busqueda"],"No Results":["Sin resultados"],"Latest":["Lo último"],"Local":["Local"],"Up Next":["Siguiente"],"News":["Noticias"],"Now Playing":["Reproduciendo ahora"],"Expand Map":["Expandir mapa"],"Collapse Map":["Contraer mapa"],"Weather Alerts":["Alertas del Tiempo "],"School Closings":["Cierres de escuelas"],"View All":["Ver todo"],"Wind":["Viento"],"Click to search by city or zip...":["Haga clic para buscar por ciudad o zip..."],"Feels like":["Sensación térmica"],"Humidity":["Humedad"],"Precip":["Precip"],"Temperature":["Temperatura"],"Precipitation":["Precipitación"],"Tonight":["Esta noche"],"Tomorrow":["Mañana"],"Suggested Regions":["Regiones sugeridas"],"Search city, zip…":["Buscar ciudad, zip..."],"Close search":["Búsqueda cercana"],"Today":["Hoy"],"High Temperature":["Alta temperatura"],"Low Temperature":["Baja temperatura"],"Chance of precipitation":["Probabilidad de precipitación"],"10 Day Forecast":["Pronóstico de 10 días"],"Type of Complaint":["Tipo de queja"],"Provide a detailed description of your problem":["Proporcione una descripción detallada de su problema"],"Postal Code (only the first 5 digits)":["Código postal (Solo los primeros 5 dígitos)"],"Provide Documentation":["Proporcione la documentación"],"Send":["Enviar"],"Watch on your phone or tablet through the NBC app.":["Míralo en vivo en tu teléfono o tablet a través de la aplicación de Telemundo"],"Open the NBC App":["Abrir la aplicación de Telemundo"],"Watch Now":["Ver ahora"],"Login with your TV provider to watch unlimited NBC content on":["Inicia sesión con tu proveedor de cable ver para el contenido ilimitado de Telemundo"],"Rank":["Rango"],"Nation":["Nación"]}}} );
+</script>
+<script src='https://ak.sail-horizon.com/spm/spm.v1.min.js?ver=1.0.0' id='nbc-sailthru-js'></script>
+<script id='nbc-sailthru-js-after'>
+if ("undefined" !== typeof Sailthru) { Sailthru.init({"customerId":"578ec885bae0cc2cb367533f487ce02d"}); }
+</script>
+<script src='https://www.telemundo62.com/wp-content/themes/nbc-station/static/js/player.6.1.3.js?ver=1.0.2' id='pdk-js'></script>
+<script src='https://www.telemundo62.com/wp-content/themes/nbc-station/client/build/js/videoPlayer.7b5017f07999a106edc4.bundle.min.js?ver=1.0.2' id='nbc-video-player-js'></script>
+<script src='https://native.sharethrough.com/assets/sfp.js?ver=5.5.5' id='sharethrough-js'></script>
+<script async src='https://www.telemundo62.com/wp-content/themes/nbc-station/client/build/js/responsiveIframe.fe56600a784337c25b13.bundle.min.js?ver=1.0.2' id='nbc-responsive-iframe-js'></script>
+<script async src='https://www.telemundo62.com/wp-content/themes/nbc-station/client/build/js/flyoutNav.276edabb7c307347f121.bundle.min.js?ver=1.0.2' id='nbc-flyout-nav-js'></script>
+<script src='https://www.telemundo62.com/wp-content/themes/nbc-station/client/build/js/articleContent.002368ae3a0d6363e579.bundle.min.js?ver=1.0.2' id='nbc-article-content-js'></script>
+<script defer src='https://js-sec.indexww.com/ht/p/186439-10309961626855.js?ver=1.0.2' id='nbc-index-exchange-js'></script>
+<script src='https://www.telemundo62.com/wp-includes/js/wp-embed.min.js?ver=5.5.5' id='wp-embed-js'></script>
+<script src='https://z.moatads.com/nbcuyieldheader7581548001/moatheader.js?ver=1.0.0' id='moat-js'></script>
+<script src='https://stats.wp.com/e-202130.js' defer></script>
+<script>
+	_stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:9.4.1',blog:'165596382',post:'2029693',tz:'-4',srv:'www.telemundo62.com'} ]);
+	_stq.push([ 'clickTrackerInit', '165596382', '2029693' ]);
+</script>
+
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","licenseKey":"53cef82690","applicationID":"189190456","transactionName":"YVBXYBEFVkZSU00NVlgadFcXDVdbHEdLBUlGUEc=","queueTime":0,"applicationTime":2182,"atts":"TRdAFlkfRRkRURteQktI","errorBeacon":"bam-cell.nr-data.net","agent":""}</script></body>
+</html>

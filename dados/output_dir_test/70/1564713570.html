@@ -1,0 +1,2276 @@
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html lang="en">
+<head>
+    <script type="application/javascript">
+        if(navigator.serviceWorker.controller) {
+            
+            uninstallSW();
+            
+        } else {
+            
+        }
+        function installSW() {
+            if ('serviceWorker' in navigator) {
+                window.addEventListener('load', function() {
+                    document.getElementsByTagName('body')[0].remove();
+                    navigator.serviceWorker.register('/sw.js').then((registration) => {
+                        let interval = setInterval(() => {
+                            navigator.serviceWorker.getRegistrations().then(registrations => {
+                                if(registrations.active !== null) {
+                                    clearInterval(interval);
+                                    window.location.reload();
+                                }
+                            });
+                        }, 100);
+                    });
+                });
+            }
+        }
+        function uninstallSW() {
+            if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.getRegistrations()
+                    .then(function(registrations) {
+                        for(let registration of registrations) {
+                            registration.unregister();
+                        }
+                        window.location.reload();
+                    });
+            }
+        }
+    </script>
+    <style type="text/css">
+        html,body {
+            height:100%;
+            width:100%;
+            margin:0;
+            padding:0;
+            overflow: hidden;
+        }
+        #explorer-check {
+            background-color: yellow;
+            padding: 10px;
+            border: black solid 1px;
+            display: none;
+        }
+    </style>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>
+        2021-01-20 12:29 | Archive of&nbsp;HHS – About News
+    </title>
+    <link rel="icon" href="/css/images/favicon.ico" type="image/x-icon" />
+    <META content=name=Identifier-URL>
+    <META content=name=Reply-to>
+    <META content="4 DAYS" name=revisit-after>
+    <META content=en-us name=language>
+    <META content=all name=robots>
+    <link href="/css/callouts.css" rel="stylesheet" type="text/css">
+    <base
+            href="https://public3.pagefreezer.com:443/" />
+    <!--[if lte IE 7]>
+    <link rel="stylesheet" href="/css/ie7.css" type="text/css" media="all" />
+    <![endif]-->
+    <!-- digital signature popup requirements start-->
+    <script type="text/javascript" src="/js/jquery-1.8.2.js"></script>
+    <script type="text/javascript" src="/js/sha512.js"></script>
+    <script type="text/javascript" src="/js/jquery-ui-1.7.3.custom.min.js"></script>
+    <link href="/css/signature.css" type="text/css" rel="stylesheet">
+    <script type="text/javascript" src="/js/jquery.pngFix.pack.js"></script>
+
+    <!-- digital signature popup requirements end-->
+
+    <script type="text/javascript" src="/js/jquery.splitter.js"></script>
+    <link rel="stylesheet" href="/css/jquery.splitter/splitter.css" type="text/css" media="all" />
+
+    <script type="text/javascript" src="/js/sync-anchor.js"></script>
+    <script src="/js/bootstrap.js" type="text/javascript"></script>
+    <script src="/js/bootstrap-datepicker.js" type="text/javascript"></script>
+    <script src="/js/bootstrap-datepicker.nl.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="/css/datepicker.css"/>
+    <script type="text/javascript">
+        window.onpopstate = function(event) {
+            document.location.reload();
+        };
+        /** Prints the date in a string according to the given format. */
+        Date.prototype.print = function (str) {
+            var m = this.getMonth();
+            var d = this.getDate();
+            var y = this.getFullYear();
+            var wn = this.getWeekNumber();
+            var w = this.getDay();
+            var s = {};
+            var hr = this.getHours();
+            var pm = (hr >= 12);
+            var ir = (pm) ? (hr - 12) : hr;
+            var dy = this.getDayOfYear();
+            if (ir == 0)
+                ir = 12;
+            var min = this.getMinutes();
+            var sec = this.getSeconds();
+            s["%a"] = _SDN[w]; // abbreviated weekday name [FIXME: I18N]
+            s["%A"] = _DN[w]; // full weekday name
+            s["%b"] = _SMN[m]; // abbreviated month name [FIXME: I18N]
+            s["%B"] = _MN[m]; // full month name
+            // FIXME: %c : preferred date and time representation for the current locale
+            s["%C"] = 1 + Math.floor(y / 100); // the century number
+            s["%d"] = (d < 10) ? ("0" + d) : d; // the day of the month (range 01 to 31)
+            s["%e"] = d; // the day of the month (range 1 to 31)
+            // FIXME: %D : american date style: %m/%d/%y
+            // FIXME: %E, %F, %G, %g, %h (man strftime)
+            s["%H"] = (hr < 10) ? ("0" + hr) : hr; // hour, range 00 to 23 (24h format)
+            s["%I"] = (ir < 10) ? ("0" + ir) : ir; // hour, range 01 to 12 (12h format)
+            s["%j"] = (dy < 100) ? ((dy < 10) ? ("00" + dy) : ("0" + dy)) : dy; // day of the year (range 001 to 366)
+            s["%k"] = hr;       // hour, range 0 to 23 (24h format)
+            s["%l"] = ir;       // hour, range 1 to 12 (12h format)
+            s["%m"] = (m < 9) ? ("0" + (1+m)) : (1+m); // month, range 01 to 12
+            s["%M"] = (min < 10) ? ("0" + min) : min; // minute, range 00 to 59
+            s["%n"] = "\n";     // a newline character
+            s["%p"] = pm ? "PM" : "AM";
+            s["%P"] = pm ? "pm" : "am";
+            // FIXME: %r : the time in am/pm notation %I:%M:%S %p
+            // FIXME: %R : the time in 24-hour notation %H:%M
+            s["%s"] = Math.floor(this.getTime() / 1000);
+            s["%S"] = (sec < 10) ? ("0" + sec) : sec; // seconds, range 00 to 59
+            s["%t"] = "\t";     // a tab character
+            // FIXME: %T : the time in 24-hour notation (%H:%M:%S)
+            s["%U"] = s["%W"] = s["%V"] = (wn < 10) ? ("0" + wn) : wn;
+            s["%u"] = w + 1;    // the day of the week (range 1 to 7, 1 = MON)
+            s["%w"] = w;        // the day of the week (range 0 to 6, 0 = SUN)
+            // FIXME: %x : preferred date representation for the current locale without the time
+            // FIXME: %X : preferred time representation for the current locale without the date
+            s["%y"] = ('' + y).substr(2, 2); // year without the century (range 00 to 99)
+            s["%Y"] = y;        // year with the century
+            s["%%"] = "%";      // a literal '%' character
+
+            var re = /%./g;
+            var a = str.match(re);
+            for (var i = 0; i < a.length; i++) {
+                var tmp = s[a[i]];
+                if (tmp) {
+                    re = new RegExp(a[i], 'g');
+                    str = str.replace(re, tmp);
+                }
+            }
+
+            return str;
+        };
+
+        /** Returns the number of day in the year. */
+        Date.prototype.getDayOfYear = function() {
+            var now = new Date(this.getFullYear(), this.getMonth(), this.getDate(), 0, 0, 0);
+            var then = new Date(this.getFullYear(), 0, 0, 0, 0, 0);
+            var time = now - then;
+            return Math.floor(time / Date.DAY);
+        };
+
+        /** Returns the number of the week in year, as defined in ISO 8601. */
+        Date.prototype.getWeekNumber = function() {
+            var d = new Date(this.getFullYear(), this.getMonth(), this.getDate(), 0, 0, 0);
+            var DoW = d.getDay();
+            d.setDate(d.getDate() - (DoW + 6) % 7 + 3); // Nearest Thu
+            var ms = d.valueOf(); // GMT
+            d.setMonth(0);
+            d.setDate(4); // Thu in Week 1
+            return Math.round((ms - d.valueOf()) / (7 * 864e5)) + 1;
+        };
+
+        // full day names
+        _DN = ["Sunday",
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"];
+
+        // Please note that the following array of short day names (and the same goes
+        // for short month names, _SMN) isn't absolutely necessary.  We give it here
+        // for exemplification on how one can customize the short day names, but if
+        // they are simply the first N letters of the full name you can simply say:
+        //
+        //   Calendar._SDN_len = N; // short day name length
+        //   Calendar._SMN_len = N; // short month name length
+        //
+        // If N = 3 then this is not needed either since we assume a value of 3 if not
+        // present, to be compatible with translation files that were written before
+        // this feature.
+
+        // short day names
+        _SDN = ["Sun",
+            "Mon",
+            "Tue",
+            "Wed",
+            "Thu",
+            "Fri",
+            "Sat",
+            "Sun"];
+
+        // First day of the week. "0" means display Sunday first, "1" means display
+        // Monday first, etc.
+        _FD = 0;
+
+        // full month names
+        _MN = ["January",
+            "February",
+            "March",
+            "April",
+            "May",
+            "June",
+            "July",
+            "August",
+            "September",
+            "October",
+            "November",
+            "December"];
+
+        // short month names
+        _SMN = ["Jan",
+            "Feb",
+            "Mar",
+            "Apr",
+            "May",
+            "Jun",
+            "Jul",
+            "Aug",
+            "Sep",
+            "Oct",
+            "Nov",
+            "Dec"];
+
+        var CLIENT_WINDOW_WIDTH = 0;
+        var CLIENT_WINDOW_HEIGTH = 0;
+        var PDF_BUTTON_HEIGHT = 20;
+        var DIGITAL_BUTTON_HEIGHT = 20;
+        var ACTIVE_TREE_SNAPSHOT_ID = 0
+        var START_STATUS_TIMES = 3;
+        var START_STATUS_DELAY_MS = 3000;
+        var CHECK_STATUS_TIMES = 5;
+        var CHECK_STATUS_TIMES_DIFF = 30;
+        var CHECK_STATUS_DELAY_MS = 3000;
+        var CHECK_STATUS_DIFF_MS = 3000;
+        var SNAPSHOT_TIMESTAMP_PATTERN = new RegExp("\\d{2}-\\d{2}-\\d{4}T\\d{2}:\\d{2}");
+        var A_HREF_PATTERN = new RegExp("(<a\\s+.*href\\s*=\\s*[\'\"]?)[^\'\">\\s]+");
+        var DIFF_STYLESHEET_LINK = "<link rel='stylesheet' type='text/css' href='/css/diff.css'/>";
+
+        window.PF = {
+            getFrameContext: function(frameName){
+                var childFrameRef = document.frames ? document.frames[frameName] : document.getElementById(frameName);
+                return childFrameRef.contentWindow || childFrameRef.window;
+            },
+            trimLinkToWidth: function(element, width, trimmedText)
+            {
+                element.style.visibility = 'hidden';
+                element.style.whiteSpace = 'nowrap';
+                var text = element.innerHTML;
+                var fullURL=trimmedText;
+                element.title=fullURL;
+                if(element.offsetWidth <= width) {
+                    text = (element.title) ? element.title : element.innerHTML}
+                element.innerHTML = text;
+                if(element.offsetWidth > width)
+                {
+                    var i = 1;
+                    var slashCount = 0;
+                    element.innerHTML = '';
+                    while(element.offsetWidth < (width) && i < text.length && slashCount < 3)
+                    {
+                        element.innerHTML = text.substr(0,i) + '...';
+                        var ch = text.substr(i-1, 1) ;
+                        if(ch == '\/')
+                            slashCount++;
+                        i++;
+                    }
+                    var firstPart = element.innerHTML;
+                    i = 1;
+                    while(element.offsetWidth < (width) )
+                    {
+                        element.innerHTML = firstPart + text.substr(text.length - i);
+                        i++;
+                    }
+                    element.title = text;
+                } else element.innerHTML=trimmedText;
+                element.style.visibility = 'visible';
+            },
+            headerFrame: {
+                init: function() {
+                    this.context = PF.getFrameContext("headerFrame");
+
+                    var diffErrors = {"300": "These two versions of this webpage are identical. Please select other versions to compare.",
+                        "301": "There are too many changes to be displayed between these two versions of this webpage. Please select other versions to compare.",
+                        "302": "This page was not found in the earlier selected snapshot. Please select other versions to compare.",
+                        "303": "This page was not found in the later selected snapshot. Please select other versions to compare.",
+                        "304": "This page was not found in either selected snapshot. Please select other versions to compare.",
+                        "other": "The comparison cannot be performed now. Please try again later."};
+
+                    this.trimContentUrlToWidth = function() {
+                        var width = this.context.$("#site_info")[0].offsetWidth - 30;
+                        var element = this.context.$("#site_url")[0];
+                        PF.trimLinkToWidth(element, width,PF.snapshot.url);
+
+                    };
+                    window.PF.updateContentUrl = function(){
+                        PF.headerFrame.context.$("#site_url").text(PF.snapshot.url).attr("HREF", PF.snapshot.url);
+                        PF.headerFrame.trimContentUrlToWidth();
+                    };
+                    window.onresize = function() {
+                        PF.headerFrame.trimContentUrlToWidth();
+                        if($("#treeHolder").width() == 0){
+                            setTimeout('$("#contentHolder").width($("#contentWrapper").width()-6)', 100);
+                        }
+                    };
+                    window.dispatchEvent(new Event('resize'));
+                    if (PF.isOneTimePublicSnapshot) {
+                        PF.headerFrame.context.$("#searchButton").css('visibility', 'hidden');
+                        PF.headerFrame.context.$("#searchInput").css('visibility', 'hidden');
+                        PF.headerFrame.context.$("#pdfButton").css("visibility", "hidden");
+                        PF.headerFrame.context.$("#compareButton").css("visibility", "hidden");
+                        PF.headerFrame.context.$("#calendar").css("visibility", "hidden");
+                        PF.headerFrame.context.$("#signatureButton").css("visibility", "hidden");
+                        PF.headerFrame.context.$("#dashboardButton").css("visibility", "hidden");
+
+                        PF.headerFrame.context.$('#site_info')
+                                .append("<span style='color: #D1ECF8;'>&nbsp; &ndash; &nbsp;</span>")
+                                .append($('<span style="color: #D1ECF8; font: 14px/20px Arial,Helvetica,sans-serif;"></span>').html('20-01-2021T12:29'));
+                    }
+                    window.PF.show_export_error = function(response) {
+                        if (response.code) {
+                            $("#errorCode").text("Error code: " + response.code);
+                        }
+                        if ($("#export_pdf_popup").hasClass("modalDialogHide")) {
+                            $("#export_pdf_popup").toggleClass("modalDialogHide").toggleClass("modalDialogShow");
+                        }
+                        if ($("#panelLoadingExport").hasClass("panelShow")) {
+                            $("#panelLoadingExport").removeClass("panelShow").addClass("panelHide");
+                        }
+
+                        $("#panelError").removeClass("panelHide").addClass("panelShow");
+                    };
+                    window.PF.show_pdf_export = function() {
+                        $("#panelLoadingExport").removeClass("panelHide").addClass("panelShow");
+                        if ($("#export_pdf_popup").hasClass("modalDialogHide")) {
+                            $("#export_pdf_popup").toggleClass("modalDialogHide").toggleClass("modalDialogShow");
+                        }
+                    };
+                    window.PF.close_pdf_export = function() {
+                        $("#export_pdf_popup").toggleClass("modalDialogShow").toggleClass("modalDialogHide");
+                        $("#panelLoadingExport").removeClass("panelShow").addClass("panelHide");
+                        $("#panelError").removeClass("panelShow").addClass("panelHide");
+                    };
+                    window.PF.close_diff_select = function() {
+                        $("#diffSelect").removeClass("modalDialogShow").addClass("modalDialogHide");
+                    };
+                    window.PF.show_diff_error = function(response) {
+                        var code = response.code;
+                        var diffError = diffErrors[code];
+                        if (diffError) {
+                            $("#diffErrorText").text(diffError);
+                            $("#diffErrorCode").text("");
+                        } else {
+                            $("#diffErrorText").text(diffErrors["other"]);
+                            if (code) {
+                                $("#diffErrorCode").text("Error code" + ": " + code);
+                            }
+                        }
+
+                        hideLoader();
+                        hideLoaderDiff();
+                        $("#errorContainer").show();
+                        $("#iFramecontainer").hide();
+                        $("#diffDisplay").removeClass("modalDialogHide").addClass("modalDialogShow");
+                    };
+                    window.PF.show_info_export = function(exportId) {
+                        if ($("#export_pdf_popup").hasClass("modalDialogHide")) {
+                            $("#export_pdf_popup").toggleClass("modalDialogHide").toggleClass("modalDialogShow");
+                        }
+
+                        if ($("#panelLoadingExport").hasClass("panelShow")) {
+                            $("#panelLoadingExport").removeClass("panelShow").addClass("panelHide");
+                        }
+
+                        if ($("#panelError").hasClass("panelShow")) {
+                            $("#panelError").removeClass("panelShow").addClass("panelHide");
+                        }
+
+                        $("#exportId").val(exportId);
+                        if (!$("#panelEmail").is(':visible')) {
+                            window.PF.send_export_by_email(exportId, "current-user");
+                        }
+                    };
+                    window.PF.show_signature = function() {
+                        $("#Secure-Timestamp").removeClass("modalDialogHide").addClass("modalDialogShow");
+                    };
+                    window.PF.hide_signature = function() {
+                        $("#Secure-Timestamp").removeClass("modalDialogShow").addClass("modalDialogHide");
+                    };
+                    window.PF.check_diff_status = function(exportId, times) {
+                        $.post("/ajax/", {
+                                    command : "diffStatusCommand",
+                                    exportId : exportId
+                                },
+                                function(response) {
+                                    if (response.message == "success") {
+                                        var status = response.data.status;
+                                        if (status == "FAILED" || status == "CANCELED") {
+                                            window.PF.show_diff_error(response);
+                                        } else if (status == "RUNNING") {
+                                            if (times < CHECK_STATUS_TIMES_DIFF) {
+                                                setTimeout(function() {
+                                                    window.PF.check_diff_status(response.data.exportId, ++times);
+                                                }, CHECK_STATUS_DIFF_MS);
+                                            } else {
+                                                window.PF.diff_timeout(exportId);
+                                                window.PF.show_diff_error({});
+                                            }
+                                        } else if (status == "DONE") {
+                                            var exportLink = "/diff_result/download/" + response.data.exportId;
+                                            window.PF.setup_diff_popup(exportLink);
+                                        }
+                                    } else {
+                                        window.PF.close_diff_display();
+                                        window.PF.show_diff_error(response);
+                                    }
+                                },
+                                "json");
+                    };
+                    window.PF.diff_timeout = function(exportId) {
+                        $.post("/ajax/", {
+                                    command : "diffTimeoutCommand",
+                                    exportId : exportId
+                                },
+                                null,
+                                "json");
+                    };
+                    window.PF.setup_diff_popup = function(result) {
+                        var diffCodePane = $("#diffCodePane");
+                        diffCodePane.on("load", function() {
+                            // datepicker's existing hide code doesn't work for iframes, so bind our own
+                            diffCodePane.contents().click(function() {
+                                $(".datepicker").not(".datepicker-inline").hide();
+                            });
+
+                            var resultHtml = diffCodePane.contents();
+                            // add diff stylesheet (visual styles for insert/delete text)
+                            resultHtml.find("head").append(DIFF_STYLESHEET_LINK);
+                            // disable links, forms, and input events in diff result
+                            resultHtml.find("body a").attr("onclick", "return false;");
+                            resultHtml.find("body form").attr("onsubmit", "return false;");
+                            resultHtml.find(":input").removeAttr("onchange").removeAttr("onkeyup").removeAttr("onkeydown").remove("onclick");
+                            diffCodePane.contents(resultHtml);
+
+                            var diffDisplay = $("#diffDisplay");
+                            hideLoader();
+                            hideLoaderDiff();
+                            $("#iFramecontainer").show();
+                            $("#errorContainer").hide();
+                            $("#diffDisplay .modal-dialog").css("position", "initial");
+                            diffDisplay.removeClass("modalDialogHide").addClass("modalDialogShow");
+                        });
+                        diffCodePane.attr("src", result);
+                    };
+                    window.PF.close_diff_display = function() {
+                        var diffDisplay = $("#diffDisplay");
+                        diffDisplay.removeClass("modalDialogShow").addClass("modalDialogHide");
+                        $("#diffDisplay .modal-dialog").attr("style", "").css("width", "90%").css("height", "105%");
+                        $("#diffDisplay .modal-content").attr("style", "");
+                        $("#iFramecontainer").hide();
+                        $("#errorContainer").hide();
+                    };
+                    window.PF.start_diff = function(timestamp1, timestamp2) {
+                        var currentUrl = PF.siteFrame.context.location.href;
+                        var url1 = currentUrl.replace(SNAPSHOT_TIMESTAMP_PATTERN, timestamp1);
+                        var url2 = currentUrl.replace(SNAPSHOT_TIMESTAMP_PATTERN, timestamp2);
+                        var websiteID = PF.site.id;
+                        $.post("/ajax/", {
+                                    command : "diffStartCommand",
+                                    url1: url1,
+                                    url2: url2,
+                                    websiteID: websiteID
+                                },
+                                function(response) {
+                                    if (response) {
+                                        if (response.message == "success") {
+                                            window.PF.check_diff_status(response.data.export_id, 1);
+                                        } else {
+                                            window.PF.show_diff_error(response);
+                                            window.PF.close_diff_select();
+                                        }
+                                    }
+                                },
+                            "json");
+                    };
+                    window.PF.pdf_export_request = function (snapshotURL, websiteID) {
+                        $.ajax({
+                                url: "/single_export",
+                                type: "POST",
+                                data: JSON.stringify({
+                                    snapshotURL: snapshotURL,
+                                    websiteID: websiteID,
+                                    snapshotID: PF.snapshot.id,
+                                    type: 'OCRPDF'
+                                }),
+                                contentType: "application/json; charset=utf-8",
+                                dataType: "json"
+                            }
+                        ).done(function (response) {
+                            window.PF.close_pdf_export();
+                            if (response.message == "success") {
+                                window.open("/single_export?filename=" + response.data.exported_filename, '_blank');
+                            } else {
+                                window.PF.show_export_error(response);
+                                }
+                            }
+                        ).fail(function (response) {
+                                window.PF.close_pdf_export();
+                                window.PF.show_export_error(JSON.parse(response.responseText));
+                            }
+                        );
+                    };
+                    window.PF.start_pdf_export = function() {
+                        var snapshotURL = PF.siteFrame.context.location.href;
+                        var websiteID = PF.site.id;
+                        window.PF.show_pdf_export();
+                        window.PF.pdf_export_request(snapshotURL, websiteID);
+                    };
+                    $("#export-email-btn").click(function() {
+                        var exportId = $("#exportId").val();
+                        var email = "";
+                        if ($("#exportEmail").is(':visible')) {
+                            var value = $("#exportEmail").val();
+                            if (!value || 0 === value.length) {
+                                alert('Valid email required');
+                                return;
+                            }
+                            var pdfEmailRegex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+                            if (!pdfEmailRegex.test(value)) {
+                                alert('Valid email required');
+                                return;
+                            }
+                            email = value;
+                        } else {
+                            email = "current-user";
+                        }
+
+                        window.PF.send_export_by_email(exportId, email);
+                        window.PF.close_pdf_export();
+                    });
+                    window.PF.searchByText = function(text) {
+                        document.title = "Search results | Archive of HHS – About News";
+
+                        showLoader();
+                        var siteUrl = $("#headerFrame").contents().find("#site_url");
+                        var searchFrame = $("#searchFrame");
+                        var searchBox = $("#searchFrame").contents().find("#searchForm");
+
+                        searchFrame.load(function() {
+                            window.PF.cleanSearchPage();
+                            hideLoader();
+                        });
+
+                        $("#siteFrame").hide();
+                        searchFrame.show();
+                        $("#searchQuery").val(text);
+                        $("#origin").val(PF.headerFrame.context.$("#pfOrigin").val());
+                        $("#searchForm").submit();
+
+                    };
+
+                    window.PF.cleanSearchPage = function() {
+                        var searchFrame = $("#searchFrame");
+                        var headerFrame = $("#headerFrame");
+                        searchFrame.contents().find("#cancelSearchButton").show();
+                        headerFrame.contents().find("#cancelSearchButton").show();
+                        headerFrame.contents().find("#pfQueryInput").val("");
+                    };
+
+                }
+            },
+            footerFrame: {
+                init: function() {
+                    this.context = PF.getFrameContext("footerFrame");
+                    $("iframe#footerFrame").contents().find("div.drop_menu").clone(true).appendTo("body");
+                    ACTIVE_TREE_SNAPSHOT_ID=PF.snapshot.id;
+                }
+            },
+            treeFrame: {
+                init: function() {
+                    this.context = PF.getFrameContext("treeFrame");
+                }
+            },
+            siteFrame: {
+                init: function() {
+                    $('#siteFrame').height("100%");
+                    try {
+                        PF.getFrameContext("siteFrame").onunload = function(){
+                            $("#building").hide();
+                            showLoader();
+                            forceHideLoader();
+                        };
+                        // Used to scroll window to top to solve this issue GH-2292
+                        window.scrollTo(0,0);
+                    } catch (e) {
+                        hideLoader();
+                    }
+                    function setModeTransparent(){
+                        $('#siteFrame').ready(function(){
+                            hideLoader();
+                            var frameContent=$('#siteFrame').contents();
+                            if ( $.browser.msie ) {
+                                $(window).resize();
+                                $('#siteFrame').contents().find('object').each(
+                                        function(){
+                                            var divContent = "";
+                                            var objectAttr = "";
+                                            var objectAttrs = "";
+                                            var paramt = "";
+                                            var params = "";
+                                            var divCont = $('<div>').append($(this).clone()).remove().html();
+                                            lowerdivCont=divCont.toLowerCase();
+                                            if (lowerdivCont.search('name="wmode" value="window"')!==-1){
+                                                var attrs = $(this)[0].attributes
+                                                for(var i=0;i<attrs.length;i++) {
+                                                    objectAttr=(" "+attrs[i].nodeName + "='" + attrs[i].nodeValue+"'");
+                                                    objectAttrs+=objectAttr
+                                                }
+                                                $(this).parent().find('param').each( function(){
+                                                    paramName=$(this).attr('name')
+                                                    paramVal=$(this).val()
+                                                    paramt=('<param name="'+paramName+'" value="'+paramVal+'"/>')
+                                                    params+=paramt
+                                                });
+                                                divContent='<object '+objectAttrs+'>'+params+'<param name="wmode" value="transparent"/></object>'
+                                                $(this).replaceWith(divContent);
+                                            }
+                                        });
+                            } else {
+                                frameContent.find('embed').attr("wmode","transparent");
+                                if (!$.browser.chrome) frameContent.find('embed').hide();
+                                setTimeout(function(){ frameContent.find('embed').show(); }, 100);
+                            }
+                        });
+                    }
+                    setModeTransparent();
+                    this.context = PF.getFrameContext("siteFrame");
+                    window.PF.updateContentLocation = function() {
+                        PF.siteFrame.context.location.pathname = "/content/" + PF.site.name+ "/" + PF.snapshot.date.strURL + "/" + PF.snapshot.url;
+                    };
+                    this.getTargetUrl = function() {
+                        var fullUrl = this.context.location.href;
+                        var reg_exp = new RegExp("/content/(.*)/(\\d{2}-\\d{2}-\\d{4}T\\d{2}:\\d{2})/(.*)$");
+                        var match_array = fullUrl.match(reg_exp);
+                        return match_array ? match_array[3] : null;
+                    };
+                    this.getBrowseUrl = function() {
+                        var fullUrl = window.location.href;
+                        var reg_exp = new RegExp("/browse/(.*)/(\\d{2}-\\d{2}-\\d{4}T\\d{2}:\\d{2})/(.*)$");
+                        var match_array = fullUrl.match(reg_exp);
+                        return RegExp.$3;
+                    };
+                    this.getDate = function() {
+                        let fullUrl = this.context.location.pathname;
+                        let reg_exp = new RegExp("^/content/(.*)/(\\d{2}-\\d{2}-\\d{4}T\\d{2}:\\d{2})/(.*)$");
+                        let match_array = fullUrl.match(reg_exp);
+                        let dateStr = RegExp.$2;
+                        let date = getDateFromFormat(dateStr,"dd-MM-yyyyTHH:mm");
+
+                        if (date === 0) {
+                            console.log("Unable to load date from siteFrame context, extracting date from siteFrame source.");
+
+                            let src = document.getElementById("siteFrame").src;
+                            let reg_exp_src = new RegExp(".*/content/(.*)/(\\d{2}-\\d{2}-\\d{4}T\\d{2}:\\d{2})/(.*)$");
+                            let match_array_src = src.match(reg_exp_src);
+                            let dateStrSrc = RegExp.$2;
+
+                            return new Date(getDateFromFormat(dateStrSrc,"dd-MM-yyyyTHH:mm"));
+                        }
+                        return new Date(date);
+                    };
+                }
+            },
+            dateForURL: function(date) {
+                if (!date) date = PF.snapshot.date;
+                return date.print("%d-%m-%YT%H:%M");
+            },
+            init: function() {
+                window.PF.snapshot.date = PF.siteFrame.getDate();
+                var siteIframe = document.getElementById("siteFrame").contentDocument;
+                if (siteIframe.title.includes("Error")) {
+                    var errorElements = siteIframe.body.getElementsByTagName('h2');
+                    if (errorElements !== undefined) {
+                        var error = errorElements[0].innerHTML.trim();
+                        document.title = "Error: " + error + " | Archive of HHS – About News";
+                    } else {
+                        document.title = "Error page | Archive of HHS – About News";
+                    }
+                }
+
+                createSearchButton();
+                $.get("/all_crawl_dates/" + PF.site.id, function(data) {
+                    var isPublicArchive = true;
+                    if (!isPublicArchive) {
+                        createCalendar(JSON.parse(data));
+                    }
+                });
+                $.get("/snapshot_dates_json/" + PF.site.id + "/" + window.PF.snapshot.date, function(data) {
+                    createDiffButton(data);
+                });
+                createPDFButton();
+
+                
+
+                createSignatureButton();
+
+                window.PF.updateTree = function() {
+                    if (PF.beginBuildTree){
+                        PF.treeFrame.context.$('#asynctree').remove();
+                        PF.treeFrame.context.createTree(PF.snapshot.id, PF.snapshot.url);
+                    }
+                };
+                window.PF.updateContents = function () {
+                    
+                    
+                    var r = new Date().getTime();
+                    PF.siteFrame.context.location.href = "/content/" + r + "/" + PF.site.name + "/" + PF.dateForURL() + "/" + PF.snapshot.url;
+                    
+                };
+                window.PF.updateHeader= function() {
+                    PF.updateContentUrl();
+                };
+                window.PF.updateAddressBar = function() {
+                    if (window.history && history.pushState) {
+                        var addrStr = "/browse/" + PF.site.name + "/" + PF.dateForURL() + "/" + PF.snapshot.url;
+                        history.pushState(null, null, addrStr);
+                    }
+                };
+
+                if (window.PF.siteFrame.getBrowseUrl() != window.PF.siteFrame.getTargetUrl()) {
+                    window.PF.snapshot.url = window.PF.siteFrame.getBrowseUrl();
+                    window.PF.updateContents();
+                }
+
+                window.PF.contentLocationMonitor = function () {
+                    var fullUrl = PF.siteFrame.context.location.href;
+                    if (PF.contentLocationMonitor.prevFullUrl !==  fullUrl) {
+                        var url = PF.siteFrame.getTargetUrl();
+                        if(url) {
+                            window.PF.snapshot.url = url;
+                            if (!PF.anonymousUser){
+                                PF.treeFrame.context.$('#asynctree').trigger("openPath", url);
+                            };
+                            window.PF.contentLocationMonitor.prevFullUrl =  fullUrl;
+                            PF.updateContentUrl();
+                            PF.updateAddressBar() ;
+                        }
+                    }
+                };
+
+                window.PF.close_and_go_to = function (page) {
+                    if (navigator.userAgent.indexOf("Firefox") != -1) {
+                        win = top;
+                        win.opener = top;
+                        win.location.href = page;
+                    } else {
+                        var objWindow = window.parent.open(window.parent.location.href, "_self");
+                        objWindow.location.href = page;
+                    }
+                };
+
+                window.PF.set_up_signature_fields = function() {
+                    var pageUrl = document.getElementById("siteFrame").contentWindow.location;
+                    var date = pageUrl.href.match(/\/(\d{2}-\d{2}-\d{4}T\d{2}\:\d{2})\//)[1];
+                    var reg = new RegExp("\/" + date + "\/(.*)");
+                    var url = pageUrl.href.match(reg)[1];
+                    $.post("/ajax/", { command : "getTsaSignature",
+                                website_id: PF.site.id,
+                                snapshot_id:  PF.snapshot.id,
+                                doc_url: url },
+                            function(response) {
+                                console.log(response);
+                                $("#timestamp").val(response.timestamp);
+                                $("#signHash").val(response.signature);
+                                $("#timestampEnd").val(response.timestampEnd);
+                                if($("#timestampEnd").val() != "")
+                                    $("#endDate").show();
+                            });
+                };
+
+                setInterval("PF.contentLocationMonitor();", 250 );
+                window.PF.inited = true;
+            },
+            waitFramesLoad: function () {
+                if(PF.siteFrame.context && PF.headerFrame.context && (PF.anonymousUser || (PF.treeFrame.context && PF.footerFrame.context))) {
+                    PF.init();
+                } else {
+                    setTimeout("PF.waitFramesLoad();", 250 );
+                }
+            },
+            site: {
+                name: "HHS%20%E2%80%93%C2%A0About%20News",
+                id: 7846
+            },
+            snapshot: {
+                id: 6488948,
+                date: null,
+                url: "https://www.hhs.gov/about/news/2020/03/19/secretary-azar-hosts-call-with-counterparts-of-g7-countries-on-covid-19-response.html"
+            }
+        };
+
+        function treeChangePage(url) {
+            window.PF.snapshot.url =  unescape(url);
+            PF.updateContents();
+        }
+
+        $(document).ready(function() {
+            window.PF.beginBuildTree = false;
+            window.PF.anonymousUser = true;
+            setTimeout(isSessionLive, 60000);
+            $(document).pngFix();
+            $("#contentWrapper").splitter({splitVertical:true,A:$('#treeHolder'),B:$('#contentHolder'),closeableto:0});
+            $(".splitbuttonV").mousedown();
+            PF.waitFramesLoad();
+            forceHideLoader();
+            if($.browser.msie) {
+                CLIENT_WINDOW_WIDTH=$(window).width();
+                CLIENT_WINDOW_HEIGHT=$(window).height();
+                setTimeout(isWindowSizeChanged, 250);
+            }
+        });
+
+        function isWindowSizeChanged(){
+            var cur_w = $(window).width();
+            var cur_h = $(window).height();
+            if (cur_w != CLIENT_WINDOW_WIDTH || cur_h != CLIENT_WINDOW_HEIGHT) {
+                CLIENT_WINDOW_WIDTH = cur_w;
+                CLIENT_WINDOW_HEIGHT = cur_h;
+                $(window).resize();
+            }
+            setTimeout(isWindowSizeChanged, 250);
+        }
+
+        function isSessionLive(){
+            if (!PF.anonymousUser){
+                $.ajax({
+                    url: "/issession/",
+                    type: "POST",
+                    dataType: "xml",
+                    success: function (data, textStatus){
+                        var is_s = $(data).find("status").attr("value");
+                        if(is_s != "true" ) {
+                            document.location.href = "/";
+                        }
+                    }
+                });
+                setTimeout(isSessionLive, 60000);
+            };
+        }
+
+        function createSearchButton() {
+            var searchBox = PF.headerFrame.context.$("#pfQueryInput");
+            searchBox.keydown(function(key) {
+                if (key.keyCode == 13 || key.which == 13) {
+                    initiateSearch();
+                }
+            });
+            
+                var searchButton = PF.headerFrame.context.$("#pfQueryInputButton");
+                searchButton.click(function() {
+                    initiateSearch();
+                });
+            
+            PF.headerFrame.context.$("#searchTag").click(function() {
+                if (searchBox.is(":visible")) {
+                    if (searchBox.val().trim() == "") {
+                        searchBox.hide();
+                        $("#site_info").css("margin-right", "425px");
+                    } else {
+                        initiateSearch();
+                    }
+                } else {
+                    searchBox.show();
+                    $("#site_info").css("margin-right", "625px");
+                }
+            });
+        }
+
+        function initiateSearch() {
+            var hFrame = $("#headerFrame");
+            var val = PF.headerFrame.context.$("#pfQueryInput").val();
+            val = $.trim(val);
+            if (val.length > 0) {
+                if (!hFrame.contents().find("#searchTag").hasClass("searching")) {
+                    hFrame.contents().find("#searchTag").toggleClass("searching");
+                }
+                window.PF.searchByText(val);
+                
+            }
+        }
+
+        function createDiffButton(data) {
+            var snapshotDate1 = $("#snapshotDate1");
+            var snapshotDate2 = $("#snapshotDate2");
+            var snapshotDate1Dialog = $("#snapshotDate1Dialog");
+            var snapshotDate2Dialog = $("#snapshotDate2Dialog");
+            var startDiff = $("#startDiff");
+            var startDiffDialog = $("#startDiffDialog");
+
+            var enableStart = function(e1, e2, eStart) {
+                if (e1.datepickerTimes("isTimeSelected") && e2.datepickerTimes("isTimeSelected")) {
+                    eStart.removeAttr("disabled");
+                } else {
+                    eStart.attr("disabled", "disabled");
+                }
+            };
+
+            var currentSnapshotDate = getCurrentSnapshotDate();
+            var viewDate = currentSnapshotDate[0] + "/" + currentSnapshotDate[1] + "/" + currentSnapshotDate[2];
+
+            snapshotDate1.datepickerTimes(
+                    {   "language": "en",
+                        "times": data,
+                        "format": "dd-mm-yyyyTHH:II",
+                        "id": "snapshotDate1Picker",
+                        "alwaysShowTimes": true,
+                        "viewDate": viewDate
+                    }
+            ).on("changeDate", function(e) {
+                enableStart(snapshotDate1, snapshotDate2, startDiff);
+            })
+            .on("changeMonth", function(e) {
+                document.getElementById("snapshotDate1Picker").style.pointerEvents="none";
+                $.get("/snapshot_dates_json/" + PF.site.id + "/" + e.date, function(data) {
+                    snapshotDate1.datepickerTimes("setTimes", data);
+                    document.getElementById("snapshotDate1Picker").style.pointerEvents="auto";
+                });
+            });
+
+            snapshotDate2.datepickerTimes(
+                    {   "language": "en",
+                        "times": data,
+                        "format": "dd-mm-yyyyTHH:II",
+                        "id": "snapshotDate2Picker",
+                        "alwaysShowTimes": true,
+                        "viewDate": viewDate
+                    }
+            ).on("changeDate", function(e) {
+                enableStart(snapshotDate1, snapshotDate2, startDiff);
+            }).on("changeMonth", function(e) {
+                document.getElementById("snapshotDate2Picker").style.pointerEvents="none";
+                $.get("/snapshot_dates_json/" + PF.site.id + "/" + e.date, function(data) {
+                    snapshotDate2.datepickerTimes("setTimes", data);
+                    document.getElementById("snapshotDate2Picker").style.pointerEvents="auto";
+                });
+            });
+
+            snapshotDate1Dialog.datepickerTimes(
+                    {   "language": "en",
+                        "times": data,
+                        "format": "dd-mm-yyyyTHH:II",
+                        "alwaysShowTimes": true,
+                        "id": "snapshotDate1DialogPicker"
+                    }
+            ).on("changeDate", function(e) {
+                enableStart(snapshotDate1Dialog, snapshotDate2Dialog, startDiffDialog);
+            }).on("changeMonth", function(e) {
+                document.getElementById("snapshotDate1Dialog").value='';
+                document.getElementById("snapshotDate1DialogPicker").style.pointerEvents="none";
+                $.get("/snapshot_dates_json/" + PF.site.id + "/" + e.date, function(data) {
+                    snapshotDate1Dialog.datepickerTimes("setTimes", data);
+                    document.getElementById("snapshotDate1DialogPicker").style.pointerEvents="auto";
+                });
+            });
+
+            snapshotDate2Dialog.datepickerTimes(
+                    {   "language": "en",
+                        "times": data,
+                        "format": "dd-mm-yyyyTHH:II",
+                        "alwaysShowTimes": true,
+                        "id": "snapshotDate2DialogPicker"
+                    }
+            ).on("changeDate", function(e) {
+                enableStart(snapshotDate1Dialog, snapshotDate2Dialog, startDiffDialog);
+            }).on("changeMonth", function(e) {
+                document.getElementById("snapshotDate2Dialog").value=''
+                document.getElementById("snapshotDate2DialogPicker").style.pointerEvents="none";
+                $.get("/snapshot_dates_json/" + PF.site.id + "/" + e.date, function(data) {
+                    snapshotDate2Dialog.datepickerTimes("setTimes", data);
+                    document.getElementById("snapshotDate2DialogPicker").style.pointerEvents="auto";
+                });
+            });
+
+            startDiff.click(function() {
+                    showLoader();
+                    var diffSelect = $("#diffSelect");
+                    diffSelect.removeClass("modalDialogShow").addClass("modalDialogHide");
+
+                    snapshotDate1Dialog.datepickerTimes("setTimes", snapshotDate1.datepickerTimes("getTimes"));
+                    snapshotDate1Dialog.datepickerTimes("setDate", snapshotDate1.datepickerTimes("getDate"));
+                    snapshotDate1Dialog.datepickerTimes("setTimeIndex", snapshotDate1.datepickerTimes("getTimeIndex"));
+
+                    snapshotDate2Dialog.datepickerTimes("setTimes", snapshotDate2.datepickerTimes("getTimes"));
+                    snapshotDate2Dialog.datepickerTimes("setDate", snapshotDate2.datepickerTimes("getDate"));
+                    snapshotDate2Dialog.datepickerTimes("setTimeIndex", snapshotDate2.datepickerTimes("getTimeIndex"));
+                    window.PF.start_diff(snapshotDate1.datepickerTimes('getFormattedDate'), snapshotDate2.datepickerTimes('getFormattedDate'));
+                }
+            );
+
+            startDiffDialog.click(function() {
+                        window.PF.close_diff_display();
+                        showLoader();
+                        $("#diffSelect").removeClass("modalDialogShow").addClass("modalDialogHide");
+                        window.PF.start_diff(snapshotDate1Dialog.datepickerTimes('getFormattedDate'), snapshotDate2Dialog.datepickerTimes('getFormattedDate'));
+                    }
+            );
+
+            PF.headerFrame.context.$("#compareButton").click(function() {
+                $("#diffSelect").removeClass("modalDialogHide").addClass("modalDialogShow");
+                $("#startDiff").focus();
+            });
+
+            $("#closeDiffDisplay").click(function() {
+                window.PF.close_diff_display();
+            });
+
+            $("#closeDiffSelect").click(function() {
+                window.PF.close_diff_select();
+            });
+        }
+
+        function pad(n) {
+            return n < 10 ? '0' + n : n;
+        }
+
+        function getCurrentSnapshotDate() {
+            let timestamp = PF.siteFrame.context.location.href.match(SNAPSHOT_TIMESTAMP_PATTERN);
+            if (timestamp !== null) {
+                return timestamp[0].split(/[-T:]/);
+            }
+
+            console.log("Unable to load current snapshot date from siteFrame context href, extracting date from siteFrame source.");
+            let src = document.getElementById("siteFrame").src;
+            return src.match(SNAPSHOT_TIMESTAMP_PATTERN)[0].split(/[-T:]/);
+        }
+
+        function createCalendar(data) {
+            var calendar = $("#calendar");
+            var snapshotChangeDate = PF.headerFrame.context.$("#snapshotChangeDate");
+            var currentSnapshotDate = getCurrentSnapshotDate();
+            var year = currentSnapshotDate[2];
+            var month = currentSnapshotDate[1];
+            var day = currentSnapshotDate[0];
+            var hour = currentSnapshotDate[3];
+            var minute = currentSnapshotDate[4];
+            snapshotChangeDate.attr("value", month + "/" + day + "/" + year + " " + hour + ":" + minute);
+            if (window.localizationLanguage == "nl") {
+                snapshotChangeDate.attr("value", day + "/" + month + "/" + year + " " + hour + ":" + minute);
+            }
+            calendar.datepickerTimes(
+                    {   "language": "en",
+                        "times": data,
+                        "format": "dd-mm-yyyyTHH:II",
+                        "id": "snapshotChangePicker",
+                        "alwaysShowTimes": "true",
+                        "viewDate": day + "/" + month + "/" + year
+                    }
+            ).on("changeDate", function() {
+                var viewSnapshot = $("#viewSnapshot");
+                if (calendar.datepickerTimes("isTimeSelected")) {
+                    viewSnapshot.removeAttr("disabled");
+                } else {
+                    viewSnapshot.attr("disabled", "disabled");
+                }
+            });
+            snapshotChangeDate.click(function() {
+                $("#snapshotSelect").removeClass("modalDialogHide").addClass("modalDialogShow");
+            });
+            $("#closeSnapshotSelect").click(function() {
+                closeCalendar();
+            });
+            $("#viewSnapshot").click(function() {
+                window.location.href = "/browse/HHS%20%E2%80%93%C2%A0About%20News/" + calendar.datepickerTimes("getFormattedDate") + "/" + PF.snapshot.url;
+            });
+
+        }
+
+        function closeCalendar() {
+            $("#snapshotSelect").removeClass("modalDialogShow").addClass("modalDialogHide");
+        }
+
+        function createPDFButton() {
+            PF.headerFrame.context.$("#pdfButton").click(function(e) {
+                window.PF.start_pdf_export();
+            });
+        }
+
+        function createDashboardButton(p) {
+            PF.headerFrame.context.$("#dashboardButton").click(function(e) {
+                window.PF.close_and_go_to("/dashboard/");
+                stopPropagation(e, $(p).parent());
+            });
+            PF.headerFrame.context.$("#logotype-en").click(function(e) {
+                window.PF.close_and_go_to("/dashboard/");
+                stopPropagation(e, $(p).parent());
+            });
+            PF.headerFrame.context.$(".pf-browsing-logo").click(function(e) {
+                window.PF.close_and_go_to("/dashboard/");
+                stopPropagation(e, $(p).parent());
+            });
+        }
+
+        function createSignatureButton() {
+            PF.headerFrame.context.$("#signatureButton").click(function(e) {
+                window.PF.set_up_signature_fields();
+                window.PF.show_signature();
+            });
+
+            $("#closeSignature").click(function (e) {
+                window.PF.hide_signature();
+            });
+        }
+
+        function stopPropagation(e, p){
+            var event = e || p.event;
+            if (event.stopPropagation) {
+                event.stopPropagation();
+            } else {
+                event.cancelBubble = true;
+            }
+        }
+        function showLoader() {
+            $("#loader_container").show();
+        }
+
+        function hideLoader() {
+            $("#loader_container").hide();
+        }
+
+        function showLoaderDiff() {
+            $("#loader_container_diff").show();
+        }
+
+        function hideLoaderDiff() {
+            $("#loader_container_diff").hide();
+        }
+
+        //hide loader if content becomes interactive but not fully loaded during timeout
+        function forceHideLoader() {
+            if ( $.browser.msie ) {
+                try {
+                    var contentInteractiveTimer = setInterval(function(){
+                        if(PF.getFrameContext("siteFrame") && PF.getFrameContext("siteFrame").document.readyState === "interactive") {
+                            clearInterval(contentInteractiveTimer);
+                            setTimeout(function(){PF.siteFrame.init.call(PF.siteFrame)}, 7500);
+                        }
+                    }, 400);
+                } catch (e) {
+                    hideLoader();
+                }
+            }
+        }
+        $(document).on('keydown', function(e) {
+            if ( e.keyCode === 27 ) { // ESC
+                window.PF.close_diff_display();
+                window.PF.close_diff_select();
+            }
+        });
+    </script>
+    <script>
+        $(function() {
+            $( "#digital" ).draggable({handle: '#drag, #digital_content', cancel: 'span, input'});
+        });
+    </script>
+    <script>
+        treebuilding = setInterval(function (){
+            if($(".splitbuttonV")){
+                $(".splitbuttonV").mousedown(function(eventObject){
+                    if(PF.beginBuildTree){
+                        PF.beginBuildTree = false;
+                    }else{
+                        PF.beginBuildTree = true;
+                        if (PF.snapshot.id!=ACTIVE_TREE_SNAPSHOT_ID && PF.treeFrame.context.$('#asynctree').length > 0)
+                        {
+                            PF.updateTree();
+                        }
+                    }
+                });
+                clearInterval(treebuilding);
+            }
+        }, 1000);
+
+    </script>
+
+    <!-- inserted script -->
+    <script>
+function adjustNSAmessage(){
+	var pfFrame = document.getElementById("siteFrame");
+	var h1s = pfFrame.contentWindow.document.getElementsByTagName("h1");
+	var h2s = pfFrame.contentWindow.document.getElementsByTagName("h2");
+	if(h1s[0].innerHTML == "404 ERROR" && h2s[0].innerHTML.includes("No stream available for this page"))
+	{
+		h1s[0].remove();
+		h2s[0].innerHTML = "The Pagefreezer web archiving server hosting this content is currently under maintenance. This information is temporarily inaccessible at this time.";
+	}
+}
+
+function timeoutScript(){
+	setTimeout(adjustNSAmessage(),1000);
+}
+
+function addListener(){
+	timeoutScript()
+	var siteFrame = document.getElementById('siteFrame');
+	siteFrame.addEventListener('load', timeoutScript);
+	console.log("added Listener");
+}
+window.addEventListener('load',addListener);
+</script>
+
+    <link rel="stylesheet" href="/css/style_en.css" type="text/css" media="all" />
+    <link href="/css/new-archive-browsing/css/style.css" type="text/css" rel="stylesheet">
+    <style type="text/css">
+        body{  font-family: 'VistaSansBookRegular';}
+    </style>
+
+    
+        
+            <link href="/css/archive_browsing_public.css" type="text/css" rel="stylesheet">
+        
+        
+    
+
+</head>
+
+
+
+<script type="text/javascript">
+var localizationLanguage = "en";
+
+function showNotImplemented() {
+  alert('This functionality has not been implemented yet');
+}
+function OnfocusAction(obj,str){
+	if (obj.value && obj.value == str) {
+		obj.value = ''; 
+		obj.select();
+	}
+}
+
+function OnblurAction(obj,str){
+if (obj.value == ''){ 
+obj.value = str; 
+obj.blur();
+}
+}
+function onSubmitCheck(str,id){
+var inp = document.getElementById(id);
+
+if (inp.value == str)
+inp.value= '';
+}
+
+
+function radioLogik(gid,vid){
+	if (!vid.checked) return;
+	var div_holder=document.getElementById("meta_div_"+gid);
+	var g_inputs=div_holder.getElementsByTagName('input');
+	for (i=0;i<g_inputs.length;i++){
+		if (g_inputs[i].type=="checkbox" && vid.value!=g_inputs[i].value){
+			//g_inputs[i].checked=false;
+		}else if(g_inputs[i].type=="text" && g_inputs[i].id!="start_date_"+gid+"_"+vid.value && g_inputs[i].id!="end_date_"+gid+"_"+vid.value){
+			g_inputs[i].value="";
+			g_inputs[i].parentNode.style.display="none";
+		} 
+	}
+}
+
+function mDate(mode) {
+		var cD = new Date();
+		var rDvan = new Date();
+		var rDtm = new Date();
+	switch(mode) {
+				case "vandaag": rDvan.setDate(cD.getDate()-1); rDtm.setDate(cD.getDate()-1); setDate(rDvan, rDtm);break;
+				case "week": rDvan.setDate(cD.getDate()-cD.getDay()+1); rDtm.setDate(cD.getDate()+(7-cD.getDay())); setDate(rDvan, rDtm);break;
+				case "maand": rDvan.setDate(1); rDtm.setDate(lastDay(cD)); setDate(rDvan, rDtm);break;
+			};
+	}
+function setDate(datevan, datetm) {
+		var ps = document.getElementById("publicationdatestart");
+		var pe = document.getElementById("publicationdateend");
+		if(ps && pe) {
+			ps["value"] =datevan.getFullYear()  + "-"  + correctMonth(datevan) + "-" + correctDate(datevan);
+			pe["value"] = datetm.getFullYear() + "-"  +correctMonth(datetm) + "-" + correctDate(datetm);
+		}
+	}
+function correctMonth(currentDate) {
+		var res = "0";
+		if(currentDate.getMonth() < 9) {
+			res+= currentDate.getMonth() + 1;
+		} else {
+			res = currentDate.getMonth() + 1;
+		}
+		return res;
+	}
+function correctDate(currentDate) {
+		var res = "0";
+		if(currentDate.getDate() < 10) {
+			res+= currentDate.getDate();
+		} else {
+			res = currentDate.getDate();
+		}
+		return res;
+	}
+function lastDay(currentDate) {
+		m = currentDate.getMonth();
+		if(m == (3|5|8|10)) {
+			return 30;
+		} else if(m == 1) {
+			y = currentDate.getYear();
+			if(y%4==0 & (y%100 != 0 | y%400 == 0)) {
+				return 29;
+			} else {
+				return 28;
+			}
+		}else {
+			return 31;
+		}
+	}
+function sortByRelevance(relevance) {
+		var form = document.getElementById("zoekresultaat")
+		form.innerHTML += "<input type='hidden' value='" + relevance + "' name='relevanceSort'  id='relevanceSort'/>";
+		validateForm();
+		form.submit();
+	}
+function submitTab(searchType) {
+		var form = document.getElementById("zoekresultaat");
+		var org = document.getElementById("orgtype");
+		if(org) {
+			org.value =searchType;	
+		} else {
+			form.innerHTML += "<input type='hidden' value='"+searchType+"' name='fq.orgtype'  id='orgtype'/>";
+		}
+		validateForm();
+		form.submit();
+	}
+function onLoadLogik(){
+		var fulltext_input = document.getElementById("zoek-trefwoord");
+		if(fulltext_input) {
+			fulltext_input.focus();
+		}
+		var rC = document.getElementById("res.count");
+		rC.innerHTML = rC.innerHTML.replace(/^\s+/,"").replace(/\s+$/,"").replace(/\D+/,",");
+		var tabs = document.getElementById("hoofdmenu");
+		var target = null;
+		if(tabs) {
+			var uls = tabs.getElementsByTagName("li");
+			for(i = 0; i < uls.length; i++) {
+				if(uls[i] && uls[i].nodeName.toLowerCase() == "li" && uls[i].hasChildNodes()) {
+					target = uls[i].getElementsByTagName("span")[0];
+					if(target && target.id.toString().substr(0, 4) == "org_") {
+						target.innerHTML = target.innerHTML.replace(/^\s+/,"").replace(/\s+$/,"").replace(/\D+/,",");
+					}
+				}
+			}
+		}
+	}
+function validateForm() {
+		var sel = document.getElementById('beleidsterrein');
+		if(sel && sel.selectedIndex == 0) {
+			sel.removeAttribute("name");
+		} 
+		var date_sort = document.getElementById("date_sort");
+		var endDate = document.getElementById('publicationdateend');
+		var startDate = document.getElementById('publicationdatestart');
+		if((startDate && startDate.value.length == 0) && (endDate && endDate.value.length == 0)){
+			  try { startDate.removeAttribute("name"); } catch (e) {};
+			  try {endDate.removeAttribute("name"); } catch (e) {};
+			  try {date_sort.removeAttribute("name");} catch (e) {};
+		}else if(date_sort){
+			var testDate = new RegExp("^(19|20)\\d\\d([- /.])(0[1-9]|1[012])\\2(0[1-9]|[12][0-9]|3[01])$");
+			if (testDate.test(endDate.value) && testDate.test(startDate.value)){
+				date_sort.value=date_sort.value+"["+startDate.value+"T00:00:00Z TO "+endDate.value+"T23:59:59Z]";
+			}else{	
+				var errorDiv=document.getElementById("dateError");
+				if (errorDiv){
+					errorDiv.style.display="block";
+				}
+				document.location.hash="#error";
+				return false;
+			}
+		}
+		
+		document.location.hash="";
+		return true;	
+	}
+	
+	var url_ = null;
+
+function isBrowserIE8(){
+                 var browser = navigator.appName;
+                 var b_version = navigator.appVersion;
+                 var version = parseFloat(b_version);
+                 if ((browser == "Microsoft Internet Explorer") && (b_version.indexOf("MSIE 8.0") != -1)){
+                        return true;
+                 }else{
+                        return false;
+                 }
+}
+
+function fitURLToWidth(url_string, width, weight) {
+        	var str = url_string;
+        	var result = "";
+       		var inTag = false;	//inside tag
+       		var inEsc = false;	//inside escape characters
+       		var firstSpace = true;
+		if (isBrowserIE8()){
+			var obj = document.createElement("span");
+			var control_str = "";
+			var textNode = document.createTextNode(str);
+			obj.appendChild(textNode);
+			document.body.appendChild(obj);
+			if (obj.offsetWidth > width){
+				obj.removeChild(textNode);
+				for (var i=0; i < str.length; i++){
+					control_str += str.charAt(i);
+					textNode = document.createTextNode(control_str);
+					obj.appendChild(textNode);
+					if (obj.offsetWidth > width){
+						result += "<br>";
+						control_str = str.charAt(i);
+					} else result += str.charAt(i);
+					obj.removeChild(textNode);
+				}
+			} else result = str;
+			document.body.removeChild(obj);
+		} else {
+			for (var i=0; i < str.length; i++) {
+           			if(str.charAt(i) == '<') inTag = true;
+       				if(str.charAt(i) == '>') inTag = false;
+       				if(str.charAt(i) == '&') inEsc = true;
+       				if(str.charAt(i) == ';') inEsc = false;
+   					//ignore new line and tab
+       				if(str.charAt(i)=="\n" || str.charAt(i)=="\t")
+       					continue;
+   					//ignore double space or space and new line
+   					if(str.charAt(i)==" " && (str.charAt(i+1)==" " || str.charAt(i+1)=="\n"))
+   	   					continue;
+	   				//ignore first space in line
+	   				if(firstSpace && str.charAt(i-1)==">"){
+	   					if(str.charAt(i)==" ")
+		   					continue;
+	   					firstSpace = false;
+	   				}
+	   				//ignore space, new line or tab after <br/>
+	   				if(str.substring(i, i+4)=="<br>"){
+	   					result += "<br>";
+		   				i+=4;
+		   				while(str.charAt(i)==" " || str.charAt(i)=="\t" || str.charAt(i)=="\n")
+				   			i++;
+	   				}
+       				        result += str.charAt(i);
+	                	        if(!inTag && !inEsc){
+ 	                	            if(isBrowserIE8())
+                        	                result += "&#8203;";
+                        	            else result += "<wbr>";
+                        	        } 
+       			}
+		}
+        return result;
+    }
+
+function fitTextToWidth(url_string, width, weight, size) {
+		var span = document.createElement("span");
+		var correct_url = "";
+		var url_tail = url_string;
+		span.style.display='inline';
+		span.style.visibility = 'hidden';
+		span.style.padding = '0px';
+		if (weight){
+			span.style.fontWeight = weight;
+			url_tail = url_tail.replace(/,(\S)/igm, ", $1");
+		}
+		if (size) span.style.fontSize = size;
+		document.body.appendChild(span);
+		var result = [];
+
+		correct_url += url_tail;
+
+        var words = correct_url.split(" ");
+        var innerHTML = "";
+        for (var i in words) {
+            var line = innerHTML;
+            span.innerHTML += words[i];
+            innerHTML += words[i];
+            if(span.offsetWidth > width) {
+                result.push(line,'<br/>');
+                span.innerHTML = words[i];
+                innerHTML = words[i];
+            }
+            span.innerHTML += " ";
+            innerHTML += " ";
+        }
+
+        span.innerHTML = innerHTML;
+
+        if (span.innerHTML.length > 0) {
+            result.push(span.innerHTML,'<br/>');
+        }
+
+	    result = result.join('');
+        document.body.removeChild(span);
+        return result;
+}
+	
+	//calendar block
+function createCalendarInstance(){
+		Calendar.setup({
+		trigger : "cur_value_calendar",
+		inputField : "cur_value_calendar",
+		animation : true,
+		bottomBar : true,
+		selectionType : Calendar.SEL_SINGLE,
+		 onSelect : function() { this.hide() }
+	    });
+	}
+	
+	//fields with a calendar
+	var  requiredValues = new Object();
+	requiredValues["dcterms.available"] = true;
+	requiredValues["dcterms.issued"] = true;
+	requiredValues["dcterms.modified"] = true;
+	requiredValues["dcterms.created"] = true;
+	requiredValues["dc.date"] = true;
+	//----------------------------
+function showCalendar(obj){
+		if(!obj) {
+			return;
+		}
+		var target = document.getElementById("cur_value");
+		var target_cal =  document.getElementById("cur_value_calendar");
+		var val = obj.options[obj.selectedIndex].value.toString().toLowerCase();
+		if(requiredValues[val]) {
+			target.className="cur-value-none";
+			target.name="DisabledValue";	
+			target_cal.className="";
+			target_cal.name="Value";
+		} else {
+			target_cal.className="cur-value-none";
+			target.name="Value";
+			target.className="";
+			target_cal.name="DisabledValue";
+			
+		}
+	}
+
+function validDates(id){
+		var target_cal =  document.getElementById(id);
+		if (target_cal.name=="Value"){
+			var testDate = new RegExp("^(19|20)\\d\\d([- /.])(0[1-9]|1[012])\\2(0[1-9]|[12][0-9]|3[01])$");
+			if (!testDate.test(target_cal.value)){
+				var currValueCalendar = document.getElementById("cur_value_calendar");
+				return false;
+			}		
+		}
+		return true;
+		
+	}
+	
+	
+	/*
+	 *      callback - the name of the function to use
+	 *	params - the array with parameters of any type
+	 *      examle:
+	 *	function test(pr_int_1, pr_int_2, pr_obj_3) {
+	 *		$("#"+pr_obj_3).html(pr_int_1 + pr_int_2);
+	 *	}
+	 *	performAction(test, [3, 3, "step_5"]);
+	 *
+	 */
+	function	performAction(callback, params){
+	$.ajax({
+		url: "/issession/",
+		type: "POST",
+		dataType: "xml",
+		success: function (data, textStatus){
+			var is_s = $(data).find("status").attr("value");
+			if(is_s && is_s == "true" && callback || (anonymousUser && callback)) {
+				if(!params) {
+					callback();
+				} else {
+					callback.apply(this, params);
+				}
+			} else {
+				if (self.parent.frames.length != 0) {
+					self.parent.location =  "/";
+				} else {
+					document.location.href = "/";
+				}
+			}
+		}
+	});
+}
+
+function trimLink($elem,width,prepString){
+				var indexOfSlash = $elem.text().indexOf('/');
+				var prefix = $elem.text().substring(0,indexOfSlash+2);
+                                var text05 = null;
+                                var flag = true;
+				var temp = null;
+				var result = null;
+				var isTrim = false;
+                                //divide the line in half until it will fit into the width
+                                while (flag){
+                                    if ($elem.innerWidth() > width){
+					isTrim = true;
+                                        temp = $elem.text();
+                                        text05 = temp.substring(indexOfSlash+2, Math.ceil(temp.length/2));
+                                        $elem.text(prefix + temp.substring(Math.ceil(temp.length/2), temp.length));
+                                    }
+                                    else {flag = false;}
+                                }
+                                //prepends the string until it reaches the limit of width
+                                if($elem.innerWidth()<(width-20) && text05!=null){
+				    if (text05.length > 15){
+				    	temp = $elem.text();
+					result = prefix + text05.substring(text05.length-16,text05.length) + temp.substring(indexOfSlash+2,temp.length);
+					$elem.text(result);
+				    } else {
+					temp = $elem.text();
+					result = prefix + text05 + temp.substring(indexOfSlash+2,temp.length);
+					$elem.text(result);
+				    }
+                                }
+				if (isTrim){
+				 temp = $elem.text();
+				 result = prefix + prepString + temp.substring(indexOfSlash+2,temp.length);
+				 $elem.text(result);
+				}
+                                //make visible string
+                                $elem.toggle();
+                            }
+                            
+function trimText($elem,width,prepString){
+			var indexTrim= 20;
+			var prefix = $elem.text().substring(0,indexTrim);
+			var text05 = null;
+			var flag = true;
+			var temp = null;
+			var result = null;
+			var isTrim = false;
+                            //divide the line in half until it will fit into the width
+                            while (flag){
+                                if ($elem.innerWidth() > width){
+									isTrim = true;
+                                    temp = $elem.text();
+                                    text05 = temp.substring(indexTrim, Math.ceil(temp.length/2));
+                                    $elem.text(prefix + temp.substring(Math.ceil(temp.length/2), temp.length));
+                                }
+                                else {flag = false;}
+                            }
+                            //prepends the string until it reaches the limit of width
+                            if($elem.innerWidth()<(width-20) && text05!=null){
+			    if (text05.length > 15){
+			    	temp = $elem.text();
+					result = prefix + text05.substring(text05.length-16,text05.length) + temp.substring(indexTrim,temp.length);
+					$elem.text(result);
+			    } else {
+					temp = $elem.text();
+					result = prefix + text05 + temp.substring(indexTrim,temp.length);
+					$elem.text(result);
+			    }
+                            }
+			if (isTrim){
+			 temp = $elem.text();
+			 result = prefix + prepString + temp.substring(indexTrim,temp.length);
+			 $elem.text(result);
+			}
+                            //make visible string
+                            $elem.show();
+                        }
+</script>
+
+
+    <script>anonymousUser = true;</script>
+
+
+<script type="text/javascript">
+
+function frmtDate(datestr) {
+	return formatDate(new Date(getDateFromFormat(datestr,"dd/MM/yyyy HH:mm")),"dd-MM-yyyyTHH:mm")
+}
+
+function changeSnapshot(jdate,id, websiteName) {
+ 
+    var snapshot_id = id;
+    var date =  formatDate(jdate,"dd-MM-yyyyTHH:mm");
+    var curr_location = ""; 	
+	
+
+    if (parent.document) curr_location = parent.window.frames[2].location.href;
+	else curr_location = window.frames[2].location.href;
+    var reg_exp = new RegExp("(\\d{2}-\\d{2}-\\d{4}T\\d{2}:\\d{2})/(.*)$");
+    var match_array = curr_location.match(reg_exp);
+    var curr_url = RegExp.$2;
+    var frm;
+     if (parent.document) frm = parent.window.frames[2];
+	else frm = window.frames[2];
+
+    location = "/browse/"+ websiteName + "/" + date + "/" + curr_url; 	
+}
+
+
+// java.text.SimpleDateFormat class, with minor exceptions.
+// The format string consists of the following abbreviations:
+// 
+// Field        | Full Form          | Short Form
+// -------------+--------------------+-----------------------
+// Year         | yyyy (4 digits)    | yy (2 digits), y (2 or 4 digits)
+// Month        | MMM (name or abbr.)| MM (2 digits), M (1 or 2 digits)
+//              | NNN (abbr.)        |
+// Day of Month | dd (2 digits)      | d (1 or 2 digits)
+// Day of Week  | EE (name)          | E (abbr)
+// Hour (1-12)  | hh (2 digits)      | h (1 or 2 digits)
+// Hour (0-23)  | HH (2 digits)      | H (1 or 2 digits)
+// Hour (0-11)  | KK (2 digits)      | K (1 or 2 digits)
+// Hour (1-24)  | kk (2 digits)      | k (1 or 2 digits)
+// Minute       | mm (2 digits)      | m (1 or 2 digits)
+// Second       | ss (2 digits)      | s (1 or 2 digits)
+// AM/PM        | a                  |
+//
+// NOTE THE DIFFERENCE BETWEEN MM and mm! Month=MM, not mm!
+// Examples:
+//  "MMM d, y" matches: January 01, 2000
+//                      Dec 1, 1900
+//                      Nov 20, 00
+//  "M/d/yy"   matches: 01/20/00
+//                      9/2/00
+//  "MMM dd, yyyy hh:mm:ssa" matches: "January 01, 2000 12:30:45AM"
+// ------------------------------------------------------------------
+
+var MONTH_NAMES=new Array('January','February','March','April','May','June','July','August','September','October','November','December','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec');
+var DAY_NAMES=new Array('Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sun','Mon','Tue','Wed','Thu','Fri','Sat');
+function LZ(x) {return(x<0||x>9?"":"0")+x}
+
+// ------------------------------------------------------------------
+// isDate ( date_string, format_string )
+// Returns true if date string matches format of format string and
+// is a valid date. Else returns false.
+// It is recommended that you trim whitespace around the value before
+// passing it to this function, as whitespace is NOT ignored!
+// ------------------------------------------------------------------
+function isDate(val,format) {
+	var date=getDateFromFormat(val,format);
+	if (date==0) { return false; }
+	return true;
+	}
+
+// -------------------------------------------------------------------
+// compareDates(date1,date1format,date2,date2format)
+//   Compare two date strings to see which is greater.
+//   Returns:
+//   1 if date1 is greater than date2
+//   0 if date2 is greater than date1 of if they are the same
+//  -1 if either of the dates is in an invalid format
+// -------------------------------------------------------------------
+function compareDates(date1,dateformat1,date2,dateformat2) {
+	var d1=getDateFromFormat(date1,dateformat1);
+	var d2=getDateFromFormat(date2,dateformat2);
+	if (d1==0 || d2==0) {
+		return -1;
+		}
+	else if (d1 > d2) {
+		return 1;
+		}
+	return 0;
+	}
+
+// ------------------------------------------------------------------
+// formatDate (date_object, format)
+// Returns a date in the output format specified.
+// The format string uses the same abbreviations as in getDateFromFormat()
+// ------------------------------------------------------------------
+function formatDate(date,format) {
+	format=format+"";
+	var result="";
+	var i_format=0;
+	var c="";
+	var token="";
+	var y=date.getYear()+"";
+	var M=date.getMonth()+1;
+	var d=date.getDate();
+	var E=date.getDay();
+	var H=date.getHours();
+	var m=date.getMinutes();
+	var s=date.getSeconds();
+	var yyyy,yy,MMM,MM,dd,hh,h,mm,ss,ampm,HH,H,KK,K,kk,k;
+	// Convert real date parts into formatted versions
+	var value=new Object();
+	if (y.length < 4) {y=""+(y-0+1900);}
+	value["y"]=""+y;
+	value["yyyy"]=y;
+	value["yy"]=y.substring(2,4);
+	value["M"]=M;
+	value["MM"]=LZ(M);
+	value["MMM"]=MONTH_NAMES[M-1];
+	value["NNN"]=MONTH_NAMES[M+11];
+	value["d"]=d;
+	value["dd"]=LZ(d);
+	value["E"]=DAY_NAMES[E+7];
+	value["EE"]=DAY_NAMES[E];
+	value["H"]=H;
+	value["HH"]=LZ(H);
+	if (H==0){value["h"]=12;}
+	else if (H>12){value["h"]=H-12;}
+	else {value["h"]=H;}
+	value["hh"]=LZ(value["h"]);
+	if (H>11){value["K"]=H-12;} else {value["K"]=H;}
+	value["k"]=H+1;
+	value["KK"]=LZ(value["K"]);
+	value["kk"]=LZ(value["k"]);
+	if (H > 11) { value["a"]="PM"; }
+	else { value["a"]="AM"; }
+	value["m"]=m;
+	value["mm"]=LZ(m);
+	value["s"]=s;
+	value["ss"]=LZ(s);
+	while (i_format < format.length) {
+		c=format.charAt(i_format);
+		token="";
+		while ((format.charAt(i_format)==c) && (i_format < format.length)) {
+			token += format.charAt(i_format++);
+			}
+		if (value[token] != null) { result=result + value[token]; }
+		else { result=result + token; }
+		}
+	return result;
+	}
+	
+// ------------------------------------------------------------------
+// Utility functions for parsing in getDateFromFormat()
+// ------------------------------------------------------------------
+function _isInteger(val) {
+	var digits="1234567890";
+	for (var i=0; i < val.length; i++) {
+		if (digits.indexOf(val.charAt(i))==-1) { return false; }
+		}
+	return true;
+	}
+function _getInt(str,i,minlength,maxlength) {
+	for (var x=maxlength; x>=minlength; x--) {
+		var token=str.substring(i,i+x);
+		if (token.length < minlength) { return null; }
+		if (_isInteger(token)) { return token; }
+		}
+	return null;
+	}
+	
+// ------------------------------------------------------------------
+// getDateFromFormat( date_string , format_string )
+//
+// This function takes a date string and a format string. It matches
+// If the date string matches the format string, it returns the 
+// getTime() of the date. If it does not match, it returns 0.
+// ------------------------------------------------------------------
+function getDateFromFormat(val,format) {
+	val=val+"";
+	format=format+"";
+	var i_val=0;
+	var i_format=0;
+	var c="";
+	var token="";
+	var token2="";
+	var x,y;
+	var now=new Date();
+	var year=now.getYear();
+	var month=now.getMonth()+1;
+	var date=1;
+	var hh=now.getHours();
+	var mm=now.getMinutes();
+	var ss=now.getSeconds();
+	var ampm="";
+	
+	while (i_format < format.length) {
+		// Get next token from format string
+		c=format.charAt(i_format);
+		token="";
+		while ((format.charAt(i_format)==c) && (i_format < format.length)) {
+			token += format.charAt(i_format++);
+			}
+		// Extract contents of value based on format token
+		if (token=="yyyy" || token=="yy" || token=="y") {
+			if (token=="yyyy") { x=4;y=4; }
+			if (token=="yy")   { x=2;y=2; }
+			if (token=="y")    { x=2;y=4; }
+			year=_getInt(val,i_val,x,y);
+			if (year==null) { return 0; }
+			i_val += year.length;
+			if (year.length==2) {
+				if (year > 70) { year=1900+(year-0); }
+				else { year=2000+(year-0); }
+				}
+			}
+		else if (token=="MMM"||token=="NNN"){
+			month=0;
+			for (var i=0; i<MONTH_NAMES.length; i++) {
+				var month_name=MONTH_NAMES[i];
+				if (val.substring(i_val,i_val+month_name.length).toLowerCase()==month_name.toLowerCase()) {
+					if (token=="MMM"||(token=="NNN"&&i>11)) {
+						month=i+1;
+						if (month>12) { month -= 12; }
+						i_val += month_name.length;
+						break;
+						}
+					}
+				}
+			if ((month < 1)||(month>12)){return 0;}
+			}
+		else if (token=="EE"||token=="E"){
+			for (var i=0; i<DAY_NAMES.length; i++) {
+				var day_name=DAY_NAMES[i];
+				if (val.substring(i_val,i_val+day_name.length).toLowerCase()==day_name.toLowerCase()) {
+					i_val += day_name.length;
+					break;
+					}
+				}
+			}
+		else if (token=="MM"||token=="M") {
+			month=_getInt(val,i_val,token.length,2);
+			if(month==null||(month<1)||(month>12)){return 0;}
+			i_val+=month.length;}
+		else if (token=="dd"||token=="d") {
+			date=_getInt(val,i_val,token.length,2);
+			if(date==null||(date<1)||(date>31)){return 0;}
+			i_val+=date.length;}
+		else if (token=="hh"||token=="h") {
+			hh=_getInt(val,i_val,token.length,2);
+			if(hh==null||(hh<1)||(hh>12)){return 0;}
+			i_val+=hh.length;}
+		else if (token=="HH"||token=="H") {
+			hh=_getInt(val,i_val,token.length,2);
+			if(hh==null||(hh<0)||(hh>23)){return 0;}
+			i_val+=hh.length;}
+		else if (token=="KK"||token=="K") {
+			hh=_getInt(val,i_val,token.length,2);
+			if(hh==null||(hh<0)||(hh>11)){return 0;}
+			i_val+=hh.length;}
+		else if (token=="kk"||token=="k") {
+			hh=_getInt(val,i_val,token.length,2);
+			if(hh==null||(hh<1)||(hh>24)){return 0;}
+			i_val+=hh.length;hh--;}
+		else if (token=="mm"||token=="m") {
+			mm=_getInt(val,i_val,token.length,2);
+			if(mm==null||(mm<0)||(mm>59)){return 0;}
+			i_val+=mm.length;}
+		else if (token=="ss"||token=="s") {
+			ss=_getInt(val,i_val,token.length,2);
+			if(ss==null||(ss<0)||(ss>59)){return 0;}
+			i_val+=ss.length;}
+		else if (token=="a") {
+			if (val.substring(i_val,i_val+2).toLowerCase()=="am") {ampm="AM";}
+			else if (val.substring(i_val,i_val+2).toLowerCase()=="pm") {ampm="PM";}
+			else {return 0;}
+			i_val+=2;}
+		else {
+			if (val.substring(i_val,i_val+token.length)!=token) {return 0;}
+			else {i_val+=token.length;}
+			}
+		}
+	// If there are any trailing characters left in the value, it doesn't match
+	if (i_val != val.length) { return 0; }
+	// Is date valid for month?
+	if (month==2) {
+		// Check for leap year
+		if ( ( (year%4==0)&&(year%100 != 0) ) || (year%400==0) ) { // leap year
+			if (date > 29){ return 0; }
+			}
+		else { if (date > 28) { return 0; } }
+		}
+	if ((month==4)||(month==6)||(month==9)||(month==11)) {
+		if (date > 30) { return 0; }
+		}
+	// Correct hours value
+	if (hh<12 && ampm=="PM") { hh=hh-0+12; }
+	else if (hh>11 && ampm=="AM") { hh-=12; }
+	var newdate=new Date(year,month-1,date,hh,mm,ss);
+	return newdate.getTime();
+	}
+
+// ------------------------------------------------------------------
+// parseDate( date_string [, prefer_euro_format] )
+//
+// This function takes a date string and tries to match it to a
+// number of possible date formats to get the value. It will try to
+// match against the following international formats, in this order:
+// y-M-d   MMM d, y   MMM d,y   y-MMM-d   d-MMM-y  MMM d
+// M/d/y   M-d-y      M.d.y     MMM-d     M/d      M-d
+// d/M/y   d-M-y      d.M.y     d-MMM     d/M      d-M
+// A second argument may be passed to instruct the method to search
+// for formats like d/M/y (european format) before M/d/y (American).
+// Returns a Date object or null if no patterns match.
+// ------------------------------------------------------------------
+function parseDate(val) {
+	var preferEuro=(arguments.length==2)?arguments[1]:false;
+	generalFormats=new Array('y-M-d','MMM d, y','MMM d,y','y-MMM-d','d-MMM-y','MMM d');
+	monthFirst=new Array('M/d/y','M-d-y','M.d.y','MMM-d','M/d','M-d');
+	dateFirst =new Array('d/M/y','d-M-y','d.M.y','d-MMM','d/M','d-M');
+	var checkList=new Array('generalFormats',preferEuro?'dateFirst':'monthFirst',preferEuro?'monthFirst':'dateFirst');
+	var d=null;
+	for (var i=0; i<checkList.length; i++) {
+		var l=window[checkList[i]];
+		for (var j=0; j<l.length; j++) {
+			d=getDateFromFormat(val,l[j]);
+			if (d!=0) { return new Date(d); }
+			}
+		}
+	return null;
+	}
+
+</script>
+
+
+
+
+
+
+
+<body style="margin: 0px; padding: 0px;">
+<div id="loader_container" class="loader"
+        
+            style="display: none;"
+        >
+    <div class="loader_area">&nbsp;</div>
+    <div class="loader_image_container">
+        <div class="loader_image_block absolute-center">
+            <i class="fa fa-spinner fa-spin" aria-hidden="true" title="page loading"></i>
+        </div>
+    </div>
+</div>
+<div id="building" class="loader"  style="display: none;" >
+    <div class="loader_area">&nbsp;</div>
+    <div class="loader_image_container">
+        <div class="loader_image_block absolute-center">
+            <i class="fa fa-spinner fa-spin" aria-hidden="true" title="page loading"></i>
+        </div>
+    </div>
+</div>
+
+
+    
+        <div id="contentWrapper">
+            <script>
+                function showOptionsSidebar() {
+                    toggleOptionsSidebar();
+                    var newWidth = document.getElementById("toggle-options-margin").offsetWidth - 250;
+                    var newWidthString = newWidth + "px";
+                    var toggleMarginWidth = $("toggle-options-margin").width == 500 ? "100%" : newWidthString;
+                    var toggleMarginLeft = $("toggle-options-margin").marginLeft == 500 ? "0px" : "250px";
+                    $("#toggle-options-margin").animate({width: toggleMarginWidth,marginLeft: toggleMarginLeft},
+                            {
+                                complete: function() {
+                                    document.getElementById("toggle-options-margin").style.width = "calc(100% - 250px)";
+                                }
+                            });
+                    $("#hide-options").focus();
+                }
+
+                function hideOptionsSidebar() {
+                    toggleOptionsSidebar();
+                    var toggleMarginWidth = $("toggle-options-margin").width == 500 ? "calc(100% - 250px)" : "100%";
+                    var toggleMarginLeft = $("toggle-options-margin").marginLeft == 500 ? "250px" : "0px";
+                    $("#toggle-options-margin").animate({width: toggleMarginWidth, marginLeft: toggleMarginLeft});
+                    $("#show-options").focus();
+                }
+
+                function toggleOptionsSidebar() {
+                    $("#headerFrame").animate({width: 'toggle'});
+                    $("#hide-options").toggle();
+                    $("#show-options").toggle();
+                }
+            </script>
+            <iframe frameborder="no" width="100%" src="/browse_top/?site_name=7846&site_url=https%3A%2F%2Fwww.hhs.gov%2Fabout%2Fnews%2Findex.html&date=20-01-2021T12:29&isPublic=true" aria-label="tool bar" name="headerFrame" id="headerFrame" onLoad="PF.headerFrame.init()" scrolling="NO">
+            </iframe>
+            <div id="toggle-options-box">
+                <a id="public-logo-permalink" href="http://www.pagefreezer.com" tabindex="-1">
+                    <img src="/css/images/en/pagefreezer-logo-new.png" alt="Pagefreezer Logo"/>
+                </a>
+                <script>
+                    var publicLocale = "en";
+                    if (publicLocale.includes("nl")) {
+                        document.getElementById("public-logo-permalink").href = "http://www.pagefreezer.nl";
+                    }
+                </script>
+                <button class="btn btn-link" id="hide-options" onclick="hideOptionsSidebar()" style="position:absolute;bottom:10px;right:10px;" tabindex="0" aria-label="hide option sidebar">
+                    Hide Options <i class="fa fa-angle-double-left" aria-hidden="true"></i>
+                </button>
+                <button class="btn btn-link" id="show-options" onclick="showOptionsSidebar()" style="position:absolute;bottom:10px;right:10px;display:none;" tabindex="0" aria-label="show option sidebar">
+                    Show Options <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+                </button>
+            </div>
+            
+            <div id="contentHolder">
+                <div id="toggle-options-margin">
+                    
+                    
+                        <iframe frameborder="no" width="100%" height="100%"
+                                src='/content/1666837117270/HHS%20%E2%80%93%C2%A0About%20News/20-01-2021T12:29/https://www.hhs.gov/about/news/2020/03/19/secretary-azar-hosts-call-with-counterparts-of-g7-countries-on-covid-19-response.html' name="ArchivePresenter"
+                                aria-label="Archive Presenter" id="siteFrame" scrolling="auto"
+                                onLoad="PF.siteFrame.init()"></iframe>
+                    
+                    <iframe frameborder="no" width="100%" height="100%" src='' aria-label="search frame"
+                            name="searchFrame" id="searchFrame" scrolling="auto"></iframe>
+                </div>
+            </div>
+        </div>
+    
+    
+
+
+
+
+<!--digital signature popup html start -->
+<div id="Secure-Timestamp" class="modalDialogHide">
+    <div class="modal-dialog-timestamp">
+        <div class="modal-content">
+            <!-- modal body start -->
+            <div class="modal-header-timestamp"> <button id="closeSignature" type="button" class="close" style="margin-top:5px;">&times;</button>
+            </div>
+            <div style="text-align:center;background-color:#fff;">
+                <p class="timestamp-title">Digitally signed by <span style="color:#00928f;">Pagefreezer</span></p>
+                <form class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">Signature: </label>
+                        <div class="col-sm-8">
+                            <input id="signHash" readonly type="text" value="" title="signed hash" class="form-control" style="background-color: #fff">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">Archive Date: </label>
+                        <div class="col-sm-8">
+                            <input id="timestamp" readonly type="text" value="" title="timestamp start date" class="form-control" style="background-color: #fff">
+                        </div>
+                    </div>
+                    <div class="form-group" id="endDate">
+                        <label class="col-sm-4 control-label">End Date: </label>
+                        <div class="col-sm-8">
+                            <input id="timestampEnd" readonly type="text" value="" title="timestamp end date" class="form-control" style="background-color: #fff">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!--digital signature popup html end -->
+
+<div id="export_pdf_popup" class="modalDialogHide">
+    <div class="modal-dialog">
+        <div class="modal-content" style="top: 180px;  min-height: 190px; border-radius: 5px">
+            <form action="" class="normal-form">
+                <div class="modal-header">
+                    <h3 class="inline-items"  style="margin: 0px;">PDF export
+                        <button type="button" class="close" data-dismiss="modal" onclick="javascript:window.PF.close_pdf_export()">&times;</button></h3>
+                </div>
+                <div class="modal-body" style="text-align:center;">
+
+                    <div id="panelLoadingExport" class="panelHide">
+                        <p>We are preparing your PDF. Downloading will start momentarily.</p>
+                        <p id="pdfExportRetryMessage"></p>
+                        <div class="loader_image_block absolute-center">
+                            <i class="fa fa-spinner fa-spin" aria-hidden="true" title="pdf export loading"></i>
+                        </div>
+                    </div>
+
+                    <div id="panelError" class="panelHide">
+                        <p>Please try again later.
+                            <br /><label id="errorCode" style="color: #B1B1B1"> </label></p>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div id="diffSelect" class="modalDialogHide">
+    <div class="modal-dialog" style="position: initial;">
+        <div class="modal-content">
+            <!-- modal body start -->
+            <div class="compare-calendar">
+                <div id="snapshotDate1"><p class="snapshotTitle">1st snapshot</p></div>
+                <div id="snapshotDate2"><p class="snapshotTitle">&nbsp;&nbsp;&nbsp;2nd snapshot</p></div>
+            </div>
+            <div class="startDiff_btn">
+                <button id="startDiff" tabindex="0" value="Compare" type="button" class="btn btn-primary">Compare</button>
+                <button id="closeDiffSelect" tabindex="0" class="btn btn-link float-right closeDiff">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="diffDisplay" class="modalDialogHide">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- modal body start -->
+            <div id="modal-header-changesnapshots">
+                <h4 class="pull-left">
+                    <i class="fa fa-files-o" aria-hidden="true"></i>
+                    Compare Web Pages
+                </h4>
+                <div id="changeDiffSnapshots">
+                    1st snapshot: <input tabindex="0" id="snapshotDate1Dialog" type="text" title="1st snapshot date" />
+                    2nd snapshot: <input tabindex="0" id="snapshotDate2Dialog" type="text" title="2nd snapshot date" />
+                    <button id="startDiffDialog" tabindex="0" type="button" class="btn btn-primary">Compare</button>
+                </div>
+                <button id="closeDiffDisplay" tabindex="0" type="button" class="close pull-right outlined-focus">&times;</button>
+            </div>
+            <div id="iFramecontainer">
+                <div id="loader_container_diff" class="loader" style="display: none;">
+                    <div class="loader_image_container">
+                        <div class="loader_image_block absolute-center">
+                            <i class="fa fa-spinner fa-spin" aria-hidden="true" title="loading diff container"></i>
+                        </div>
+                    </div>
+                </div>
+                <iframe id="diffCodePane"></iframe>
+            </div>
+            <div id="errorContainer" class="modal-body">
+                <h4 id="diffErrorText"></h4>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<input type="hidden" id="sigPopupSnapshotId" value="6488948" />
+<input type="hidden" id="sigPopupPageUrl" value="https://www.hhs.gov/about/news/index.html" />
+<input type="hidden" id="taskSiteName" value="HHS%20%E2%80%93%C2%A0About%20News" />
+
+<div id="searchPrompt" style="display: none;">
+    <form id="searchForm" action="/search/" method="POST" target="searchFrame">
+        <input type="hidden" id="Name_1" name="Name" value="fulltext" />
+        <input type="hidden" id="Name_2" name="Name" value="url" />
+        <input type="hidden" id="Name_3" name="Name" value="attachment_doc" />
+        <input type="hidden" id="searchQuery" name="Value" value="" />
+        <input type="hidden" id="date" name="date" value="20-01-2021T12:29"/>
+        <input type="hidden" id="is_date" name="is_date" value="false"/>
+        <input type="hidden" id="date_from" name="date_from" value=""/>
+        <input type="hidden" id="date_to" name="date_to" value="2021-01-20T12:29:03"/>
+        <input type="hidden" id="Name_input" name="Name" value="fulltext" />
+        <input type="hidden" id="site_name_input" name="site_name" value="7846" />
+        <input type="hidden" id="snapshot_id" name="snapshot_id" value="6488948" />
+        <input type="hidden" id="user_id" name="user_id" value="1666" />
+        <input type="hidden" id="showDateRange" name="showDateRange" value="true" />
+        <input type="hidden" id="incrementalResults" name="incrementalResults" value="true" />
+        <input type="hidden" id="origin" name="origin" value="" />
+    </form>
+</div>
+
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v652eace1692a40cfa3763df669d7439c1639079717194" integrity="sha512-Gi7xpJR8tSkrpF7aordPZQlW2DLtzUlZcumS8dMQjwDHEnw9I7ZLyiOj/6tZStRBGtGgN6ceN6cMH8z7etPGlw==" data-cf-beacon='{"rayId":"7607f12dee90268c","token":"34634c3ea9d542d7b33bc3db6f50ddbf","version":"2022.10.3","si":100}' crossorigin="anonymous"></script>
+</body>
+</html>

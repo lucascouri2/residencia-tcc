@@ -1,0 +1,1237 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-US">
+<head><meta charset="UTF-8"><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>class RocketLazyLoadScripts{constructor(){this.triggerEvents=["keydown","mousedown","mousemove","touchmove","touchstart","touchend","wheel"],this.userEventHandler=this._triggerListener.bind(this),this.touchStartHandler=this._onTouchStart.bind(this),this.touchMoveHandler=this._onTouchMove.bind(this),this.touchEndHandler=this._onTouchEnd.bind(this),this.clickHandler=this._onClick.bind(this),this.interceptedClicks=[],window.addEventListener("pageshow",(e=>{this.persisted=e.persisted})),window.addEventListener("DOMContentLoaded",(()=>{this._preconnect3rdParties()})),this.delayedScripts={normal:[],async:[],defer:[]},this.allJQueries=[]}_addUserInteractionListener(e){document.hidden?e._triggerListener():(this.triggerEvents.forEach((t=>window.addEventListener(t,e.userEventHandler,{passive:!0}))),window.addEventListener("touchstart",e.touchStartHandler,{passive:!0}),window.addEventListener("mousedown",e.touchStartHandler),document.addEventListener("visibilitychange",e.userEventHandler))}_removeUserInteractionListener(){this.triggerEvents.forEach((e=>window.removeEventListener(e,this.userEventHandler,{passive:!0}))),document.removeEventListener("visibilitychange",this.userEventHandler)}_onTouchStart(e){"HTML"!==e.target.tagName&&(window.addEventListener("touchend",this.touchEndHandler),window.addEventListener("mouseup",this.touchEndHandler),window.addEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.addEventListener("mousemove",this.touchMoveHandler),e.target.addEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"onclick","rocket-onclick"))}_onTouchMove(e){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler),e.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"rocket-onclick","onclick")}_onTouchEnd(e){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler)}_onClick(e){e.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"rocket-onclick","onclick"),this.interceptedClicks.push(e),e.preventDefault(),e.stopPropagation(),e.stopImmediatePropagation()}_replayClicks(){window.removeEventListener("touchstart",this.touchStartHandler,{passive:!0}),window.removeEventListener("mousedown",this.touchStartHandler),this.interceptedClicks.forEach((e=>{e.target.dispatchEvent(new MouseEvent("click",{view:e.view,bubbles:!0,cancelable:!0}))}))}_renameDOMAttribute(e,t,n){e.hasAttribute&&e.hasAttribute(t)&&(event.target.setAttribute(n,event.target.getAttribute(t)),event.target.removeAttribute(t))}_triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}_preconnect3rdParties(){let e=[];document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((t=>{if(t.hasAttribute("src")){const n=new URL(t.src).origin;n!==location.origin&&e.push({src:n,crossOrigin:t.crossOrigin||"module"===t.getAttribute("data-rocket-type")})}})),e=[...new Map(e.map((e=>[JSON.stringify(e),e]))).values()],this._batchInjectResourceHints(e,"preconnect")}async _loadEverythingNow(){this.lastBreath=Date.now(),this._delayEventListeners(),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async);try{await this._triggerDOMContentLoaded(),await this._triggerWindowLoad()}catch(e){}window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this._replayClicks()}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((e=>{e.hasAttribute("src")?e.hasAttribute("async")&&!1!==e.async?this.delayedScripts.async.push(e):e.hasAttribute("defer")&&!1!==e.defer||"module"===e.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(e):this.delayedScripts.normal.push(e):this.delayedScripts.normal.push(e)}))}async _transformScript(e){return await this._littleBreath(),new Promise((t=>{const n=document.createElement("script");[...e.attributes].forEach((e=>{let t=e.nodeName;"type"!==t&&("data-rocket-type"===t&&(t="type"),n.setAttribute(t,e.nodeValue))})),e.hasAttribute("src")?(n.addEventListener("load",t),n.addEventListener("error",t)):(n.text=e.text,t());try{e.parentNode.replaceChild(n,e)}catch(e){t()}}))}async _loadScriptsFromList(e){const t=e.shift();return t?(await this._transformScript(t),this._loadScriptsFromList(e)):Promise.resolve()}_preloadAllScripts(){this._batchInjectResourceHints([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}_batchInjectResourceHints(e,t){var n=document.createDocumentFragment();e.forEach((e=>{if(e.src){const i=document.createElement("link");i.href=e.src,i.rel=t,"preconnect"!==t&&(i.as="script"),e.getAttribute&&"module"===e.getAttribute("data-rocket-type")&&(i.crossOrigin=!0),e.crossOrigin&&(i.crossOrigin=e.crossOrigin),n.appendChild(i)}})),document.head.appendChild(n)}_delayEventListeners(){let e={};function t(t,n){!function(t){function n(n){return e[t].eventsToRewrite.indexOf(n)>=0?"rocket-"+n:n}e[t]||(e[t]={originalFunctions:{add:t.addEventListener,remove:t.removeEventListener},eventsToRewrite:[]},t.addEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.add.apply(t,arguments)},t.removeEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.remove.apply(t,arguments)})}(t),e[t].eventsToRewrite.push(n)}function n(e,t){let n=e[t];Object.defineProperty(e,t,{get:()=>n||function(){},set(i){e["rocket"+t]=n=i}})}t(document,"DOMContentLoaded"),t(window,"DOMContentLoaded"),t(window,"load"),t(window,"pageshow"),t(document,"readystatechange"),n(document,"onreadystatechange"),n(window,"onload"),n(window,"onpageshow")}_delayJQueryReady(e){let t=window.jQuery;Object.defineProperty(window,"jQuery",{get:()=>t,set(n){if(n&&n.fn&&!e.allJQueries.includes(n)){n.fn.ready=n.fn.init.prototype.ready=function(t){e.domReadyFired?t.bind(document)(n):document.addEventListener("rocket-DOMContentLoaded",(()=>t.bind(document)(n)))};const t=n.fn.on;n.fn.on=n.fn.init.prototype.on=function(){if(this[0]===window){function e(e){return e.split(" ").map((e=>"load"===e||0===e.indexOf("load.")?"rocket-jquery-load":e)).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=e(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach((t=>{delete Object.assign(arguments[0],{[e(t)]:arguments[0][t]})[t]}))}return t.apply(this,arguments),this},e.allJQueries.push(n)}t=n}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._littleBreath(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._littleBreath(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._littleBreath(),window.dispatchEvent(new Event("rocket-load")),await this._littleBreath(),window.rocketonload&&window.rocketonload(),await this._littleBreath(),this.allJQueries.forEach((e=>e(window).trigger("rocket-jquery-load"))),await this._littleBreath();const e=new Event("rocket-pageshow");e.persisted=this.persisted,window.dispatchEvent(e),await this._littleBreath(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted})}_handleDocumentWrite(){const e=new Map;document.write=document.writeln=function(t){const n=document.currentScript,i=document.createRange(),r=n.parentElement;let o=e.get(n);void 0===o&&(o=n.nextSibling,e.set(n,o));const s=document.createDocumentFragment();i.setStart(s,0),s.appendChild(i.createContextualFragment(t)),r.insertBefore(s,o)}}async _littleBreath(){Date.now()-this.lastBreath>45&&(await this._requestAnimFrame(),this.lastBreath=Date.now())}async _requestAnimFrame(){return document.hidden?new Promise((e=>setTimeout(e))):new Promise((e=>requestAnimationFrame(e)))}static run(){const e=new RocketLazyLoadScripts;e._addUserInteractionListener(e)}}RocketLazyLoadScripts.run();</script>
+<!-- Google Tag Manager -->
+<script type="rocketlazyloadscript">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PBSFB6S');</script>
+<!-- End Google Tag Manager -->
+<script async src="//www.googletagservices.com/tag/js/gpt.js"></script><script data-minify="1" async src="https://gearjunkie.com/wp-content/cache/min/1/wp-content/themes/marvin2/assets/scripts/prebid3.1.0.js?ver=1666785607"></script>
+<script type="rocketlazyloadscript" async src="https://www.googletagmanager.com/gtag/js?id=UA-56514361-3"></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-56514361-3', {
+	'custom_map': {
+	'dimension1': 'author',
+	'dimension2': 'category'
+},
+'allow_ad_personalization_signals': true,
+'link_attribution': true
+});
+gtag('config', 'G-LEC6MB4KY9', {
+	'custom_map': {
+	'dimension1': 'author',
+	'dimension2': 'category'
+},
+'allow_ad_personalization_signals': true,
+'link_attribution': true
+});
+</script>
+		
+		<meta property="fb:app_id" content="1581013275506378" />
+		<meta property="fb:pages" content="20785552513" />
+		<meta name="application-name" content="GearJunkie">
+		<meta name="theme-color" content="#226440">
+		<meta name="google-site-verification" content="YMt2qhx8r9X9CWKsaIwZRfyWsnM7guvgnwSUo03Z0MU" />
+
+		<!-- Force IE to use the latest rendering engine available -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"><script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"a17ae7e67b",applicationID:"156408807"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(9),c=t(10),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(11);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(8),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],7:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],8:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],9:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],10:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],11:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(9),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!M++){var t=T.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(x,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+T.offset],null,"api"),c("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){c("mark",["domContent",a()+T.offset],null,"api")}var a=t(5),c=t("handle"),f=t(9),u=t("ee"),s=t(7),d=t(2),p=t(3),l=d.getConfiguration("ssl")===!1?"http":"https",v=window,m=v.document,g="addEventListener",y="attachEvent",h=v.XMLHttpRequest,w=h&&h.prototype,b=!1;NREUM.o={ST:setTimeout,SI:v.setImmediate,CT:clearTimeout,XHR:h,REQ:v.Request,EV:v.Event,PR:v.Promise,MO:v.MutationObserver};var E=""+location,x={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1216.min.js"},O=h&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),T=e.exports={offset:a.getLastTimestamp(),now:a,origin:E,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(6),m[g]?(m[g]("DOMContentLoaded",o,p(!1)),v[g]("load",r,p(!1))):(m[y]("onreadystatechange",i),v[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var M=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(10),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+
+		<!-- Mobile Meta -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta class="foundation-mq">
+
+					<link rel="icon" href="https://gearjunkie.com/wp-content/themes/marvin2/assets/images/favicon.png">
+			<link href="https://gearjunkie.com/wp-content/themes/marvin2/assets/images/apple-icon-touch.png" rel="apple-touch-icon" />
+	    
+		<link rel="pingback" href="https://gearjunkie.com/xmlrpc.php">
+		<link rel="alternate" type="application/rss+xml" title="GearJunkie" href="https://gearjunkie.com/feed/" />
+
+		<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+<link data-minify="1" rel="preload" as="style" href="https://gearjunkie.com/wp-content/cache/min/1/wp-content/themes/marvin2/assets/styles/style.css?ver=1666785607">
+<link rel="preload" as="script" href="https://gearjunkie.com/wp-content/themes/marvin2/assets/scripts/jquery-3.1.1.min.js?ver=3.1.1">
+<link rel="preload" as="script" href="https://gearjunkie.com/wp-content/themes/marvin2/assets/scripts/scripts.js?ver=1666646878">
+	<script>
+		window.addEventListener('load', function (){
+			setTimeout(function(){
+				(function (d) {
+					var config = {
+							kitId: 'gza2ipn',
+							async: true
+						},
+						h = d.documentElement, t = setTimeout(function () {
+							h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive";
+						}, config.scriptTimeout), tk = d.createElement("script"), f = false, s = d.getElementsByTagName("script")[0], a;
+					h.className += " wf-loading";
+					tk.src = 'https://use.typekit.net/' + config.kitId + '.js';
+					tk.async = true;
+					tk.onload = tk.onreadystatechange = function () {
+						a = this.readyState;
+						if (f || a && a != "complete" && a != "loaded") return;
+						f = true;
+						clearTimeout(t);
+						try {
+							Typekit.load(config)
+						} catch (e) {
+						}
+					};
+					s.parentNode.insertBefore(tk, s)
+				})(document);
+			}, 2500)
+		});
+	</script>
+		<script id="delay-user-interaction">
+		window.addEventListener('load', function (){
+			setTimeout(function(){
+				window.dispatchEvent(new KeyboardEvent('keydown', { 'key': ''}));
+			}, 2500)
+		});
+	</script>
+		<style>
+		.article-header > iframe {
+			width: 100%;
+			height: 255px;
+		}
+		#sidebar-video .gj-video-wrapper {
+			min-height: 210px;
+		}
+
+		.jw-ads-view div div {
+			height: 100%;
+		}
+
+		@media screen and (min-width: 1023px) {
+			#top-bar-menu .top-bar { display: flex; }
+			#GJ-AD-Billboard-1 {
+				/*min-height: 250px;*/
+				display: block !important;
+			}
+			.page-template-default .page-body, .single .page-body {
+				width: 656px !important;
+				padding-left: 0.95rem !important;
+			}
+			#grid h1.entry-title {
+				line-height: 1;
+				font-size: 2.75rem;
+				padding: 0 1rem;
+		}
+		@media screen and (min-width: 1023px) {
+			.article-header > iframe {
+				height: 352px;
+			}
+		}
+	</style>
+	<link href="http://s3.amazonaws.com" rel="preconnect" crossorigin/><link rel="preload" as="image" imagesrcset="https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/03/portland-olympic-rings-700x467.jpg 700w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/03/portland-olympic-rings-300x200.jpg 300w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/03/portland-olympic-rings-768x512.jpg 768w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/03/portland-olympic-rings-1200x800.jpg 1200w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/03/portland-olympic-rings-600x400.jpg 600w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/03/portland-olympic-rings-293x195.jpg 293w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/03/portland-olympic-rings-586x390.jpg 586w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/03/portland-olympic-rings-400x266.jpg 400w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/03/portland-olympic-rings-200x133.jpg 200w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/03/portland-olympic-rings-1220x813.jpg 1220w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/03/portland-olympic-rings-610x407.jpg 610w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/03/portland-olympic-rings-1676x1117.jpg 1676w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/03/portland-olympic-rings-838x559.jpg 838w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/03/portland-olympic-rings-1940x1293.jpg 1940w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/03/portland-olympic-rings-1880x1253.jpg 1880w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/03/portland-olympic-rings-150x100.jpg 150w" imagesizes="(max-width: 700px) 100vw, 700px"/>
+	<!-- This site is optimized with the Yoast SEO Premium plugin v18.4 (Yoast SEO v18.6) - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>Olympics Postponed: Official Says 2021 Likely | GearJunkie</title>
+	<meta name="description" content="A veteran International Olympic Committee member said, &#039;postponement has been decided.&#039;" />
+	<link rel="canonical" href="https://gearjunkie.com/news/2020-olympics-postponed-coronavirus-tokyo" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="Olympics Postponed: Official Says 2021 Likely" />
+	<meta property="og:description" content="A veteran International Olympic Committee member said, &#039;postponement has been decided.&#039;" />
+	<meta property="og:url" content="https://gearjunkie.com/news/2020-olympics-postponed-coronavirus-tokyo" />
+	<meta property="og:site_name" content="GearJunkie" />
+	<meta property="article:publisher" content="https://www.facebook.com/TheGearJunkie/" />
+	<meta property="article:published_time" content="2020-03-23T18:42:53+00:00" />
+	<meta property="article:modified_time" content="2020-03-30T18:25:12+00:00" />
+	<meta property="og:image" content="https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/03/portland-olympic-rings-1200x628.jpg" />
+	<meta property="og:image:width" content="1200" />
+	<meta property="og:image:height" content="628" />
+	<meta property="og:image:type" content="image/jpeg" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:creator" content="@thegearjunkie" />
+	<meta name="twitter:site" content="@thegearjunkie" />
+	<meta name="twitter:label1" content="Written by" />
+	<meta name="twitter:data1" content="Adam Ruggiero" />
+	<meta name="twitter:label2" content="Est. reading time" />
+	<meta name="twitter:data2" content="1 minute" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://gearjunkie.com/#website","url":"https://gearjunkie.com/","name":"GearJunkie","description":"Outdoor Gear Reviews &amp; News","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://gearjunkie.com/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"ImageObject","@id":"https://gearjunkie.com/news/2020-olympics-postponed-coronavirus-tokyo#primaryimage","inLanguage":"en-US","url":"https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/03/portland-olympic-rings.jpg","contentUrl":"https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/03/portland-olympic-rings.jpg","width":3024,"height":2016,"caption":"Olympic rings"},{"@type":"WebPage","@id":"https://gearjunkie.com/news/2020-olympics-postponed-coronavirus-tokyo#webpage","url":"https://gearjunkie.com/news/2020-olympics-postponed-coronavirus-tokyo","name":"Olympics Postponed: Official Says 2021 Likely | GearJunkie","isPartOf":{"@id":"https://gearjunkie.com/#website"},"primaryImageOfPage":{"@id":"https://gearjunkie.com/news/2020-olympics-postponed-coronavirus-tokyo#primaryimage"},"datePublished":"2020-03-23T18:42:53+00:00","dateModified":"2020-03-30T18:25:12+00:00","author":{"@id":"https://gearjunkie.com/#/schema/person/52ca5b78bfbd1cb497e07ba4906aaa11"},"description":"A veteran International Olympic Committee member said, 'postponement has been decided.'","breadcrumb":{"@id":"https://gearjunkie.com/news/2020-olympics-postponed-coronavirus-tokyo#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://gearjunkie.com/news/2020-olympics-postponed-coronavirus-tokyo"]}]},{"@type":"BreadcrumbList","@id":"https://gearjunkie.com/news/2020-olympics-postponed-coronavirus-tokyo#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://gearjunkie.com/"},{"@type":"ListItem","position":2,"name":"Olympics Postponed: Official Says 2021 Likely"}]},{"@type":"Person","@id":"https://gearjunkie.com/#/schema/person/52ca5b78bfbd1cb497e07ba4906aaa11","name":"Adam Ruggiero","image":{"@type":"ImageObject","@id":"https://gearjunkie.com/#personlogo","inLanguage":"en-US","url":"https://secure.gravatar.com/avatar/27fe6efa07cb17cefcc1c315c7498285?s=96&d=blank&r=g","contentUrl":"https://secure.gravatar.com/avatar/27fe6efa07cb17cefcc1c315c7498285?s=96&d=blank&r=g","caption":"Adam Ruggiero"},"description":"Adam Ruggiero is the editor-in-chief of GearJunkie and a fan of virtually all sports and activities. From biking, running, and (not enough) surfing, to ball sports, camping, and cattle farming — if it's outside, it's worth doing. Adam graduated from the University of Minnesota with a BA in journalism. Likes: unique beer, dogs, stories. Like nots: neckties, escalators, manicured lawns.","url":"https://gearjunkie.com/author/aruggiero"}]}</script>
+	<!-- / Yoast SEO Premium plugin. -->
+
+
+<link rel='dns-prefetch' href='//www.avantlink.com' />
+<link rel='dns-prefetch' href='//gearjunkie.com' />
+<link rel='dns-prefetch' href='//cdn.jwplayer.com' />
+<link rel='dns-prefetch' href='//s.skimresources.com' />
+<link rel='dns-prefetch' href='//www.facebook.com' />
+<link rel='dns-prefetch' href='//s3.amazonaws.com' />
+<link rel='dns-prefetch' href='//pixel.quantserve.com' />
+<link rel='dns-prefetch' href='//connect.facebook.net' />
+<link rel='dns-prefetch' href='//csi.gstatic.com' />
+<link rel='dns-prefetch' href='//jwpltx.com' />
+
+<link rel="alternate" type="application/rss+xml" title="GearJunkie &raquo; Feed" href="https://gearjunkie.com/feed" />
+<link rel="alternate" type="application/rss+xml" title="GearJunkie &raquo; Comments Feed" href="https://gearjunkie.com/comments/feed" />
+<link rel="alternate" type="application/rss+xml" title="GearJunkie &raquo; Olympics Postponed: Official Says 2021 Likely Comments Feed" href="https://gearjunkie.com/news/2020-olympics-postponed-coronavirus-tokyo/feed" />
+<noscript><link rel='stylesheet' id='fallback-wp-block-library-css'  href='https://gearjunkie.com/wp-includes/css/dist/block-library/style.min.css?ver=5.7' type='text/css' media='all' />
+</noscript><link rel='stylesheet' id='wp-block-library-css'  href='https://gearjunkie.com/wp-includes/css/dist/block-library/style.min.css?ver=5.7' type='text/css' media='print' onload='this.media="all"; this.onload=null;' />
+<style id='xcurrent-critical-lazy-embeds-inline-css' type='text/css'>
+lite-youtube,lite-vimeo{background-color:#000;display:block;contain:content;background-position:center center;background-size:cover;position:relative}lite-youtube::after{content:"";display:block;padding-bottom:calc(100% / (16 / 9))}lite-youtube iframe{width:100%;height:100%;position:absolute;top:0;left:0}lite-youtube>.lty-playbtn{display:none}lite-vimeo{aspect-ratio:16/9}.lazy-embed,.lazy-embed--loaded{min-height:var(--mobile-height, 100px)}@media only screen and (min-width: 600px){.lazy-embed,.lazy-embed--loaded{min-height:var(--desktop-height, 100px)}}.embed-twitter-com blockquote.twitter-tweet{visibility:hidden;opacity:0}.embed-tiktok-com{min-height:743px;margin:18px 0 0}@media only screen and (min-width: 600px){.embed-tiktok-com{min-height:728px}}.embed-tiktok-com .tiktok-embed{visibility:hidden;opacity:0;margin:0}.embed-instagram-com{min-height:var(--mobile-height, 509px)}@media only screen and (min-width: 600px){.embed-instagram-com{min-height:var(--desktop-height, 663px)}}.embed-instagram-com blockquote.instagram-media{visibility:hidden;opacity:0}
+
+</style>
+<noscript><link data-minify="1" rel='stylesheet' id='fallback-lgc-unsemantic-grid-responsive-tablet-css'  href='https://gearjunkie.com/wp-content/cache/min/1/wp-content/plugins/lightweight-grid-columns/css/unsemantic-grid-responsive-tablet.css?ver=1666785607' type='text/css' media='all' />
+</noscript><link data-minify="1" rel='stylesheet' id='lgc-unsemantic-grid-responsive-tablet-css'  href='https://gearjunkie.com/wp-content/cache/min/1/wp-content/plugins/lightweight-grid-columns/css/unsemantic-grid-responsive-tablet.css?ver=1666785607' type='text/css' media='print' onload='this.media="all"; this.onload=null;' />
+<link data-minify="1" rel='stylesheet' id='site-css-css'  href='https://gearjunkie.com/wp-content/cache/min/1/wp-content/themes/marvin2/assets/styles/style.css?ver=1666785607' type='text/css' media='all' />
+<noscript><link data-minify="1" rel='stylesheet' id='fallback-gj-vendor-css'  href='https://gearjunkie.com/wp-content/cache/min/1/wp-content/themes/marvin2/assets/styles/gj_vendor.css?ver=1666785607' type='text/css' media='all' />
+</noscript><link data-minify="1" rel='stylesheet' id='gj-vendor-css'  href='https://gearjunkie.com/wp-content/cache/min/1/wp-content/themes/marvin2/assets/styles/gj_vendor.css?ver=1666785607' type='text/css' media='print' onload='this.media="all"; this.onload=null;' />
+<noscript><link data-minify="1" rel='stylesheet' id='fallback-slick-css-css'  href='https://gearjunkie.com/wp-content/cache/min/1/wp-content/themes/marvin2/assets/slick/slick.css?ver=1666785607' type='text/css' media='all' />
+</noscript><link data-minify="1" rel='stylesheet' id='slick-css-css'  href='https://gearjunkie.com/wp-content/cache/min/1/wp-content/themes/marvin2/assets/slick/slick.css?ver=1666785607' type='text/css' media='print' onload='this.media="all"; this.onload=null;' />
+<noscript><link data-minify="1" rel='stylesheet' id='fallback-slick-theme-css-css'  href='https://gearjunkie.com/wp-content/cache/min/1/wp-content/themes/marvin2/assets/slick/slick-theme.css?ver=1666785607' type='text/css' media='all' />
+</noscript><link data-minify="1" rel='stylesheet' id='slick-theme-css-css'  href='https://gearjunkie.com/wp-content/cache/min/1/wp-content/themes/marvin2/assets/slick/slick-theme.css?ver=1666785607' type='text/css' media='print' onload='this.media="all"; this.onload=null;' />
+<script type='text/javascript' src='https://gearjunkie.com/wp-content/themes/marvin2/assets/scripts/jquery-3.1.1.min.js?ver=3.1.1' id='jquery-core-js'></script>
+<script type='text/javascript' id='jquery-core-js-after'>
+var GJ_View = {"type":"post","single":true,"ad_group":"_Misc","ad_type":"Article","ads_enabled":true,"categories":["olympics","news"],"tags":["coronavirus"],"post_id":89041,"in_article_enabled":true,"prebid_enabled":true};
+</script>
+<script type='text/javascript' defer src='https://gearjunkie.com/wp-content/themes/marvin2/assets/scripts/jquery-migrate-3.0.0.min.js?ver=3.0.0' id='jquery-migrate-js'></script>
+<script type='text/javascript' defer src='https://gearjunkie.com/wp-content/themes/marvin2/assets/slick/slick.min.js?ver=5.7' id='slick-js-js'></script>
+<link rel="https://api.w.org/" href="https://gearjunkie.com/wp-json/" /><link rel="alternate" type="application/json" href="https://gearjunkie.com/wp-json/wp/v2/posts/89041" /><link rel="alternate" type="application/json+oembed" href="https://gearjunkie.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fgearjunkie.com%2Fnews%2F2020-olympics-postponed-coronavirus-tokyo" />
+<link rel="alternate" type="text/xml+oembed" href="https://gearjunkie.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fgearjunkie.com%2Fnews%2F2020-olympics-postponed-coronavirus-tokyo&#038;format=xml" />
+<link rel="shortlink" href="https://grjnk.co/3dlKBox" />
+<!-- Begin comScore Tag -->
+<script type="rocketlazyloadscript">
+var _comscore = _comscore || [];
+_comscore.push({ c1: "2", c2: "31601662" });
+(function() {
+var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true;
+s.src = "https://sb.scorecardresearch.com/cs/31601662/beacon.js";
+el.parentNode.insertBefore(s, el);
+})();
+</script>
+<noscript>
+<img src="https://sb.scorecardresearch.com/p?c1=2&c2=31601662&cv=3.6.0&cj=1">
+</noscript>
+<!-- End comScore Tag -->
+
+<!-- Hotjar Tracking Code for https://gearjunkie.com/ -->
+<script type="rocketlazyloadscript">
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:2693152,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+<style>
+	#header-wrap {
+		z-index: 9;
+	}
+	.entry-content .table-responsive {
+		display: block;
+		width: 100%;
+		overflow-x: auto;
+		-webkit-overflow-scrolling: touch;
+		font-size: 0.9rem;
+	}
+	
+	 .entry-content .table-responsive table {
+		 border: 1px solid #000;
+	}
+	 .entry-content .table-responsive table tbody, .entry-content .table-responsive table tfoot, .entry-content .table-responsive table thead {
+		 border: 1px solid #000;
+	}
+	 .entry-content .table-responsive table thead tr {
+		 background-color: #226440;
+		 color: #fff;
+	}
+	 .entry-content .table-responsive table tbody tr:nth-child(even) {
+		 background-color: rgba(0, 0, 0, .04);
+		 border: 1px solid #000;
+	}
+	 .entry-content .table-responsive table tbody tr:nth-child(odd) {
+		 background-color: rgba(0, 0, 0, .1);
+		 border: 1px solid #000;
+	}
+	 .entry-content .table-responsive table tbody tr:hover {
+		 background-color: #fff;
+	}
+
+</style>
+
+<script type="rocketlazyloadscript" defer data-domain="gearjunkie.com" src="https://plausible.gearjunkie.com/js/plausible.js"></script>
+
+<!-- Matomo -->
+<script type="rocketlazyloadscript">
+  var _paq = window._paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//dev1.gearjunkie.com/matomo/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '1']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo Code -->		<!--[if lt IE 9]>
+			<link rel="stylesheet" href="https://gearjunkie.com/wp-content/plugins/lightweight-grid-columns/css/ie.min.css" />
+		<![endif]-->
+		<style>
+		.incontent-billboard {
+			margin-left: -1.890rem !important;
+			margin-top: 25px;
+			margin-bottom: 25px;
+		}
+		
+		.incontent-billboard iframe {
+			padding-top: 25px;
+			padding-bottom: 25px;
+			height: 300px;
+			border-top: 1px solid #EAEAEA !important;
+			border-bottom: 1px solid #EAEAEA !important;
+		}
+		
+		.incontent-ad-mobile {
+			margin-bottom: 25px;
+		}
+
+		.dfpbox-sidebar {
+			width: 300px !important;
+		}
+	</style>
+		      <meta name="onesignal" content="wordpress-plugin"/>
+            <script>
+
+      window.OneSignal = window.OneSignal || [];
+
+      OneSignal.push( function() {
+        OneSignal.SERVICE_WORKER_UPDATER_PATH = "OneSignalSDKUpdaterWorker.js.php";
+                      OneSignal.SERVICE_WORKER_PATH = "OneSignalSDKWorker.js.php";
+                      OneSignal.SERVICE_WORKER_PARAM = { scope: "/" };
+        OneSignal.setDefaultNotificationUrl("https://gearjunkie.com");
+        var oneSignal_options = {};
+        window._oneSignalInitOptions = oneSignal_options;
+
+        oneSignal_options['wordpress'] = true;
+oneSignal_options['appId'] = '12908750-f7a8-4300-bf30-369b9012587c';
+oneSignal_options['allowLocalhostAsSecureOrigin'] = true;
+oneSignal_options['welcomeNotification'] = { };
+oneSignal_options['welcomeNotification']['title'] = "GearJunkie";
+oneSignal_options['welcomeNotification']['message'] = "Thanks for subscribing to GearJunkie!";
+oneSignal_options['welcomeNotification']['url'] = "https://gearjunkie.com/";
+oneSignal_options['path'] = "https://gearjunkie.com/wp-content/plugins/onesignal-free-web-push-notifications/sdk_files/";
+oneSignal_options['safari_web_id'] = "web.onesignal.auto.34cabfa2-ddd9-46d0-b8b2-6fad793020e0";
+oneSignal_options['persistNotification'] = true;
+oneSignal_options['promptOptions'] = { };
+              OneSignal.init(window._oneSignalInitOptions);
+              OneSignal.showSlidedownPrompt();      });
+
+      function documentInitOneSignal() {
+        var oneSignal_elements = document.getElementsByClassName("OneSignal-prompt");
+
+        var oneSignalLinkClickHandler = function(event) { OneSignal.push(['registerForPushNotifications']); event.preventDefault(); };        for(var i = 0; i < oneSignal_elements.length; i++)
+          oneSignal_elements[i].addEventListener('click', oneSignalLinkClickHandler, false);
+      }
+
+      if (document.readyState === 'complete') {
+           documentInitOneSignal();
+      }
+      else {
+           window.addEventListener("load", function(event){
+               documentInitOneSignal();
+          });
+      }
+    </script>
+<!-- Google Tag Manager -->
+<script type="rocketlazyloadscript">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','GJDataLayer','GTM-KJFNM6T');</script>
+<!-- End Google Tag Manager -->
+			<script type="rocketlazyloadscript">var content_has_shortcode = false;</script>
+			    <script type="rocketlazyloadscript">
+        GJDataLayer = window.dataLayer || [];
+        GJDataLayer.push({
+            "event" : "page_has_loaded",
+            "page_author" : ["Adam Ruggiero"],
+			"page_category" : ["olympics","news"],
+        });
+    </script>
+        <noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript>
+				<meta name="author" content="Adam Ruggiero"/>
+		<meta name="gj_ga_category" content="Olympics News">
+				<script type="rocketlazyloadscript">
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '255934891409813');
+fbq('track', 'PageView');
+fbq('track', 'ViewContent');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=255934891409813&ev=PageView&noscript=1" />
+</noscript>
+<script type="rocketlazyloadscript">
+!function(e){if(!window.pintrk){window.pintrk = function () {
+window.pintrk.queue.push(Array.prototype.slice.call(arguments))};var
+n=window.pintrk;n.queue=[],n.version="3.0";var
+t=document.createElement("script");t.async=!0,t.src=e;var
+r=document.getElementsByTagName("script")[0];
+r.parentNode.insertBefore(t,r)}}("https://s.pinimg.com/ct/core.js");
+pintrk('load', '2614925080141');
+pintrk('page');
+</script>
+<noscript>
+<img height="1" width="1" style="display:none;" alt="" src="https://ct.pinterest.com/v3/?tid=2614925080141&noscript=1" />
+</noscript>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript">!(function(o,n,t){t=o.createElement(n),o=o.getElementsByTagName(n)[0],t.async=1,t.src="https://repeatsweater.com/v2/0/fpy9bw2asLGSQpAk_LyF9q4hNxDCNtAF-KGpHNiZmpJ1dQ1Ni233vvPu7PaeghvHKeG",o.parentNode.insertBefore(t,o)})(document,"script"),(function(o,n){o[n]=o[n]||function(){(o[n].q=o[n].q||[]).push(arguments)}})(window,"admiral");!(function(n,e,r,t){function o(){if((function o(t){try{return(t=localStorage.getItem("v4ac1eiZr0"))&&0<t.split(",")[4]}catch(n){}return!1})()){var t=n[e].pubads();typeof t.setTargeting===r&&t.setTargeting("admiral-engaged","true")}}(t=n[e]=n[e]||{}).cmd=t.cmd||[],typeof t.pubads===r?o():typeof t.cmd.unshift===r?t.cmd.unshift(o):t.cmd.push(o)})(window,"googletag","function");;;;;</script>
+	</head>
+
+	<body class="post-template-default single single-post postid-89041 single-format-standard wp-custom-logo no-js" data-postid="89041">
+		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PBSFB6S" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KJFNM6T"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+	
+		<!-- Twitter single-event website tag code -->
+		<script src="//static.ads-twitter.com/oct.js" type="text/javascript"></script>
+		<script type="rocketlazyloadscript" data-rocket-type="text/javascript">twttr.conversion.trackPid('o91ga', { tw_sale_amount: 0, tw_order_quantity: 0 });</script>
+		<noscript>
+		<img height="1" width="1" style="display:none;" alt="" src="https://analytics.twitter.com/i/adsct?txn_id=o91ga&p_id=Twitter&tw_sale_amount=0&tw_order_quantity=0" />
+		<img height="1" width="1" style="display:none;" alt="" src="//t.co/i/adsct?txn_id=o91ga&p_id=Twitter&tw_sale_amount=0&tw_order_quantity=0" />
+		</noscript>
+		<!-- End Twitter single-event website tag code -->
+
+		<div class="off-canvas-wrapper">
+		
+			<div class="off-canvas-content" data-off-canvas-content>
+				<header class="header" role="banner">
+				<div id="header-wrap"><div id='GJ-AD-Billboard-1' class='header home-billboard dfpbox' data-size='billboard' data-pos='billboard1'></div><div id='GJ-AD-Mobile-1' class='header home-mobile header-ad-single-mobile dfpbox' data-size='mobile-banner' data-pos='mbanner1'></div></div>
+				<div data-sticky-container>
+	<div id="top-bar-menu" class="sticky" data-sticky data-top-anchor="1" data-margin-top="0" data-stick-to="top" data-sticky-on="small">
+				<div class="title-bar" data-responsive-toggle="menu-top-nav" data-hide-for="large">
+			<button class="menu-icon" type="button" data-toggle="menu-top-nav"></button>
+			<!-- <div class="title-bar-title">Menu</div> -->
+			<div class="title-logo">
+				<a href="https://gearjunkie.com" title="GearJunkie" id="top-bar-logo">
+					<span class="logo-wrap"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="GearJunkie Logo" data-lazy-src="https://gearjunkie.com/wp-content/themes/marvin2/assets/images/gj-logo.svg"><noscript><img src="https://gearjunkie.com/wp-content/themes/marvin2/assets/images/gj-logo.svg" alt="GearJunkie Logo"></noscript></span>
+				</a>
+			</div>
+		</div>
+		<div class="top-bar">
+			<!--<button class="menu-icon" type="button" data-toggle></button>-->
+			<div class="top-bar-left show-for-large">
+				<ul class="menu">
+					<li>
+						<a href="https://gearjunkie.com" title="GearJunkie" id="top-bar-logo" style="display: block;">
+						<span class="logo-wrap">
+							<object type="image/svg+xml" data="https://gearjunkie.com/wp-content/themes/marvin2/assets/images/gj-logo.svg" style="pointer-events: none;"></object>
+						</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="top-bar-center">
+				<ul id="menu-top-nav" class="vertical large-horizontal dropdown menu" data-responsive-menu="drilldown large-dropdown" role="menubar"><li id="menu-item-latest" class="menu-item has-submenu" role="menuitem"><a href="/latest">Latest</a><ul class="vertical menu submenu nav-article-feed"><div class="grid-x grid-padding-x small-up-3 large-up-5 align-stretch"><li class="menu-item cell"><a href="https://gearjunkie.com/climbing/video-marcel-remy-climbing-tribute" class="card"><div class="card-background-image"><img class="lazy wp-post-image nav-image" src="https://gearjunkie.com/wp-content/themes/marvin2/assets/images/1x1.png"  data-src="https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/marcelremy2-copy-120x90.jpg" data-src-retina="https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/marcelremy2-copy-240x180.jpg" data-pin-nopin="true" alt="marcel remy" title="&lsquo;Bravo,&rsquo; Marcel Remy: A Biographic Tribute"></div><div class="card-section">‘Bravo,’ Marcel Remy: A Biographic Tribute</div></a></li><li class="menu-item cell"><a href="https://gearjunkie.com/biking/body-rocket-aerodynamic-data-without-wind-tunnel" class="card"><div class="card-background-image"><img class="lazy wp-post-image nav-image" src="https://gearjunkie.com/wp-content/themes/marvin2/assets/images/1x1.png"  data-src="https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Foto-4-10-22-16-15-45-2-120x90.jpg" data-src-retina="https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Foto-4-10-22-16-15-45-2-240x180.jpg" data-pin-nopin="true" alt="Body Rocket stem sensor" title="Body Rocket: Aerodynamic Data for Cyclists Without a Wind Tunnel"></div><div class="card-section">Body Rocket: Aerodynamic Data for Cyclists Without a Wind Tunnel</div></a></li><li class="menu-item cell"><a href="https://gearjunkie.com/news/hunter-shoots-himself-while-fighting-grizzly" class="card"><div class="card-background-image"><img class="lazy wp-post-image nav-image" src="https://gearjunkie.com/wp-content/themes/marvin2/assets/images/1x1.png"  data-src="https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/shutterstock_660122344-120x90.jpg" data-src-retina="https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/shutterstock_660122344-240x180.jpg" data-pin-nopin="true" alt="Hunter Shoots Himself in the Leg While Fighting Off Grizzly Bear" title="Hunter Shoots Himself in the Leg While Fighting Off Grizzly Bear"></div><div class="card-section">Hunter Shoots Himself in the Leg While Fighting Off Grizzly Bear</div></a></li><li class="menu-item cell"><a href="https://gearjunkie.com/climbing/conservation-access-fund-seeks-van-life-trail-builders" class="card"><div class="card-background-image"><img class="lazy wp-post-image nav-image" src="https://gearjunkie.com/wp-content/themes/marvin2/assets/images/1x1.png"  data-src="https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Screen-Shot-2022-10-25-at-11.09.38-AM-120x90.jpg" data-src-retina="https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Screen-Shot-2022-10-25-at-11.09.38-AM-240x180.jpg" data-pin-nopin="true" alt="access fund van life" title="Dream Job for Conservation: Access Fund Seeks Van Life Trail Builders"></div><div class="card-section">Dream Job for Conservation: Access Fund Seeks Van Life Trail Builders</div></a></li><li class="menu-item cell"><a href="https://gearjunkie.com/biking/hannah-otto-whole-enchilada-trail-fkt" class="card"><div class="card-background-image"><img class="lazy wp-post-image nav-image" src="https://gearjunkie.com/wp-content/themes/marvin2/assets/images/1x1.png"  data-src="https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/BCRe_221011_2408-120x90.jpg" data-src-retina="https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/BCRe_221011_2408-240x180.jpg" data-pin-nopin="true" alt="Fastest Known Time: Hannah Otto Slays Moab's The Whole Enchilada Trail" title="Fastest Known Time: Hannah Otto Slays Moab's The Whole Enchilada Trail"></div><div class="card-section">Fastest Known Time: Hannah Otto Slays Moab's The Whole Enchilada Trail</div></a></li></div><div class="subnav-add-on"><a href="/latest" class="nav-category-all-link">More Articles</a></div></ul></li><li id="menu-item-topics" class="menu-item has-submenu" role="menuitem"><a href="/topics">Topics</a><ul class="vertical menu submenu"><div class="grid-x grid-padding-x align-stretch"><ul class="menu submenu nav-topics"><li data-value="category/adventure" data-type="category" data-slug="adventure" data-id="28"><a href="https://gearjunkie.com/adventure" title="Adventure" data-nav-pos="category/adventure">Adventure</a></li><li data-value="category/apparel" data-type="category" data-slug="apparel" data-id="31"><a href="https://gearjunkie.com/apparel" title="Apparel" data-nav-pos="category/apparel">Apparel</a></li><li data-value="category/biking" data-type="category" data-slug="biking" data-id="25"><a href="https://gearjunkie.com/biking" title="Biking" data-nav-pos="category/biking">Biking</a></li><li data-value="category/camper-rv" data-type="category" data-slug="camper-rv" data-id="289"><a href="https://gearjunkie.com/camper-rv" title="Camper &amp; RV" data-nav-pos="category/camper-rv">Camper &amp; RV</a></li><li data-value="category/camping" data-type="category" data-slug="camping" data-id="27"><a href="https://gearjunkie.com/camping" title="Camping" data-nav-pos="category/camping">Camping</a></li><li data-value="category/climbing" data-type="category" data-slug="climbing" data-id="29"><a href="https://gearjunkie.com/climbing" title="Climbing" data-nav-pos="category/climbing">Climbing</a></li><li data-value="category/endurance" data-type="category" data-slug="endurance" data-id="81"><a href="https://gearjunkie.com/endurance" title="Endurance" data-nav-pos="category/endurance">Endurance</a></li><li data-value="category/health-fitness" data-type="category" data-slug="health-fitness" data-id="110"><a href="https://gearjunkie.com/health-fitness" title="Fitness" data-nav-pos="category/health-fitness">Fitness</a></li><li data-value="category/food-hydration" data-type="category" data-slug="food-hydration" data-id="30"><a href="https://gearjunkie.com/food-hydration" title="Food / Hydration" data-nav-pos="category/food-hydration">Food / Hydration</a></li><li data-value="category/footwear" data-type="category" data-slug="footwear" data-id="32"><a href="https://gearjunkie.com/footwear" title="Footwear" data-nav-pos="category/footwear">Footwear</a></li><li data-value="url/gear-we-love" data-type="url" data-slug="gear-we-love" data-id="0"><a href="https://gearjunkie.com/guides/gearjunkie-favorites" title="Gear We Love" data-nav-pos="url/gear-we-love">Gear We Love</a></li><li data-value="category/hiking" data-type="category" data-slug="hiking" data-id="34"><a href="https://gearjunkie.com/outdoor/hiking" title="Hiking" data-nav-pos="category/hiking">Hiking</a></li><li data-value="lander/hunt-fish" data-type="lander" data-slug="hunt-fish" data-id="45911"><a href="https://gearjunkie.com/hunt-fish" title="Hunt & Fish" data-nav-pos="lander/hunt-fish">Hunt & Fish</a></li><li data-value="category/knives" data-type="category" data-slug="knives" data-id="111"><a href="https://gearjunkie.com/knives" title="Knives" data-nav-pos="category/knives">Knives</a></li><li data-value="category/motors" data-type="category" data-slug="motors" data-id="287"><a href="https://gearjunkie.com/motors" title="Motors" data-nav-pos="category/motors">Motors</a></li><li data-value="category/news" data-type="category" data-slug="news" data-id="40"><a href="https://gearjunkie.com/news" title="News" data-nav-pos="category/news">News</a></li><li data-value="category/outdoor" data-type="category" data-slug="outdoor" data-id="45"><a href="https://gearjunkie.com/outdoor" title="Outdoor" data-nav-pos="category/outdoor">Outdoor</a></li><li data-value="category/outdoor_retailer" data-type="category" data-slug="outdoor_retailer" data-id="17"><a href="https://gearjunkie.com/outdoor_retailer" title="Outdoor Retailer" data-nav-pos="category/outdoor_retailer">Outdoor Retailer</a></li><li data-value="category/packs" data-type="category" data-slug="packs" data-id="37"><a href="https://gearjunkie.com/packs" title="Packs" data-nav-pos="category/packs">Packs</a></li><li data-value="category/technology" data-type="category" data-slug="technology" data-id="35"><a href="https://gearjunkie.com/technology" title="Technology" data-nav-pos="category/technology">Technology</a></li><li data-value="category/travel" data-type="category" data-slug="travel" data-id="44"><a href="https://gearjunkie.com/travel" title="Travel" data-nav-pos="category/travel">Travel</a></li><li data-value="category/boats-water" data-type="category" data-slug="boats-water" data-id="41"><a href="https://gearjunkie.com/boats-water" title="Water" data-nav-pos="category/boats-water">Water</a></li><li data-value="category/winter" data-type="category" data-slug="winter" data-id="33"><a href="https://gearjunkie.com/winter" title="Winter" data-nav-pos="category/winter">Winter</a></li><li data-value="category/womens" data-type="category" data-slug="womens" data-id="39"><a href="https://gearjunkie.com/womens" title="Women" data-nav-pos="category/womens">Women</a></li></ul></div><div class="subnav-add-on"><a href="/topics" class="nav-category-all-link">More Articles</a></div></ul></li><li id="menu-item-reviews" class="menu-item has-submenu" role="menuitem"><a href="/tag/reviews">Reviews</a><ul class="vertical menu submenu nav-article-feed"><div class="grid-x grid-padding-x small-up-3 large-up-5 align-stretch"><li class="menu-item cell"><a href="https://gearjunkie.com/winter/best-ski-goggles" class="card"><div class="card-background-image"><img class="lazy wp-post-image nav-image" src="https://gearjunkie.com/wp-content/themes/marvin2/assets/images/1x1.png"  data-src="https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/DSC09198-copy-120x90.jpg" data-src-retina="https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/DSC09198-copy-240x180.jpg" data-pin-nopin="true" alt="The Best Ski Goggles of 2022-2023" title="The Best Ski Goggles of 2022-2023"></div><div class="card-section">The Best Ski Goggles of 2022-2023</div></a></li><li class="menu-item cell"><a href="https://gearjunkie.com/outdoor/hunt-fish/carter-like-mike-ii-release-review" class="card"><div class="card-background-image"><img class="lazy wp-post-image nav-image" src="https://gearjunkie.com/wp-content/themes/marvin2/assets/images/1x1.png"  data-src="https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Dialed-In-Hunter-0318-120x90.jpg" data-src-retina="https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Dialed-In-Hunter-0318-240x180.jpg" data-pin-nopin="true" alt="Carter Like Mike II Release Review" title="Carter Like Mike II Release Review: The Best of the Best"></div><div class="card-section">Carter Like Mike II Release Review: The Best of the Best</div></a></li><li class="menu-item cell"><a href="https://gearjunkie.com/winter/best-ski-pants-womens" class="card"><div class="card-background-image"><img class="lazy wp-post-image nav-image" src="https://gearjunkie.com/wp-content/themes/marvin2/assets/images/1x1.png"  data-src="https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/DSC03530-copy-120x90.jpg" data-src-retina="https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/DSC03530-copy-240x180.jpg" data-pin-nopin="true" alt="The Best Women's Ski Pants of 2022-2023" title="The Best Women's Ski Pants of 2022-2023"></div><div class="card-section">The Best Women's Ski Pants of 2022-2023</div></a></li><li class="menu-item cell"><a href="https://gearjunkie.com/winter/snowboarding/best-snowboard-pants" class="card"><div class="card-background-image"><img class="lazy wp-post-image nav-image" src="https://gearjunkie.com/wp-content/themes/marvin2/assets/images/1x1.png"  data-src="https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/DSC3195-120x90.jpg" data-src-retina="https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/DSC3195-240x180.jpg" data-pin-nopin="true" alt="snowboarders descending ski hill" title="The Best Snowboard Pants of 2022-2023"></div><div class="card-section">The Best Snowboard Pants of 2022-2023</div></a></li><li class="menu-item cell"><a href="https://gearjunkie.com/outdoor/hiking/best-mens-flannel-shirts" class="card"><div class="card-background-image"><img class="lazy wp-post-image nav-image" src="https://gearjunkie.com/wp-content/themes/marvin2/assets/images/1x1.png"  data-src="https://s3.amazonaws.com/images.gearjunkie.com/uploads/2019/10/Fjall-Flannel-2-120x90.jpg" data-src-retina="https://s3.amazonaws.com/images.gearjunkie.com/uploads/2019/10/Fjall-Flannel-2-240x180.jpg" data-pin-nopin="true" alt="Fjallraven Best Flannel for Men 2" title="The Best Men's Flannel Shirts of 2022-2023"></div><div class="card-section">The Best Men's Flannel Shirts of 2022-2023</div></a></li></div><div class="subnav-add-on"><a href="/tag/reviews" class="nav-category-all-link">More Articles</a></div></ul></li><li id="menu-item-videos" class="menu-item has-submenu" role="menuitem"><a href="/type/video">Videos</a><ul class="vertical menu submenu nav-article-feed"><div class="grid-x grid-padding-x small-up-3 large-up-5 align-stretch"><li class="menu-item cell"><a href="https://gearjunkie.com/climbing/video-marcel-remy-climbing-tribute" class="card"><div class="card-background-image"><img class="lazy wp-post-image nav-image" src="https://gearjunkie.com/wp-content/themes/marvin2/assets/images/1x1.png"  data-src="https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/marcelremy2-copy-120x90.jpg" data-src-retina="https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/marcelremy2-copy-240x180.jpg" data-pin-nopin="true" alt="marcel remy" title="&lsquo;Bravo,&rsquo; Marcel Remy: A Biographic Tribute"></div><div class="card-section">‘Bravo,’ Marcel Remy: A Biographic Tribute</div></a></li><li class="menu-item cell"><a href="https://gearjunkie.com/motors/electrikhana-ken-block-hoonitron-video" class="card"><div class="card-background-image"><img class="lazy wp-post-image nav-image" src="https://gearjunkie.com/wp-content/themes/marvin2/assets/images/1x1.png"  data-src="https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Screen-Shot-2022-10-25-at-6.20.05-AM-120x90.jpg" data-src-retina="https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Screen-Shot-2022-10-25-at-6.20.05-AM-240x180.jpg" data-pin-nopin="true" alt="Electrikhana" title="'Electrikhana': Ken Block Spins Through Vegas in Electric Audi"></div><div class="card-section">'Electrikhana': Ken Block Spins Through Vegas in Electric Audi</div></a></li><li class="menu-item cell"><a href="https://gearjunkie.com/boats-water/surfing/watch-film-black-people-surf" class="card"><div class="card-background-image"><img class="lazy wp-post-image nav-image" src="https://gearjunkie.com/wp-content/themes/marvin2/assets/images/1x1.png"  data-src="https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/surf-120x90.jpg" data-src-retina="https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/surf-240x180.jpg" data-pin-nopin="true" alt="'Black People Surf?' In This Film, the Answer Is a Resounding Yes!" title="'Black People Surf?' In This Film, the Answer Is a Resounding Yes!"></div><div class="card-section">'Black People Surf?' In This Film, the Answer Is a Resounding Yes!</div></a></li><li class="menu-item cell"><a href="https://gearjunkie.com/winter/skiing/pursuit-of-soul-2-trailer-film" class="card"><div class="card-background-image"><img class="lazy wp-post-image nav-image" src="https://gearjunkie.com/wp-content/themes/marvin2/assets/images/1x1.png"  data-src="https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/midwest-120x90.jpg" data-src-retina="https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/midwest-240x180.jpg" data-pin-nopin="true" alt="'Pursuit of Soul 2' Trailer: Midwest Skiing Film Coming Soon" title="'Pursuit of Soul 2' Trailer: Midwest Skiing Film Coming Soon"></div><div class="card-section">'Pursuit of Soul 2' Trailer: Midwest Skiing Film Coming Soon</div></a></li><li class="menu-item cell"><a href="https://gearjunkie.com/winter/ark-snowboard-video-trailer" class="card"><div class="card-background-image"><img class="lazy wp-post-image nav-image" src="https://gearjunkie.com/wp-content/themes/marvin2/assets/images/1x1.png"  data-src="https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/gj-ark-video-120x90.jpg" data-src-retina="https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/gj-ark-video-240x180.jpg" data-pin-nopin="true" alt="a snowboarder catches huge air against a blue sky in a screenshot from the ARK trailer" title="Sick Jumps, Clean Lines in Trailer for New Snowboard Film"></div><div class="card-section">Sick Jumps, Clean Lines in Trailer for New Snowboard Film</div></a></li></div><div class="subnav-add-on"><a href="/type/video" class="nav-category-all-link">More Articles</a></div></ul></li><li id="menu-item-features" class="menu-item has-submenu" role="menuitem"><a href="/">Features</a><ul class="vertical menu submenu nav-article-feed"><div class="grid-x grid-padding-x small-up-3 large-up-5 align-stretch"><ul class="menu submenu nav-features"><div class="grid-x grid-padding-x grid-margin-x small-up-2 large-up-4 align-stretch"><li class="featured-article menu-item cell"><a href="https://gearjunkie.com/chevy-off-the-map?utm_source=gearjunkie&utm_medium=feature_nav" class="card"><div class="card-background-image"><img class="lazy wp-post-image nav-image" src="https://gearjunkie.com/wp-content/themes/marvin2/assets/images/1x1.png"  data-src="https://s3.amazonaws.com/images.gearjunkie.com/uploads/2021/11/otm-cover-1-200x120.png" data-src-retina="https://s3.amazonaws.com/images.gearjunkie.com/uploads/2021/11/otm-cover-1.png" data-pin-nopin="true" alt="otm-cover" title="otm-cover"></div><div class="card-section"><span class="card-headline">"Off the Map" with Chevrolet</span><span class="card-description">We go "Off the Map" to find new roads and epic adventures.</span></span></div></a></li><li class="featured-article menu-item cell"><a href="https://gearjunkie.com/toyota-adventure-racing?utm_source=gearjunkie&utm_medium=feature_nav" class="card"><div class="card-background-image"><img class="lazy wp-post-image nav-image" src="https://gearjunkie.com/wp-content/themes/marvin2/assets/images/1x1.png"  data-src="https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/05/toyota-usara-feature-200x120.jpg" data-src-retina="https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/05/toyota-usara-feature.jpg" data-pin-nopin="true" alt="toyota-usara-feature" title="toyota-usara-feature"></div><div class="card-section"><span class="card-headline">Adventure Racing 2022</span><span class="card-description">Trek, bike, and paddle with GearJunkie and USARA this season as we explore and compete in wilderness events around America.</span></span></div></a></li><li class="featured-article menu-item cell"><a href="https://gearjunkie.com/podcast?utm_source=gearjunkie&utm_medium=feature_nav" class="card"><div class="card-background-image"><img class="lazy wp-post-image nav-image" src="https://gearjunkie.com/wp-content/themes/marvin2/assets/images/1x1.png"  data-src="https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/02/GJ-Podcast-200x120-Feature-Nav%402x-80-200x120.jpg" data-src-retina="https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/02/GJ-Podcast-200x120-Feature-Nav%402x-80.jpg" data-pin-nopin="true" alt="The GearJunkie Podcast logo with radio signal graphic" title="The GearJunkie Podcast"></div><div class="card-section"><span class="card-headline">The GearJunkie Podcast</span><span class="card-description">Sharing in-depth conversations between the world's adventurers, athletes, and outdoorspeople, The GearJunkie Podcast is your inside look into the outdoors industry.</span></span></div></a></li><li class="featured-article menu-item cell"><a href="https://gearjunkie.com/emerging-gear?utm_source=gearjunkie&utm_medium=feature_nav" class="card"><div class="card-background-image"><img class="lazy wp-post-image nav-image" src="https://gearjunkie.com/wp-content/themes/marvin2/assets/images/1x1.png"  data-src="https://s3.amazonaws.com/images.gearjunkie.com/uploads/2018/06/nav-emerging-1x-200x120.jpg" data-src-retina="https://s3.amazonaws.com/images.gearjunkie.com/uploads/2018/06/nav-emerging-1x.jpg" data-pin-nopin="true" alt="nav-emerging-1x" title="nav-emerging-1x"></div><div class="card-section"><span class="card-headline">Emerging Gear</span><span class="card-description">From next-gen tech to ingenious innovation, our weekly peek at emerging products examines the sometimes cutting-edge, sometimes quirky world of gear design.</span></span></div></a></li></div></ul></div><div class="subnav-add-on"><a href="/" class="nav-category-all-link">More Articles</a></div></ul></li><li id="menu-item-buyers-guides" class="menu-item has-submenu" role="menuitem"><a href="/buyers-guides">Buyers Guides</a><ul class="vertical menu submenu nav-article-feed"><div class="grid-x grid-padding-x small-up-3 large-up-5 align-stretch"><ul class="menu submenu nav-features"><div class="grid-x grid-padding-x grid-margin-x small-up-3 large-up-5 align-stretch"><li class="featured-article menu-item cell"><a href="https://gearjunkie.com/buyers-guides/winter-gear-reviews?utm_source=gearjunkie&utm_medium=buyers_guide_nav" class="card"><div class="card-background-image"><img class="lazy wp-post-image nav-image" src="https://gearjunkie.com/wp-content/themes/marvin2/assets/images/1x1.png"  data-src="https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/My-project-14-200x120.jpg" data-src-retina="https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/My-project-14.jpg" data-pin-nopin="true" alt="My project" title="My project"></div><div class="card-section"><span class="card-headline">Winter Gear Reviews</span><span class="card-description">Our team of experts is bringing you the best winter gear reviews and buying guides.</span></span></div></a></li><li class="featured-article menu-item cell"><a href="https://gearjunkie.com/buyers-guides/ski-gear-reviews?utm_source=gearjunkie&utm_medium=buyers_guide_nav" class="card"><div class="card-background-image"><img class="lazy wp-post-image nav-image" src="https://gearjunkie.com/wp-content/themes/marvin2/assets/images/1x1.png"  data-src="https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/My-project-10-200x120.jpg" data-src-retina="https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/My-project-10.jpg" data-pin-nopin="true" alt="My project" title="My project"></div><div class="card-section"><span class="card-headline">Ski Gear Reviews </span><span class="card-description">We've tested the best skis, boots, and apparel to outfit you for big days in the mountains.</span></span></div></a></li><li class="featured-article menu-item cell"><a href="https://gearjunkie.com/buyers-guides/backpacking-gear-reviews?utm_source=gearjunkie&utm_medium=buyers_guide_nav" class="card"><div class="card-background-image"><img class="lazy wp-post-image nav-image" src="https://gearjunkie.com/wp-content/themes/marvin2/assets/images/1x1.png"  data-src="https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/05/BestBackpacking-nav-200x120.jpeg" data-src-retina="https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/05/BestBackpacking-nav.jpeg" data-pin-nopin="true" alt="Best Backpacking nav" title="Best Backpacking nav"></div><div class="card-section"><span class="card-headline">Backpacking Gear Reviews</span><span class="card-description">Read through our favorite expert-compiled gear for thru-hiking, backpacking, ultralight backpacking and more. </span></span></div></a></li><li class="featured-article menu-item cell"><a href="https://gearjunkie.com/buyers-guides/hunt-fish-reviews?utm_source=gearjunkie&utm_medium=buyers_guide_nav" class="card"><div class="card-background-image"><img class="lazy wp-post-image nav-image" src="https://gearjunkie.com/wp-content/themes/marvin2/assets/images/1x1.png"  data-src="https://s3.amazonaws.com/images.gearjunkie.com/uploads/2021/10/buyers-guides-hunt-200x120.jpg" data-src-retina="https://s3.amazonaws.com/images.gearjunkie.com/uploads/2021/10/buyers-guides-hunt.jpg" data-pin-nopin="true" alt="buyers-guides-hunt" title="buyers-guides-hunt"></div><div class="card-section"><span class="card-headline">Hunt & Fish Reviews</span><span class="card-description">Your source for comprehensive hunting reviews and buying guides. </span></span></div></a></li><li class="featured-article menu-item cell"><a href="https://gearjunkie.com/buyers-guides/cycling-gear-reviews?utm_source=gearjunkie&utm_medium=buyers_guide_nav" class="card"><div class="card-background-image"><img class="lazy wp-post-image nav-image" src="https://gearjunkie.com/wp-content/themes/marvin2/assets/images/1x1.png"  data-src="https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/05/bike-nav-200x120.jpeg" data-src-retina="https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/05/bike-nav.jpeg" data-pin-nopin="true" alt="bike nav" title="bike nav"></div><div class="card-section"><span class="card-headline">Mountain Biking & Cycling Reviews</span><span class="card-description">The GearJunkie gear guide to mountain, road, and gravel bikes, bike accessories, apparel, and more.</span></span></div></a></li></div></ul></div><div class="subnav-add-on"><a href="/buyers-guides" class="nav-category-all-link">More Articles</a></div></ul></li><li id="menu-item-deals" class="menu-item has-submenu" role="menuitem"><a href="/deals">Deals</a><ul class="vertical menu submenu nav-article-feed"><div class="grid-x grid-padding-x small-up-3 large-up-5 align-stretch"><li class="menu-item cell"><a href="https://gearjunkie.com/weekly-outdoor-gear-deals/bargains-10-21-2022" class="card"><div class="card-background-image"><img class="lazy wp-post-image nav-image" src="https://gearjunkie.com/wp-content/themes/marvin2/assets/images/1x1.png"  data-src="https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/CamelBak-Brand-Image-Drinkware-120x90.jpg" data-src-retina="https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/CamelBak-Brand-Image-Drinkware-240x180.jpg" data-pin-nopin="true" alt="CamelBak Brand Image Drinkware" title="Gear Bargains: Save on Jackets, Daypacks, Tents, and More"></div><div class="card-section">Gear Bargains: Save on Jackets, Daypacks, Tents, and More</div></a></li><li class="menu-item cell"><a href="https://gearjunkie.com/weekly-outdoor-gear-deals/weekly-gear-deals-10-19-2022" class="card"><div class="card-background-image"><img class="lazy wp-post-image nav-image" src="https://gearjunkie.com/wp-content/themes/marvin2/assets/images/1x1.png"  data-src="https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Huckberry-Brand-Image-Wellen-Cotton-Sweater-120x90.jpg" data-src-retina="https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Huckberry-Brand-Image-Wellen-Cotton-Sweater-240x180.jpg" data-pin-nopin="true" alt="Huckberry Brand Image Wellen Cotton Sweater" title="Gear Deals From iROCKER, RTIC, Mountain Hardwear, and More"></div><div class="card-section">Gear Deals From iROCKER, RTIC, Mountain Hardwear, and More</div></a></li><li class="menu-item cell"><a href="https://gearjunkie.com/weekly-outdoor-gear-deals/best-selling-gear-backcountry" class="card"><div class="card-background-image"><img class="lazy wp-post-image nav-image" src="https://gearjunkie.com/wp-content/themes/marvin2/assets/images/1x1.png"  data-src="https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/11/Stanley-Trigger-Action-Travel-Mug-lineup-120x90.jpg" data-src-retina="https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/11/Stanley-Trigger-Action-Travel-Mug-lineup-240x180.jpg" data-pin-nopin="true" alt="Stanley Trigger Action Travel Mug lineup" title="The Bestselling Gear at Backcountry This Week"></div><div class="card-section">The Bestselling Gear at Backcountry This Week</div></a></li><li class="menu-item cell"><a href="https://gearjunkie.com/weekly-outdoor-gear-deals/bargains-10-14-2022" class="card"><div class="card-background-image"><img class="lazy wp-post-image nav-image" src="https://gearjunkie.com/wp-content/themes/marvin2/assets/images/1x1.png"  data-src="https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Klean-Kanteen-Brand-Image-Camping-120x90.jpg" data-src-retina="https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Klean-Kanteen-Brand-Image-Camping-240x180.jpg" data-pin-nopin="true" alt="Klean Kanteen Brand Image Camping" title="Gear Bargains: Save on Apparel, Drinkware, Sleeping Pads, and More"></div><div class="card-section">Gear Bargains: Save on Apparel, Drinkware, Sleeping Pads, and More</div></a></li><li class="menu-item cell"><a href="https://gearjunkie.com/weekly-outdoor-gear-deals/weekly-gear-deals-10-12-2022" class="card"><div class="card-background-image"><img class="lazy wp-post-image nav-image" src="https://gearjunkie.com/wp-content/themes/marvin2/assets/images/1x1.png"  data-src="https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Sea-to-Summit-Brand-Image-Camping-120x90.jpg" data-src-retina="https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Sea-to-Summit-Brand-Image-Camping-240x180.jpg" data-pin-nopin="true" alt="Sea to Summit Brand Image Camping" title="Gear Deals From Dometic, Columbia, Patagonia, and More"></div><div class="card-section">Gear Deals From Dometic, Columbia, Patagonia, and More</div></a></li></div><div class="subnav-add-on"><a href="/deals" class="nav-category-all-link">More Articles</a></div></ul></li><li class="hide-for-large vertical-social"><ul class="menu social-links"><li class="menu-item"><a href="https://www.facebook.com/TheGearJunkie" target="_blank"><svg class="svg-icon" role="img"><use xlink:href="https://gearjunkie.com/wp-content/themes/marvin2/assets/svg/icons.svg#facebook" /></svg></a></li><li class="menu-item"><a href="https://twitter.com/TheGearJunkie" target="_blank"><svg class="svg-icon" role="img"><use xlink:href="https://gearjunkie.com/wp-content/themes/marvin2/assets/svg/icons.svg#twitter" /></svg></a></li><li class="menu-item"><a href="https://www.instagram.com/thegearjunkie/" target="_blank"><svg class="svg-icon" role="img"><use xlink:href="https://gearjunkie.com/wp-content/themes/marvin2/assets/svg/icons.svg#instagram" /></svg></a></li><li class="menu-item"><a href="/feed" target="_blank"><svg class="svg-icon" role="img"><use xlink:href="https://gearjunkie.com/wp-content/themes/marvin2/assets/svg/icons.svg#rss" /></svg></a></li></ul></li><li class="hide-for-large"><form role="search" method="get" id="mobile-searchform" class="hide-for-large" action="https://gearjunkie.com/">
+          <i class="icon-search"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Search icon" data-lazy-src="https://gearjunkie.com/wp-content/themes/marvin2/assets/svg/icons/search.svg"/><noscript><img src="https://gearjunkie.com/wp-content/themes/marvin2/assets/svg/icons/search.svg" alt="Search icon"/></noscript></i>
+          <input type="text" name="s" id="m-s" placeholder="Search GearJunkie"/>
+      </form></li></ul>			</div>
+			<div class="top-bar-right show-for-large">
+				<form role="search" method="get" id="searchform" action="https://gearjunkie.com/">
+				<i class="icon-search"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Search icon" data-lazy-src="https://gearjunkie.com/wp-content/themes/marvin2/assets/svg/icons/search.svg"/><noscript><img src="https://gearjunkie.com/wp-content/themes/marvin2/assets/svg/icons/search.svg" alt="Search icon"/></noscript></i>
+				<input type="text" name="s" id="s" placeholder="Search GearJunkie"/>
+				</form>
+				<ul class="menu social-links"><li class="menu-item"><a href="https://www.facebook.com/TheGearJunkie" target="_blank"><svg class="svg-icon" role="img"><use xlink:href="https://gearjunkie.com/wp-content/themes/marvin2/assets/svg/icons.svg#facebook" /></svg></a></li><li class="menu-item"><a href="https://twitter.com/TheGearJunkie" target="_blank"><svg class="svg-icon" role="img"><use xlink:href="https://gearjunkie.com/wp-content/themes/marvin2/assets/svg/icons.svg#twitter" /></svg></a></li><li class="menu-item"><a href="https://www.instagram.com/thegearjunkie/" target="_blank"><svg class="svg-icon" role="img"><use xlink:href="https://gearjunkie.com/wp-content/themes/marvin2/assets/svg/icons.svg#instagram" /></svg></a></li><li class="menu-item"><a href="/feed" target="_blank"><svg class="svg-icon" role="img"><use xlink:href="https://gearjunkie.com/wp-content/themes/marvin2/assets/svg/icons.svg#rss" /></svg></a></li></ul>			</div>
+		</div>
+			</div>
+</div>
+				</header>
+<style>
+	.entry-content a {
+		position: relative;
+		z-index: 9;
+	}
+</style>
+<div class="content">
+	<div id="superskin" class="dfpbox siteskin-wrapper" data-size="superskin" data-pos="superskin"></div>	<div id="grid" class="grid-container">
+		<div class="inner-content grid-x grid-padding-x grid-padding-y">
+
+			<main class="main page-body cell" role="main">
+			
+			    			    	<!-- Add category sponsorship here -->
+			    									    	<article id="post-89041" class="post-89041 post type-post status-publish format-standard has-post-thumbnail hentry category-olympics category-news tag-coronavirus" role="article" itemscope itemtype="http://schema.org/NewsArticle">
+	<header class="article-header">
+		<a itemprop="image" href="https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/03/portland-olympic-rings.jpg">
+			<figure>
+				<img width="3024" height="2016" decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%203024%202016'%3E%3C/svg%3E" class="attachment- size-" alt="Olympic rings" data-lazy-src="https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/03/portland-olympic-rings.jpg" /><noscript><img width="3024" height="2016" decoding="async" src="https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/03/portland-olympic-rings.jpg" class="attachment- size-" alt="Olympic rings" /></noscript>							</figure>
+		</a>
+		<h1 class="entry-title single-title" itemprop="headline">Olympics Postponed: Official Says 2021 Likely</h1>
+		<div class="byline-wrapper grid-x">
+			<p class="byline">March 23, 2020<span class="pipe">&nbsp;|&nbsp;</span>By <a href="https://gearjunkie.com/author/aruggiero" title="Posts by Adam Ruggiero" rel="author">Adam Ruggiero</a></p>
+<div class="share-article">
+	<div class="wrap">
+		<div class="count">Share now:</div>
+		<div class="social-shares" data-section="Top Social">
+			<a href="https://www.facebook.com/share.php?u=https://gearjunkie.com/news/2020-olympics-postponed-coronavirus-tokyo&amp;t=Olympics Postponed: Official Says 2021 Likely" target="_blank" class='facebook-share' title="Share on Facebook" data-network="Facebook"><img class="icon-facebook" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Share on Facebook" data-lazy-src="https://gearjunkie.com/wp-content/themes/marvin2/assets/svg/icons/facebook.svg"/><noscript><img class="icon-facebook" src="https://gearjunkie.com/wp-content/themes/marvin2/assets/svg/icons/facebook.svg" alt="Share on Facebook"/></noscript></a>
+			<a href="https://twitter.com/share?url=https://gearjunkie.com/news/2020-olympics-postponed-coronavirus-tokyo&text=Olympics Postponed: Official Says 2021 Likely&via=thegearjunkie" target="_blank" class='twitter-share' data-network="Twitter" title="Post to Twitter"><img class="icon-twitter" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Post to Twitter" data-lazy-src="https://gearjunkie.com/wp-content/themes/marvin2/assets/svg/icons/twitter.svg"/><noscript><img class="icon-twitter" src="https://gearjunkie.com/wp-content/themes/marvin2/assets/svg/icons/twitter.svg" alt="Post to Twitter"/></noscript></a>
+			<a href="https://www.reddit.com/submit?url=https://gearjunkie.com/news/2020-olympics-postponed-coronavirus-tokyo&title=Olympics Postponed: Official Says 2021 Likely" target="_blank" class='reddit-share' title="Post to Reddit" data-network="Reddit"><img class="icon-reddit" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Post to Reddit" data-lazy-src="https://gearjunkie.com/wp-content/themes/marvin2/assets/svg/icons/reddit.svg"/><noscript><img class="icon-reddit" src="https://gearjunkie.com/wp-content/themes/marvin2/assets/svg/icons/reddit.svg" alt="Post to Reddit"/></noscript></a>
+			<a href="https://share.flipboard.com/bookmarklet/popout?v=2&title=Olympics Postponed: Official Says 2021 Likely&url=https://gearjunkie.com/news/2020-olympics-postponed-coronavirus-tokyo" target="_blank" class='flipboard-share' data-network="Flipboard"><img class="icon-flipboard" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Post to Flipboard" data-lazy-src="https://gearjunkie.com/wp-content/themes/marvin2/assets/svg/icons/flipboard.svg"/><noscript><img class="icon-flipboard" src="https://gearjunkie.com/wp-content/themes/marvin2/assets/svg/icons/flipboard.svg" alt="Post to Flipboard"/></noscript></a>
+		</div>
+	</div>
+</div>
+		</div>
+    </header> <!-- end article header -->
+    <section class="entry-content" itemprop="articleBody">
+		<div id="breadcrumbs"><a href="https://gearjunkie.com">Home</a> » <a href="https://gearjunkie.com/news">News</a> » Olympics Postponed: Official Says 2021 Likely</div>
+		<p class="lead-in">A veteran International Olympic Committee member said, &#8216;postponement has been decided.&#8217;</p>
+<p><strong>The International Olympic Committee (IOC) will postpone the 2020 Tokyo games, </strong>likely until 2021, <a target="_blank" href="https://www.usatoday.com/story/sports/olympics/2020/03/23/olympics-2020-ioc-member-tokyo-games-postponed-dick-pound-coronavirus/2899848001/">USA Today</a> reports.</p>
+<p>Longtime committee member Dick Pound told the newspaper the decision has been made, with full details to come next month.</p>
+<p><strong>Update: The International Olympic Committee has announced new dates for the 2021 Olympics. <a target="_blank" href="https://twitter.com/Tokyo2020/status/1244618800663683072">They will hold the games from July 23 to August 8, 2021.</a> </strong></p>
+<p>&#8220;On the basis of the information the IOC has, postponement has been decided,&#8221; Pound said in a phone interview.</p>
+<p>This news comes less than a day after the IOC issued a statement saying it might consider postponing the games but would not cancel them. That statement <a target="_blank" href="https://gearjunkie.com/canada-australia-withdraw-summer-olympics-tokyo">sparked moves</a> by both the Canadian and Australian Olympic committees to withdraw from the 2020 games.</p>
+<p>&#8220;While it is incredibly disappointing, postponement is likely the best option we have,&#8221; said Sarah Laico, events and logistics extern at the United States Olympic and Paralympic Committee.</p>
+<p>&#8220;The games simply would not have gone on with the same vigor and excitement they deserve, and we owe it to our athletes to keep them safe and healthy, first and foremost. I look forward to seeing Team USA shine at the right time, under the right conditions.&#8221;</p>
+<p>We will update this story with more information as it becomes available.</p>
+<div class="related-in-article grid-x grid-margin-x">
+<div class="target"><a href="https://gearjunkie.com/news/canada-australia-withdraw-summer-olympics-tokyo?sce=post-related-link" class="target" target="_blank"></a></div>
+<div class="thumb-image cell small-4 first">
+						<a href="https://gearjunkie.com/news/canada-australia-withdraw-summer-olympics-tokyo?sce=post-related-link" target="_blank"><img class="lazy wp-post-image" decoding="async" src="https://gearjunkie.com/wp-content/themes/marvin2/assets/images/1x1.png"  data-src="https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/03/olympic-rings-australia-200x133.jpeg" data-src-retina="https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/03/olympic-rings-australia-400x266.jpeg" data-pin-nopin="true" alt="Olympic Rings" title="Canada, Australia Pull Out of Tokyo Games as Olympic Officials Refuse to Cancel"></a>
+					</div>
+<div class="cell small-8 last">
+<h5>Canada, Australia Pull Out of Tokyo Games as Olympic Officials Refuse to Cancel</h5>
+<div>Canada withdrew, and Australia quickly followed suit, potentially setting off a larger push to postpone this summer's Olympic Games. <a href="https://gearjunkie.com/news/canada-australia-withdraw-summer-olympics-tokyo?sce=post-related-link" target="_blank">Read more&hellip;</a></div>
+</p></div>
+</p></div>
+<div id="GJ-AD-InArticle-1" class="dfpbox inarticle" data-size="medium-rect" data-pos="inarticle1"></div>
+			</section> <!-- end article section -->
+	<footer class="article-footer">
+		<div class="share-article">
+	<div class="wrap">
+		<div class="count">Share now:</div>
+		<div class="social-shares" data-section="Top Social">
+			<a href="https://www.facebook.com/share.php?u=https://gearjunkie.com/news/2020-olympics-postponed-coronavirus-tokyo&amp;t=Olympics Postponed: Official Says 2021 Likely" target="_blank" class='facebook-share' title="Share on Facebook" data-network="Facebook"><img class="icon-facebook" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Share on Facebook" data-lazy-src="https://gearjunkie.com/wp-content/themes/marvin2/assets/svg/icons/facebook.svg"/><noscript><img class="icon-facebook" src="https://gearjunkie.com/wp-content/themes/marvin2/assets/svg/icons/facebook.svg" alt="Share on Facebook"/></noscript></a>
+			<a href="https://twitter.com/share?url=https://gearjunkie.com/news/2020-olympics-postponed-coronavirus-tokyo&text=Olympics Postponed: Official Says 2021 Likely&via=thegearjunkie" target="_blank" class='twitter-share' data-network="Twitter" title="Post to Twitter"><img class="icon-twitter" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Post to Twitter" data-lazy-src="https://gearjunkie.com/wp-content/themes/marvin2/assets/svg/icons/twitter.svg"/><noscript><img class="icon-twitter" src="https://gearjunkie.com/wp-content/themes/marvin2/assets/svg/icons/twitter.svg" alt="Post to Twitter"/></noscript></a>
+			<a href="https://www.reddit.com/submit?url=https://gearjunkie.com/news/2020-olympics-postponed-coronavirus-tokyo&title=Olympics Postponed: Official Says 2021 Likely" target="_blank" class='reddit-share' title="Post to Reddit" data-network="Reddit"><img class="icon-reddit" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Post to Reddit" data-lazy-src="https://gearjunkie.com/wp-content/themes/marvin2/assets/svg/icons/reddit.svg"/><noscript><img class="icon-reddit" src="https://gearjunkie.com/wp-content/themes/marvin2/assets/svg/icons/reddit.svg" alt="Post to Reddit"/></noscript></a>
+			<a href="https://share.flipboard.com/bookmarklet/popout?v=2&title=Olympics Postponed: Official Says 2021 Likely&url=https://gearjunkie.com/news/2020-olympics-postponed-coronavirus-tokyo" target="_blank" class='flipboard-share' data-network="Flipboard"><img class="icon-flipboard" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Post to Flipboard" data-lazy-src="https://gearjunkie.com/wp-content/themes/marvin2/assets/svg/icons/flipboard.svg"/><noscript><img class="icon-flipboard" src="https://gearjunkie.com/wp-content/themes/marvin2/assets/svg/icons/flipboard.svg" alt="Post to Flipboard"/></noscript></a>
+		</div>
+	</div>
+</div>
+		<div class="author-bio callout">
+			<div class="grid-x">
+							<div class="author-pic medium-3">
+					<figure>
+						<img width="720" height="720" decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20720%20720'%3E%3C/svg%3E" class="attachment-author-2x size-author-2x" alt="Adam Ruggiero" title="Adam Ruggiero" data-pin-nopin="nopin" data-lazy-srcset="https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/07/adam-headshot-BW-720x720.jpg 720w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/07/adam-headshot-BW-150x150.jpg 150w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/07/adam-headshot-BW-300x300.jpg 300w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/07/adam-headshot-BW-768x768.jpg 768w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/07/adam-headshot-BW-700x700.jpg 700w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/07/adam-headshot-BW-600x600.jpg 600w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/07/adam-headshot-BW-620x620.jpg 620w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/07/adam-headshot-BW-588x588.jpg 588w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/07/adam-headshot-BW-294x294.jpg 294w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/07/adam-headshot-BW-382x382.jpg 382w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/07/adam-headshot-BW-191x191.jpg 191w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/07/adam-headshot-BW-900x900.jpg 900w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/07/adam-headshot-BW-100x100.jpg 100w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/07/adam-headshot-BW-200x200.jpg 200w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/07/adam-headshot-BW-610x610.jpg 610w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/07/adam-headshot-BW-360x360.jpg 360w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/07/adam-headshot-BW-838x838.jpg 838w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/07/adam-headshot-BW-912x912.jpg 912w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/07/adam-headshot-BW-550x550.jpg 550w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/07/adam-headshot-BW-470x470.jpg 470w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/07/adam-headshot-BW.jpg 1000w" data-lazy-sizes="(max-width: 720px) 100vw, 720px" data-lazy-src="https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/07/adam-headshot-BW-720x720.jpg" /><noscript><img width="720" height="720" decoding="async" src="https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/07/adam-headshot-BW-720x720.jpg" class="attachment-author-2x size-author-2x" alt="Adam Ruggiero" title="Adam Ruggiero" data-pin-nopin="nopin" srcset="https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/07/adam-headshot-BW-720x720.jpg 720w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/07/adam-headshot-BW-150x150.jpg 150w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/07/adam-headshot-BW-300x300.jpg 300w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/07/adam-headshot-BW-768x768.jpg 768w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/07/adam-headshot-BW-700x700.jpg 700w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/07/adam-headshot-BW-600x600.jpg 600w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/07/adam-headshot-BW-620x620.jpg 620w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/07/adam-headshot-BW-588x588.jpg 588w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/07/adam-headshot-BW-294x294.jpg 294w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/07/adam-headshot-BW-382x382.jpg 382w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/07/adam-headshot-BW-191x191.jpg 191w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/07/adam-headshot-BW-900x900.jpg 900w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/07/adam-headshot-BW-100x100.jpg 100w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/07/adam-headshot-BW-200x200.jpg 200w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/07/adam-headshot-BW-610x610.jpg 610w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/07/adam-headshot-BW-360x360.jpg 360w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/07/adam-headshot-BW-838x838.jpg 838w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/07/adam-headshot-BW-912x912.jpg 912w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/07/adam-headshot-BW-550x550.jpg 550w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/07/adam-headshot-BW-470x470.jpg 470w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/07/adam-headshot-BW.jpg 1000w" sizes="(max-width: 720px) 100vw, 720px" /></noscript>					</figure>
+				</div>
+								<div class="author-info medium-9">
+					<h5 class="author-title">By <a href="https://gearjunkie.com/author/aruggiero" title="Posts by Adam Ruggiero" rel="author">Adam Ruggiero</a></h5>
+					<div class="author-description">
+						<p>Adam Ruggiero is the editor-in-chief of GearJunkie and a fan of virtually all sports and activities. From biking, running, and (not enough) surfing, to ball sports, camping, and cattle farming — if it's outside, it's worth doing. Adam graduated from the University of Minnesota with a BA in journalism. Likes: unique beer, dogs, stories. Like nots: neckties, escalators, manicured lawns.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+				<div class="gj-footer-breadcrumb-wrap alt">
+			<span class="read-more">Read More:</span>
+			<div class="gj-footer-breadcrumb category"><a class="parent category first" href="https://gearjunkie.com/olympics"><div class="gj-term-name">Olympics</div></a><a class="parent category primary" href="https://gearjunkie.com/news"><div class="gj-term-name">News</div></a></div><div class="gj-footer-breadcrumb post_tag"><a class="parent post_tag first" href="https://gearjunkie.com/tag/coronavirus"><div class="gj-term-name">coronavirus</div></a></div>		</div>
+	</footer> 
+	<!-- end article footer -->
+	<div class="up-next">		
+	<h3 class="section-headline">
+		<span class="section-headline-inner">Up Next:</span>
+		<a href="https://gearjunkie.com/news/airbnb-unique-fund-design-contest" rel="prev">Airbnb Wants to Give You $100,000 to Design a Wacky Rental</a>	</h3>	
+</div></article> <!-- end article -->
+			    	
+			    
+			</main> <!-- end #main -->
+				
+<div class="cell sidebar grid-x" style="height: 100%;">
+	<div id="sidebar-video" class="cell">
+<div class="gj-video-wrapper">
+    	<div class="gj-sidebar-header gj-video-header">
+		<a href="/type/video"><h5>GearJunkie Video<div id="video-min-button" class="video-min">&horbar;</div><div id="video-close-button" class="video-close">&times;</div></h5></a>
+	</div>
+	<div class="gj-video" id="gj_video_1cWXzrbQ" data-mediaid="1cWXzrbQ" data-elementid="gj_video_1cWXzrbQ" data-auto="true" data-second_auto="false" data-mute="true" data-repeat="false" data-controls="true" data-stop_no_ad="true" data-devmode="false" data-ad="true"></div>
+</div></div>
+<div id="sidebar-trending" class="cell show-for-medium">
+	<div class="gj-sidebar-header">
+		<a href="https://gearjunkie.com/winter/world-s-best-winter-mitts" onclick="gtag('event','click',{'event_category' : 'top-trending', 'event_label' : 'https://gearjunkie.com/winter/world-s-best-winter-mitts'});"><h5>Top Trending on GearJunkie</h5></a>
+	</div>
+	<figure>
+		<a href="https://gearjunkie.com/winter/world-s-best-winter-mitts" onclick="gtag('event','click',{'event_category' : 'top-trending', 'event_label' : 'https://gearjunkie.com/winter/world-s-best-winter-mitts'});">
+			<img class="lazy wp-post-image" src="https://gearjunkie.com/wp-content/themes/marvin2/assets/images/1x1.png"  data-src="https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/DSC09618-copy-300x200.jpg" data-src-retina="https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/DSC09618-copy-600x400.jpg" data-pin-nopin="true" alt="The Best Winter Mittens of 2022-2023" title="The Best Winter Mittens of 2022-2023">		</a>
+	</figure>
+	<div class="excerpt">
+		<a href="https://gearjunkie.com/winter/world-s-best-winter-mitts" onclick="gtag('event','click',{'event_category' : 'top-trending', 'event_label' : 'https://gearjunkie.com/winter/world-s-best-winter-mitts'});">
+			<h2>The Best Winter Mittens of 2022-2023</h2>
+			<p>When it's too cold for gloves, a good pair of mittens is crucial to enjoying any winter activity. Check out our best winter mitt recommendations for 2022.</p>
+		</a>
+		<a class="button" href="https://gearjunkie.com/winter/world-s-best-winter-mitts" onclick="gtag('event','click',{'event_category' : 'top-trending', 'event_label' : 'https://gearjunkie.com/winter/world-s-best-winter-mitts'});">
+			Keep Reading
+		</a>
+	</div>
+</div>
+			<div id="sidebar-ad-2" class="cell sidebar-ad medium-rectangle">
+				<div id='GJ-AD-Sidebar-2' class='side-ad-box dfpbox' data-size='var-rect' data-pos='sbanner2'></div>	
+			</div>
+		<div class="cell show-for-medium">
+		
+	<section class="deal-grid grid-container full sidebar-section">
+					<div class="gj-sidebar-header sidebar-deals-header"><a href="/deals"><h5>GearJunkie Latest Deals</h5></a></div>
+				<div id="sidebar-deals-slider" class="orbit" data-orbit data-autoplay="false" data-use-m-u-i="false"><div class="orbit-wrapper"><ul class="orbit-container"><li class="orbit-slide"><figure class="orbit-figure">
+	<a href="https://gearjunkie.com/weekly-outdoor-gear-deals/bargains-10-21-2022">
+		<img width="300" height="200" decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20200'%3E%3C/svg%3E" class="attachment-gj-32-xs size-gj-32-xs wp-post-image" alt="CamelBak Brand Image Drinkware" data-lazy-srcset="https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/CamelBak-Brand-Image-Drinkware-300x200.jpg 300w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/CamelBak-Brand-Image-Drinkware-700x467.jpg 700w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/CamelBak-Brand-Image-Drinkware-768x512.jpg 768w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/CamelBak-Brand-Image-Drinkware-1200x800.jpg 1200w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/CamelBak-Brand-Image-Drinkware-1380x920.jpg 1380w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/CamelBak-Brand-Image-Drinkware-690x460.jpg 690w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/CamelBak-Brand-Image-Drinkware-1320x880.jpg 1320w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/CamelBak-Brand-Image-Drinkware-660x440.jpg 660w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/CamelBak-Brand-Image-Drinkware-600x400.jpg 600w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/CamelBak-Brand-Image-Drinkware-720x480.jpg 720w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/CamelBak-Brand-Image-Drinkware-360x240.jpg 360w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/CamelBak-Brand-Image-Drinkware-240x160.jpg 240w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/CamelBak-Brand-Image-Drinkware-120x80.jpg 120w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/CamelBak-Brand-Image-Drinkware-1240x827.jpg 1240w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/CamelBak-Brand-Image-Drinkware-620x413.jpg 620w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/CamelBak-Brand-Image-Drinkware-588x392.jpg 588w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/CamelBak-Brand-Image-Drinkware-294x196.jpg 294w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/CamelBak-Brand-Image-Drinkware-382x255.jpg 382w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/CamelBak-Brand-Image-Drinkware-191x127.jpg 191w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/CamelBak-Brand-Image-Drinkware-293x195.jpg 293w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/CamelBak-Brand-Image-Drinkware-586x390.jpg 586w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/CamelBak-Brand-Image-Drinkware-400x266.jpg 400w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/CamelBak-Brand-Image-Drinkware-200x133.jpg 200w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/CamelBak-Brand-Image-Drinkware-1220x813.jpg 1220w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/CamelBak-Brand-Image-Drinkware-610x407.jpg 610w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/CamelBak-Brand-Image-Drinkware-838x559.jpg 838w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/CamelBak-Brand-Image-Drinkware-900x600.jpg 900w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/CamelBak-Brand-Image-Drinkware-450x300.jpg 450w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/CamelBak-Brand-Image-Drinkware-150x100.jpg 150w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/CamelBak-Brand-Image-Drinkware.jpg 1500w" data-lazy-sizes="(max-width: 300px) 100vw, 300px" data-lazy-src="https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/CamelBak-Brand-Image-Drinkware-300x200.jpg" /><noscript><img width="300" height="200" decoding="async" src="https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/CamelBak-Brand-Image-Drinkware-300x200.jpg" class="attachment-gj-32-xs size-gj-32-xs wp-post-image" alt="CamelBak Brand Image Drinkware" srcset="https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/CamelBak-Brand-Image-Drinkware-300x200.jpg 300w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/CamelBak-Brand-Image-Drinkware-700x467.jpg 700w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/CamelBak-Brand-Image-Drinkware-768x512.jpg 768w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/CamelBak-Brand-Image-Drinkware-1200x800.jpg 1200w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/CamelBak-Brand-Image-Drinkware-1380x920.jpg 1380w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/CamelBak-Brand-Image-Drinkware-690x460.jpg 690w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/CamelBak-Brand-Image-Drinkware-1320x880.jpg 1320w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/CamelBak-Brand-Image-Drinkware-660x440.jpg 660w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/CamelBak-Brand-Image-Drinkware-600x400.jpg 600w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/CamelBak-Brand-Image-Drinkware-720x480.jpg 720w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/CamelBak-Brand-Image-Drinkware-360x240.jpg 360w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/CamelBak-Brand-Image-Drinkware-240x160.jpg 240w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/CamelBak-Brand-Image-Drinkware-120x80.jpg 120w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/CamelBak-Brand-Image-Drinkware-1240x827.jpg 1240w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/CamelBak-Brand-Image-Drinkware-620x413.jpg 620w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/CamelBak-Brand-Image-Drinkware-588x392.jpg 588w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/CamelBak-Brand-Image-Drinkware-294x196.jpg 294w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/CamelBak-Brand-Image-Drinkware-382x255.jpg 382w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/CamelBak-Brand-Image-Drinkware-191x127.jpg 191w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/CamelBak-Brand-Image-Drinkware-293x195.jpg 293w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/CamelBak-Brand-Image-Drinkware-586x390.jpg 586w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/CamelBak-Brand-Image-Drinkware-400x266.jpg 400w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/CamelBak-Brand-Image-Drinkware-200x133.jpg 200w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/CamelBak-Brand-Image-Drinkware-1220x813.jpg 1220w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/CamelBak-Brand-Image-Drinkware-610x407.jpg 610w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/CamelBak-Brand-Image-Drinkware-838x559.jpg 838w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/CamelBak-Brand-Image-Drinkware-900x600.jpg 900w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/CamelBak-Brand-Image-Drinkware-450x300.jpg 450w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/CamelBak-Brand-Image-Drinkware-150x100.jpg 150w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/CamelBak-Brand-Image-Drinkware.jpg 1500w" sizes="(max-width: 300px) 100vw, 300px" /></noscript>		<figcaption class="orbit-caption">
+			Gear Bargains: Save on Jackets, Daypacks, Tents, and More		</figcaption>
+	</a>
+</figure></li><li class="orbit-slide"><figure class="orbit-figure">
+	<a href="https://gearjunkie.com/weekly-outdoor-gear-deals/weekly-gear-deals-10-19-2022">
+		<img width="300" height="200" decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20200'%3E%3C/svg%3E" class="attachment-gj-32-xs size-gj-32-xs wp-post-image" alt="Huckberry Brand Image Wellen Cotton Sweater" data-lazy-srcset="https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Huckberry-Brand-Image-Wellen-Cotton-Sweater-300x200.jpg 300w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Huckberry-Brand-Image-Wellen-Cotton-Sweater-700x467.jpg 700w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Huckberry-Brand-Image-Wellen-Cotton-Sweater-768x512.jpg 768w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Huckberry-Brand-Image-Wellen-Cotton-Sweater-1200x800.jpg 1200w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Huckberry-Brand-Image-Wellen-Cotton-Sweater-1380x920.jpg 1380w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Huckberry-Brand-Image-Wellen-Cotton-Sweater-690x460.jpg 690w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Huckberry-Brand-Image-Wellen-Cotton-Sweater-1320x880.jpg 1320w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Huckberry-Brand-Image-Wellen-Cotton-Sweater-660x440.jpg 660w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Huckberry-Brand-Image-Wellen-Cotton-Sweater-600x400.jpg 600w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Huckberry-Brand-Image-Wellen-Cotton-Sweater-720x480.jpg 720w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Huckberry-Brand-Image-Wellen-Cotton-Sweater-360x240.jpg 360w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Huckberry-Brand-Image-Wellen-Cotton-Sweater-240x160.jpg 240w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Huckberry-Brand-Image-Wellen-Cotton-Sweater-120x80.jpg 120w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Huckberry-Brand-Image-Wellen-Cotton-Sweater-1240x827.jpg 1240w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Huckberry-Brand-Image-Wellen-Cotton-Sweater-620x413.jpg 620w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Huckberry-Brand-Image-Wellen-Cotton-Sweater-588x392.jpg 588w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Huckberry-Brand-Image-Wellen-Cotton-Sweater-294x196.jpg 294w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Huckberry-Brand-Image-Wellen-Cotton-Sweater-382x255.jpg 382w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Huckberry-Brand-Image-Wellen-Cotton-Sweater-191x127.jpg 191w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Huckberry-Brand-Image-Wellen-Cotton-Sweater-293x195.jpg 293w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Huckberry-Brand-Image-Wellen-Cotton-Sweater-586x390.jpg 586w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Huckberry-Brand-Image-Wellen-Cotton-Sweater-400x266.jpg 400w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Huckberry-Brand-Image-Wellen-Cotton-Sweater-200x133.jpg 200w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Huckberry-Brand-Image-Wellen-Cotton-Sweater-1220x813.jpg 1220w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Huckberry-Brand-Image-Wellen-Cotton-Sweater-610x407.jpg 610w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Huckberry-Brand-Image-Wellen-Cotton-Sweater-838x559.jpg 838w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Huckberry-Brand-Image-Wellen-Cotton-Sweater-900x600.jpg 900w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Huckberry-Brand-Image-Wellen-Cotton-Sweater-450x300.jpg 450w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Huckberry-Brand-Image-Wellen-Cotton-Sweater-150x100.jpg 150w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Huckberry-Brand-Image-Wellen-Cotton-Sweater.jpg 1500w" data-lazy-sizes="(max-width: 300px) 100vw, 300px" data-lazy-src="https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Huckberry-Brand-Image-Wellen-Cotton-Sweater-300x200.jpg" /><noscript><img width="300" height="200" decoding="async" src="https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Huckberry-Brand-Image-Wellen-Cotton-Sweater-300x200.jpg" class="attachment-gj-32-xs size-gj-32-xs wp-post-image" alt="Huckberry Brand Image Wellen Cotton Sweater" srcset="https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Huckberry-Brand-Image-Wellen-Cotton-Sweater-300x200.jpg 300w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Huckberry-Brand-Image-Wellen-Cotton-Sweater-700x467.jpg 700w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Huckberry-Brand-Image-Wellen-Cotton-Sweater-768x512.jpg 768w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Huckberry-Brand-Image-Wellen-Cotton-Sweater-1200x800.jpg 1200w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Huckberry-Brand-Image-Wellen-Cotton-Sweater-1380x920.jpg 1380w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Huckberry-Brand-Image-Wellen-Cotton-Sweater-690x460.jpg 690w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Huckberry-Brand-Image-Wellen-Cotton-Sweater-1320x880.jpg 1320w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Huckberry-Brand-Image-Wellen-Cotton-Sweater-660x440.jpg 660w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Huckberry-Brand-Image-Wellen-Cotton-Sweater-600x400.jpg 600w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Huckberry-Brand-Image-Wellen-Cotton-Sweater-720x480.jpg 720w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Huckberry-Brand-Image-Wellen-Cotton-Sweater-360x240.jpg 360w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Huckberry-Brand-Image-Wellen-Cotton-Sweater-240x160.jpg 240w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Huckberry-Brand-Image-Wellen-Cotton-Sweater-120x80.jpg 120w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Huckberry-Brand-Image-Wellen-Cotton-Sweater-1240x827.jpg 1240w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Huckberry-Brand-Image-Wellen-Cotton-Sweater-620x413.jpg 620w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Huckberry-Brand-Image-Wellen-Cotton-Sweater-588x392.jpg 588w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Huckberry-Brand-Image-Wellen-Cotton-Sweater-294x196.jpg 294w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Huckberry-Brand-Image-Wellen-Cotton-Sweater-382x255.jpg 382w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Huckberry-Brand-Image-Wellen-Cotton-Sweater-191x127.jpg 191w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Huckberry-Brand-Image-Wellen-Cotton-Sweater-293x195.jpg 293w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Huckberry-Brand-Image-Wellen-Cotton-Sweater-586x390.jpg 586w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Huckberry-Brand-Image-Wellen-Cotton-Sweater-400x266.jpg 400w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Huckberry-Brand-Image-Wellen-Cotton-Sweater-200x133.jpg 200w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Huckberry-Brand-Image-Wellen-Cotton-Sweater-1220x813.jpg 1220w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Huckberry-Brand-Image-Wellen-Cotton-Sweater-610x407.jpg 610w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Huckberry-Brand-Image-Wellen-Cotton-Sweater-838x559.jpg 838w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Huckberry-Brand-Image-Wellen-Cotton-Sweater-900x600.jpg 900w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Huckberry-Brand-Image-Wellen-Cotton-Sweater-450x300.jpg 450w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Huckberry-Brand-Image-Wellen-Cotton-Sweater-150x100.jpg 150w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Huckberry-Brand-Image-Wellen-Cotton-Sweater.jpg 1500w" sizes="(max-width: 300px) 100vw, 300px" /></noscript>		<figcaption class="orbit-caption">
+			Gear Deals From iROCKER, RTIC, Mountain Hardwear, and More		</figcaption>
+	</a>
+</figure></li><li class="orbit-slide"><figure class="orbit-figure">
+	<a href="https://gearjunkie.com/weekly-outdoor-gear-deals/best-selling-gear-backcountry">
+		<img width="300" height="200" decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20200'%3E%3C/svg%3E" class="attachment-gj-32-xs size-gj-32-xs wp-post-image" alt="Stanley Trigger Action Travel Mug lineup" data-lazy-srcset="https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/11/Stanley-Trigger-Action-Travel-Mug-lineup.jpg 1227w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/11/Stanley-Trigger-Action-Travel-Mug-lineup-300x200.jpg 300w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/11/Stanley-Trigger-Action-Travel-Mug-lineup-768x509.jpg 768w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/11/Stanley-Trigger-Action-Travel-Mug-lineup-700x464.jpg 700w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/11/Stanley-Trigger-Action-Travel-Mug-lineup-1200x796.jpg 1200w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/11/Stanley-Trigger-Action-Travel-Mug-lineup-600x400.jpg 600w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/11/Stanley-Trigger-Action-Travel-Mug-lineup-620x411.jpg 620w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/11/Stanley-Trigger-Action-Travel-Mug-lineup-588x390.jpg 588w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/11/Stanley-Trigger-Action-Travel-Mug-lineup-294x195.jpg 294w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/11/Stanley-Trigger-Action-Travel-Mug-lineup-382x253.jpg 382w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/11/Stanley-Trigger-Action-Travel-Mug-lineup-191x127.jpg 191w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/11/Stanley-Trigger-Action-Travel-Mug-lineup-293x195.jpg 293w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/11/Stanley-Trigger-Action-Travel-Mug-lineup-586x390.jpg 586w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/11/Stanley-Trigger-Action-Travel-Mug-lineup-400x266.jpg 400w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/11/Stanley-Trigger-Action-Travel-Mug-lineup-200x133.jpg 200w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/11/Stanley-Trigger-Action-Travel-Mug-lineup-1220x809.jpg 1220w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/11/Stanley-Trigger-Action-Travel-Mug-lineup-610x405.jpg 610w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/11/Stanley-Trigger-Action-Travel-Mug-lineup-838x556.jpg 838w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/11/Stanley-Trigger-Action-Travel-Mug-lineup-151x100.jpg 151w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/11/Stanley-Trigger-Action-Travel-Mug-lineup-301x200.jpg 301w" data-lazy-sizes="(max-width: 300px) 100vw, 300px" data-lazy-src="https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/11/Stanley-Trigger-Action-Travel-Mug-lineup.jpg" /><noscript><img width="300" height="200" decoding="async" src="https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/11/Stanley-Trigger-Action-Travel-Mug-lineup.jpg" class="attachment-gj-32-xs size-gj-32-xs wp-post-image" alt="Stanley Trigger Action Travel Mug lineup" srcset="https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/11/Stanley-Trigger-Action-Travel-Mug-lineup.jpg 1227w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/11/Stanley-Trigger-Action-Travel-Mug-lineup-300x200.jpg 300w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/11/Stanley-Trigger-Action-Travel-Mug-lineup-768x509.jpg 768w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/11/Stanley-Trigger-Action-Travel-Mug-lineup-700x464.jpg 700w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/11/Stanley-Trigger-Action-Travel-Mug-lineup-1200x796.jpg 1200w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/11/Stanley-Trigger-Action-Travel-Mug-lineup-600x400.jpg 600w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/11/Stanley-Trigger-Action-Travel-Mug-lineup-620x411.jpg 620w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/11/Stanley-Trigger-Action-Travel-Mug-lineup-588x390.jpg 588w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/11/Stanley-Trigger-Action-Travel-Mug-lineup-294x195.jpg 294w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/11/Stanley-Trigger-Action-Travel-Mug-lineup-382x253.jpg 382w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/11/Stanley-Trigger-Action-Travel-Mug-lineup-191x127.jpg 191w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/11/Stanley-Trigger-Action-Travel-Mug-lineup-293x195.jpg 293w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/11/Stanley-Trigger-Action-Travel-Mug-lineup-586x390.jpg 586w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/11/Stanley-Trigger-Action-Travel-Mug-lineup-400x266.jpg 400w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/11/Stanley-Trigger-Action-Travel-Mug-lineup-200x133.jpg 200w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/11/Stanley-Trigger-Action-Travel-Mug-lineup-1220x809.jpg 1220w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/11/Stanley-Trigger-Action-Travel-Mug-lineup-610x405.jpg 610w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/11/Stanley-Trigger-Action-Travel-Mug-lineup-838x556.jpg 838w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/11/Stanley-Trigger-Action-Travel-Mug-lineup-151x100.jpg 151w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2020/11/Stanley-Trigger-Action-Travel-Mug-lineup-301x200.jpg 301w" sizes="(max-width: 300px) 100vw, 300px" /></noscript>		<figcaption class="orbit-caption">
+			The Bestselling Gear at Backcountry This Week		</figcaption>
+	</a>
+</figure></li><li class="orbit-slide"><figure class="orbit-figure">
+	<a href="https://gearjunkie.com/weekly-outdoor-gear-deals/bargains-10-14-2022">
+		<img width="300" height="200" decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20200'%3E%3C/svg%3E" class="attachment-gj-32-xs size-gj-32-xs wp-post-image" alt="Klean Kanteen Brand Image Camping" data-lazy-srcset="https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Klean-Kanteen-Brand-Image-Camping-300x200.jpg 300w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Klean-Kanteen-Brand-Image-Camping-700x467.jpg 700w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Klean-Kanteen-Brand-Image-Camping-768x512.jpg 768w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Klean-Kanteen-Brand-Image-Camping-1200x800.jpg 1200w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Klean-Kanteen-Brand-Image-Camping-1380x920.jpg 1380w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Klean-Kanteen-Brand-Image-Camping-690x460.jpg 690w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Klean-Kanteen-Brand-Image-Camping-1320x880.jpg 1320w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Klean-Kanteen-Brand-Image-Camping-660x440.jpg 660w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Klean-Kanteen-Brand-Image-Camping-600x400.jpg 600w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Klean-Kanteen-Brand-Image-Camping-720x480.jpg 720w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Klean-Kanteen-Brand-Image-Camping-360x240.jpg 360w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Klean-Kanteen-Brand-Image-Camping-240x160.jpg 240w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Klean-Kanteen-Brand-Image-Camping-120x80.jpg 120w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Klean-Kanteen-Brand-Image-Camping-1240x827.jpg 1240w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Klean-Kanteen-Brand-Image-Camping-620x413.jpg 620w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Klean-Kanteen-Brand-Image-Camping-588x392.jpg 588w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Klean-Kanteen-Brand-Image-Camping-294x196.jpg 294w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Klean-Kanteen-Brand-Image-Camping-382x255.jpg 382w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Klean-Kanteen-Brand-Image-Camping-191x127.jpg 191w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Klean-Kanteen-Brand-Image-Camping-293x195.jpg 293w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Klean-Kanteen-Brand-Image-Camping-586x390.jpg 586w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Klean-Kanteen-Brand-Image-Camping-400x266.jpg 400w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Klean-Kanteen-Brand-Image-Camping-200x133.jpg 200w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Klean-Kanteen-Brand-Image-Camping-1220x813.jpg 1220w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Klean-Kanteen-Brand-Image-Camping-610x407.jpg 610w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Klean-Kanteen-Brand-Image-Camping-838x559.jpg 838w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Klean-Kanteen-Brand-Image-Camping-900x600.jpg 900w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Klean-Kanteen-Brand-Image-Camping-450x300.jpg 450w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Klean-Kanteen-Brand-Image-Camping-150x100.jpg 150w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Klean-Kanteen-Brand-Image-Camping.jpg 1500w" data-lazy-sizes="(max-width: 300px) 100vw, 300px" data-lazy-src="https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Klean-Kanteen-Brand-Image-Camping-300x200.jpg" /><noscript><img width="300" height="200" decoding="async" src="https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Klean-Kanteen-Brand-Image-Camping-300x200.jpg" class="attachment-gj-32-xs size-gj-32-xs wp-post-image" alt="Klean Kanteen Brand Image Camping" srcset="https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Klean-Kanteen-Brand-Image-Camping-300x200.jpg 300w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Klean-Kanteen-Brand-Image-Camping-700x467.jpg 700w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Klean-Kanteen-Brand-Image-Camping-768x512.jpg 768w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Klean-Kanteen-Brand-Image-Camping-1200x800.jpg 1200w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Klean-Kanteen-Brand-Image-Camping-1380x920.jpg 1380w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Klean-Kanteen-Brand-Image-Camping-690x460.jpg 690w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Klean-Kanteen-Brand-Image-Camping-1320x880.jpg 1320w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Klean-Kanteen-Brand-Image-Camping-660x440.jpg 660w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Klean-Kanteen-Brand-Image-Camping-600x400.jpg 600w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Klean-Kanteen-Brand-Image-Camping-720x480.jpg 720w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Klean-Kanteen-Brand-Image-Camping-360x240.jpg 360w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Klean-Kanteen-Brand-Image-Camping-240x160.jpg 240w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Klean-Kanteen-Brand-Image-Camping-120x80.jpg 120w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Klean-Kanteen-Brand-Image-Camping-1240x827.jpg 1240w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Klean-Kanteen-Brand-Image-Camping-620x413.jpg 620w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Klean-Kanteen-Brand-Image-Camping-588x392.jpg 588w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Klean-Kanteen-Brand-Image-Camping-294x196.jpg 294w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Klean-Kanteen-Brand-Image-Camping-382x255.jpg 382w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Klean-Kanteen-Brand-Image-Camping-191x127.jpg 191w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Klean-Kanteen-Brand-Image-Camping-293x195.jpg 293w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Klean-Kanteen-Brand-Image-Camping-586x390.jpg 586w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Klean-Kanteen-Brand-Image-Camping-400x266.jpg 400w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Klean-Kanteen-Brand-Image-Camping-200x133.jpg 200w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Klean-Kanteen-Brand-Image-Camping-1220x813.jpg 1220w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Klean-Kanteen-Brand-Image-Camping-610x407.jpg 610w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Klean-Kanteen-Brand-Image-Camping-838x559.jpg 838w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Klean-Kanteen-Brand-Image-Camping-900x600.jpg 900w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Klean-Kanteen-Brand-Image-Camping-450x300.jpg 450w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Klean-Kanteen-Brand-Image-Camping-150x100.jpg 150w, https://s3.amazonaws.com/images.gearjunkie.com/uploads/2022/10/Klean-Kanteen-Brand-Image-Camping.jpg 1500w" sizes="(max-width: 300px) 100vw, 300px" /></noscript>		<figcaption class="orbit-caption">
+			Gear Bargains: Save on Apparel, Drinkware, Sleeping Pads, and More		</figcaption>
+	</a>
+</figure></li></ul>
+					<div class="orbit-controls">
+					      <button class="orbit-previous"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button>				<button class="category-more">
+				<a href="/deals" onclick="gtag('event','click',{'event_category' : 'deals-view-more', 'event_label' : 'View More Deals'});">
+				View More Deals
+				<span class="icon-angle-circled-right"></span>			</a>			
+		</button>
+						
+				
+						  <button class="orbit-next"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
+					    </div>
+					</div>
+				</div>		
+	</section>
+		</div>
+	<div class="cell show-for-medium">
+			<div id="sidebar-enews" class="enews-wrapper">
+		<div class="gj-sidebar-header enews-signup-header">
+			<a href="/enews"><h5>Sign Up For GearJunkie Enews<span class="dashicons dashicons-email"></span></h5></a>
+		</div>
+					<div class="enews-signup-body ">
+				<form  method="post" id="mc--subscribe-form" name="mc-embedded-subscribe-form"  class="validate " target="_blank">
+			<div class="email-signup-extra">
+				<div class="grid-x grid-margin-x input-group email-inputs">
+
+								<div class="email-options-toggle cell">
+				<div class='interest-options'>
+					<h6>Choose Your interests:</h6>
+					<div class='options-wrapper'>						<div class="checkbox-wrapper">
+							<input id="generic-enews-news" type="checkbox" name='editions[]' value="News" data-edition="f86ba4aaf3">
+							<label for="generic-enews-news" class="email-checkbox">
+								<span>News</span>
+							</label>
+						</div>						<div class="checkbox-wrapper">
+							<input id="generic-enews-deals" type="checkbox" name='editions[]' value="Deals" data-edition="18baaa151c">
+							<label for="generic-enews-deals" class="email-checkbox">
+								<span>Deals</span>
+							</label>
+						</div>						<div class="checkbox-wrapper">
+							<input id="generic-enews-gear" type="checkbox" name='editions[]' value="Gear" data-edition="e6aa23b225">
+							<label for="generic-enews-gear" class="email-checkbox">
+								<span>Gear</span>
+							</label>
+						</div>						<div class="checkbox-wrapper">
+							<input id="generic-enews-top-stories" type="checkbox" name='editions[]' value="Top Stories" data-edition="68fca56508" checked>
+							<label for="generic-enews-top-stories" class="email-checkbox">
+								<span>Top Stories</span>
+							</label>
+						</div>					</div>
+				</div>
+			</div>					
+										
+					<div class="cell enews-email-wrapper input-group">
+						<span class="input-group-label">Email Address</span>
+						<input type="email" value="" name="EMAIL" class="email input-group-field" id="input-email-" placeholder="me@example.com" >
+						<div class="input-group-button">
+							<button style="" name="subscribe" id="mc--subscribe-button" class="button enews-subscribe ">Subscribe</button>
+							<div style="position: absolute; left: -5000px;"><input type="text" name="b_cb657f6582be6d7b9f61ef91b_4761d8db2c" tabindex="-1" value=""></div>
+					</div>
+						
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+	<div class="overlay">
+		<div class="spinner">
+			<div class="bounce1"></div>
+			<div class="bounce2"></div>
+			<div class="bounce3"></div>
+		</div>
+		<div class="status">Saving&hellip;</div>
+	</div>	</div>	</div>
+				<div id="sidebar-ad-3" class="cell sidebar-ad medium-rectangle">
+				<div id='GJ-AD-Sidebar-3' class='side-ad-box dfpbox' data-size='var-rect' data-pos='sbanner3'></div>	
+			</div>
+		</div>
+		</div> <!-- end #inner-content -->
+		
+		<div id='GJ-AD-Billboard-2' class='GJ-AD-Header dfpbox' data-size='billboard' data-pos='billboard2'></div><div id='GJ-AD-Mobile-2' class='GJ-AD-Mobile dfpbox' data-size='mobile-banner' data-pos='mbanner2'></div>				<script>
+	// allows for infinite to be disabled on selected articles
+	var disable_infinite = false; 
+</script>
+<div class="post-pagination">
+	<div class="pagination-previous">
+		<a href="https://gearjunkie.com/news/airbnb-unique-fund-design-contest" rel="prev">Airbnb Wants to Give You $100,000 to Design a Wacky Rental</a>	</div>
+	<div class="pagination-next">
+		<a href="https://gearjunkie.com/news/san-juan-county-colorado-ban-backcountry" rel="next">Colorado Sheriff Bans All Backcountry Recreation</a>	</div>
+</div>
+<div class="infinite-article"></div>
+	</div> <!-- end .grid-container -->
+
+</div> <!-- end #content -->
+				<footer class="footer" role="contentinfo">
+					<div class="grid-container fluid top">
+						<div class="inner-footer grid-x grid-margin-x">
+							<div class="cell auto">
+					            <div class="grid-x">
+					                <a href="https://gearjunkie.com" title="GearJunkie" id="footer-logo"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="GearJunkie Logo" data-lazy-src="https://gearjunkie.com/wp-content/themes/marvin2/assets/images/gj-logo.svg"><noscript><img src="https://gearjunkie.com/wp-content/themes/marvin2/assets/images/gj-logo.svg" alt="GearJunkie Logo"></noscript></a>
+	  								<nav role="navigation">
+	      								<ul class="grid-x align-left no-bullet">
+	      									<li><a href="/about">About</a></li>
+	      									<li><a href="/contact">Contact</a></li>
+	      									<li><a href="/advertising">Advertising</a></li>
+										</ul>
+	      							</nav>
+	      						</div>
+	    					</div>
+							<div class="cell small-12 medium-12 large-4">
+								<p class="source-org copyright">&copy; Copyright 2022 GearJunkie, All Rights Reserved</p>
+							</div>
+						</div>
+					</div>
+					<div class="grid-container fluid bottom">
+						<ul class="grid-x grid-margin-x align-center no-bullet">
+							<li><a href="/privacy">Privacy Policy</a></li>
+							<li><a href="/privacy#ca-privacy-notice">California Privacy Notice</a></li>
+							<li><a href="/do-not-sell">Do Not Sell My Personal Information</a></li>
+							<li><a href="https://info.wrightsmedia.com/gearjunkie-licensing-and-permissions">Licensing &amp; Permissions</a></li>
+						</ul>
+					</div>
+				</footer>
+			</div>  <!-- end .off-canvas-content -->
+		</div> <!-- end .off-canvas-wrapper -->
+<div id="madhesion">
+	<div id="madhesion-wrapper">
+		<div id='GJ-AD-MobAdh' class='GJ-AD-MobAdh dfpbox' data-size='mobile-adhesion' data-pos='mobile-adhesion'></div>		<div id="madhesion-close"><span>&times;</span></div>
+	</div>
+</div>
+
+<div id="pu-wrapper">
+	<div id="pu-enews" class="enews-wrapper">
+		<h3 class="copy">Sign up for our weekly email</h3>
+			<div class="enews-signup-body ">
+				<form  method="post" id="mc-popup-subscribe-form" name="mc-embedded-subscribe-form"  class="validate popup" target="_blank">
+			<div class="email-signup-extra">
+				<div class="grid-x grid-margin-x input-group email-inputs">
+
+								<div class="email-options-toggle cell">
+				<div class='interest-options'>
+					<h6>Choose Your interests:</h6>
+					<div class='options-wrapper'>						<div class="checkbox-wrapper">
+							<input id="popup-enews-news" type="checkbox" name='editions[]' value="News" data-edition="f86ba4aaf3">
+							<label for="popup-enews-news" class="email-checkbox">
+								<span>News</span>
+							</label>
+						</div>						<div class="checkbox-wrapper">
+							<input id="popup-enews-deals" type="checkbox" name='editions[]' value="Deals" data-edition="18baaa151c">
+							<label for="popup-enews-deals" class="email-checkbox">
+								<span>Deals</span>
+							</label>
+						</div>						<div class="checkbox-wrapper">
+							<input id="popup-enews-gear" type="checkbox" name='editions[]' value="Gear" data-edition="e6aa23b225">
+							<label for="popup-enews-gear" class="email-checkbox">
+								<span>Gear</span>
+							</label>
+						</div>						<div class="checkbox-wrapper">
+							<input id="popup-enews-top-stories" type="checkbox" name='editions[]' value="Top Stories" data-edition="68fca56508" checked>
+							<label for="popup-enews-top-stories" class="email-checkbox">
+								<span>Top Stories</span>
+							</label>
+						</div>					</div>
+				</div>
+			</div>					
+										
+					<div class="cell enews-email-wrapper input-group">
+						<span class="input-group-label">Email Address</span>
+						<input type="email" value="" name="EMAIL" class="email input-group-field" id="input-email-popup" placeholder="me@example.com" >
+						<div class="input-group-button">
+							<button style="" name="subscribe" id="mc-popup-subscribe-button" class="button enews-subscribe popup">Subscribe</button>
+							<div style="position: absolute; left: -5000px;"><input type="text" name="b_cb657f6582be6d7b9f61ef91b_4761d8db2c" tabindex="-1" value=""></div>
+					</div>
+						
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+	<div class="overlay">
+		<div class="spinner">
+			<div class="bounce1"></div>
+			<div class="bounce2"></div>
+			<div class="bounce3"></div>
+		</div>
+		<div class="status">Saving&hellip;</div>
+	</div>		<div id="email-close-link" class="email-close">
+			<div><p>No, thanks.</p></div>
+		</div>
+		<div id="pu-close"><span>&times;</span></div>
+	</div>
+</div>
+		<!-- Trackonomics -->
+<script type="rocketlazyloadscript">
+//var loc = window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/'));
+//if(loc == '/the-best-work-pants-for-men')
+//{
+var scrEm = document.createElement("script");
+scrEm.setAttribute("id", "funnel-relay-installer");
+scrEm.setAttribute("data-customer-id", "lola_d3bb2_gearjunkie");
+scrEm.setAttribute("data-property-id", "PROPERTY_ID");
+scrEm.setAttribute("data-autorun", "true");
+scrEm.setAttribute("async", "true");
+scrEm.setAttribute("src", "https://cdn-magiclinks.trackonomics.net/client/static/v2/lola_d3bb2_gearjunkie.js");
+document.head.appendChild(scrEm);
+//}
+</script>
+<script type="rocketlazyloadscript">
+	
+/*window.addEventListener('DOMContentLoaded', function(){
+	if(document.body.classList.contains('home') && !document.body.classList.contains('logged-in') && window.innerWidth >= 970){
+		document.querySelector('#top-bar-menu').classList.add('is-stuck');
+		var marginTop = (document.querySelector('#header-wrap').clientHeight + document.querySelector('#top-bar-menu').clientHeight);
+		marginTop += 'px';
+		document.querySelector('#grid').style.marginTop = marginTop;
+	}
+});*/
+	
+$(window).scroll(function(){
+    $(".page-id-124736 #branding").css("opacity", 1 - $(window).scrollTop() / 250);
+  });
+$(document).ready(function(){
+	
+	if($(window).innerWidth() > 970){
+		$('#menu-item-gift-guides').css({ 'position': 'relative' });
+		$('#menu-item-gift-guides').find('ul.is-dropdown-submenu').css({ 'width': '250px' });
+		$('#menu-item-gift-guides').find('.subnav-add-on').remove();
+	}
+	
+	setTimeout(function(){ $('.related-in-article').find('.dfpbox').remove(); }, 2000);
+	
+	$('.entry-content table').wrap('<div class="table-responsive"></div>');
+	$('.entry-content table').css({ 'width':'580px' });
+  
+  $('.vidLink').on('click tap touchstart', function(){
+	var thisPop = $(this).attr("rel");
+    $('.video-popup'+thisPop).fadeIn('slow');
+	  var thisSrc = $('.video-popup'+thisPop).find("iframe.video").attr("src");
+	  if(thisSrc == '')
+		  {
+			  var dataURL = $('.video-popup'+thisPop).attr("data-url");
+			  $('.video-popup'+thisPop).find("iframe.video").attr("src",dataURL);
+		  }
+    return false;
+  });
+  
+  $('.popup-bg').on('click tap touchstart', function(){
+    $('.video-popup').slideUp('slow');
+	   $("iframe.video").attr("src","");
+    return false;
+  });
+  
+   $('.close-btn').on('click tap touchstart', function(){
+     $('.video-popup').fadeOut('slow');
+	   $("iframe.video").attr("src","");
+      return false;
+   });
+	
+	//$(".article-header .gj-video").gjVideoInit();
+	
+	/*$('#top-bar-menu').parent().on('sticky.zf.stuckto:top', function(e){
+		if ($(window).outerWidth() >= 1024 && $('body').hasClass('single')) {
+			$('#sidebar-video .gj-video-wrapper').addClass('affixed').css({
+				'position': 'fixed',
+				'top': $('#top-bar-menu').outerHeight(),
+				'height' : '210px',
+				'z-index' : 9,
+			});
+		}
+	});
+
+	$('#top-bar-menu').parent().on('sticky.zf.unstuckfrom:top', function(e) {
+		if ($(window).outerWidth() >= 1024 && $('body').hasClass('single')) {
+			$('#sidebar-video .gj-video-wrapper').removeClass('affixed').css({
+				'position': 'relative',
+				'top': '',
+				'height' : '210px',
+				'z-index' : 9,
+			});
+		}
+	});*/
+  
+});
+</script><script type="rocketlazyloadscript" data-rocket-type='text/javascript' defer src='https://www.avantlink.com/ale/ale.php?ti=9273' id='avantlink-ale-js'></script>
+<script type='text/javascript' id='rocket-browser-checker-js-after'>
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+</script>
+<script type='text/javascript' id='rocket-preload-links-js-extra'>
+/* <![CDATA[ */
+var RocketPreloadLinksConfig = {"excludeUris":"\/v2\/playlists\/tF5vPPFJ|\/(?:.+\/)?feed(?:\/(?:.+\/?)?)?$|\/(?:.+\/)?embed\/|\/(index\\.php\/)?wp\\-json(\/.*|$)|\/wp-admin|\/logout|\/wp-login.php|\/refer\/|\/go\/|\/recommend\/|\/recommends\/","usesTrailingSlash":"","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php|html|htm","siteUrl":"https:\/\/gearjunkie.com","onHoverDelay":"100","rateThrottle":"3"};
+/* ]]> */
+</script>
+<script type='text/javascript' id='rocket-preload-links-js-after'>
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+</script>
+<script data-minify="1" type='text/javascript' async src='https://gearjunkie.com/wp-content/cache/min/1/wp-content/plugins/xcurrent/assets/js/delay-load.js?ver=1666785607' id='xcurrent-delay-load-js'></script>
+<script type='text/javascript' defer src='https://cdn.jwplayer.com/libraries/7irqm08j.js?ver=5.7' id='gj-jw-player-js-js'></script>
+<script type='text/javascript' defer src='https://gearjunkie.com/wp-content/themes/marvin2/assets/scripts/ads.min.js?ver=1574699608' id='gj-blocktrack-js'></script>
+<script type='text/javascript' id='site-js-js-extra'>
+/* <![CDATA[ */
+var gjenews = {"url":"https:\/\/gearjunkie.com\/wp-admin\/admin-ajax.php","query":{"page":"","name":"2020-olympics-postponed-coronavirus-tokyo","category_name":"news"}};
+/* ]]> */
+</script>
+<script data-minify="1" type='text/javascript' src='https://gearjunkie.com/wp-content/cache/min/1/wp-content/themes/marvin2/assets/scripts/scripts.js?ver=1666785607' id='site-js-js'></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' defer src='https://s.skimresources.com/js/66154X1501138.skimlinks.js?ver=5.7' id='gj-skimlinks-js'></script>
+<script type='text/javascript' id='gj_disqus_embed-js-extra'>
+/* <![CDATA[ */
+var embedVars = {"disqusConfig":{"integration":"wordpress 3.0.21"},"disqusIdentifier":"89041 https:\/\/gearjunkie.com\/?p=89041","disqusShortname":"gear-junkie-com","disqusTitle":"Olympics Postponed: Official Says 2021 Likely","disqusUrl":"https:\/\/gearjunkie.com\/news\/2020-olympics-postponed-coronavirus-tokyo","postId":"89041"};
+var countVars = {"disqusShortname":"gear-junkie-com"};
+/* ]]> */
+</script>
+<script data-minify="1" type='text/javascript' defer src='https://gearjunkie.com/wp-content/cache/min/1/wp-content/themes/marvin2/assets/scripts/gj_vendor.js?ver=1666785607' id='gj_disqus_embed-js'></script>
+<script type='text/javascript' defer src='https://gearjunkie.com/wp-includes/js/wp-embed.min.js?ver=5.7' id='wp-embed-js'></script>
+<script data-minify="1" type='text/javascript' src='https://gearjunkie.com/wp-content/cache/min/1/sdks/OneSignalSDK.js?ver=1666785608' async='async' id='remote_sdk-js'></script>
+		<script id="incontent-ads-for-single-post">
+
+		function renderAds(which_ad, which_pos) {
+			// todo: just use a function built in ads.js
+			var mapping1 = googletag.sizeMapping();
+			mapping1.addSize([970, 250], [970, 250]);
+			mapping1.addSize([0, 0], []);
+			mapping1 = mapping1.build();
+
+			dimString1 = '970x250';
+			dimArray1 = [970, 250];
+
+			var ad_group = '_Misc';
+			if (GJ_View && GJ_View.ad_group) {
+				ad_group = GJ_View.ad_group;
+			}
+			
+			var adUnitPath1 = '/21726640144/GearJunkie.com/970x250' + ad_group;
+
+			var slot1 = googletag.defineSlot(
+				adUnitPath1,
+				dimArray1,
+				which_ad);
+			if (slot1) {
+				slot1.defineSizeMapping(mapping1)
+					.addService(googletag.pubads())
+					.setTargeting('pos', 'billboard' + which_pos)
+					.setTargeting('categories', GJ_View.categories[0])
+					.setCollapseEmptyDiv(true, true);
+			}
+
+			// console.log(slot1);
+			if (slot1) {
+				googletag.display(slot1);
+				if (GJ_View.ad_test) console.log('--> DISPLAY ' + slot1.getSlotElementId() + ' pos=' + slot1.getTargeting('pos'));
+				googletag.pubads().refresh([slot1]);
+				if (GJ_View.ad_test) console.log('--> REFRESH ' + slot1.getSlotElementId() + ' pos=' + slot1.getTargeting('pos'));
+			} else {
+				// console.log('no slot1');
+			}
+
+		}
+
+		function renderAdsSidebar(which_ad, which_pos) {
+			// todo: just use a function built in ads.js
+			var mapping1 = googletag.sizeMapping();
+			mapping1.addSize([300, 250], [300, 250]);
+			mapping1.addSize([0, 0], []);
+			mapping1 = mapping1.build();
+
+			dimString1 = '300x250';
+			dimArray1 = [300, 250];
+
+			var ad_group = '_Misc';
+			if (GJ_View && GJ_View.ad_group) {
+				ad_group = GJ_View.ad_group;
+			}
+			
+			var adUnitPath1 = '/21726640144/GearJunkie.com/300x250' + ad_group;
+
+			var slot1 = googletag.defineSlot(
+				adUnitPath1,
+				dimArray1,
+				which_ad);
+			if (slot1) {
+				slot1.defineSizeMapping(mapping1)
+					.addService(googletag.pubads())
+					.setTargeting('pos', 'sbanner' + which_pos)
+					.setTargeting('categories', GJ_View.categories[0])
+					.setCollapseEmptyDiv(true, true);
+			}
+
+			// console.log(slot1);
+			if (slot1) {
+				googletag.display(slot1);
+				if (GJ_View.ad_test) console.log('--> DISPLAY ' + slot1.getSlotElementId() + ' pos=' + slot1.getTargeting('pos'));
+				googletag.pubads().refresh([slot1]);
+				if (GJ_View.ad_test) console.log('--> REFRESH ' + slot1.getSlotElementId() + ' pos=' + slot1.getTargeting('pos'));
+			} else {
+				// console.log('no slot1');
+			}
+
+		}
+
+		function renderAdsMobile(which_ad, which_pos) {
+			// todo: just use a function built in ads.js
+			var mapping1 = googletag.sizeMapping();
+			mapping1.addSize([300, 250], [300, 250]);
+			mapping1.addSize([0, 0], []);
+			mapping1 = mapping1.build();
+
+			dimString1 = '300x250';
+			dimArray1 = [300, 250];
+
+			var ad_group = '_Misc';
+			if (GJ_View && GJ_View.ad_group) {
+				ad_group = GJ_View.ad_group;
+			}
+			
+			var adUnitPath1 = '/21726640144/GearJunkie.com/300x250' + ad_group;
+
+			var slot1 = googletag.defineSlot(
+				adUnitPath1,
+				dimArray1,
+				which_ad);
+			if (slot1) {
+				slot1.defineSizeMapping(mapping1)
+					.addService(googletag.pubads())
+					.setTargeting('pos', 'mbanner' + which_pos)
+					.setTargeting('categories', GJ_View.categories[0])
+					.setCollapseEmptyDiv(true, true);
+			}
+
+			// console.log(slot1);
+			if (slot1) {
+				googletag.display(slot1);
+				if (GJ_View.ad_test) console.log('--> DISPLAY ' + slot1.getSlotElementId() + ' pos=' + slot1.getTargeting('pos'));
+				googletag.pubads().refresh([slot1]);
+				if (GJ_View.ad_test) console.log('--> REFRESH ' + slot1.getSlotElementId() + ' pos=' + slot1.getTargeting('pos'));
+			} else {
+				// console.log('no slot1');
+			}
+
+		}
+
+		/** rendering mobile ads */
+
+		if(window.innerWidth < 970){
+			document.addEventListener('DOMContentLoaded',function(){
+				var googletag = googletag || {};
+				googletag.cmd = googletag.cmd || [];
+				(function() {
+				var gads = document.createElement('script');
+				gads.async = true;
+				gads.type = 'text/javascript';
+				var useSSL = 'https:' == document.location.protocol;
+				gads.src = (useSSL ? 'https:' : 'http:') +
+				'//www.googletagservices.com/tag/js/gpt.js';
+				var node = document.getElementsByTagName('script')[0];
+				node.parentNode.insertBefore(gads, node);
+				})();
+
+				setTimeout(function(){
+					var paragraphs = document.querySelectorAll('.entry-content p');
+					
+					var y = 1;
+					for(var i=1; i<paragraphs.length; i++){
+						if (i % 7 == 0 && y <= 4 && paragraphs[i].parentNode.tagName == 'SECTION' && i < paragraphs.length) {
+							var newAd = document.createElement('div');
+							var id = 'GJ-AD-Incontent-Mobile-' + i;
+							newAd.id = id;
+							newAd.className = 'GJ-AD-Mobile incontent-ad-mobile dfpbox';
+							newAd.dataset.size = 'mobile-banner';
+							newAd.dataset.pos = 'mbanner' + i;
+							newAd.dataset.categories = GJ_View.categories[0];
+							paragraphs[i].after(newAd);
+							setTimeout(renderAdsMobile(id, i), 1000);
+							y++;
+						}
+					}
+				}, 5000);
+			});
+		}
+
+		var ja_passou = false;
+
+		if(window.innerWidth >= 970){
+			document.addEventListener('DOMContentLoaded',function(){
+				window.addEventListener('scroll', function(){
+					if (GJ_View.in_article_enabled == false){
+						//do nothing.
+					} else {
+						if(ja_passou == false){
+							//console.log('AINDA NAO PASSOU');
+							
+							//if(window.scrollY > document.querySelector('#sidebar-ad-3').offsetTop-300){
+							if(window.scrollY > 2000){
+								ja_passou = true;
+
+								var googletag = googletag || {};
+								googletag.cmd = googletag.cmd || [];
+								(function() {
+								var gads = document.createElement('script');
+								gads.async = true;
+								gads.type = 'text/javascript';
+								var useSSL = 'https:' == document.location.protocol;
+								gads.src = (useSSL ? 'https:' : 'http:') +
+								'//www.googletagservices.com/tag/js/gpt.js';
+								var node = document.getElementsByTagName('script')[0];
+								node.parentNode.insertBefore(gads, node);
+								})();
+
+								pes = document.querySelectorAll('.entry-content p');
+								for(x=0; x<pes.length; x++){
+									//if(pes[x].offsetTop > document.querySelector('#sidebar-ad-3').offsetTop ){
+									if(pes[x].offsetTop > 2000 ){
+										if(pes[x].parentNode.tagName == 'SECTION'){
+											pes[x].classList.add('past-sidebar');
+										}
+									}
+								}
+
+								p = document.querySelector('.entry-content .past-sidebar');
+								var fromTop = p.offsetTop; 
+
+								x = 0;
+								
+								pes.forEach((pe) => {
+									if(pe.offsetTop >= fromTop ){
+										var id = 'GJ-AD-Billboard-' + fromTop + '-' + x;
+										var newAd = document.createElement('div');
+										
+										var newAdContainer = document.createElement('div');
+										newAdContainer.className = "incontent-ad-container";
+										newAdContainer.style.position = 'relative';
+										newAdContainer.id = 'GJ-AD-Container-' + fromTop;
+										
+										newAd.id = id;
+										newAd.className = 'category-billboard dfpbox incontent-billboard';
+										newAd.dataset.size = 'billboard';
+										newAd.dataset.pos = 'billboard' + fromTop;
+										newAd.dataset.categories = GJ_View.categories[0];
+										pe.after(newAdContainer);
+										newAdContainer.appendChild(newAd);
+										setTimeout(renderAds(id, fromTop), 1000);
+										fromTop = fromTop + 2000;
+										x++;
+									}
+								});
+
+								var adContainers = document.querySelectorAll('.incontent-ad-container');
+								var x = 0;
+
+								adContainers.forEach((container) => {
+									if(x<(adContainers.length-1)){
+										//adding the sidebar ad.
+										var fromTop = container.offsetTop; 
+										var idSidebar = 'GJ-AD-Sidebar-' + fromTop;
+										var newAdSidebar = document.createElement('div');
+										newAdSidebar.id = idSidebar;
+										newAdSidebar.style.position = 'absolute';
+										newAdSidebar.style.right = '-330px';
+										newAdSidebar.style.top = '1000px';
+										newAdSidebar.className = 'side-ad-box dfpbox dfpbox-sidebar';
+										newAdSidebar.dataset.size = 'var-rect';
+										newAdSidebar.dataset.pos = 'sbanner' + fromTop;
+										newAdSidebar.dataset.categories = GJ_View.categories[0];
+										container.appendChild(newAdSidebar);
+										setTimeout(renderAdsSidebar(idSidebar, fromTop), 1000);
+									}
+
+									x++;
+								});
+
+							}
+						}
+					}
+				});
+
+				if(document.querySelector('.related-in-article .incontent-billboard') !== null){
+					document.querySelector('.related-in-article .incontent-billboard').style.display = 'none';
+				}
+				
+				if(document.querySelector('.related-in-article .incontent-ad-mobile') !== null){
+					document.querySelector('.related-in-article .incontent-ad-mobile').style.display = 'none';
+				}
+				
+				if(document.querySelector('.author-bio .incontent-billboard') !== null){
+					document.querySelector('.author-bio .incontent-billboard').style.display = 'none';
+				}
+				
+				if(document.querySelector('.author-bio .incontent-ad-mobile') !== null){
+					document.querySelector('.author-bio .incontent-ad-mobile').style.display = 'none';
+				}
+
+				if( window.innerWidth < 970 ){
+					document.querySelector('section.entry-content #GJ-AD-InArticle-1').style.display = 'none';
+				}
+			});
+		}
+
+		</script>
+			<script>window.lazyLoadOptions={elements_selector:"img[data-lazy-src],.rocket-lazyload",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}};window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async src="https://gearjunkie.com/wp-content/plugins/wp-rocket/assets/js/lazyload/17.5/lazyload.min.js"></script>
+		<div id="fb-root"></div>
+<script type="rocketlazyloadscript">(function(d, s, id) {
+var js, fjs = d.getElementsByTagName(s)[0];
+if (d.getElementById(id)) return;
+js = d.createElement(s); js.id = id;
+js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3&appId=1581013275506378";
+fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+	<script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+	var _qevents = _qevents || [];
+
+	(function() {
+	var elem = document.createElement('script');
+	elem.src = (document.location.protocol == "https:" ? "https://secure" : "http://edge") + ".quantserve.com/quant.js";
+	elem.async = true;
+	elem.type = "text/javascript";
+	var scpt = document.getElementsByTagName('script')[0];
+	scpt.parentNode.insertBefore(elem, scpt);
+	})();
+
+	_qevents.push({
+	qacct:"p-KbMJ-y4beb5AJ"
+	});
+	</script>
+
+	<noscript>
+	<div style="display:none;">
+	<img src="//pixel.quantserve.com/pixel/p-KbMJ-y4beb5AJ.gif" border="0" height="1" width="1" alt="Quantcast"/>
+	</div>
+	</noscript>
+	<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"a17ae7e67b","applicationID":"156408807","transactionName":"NV1RNhNUDxZYVxJZCwwXcgEVXA4LFkcPXgMOXQ==","queueTime":0,"applicationTime":975,"atts":"GRpSQFtOHBg=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>
+
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me -->

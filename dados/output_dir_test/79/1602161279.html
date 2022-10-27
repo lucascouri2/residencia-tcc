@@ -1,0 +1,2601 @@
+<!doctype html>
+<!--[if lt IE 8]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="es"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8" lang="es"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9" lang="es"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="es"> <!--<![endif]-->
+<head>
+<title>Un robot mantiene la distancia social en los parques de Singapur</title>
+<meta name="keywords" content="Singapur,coronavirus,covid-19" />
+<meta name="description" content="Tiene aspecto de can patrulla en horas punta para recordar a los corredores que deben mantener una separación mínima con el resto de personas" />
+<meta name="date" scheme="W3CDTF" content="2020-05-10T02:45:24+0200" />
+<meta name="DC.date.issued" scheme="W3CDTF" content="2020-05-10" />
+<meta name="DC.date" scheme="W3CDTF" content="2020-05-10" />
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"><script type="1759ac48d45172e63cf7f824-text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"a2dc53d1aa",applicationID:"89164732"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(9),c=t(10),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(11);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(8),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],7:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],8:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],9:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],10:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],11:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(9),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!M++){var t=T.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(x,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+T.offset],null,"api"),c("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){c("mark",["domContent",a()+T.offset],null,"api")}var a=t(5),c=t("handle"),f=t(9),u=t("ee"),s=t(7),d=t(2),p=t(3),l=d.getConfiguration("ssl")===!1?"http":"https",v=window,m=v.document,g="addEventListener",y="attachEvent",h=v.XMLHttpRequest,w=h&&h.prototype,b=!1;NREUM.o={ST:setTimeout,SI:v.setImmediate,CT:clearTimeout,XHR:h,REQ:v.Request,EV:v.Event,PR:v.Promise,MO:v.MutationObserver};var E=""+location,x={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1216.min.js"},O=h&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),T=e.exports={offset:a.getLastTimestamp(),now:a,origin:E,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(6),m[g]?(m[g]("DOMContentLoaded",o,p(!1)),v[g]("load",r,p(!1))):(m[y]("onreadystatechange",i),v[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var M=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(10),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+<meta name="viewport" content="width=device-width , initial-scale=1.0">
+<meta name="generator" content="OpenNemas - Open Source News Management System" />
+<meta name="author" content="El Progreso de Lugo" />
+<meta http-equiv="Refresh" content="900; url=https://www.elprogreso.es/articulo/mundo/robot-mantiene-distancia-social-parques-singapur/202005100245241437665.html" />
+<meta name="revisit-after" content="1 days" />
+<meta name="robots" content="index,follow" />
+<meta name="theme-color" content="#46b0d5">
+<script type="1759ac48d45172e63cf7f824-text/javascript">
+
+const _0x305f=['text/x-javascript','toLowerCase','map','prototype','onmonreadystatechange','_registerAllDelayedScripts','allJQueries','forEach','_preloadAllScripts','dispatchEvent','touchmove','_addUserInteractionListener','appendChild','type','defer','Unable\x20to\x20document.write\x20this:\x20','shift','onm-jquery-load','3518rGdxYo','indexOf','triggerEvents','_handleDocumentWrite','845775tcRzzo','_isValidScriptType','script','attributes','text/ecmascript','normal','onm-pageshow','onm-DOMContentLoaded','1329457JnBrJL','onm-load','onm-','_requestAnimFrame','ready','replaceChild','readyState','module','removeEventListener','preload','assign','writeln','onmonload','insertBefore','eventOptions','remove','rel','_loadScriptsFromList','keydown','createContextualFragment','1254584AyZAvA','createRange','_triggerWindowLoad','includes','domReadyFired','onmonpageshow','241379WStupX','setAttribute','addEventListener','load.','nextSibling','application/x-javascript','713101VCwMeK','38053hLAmyi','delayedScripts','originalFunctions','eventsToRewrite','error','load','text','_removeUserInteractionListener','write','_delayEventListeners','data-onm-type','trigger','DOMContentLoaded','userEventListener','setStart','wheel','run','touchstart','createDocumentFragment','triggerListener','onm-readystatechange','head','1aXFrtc','503rikvQv','resolve','parentNode','set','createElement','getAttribute','14lksAIn','hasAttribute','onreadystatechange','defineProperty','async','split','jQuery','currentScript','string','nodeValue','_delayJQueryReady','_loadEverythingNow','pageshow','onpageshow','push','apply','src','_transformScript','link','1Pswayp','onm','object','bind','parentElement','mousemove','application/jscript'];const _0x773cc7=_0x3a43;function _0x3a43(_0x3fb2b7,_0x15c76a){return _0x3a43=function(_0x305f54,_0x3a43ab){_0x305f54=_0x305f54-0x133;let _0x3ae57=_0x305f[_0x305f54];return _0x3ae57;},_0x3a43(_0x3fb2b7,_0x15c76a);}(function(_0x23291e,_0x55a9eb){const _0x27c53d=_0x3a43;while(!![]){try{const _0x559973=-parseInt(_0x27c53d(0x189))*parseInt(_0x27c53d(0x164))+parseInt(_0x27c53d(0x1a3))+parseInt(_0x27c53d(0x14a))*-parseInt(_0x27c53d(0x133))+-parseInt(_0x27c53d(0x181))+-parseInt(_0x27c53d(0x134))*-parseInt(_0x27c53d(0x151))+parseInt(_0x27c53d(0x19d))+-parseInt(_0x27c53d(0x14b))*-parseInt(_0x27c53d(0x17d));if(_0x559973===_0x55a9eb)break;else _0x23291e['push'](_0x23291e['shift']());}catch(_0x23cc6d){_0x23291e['push'](_0x23291e['shift']());}}}(_0x305f,0xde266));class OnmLazyLoadScripts{constructor(_0x46f2c0){const _0x6a0eea=_0x3a43;this[_0x6a0eea(0x17f)]=_0x46f2c0,this['eventOptions']={'passive':!0x0},this['userEventListener']=this[_0x6a0eea(0x147)][_0x6a0eea(0x167)](this),this[_0x6a0eea(0x135)]={'normal':[],'async':[],'defer':[]},this[_0x6a0eea(0x171)]=[];}[_0x773cc7(0x176)](_0x36e0fc){const _0x393ddb=_0x773cc7;this[_0x393ddb(0x17f)]['forEach'](_0x1ffcf1=>window[_0x393ddb(0x1a5)](_0x1ffcf1,_0x36e0fc[_0x393ddb(0x141)],_0x36e0fc[_0x393ddb(0x197)]));}[_0x773cc7(0x13b)](_0x5134b5){const _0x5716ef=_0x773cc7;this[_0x5716ef(0x17f)][_0x5716ef(0x172)](_0x3da682=>window[_0x5716ef(0x191)](_0x3da682,_0x5134b5[_0x5716ef(0x141)],_0x5134b5[_0x5716ef(0x197)]));}['triggerListener'](){const _0x551012=_0x773cc7;this[_0x551012(0x13b)](this),'loading'===document[_0x551012(0x18f)]?document['addEventListener'](_0x551012(0x140),this[_0x551012(0x15c)][_0x551012(0x167)](this)):this[_0x551012(0x15c)]();}async[_0x773cc7(0x15c)](){const _0x3d85b1=_0x773cc7;this['_delayEventListeners'](),this[_0x3d85b1(0x15b)](this),this['_handleDocumentWrite'](),this[_0x3d85b1(0x170)](),this[_0x3d85b1(0x173)](),await this[_0x3d85b1(0x19a)](this[_0x3d85b1(0x135)][_0x3d85b1(0x186)]),await this[_0x3d85b1(0x19a)](this[_0x3d85b1(0x135)][_0x3d85b1(0x179)]),await this[_0x3d85b1(0x19a)](this[_0x3d85b1(0x135)][_0x3d85b1(0x155)]),await this['_triggerDOMContentLoaded'](),await this[_0x3d85b1(0x19f)](),window[_0x3d85b1(0x174)](new Event('onm-allScriptsLoaded'));}[_0x773cc7(0x170)](){const _0x25a978=_0x773cc7;document['querySelectorAll']('script[type=onmlazyloadscript]')[_0x25a978(0x172)](_0x55a7f9=>{const _0x3367d6=_0x25a978;_0x55a7f9[_0x3367d6(0x152)](_0x3367d6(0x161))?_0x55a7f9[_0x3367d6(0x152)]('async')&&!0x1!==_0x55a7f9[_0x3367d6(0x155)]?this['delayedScripts']['async'][_0x3367d6(0x15f)](_0x55a7f9):_0x55a7f9[_0x3367d6(0x152)](_0x3367d6(0x179))&&!0x1!==_0x55a7f9[_0x3367d6(0x179)]||_0x3367d6(0x190)===_0x55a7f9[_0x3367d6(0x150)](_0x3367d6(0x13e))?this[_0x3367d6(0x135)][_0x3367d6(0x179)][_0x3367d6(0x15f)](_0x55a7f9):this[_0x3367d6(0x135)][_0x3367d6(0x186)][_0x3367d6(0x15f)](_0x55a7f9):this[_0x3367d6(0x135)][_0x3367d6(0x186)][_0x3367d6(0x15f)](_0x55a7f9);});}async[_0x773cc7(0x162)](_0x55881e){const _0x3399f5=_0x773cc7;return await this[_0x3399f5(0x18c)](),new Promise(_0x4702ec=>{const _0x16a752=_0x3399f5,_0x1af679=document[_0x16a752(0x14f)]('script');let _0x3a843a;[..._0x55881e[_0x16a752(0x184)]][_0x16a752(0x172)](_0x4e8a36=>{const _0xe5dc88=_0x16a752;let _0x418fe1=_0x4e8a36['nodeName'];_0xe5dc88(0x178)!==_0x418fe1&&(_0xe5dc88(0x13e)===_0x418fe1&&(_0x418fe1=_0xe5dc88(0x178),_0x3a843a=_0x4e8a36[_0xe5dc88(0x15a)]),_0x1af679[_0xe5dc88(0x1a4)](_0x418fe1,_0x4e8a36['nodeValue']));}),_0x55881e[_0x16a752(0x152)]('src')&&this['_isValidScriptType'](_0x3a843a)?(_0x1af679['addEventListener'](_0x16a752(0x139),_0x4702ec),_0x1af679[_0x16a752(0x1a5)](_0x16a752(0x138),_0x4702ec)):(_0x1af679[_0x16a752(0x13a)]=_0x55881e[_0x16a752(0x13a)],_0x4702ec()),_0x55881e[_0x16a752(0x14d)][_0x16a752(0x18e)](_0x1af679,_0x55881e);});}[_0x773cc7(0x182)](_0x4db91b){const _0x2befef=_0x773cc7;return!_0x4db91b||''===_0x4db91b||_0x2befef(0x159)==typeof _0x4db91b&&['text/javascript',_0x2befef(0x16b),_0x2befef(0x185),'text/jscript','application/javascript',_0x2befef(0x1a8),'application/ecmascript',_0x2befef(0x16a),_0x2befef(0x190)][_0x2befef(0x1a0)](_0x4db91b[_0x2befef(0x16c)]());}async[_0x773cc7(0x19a)](_0x3af8ca){const _0x16b89a=_0x773cc7,_0x47b0f6=_0x3af8ca[_0x16b89a(0x17b)]();return _0x47b0f6?(await this['_transformScript'](_0x47b0f6),this[_0x16b89a(0x19a)](_0x3af8ca)):Promise[_0x16b89a(0x14c)]();}[_0x773cc7(0x173)](){const _0x3e9206=_0x773cc7;var _0x5a38c5=document[_0x3e9206(0x146)]();[...this[_0x3e9206(0x135)]['normal'],...this[_0x3e9206(0x135)][_0x3e9206(0x179)],...this[_0x3e9206(0x135)]['async']][_0x3e9206(0x172)](_0x39d593=>{const _0x3667da=_0x3e9206,_0x1b284d=_0x39d593[_0x3667da(0x150)]('src');if(_0x1b284d){const _0xf6f7d6=document['createElement'](_0x3667da(0x163));_0xf6f7d6['href']=_0x1b284d,_0xf6f7d6[_0x3667da(0x199)]=_0x3667da(0x192),_0xf6f7d6['as']=_0x3667da(0x183),_0x5a38c5[_0x3667da(0x177)](_0xf6f7d6);}}),document[_0x3e9206(0x149)][_0x3e9206(0x177)](_0x5a38c5);}[_0x773cc7(0x13d)](){const _0x52a507=_0x773cc7;let _0x26b1fc={};function _0x50dcf8(_0x1d44f8,_0x36da8f){const _0x58e1f4=_0x3a43;!function(_0x3e2d03){const _0x492ddc=_0x3a43;function _0x1269a2(_0xfa31a8){const _0x2ebabf=_0x3a43;return _0x26b1fc[_0x3e2d03][_0x2ebabf(0x137)][_0x2ebabf(0x17e)](_0xfa31a8)>=0x0?_0x2ebabf(0x18b)+_0xfa31a8:_0xfa31a8;}_0x26b1fc[_0x3e2d03]||(_0x26b1fc[_0x3e2d03]={'originalFunctions':{'add':_0x3e2d03[_0x492ddc(0x1a5)],'remove':_0x3e2d03[_0x492ddc(0x191)]},'eventsToRewrite':[]},_0x3e2d03[_0x492ddc(0x1a5)]=function(){const _0x3fec81=_0x492ddc;arguments[0x0]=_0x1269a2(arguments[0x0]),_0x26b1fc[_0x3e2d03][_0x3fec81(0x136)]['add'][_0x3fec81(0x160)](_0x3e2d03,arguments);},_0x3e2d03[_0x492ddc(0x191)]=function(){const _0xb615e9=_0x492ddc;arguments[0x0]=_0x1269a2(arguments[0x0]),_0x26b1fc[_0x3e2d03][_0xb615e9(0x136)][_0xb615e9(0x198)]['apply'](_0x3e2d03,arguments);});}(_0x1d44f8),_0x26b1fc[_0x1d44f8]['eventsToRewrite'][_0x58e1f4(0x15f)](_0x36da8f);}function _0x2d9bd7(_0x307810,_0x592ed0){const _0x13f8ea=_0x3a43;let _0x42bbb5=_0x307810[_0x592ed0];Object[_0x13f8ea(0x154)](_0x307810,_0x592ed0,{'get':()=>_0x42bbb5||function(){},'set'(_0x10a130){const _0x9d8e89=_0x13f8ea;_0x307810[_0x9d8e89(0x165)+_0x592ed0]=_0x42bbb5=_0x10a130;}});}_0x50dcf8(document,_0x52a507(0x140)),_0x50dcf8(window,_0x52a507(0x140)),_0x50dcf8(window,_0x52a507(0x139)),_0x50dcf8(window,_0x52a507(0x15d)),_0x50dcf8(document,'readystatechange'),_0x2d9bd7(document,_0x52a507(0x153)),_0x2d9bd7(window,'onload'),_0x2d9bd7(window,_0x52a507(0x15e));}['_delayJQueryReady'](_0x258878){const _0x2d97aa=_0x773cc7;let _0x18b4b5=window[_0x2d97aa(0x157)];Object['defineProperty'](window,_0x2d97aa(0x157),{'get':()=>_0x18b4b5,'set'(_0x469be2){const _0x3b3441=_0x2d97aa;if(_0x469be2&&_0x469be2['fn']&&!_0x258878['allJQueries'][_0x3b3441(0x1a0)](_0x469be2)){_0x469be2['fn'][_0x3b3441(0x18d)]=_0x469be2['fn']['init'][_0x3b3441(0x16e)][_0x3b3441(0x18d)]=function(_0x12d5e3){const _0x3f09c2=_0x3b3441;_0x258878[_0x3f09c2(0x1a1)]?_0x12d5e3[_0x3f09c2(0x167)](document)(_0x469be2):document[_0x3f09c2(0x1a5)]('onm-DOMContentLoaded',()=>_0x12d5e3[_0x3f09c2(0x167)](document)(_0x469be2));};const _0x5986b1=_0x469be2['fn']['on'];_0x469be2['fn']['on']=_0x469be2['fn']['init']['prototype']['on']=function(){const _0x14bf91=_0x3b3441;if(this[0x0]===window){function _0xbf51cf(_0x3a6123){const _0x3939ef=_0x3a43;return _0x3a6123[_0x3939ef(0x156)]('\x20')[_0x3939ef(0x16d)](_0x113dc1=>_0x3939ef(0x139)===_0x113dc1||0x0===_0x113dc1[_0x3939ef(0x17e)](_0x3939ef(0x1a6))?_0x3939ef(0x17c):_0x113dc1)['join']('\x20');}_0x14bf91(0x159)==typeof arguments[0x0]||arguments[0x0]instanceof String?arguments[0x0]=_0xbf51cf(arguments[0x0]):_0x14bf91(0x166)==typeof arguments[0x0]&&Object['keys'](arguments[0x0])['forEach'](_0x100edd=>{const _0xaa8158=_0x14bf91;delete Object[_0xaa8158(0x193)](arguments[0x0],{[_0xbf51cf(_0x100edd)]:arguments[0x0][_0x100edd]})[_0x100edd];});}return _0x5986b1['apply'](this,arguments),this;},_0x258878[_0x3b3441(0x171)][_0x3b3441(0x15f)](_0x469be2);}_0x18b4b5=_0x469be2;}});}async['_triggerDOMContentLoaded'](){const _0x34e392=_0x773cc7;this[_0x34e392(0x1a1)]=!0x0,await this[_0x34e392(0x18c)](),document[_0x34e392(0x174)](new Event('onm-DOMContentLoaded')),await this['_requestAnimFrame'](),window[_0x34e392(0x174)](new Event(_0x34e392(0x188))),await this[_0x34e392(0x18c)](),document[_0x34e392(0x174)](new Event(_0x34e392(0x148))),await this[_0x34e392(0x18c)](),document['onmonreadystatechange']&&document[_0x34e392(0x16f)]();}async[_0x773cc7(0x19f)](){const _0x510ece=_0x773cc7;await this['_requestAnimFrame'](),window[_0x510ece(0x174)](new Event(_0x510ece(0x18a))),await this[_0x510ece(0x18c)](),window[_0x510ece(0x195)]&&window['onmonload'](),await this[_0x510ece(0x18c)](),this[_0x510ece(0x171)]['forEach'](_0x37d85a=>_0x37d85a(window)[_0x510ece(0x13f)](_0x510ece(0x17c))),window[_0x510ece(0x174)](new Event(_0x510ece(0x187))),await this[_0x510ece(0x18c)](),window[_0x510ece(0x1a2)]&&window['onmonpageshow']();}[_0x773cc7(0x180)](){const _0x7cfb67=_0x773cc7,_0x151285=new Map();document[_0x7cfb67(0x13c)]=document[_0x7cfb67(0x194)]=function(_0x391184){const _0x4c87a3=_0x7cfb67,_0x192d74=document[_0x4c87a3(0x158)];_0x192d74||console[_0x4c87a3(0x138)](_0x4c87a3(0x17a)+_0x391184);const _0x28c02f=document[_0x4c87a3(0x19e)](),_0x1adaa2=_0x192d74[_0x4c87a3(0x168)];let _0x1a1cc2=_0x151285['get'](_0x192d74);void 0x0===_0x1a1cc2&&(_0x1a1cc2=_0x192d74[_0x4c87a3(0x1a7)],_0x151285[_0x4c87a3(0x14e)](_0x192d74,_0x1a1cc2));const _0x103cbb=document[_0x4c87a3(0x146)]();_0x28c02f[_0x4c87a3(0x142)](_0x103cbb,0x0),_0x103cbb[_0x4c87a3(0x177)](_0x28c02f[_0x4c87a3(0x19c)](_0x391184)),_0x1adaa2[_0x4c87a3(0x196)](_0x103cbb,_0x1a1cc2);};}async[_0x773cc7(0x18c)](){return new Promise(_0x7fb5cd=>requestAnimationFrame(_0x7fb5cd));}static[_0x773cc7(0x144)](){const _0x220dc2=_0x773cc7,_0x35c053=new OnmLazyLoadScripts([_0x220dc2(0x19b),_0x220dc2(0x169),_0x220dc2(0x175),_0x220dc2(0x145),'touchend',_0x220dc2(0x143)]);_0x35c053[_0x220dc2(0x176)](_0x35c053);}}OnmLazyLoadScripts[_0x773cc7(0x144)]();
+
+</script>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Un robot mantiene la distancia social en Singapur" />
+<meta property="og:description" content="Tiene aspecto de can patrulla en horas punta para recordar a los corredores que deben mantener una separación mínima con el resto de personas" />
+<meta property="og:url" content="https://www.elprogreso.es/articulo/mundo/robot-mantiene-distancia-social-parques-singapur/202005100245241437665.html" />
+<meta property="og:site_name" content="El Progreso de Lugo" />
+<meta property="og:image" content="https://www.elprogreso.es/media/elprogreso/images/2020/05/10/2020051000444652262.jpg" />
+<meta property="og:image:width" content="640" />
+<meta property="og:image:height" content="360" />
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Un robot mantiene la distancia social en Singapur">
+<meta name="twitter:description" content="Tiene aspecto de can patrulla en horas punta para recordar a los corredores que deben mantener una separación mínima con el resto de personas">
+<meta name="twitter:site" content="@elprogreso_lugo">
+<meta name="twitter:domain" content="https://www.elprogreso.es/articulo/mundo/robot-mantiene-distancia-social-parques-singapur/202005100245241437665.html">
+<meta name="twitter:image" content="https://www.elprogreso.es/media/elprogreso/images/2020/05/10/2020051000444652262.jpg">
+<meta name="google-site-verification" content="YXIfS5tQqkr_nZfOIYsItqkbBWP_aepKxTzr5u6SDyI" />
+<link rel='icon' type='image/png' href='/media/elprogreso/images/2021/01/01/2021010100000068286.png'>
+<link rel='apple-touch-icon' href='/media/elprogreso/images/2021/01/01/2021010100000068286.png'>
+<link rel='apple-touch-icon' sizes='57x57' href='/media/elprogreso/images/2021/01/01/2021010100000068286.png'>
+<link rel='apple-touch-icon' sizes='60x60' href='/media/elprogreso/images/2021/01/01/2021010100000068286.png'>
+<link rel='apple-touch-icon' sizes='72x72' href='/media/elprogreso/images/2021/01/01/2021010100000068286.png'>
+<link rel='apple-touch-icon' sizes='76x76' href='/media/elprogreso/images/2021/01/01/2021010100000068286.png'>
+<link rel='apple-touch-icon' sizes='114x114' href='/media/elprogreso/images/2021/01/01/2021010100000068286.png'>
+<link rel='apple-touch-icon' sizes='120x120' href='/media/elprogreso/images/2021/01/01/2021010100000068286.png'>
+<link rel='apple-touch-icon' sizes='144x144' href='/media/elprogreso/images/2021/01/01/2021010100000068286.png'>
+<link rel='apple-touch-icon' sizes='152x152' href='/media/elprogreso/images/2021/01/01/2021010100000068286.png'>
+<link rel='apple-touch-icon' sizes='180x180' href='/media/elprogreso/images/2021/01/01/2021010100000068286.png'>
+<link rel='icon' type='image/png' sizes='192x192' href='/media/elprogreso/images/2021/01/01/2021010100000068286.png'>
+<link rel='icon' type='image/png' sizes='96x96' href='/media/elprogreso/images/2021/01/01/2021010100000068286.png'>
+<link rel='icon' type='image/png' sizes='32x32' href='/media/elprogreso/images/2021/01/01/2021010100000068286.png'>
+<link rel='icon' type='image/png' sizes='16x16' href='/media/elprogreso/images/2021/01/01/2021010100000068286.png'>
+<script type="application/ld+json">
+  [{
+    "@context": "http://schema.org/",
+    "@type": "BreadcrumbList",
+    "itemListElement": [{
+      "@type": "ListItem",
+      "item": {
+        "@id": "https://www.elprogreso.es",
+        "name": "El Progreso de Lugo",
+        "@type": "CollectionPage"
+      },
+      "position": 1
+    }
+          , {
+        "@type": "ListItem",
+        "item": {
+          "@id": "https://www.elprogreso.es/blog/section/mundo",
+          "name": "Mundo",
+          "@type": "CollectionPage"
+        },
+        "position": 2
+      }, {
+        "@type": "ListItem",
+        "item": {
+          "@id": "https://www.elprogreso.es/articulo/mundo/robot-mantiene-distancia-social-parques-singapur/202005100245241437665.html",
+          "name": "Un robot mantiene la distancia social en Singapur",
+          "@type": "ItemPage"
+        },
+        "position": 3
+      }
+      ]},
+  {
+    "@context": "http://schema.org",
+    "@type": "NewsArticle",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.elprogreso.es/articulo/mundo/robot-mantiene-distancia-social-parques-singapur/202005100245241437665.html"
+    },
+    "headline": "Un robot mantiene la distancia social en Singapur",
+    "author": {
+      "@type": "Person",
+      "name": "Efe"
+          },
+    "datePublished": "2020-05-10T02:45:24+02:00",
+    "dateModified": "2020-05-11T21:25:12+02:00",
+          "articleSection": "Mundo",
+        "keywords": "Singapur,coronavirus,covid-19",
+    "url": "https://www.elprogreso.es/articulo/mundo/robot-mantiene-distancia-social-parques-singapur/202005100245241437665.html",
+    "wordCount": 26,
+    "description": "Tiene aspecto de can patrulla en horas punta para recordar a los corredores que deben mantener una separación mínima con el resto de personas",
+    "publisher": {
+      "@type": "Organization",
+      "name": "El Progreso de Lugo",
+      "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.elprogreso.es/media/elprogreso/images/2021/01/01/2021010100000057952.png"
+      },
+      "url": "https://www.elprogreso.es"
+    }
+          , "image": {
+          "@type": "ImageObject",
+          "url": "https://www.elprogreso.es/media/elprogreso/images/2020/05/10/2020051000444652262.jpg",
+          "height": 360,
+          "width": 640
+        }
+      },
+      {
+  "@context": "http://schema.org",
+  "@type": "ImageObject",
+  "author": "Efe",
+  "url": "https://www.elprogreso.es/media/elprogreso/images/2020/05/10/2020051000444652262.jpg",
+  "height": 360,
+  "width": 640,
+  "datePublished": "2020-05-10T02:44:46+02:00",
+  "caption": "Un robot controla los paques de Singapur.Efe",
+  "name": "2020051000444652262.jpg"
+}
+      ]
+</script>
+<link rel="preload" href="/themes/auris/fonts/fontawesome-webfont.woff2?v=4.7.0" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/MaterialIcons-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/titillium-web-v10-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/public-sans-v7-latin-300.woff2" as="font" type="font/woff2" crossorigin>
+
+<link rel="stylesheet" type="text/css" href="/themes/auris/css/style-lila.20221019152606.css">
+<script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="1759ac48d45172e63cf7f824-|49"></script><link rel="stylesheet" href="/dynamic/css/global.1666698876.css" media="print" onload="this.media='all'">
+<script data-onm-type="text/javascript" type="onmlazyloadscript" src="/themes/auris/js/header.20221019152606.js"></script>
+
+<!--[if lt IE 9]>
+    <script data-onm-type="text/javascript" type="onmlazyloadscript"  src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script data-onm-type="text/javascript" type="onmlazyloadscript"  src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="https://www.elprogreso.es/rss" />
+<link rel="amphtml" href="https://www.elprogreso.es/articulo/mundo/robot-mantiene-distancia-social-parques-singapur/202005100245241437665.amp.html" /><link rel="canonical" href="https://www.elprogreso.es/articulo/mundo/robot-mantiene-distancia-social-parques-singapur/202005100245241437665.html" /><script data-onm-type="text/javascript" type="onmlazyloadscript">
+            var device = (window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth) < 768 ? "phone" : ((window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth) < 992 ? "tablet" : "desktop");
+            dataLayer = [{"layout":"articulo","categoria":"mundo","createdby":15,"lastmodify":15,"firma":"","fechapublicacion":"20200510","keywords":"Singapur,coronavirus,covid-19","noticia_id":1437665,"mediatype":"photo","seotag":"singapur,coronavirus,covid-19","platform":"web","gaid":"","su":"","dimension1":"articulo","dimension2":"mundo","dimension5":15,"dimension6":15,"dimension7":"","dimension8":"20200510","dimension9":"Singapur,coronavirus,covid-19","dimension10":1437665,"dimension11":"photo","dimension12":"singapur,coronavirus,covid-19","dimension13":"web","dimension16":"","dimension17":"","fechadeactualizacion":"2020-05-11 21:25:12"}];</script>
+<script data-onm-type="text/javascript" type="onmlazyloadscript" async=true>
+(function() {
+  var host = window.location.hostname;
+  var element = document.createElement('script');
+  var firstScript = document.getElementsByTagName('script')[0];
+  var url = 'https://cmp.quantcast.com'
+    .concat('/choice/', 'M2kUnhxu9_MrD', '/', host, '/choice.js');
+  var uspTries = 0;
+  var uspTriesLimit = 3;
+  element.async = true;
+  element.type = 'text/javascript';
+  element.src = url;
+
+  firstScript.parentNode.insertBefore(element, firstScript);
+
+  function makeStub() {
+    var TCF_LOCATOR_NAME = '__tcfapiLocator';
+    var queue = [];
+    var win = window;
+    var cmpFrame;
+
+    function addFrame() {
+      var doc = win.document;
+      var otherCMP = !!(win.frames[TCF_LOCATOR_NAME]);
+
+      if (!otherCMP) {
+        if (doc.body) {
+          var iframe = doc.createElement('iframe');
+
+          iframe.style.cssText = 'display:none';
+          iframe.name = TCF_LOCATOR_NAME;
+          doc.body.appendChild(iframe);
+        } else {
+          setTimeout(addFrame, 5);
+        }
+      }
+      return !otherCMP;
+    }
+
+    function tcfAPIHandler() {
+      var gdprApplies;
+      var args = arguments;
+
+      if (!args.length) {
+        return queue;
+      } else if (args[0] === 'setGdprApplies') {
+        if (
+          args.length > 3 &&
+          args[2] === 2 &&
+          typeof args[3] === 'boolean'
+        ) {
+          gdprApplies = args[3];
+          if (typeof args[2] === 'function') {
+            args[2]('set', true);
+          }
+        }
+      } else if (args[0] === 'ping') {
+        var retr = {
+          gdprApplies: gdprApplies,
+          cmpLoaded: false,
+          cmpStatus: 'stub'
+        };
+
+        if (typeof args[2] === 'function') {
+          args[2](retr);
+        }
+      } else {
+        if(args[0] === 'init' && typeof args[3] === 'object') {
+          args[3] = { ...args[3], tag_version: 'V2' };
+        }
+        queue.push(args);
+      }
+    }
+
+    function postMessageEventHandler(event) {
+      var msgIsString = typeof event.data === 'string';
+      var json = {};
+
+      try {
+        if (msgIsString) {
+          json = JSON.parse(event.data);
+        } else {
+          json = event.data;
+        }
+      } catch (ignore) {}
+
+      var payload = json.__tcfapiCall;
+
+      if (payload) {
+        window.__tcfapi(
+          payload.command,
+          payload.version,
+          function(retValue, success) {
+            var returnMsg = {
+              __tcfapiReturn: {
+                returnValue: retValue,
+                success: success,
+                callId: payload.callId
+              }
+            };
+            if (msgIsString) {
+              returnMsg = JSON.stringify(returnMsg);
+            }
+            if (event && event.source && event.source.postMessage) {
+              event.source.postMessage(returnMsg, '*');
+            }
+          },
+          payload.parameter
+        );
+      }
+    }
+
+    while (win) {
+      try {
+        if (win.frames[TCF_LOCATOR_NAME]) {
+          cmpFrame = win;
+          break;
+        }
+      } catch (ignore) {}
+
+      if (win === window.top) {
+        break;
+      }
+      win = win.parent;
+    }
+    if (!cmpFrame) {
+      addFrame();
+      win.__tcfapi = tcfAPIHandler;
+      win.addEventListener('message', postMessageEventHandler, false);
+    }
+  };
+
+  makeStub();
+
+  var uspStubFunction = function() {
+    var arg = arguments;
+    if (typeof window.__uspapi !== uspStubFunction) {
+      setTimeout(function() {
+        if (typeof window.__uspapi !== 'undefined') {
+          window.__uspapi.apply(window.__uspapi, arg);
+        }
+      }, 500);
+    }
+  };
+
+  var checkIfUspIsReady = function() {
+    uspTries++;
+    if (window.__uspapi === uspStubFunction && uspTries < uspTriesLimit) {
+      console.warn('USP is not accessible');
+    } else {
+      clearInterval(uspInterval);
+    }
+  };
+
+  if (typeof window.__uspapi === 'undefined') {
+    window.__uspapi = uspStubFunction;
+    var uspInterval = setInterval(checkIfUspIsReady, 6000);
+  }
+})();
+</script>
+<script data-onm-type="text/javascript" type="onmlazyloadscript">
+  var _onmaq = _onmaq || {};
+
+  _onmaq.width              = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+  _onmaq.category           = 'mundo';
+  _onmaq.contentId          = '1437665';
+  _onmaq.advertisementGroup = 'article_inner';
+  _onmaq.debug              = false;
+  _onmaq.device             = _onmaq.width < 768 ? 'phone' : (_onmaq.width < 992 ? 'tablet' : 'desktop');
+  _onmaq.extension          = 'article';
+  _onmaq.cookieLifetime     = 30;
+  _onmaq.slots              = [  ];
+  _onmaq.url                = '/api/v1/advertisements';
+  _onmaq.strings            = {
+    'entering': 'Entrando en la página solicitada',
+    'mark':     'Publicidad',
+    'skip':     'Saltar publicidad'
+  };
+
+  (function() {
+    var am = document.createElement('script');
+
+    am.src   = '/assets/src/onm-am/am.20221020135018.js';
+    am.async = true;
+
+    (document.getElementsByTagName('head')[0] ||
+        document.getElementsByTagName('body')[0]).appendChild(am);
+  })();
+</script>
+<script data-onm-type="text/javascript" type="onmlazyloadscript" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1271104198793782" crossorigin="anonymous"></script>
+<script data-onm-type="text/javascript" type="onmlazyloadscript" src="https://widgets.widg.io/widgio-elements.js" defer></script>
+<script data-onm-type="application/javascript" type="onmlazyloadscript" src="https://ced.sascdn.com/tag/3066/smart.js" async></script>
+<script data-onm-type="application/javascript" type="onmlazyloadscript">
+    var sas = sas || {};
+    sas.cmd = sas.cmd || [];
+    sas.cmd.push(function() {
+        sas.setup({ networkid: 3066, domain: "https://www8.smartadserver.com", async: true });
+    });
+</script>
+<script data-onm-type="text/javascript" type="onmlazyloadscript" async src=https://tags.refinery89.com/v2/elprogresoes.js></script>
+<script data-onm-type="text/javascript" type="onmlazyloadscript">
+var isBranded = false;
+if (document.querySelector('meta[name="keywords"]').content.includes('AdBranded')) {
+  isBranded = true;
+}
+</script>
+<script data-onm-type="text/javascript" type="onmlazyloadscript" src="//widget.playoncenter.com/newplayer/ifriendly/embed.min.js"></script>
+<style>.smarty-3554125_1654531959687{position:relative;padding-bottom:56.25%!important;height:0;overflow:hidden;max-width:100%!important;} .smarty-3554125_1654531959687 iframe, .smarty-3554125_1654531959687 object, .smarty-3554125_1654531959687 embed {position:absolute;top:0;left:0;min-width:100%;width:1px;height:100%;}</style>
+<script data-onm-type="text/javascript" type="onmlazyloadscript">
+if (!isBranded) {
+    ! function () {
+        window.hb_now = Date.now();
+        var e = document.getElementsByTagName("script")[0],
+            t = "https://hb.20m.es/stable/config/grupoelprogreso.com/desktop-mobile-elprogreso.min.js";
+        window.location.search.match(/hb_test=true/) && (t = t.replace("/stable/", "/test/"));
+        var n = document.createElement("script");
+        n.async = !0, n.src = t, e.parentNode.insertBefore(n, e)
+    }();
+}
+</script>
+<script data-onm-type="text/javascript" type="onmlazyloadscript" defer src="https://cdn.unblockia.com/h.js"></script>
+<script data-onm-type="text/javascript" type="onmlazyloadscript" src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+<script data-onm-type="text/javascript" type="onmlazyloadscript">
+  var OneSignal = window.OneSignal || [];
+  OneSignal.push(function() {
+    OneSignal.init({
+      appId: "f4b370ab-08b7-42ba-9869-282b042f5291",
+    });
+  });
+</script>
+<script data-onm-type="text/javascript" type="onmlazyloadscript">
+if (_onmaq && _onmaq.extension != 'obituary' && !isBranded) {
+  window._taboola = window._taboola || [];
+  _taboola.push({article:'auto'});
+  !function (e, f, u, i) {
+    if (!document.getElementById(i)){
+      e.async = 1;
+      e.src = u;
+      e.id = i;
+      f.parentNode.insertBefore(e, f);
+    }
+  }(document.createElement('script'),
+  document.getElementsByTagName('script')[0],
+  '//cdn.taboola.com/libtrc/alayansmedia-elprogresonetwork/loader.js',
+  'tb_loader_script');
+  if(window.performance && typeof window.performance.mark == 'function')
+    {window.performance.mark('tbl_ic');}
+}
+</script>
+<meta name="encatena-verify-code" content="8ce0e5f60b8c2b256ececf4c9b42733d" />
+<meta name="detectify-verification" content="4a5a9ce981f4b62aa743623c64cbb770" />
+<meta name="publisuites-verify-code" content="aHR0cHM6Ly93d3cuZWxwcm9ncmVzby5lcw==" />
+<meta name="getlinko-verify-code" content="getlinko-verify-NDg1Nw==" />
+<style>
+.ot-floating-button { display: none !important; }
+.addoor-widget.oat:before { line-height:0 }
+.ad-skyscraper-right { top: 15px; right: 0; transform: translateX(calc(5px + 100%)); }
+.ad-skyscraper-left { top: 15px; left: 0; transform: translateX(calc(-100% - 5px )); }
+.oat>style { display: none; }
+.interstitial { background: transparent!important; }
+.interstitial-wrapper { background: white!important; margin-top:120px; }
+.interstitial-header { font-size:13px; }
+.addoor-widget { margin-top: 30px !important; }
+.inner-content .body figure[style*="left"] { margin:0 10px 10px 0; }
+.inner-content .body figure[style*="right"] { margin:0 0 10px 10px; }
+.inner-content .body img[style*="left"] { margin:0 10px 10px 0; }
+.inner-content .body img[style*="right"] { margin:0 0 10px 10px;}
+@media (max-width: 991px) {
+.preheader .lang-selector {line-height:32px;margin-left:0;}
+.preheader .lang-selector .dropdown-menu { left:auto; right:0; min-width:auto; max-width:80vw;}
+.widget-lang-selector .widget {background-color: transparent!important; min-width:32px;}
+.preheader .lang-selector, .preheader .lang-selector i {line-height: 48px;}
+}
+@media (min-width: 992px) {
+.header .lang-selector { margin-top:0; margin-left:10px;font-family: Oswald!important;}
+.widget-lang-selector .widget {background-color: transparent!important; min-width:32px;}
+}
+</style>
+
+<style>
+.widget-opinions .wrapper-photo figure,
+.widget-opinions .author-photo figure,
+.widget-opinions .blogger-image figure {
+  position: relative;
+}
+.widget-opinions .wrapper-photo figure a,
+.widget-opinions .author-photo figure a,
+.widget-opinions .blogger-image figure a,
+.widget-opinions .wrapper-photo figure img,
+.widget-opinions .author-photo figure img,
+.widget-opinions .blogger-image figure img {
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  width: 100%;
+}
+</style>
+
+
+<style>
+.header {
+  position: relative;
+}
+.reading-progress::-webkit-progress-bar,.next-article-progress::-webkit-progress-bar {
+    background-color: #000;
+}
+.wrapper-wide .container .widget-content-listing {
+    padding: 0;
+}
+.onm-new.onm-new-opinion .author-photo {
+    height: calc(48px + 1rem + 1px);
+}
+.inf_article + .inf_article {
+    margin-top: 0;
+}
+.body .related-content.related-content-inner ul li figure {
+  flex: 1 0 100px;
+  max-width: 100px!important;
+}
+.widget .next-article-navigation .onm-new-tiny .article-media {
+  height: 0;
+}
+.footer-logos img {
+    filter: invert() saturate(0) brightness(10);
+}
+.footer .widget-header:after {
+  border-bottom: 1px solid #fff;
+  bottom: 0;
+}
+@media (min-width: 768px) {
+  .onm-new-over.onm-new-big_content-wide .article-media figure {
+    padding-bottom: min(540px, 56.25%);
+  }
+}
+</style>
+
+
+<style>
+.header-topbar-menu_left .navbar-nav .nav-item:first-child:before {
+  content: "Está pasando:";
+  color: var(--site-color);
+  font-size: .75rem;
+  font-weight: 700;
+  padding: 0.25rem 0.25rem 0.25rem 0.5rem;
+  text-transform: uppercase;
+}
+#main.home .onm-new.onm-new-over .onm-related-content .onm-new.onm-new-related .title a {
+    color: #fff!important
+}
+</style>
+
+
+<style>
+.onm-new.onm-new-opinion {
+  border-top: 1px solid var(--site-color)!important;
+}
+.onm-new.onm-new-opinion .opinion-media .author-photo {
+  border-top-color: #000;
+}
+@media(min-width:992px) {
+  .frontpage-firmas .widget-opinions > .widget-content > .row > * {
+    flex: 0 0 100%;
+    max-width: 100%;
+    width: 100%;
+  }
+}
+</style>
+
+
+<style>
+.archive-contents .onm-new .content-info .date-container {
+  display: block;
+  margin-left: 5px;
+}
+.footer .developed{
+  padding: 0 !important;
+}
+.footer .footer-data .contact-data {
+  padding-bottom: 0 !important;
+}
+.footer-logos {
+  padding-bottom: 0 !important;
+  margin-top: 15px !important;
+}
+</style>
+
+<script data-onm-type="text/javascript" type="onmlazyloadscript">
+if (_onmaq && _onmaq.extension != 'obituary' && !isBranded) {
+    window._seedtagq = window._seedtagq || [];
+    window._seedtagq.push(['_setId', '0211-7230-01']);
+    window._seedtagq.push(['iframe_mode']);
+    (function () {
+      var st = document.createElement('script');
+      st.type = 'text/javascript';
+      st.async = true;
+      st.src = ('https:' == document.location.protocol
+        ? 'https'
+        : 'http') + '://config.seedtag.com/loader.js?v=' + Math.random();
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(st, s);
+    })();
+}
+</script>
+<script data-onm-type="text/javascript" type="onmlazyloadscript">
+  window.teads_analytics = window.teads_analytics || {};
+  window.teads_analytics.analytics_tag_id = "PUB_19739";
+  window.teads_analytics.share = window.teads_analytics.share || function() {
+    ;(window.teads_analytics.shared_data = window.teads_analytics.shared_data || []).push(arguments)
+  };
+</script>
+<script data-onm-type="text/javascript" type="onmlazyloadscript" async src="https://a.teads.tv/analytics/tag.js"></script>
+<script data-onm-type="text/javascript" type="onmlazyloadscript" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1134119922178345" crossorigin="anonymous"></script>
+
+<script data-onm-type="text/javascript" type="onmlazyloadscript">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-PVJ5QVB');</script>
+<script data-onm-type="text/javascript" type="onmlazyloadscript" src="/assets/js/onm/jquery.onm-stats.20221020135018.js"></script> <script data-onm-type="text/javascript" type="onmlazyloadscript">
+  jQuery.onmStats({ content_id: 1437665, controller: '/content/stats' });
+</script>
+<script data-onm-type="text/javascript" type="onmlazyloadscript">
+  var _comscore = _comscore || [];
+  _comscore.push({ c1: "2", c2: "18050225" });
+  (function() {
+    var s = document.createElement("script"),
+    el = document.getElementsByTagName("script")[0];
+    s.async = true;
+    s.src = "https://sb.scorecardresearch.com/cs/18050225/beacon.js";
+    el.parentNode.insertBefore(s, el);
+  })();
+</script> <noscript> <img src="https://sb.scorecardresearch.com/p?c1=2&c2=18050225&cv=3.6&cj=1" /> </noscript> <script data-onm-type="text/javascript" type="onmlazyloadscript" async src="https://www.googletagmanager.com/gtag/js?id=UA-8404287-9"></script> <script data-onm-type="text/javascript" type="onmlazyloadscript">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  gtag('js', new Date());
+
+      gtag('config', 'UA-8404287-9');
+      gtag('config', 'UA-40838799-5');
+      gtag('config', 'G-DZD8C8RYLW');
+      gtag('config', 'G-DT25TRBWK5');
+      gtag('config', 'UA-152072112-14');
+  </script>
+<script data-onm-type="text/javascript" type="onmlazyloadscript">
+// Tag configuration
+var gfkS2sConf = {
+  media: "ElprogresoWeb",
+  url:   "//es-config.sensic.net/s2s-web.js",
+  type:  "WEB"
+};
+
+// Site tracker
+(function (w, d, c, s, id, v) {
+  if (d.getElementById(id)) {
+    return;
+  }
+
+  w.gfkS2sConf = c;
+  w[id] = {};
+  w[id].agents = [];
+
+  var api = ["playStreamLive", "playLive", "playStreamOnDemand", "playVOD", "stop", "skip", "screen", "volume", "impression"];
+
+  w.gfks = (function () {
+    function f(sA, e, cb) {
+      return function () {
+        sA.p = cb();
+        sA.queue.push({ f: e, a: arguments });
+      };
+    }
+    function s(c, pId, cb) {
+      var sA = { queue: [], config: c, cb: cb, pId: pId };
+      for (var i = 0; i < api.length; i++) {
+        var e = api[i];
+        sA[e] = f(sA, e, cb);
+      }
+      return sA;
+    }
+      return s;
+    }());
+
+    w[id].getAgent = function (cb, pId) {
+      var a = {
+        a: new w.gfks(c, pId || "", cb || function () {
+          return 0;
+        })
+      };
+      function g(a, e) {
+        return function () {
+          return a.a[e].apply(a.a, arguments);
+        }
+      }
+      for (var i = 0; i < api.length; i++) {
+        var e = api[i];
+        a[e] = g(a, e);
+      }
+      w[id].agents.push(a);
+      return a;
+    };
+
+    var lJS = function (eId, url) {
+      var tag = d.createElement(s);
+      var el = d.getElementsByTagName(s)[0];
+      tag.id = eId;
+      tag.async = true;
+      tag.type = 'text/javascript';
+      tag.src = url;
+      el.parentNode.insertBefore(tag, el);
+    };
+
+    if (c.hasOwnProperty(v)) { lJS(id + v, c[v]); }
+    lJS(id, c.url);
+})(window, document, gfkS2sConf, 'script', 'gfkS2s', 'visUrl');
+
+// Instantiating a JS Agent
+var agent = gfkS2s.getAgent();
+var customParams = { c1: "elprogreso.es", c2: "mundo" };
+
+agent.impression("default", customParams);
+</script>
+<script data-onm-type="text/javascript" type="onmlazyloadscript">
+  var _PROMETEO_MEDIA_CONFIG = {};
+  _PROMETEO_MEDIA_CONFIG = {
+    siteId: 902,
+    author: "Efe",
+    author_id: "",
+    publish_time: "2020-05-10 02:45:24",
+    article_id: "1437665",
+    content_type: "articulo",
+    section: "mundo",
+    tags: "singapur,coronavirus,covid-19",
+    thumbnail_image: "https://www.elprogreso.es/media/elprogreso/images/2020/05/10/2020051000444652262.jpg",
+    accesstype: "abierto",
+    cuser: "__onm_user"
+  }
+</script>
+</head>
+<body class="onm-body" data-category="mundo" data-twitter-user="elprogreso_lugo">
+
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PVJ5QVB"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<div id="x01" class="henneoHB"></div>
+<script data-onm-type="text/javascript" type="onmlazyloadscript" type='text/javascript'>
+if (_onmaq && _onmaq.extension != 'obituary' && !isBranded) {
+    (function () {
+        var elem = document.createElement('script');
+        var scpt = document.getElementsByTagName('script')[0];
+        elem.type = "text/javascript";
+        elem.async = true;
+        elem.class = "teads";
+        elem.src = "https://a.teads.tv/page/110174/tag";
+        scpt.parentNode.insertBefore(elem, scpt);
+    })();
+}
+</script>
+<div class="main-container container-fluid px-0">
+<div class="section-header">
+<header class="main-header cat-mundo fixed-top">
+<div class="header header-inner border-mundo">
+<div class="header-topbar d-none d-lg-flex bg-mundo">
+<div class="header-topbar-menu header-topbar-menu_left">
+<ul class="navbar-nav">
+<li class="nav-item ">
+<a class="nav-link" href="/tags/premio-puro-cora" title="Premio Puro Cora" target="_blank">
+Premio Puro Cora
+</a>
+</li>
+<li class="nav-item ">
+<a class="nav-link" href="/tags/tragedia-en-ourense" title="Tragedia en Ourense" target="_blank">
+Tragedia en Ourense
+</a>
+</li>
+</ul>
+</div>
+<div class="header-topbar-menu header-topbar-menu_right">
+<time class="header-datetime header-datetime-desktop d-none">
+27 oct. 2022
+</time>
+<ul class="navbar-nav">
+<div class="widget-lang-selector widget-lang-selector-mobile">
+<div class="widget"><div class="lang-selector">
+<div class="dropdown-toggle" id="languageSelect" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" role="button">
+<i class="material-icons">language</i>
+Español
+<span class="caret"></span>
+</div>
+<ul class="dropdown-menu" aria-labelledby="languageSelect">
+<li class="active">
+<a href="/">
+Español
+</a>
+</li>
+<li>
+<a href="/gl">
+Gallego
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<li class="nav-item topbar-socials">
+<ul class="social-links list-inline">
+<li class="item-facebook">
+<a href="//www.facebook.com/elprogresodelugo/" class="facebook color-facebook" target="_blank">
+<i class="fa fa-facebook"></i> <span>Facebook</span>
+</a>
+</li>
+<li class="item-twitter">
+<a href="//twitter.com/elprogreso_lugo" class="twitter color-twitter" target="_blank">
+<i class="fa fa-twitter"></i> <span>Twitter</span>
+</a>
+</li>
+<li class="item-instagram">
+<a href="https://www.instagram.com/elprogresodelugo/" class="instagram color-instagram" target="_blank">
+<i class="fa fa-instagram"></i> <span>Instagram</span>
+</a>
+</li>
+<li class="item-rss">
+<a href="/rss/listado" class="rss color-rss" title="RSS">
+<i class="fa fa-rss"></i> <span>RSS</span>
+</a>
+</li>
+</ul>
+</li>
+<li class="nav-item dropdown menu-user">
+<div class="user-area">
+<div class="utilities-menu">
+<div class="user-menu hidden">
+<div class="dropdown user-menu-dropdown">
+<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownUser" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="mi material-icons">person</i></a>
+<ul class="dropdown-menu dropdown-menu-right">
+<li class="user-menu-item user-menu-item-login">
+<a href="/login"><span>Iniciar sesión</span></a>
+</li>
+<li class="user-menu-item user-menu-item-register">
+<a href="/user/register"><span>Crear cuenta</span></a>
+</li>
+<li class="user-menu-item user-menu-item-account user-menu-logged">
+<a href="/user">
+<i class="mi material-icons">person</i>Perfil </a>
+</li>
+<li class="user-menu-item user-menu-item-logout user-menu-logged">
+<a href="/auth/logout">
+<i class="mi material-icons">exit_to_app</i>Cerrar sesión </a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<script data-onm-type="text/javascript" type="onmlazyloadscript">
+    $(document).ready(function() {
+      if ($.cookie('__onm_user') != null) {
+        var __onm_user = JSON.parse($.cookie('__onm_user'));
+
+        if (__onm_user.name != null) {
+          $('.user-menu-dropdown .nav-link.dropdown-toggle').append('Hola, ' + __onm_user.name);
+        }
+        $('.user-menu-dropdown .user-menu-item:not(.user-menu-logged)').remove();
+      } else {
+        $('.user-menu-dropdown .user-menu-item.user-menu-logged').remove();
+      }
+      $('.user-menu').removeClass('hidden');
+    });
+  </script>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="container-fluid px-0">
+<div class="row no-gutters">
+<div class="navbar-logos col-12">
+<nav class="navbar navbar-light navbar-main justify-content-start p-0" aria-label="breadcrumb">
+<button class="navbar-toggler mr-2" type="button" data-toggle="collapse" data-target="#menu-sidebar" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+<span class="navbar-toggler-icon btn-hamburger"><i class="mi material-icons">menu</i></span>
+</button>
+<div class="header-brand">
+<a class="navbar-brand" href="/" title="El Progreso de Lugo">
+<img alt="El Progreso de Lugo" src="/media/elprogreso/images/2021/01/01/2021010100000057952.png" class="header-logo" height="70" width="510">
+<img alt="El Progreso de Lugo" src="/media/elprogreso/images/2021/01/01/2021010100000065988.png" class="mobile-logo d-none" height="48" width="348">
+<span class="d-none">El Progreso de Lugo</span>
+</a>
+</div>
+<a class="category-header nav-item nav-link text-uppercase second-color d-lg-none" href="/blog/section/mundo">Mundo</a>
+</nav>
+</div>
+<div class="navbar-menu col-12">
+<nav class="main-nav-menu navbar-desktop d-none d-lg-flex">
+<nav class="main-nav-menu container">
+<ul class="navbar-nav">
+<li class="nav-item section lugo ">
+<a class="nav-link" href="/blog/section/lugo" title="Sección: Lugo">
+<span>lugo</span>
+</a>
+</li>
+<li class="nav-item section a-marina ">
+<a class="nav-link" href="/blog/section/a-marina" title="Sección: A Mariña">
+<span>a mariña</span>
+</a>
+</li>
+<li class="nav-item section a-chaira ">
+<a class="nav-link" href="/blog/section/a-chaira" title="Sección: A Chaira">
+<span>a chaira</span>
+</a>
+</li>
+<li class="nav-item section ribeira-sacra ">
+<a class="nav-link" href="/blog/section/ribeira-sacra" title="Sección: Ribeira Sacra">
+<span>ribeira sacra</span>
+</a>
+</li>
+<li class="nav-item section sarria ">
+<a class="nav-link" href="/blog/section/sarria" title="Sección: Sarria">
+<span>sarria</span>
+</a>
+</li>
+<li class="nav-item section deporte-local-lugo ">
+<a class="nav-link" href="/blog/section/deporte-local-lugo" title="Sección: Deporte">
+<span>deporte</span>
+</a>
+</li>
+<li class="nav-item section galicia ">
+<a class="nav-link" href="/blog/section/galicia" title="Sección: Galicia">
+<span>galicia</span>
+</a>
+</li>
+<li class="nav-item section gente ">
+<a class="nav-link" href="/blog/section/gente" title="Sección: Gente">
+<span>gente</span>
+</a>
+</li>
+<li class="nav-item section firmas ">
+<a class="nav-link" href="/seccion/firmas/" title="Sección: Firmas">
+<span>firmas</span>
+</a>
+</li>
+<li class="nav-item section  dropdown">
+<a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="/" title="Sección: Media" target="_blank">
+<span>media</span>
+</a>
+<nav class="submenu dropdown-menu">
+<a class="dropdown-item video" href="/video" title="vídeos">
+Vídeos
+</a>
+<a class="dropdown-item album" href="/album" title="galerías">
+Galerías
+</a>
+</nav>
+</li>
+</ul>
+</nav>
+</nav>
+<div class="innerbar">
+<div class="header-logo d-flex d-lg-none">
+<a href="https://www.elprogreso.es/">
+<img alt="El Progreso de Lugo" class="author-avatar onm-img img-responsive" src="/media/elprogreso/images/2021/01/01/2021010100000068286.png" height="120" width="120">
+</a>
+</div>
+<div class="innerbar-breadcrumb">
+<a class="category-header nav-item nav-link text-uppercase second-color" href="/blog/section/mundo">Mundo</a>
+<h2 class="title">Un robot mantiene la distancia social en los parques de Singapur</h2>
+</div>
+<div class="mobile-sharetools d-none d-md-flex">
+<div class="sharrre-tools">
+<div class="sharrre" data-title="Compartir" data-url="/articulo/mundo/robot-mantiene-distancia-social-parques-singapur/202005100245241437665.html">
+<ul class="nav ">
+<li class="nav-item share-mail only-share d-flex">
+<a class="button-share-by-email box" href="/cdn-cgi/l/email-protection#221d515740484741561f774c071012504d404d560710124f434c564b474c470710124e43071012464b5156434c414b43071012514d414b434e071012474c071012714b4c454352575004404d465b1f6a4702414d4f524350564b464d02574c02435056e18f41574e4d02414d4c564b454d071266071263774c071012504d404d560710124f434c564b474c470710124e43071012464b5156434c414b43071012514d414b434e071012474c071012714b4c45435257500712660712634a56565251180d0d5555550c474e52504d455047514d0c47510d4350564b41574e4d0d4f574c464d0d504d404d560f4f434c564b474c470f464b5156434c414b430f514d414b434e0f524350535747510f514b4c45435257500d1012101212171312121016171016131611151414170c4a564f4e04434f521957564f7d514d575041471f514d414b434e04434f521957564f7d4f47464b574f1f474f434b4e04434f521957564f7d41434f52434b454c1f514a4350477d405756564d4c" title="Enviar por email">
+<span class="share"><i class="fa fa-envelope-o"></i></span>
+</a>
+</li>
+<li class="nav-item print only-share d-none d-md-flex">
+<a class="button-print box" href="#" onclick="if (!window.__cfRLUnblockHandlers) return false; window.print();" title="Imprimir" data-cf-modified-1759ac48d45172e63cf7f824-="">
+<span class="share"> <i class="fa fa-print"></i></span>
+</a>
+</li>
+<li id="whatsapp-8604" class="nav-item whatsapp d-flex d-md-none">
+<a class="box" title="Compartir" href="whatsapp://send?text=Un%20robot%20mantiene%20la%20distancia%20social%20en%20los%20parques%20de%20Singapur%20-%20https%3A%2F%2Fwww.elprogreso.es%2Farticulo%2Fmundo%2Frobot-mantiene-distancia-social-parques-singapur%2F202005100245241437665.html%3Futm_medium=social%26utm_source=whatsapp%26utm_campaign=share_button"><span class="share"><i class="fa fa-whatsapp"></i></span>
+</a>
+</li>
+<li id="facebook-8604" class="nav-item facebook d-flex" data-url="https://www.elprogreso.es/articulo/mundo/robot-mantiene-distancia-social-parques-singapur/202005100245241437665.html?utm_medium=social&utm_source=facebook&utm_campaign=share_button" data-text="Un robot mantiene la distancia social en los parques de Singapur">
+<a class="box" title="Compartir" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.elprogreso.es%2Farticulo%2Fmundo%2Frobot-mantiene-distancia-social-parques-singapur%2F202005100245241437665.html%3Futm_medium=social%26utm_source=facebook%26utm_campaign=share_button"><span class="share"><i class="fa fa-facebook"></i></span>
+</a>
+</li>
+<li id="twitter-8604" class="nav-item twitter d-flex">
+<a class="box" title="Compartir" href="https://twitter.com/share?text=Un+robot+mantiene+la+distancia+social+en+los+parques+de+Singapur&via=elprogreso_lugo&url=https%3A%2F%2Fwww.elprogreso.es%2Farticulo%2Fmundo%2Frobot-mantiene-distancia-social-parques-singapur%2F202005100245241437665.html%3Futm_medium=social%26utm_source=twitter%26utm_campaign=share_button">
+<span class="share"><i class="fa fa-twitter"></i></span>
+</a>
+</li>
+<li id="linkedin-8604" class="nav-item linkedin d-none d-md-flex">
+<a class="box" title="Compartir" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.elprogreso.es%2Farticulo%2Fmundo%2Frobot-mantiene-distancia-social-parques-singapur%2F202005100245241437665.html%3Futm_medium%3Dsocial%26utm_source%3Dlinkedin%26utm_campaign%3Dshare_button">
+<span class="share"><i class="fa fa-linkedin"></i></span>
+</a>
+</li>
+<li id="nextarticle-8604" class="nav-item nextarticle only-share hidden">
+<a class="box" href="">
+<span class="share small">Siguiente</span>
+<span><i class="mi material-icons ml-1">chevron_right</i></span>
+</a>
+</li>
+</ul>
+</div>
+</div>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-onm-type="text/javascript" type="onmlazyloadscript">
+  $('#twitter-8604').on('click', 'a', function() {
+    window.open(this.href, '', 'menubar=no, toolbar=no, resizable=yes, scrollbars=yes, height=350, width=700');
+    return false;
+  });
+  $('#linkedin-8604').on('click', 'a', function() {
+    window.open(this.href, '', 'menubar=no, toolbar=no, resizable=yes, scrollbars=yes, height=350, width=700');
+    return false;
+  });
+  $('#facebook-8604').on('click', 'a', function() {
+    window.open(this.href, '', 'menubar=no, toolbar=no, resizable=yes, scrollbars=yes, height=350, width=700');
+    return false;
+  });
+</script>
+</div>
+</div>
+</div>
+</div>
+<time class="header-datetime header-datetime-mobile d-none">
+27 oct. 2022
+</time>
+</div>
+<nav id="menu-sidebar" class="menu-sidebar collapse">
+<div class="row">
+<div class="menu-sidebar-container col-12 col-md-6 col-lg-8 col-xl-7 bg-dark">
+<div class="menu-header border-site-color">
+<button class="button-close btn btn-link rounded-0 m-o" data-toggle="collapse" data-target="#menu-sidebar"><i class="mi material-icons site-color">close</i></button>
+</div>
+<div class="row">
+<div class="col-12 col-lg-6 mb-4 order-lg-2">
+<div class="user-area user-area-hamburger hidden">
+<div class="widget-header nano-header border-0 mb-2">
+<span class="">Cuenta</span>
+<span class="user-menu-username user-menu-logged">Hola,</span>
+</div>
+<div class="user-menu user-menu-hamburger d-flex">
+<div class="user-menu-item user-menu-item-login d-inline-flex mr-2">
+<a class="btn btn-onm btn-dark bg-site-color border-0 mb-1" href="/login">
+<span>Iniciar sesión</span> <i class="mi material-icons ml-1">lock_open</i>
+</a>
+</div>
+<div class="user-menu-item user-menu-item-register d-inline-flex">
+<a class="btn btn-onm btn-dark bg-site-color border-0 mb-1" href="/user/register">
+<span>Crear cuenta</span> <i class="mi material-icons ml-1">person_add</i>
+</a>
+</div>
+<div class="user-menu-item user-menu-item-account user-menu-logged d-inline-flex mr-2">
+<a class="btn btn-onm btn-dark bg-site-color border-0 mb-1" href="/user">
+<span>Perfil</span> <i class="mi material-icons ml-1">person</i>
+</a>
+</div>
+<div class="user-menu-item user-menu-item-logout user-menu-logged d-inline-flex">
+<a class="btn btn-onm btn-dark bg-site-color border-0 mb-1" href="/auth/logout">
+<span>Cerrar sesión</span> <i class="mi material-icons ml-1">exit_to_app</i>
+</a>
+</div>
+</div>
+</div>
+<script data-onm-type="text/javascript" type="onmlazyloadscript">
+    $(document).ready(function() {
+      if ($.cookie('__onm_user') != null) {
+        var __onm_user = JSON.parse($.cookie('__onm_user'));
+
+        if (__onm_user.name != null) {
+          $('.user-area-hamburger .user-menu-username').append(' ' + __onm_user.name);
+        }
+        $('.user-area-hamburger .user-menu-item:not(.user-menu-logged)').remove();
+        $('.user-area-hamburger .widget-header span:not(.user-menu-logged)').remove();
+      } else {
+        $('.user-area-hamburger .user-menu-item.user-menu-logged').remove();
+        $('.user-area-hamburger .user-area .widget-header span.user-menu-logged').remove();
+        $('.user-area-hamburger .user-menu-username').remove();
+      }
+      $('.user-area-hamburger').removeClass('hidden');
+    });
+  </script>
+</div>
+<div class="col-12 col-lg-6 mb-4">
+<div class="menu-search">
+<div class="widget-header nano-header border-0 mb-2">
+Buscar
+</div>
+<div class="widget-content">
+<div class="main-search-form search-block">
+<form class="navbar-form" action="/search" method="GET">
+<div class="input-group">
+<input type="text" name="tag_name" class="form-control border-0" placeholder="buscar">
+<div class="input-group-append">
+<button class="search-button btn btn-onm btn-light btn-block border-0" type="submit">
+<i class="mi material-icons site-color">search</i>
+</button>
+</div>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-12 col-lg-6 d-flex">
+<div class="navbar navbar-dark">
+ <div class="show_only_webview w-100 d-none">
+<div class="widget-header nano-header mb-2">
+Notificaciones </div>
+<ul class="navbar-nav list-unstyled components">
+<li class="nav-item">
+<a class="nav-link d-flex justify-content-between align-items-center" href="/estaticas/notificaciones.html">
+Ver Notificaciones <i class="mi material-icons mr-1 site-color">notifications</i>
+</a>
+</li>
+</ul>
+</div>
+<div class="widget-header nano-header mb-2">
+Secciones
+</div>
+<ul id="hamburger-main" class="navbar-nav list-unstyled components">
+<li class="nav-item">
+<a class="nav-link" href="https://kiosko.elprogreso.es/" title="Sección: Kiosko" target="_blank">
+Kiosko
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="#" title="Sección: Lugo" target="_blank">
+Lugo
+</a>
+<button class="btn btn-link" data-target="#lugoSubmenu" data-toggle="collapse" aria-expanded="false"><i class="mi material-icons">expand_more</i></button>
+<ul class="nav-item-submenu collapse list-unstyled" id="lugoSubmenu" data-parent="#hamburger-main">
+<li class="nav-item">
+<a href="/blog/section/lugo" title="Lugo" class="nav-link">
+Lugo
+</a>
+</li>
+<li class="nav-item">
+<a href="/esquela" title="Esquelas" class="nav-link" target="_blank">
+Esquelas
+</a>
+</li>
+<li class="nav-item">
+<a href="/events" title="Agenda" class="nav-link">
+Agenda
+</a>
+</li>
+</ul>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="/blog/section/comarca-lugo" title="Sección: Comarca de Lugo">
+Comarca de Lugo
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="/blog/section/a-marina" title="Sección: A Mariña">
+A Mariña
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="/blog/section/a-chaira" title="Sección: A Chaira">
+A Chaira
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="/blog/section/ribeira-sacra" title="Sección: Ribeira Sacra">
+Ribeira Sacra
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="/blog/section/a-montana" title="Sección: A Montaña">
+A Montaña
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="/blog/section/sarria" title="Sección: Sarria">
+Sarria
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="/blog/section/ulloa-melide" title="Sección: A Ulloa e Melide">
+A Ulloa e Melide
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="#" title="Sección: Deportes" target="_blank">
+Deportes
+</a>
+<button class="btn btn-link" data-target="#deportesSubmenu" data-toggle="collapse" aria-expanded="false"><i class="mi material-icons">expand_more</i></button>
+<ul class="nav-item-submenu collapse list-unstyled" id="deportesSubmenu" data-parent="#hamburger-main">
+<li class="nav-item">
+<a href="/blog/section/deporte-general" title="Deporte General" class="nav-link">
+Deporte General
+</a>
+ </li>
+<li class="nav-item">
+<a href="https://www.elprogreso.es/seccion/forza-breo" title="Forza Breo" class="nav-link" target="_blank">
+Forza Breo
+</a>
+</li>
+<li class="nav-item">
+<a href="https://www.elprogreso.es/seccion/forza-lugo" title="Forza Lugo" class="nav-link" target="_blank">
+Forza Lugo
+</a>
+</li>
+<li class="nav-item">
+<a href="https://www.elprogreso.es/seccion/a-canteira" title="A Canteira" class="nav-link" target="_blank">
+A Canteira
+</a>
+</li>
+<li class="nav-item">
+<a href="https://www.elprogreso.es/seccion/en-xogo" title="En xogo" class="nav-link" target="_blank">
+En xogo
+</a>
+</li>
+<li class="nav-item">
+<a href="https://www.galiciae.com/seccion/motor-on" title="MotorOn" class="nav-link" target="_blank">
+MotorOn
+</a>
+</li>
+</ul>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="/blog/section/comarcas" title="Sección: Comarcas">
+Comarcas
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="/blog/section/galicia" title="Sección: Galicia">
+Galicia
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="/blog/section/espana" title="Sección: España">
+España
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="/blog/section/economia" title="Sección: Economía">
+Economía
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="/blog/section/mundo" title="Sección: Mundo">
+Mundo
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="/seccion/firmas/" title="Sección: Firmas" target="_blank">
+Firmas
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="#" title="Sección: Cultura" target="_blank">
+Cultura
+</a>
+<button class="btn btn-link" data-target="#culturaSubmenu" data-toggle="collapse" aria-expanded="false"><i class="mi material-icons">expand_more</i></button>
+<ul class="nav-item-submenu collapse list-unstyled" id="culturaSubmenu" data-parent="#hamburger-main">
+<li class="nav-item">
+<a href="/blog/section/cultura" title="Cultura" class="nav-link">
+Cultura
+</a>
+</li>
+<li class="nav-item">
+<a href="https://www.galiciae.com/seccion/taboa-redonda" title="Táboa Redonda" class="nav-link" target="_blank">
+Táboa Redonda
+</a>
+</li>
+<li class="nav-item">
+<a href="/estaticas/estrenos/" title="Estrenos" class="nav-link">
+Estrenos
+</a>
+</li>
+</ul>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="/blog/section/gente" title="Sección: Gente y espectáculos">
+Gente y espectáculos
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="col-12 col-lg-6 d-flex">
+<div id="hamburger-secondary" class="navbar navbar-dark">
+<div class="widget-lang-selector widget-lang-selector-mobile pb-3 w-100">
+<div class="widget-header nano-header mb-2 w-100">
+Language </div>
+<div class="widget"><div class="lang-selector">
+<div class="dropdown-toggle" id="languageSelect" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" role="button">
+<i class="material-icons">language</i>
+Español
+<span class="caret"></span>
+</div>
+<ul class="dropdown-menu" aria-labelledby="languageSelect">
+<li class="active">
+<a href="/">
+Español
+</a>
+</li>
+<li>
+<a href="/gl">
+Gallego
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="widget-header nano-header mb-2">
+Servicios
+</div>
+<ul class="navbar-nav list-unstyled components" id="serviciosSubmenu">
+<li class="nav-item">
+<a href="/events" title="Agenda" class="nav-link">
+Agenda
+</a>
+</li>
+<li class="nav-item">
+<a href="/esquela" title="Esquelas" class="nav-link" target="_blank">
+Esquelas
+</a>
+</li>
+</ul>
+<div class="widget-header nano-header mb-2">
+El Grupo
+</div>
+<ul class="navbar-nav list-unstyled components" id="elgrupoSubmenu">
+<li class="nav-item">
+<a href="https://www.elprogreso.es/" title="El Progreso" class="nav-link" target="_blank">
+El Progreso
+</a>
+</li>
+<li class="nav-item">
+<a href="https://www.diariodepontevedra.es/" title="Diario de Pontevedra" class="nav-link" target="_blank">
+Diario de Pontevedra
+</a>
+</li>
+<li class="nav-item">
+<a href="https://www.galiciae.com/" title="Galiciaé" class="nav-link" target="_blank">
+Galiciaé
+</a>
+</li>
+<li class="nav-item">
+<a href="http://www.axencia.com/" title="AGN" class="nav-link" target="_blank">
+AGN
+</a>
+</li>
+</ul>
+<div class="hamburger-socials pb-3 w-100">
+<div class="widget-header nano-header mb-2">
+Síguenos </div>
+<ul class="social-links list-inline">
+<li class="item-facebook">
+<a href="//www.facebook.com/elprogresodelugo/" class="facebook color-facebook" target="_blank">
+<i class="fa fa-facebook"></i> <span>Facebook</span>
+</a>
+</li>
+<li class="item-twitter">
+<a href="//twitter.com/elprogreso_lugo" class="twitter color-twitter" target="_blank">
+<i class="fa fa-twitter"></i> <span>Twitter</span>
+</a>
+</li>
+<li class="item-instagram">
+<a href="https://www.instagram.com/elprogresodelugo/" class="instagram color-instagram" target="_blank">
+<i class="fa fa-instagram"></i> <span>Instagram</span>
+</a>
+</li>
+<li class="item-rss">
+<a href="/rss/listado" class="rss color-rss" title="RSS">
+<i class="fa fa-rss"></i> <span>RSS</span>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="menu-sidebar-curtain" data-toggle="collapse" data-target="#menu-sidebar">
+</div>
+</nav>
+<progress class="reading-progress second-site-color mundo" value="0"></progress>
+</div>
+</header>
+<div class="ads bg-light">
+<div class="ads ads-header">
+<div class="megabanner">
+</div>
+<div>
+<div class="ad-left">
+<div class="ad-slot oat oat-visible oat-top " data-mark="Publicidad" style="height: 265px;"><div id="top1" class="henneoHB"></div></div>
+</div>
+<div class="ad-right">
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="main-wrapper">
+<div class="inf_article">
+<section class="article">
+<div id="main" class="inner-content">
+<div class="container">
+<div class="article-header">
+<div class="category-header border-site-color">
+<a href="/blog/section/mundo">
+Mundo
+</a>
+</div>
+<h1 class="title">
+Un robot mantiene la distancia social en los parques de Singapur
+</h1>
+<div class="summary">
+Tiene aspecto de can patrulla en horas punta para recordar a los corredores que deben mantener una separación mínima con el resto de personas
+</div>
+<div class="article-media">
+<figure class="article-media-hero">
+<img src="/asset/thumbnail,1280,720,center,center/media/elprogreso/images/2020/05/10/2020051000444652262.jpg" alt="Un robot controla los paques de Singapur.Efe" srcset="/asset/thumbnail,480,270,center,center/media/elprogreso/images/2020/05/10/2020051000444652262.jpg 480w, /asset/thumbnail,768,432,center,center/media/elprogreso/images/2020/05/10/2020051000444652262.jpg 768w, /asset/thumbnail,992,558,center,center/media/elprogreso/images/2020/05/10/2020051000444652262.jpg 992w, /asset/thumbnail,1280,720,center,center/media/elprogreso/images/2020/05/10/2020051000444652262.jpg 1280w" sizes="(max-width: 480px) 480px, (max-width: 768px) 768px, (max-width: 992px) 992px, 1280px" height="720" width="1280">
+<figcaption class="photo-subtitle offset-xl-1">
+<i class="mi material-icons site-color">photo_camera</i> Un robot controla los paques de Singapur.Efe
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="row">
+<div class="content-col col-12 col-lg stick">
+<div class="smart-sticky">
+<article id="article-1437665" class="article-1437665 format category-54">
+<div class="metadata-body metadata-body-start">
+<div class="row">
+<div class="content-meta content-meta-top col d-flex">
+<div class="author-data">
+<span class="agency">
+Efe
+</span>
+</div>
+<span class="content-meta-date">10/may./20</span>
+</div>
+<div class="content-utilities-box col-auto d-flex">
+<div class="mobile-sharetools">
+<div class="sharrre-tools">
+<div class="sharrre" data-title="Compartir" data-url="/articulo/mundo/robot-mantiene-distancia-social-parques-singapur/202005100245241437665.html">
+<ul class="nav ">
+<li class="nav-item share-mail only-share d-flex">
+<a class="button-share-by-email box" href="/cdn-cgi/l/email-protection#b689c5c3d4dcd3d5c28be3d8938486c4d9d4d9c2938486dbd7d8c2dfd3d8d3938486dad7938486d2dfc5c2d7d8d5dfd7938486c5d9d5dfd7da938486d3d8938486e5dfd8d1d7c6c3c490d4d9d2cf8bfed396d5d9dbc6d7c4c2dfd2d996c3d896d7c4c2751bd5c3dad996d5d9d8c2dfd1d99386f29386f7e3d8938486c4d9d4d9c2938486dbd7d8c2dfd3d8d3938486dad7938486d2dfc5c2d7d8d5dfd7938486c5d9d5dfd7da938486d3d8938486e5dfd8d1d7c6c3c49386f29386f7dec2c2c6c58c9999c1c1c198d3dac6c4d9d1c4d3c5d998d3c599d7c4c2dfd5c3dad999dbc3d8d2d999c4d9d4d9c29bdbd7d8c2dfd3d8d39bd2dfc5c2d7d8d5dfd79bc5d9d5dfd7da9bc6d7c4c7c3d3c59bc5dfd8d1d7c6c3c49984868486868387868684828384828782858180808398dec2dbda90d7dbc68dc3c2dbe9c5d9c3c4d5d38bc5d9d5dfd7da90d7dbc68dc3c2dbe9dbd3d2dfc3db8bd3dbd7dfda90d7dbc68dc3c2dbe9d5d7dbc6d7dfd1d88bc5ded7c4d3e9d4c3c2c2d9d8" title="Enviar por email">
+<span class="share"><i class="fa fa-envelope-o"></i></span>
+</a>
+</li>
+<li class="nav-item print only-share d-none d-md-flex">
+<a class="button-print box" href="#" onclick="if (!window.__cfRLUnblockHandlers) return false; window.print();" title="Imprimir" data-cf-modified-1759ac48d45172e63cf7f824-="">
+<span class="share"> <i class="fa fa-print"></i></span>
+</a>
+</li>
+<li id="whatsapp-5081" class="nav-item whatsapp d-flex d-md-none">
+<a class="box" title="Compartir" href="whatsapp://send?text=Un%20robot%20mantiene%20la%20distancia%20social%20en%20los%20parques%20de%20Singapur%20-%20https%3A%2F%2Fwww.elprogreso.es%2Farticulo%2Fmundo%2Frobot-mantiene-distancia-social-parques-singapur%2F202005100245241437665.html%3Futm_medium=social%26utm_source=whatsapp%26utm_campaign=share_button"><span class="share"><i class="fa fa-whatsapp"></i></span>
+</a>
+</li>
+<li id="facebook-5081" class="nav-item facebook d-flex" data-url="https://www.elprogreso.es/articulo/mundo/robot-mantiene-distancia-social-parques-singapur/202005100245241437665.html?utm_medium=social&utm_source=facebook&utm_campaign=share_button" data-text="Un robot mantiene la distancia social en los parques de Singapur">
+<a class="box" title="Compartir" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.elprogreso.es%2Farticulo%2Fmundo%2Frobot-mantiene-distancia-social-parques-singapur%2F202005100245241437665.html%3Futm_medium=social%26utm_source=facebook%26utm_campaign=share_button"><span class="share"><i class="fa fa-facebook"></i></span>
+</a>
+</li>
+<li id="twitter-5081" class="nav-item twitter d-flex">
+<a class="box" title="Compartir" href="https://twitter.com/share?text=Un+robot+mantiene+la+distancia+social+en+los+parques+de+Singapur&via=elprogreso_lugo&url=https%3A%2F%2Fwww.elprogreso.es%2Farticulo%2Fmundo%2Frobot-mantiene-distancia-social-parques-singapur%2F202005100245241437665.html%3Futm_medium=social%26utm_source=twitter%26utm_campaign=share_button">
+<span class="share"><i class="fa fa-twitter"></i></span>
+</a>
+</li>
+<li id="linkedin-5081" class="nav-item linkedin d-none d-md-flex">
+<a class="box" title="Compartir" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.elprogreso.es%2Farticulo%2Fmundo%2Frobot-mantiene-distancia-social-parques-singapur%2F202005100245241437665.html%3Futm_medium%3Dsocial%26utm_source%3Dlinkedin%26utm_campaign%3Dshare_button">
+<span class="share"><i class="fa fa-linkedin"></i></span>
+</a>
+</li>
+<li id="nextarticle-5081" class="nav-item nextarticle only-share hidden">
+<a class="box" href="">
+<span class="share small">Siguiente</span>
+<span><i class="mi material-icons ml-1">chevron_right</i></span>
+</a>
+</li>
+</ul>
+</div>
+</div>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-onm-type="text/javascript" type="onmlazyloadscript">
+  $('#twitter-5081').on('click', 'a', function() {
+    window.open(this.href, '', 'menubar=no, toolbar=no, resizable=yes, scrollbars=yes, height=350, width=700');
+    return false;
+  });
+  $('#linkedin-5081').on('click', 'a', function() {
+    window.open(this.href, '', 'menubar=no, toolbar=no, resizable=yes, scrollbars=yes, height=350, width=700');
+    return false;
+  });
+  $('#facebook-5081').on('click', 'a', function() {
+    window.open(this.href, '', 'menubar=no, toolbar=no, resizable=yes, scrollbars=yes, height=350, width=700');
+    return false;
+  });
+</script>
+</div>
+</div>
+</div>
+</div>
+<div class="content-data">
+<div class="ads">
+<div class="ad-slot oat oat-visible oat-top " data-mark="       " style="height: 265px;"><div id="top1_pause" class="henneoHB"></div>
+<div id="sas_65051"></div>
+<script data-onm-type="application/javascript" type="onmlazyloadscript">
+    sas.cmd.push(function() {
+        sas.call("std", {
+            siteId: 234801, // 
+            pageId: 971066, // Página : Progreso/inner_pages
+            formatId: 65051, // Formato : Intext_video 1x1
+            target: '' // Segmentación
+        });
+    });
+</script></div>
+</div>
+<div class="">
+</div>
+<div class="content-body inner-article-data">
+<div id="body001-1437665" class="body mundo">
+<p>Las personas que salen a ejercitarse durante la pandemia de la covid-19 en los parques de Singapur se pueden cruzar con una curioso visitante: un robot que se desplaza como un perro y que <strong>recuerda a los deportistas que mantengan las distancias</strong>.</p><div class="ad-slot oat oat-visible oat-top " data-mark="  " style="height: 265px;"><div id="boton1_pause" class="henneoHB"></div>
+<div id="sas_65040"></div>
+<script data-onm-type="application/javascript" type="onmlazyloadscript">
+    sas.cmd.push(function() {
+        sas.call("std", {
+            siteId: 234801, // 
+            pageId: 971066, // Página : Progreso/inner_pages
+            formatId: 65040, // Formato : Intext_video 1x1
+            target: '' // Segmentación
+        });
+    });
+</script>
+</div>
+<p>Con gran agilidad, el robot, de color amarillo y negro y bautizado como Spot, transita por los caminos y las zonas de hierba, mientras emite varios mensajes.</p>
+<p>"Mantengamos a Singapur saludable. Por<strong> vuestra propia seguridad </strong>y la que os rodean, por favor, permanecer al menos a un metro de distancia. Gracias", indica con voz de mujer y en idioma inglés, uno de los cuatro comúnmente utilizados en esta próspera nación asiática.</p>
+<p><br />
+<iframe width="560" height="315" src="https://www.youtube.com/embed/DPjQFVARmgQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></p>
+<p>El robot, controlado de manera remota, es parte de un programa piloto de dos semanas organizado por varios organismos <strong>gubernamentales </strong>de la ciudad-estado dentro del plan para evitar la propagación del nuevo coronavirus, publica este sábado local el diario <em>The Straits Times</em>.</p>
+<p>Con sensores para detectar objetos y evitar colisiones, Spot también cuenta con cámaras que ayudan a las autoridades a estimar el número de personas que visitan zonas del parque Bishan-Ang Mo Kio, en el centro de la isla de Singapur.</p>
+<p>Aunque Spot siempre va acompañado por un trabajador de Departamento de Parques Naturales por si surgieran problemas.</p>
+<p>Durante el tiempo de prueba, <strong>el robot transitará a lo largo de un recorrido de unos 3 kilómetros y solo en las horas puntas</strong>, pero de suponer un éxito podría ampliar su horario y territorio, e incluso utilizarse en otras zonas verdes de la megalópoli.</p>
+<p>Singapur, que llegó a ser citado por la Organización Mundial de la Salud como ejemplo de cómo controlar la pandemia, registra actualmente un progresivo descenso en los casos después del rebrote registrado en abril en los barracones de trabajadores no cualificados.</p>
+<p>Las autoridades singapurenses actuaron rápido y con firmeza desde el primer momento para frenar al virus, pero dejaron desprotegidos los modestos bloques donde residen estos foráneos que se encargan de los trabajos más duros y proceden en su mayoría del países del subcontinente indio.</p>
+<p>Este sábado las autoridades <strong>sanitarias confirmaron 753 nuevos infectados</strong>, la mayoría de ellos en los citados barracones, lo que eleva el total de casos a 22.460, incluidos 20 decesos.&nbsp;</p>
+</div>
+</div>
+<div class="metadata-body metadata-body-end">
+<div class="row">
+<div class="content-meta col-12">
+<div class="content-meta-label d-none">
+Etiquetas </div>
+<div class="content-meta-tags">
+<a href="/tags/singapur" class="tag-item">Singapur</a> <a href="/tags/coronavirus" class="tag-item">coronavirus</a> <a href="/tags/covid-19" class="tag-item">covid-19</a>
+</div>
+</div>
+<div class="content-utilities-box col">
+<div class="mobile-sharetools">
+<div class="sharrre-tools">
+<div class="sharrre" data-title="Compartir" data-url="/articulo/mundo/robot-mantiene-distancia-social-parques-singapur/202005100245241437665.html">
+<ul class="nav ">
+<li class="nav-item share-mail only-share d-flex">
+<a class="button-share-by-email box" href="/cdn-cgi/l/email-protection#1f206c6a7d757a7c6b224a713a2d2f6d707d706b3a2d2f727e716b767a717a3a2d2f737e3a2d2f7b766c6b7e717c767e3a2d2f6c707c767e733a2d2f7a713a2d2f4c7671787e6f6a6d397d707b6622577a3f7c70726f7e6d6b767b703f6a713f7e6d6bdcb27c6a73703f7c70716b7678703a2f5b3a2f5e4a713a2d2f6d707d706b3a2d2f727e716b767a717a3a2d2f737e3a2d2f7b766c6b7e717c767e3a2d2f6c707c767e733a2d2f7a713a2d2f4c7671787e6f6a6d3a2f5b3a2f5e776b6b6f6c253030686868317a736f6d70786d7a6c70317a6c307e6d6b767c6a737030726a717b70306d707d706b32727e716b767a717a327b766c6b7e717c767e326c707c767e73326f7e6d6e6a7a6c326c7671787e6f6a6d302d2f2d2f2f2a2e2f2f2d2b2a2d2b2e2b2c2829292a31776b7273397e726f246a6b72406c706a6d7c7a226c707c767e73397e726f246a6b7240727a7b766a72227a727e7673397e726f246a6b72407c7e726f7e767871226c777e6d7a407d6a6b6b7071" title="Enviar por email">
+<span class="share"><i class="fa fa-envelope-o"></i></span>
+</a>
+</li>
+<li class="nav-item print only-share d-none d-md-flex">
+<a class="button-print box" href="#" onclick="if (!window.__cfRLUnblockHandlers) return false; window.print();" title="Imprimir" data-cf-modified-1759ac48d45172e63cf7f824-="">
+<span class="share"> <i class="fa fa-print"></i></span>
+</a>
+</li>
+<li id="whatsapp-7023" class="nav-item whatsapp d-flex d-md-none">
+<a class="box" title="Compartir" href="whatsapp://send?text=Un%20robot%20mantiene%20la%20distancia%20social%20en%20los%20parques%20de%20Singapur%20-%20https%3A%2F%2Fwww.elprogreso.es%2Farticulo%2Fmundo%2Frobot-mantiene-distancia-social-parques-singapur%2F202005100245241437665.html%3Futm_medium=social%26utm_source=whatsapp%26utm_campaign=share_button"><span class="share"><i class="fa fa-whatsapp"></i></span>
+</a>
+</li>
+<li id="facebook-7023" class="nav-item facebook d-flex" data-url="https://www.elprogreso.es/articulo/mundo/robot-mantiene-distancia-social-parques-singapur/202005100245241437665.html?utm_medium=social&utm_source=facebook&utm_campaign=share_button" data-text="Un robot mantiene la distancia social en los parques de Singapur">
+<a class="box" title="Compartir" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.elprogreso.es%2Farticulo%2Fmundo%2Frobot-mantiene-distancia-social-parques-singapur%2F202005100245241437665.html%3Futm_medium=social%26utm_source=facebook%26utm_campaign=share_button"><span class="share"><i class="fa fa-facebook"></i></span>
+</a>
+</li>
+<li id="twitter-7023" class="nav-item twitter d-flex">
+<a class="box" title="Compartir" href="https://twitter.com/share?text=Un+robot+mantiene+la+distancia+social+en+los+parques+de+Singapur&via=elprogreso_lugo&url=https%3A%2F%2Fwww.elprogreso.es%2Farticulo%2Fmundo%2Frobot-mantiene-distancia-social-parques-singapur%2F202005100245241437665.html%3Futm_medium=social%26utm_source=twitter%26utm_campaign=share_button">
+<span class="share"><i class="fa fa-twitter"></i></span>
+</a>
+</li>
+<li id="linkedin-7023" class="nav-item linkedin d-none d-md-flex">
+<a class="box" title="Compartir" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.elprogreso.es%2Farticulo%2Fmundo%2Frobot-mantiene-distancia-social-parques-singapur%2F202005100245241437665.html%3Futm_medium%3Dsocial%26utm_source%3Dlinkedin%26utm_campaign%3Dshare_button">
+<span class="share"><i class="fa fa-linkedin"></i></span>
+</a>
+</li>
+<li id="nextarticle-7023" class="nav-item nextarticle only-share hidden">
+<a class="box" href="">
+<span class="share small">Siguiente</span>
+<span><i class="mi material-icons ml-1">chevron_right</i></span>
+</a>
+</li>
+</ul>
+</div>
+</div>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-onm-type="text/javascript" type="onmlazyloadscript">
+  $('#twitter-7023').on('click', 'a', function() {
+    window.open(this.href, '', 'menubar=no, toolbar=no, resizable=yes, scrollbars=yes, height=350, width=700');
+    return false;
+  });
+  $('#linkedin-7023').on('click', 'a', function() {
+    window.open(this.href, '', 'menubar=no, toolbar=no, resizable=yes, scrollbars=yes, height=350, width=700');
+    return false;
+  });
+  $('#facebook-7023').on('click', 'a', function() {
+    window.open(this.href, '', 'menubar=no, toolbar=no, resizable=yes, scrollbars=yes, height=350, width=700');
+    return false;
+  });
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</article>
+ </div>
+</div>
+<aside class="sidebar-col col-12 col-lg-4 stick">
+<div class="smart-sticky">
+<div class="last-column">
+<div class="row">
+<div class="col-12">
+<div class="ad-slot oat oat-visible oat-top " data-mark="Publicidad" style="height: 615px;"><div id="right1" class="henneoHB"></div></div>
+<div class="widget"><div class="widget-today-news">
+<div class="widget-header site-color border-site-color">
+<span>
+Noticias de Hoy
+</span>
+</div>
+<div class="widget-content">
+<div class="content onm-new">
+<div class="image-number">
+<figure class="capture ">
+<a href="/articulo/lugo/gobierno-local-dice-que-subio-gasto-habitante-pese-caida-ingresos/202210262134181611543.html" title="El gobierno local dice que subió el gasto por habitante pese a la caída de ingresos">
+<img class="onm-image img-responsive lazyload" src="/assets/images/lazy-bg.png" data-src="/asset/thumbnail,240,140,center,center/media/elprogreso/images/2022/10/27/2022102708294694997.jpg" alt="Lara M&eacute;ndez visita las obras del centro social de Lamas de Prado. SEBAS SENANDE" height="140" width="240">
+</a>
+</figure>
+<div class="number">1</div>
+</div>
+<div class="title-comments">
+<a href="/articulo/lugo/gobierno-local-dice-que-subio-gasto-habitante-pese-caida-ingresos/202210262134181611543.html">
+El gobierno local dice que subi&oacute; el gasto por habitante pese a la ca&iacute;da de ingresos
+</a>
+</div>
+</div>
+<div class="content onm-new">
+<div class="image-number">
+<figure class="capture ">
+<a href="/articulo/lugo/manuel-jabois-recuerda-recibir-puro-cora-que-crecio-grupo-progreso/202210270844031611582.html" title="Manuel Jabois recuerda al recibir el Puro Cora que creció en el Grupo El Progreso">
+<img class="onm-image img-responsive lazyload" src="/assets/images/lazy-bg.png" data-src="/asset/thumbnail,240,140,center,center/media/elprogreso/images/2022/10/27/2022102708395376315.jpg" alt="Manuel Jabois recibe el premio Puro Cora de Blanca Garc&iacute;a Montenegro. VICTORIA RODR&Iacute;GUEZ" height="140" width="240">
+</a>
+</figure>
+<div class="number">2</div>
+</div>
+<div class="title-comments">
+<a href="/articulo/lugo/manuel-jabois-recuerda-recibir-puro-cora-que-crecio-grupo-progreso/202210270844031611582.html">
+Manuel Jabois recuerda al recibir el Puro Cora que creci&oacute; en el Grupo El Progreso
+</a>
+</div>
+</div>
+<div class="content onm-new">
+<div class="image-number">
+<figure class="capture ">
+<a href="/articulo/lugo/agenda-hoy-lugo/202210261859561611456.html" title="AGENDA 📆 Hoy en Lugo">
+<img class="onm-image img-responsive lazyload" src="/assets/images/lazy-bg.png" data-src="/asset/thumbnail,240,140,center,center/media/elprogreso/images/2021/11/10/2021111018102180420.jpg" alt="Agenda" height="140" width="240">
+</a>
+</figure>
+<div class="number">3</div>
+</div>
+<div class="title-comments">
+<a href="/articulo/lugo/agenda-hoy-lugo/202210261859561611456.html">
+AGENDA 📆 Hoy en Lugo
+</a>
+</div>
+</div>
+<div class="content onm-new">
+<div class="image-number">
+<figure class="capture ">
+<a href="/articulo/lugo/mira-lugo/202210261905031611469.html" title="Mira Lugo ▶ Revista, podcast y Uned">
+<img class="onm-image img-responsive lazyload" src="/assets/images/lazy-bg.png" data-src="/asset/thumbnail,240,140,center,center/media/elprogreso/images/2022/06/18/2022061810541210526.jpg" alt="Hoy en Mira Lugo..." height="140" width="240">
+</a>
+</figure>
+<div class="number">4</div>
+</div>
+<div class="title-comments">
+<a href="/articulo/lugo/mira-lugo/202210261905031611469.html">
+Mira Lugo ▶ Revista, podcast y Uned
+</a>
+</div>
+</div>
+<div class="content onm-new">
+<div class="image-number">
+<figure class="capture ">
+<a href="/articulo/economia/hacienda-adelanta-2022-entrada-vigor-impuesto-grandes-fortunas/202210270023061611578.html" title="Hacienda adelanta a 2022 la entrada en vigor del impuesto a las grandes fortunas">
+<img class="onm-image img-responsive lazyload" src="/assets/images/lazy-bg.png" data-src="/asset/thumbnail,240,140,center,center/media/elprogreso/images/2022/09/29/2022092912542679849.jpg" alt="La ministra de Hacienda, Mar&iacute;a Jes&uacute;s Montero. EFE" height="140" width="240">
+</a>
+</figure>
+<div class="number">5</div>
+</div>
+<div class="title-comments">
+<a href="/articulo/economia/hacienda-adelanta-2022-entrada-vigor-impuesto-grandes-fortunas/202210270023061611578.html">
+Hacienda adelanta a 2022 la entrada en vigor del impuesto a las grandes fortunas
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="widget"><div class="widget-most-seeing-commented-content widget-9299">
+<div class="widget-header site-color border-site-color">
+<span>Lo más</span>
+</div>
+<div class="widget-content ">
+<ul class="tab-selector nav nav-tabs">
+<li class="nav-item selector more-viewed">
+<a class="nav-link small active" href="#tab-more-viewed"><span>Visto</span></a>
+</li>
+<li class="nav-item selector more-recent">
+<a class="nav-link small" href="#tab-more-recent"><span>Actual</span></a>
+</li>
+</ul>
+<div class="tab-content">
+<div class="tab-pane fade show active" id="tab-more-viewed">
+<article id="content-1609858" class="onm-new type- category-  onm-new-tiny colorize">
+<div class="article-media">
+<figure class="capture cover-img">
+<a href="/articulo/lugo/eloy-castro-consigue-esquivar-otra-vez-justicia-evadirse-portugal/202210201904211609858.html" title="Eloy Castro consigue esquivar otra vez a la Justicia tras evadirse en Portugal">
+<img class="onm-image img-responsive lazyload" src="/assets/images/lazy-bg.png" data-src="/asset/zoomcrop,480,270,center,center/media/elprogreso/images/2022/09/02/2022090209140420211.jpg" alt="Eloy Castro, hace cinco a&ntilde;os en la nave que ten&iacute;a en la Estrada da Coru&ntilde;a, al lado del cuartel de Garabolos. AEP" height="270" width="480">
+</a>
+</figure>
+</div>
+<div class="article-data">
+<div class="category-name">
+Lugo
+</div>
+<div class="title">
+<a href="/articulo/lugo/eloy-castro-consigue-esquivar-otra-vez-justicia-evadirse-portugal/202210201904211609858.html" title="Eloy Castro consigue esquivar otra vez a la Justicia tras evadirse en Portugal">Eloy Castro consigue esquivar otra vez a la Justicia tras evadirse en Portugal</a>
+</div>
+<div class="content-info">
+<span class="author-name agency">
+<a href="/author/miguel-olarte">
+Miguel Olarte
+</a>
+</span>
+<span class="author-net">
+<a href="https://www.twitter.com/olartemiguel " target="_blank" class="custom-button button-twitter color-twitter">
+<i class="fa fa-twitter"></i>
+</a>
+</span>
+<span class="date-container"> 21/oct./22</span>
+</div>
+<div class="onm-item-counter border-site-color">
+1
+</div>
+</div>
+</article>
+<article id="content-1611046" class="onm-new type- category-  onm-new-tiny colorize">
+<div class="article-media">
+<figure class="capture cover-img">
+<a href="/articulo/lugo/decenas-afectados-cierre-centro-estetica-augas-ferreas/202210242202221611046.html" title="Decenas de afectados por el cierre de un centro de estética de Augas Férreas">
+<img class="onm-image img-responsive lazyload" src="/assets/images/lazy-bg.png" data-src="/asset/zoomcrop,480,270,center,center/media/elprogreso/images/2022/10/25/2022102508504830185.jpg" alt="Centro Sensei en Augas F&eacute;rreas. XES&Uacute;S PONTE" height="270" width="480">
+</a>
+</figure>
+</div>
+<div class="article-data">
+<div class="category-name">
+Lugo
+</div>
+<div class="title">
+<a href="/articulo/lugo/decenas-afectados-cierre-centro-estetica-augas-ferreas/202210242202221611046.html" title="Decenas de afectados por el cierre de un centro de estética de Augas Férreas">Decenas de afectados por el cierre de un centro de estética de Augas Férreas</a>
+</div>
+<div class="content-info">
+<span class="author-name agency">
+<a href="/author/arsenio-coto">
+Arsenio Coto
+</a>
+</span>
+<span class="author-net">
+<a href="https://www.twitter.com/@arsenio_coto" target="_blank" class="custom-button button-twitter color-twitter">
+<i class="fa fa-twitter"></i>
+</a>
+</span>
+<span class="date-container"> 25/oct./22</span>
+</div>
+<div class="onm-item-counter border-site-color">
+2
+</div>
+</div>
+</article>
+<article id="content-1610599" class="onm-new type- category-  onm-new-tiny colorize">
+<div class="article-media">
+<figure class="capture cover-img">
+<a href="/articulo/comarcas/produccion-leche-reduce-desata-lucha-suministro/202210231910291610599.html" title="La producción de leche se reduce y desata una lucha por el suministro">
+<img class="onm-image img-responsive lazyload" src="/assets/images/lazy-bg.png" data-src="/asset/zoomcrop,480,270,center,center/media/elprogreso/images/2022/06/15/2022061514554332681.jpg" alt="Vacas. JOS&Eacute; M&ordf; &Aacute;LVEZ" height="270" width="480">
+</a>
+</figure>
+</div>
+<div class="article-data">
+<div class="category-name">
+Comarcas
+</div>
+<div class="title">
+<a href="/articulo/comarcas/produccion-leche-reduce-desata-lucha-suministro/202210231910291610599.html" title="La producción de leche se reduce y desata una lucha por el suministro">La producción de leche se reduce y desata una lucha por el suministro</a>
+</div>
+<div class="content-info">
+<span class="author-name agency">
+M. Nieto/ K. A./C. L. F./V. P
+</span>
+<span class="date-container"> 23/oct./22</span>
+</div>
+<div class="onm-item-counter border-site-color">
+3
+</div>
+</div>
+</article>
+<article id="content-1609916" class="onm-new type- category-  onm-new-tiny colorize">
+<div class="article-media">
+<figure class="capture cover-img">
+<a href="/articulo/gente/xokas-compra-piso/202210210835181609916.html" title="El Xokas compra piso y se hace viral">
+<img class="onm-image img-responsive lazyload" src="/assets/images/lazy-bg.png" data-src="/asset/zoomcrop,480,270,center,center/media/elprogreso/images/2022/10/21/2022102108335362413.png" alt="El nuevo piso de El Xokas. TWITTER. PNG" height="270" width="480">
+</a>
+</figure>
+</div>
+<div class="article-data">
+<div class="category-name">
+Gente
+</div>
+<div class="title">
+<a href="/articulo/gente/xokas-compra-piso/202210210835181609916.html" title="El Xokas compra piso y se hace viral">El Xokas compra piso y se hace viral</a>
+</div>
+<div class="content-info">
+<span class="author-name agency">
+REDACCIÓN
+</span>
+<span class="date-container"> 21/oct./22</span>
+</div>
+<div class="onm-item-counter border-site-color">
+4
+</div>
+</div>
+</article>
+<article id="content-1609861" class="onm-new type- category-  onm-new-tiny colorize">
+<div class="article-media">
+<figure class="capture cover-img">
+<a href="/articulo/lugo/adios-antonio-rodriguez-cara-visible-oca-45-anos-hosteleria/202210201917521609861.html" title="Se jubila la cara visible de La Oca tras 45 años en la hostelería">
+<img class="onm-image img-responsive lazyload" src="/assets/images/lazy-bg.png" data-src="/asset/zoomcrop,480,270,center,center/media/elprogreso/images/2022/10/20/2022102019164785086.jpg" alt="Jes&uacute;s Moreira y Antonio y Cristian Rodr&iacute;guez, ante La Oca. VICTOPRIA RODR&Iacute;GUEZ" height="270" width="480">
+</a>
+</figure>
+</div>
+<div class="article-data">
+<div class="category-name">
+Lugo
+</div>
+<div class="title">
+<a href="/articulo/lugo/adios-antonio-rodriguez-cara-visible-oca-45-anos-hosteleria/202210201917521609861.html" title="Se jubila la cara visible de La Oca tras 45 años en la hostelería">Se jubila la cara visible de La Oca tras 45 años en la hostelería</a>
+</div>
+<div class="content-info">
+<span class="author-name agency">
+<a href="/author/arsenio-coto">
+Arsenio Coto
+</a>
+</span>
+<span class="author-net">
+<a href="https://www.twitter.com/@arsenio_coto" target="_blank" class="custom-button button-twitter color-twitter">
+<i class="fa fa-twitter"></i>
+</a>
+</span>
+<span class="date-container"> 21/oct./22</span>
+</div>
+<div class="onm-item-counter border-site-color">
+5
+</div>
+</div>
+</article>
+</div>
+<div class="tab-pane fade" id="tab-more-recent">
+<article id="content-1611543" class="onm-new type- category-  onm-new-tiny colorize">
+<div class="article-media">
+<figure class="capture cover-img">
+<a href="/articulo/lugo/gobierno-local-dice-que-subio-gasto-habitante-pese-caida-ingresos/202210262134181611543.html" title="El gobierno local dice que subió el gasto por habitante pese a la caída de ingresos">
+<img class="onm-image img-responsive lazyload" src="/assets/images/lazy-bg.png" data-src="/asset/zoomcrop,480,270,center,center/media/elprogreso/images/2022/10/27/2022102708294694997.jpg" alt="Lara M&eacute;ndez visita las obras del centro social de Lamas de Prado. SEBAS SENANDE" height="270" width="480">
+</a>
+</figure>
+</div>
+<div class="article-data">
+<div class="category-name">
+Lugo
+</div>
+<div class="title">
+<a href="/articulo/lugo/gobierno-local-dice-que-subio-gasto-habitante-pese-caida-ingresos/202210262134181611543.html" title="El gobierno local dice que subió el gasto por habitante pese a la caída de ingresos">El gobierno local dice que subió el gasto por habitante pese a la caída de ingresos</a>
+</div>
+<div class="content-info">
+<span class="author-name agency">
+<a href="/author/kari-acebo">
+Kari Acebo
+</a>
+</span>
+<span class="author-net">
+</span>
+<span class="date-container"> 27/oct./22</span>
+</div>
+<div class="onm-item-counter border-site-color">
+1
+</div>
+</div>
+</article>
+<article id="content-1611582" class="onm-new type- category-  onm-new-tiny colorize">
+<div class="article-media">
+<figure class="capture cover-img">
+<a href="/articulo/lugo/manuel-jabois-recuerda-recibir-puro-cora-que-crecio-grupo-progreso/202210270844031611582.html" title="Manuel Jabois recuerda al recibir el Puro Cora que creció en el Grupo El Progreso">
+<img class="onm-image img-responsive lazyload" src="/assets/images/lazy-bg.png" data-src="/asset/zoomcrop,480,270,center,center/media/elprogreso/images/2022/10/27/2022102708395376315.jpg" alt="Manuel Jabois recibe el premio Puro Cora de Blanca Garc&iacute;a Montenegro. VICTORIA RODR&Iacute;GUEZ" height="270" width="480">
+</a>
+</figure>
+</div>
+<div class="article-data">
+<div class="category-name">
+Lugo
+</div>
+<div class="title">
+<a href="/articulo/lugo/manuel-jabois-recuerda-recibir-puro-cora-que-crecio-grupo-progreso/202210270844031611582.html" title="Manuel Jabois recuerda al recibir el Puro Cora que creció en el Grupo El Progreso">Manuel Jabois recuerda al recibir el Puro Cora que creció en el Grupo El Progreso</a>
+</div>
+<div class="content-info">
+<span class="author-name agency">
+<a href="/author/vanesa-bran">
+Vanesa Bran
+</a>
+</span>
+<span class="author-net">
+</span>
+<span class="date-container"> 27/oct./22</span>
+</div>
+<div class="onm-item-counter border-site-color">
+2
+</div>
+</div>
+</article>
+<article id="content-1611456" class="onm-new type- category-  onm-new-tiny colorize">
+<div class="article-media">
+<figure class="capture cover-img">
+<a href="/articulo/lugo/agenda-hoy-lugo/202210261859561611456.html" title="AGENDA 📆 Hoy en Lugo">
+<img class="onm-image img-responsive lazyload" src="/assets/images/lazy-bg.png" data-src="/asset/zoomcrop,480,270,center,center/media/elprogreso/images/2021/11/10/2021111018102180420.jpg" alt="Agenda" height="270" width="480">
+</a>
+</figure>
+</div>
+<div class="article-data">
+<div class="category-name">
+Lugo
+</div>
+<div class="title">
+<a href="/articulo/lugo/agenda-hoy-lugo/202210261859561611456.html" title="AGENDA 📆 Hoy en Lugo">AGENDA 📆 Hoy en Lugo</a>
+</div>
+<div class="content-info">
+<span class="author-name agency">
+Redacción
+</span>
+<span class="date-container"> 27/oct./22</span>
+</div>
+<div class="onm-item-counter border-site-color">
+3
+</div>
+</div>
+</article>
+<article id="content-1611469" class="onm-new type- category-  onm-new-tiny colorize">
+<div class="article-media">
+<figure class="capture cover-img">
+<a href="/articulo/lugo/mira-lugo/202210261905031611469.html" title="Mira Lugo ▶ Revista, podcast y Uned">
+<img class="onm-image img-responsive lazyload" src="/assets/images/lazy-bg.png" data-src="/asset/zoomcrop,480,270,center,center/media/elprogreso/images/2022/06/18/2022061810541210526.jpg" alt="Hoy en Mira Lugo..." height="270" width="480">
+</a>
+</figure>
+</div>
+<div class="article-data">
+<div class="category-name">
+Lugo
+</div>
+<div class="title">
+<a href="/articulo/lugo/mira-lugo/202210261905031611469.html" title="Mira Lugo ▶ Revista, podcast y Uned">Mira Lugo ▶ Revista, podcast y Uned</a>
+</div>
+<div class="content-info">
+<span class="author-name agency">
+Redacción
+</span>
+<span class="date-container"> 27/oct./22</span>
+</div>
+<div class="onm-item-counter border-site-color">
+4
+</div>
+</div>
+</article>
+<article id="content-1611578" class="onm-new type- category-  onm-new-tiny colorize">
+<div class="article-media">
+<figure class="capture cover-img">
+<a href="/articulo/economia/hacienda-adelanta-2022-entrada-vigor-impuesto-grandes-fortunas/202210270023061611578.html" title="Hacienda adelanta a 2022 la entrada en vigor del impuesto a las grandes fortunas">
+<img class="onm-image img-responsive lazyload" src="/assets/images/lazy-bg.png" data-src="/asset/zoomcrop,480,270,center,center/media/elprogreso/images/2022/09/29/2022092912542679849.jpg" alt="La ministra de Hacienda, Mar&iacute;a Jes&uacute;s Montero. EFE" height="270" width="480">
+</a>
+</figure>
+</div>
+<div class="article-data">
+<div class="category-name">
+Economía
+</div>
+<div class="title">
+<a href="/articulo/economia/hacienda-adelanta-2022-entrada-vigor-impuesto-grandes-fortunas/202210270023061611578.html" title="Hacienda adelanta a 2022 la entrada en vigor del impuesto a las grandes fortunas">Hacienda adelanta a 2022 la entrada en vigor del impuesto a las grandes fortunas</a>
+</div>
+<div class="content-info">
+<span class="author-name agency">
+Europa Press
+</span>
+<span class="date-container"> 27/oct./22</span>
+</div>
+<div class="onm-item-counter border-site-color">
+5
+</div>
+</div>
+</article>
+</div>
+</div>
+</div>
+</div>
+<script data-onm-type="text/javascript" type="onmlazyloadscript">
+  $('.widget-9299 .tab-selector a').click(function (e) {
+    e.preventDefault();
+    $(this).tab('show');
+  });
+</script>
+</div>
+<div class="ad-slot oat oat-visible oat-top " data-mark="Publicidad" style="height: 615px;"><div id="right2" class="henneoHB"></div></div>
+<div class="ad-slot oat oat-visible oat-top " data-mark="Publicidad" style="height: 615px;"><div id="right3" class="henneoHB"></div></div>
+<div class="ad-slot oat oat-visible oat-top " data-mark="Publicidad" style="height: 615px;"><div id="right4" class="henneoHB"></div></div>
+<div class="ad-slot oat oat-visible oat-top " data-mark="Publicidad" style="height: 615px;"><div id="right5" class="henneoHB"></div></div>
+</div>
+</div>
+</div>
+</div>
+</aside>
+</div>
+<div class="content-utilities-box is-stick d-md-none">
+<div class="mobile-sharetools">
+<div class="sharrre-tools">
+<div class="sharrre" data-title="Compartir" data-url="/articulo/mundo/robot-mantiene-distancia-social-parques-singapur/202005100245241437665.html">
+<ul class="nav nav-justified">
+<li class="nav-item share-mail only-share d-flex">
+<a class="button-share-by-email box" href="/cdn-cgi/l/email-protection#8db2fef8efe7e8eef9b0d8e3a8bfbdffe2efe2f9a8bfbde0ece3f9e4e8e3e8a8bfbde1eca8bfbde9e4fef9ece3eee4eca8bfbdfee2eee4ece1a8bfbde8e3a8bfbddee4e3eaecfdf8ffabefe2e9f4b0c5e8adeee2e0fdecfff9e4e9e2adf8e3adecfff94e20eef8e1e2adeee2e3f9e4eae2a8bdc9a8bdccd8e3a8bfbdffe2efe2f9a8bfbde0ece3f9e4e8e3e8a8bfbde1eca8bfbde9e4fef9ece3eee4eca8bfbdfee2eee4ece1a8bfbde8e3a8bfbddee4e3eaecfdf8ffa8bdc9a8bdcce5f9f9fdfeb7a2a2fafafaa3e8e1fdffe2eaffe8fee2a3e8fea2ecfff9e4eef8e1e2a2e0f8e3e9e2a2ffe2efe2f9a0e0ece3f9e4e8e3e8a0e9e4fef9ece3eee4eca0fee2eee4ece1a0fdecfffcf8e8fea0fee4e3eaecfdf8ffa2bfbdbfbdbdb8bcbdbdbfb9b8bfb9bcb9bebabbbbb8a3e5f9e0e1abece0fdb6f8f9e0d2fee2f8ffeee8b0fee2eee4ece1abece0fdb6f8f9e0d2e0e8e9e4f8e0b0e8e0ece4e1abece0fdb6f8f9e0d2eeece0fdece4eae3b0fee5ecffe8d2eff8f9f9e2e3" title="Enviar por email">
+<span class="share"><i class="fa fa-envelope-o"></i></span>
+</a>
+</li>
+<li class="nav-item print only-share d-none d-md-flex">
+<a class="button-print box" href="#" onclick="if (!window.__cfRLUnblockHandlers) return false; window.print();" title="Imprimir" data-cf-modified-1759ac48d45172e63cf7f824-="">
+<span class="share"> <i class="fa fa-print"></i></span>
+</a>
+</li>
+<li id="whatsapp-5500" class="nav-item whatsapp d-flex d-md-none">
+<a class="box" title="Compartir" href="whatsapp://send?text=Un%20robot%20mantiene%20la%20distancia%20social%20en%20los%20parques%20de%20Singapur%20-%20https%3A%2F%2Fwww.elprogreso.es%2Farticulo%2Fmundo%2Frobot-mantiene-distancia-social-parques-singapur%2F202005100245241437665.html%3Futm_medium=social%26utm_source=whatsapp%26utm_campaign=share_button"><span class="share"><i class="fa fa-whatsapp"></i></span>
+</a>
+</li>
+<li id="facebook-5500" class="nav-item facebook d-flex" data-url="https://www.elprogreso.es/articulo/mundo/robot-mantiene-distancia-social-parques-singapur/202005100245241437665.html?utm_medium=social&utm_source=facebook&utm_campaign=share_button" data-text="Un robot mantiene la distancia social en los parques de Singapur">
+<a class="box" title="Compartir" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.elprogreso.es%2Farticulo%2Fmundo%2Frobot-mantiene-distancia-social-parques-singapur%2F202005100245241437665.html%3Futm_medium=social%26utm_source=facebook%26utm_campaign=share_button"><span class="share"><i class="fa fa-facebook"></i></span>
+</a>
+</li>
+<li id="twitter-5500" class="nav-item twitter d-flex">
+<a class="box" title="Compartir" href="https://twitter.com/share?text=Un+robot+mantiene+la+distancia+social+en+los+parques+de+Singapur&via=elprogreso_lugo&url=https%3A%2F%2Fwww.elprogreso.es%2Farticulo%2Fmundo%2Frobot-mantiene-distancia-social-parques-singapur%2F202005100245241437665.html%3Futm_medium=social%26utm_source=twitter%26utm_campaign=share_button">
+<span class="share"><i class="fa fa-twitter"></i></span>
+</a>
+</li>
+<li id="linkedin-5500" class="nav-item linkedin d-none d-md-flex">
+<a class="box" title="Compartir" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.elprogreso.es%2Farticulo%2Fmundo%2Frobot-mantiene-distancia-social-parques-singapur%2F202005100245241437665.html%3Futm_medium%3Dsocial%26utm_source%3Dlinkedin%26utm_campaign%3Dshare_button">
+<span class="share"><i class="fa fa-linkedin"></i></span>
+</a>
+</li>
+<li id="nextarticle-5500" class="nav-item nextarticle only-share hidden">
+<a class="box" href="">
+<span class="share small">Siguiente</span>
+<span><i class="mi material-icons ml-1">chevron_right</i></span>
+</a>
+</li>
+</ul>
+</div>
+</div>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-onm-type="text/javascript" type="onmlazyloadscript">
+  $('#twitter-5500').on('click', 'a', function() {
+    window.open(this.href, '', 'menubar=no, toolbar=no, resizable=yes, scrollbars=yes, height=350, width=700');
+    return false;
+  });
+  $('#linkedin-5500').on('click', 'a', function() {
+    window.open(this.href, '', 'menubar=no, toolbar=no, resizable=yes, scrollbars=yes, height=350, width=700');
+    return false;
+  });
+  $('#facebook-5500').on('click', 'a', function() {
+    window.open(this.href, '', 'menubar=no, toolbar=no, resizable=yes, scrollbars=yes, height=350, width=700');
+    return false;
+  });
+</script>
+</div>
+</div>
+</div>
+</div>
+</section>
+<div class="wrapper-other-contents">
+<div class="container-fluid">
+<div class="row">
+<div class="content-col col-12 col-lg stick">
+<div class="smart-sticky">
+<div class="ads">
+</div>
+<div class=" ">
+<div class="more-in-section">
+<div class="widget"> <div class="widget_last_in_section_photo section-54">
+<div class="header-section widget-header">
+<span>Más en Mundo</span>
+</div>
+<div class="widget-content">
+<div class="row equal-height">
+<div class="col-12 col-sm-6 col-lg-3">
+<article id="content-1611577" class="onm-new onm-new-card onm-new-med type- category-   colorize">
+<div class="article-media bg-mundo">
+<figure class="capture cover-img">
+<a href="/articulo/mundo/fuerzas-disuasion-nuclear-rusia-ensayan-ataque-masivo-supervision-putin/202210270010051611577.html" title="Las fuerzas de disuasión nuclear de Rusia ensayan un ataque &quot;masivo&quot; bajo la supervisión de Putin">
+<img class="onm-image img-responsive lazyload" src="/assets/images/lazy-bg.png" data-srcset="/asset/zoomcrop,480,270,center,center/media/elprogreso/images/2022/10/27/2022102700093988929.jpg 480w, /asset/zoomcrop,768,432,center,center/media/elprogreso/images/2022/10/27/2022102700093988929.jpg 768w" data-sizes="auto" data-src="/asset/zoomcrop,768,432,center,center/media/elprogreso/images/2022/10/27/2022102700093988929.jpg" alt="Vladimir Putin. EUROPA PRESS" height="432" width="768">
+</a>
+</figure>
+</div>
+<div class="article-data">
+<div class="section category-name">
+Mundo
+</div>
+<div class="title">
+<a href="/articulo/mundo/fuerzas-disuasion-nuclear-rusia-ensayan-ataque-masivo-supervision-putin/202210270010051611577.html" title="Las fuerzas de disuasión nuclear de Rusia ensayan un ataque &quot;masivo&quot; bajo la supervisión de Putin">Las fuerzas de disuasión nuclear de Rusia ensayan un ataque "masivo" bajo la supervisión de Putin</a>
+</div>
+<div class="content-info">
+<span class="author-name agency">
+Europa Press
+</span>
+<span class="date-container"> 27/oct./22</span>
+</div>
+</div>
+</article>
+</div>
+<div class="col-12 col-sm-6 col-lg-3">
+<article id="content-1611330" class="onm-new onm-new-card onm-new-med type- category-   colorize">
+<div class="article-media bg-mundo">
+<figure class="capture cover-img">
+<a href="/articulo/mundo/muere-hombre-mas-guarro-mundo-despues-ducharse-primera-vez-mas-70-anos/202210261157091611330.html" title="Muere &apos;el hombre más guarro del mundo&apos; después de ducharse por primera vez en más de 70 años">
+<img class="onm-image img-responsive lazyload" src="/assets/images/lazy-bg.png" data-srcset="/asset/zoomcrop,480,270,center,center/media/elprogreso/images/2022/10/26/2022102611565125558.jpg 480w, /asset/zoomcrop,768,432,center,center/media/elprogreso/images/2022/10/26/2022102611565125558.jpg 768w" data-sizes="auto" data-src="/asset/zoomcrop,768,432,center,center/media/elprogreso/images/2022/10/26/2022102611565125558.jpg" alt="Hamou Haji. AFP" height="432" width="768">
+</a>
+</figure>
+</div>
+<div class="article-data">
+<div class="section category-name">
+Mundo
+</div>
+<div class="title">
+<a href="/articulo/mundo/muere-hombre-mas-guarro-mundo-despues-ducharse-primera-vez-mas-70-anos/202210261157091611330.html" title="Muere &apos;el hombre más guarro del mundo&apos; después de ducharse por primera vez en más de 70 años">Muere 'el hombre más guarro del mundo' después de ducharse por primera vez en más de 70 años</a>
+</div>
+<div class="content-info">
+<span class="author-name agency">
+Redacción
+</span>
+<span class="date-container"> 26/oct./22</span>
+</div>
+</div>
+</article>
+</div>
+<div class="col-12 col-sm-6 col-lg-3">
+<article id="content-1611104" class="onm-new onm-new-card onm-new-med type- category-   colorize">
+<div class="article-media bg-mundo">
+<figure class="capture cover-img">
+<a href="/articulo/mundo/asesinato-boda-mexico-sicario-confundio-novio/202210251053561611104.html" title="Asesinato en una boda en México: el sicario se confundió de novio">
+<img class="onm-image img-responsive lazyload" src="/assets/images/lazy-bg.png" data-srcset="/asset/zoomcrop,480,270,center,center/media/elprogreso/images/2022/10/25/2022102510572864095.jpg 480w, /asset/zoomcrop,768,432,center,center/media/elprogreso/images/2022/10/25/2022102510572864095.jpg 768w" data-sizes="auto" data-src="/asset/zoomcrop,768,432,center,center/media/elprogreso/images/2022/10/25/2022102510572864095.jpg" alt="La novia, tras el asesinato. REDES SOCIALES" height="432" width="768">
+</a>
+</figure>
+</div>
+<div class="article-data">
+<div class="section category-name">
+Mundo
+</div>
+<div class="title">
+<a href="/articulo/mundo/asesinato-boda-mexico-sicario-confundio-novio/202210251053561611104.html" title="Asesinato en una boda en México: el sicario se confundió de novio">Asesinato en una boda en México: el sicario se confundió de novio</a>
+</div>
+<div class="content-info">
+<span class="author-name agency">
+Agencias
+</span>
+<span class="date-container"> 25/oct./22</span>
+</div>
+</div>
+</article>
+</div>
+ <div class="col-12 col-sm-6 col-lg-3">
+<article id="content-1611060" class="onm-new onm-new-card onm-new-med type- category-   colorize">
+<div class="article-media bg-mundo">
+<figure class="capture cover-img">
+<a href="/articulo/mundo/joven-mata-mujeres-instituto-ee-uu-es-abatido/202210242257381611060.html" title="Un joven mata a dos mujeres en un instituto de EE UU y es abatido">
+<img class="onm-image img-responsive lazyload" src="/assets/images/lazy-bg.png" data-srcset="/asset/zoomcrop,480,270,center,center/media/elprogreso/images/2022/10/24/2022102422563282718.jpg 480w, /asset/zoomcrop,768,432,center,center/media/elprogreso/images/2022/10/24/2022102422563282718.jpg 768w" data-sizes="auto" data-src="/asset/zoomcrop,768,432,center,center/media/elprogreso/images/2022/10/24/2022102422563282718.jpg" alt="El instituto en el que se produjo el tiroteo. GOOGLE MAPS" height="432" width="768">
+</a>
+</figure>
+</div>
+<div class="article-data">
+<div class="section category-name">
+Mundo
+</div>
+<div class="title">
+<a href="/articulo/mundo/joven-mata-mujeres-instituto-ee-uu-es-abatido/202210242257381611060.html" title="Un joven mata a dos mujeres en un instituto de EE UU y es abatido">Un joven mata a dos mujeres en un instituto de EE UU y es abatido</a>
+</div>
+<div class="content-info">
+<span class="author-name agency">
+Agencias
+</span>
+<span class="date-container"> 24/oct./22</span>
+</div>
+</div>
+</article>
+</div>
+<div class="col-12 col-sm-6 col-lg-3">
+<article id="content-1610964" class="onm-new onm-new-card onm-new-med type- category-   colorize">
+<div class="article-media bg-mundo">
+<figure class="capture cover-img">
+<a href="/articulo/mundo/rishi-sunak-nuevo-primer-ministro-britanico/202210241508191610964.html" title="Rishi Sunak, nuevo primer ministro británico tras la retirada de Mordaunt">
+<img class="onm-image img-responsive lazyload" src="/assets/images/lazy-bg.png" data-srcset="/asset/zoomcrop,480,270,center,center/media/elprogreso/images/2022/10/24/2022102408542743142.jpg 480w, /asset/zoomcrop,768,432,center,center/media/elprogreso/images/2022/10/24/2022102408542743142.jpg 768w" data-sizes="auto" data-src="/asset/zoomcrop,768,432,center,center/media/elprogreso/images/2022/10/24/2022102408542743142.jpg" alt="Rishi Sunak, a la salida de su casa en Londes. EUROPA PRESS" height="432" width="768">
+</a>
+</figure>
+</div>
+<div class="article-data">
+<div class="section category-name">
+Mundo
+</div>
+<div class="title">
+<a href="/articulo/mundo/rishi-sunak-nuevo-primer-ministro-britanico/202210241508191610964.html" title="Rishi Sunak, nuevo primer ministro británico tras la retirada de Mordaunt">Rishi Sunak, nuevo primer ministro británico tras la retirada de Mordaunt</a>
+</div>
+<div class="content-info">
+<span class="author-name agency">
+Efe
+</span>
+<span class="date-container"> 24/oct./22</span>
+</div>
+</div>
+</article>
+</div>
+<div class="col-12 col-sm-6 col-lg-3">
+<article id="content-1610239" class="onm-new onm-new-card onm-new-med type- category-   colorize">
+<div class="article-media bg-mundo">
+<figure class="capture cover-img">
+<a href="/articulo/mundo/hallan-restos-avioneta-desaparecida-costa-rico-alemanes-bordo/202210221604211610239.html" title="Hallan los restos del jet del milonario Rainer Schaller desaparecido en Costa Rica">
+<img class="onm-image img-responsive lazyload" src="/assets/images/lazy-bg.png" data-srcset="/asset/zoomcrop,480,270,center,center/media/elprogreso/images/2022/10/22/2022102216064544179.jpg 480w, /asset/zoomcrop,768,432,center,center/media/elprogreso/images/2022/10/22/2022102216064544179.jpg 768w" data-sizes="auto" data-src="/asset/zoomcrop,768,432,center,center/media/elprogreso/images/2022/10/22/2022102216064544179.jpg" alt="Rainer Schaller, en 2007. ARCHIVO" height="432" width="768">
+</a>
+</figure>
+</div>
+<div class="article-data">
+<div class="section category-name">
+Mundo
+</div>
+<div class="title">
+<a href="/articulo/mundo/hallan-restos-avioneta-desaparecida-costa-rico-alemanes-bordo/202210221604211610239.html" title="Hallan los restos del jet del milonario Rainer Schaller desaparecido en Costa Rica">Hallan los restos del jet del milonario Rainer Schaller desaparecido en Costa Rica</a>
+</div>
+<div class="content-info">
+<span class="author-name agency">
+Efe
+</span>
+<span class="date-container"> 22/oct./22</span>
+</div>
+</div>
+</article>
+</div>
+<div class="col-12 col-sm-6 col-lg-3">
+<article id="content-1610166" class="onm-new onm-new-card onm-new-med type- category-   colorize">
+<div class="article-media bg-mundo">
+<figure class="capture cover-img">
+<a href="/articulo/mundo/trump-aliados-acorralados-asalto-capitolio/202210220051431610166.html" title="Trump y sus aliados, acorralados por el asalto al Capitolio">
+<img class="onm-image img-responsive lazyload" src="/assets/images/lazy-bg.png" data-srcset="/asset/zoomcrop,480,270,center,center/media/elprogreso/images/2022/10/22/2022102200494758694.jpg 480w, /asset/zoomcrop,768,432,center,center/media/elprogreso/images/2022/10/22/2022102200494758694.jpg 768w" data-sizes="auto" data-src="/asset/zoomcrop,768,432,center,center/media/elprogreso/images/2022/10/22/2022102200494758694.jpg" alt="Simpatizantes de Donald Trump el 6 de enero de 2021 durante el asalto al Capitolio. WILL OLIVER (EFE)" height="432" width="768">
+</a>
+</figure>
+</div>
+<div class="article-data">
+<div class="section category-name">
+Mundo
+</div>
+<div class="title">
+<a href="/articulo/mundo/trump-aliados-acorralados-asalto-capitolio/202210220051431610166.html" title="Trump y sus aliados, acorralados por el asalto al Capitolio">Trump y sus aliados, acorralados por el asalto al Capitolio</a>
+</div>
+<div class="content-info">
+<span class="author-name agency">
+Efe
+</span>
+<span class="date-container"> 22/oct./22</span>
+</div>
+</div>
+</article>
+</div>
+<div class="col-12 col-sm-6 col-lg-3">
+<article id="content-1610111" class="onm-new onm-new-card onm-new-med type- category-   colorize">
+<div class="article-media bg-mundo">
+<figure class="capture cover-img">
+<a href="/articulo/mundo/exministra-mordaunt-anuncia-candidatura-suceder-truss/202210211941341610111.html" title="La exministra Mordaunt anuncia su candidatura para suceder a Truss">
+<img class="onm-image img-responsive lazyload" src="/assets/images/lazy-bg.png" data-srcset="/asset/zoomcrop,480,270,center,center/media/elprogreso/images/2022/10/21/2022102119411542657.jpg 480w, /asset/zoomcrop,768,432,center,center/media/elprogreso/images/2022/10/21/2022102119411542657.jpg 768w" data-sizes="auto" data-src="/asset/zoomcrop,768,432,center,center/media/elprogreso/images/2022/10/21/2022102119411542657.jpg" alt="Penny Mordaunt, a la derecha. EFE" height="432" width="768">
+</a>
+</figure>
+</div>
+<div class="article-data">
+<div class="section category-name">
+Mundo
+</div>
+<div class="title">
+<a href="/articulo/mundo/exministra-mordaunt-anuncia-candidatura-suceder-truss/202210211941341610111.html" title="La exministra Mordaunt anuncia su candidatura para suceder a Truss">La exministra Mordaunt anuncia su candidatura para suceder a Truss</a>
+</div>
+<div class="content-info">
+<span class="author-name agency">
+Efe
+</span>
+<span class="date-container"> 21/oct./22</span>
+</div>
+</div>
+</article>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="ads">
+</div>
+<div class="widget-header">
+<span>Comentarios</span>
+</div>
+<div id="comentarios-1437665" class="article-comments">
+<div id="comments_thread-1437665"></div>
+<script data-onm-type="text/javascript" type="onmlazyloadscript" src="/assets/js/jquery-onm/jquery.onmcomments.20221020135018.js"></script>
+<script data-onm-type="text/javascript" type="onmlazyloadscript" defer>
+    $('#comments_thread-1437665').onmComments({
+      content_id: '1437665',
+      elems_per_page: '10' || 10,
+      url: '/comments/get'
+    });
+    var contentURL = 'https%3A%2F%2Fwww.elprogreso.es%2Farticulo%2Fmundo%2Frobot-mantiene-distancia-social-parques-singapur%2F202005100245241437665.html';
+    </script>
+</div>
+<div class="ads">
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="container ads">
+<div class="ads ads-footer">
+<div class="ad-left">
+</div>
+<div class="ad-right">
+</div>
+</div>
+</div>
+<footer class="footer bg-light py-5">
+<div class="footer-content container-fluid">
+<div class="container">
+<div class="footer-socials pb-3">
+<div class="widget-header mb-0 mr-2">
+Síguenos </div>
+<ul class="social-links list-inline">
+<li class="item-facebook">
+<a href="//www.facebook.com/elprogresodelugo/" class="facebook color-facebook" target="_blank">
+<i class="fa fa-facebook"></i> <span>Facebook</span>
+</a>
+</li>
+<li class="item-twitter">
+<a href="//twitter.com/elprogreso_lugo" class="twitter color-twitter" target="_blank">
+<i class="fa fa-twitter"></i> <span>Twitter</span>
+</a>
+</li>
+<li class="item-instagram">
+<a href="https://www.instagram.com/elprogresodelugo/" class="instagram color-instagram" target="_blank">
+<i class="fa fa-instagram"></i> <span>Instagram</span>
+</a>
+</li>
+<li class="item-rss">
+<a href="/rss/listado" class="rss color-rss" title="RSS">
+<i class="fa fa-rss"></i> <span>RSS</span>
+</a>
+</li>
+</ul>
+</div>
+<div class="row footer-data align-items-center">
+<div class="menu-footer col-12">
+<div class="footer-sections">
+<div class="row">
+<div class="col py-3">
+<div class="widget-header second-color mb-3">
+Info
+</div>
+<ul class="navbar-nav list-unstyled components">
+<li class="nav-item subcat publicidad">
+<a class="nav-link" href="/estaticas/publicidad/" title="publicidad">
+Publicidad
+</a>
+</li>
+<li class="nav-item subcat contacto">
+<a class="nav-link" href="/estaticas/contacto/" title="contacto">
+Contacto
+</a>
+</li>
+<li class="nav-item subcat politica-de-cookies">
+<a class="nav-link" href="/estaticas/politica-de-cookies/" title="política de cookies">
+Política de Cookies
+</a>
+</li>
+<li class="nav-item subcat aviso-legal">
+<a class="nav-link" href="/estaticas/aviso-legal/" title="aviso legal">
+Aviso Legal
+</a>
+</li>
+<li class="nav-item subcat comunicados">
+<a class="nav-link" href="/blog/section/comunicados" title="comunicados">
+Comunicados
+</a>
+</li>
+<li class="nav-item subcat estaticaspolitica-privacidad.html">
+<a class="nav-link" href="/estaticas/politica-privacidad.html" title="política de privacidad" target="_blank">
+Política de privacidad
+</a>
+</li>
+</ul>
+</div>
+<div class="col py-3">
+<div class="widget-header second-color mb-3">
++ El Progreso
+</div>
+<ul class="navbar-nav list-unstyled components">
+<li class="nav-item subcat newsletter">
+<a class="nav-link" href="/newsletter" title="boletín de noticias">
+Boletín de noticias
+</a>
+</li>
+<li class="nav-item subcat https:www.kioskoymas.compublicacionelprogreso">
+<a class="nav-link" href="https://www.kioskoymas.com/publicacion/elprogreso/" title="en papel" target="_blank">
+En papel
+</a>
+</li>
+<li class="nav-item subcat archivecontent">
+<a class="nav-link" href="/archive/content" title="archivo">
+Archivo
+</a>
+</li>
+</ul>
+</div>
+<div class="col py-3">
+<div class="widget-header second-color mb-3">
+El Grupo
+</div>
+<ul class="navbar-nav list-unstyled components">
+<li class="nav-item subcat https:www.elprogreso.es">
+<a class="nav-link" href="https://www.elprogreso.es/" title="el progreso" target="_blank">
+El Progreso
+</a>
+</li>
+<li class="nav-item subcat https:www.diariodepontevedra.es">
+<a class="nav-link" href="https://www.diariodepontevedra.es/" title="diario de pontevedra" target="_blank">
+Diario de Pontevedra
+</a>
+</li>
+<li class="nav-item subcat https:www.galiciae.com">
+<a class="nav-link" href="https://www.galiciae.com/" title="galiciaé" target="_blank">
+Galiciaé
+</a>
+</li>
+<li class="nav-item subcat http:www.axencia.com">
+<a class="nav-link" href="http://www.axencia.com/" title="agn" target="_blank">
+AGN
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="contact-data col-12 py-3">
+<div class="footer-text text-center">
+<p>Rúa Ribadeo 5, Lugo</p>
+<p>Tlfno: 982 29 81 00</p>
+<p>(Grupo El Progreso)</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="footer-logo">
+<div class="container">
+<div class="footer-img" style="background-image:url(/media/elprogreso/images/2021/01/01/2021010100000057952.png)">
+&nbsp;
+</div>
+</div>
+</div>
+<div class="developed col-12 text-center py-5">
+<div class="developed-by">
+<div class="opennemas">
+<a href="https://www.opennemas.com/" title="Opennemas by Openhost" target="_blank">
+<img alt="OpenNeMaS CMS by Openhost" src="/assets/images/logos/opennemas-powered-horizontal.png" height="67" width="200">
+</a>
+</div>
+</div>
+</div>
+</footer>
+<script data-onm-type="text/javascript" type="onmlazyloadscript" src="/themes/auris/js/functions.20221019152606.js"></script>
+<script data-onm-type="text/javascript" type="onmlazyloadscript">
+      // Hide parts of the web if we are in a webview
+      if (parseInt(location.search.split('webview=').splice(1).join('').split('&')[0]) == 1) {
+        $(".show_only_webview").removeClass('d-none');
+      }
+    </script>
+<script data-onm-type="text/javascript" type="onmlazyloadscript">   var adint = setInterval(function () {     var slots = document.getElementsByClassName('hidden-' + _onmaq.device);      if (slots.length === 0) {       clearInterval(adint);     }      for (var j = 0; j < slots.length; j++) {       slots[j].remove();     }   }, 250); </script>
+
+<script data-onm-type="text/javascript" type="onmlazyloadscript">
+$('.main-header a').each(function() {
+  if($(this).is("[href*='tags']")){
+    $(this).attr('target','_self');
+  }
+});
+</script>
+
+<script data-onm-type="text/javascript" type="onmlazyloadscript">
+if (_onmaq && _onmaq.extension != 'obituary' && !isBranded) {
+  $('.article .content-data').append('<div id="Player_Playoncontent" class="smarty-3554125_1654531959687"><iframe id="3554125_1654531959687" title="Video Producer elprogreso.es" allow="autoplay; fullscreen"></iframe><scr' + 'ipt type="application/javascript">(function(){IFRIENDLY_DATA.init({"idFrm":"3554125_1654531959687","type":"video","affId":"12654","filter":"3554125","width":600,"height":338,"twitter":"","volume":100,"autoplay":1,"hasVideoRelated":0,"share_rrss":1,"max":50,"limit":25,"domain":"//widget.playoncenter.com/","viewFriendly":1});})()</scr' + 'ipt></div><br><br>');
+}
+</script>
+
+<script data-onm-type="text/javascript" type="onmlazyloadscript">
+if (_onmaq && _onmaq.extension != 'obituary' && !isBranded) {
+  $('.article .content-data').append('<div id="n8J3xuWydq1dpYt65idH" data-prometeo-mediaid="MEDIA_902" data-prometeo-widget="WIDGET-PROMETEO-V2" class="WIDGET-PROMETEO-V2 prometeo-content"></div>');
+}
+</script>
+<script data-onm-type="text/javascript" type="onmlazyloadscript">
+  $('.video-inner .video-data').append('<div id="taboola-below-article-thumbnails"></div><scr' +  'ipt type="text/javascript"> window._taboola = window._taboola || []; _taboola.push({ mode: "thumbnails-a", container: "taboola-below-article-thumbnails", placement: "Below Article Thumbnails", target_type: "mix" });</scr' + 'ipt>');
+  $('.content-data .body p').last().after('<br><div id="taboola-below-article-thumbnails"></div><scr' + 'ipt type="text/javascript"> window._taboola = window._taboola || []; _taboola.push({ mode: "thumbnails-a", container: "taboola-below-article-thumbnails", placement: "Below Article Thumbnails", target_type: "mix" });</scr' + 'ipt>');
+  $('.inner-album-data').append('<div id="taboola-below-article-thumbnails"></div><scr' + 'ipt type="text/javascript"> window._taboola = window._taboola || []; _taboola.push({ mode: "thumbnails-a", container: "taboola-below-article-thumbnails", placement: "Below Article Thumbnails", target_type: "mix" });</scr' + 'ipt>');
+</script>
+
+<script data-onm-type="text/javascript" type="onmlazyloadscript">
+var _qevents = _qevents || [];
+
+(function() {
+var elem = document.createElement('script');
+elem.src = (document.location.protocol == "https:" ? "https://secure" : "http://edge") + ".quantserve.com/quant.js";
+elem.async = true;
+elem.type = "text/javascript";
+var scpt = document.getElementsByTagName('script')[0];
+scpt.parentNode.insertBefore(elem, scpt);
+})();
+
+_qevents.push({
+qacct:"p-M2kUnhxu9_MrD"
+});
+</script>
+<noscript>
+<div style="display:none;">
+<img src="//pixel.quantserve.com/pixel/p-M2kUnhxu9_MrD.gif" border="0" height="1" width="1" alt="Quantcast"/>
+</div>
+</noscript>
+
+<script data-onm-type="text/javascript" type="onmlazyloadscript">
+  $('.footer-sections .row .col:first-child  ul.navbar-nav').append('<li class="nav-item subcat configuracion-privacidad"> <a class="nav-link change-consent" onclick="window.__tcfapi(\'displayConsentUi\', 2, function() {} );"> Configuración de privacidad </a> </li>');
+</script>
+<script data-onm-type="text/javascript" type="onmlazyloadscript">
+if (window.jQuery !== undefined) {
+  if ($('body').data("category") == 'lugo' && $('.last-column .widget').length) {
+    $('.auto-frontpage aside .last-column .row .widget-most-seeing-commented-content').first().append('<div class="candy mini bg-orange pill-mesaredonda" style="background: url(//elprogreso.opennemas.com/media/elprogreso/images/2020/02/07//2020020711381950092.jpg)"><a href="http://concellodelugo.gal/es/actuaciones/programacion-cultural">&nbsp;</a></div>');
+  }
+}
+</script>
+<script data-onm-type="text/javascript" type="onmlazyloadscript">
+if ($('#thumbCarousel-1298994').length > 0) {
+  $('.album-content .subtitle').prepend('<div><img src="/media/elprogreso/images/2018/03/06//2018030613051920974.gif" title="patrocinio"><br></div>');
+}
+
+footerLogos = "";
+footerLogos += "<div class='footer-logos container-fluid border-site-color'>";
+footerLogos += "<div class='container'>";
+footerLogos += "<div class='row text-center'>";
+footerLogos += "<div class='col-lg-3 col-md-3 col-sm-3 col-xs-6'><a href='//www.elprogreso.es' title='El Progreso de Lugo' target='_blank'><img src='/media/elprogreso/sections/progreso-black.png' alt='El Progreso de Lugo'></a></div>";
+footerLogos += "<div class='col-lg-3 col-md-3 col-sm-3 col-xs-6'><a href='//www.diariodepontevedra.es' title='Diario de Pontevedra' target='_blank'><img src='/media/elprogreso/sections/diariodepontevedra-black.png' alt='Diario de Pontevedra'></a></div>";
+footerLogos += "<div class='col-lg-3 col-md-3 col-sm-3 col-xs-6'><a href='//www.galiciae.com' title='Galiciaé' target='_blank'><img src='/media/elprogreso/sections/galiciae-black.png' alt='Galiciaé'></a></div>";
+footerLogos += "<div class='col-lg-3 col-md-3 col-sm-3 col-xs-6'><a href='http://www.axencia.com/' title='Axencia Galega de Noticias' target='_blank'><img src='/media/elprogreso/sections/axencia.png' alt='Axencia Galega de Noticias'></a></div></div></div></div>";
+$( "footer" ).prepend( footerLogos );
+</script>
+<style>
+.footer-logos {
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-top-width: 0;
+  border-top-style: none;
+  margin-top: 30px;
+  padding-top: 0;
+  margin-bottom: 0;
+  padding-bottom: 15px;
+}
+.footer-logos .row div {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.footer-logos img {
+  height: auto;
+  max-width: 150px;
+  max-height: 75px;
+  vertical-align: middle;
+  text-align: center;
+}
+</style>
+<script data-onm-type="text/javascript" type="onmlazyloadscript">
+if (window.location.href.indexOf('guia-restaurantes-lugo') > -1 || window.location.href.indexOf('que-jugador-del-lugo-ha-sido-tu-favorito') > -1 || isBranded) {
+    var slots = document.querySelectorAll('.oat');
+
+    for (var i = 0; i < slots.length; i++) {
+      slots[i].remove();
+    }
+}
+</script>
+<script data-onm-type="text/javascript" type="onmlazyloadscript" type='text/javascript'>
+  (function () {
+    function loadPrometeoScript() {
+      var e = document.createElement('script');
+      var n = document.getElementsByTagName('script')[0];
+      e.type = 'text/javascript';
+      e.async = true;
+      e.src = 'https://dkumiip2e9ary.cloudfront.net/js/prometeo-media/pro/prometeo-media.js';
+      n.parentNode.insertBefore(e, n);
+    }
+    loadPrometeoScript();
+  })();
+</script>
+<script data-onm-type="application/javascript" type="onmlazyloadscript" src="https://ced.sascdn.com/tag/3066/smart.js" async></script>
+<div id="sas_65081"></div>
+<script data-onm-type="application/javascript" type="onmlazyloadscript">
+    var sas = sas || {};
+    sas.cmd = sas.cmd || [];
+    sas.cmd.push(
+        function () {
+            sas.call(
+                { siteId: 234801, pageId: 971066, formatId: 65081, tagId: "sas_65081" },
+                { networkId: 3066, domain: "https://www8.smartadserver.com" /*, onNoad: function() {} */ }
+            );
+        }
+    );
+</script>
+<script data-onm-type="text/javascript" type="onmlazyloadscript">
+window._taboola = window._taboola || [];
+_taboola.push({flush: true});
+</script>
+<script type="1759ac48d45172e63cf7f824-text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"a2dc53d1aa","applicationID":"89164732","transactionName":"MlNaMBdQXhdUUxZeCQsZexEWRV8JGlYQWAgRU1YAOlBCEFxTDlI5Fl5XEw==","queueTime":0,"applicationTime":206,"atts":"HhRZRl9KTRk=","errorBeacon":"bam.nr-data.net","agent":""}</script><script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="1759ac48d45172e63cf7f824-|49" defer=""></script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/vaafb692b2aea4879b33c060e79fe94621666317369993" integrity="sha512-0ahDYl866UMhKuYcW078ScMalXqtFJggm7TmlUtp0UlD4eQk0Ixfnm5ykXKvGJNFjLMoortdseTfsRT8oCfgGA==" data-cf-beacon='{"rayId":"760981c8fe91db29","token":"02279383a0fa420ca735dfb1bedc1c3e","version":"2022.10.3","si":100}' crossorigin="anonymous"></script>
+</body>
+</html>

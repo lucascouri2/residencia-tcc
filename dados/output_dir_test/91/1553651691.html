@@ -1,0 +1,2081 @@
+
+<!DOCTYPE html>
+<!--[if IE 8]>
+<html class="ie ie8" lang="en-US">
+<![endif]-->
+<!--[if IE 7]>
+<html class="ie ie7" lang="en-US">
+<![endif]-->
+<!--[if IE]>
+<html class="ie" lang="en-US">
+<![endif]-->
+<!--[if !(IE 7) | !(IE 8) | !(IE) ]><!-->
+<html lang="en-US">
+<!--<![endif]-->
+
+<head>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        
+    
+        
+
+    <link rel="pingback" href="https://www.staradvertiser.com/xmlrpc.php" />
+    <link rel="icon" type="image/png" href="https://staradvertiser.wpenginepowered.com/wp-content/themes/staradvertiser/images/sa-favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="https://staradvertiser.wpenginepowered.com/wp-content/themes/staradvertiser/images/sa-favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="https://staradvertiser.wpenginepowered.com/wp-content/themes/staradvertiser/images/sa-favicon-96x96.png" sizes="96x96" />
+    <link rel="apple-touch-icon" href="https://staradvertiser.wpenginepowered.com/wp-content/uploads/site-images/sa-apple-touch-icon.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="https://staradvertiser.wpenginepowered.com/wp-content/uploads/site-images/sa-apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="https://staradvertiser.wpenginepowered.com/wp-content/uploads/site-images/sa-apple-touch-icon.png" />
+    
+    
+    <!-- Start otto Installation Code for https://gateway.staradvertiser.com -->
+    <script src="//d3plfjw9uod7ab.cloudfront.net/41e899d4-eecb-4906-b3ea-3f7a3f7fae2f.js" type="text/javascript"></script>
+    <!-- End otto Installation Code -->
+    
+    
+    <!-- Ad lazy load -->
+    <!--<script src="https://staradvertiser.wpenginepowered.com/wp-content/themes/staradvertiser/js/lazy-load-ad-intersection-observer-polyfill.min.js"></script>-->
+    <!--<script src="https://staradvertiser.wpenginepowered.com/wp-content/themes/staradvertiser/js/lazy-load-ad.min.js?version=1.0"></script>-->
+    <!-- Google Ad Manager and Amazon Publisher Services -->
+  <script>
+    function pbjsSetConfig() {
+        googletag.cmd.push(function() {
+
+            pbjs.setConfig({
+                userSync: {
+                    userIds: [{
+                        name: "identityLink",
+                        params: {
+                            pid: '1273'
+                        },
+                        storage: {
+                            type: "cookie",
+                            name: "idl_env", // create a cookie with this name
+                            expires: 7 // cookie can last for seven days
+                        }
+                    }],
+                    syncDelay: 3000 // 3 seconds after the first auction
+                },
+                cache: {
+                  url: 'https://prebid.adnxs.com/pbc/v1/cache'
+                },
+            });
+            executeParallelAuctionAlongsidePrebid(); 
+        });
+    }
+
+    function getGTagAdSizes( adSizes ) {
+        var tempSizes = [];
+        adSizes.forEach(function(entry) {
+          let keys = Object.keys(entry);
+          tempSizes.push([entry[keys[0]], entry[keys[1]]]);
+        });
+        return tempSizes;
+    }
+
+    function getGTagAdSizesWithLimit( adSizes, limit ) {
+      var tempSizes = [];
+      var counter = 0;
+      adSizes.forEach(function(entry) {
+          counter++;
+          if( counter <= limit ) {
+            let keys = Object.keys(entry);
+            tempSizes.push([entry[keys[0]], entry[keys[1]]]);
+          }
+      });
+      return tempSizes;
+    }
+    
+    /** Executes a parallel auction with prebid **/
+    function executeParallelAuctionAlongsidePrebid() {
+
+        var FAILSAFE_TIMEOUT = 2000;
+        var requestManager = {
+            adserverRequestSent: false,
+            aps: false,
+            prebid: false
+        };
+
+        // when both APS and Prebid have returned, initiate ad request
+        function biddersBack() {
+            if (requestManager.aps && requestManager.prebid) {
+                sendAdserverRequest();
+            } 
+            return;
+        }
+
+        // sends adserver request
+        function sendAdserverRequest() {
+            if (requestManager.adserverRequestSent === true) {
+                return;
+            }
+            requestManager.adserverRequestSent = true;
+            googletag.cmd.push(function() {
+                // if ('undefined' !== typeof AdLazyLoader) {
+                    // AdLazyLoader.registerSlots(bidSlots);
+                    if ( outOfPageSlots ) {
+                        googletag.pubads().refresh( outOfPageSlots );
+                    }
+                // }
+                googletag.pubads().refresh( bidSlots );
+            });
+        }
+
+        // sends bid request to APS and Prebid
+        function requestHeaderBids() {
+            var apsSlots = [];
+            var apsPubCID = ( typeof window.PublisherCommonId.getId !== "undefined" ) ? window.PublisherCommonId.getId() : false;;
+            bidSlots.forEach(function(adSlot){
+                let tempSlot = {
+                  slotID: adSlot.getSlotElementId(),
+                  slotName: adSlot.getAdUnitPath(),
+                  sizes: getGTagAdSizes(adSlot.getSizes()),                       
+                };
+
+                if( apsPubCID ) {
+                  tempSlot['slotParams'] = {
+                      "pubcid.org": [apsPubCID],
+                    };
+                }
+
+                apsSlots.push( tempSlot );
+            })
+
+            // APS request
+            apstag.fetchBids({
+                    slots: apsSlots
+                },function(bids) {
+                    googletag.cmd.push(function() {
+                        apstag.setDisplayBids();
+                        
+                        requestManager.aps = true; // signals that APS request has completed
+                        biddersBack(); // checks whether both APS and Prebid have returned
+                    });
+                }
+            );
+
+            var pbjsSlots = [];
+            bidSlots.forEach(function(adSlot){
+                pbjsSlots.push({
+                    code: adSlot.getAdUnitPath(),
+                    mediaTypes: {
+                        banner: {
+                            sizes: getGTagAdSizes(adSlot.getSizes())  
+                        },
+                        video: {
+                          playerSize: getGTagAdSizesWithLimit(adSlot.getSizes(), 1), // required
+                          context: 'instream'
+                        }
+                    },
+                    bids: prebid_bidders                      
+                });
+            })
+            
+            pbjs.que.push(function() {
+                pbjs.addAdUnits(pbjsSlots);
+            });
+
+            // put prebid request here
+            pbjs.que.push(function() {
+                pbjs.requestBids({
+                    bidsBackHandler: function() {
+                        googletag.cmd.push(function() {
+                            pbjs.setTargetingForGPTAsync();
+                            requestManager.prebid = true; // signals that Prebid request has completed
+                            biddersBack(); // checks whether both APS and Prebid have returned
+                        })
+                    }
+                });
+            });
+        }
+        
+        // initiate bid request
+        requestHeaderBids();
+
+        // set failsafe timeout
+        window.setTimeout(function() {
+            sendAdserverRequest();
+        }, FAILSAFE_TIMEOUT);
+    };
+  </script>
+  <!-- Conversant Epsilon -->
+  <script type="text/javascript" src="https://staradvertiser.wpenginepowered.com/wp-content/themes/staradvertiser/js/pubcid.min.js"></script>
+
+  <!-- IdentityHub Script begins here -->
+  <script type="text/javascript">
+    var PWT = {}; //Initialize Namespace
+    // Define prebid array
+    var pbjs = pbjs || {};
+    pbjs.que = pbjs.que || [];
+    
+    // Define googletag and the cmd array
+    var googletag = googletag || {};
+    googletag.cmd = googletag.cmd || [];
+    var gptRan = false;
+
+    var prebid_bidders = [{
+      bidder: 'pubmatic',
+      params: {
+        publisherId: '160074',                     // required
+        video: {
+          mimes: ['video/mp4','video/x-flv'],   // required
+          skippable: true,                      // optional
+        }
+      }
+    }];
+    
+    var PREBID_TIMEOUT = 1000;
+    var bidSlots, outOfPageSlots;
+
+    PWT.jsLoaded = function(){ //PubMatic pwt.js on load callback is used to load GPT and Prebid
+      loadPrebidAndGPT();
+    };
+
+    var loadPrebidAndGPT = function() {
+      // Check the gptRan flag
+      if (!gptRan) {
+        gptRan = true;
+        var gads = document.createElement('script');
+        var useSSL = 'https:' == document.location.protocol;
+        gads.src = (useSSL ? 'https:' : 'http:') + '//www.googletagservices.com/tag/js/gpt.js';
+        var node = document.getElementsByTagName('script')[0];
+        node.parentNode.insertBefore(gads, node);
+        
+        var pbjsEl = document.createElement("script");
+        pbjsEl.type = "text/javascript";
+        pbjsEl.async = true;
+        pbjsEl.src = "https://staradvertiser.wpenginepowered.com/wp-content/themes/staradvertiser/js/prebid4.15.0.js";
+        pbjsEl.onload = pbjsSetConfig;
+        var pbjsTargetEl = document.getElementsByTagName("head")[0];
+        pbjsTargetEl.insertBefore(pbjsEl, pbjsTargetEl.firstChild);
+      }
+    };
+    // Failsafe to call prebid & gpt
+    setTimeout(loadPrebidAndGPT, 100);
+
+    (function() {
+      var purl = window.location.href;
+      var url = '//ads.pubmatic.com/AdServer/js/pwt/160074/3146/';
+      var profileVersionId = '';
+      if(purl.indexOf('pwtv=')>0){
+        var regexp = /pwtv=(.*?)(&|$)/g;
+        var matches = regexp.exec(purl);
+        if(matches.length >= 2 && matches[1].length > 0){
+          profileVersionId = '/'+matches[1];
+        }
+      }
+      var wtads = document.createElement('script');
+      wtads.async = true;
+      wtads.type = 'text/javascript';
+      wtads.src = url+profileVersionId+'/pwt.js';
+      var node = document.getElementsByTagName('script')[0];
+      node.parentNode.insertBefore(wtads, node);
+    })();
+  </script>
+  <!--IdentityHub Script ends here -->
+
+  <script type='text/javascript'>
+    // Load APS library 
+    !function(a9,a,p,s,t,A,g){if(a[a9])return;function q(c,r){a[a9]._Q.push([c,r])}a[a9]={init:function(){q("i",arguments)},fetchBids:function(){q("f",arguments)},setDisplayBids:function(){},targetingKeys:function(){return[]},_Q:[]};A=p.createElement(s);A.async=!0;A.src=t;g=p.getElementsByTagName(s)[0];g.parentNode.insertBefore(A,g)}("apstag",window,document,"script","//c.amazon-adsystem.com/aax2/apstag.js");
+
+    /** To activate this feature, you will need to add a parameter to your apstag.init function. 
+    The parameter is simplerGPT and it needs to be set to true: **/
+    apstag.init({
+         pubID: 'ced4075c-e9ce-4f68-a498-b8a3cd48cc57', // enter your unique publisher id 
+         adServer: 'googletag',
+         simplerGPT: true
+     });
+  </script>
+  <!-- <p>dfp_ad_tag_type: top_news_breaking</p> -->
+  <!-- <p>is_category: false</p> -->
+  <script type='text/javascript'>
+    // Declare slot variables outside function scope so that our bid request function can access them (for method 2)
+    var slot1, slot2, slot3, slot4, slot5, slot6, slot7, slot8, slot9, slot10, slot11, slot12;
+    
+    googletag.cmd.push(function() {
+        // Create size mapping for bottom leaderboard position. If viewport is above 728x300 (but below 1000x768) show banner 728x90, if viewport is lower than 728x300 show banner 320x50
+        var mappingbottombanner = googletag.sizeMapping().
+            // addSize([1024, 768], [970, 90]).
+            addSize([728, 0], [728, 90]).
+            addSize([0, 0], [320, 50]).
+            build();
+        
+        // Create size mapping for right rail. Also display 300x600 on desktop only.
+        var mappingRightRailBox = googletag.sizeMapping().
+            addSize([768, 200], [[300, 250], [300, 600]]).
+            addSize([320, 200], [300, 250]).
+            build();
+
+        // Tile 1 300x100
+        slot1 = googletag.defineSlot('/5136785/SA_Tile1_TopNews', [[300, 100]], 'div-gpt-ad-1443757323385-10').addService(googletag.pubads());
+
+        // Tile 2 300x100
+        slot2 = googletag.defineSlot('/5136785/SA_Tile2_TopNews', [[300, 100]], 'div-gpt-ad-1449255182659-9').addService(googletag.pubads());
+
+        // Tile 3 300x100 Article-level
+        slot3 = googletag.defineSlot('/5136785/SA_300x100-1_TopNews', [[300, 100]], 'div-gpt-ad-1509425861841-8').addService(googletag.pubads());
+
+        // Interstitials
+        outOfPageSlot2 = googletag.defineOutOfPageSlot('/5136785/SA_INT_TopNews', 'div-gpt-ad-1444028495459-9').addService(googletag.pubads());
+        outOfPageSlot5 = googletag.defineOutOfPageSlot('/5136785/SA_INT_Gateway-Sponsor', 'div-gpt-ad-1587519919614-0').addService(googletag.pubads());
+
+        // X-15 - Sliding Billboard
+        slot4 = googletag.defineSlot('/5136785/SA_x15_TopNews', [[982, 30]], 'div-gpt-ad-1444028495459-24').addService(googletag.pubads());
+
+        // Top
+        slot5 = googletag.defineSlot('/5136785/SA_Top_TopNews', [[728, 90], [970, 90], [970, 250]], 'div-gpt-ad-1444028495459-39').addService(googletag.pubads());
+
+        // Box 1
+        slot6 = googletag.defineSlot('/5136785/SA_Box1_TopNews', [[300, 250]], 'div-gpt-ad-1444028495459-56').addService(googletag.pubads());
+
+        // Box 2
+        slot7 = googletag.defineSlot('/5136785/SA_Box2_TopNews', [[300, 250], [300, 600]], 'div-gpt-ad-1444028495459-70').defineSizeMapping(mappingRightRailBox).addService(googletag.pubads());
+
+        // Box 3
+        slot8 = googletag.defineSlot('/5136785/SA_Box3_TopNews', [[300, 250], [300, 600]], 'div-gpt-ad-1509158663350-7').defineSizeMapping(mappingRightRailBox).addService(googletag.pubads());
+
+        // Bottom
+        slot9 = googletag.defineSlot('/5136785/SA_Bottom_TopNews', [[320, 50], [728, 90]], 'div-gpt-ad-1444028495459-85').defineSizeMapping(mappingbottombanner).addService(googletag.pubads());
+        
+        // Slide-in Menu
+        slot10 = googletag.defineSlot('/5136785/SA_MenuBox', [[300, 250]], 'div-gpt-ad-1444965704525-0').addService(googletag.pubads());
+        slot11 = googletag.defineSlot('/5136785/SA_MenuTile', [[300, 100]], 'div-gpt-ad-1445920181141-0').addService(googletag.pubads());
+        slot12 = googletag.defineSlot('/5136785/SA_Box-events_TGIF', [[300, 250]], 'div-gpt-ad-1465867295375-0').addService(googletag.pubads());
+        outOfPageSlot3 = googletag.defineSlot('/5136785/SA_InContentAd_Archives', [[1, 1]], 'div-gpt-ad-1562987750167-0').addService(googletag.pubads());
+        outOfPageSlot4 = googletag.defineSlot('/5136785/SA_InContentAd_Archives2', [[1, 1]], 'div-gpt-ad-1563589671478-0').addService(googletag.pubads());
+
+        // Footer
+        outOfPageSlot1 = googletag.defineOutOfPageSlot('/5136785/SA_Footer_ROS', 'div-gpt-ad-1456339848629-0').addService(googletag.pubads());
+
+        
+        googletag.pubads().collapseEmptyDivs();
+        googletag.pubads().setCentering(true);
+        googletag.pubads().enableSingleRequest();
+        googletag.pubads().disableInitialLoad();
+        googletag.enableServices();
+        
+        bidSlots = [slot1, slot2, slot3, slot4, slot5, slot6, slot7, slot8, slot9, slot10, slot11, slot12];
+        outOfPageSlots = [outOfPageSlot1, outOfPageSlot2, outOfPageSlot3, outOfPageSlot4, outOfPageSlot5];
+    }); 
+</script>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+    <!--[if IE 9]>
+    <link rel="stylesheet" href="https://staradvertiser.wpenginepowered.com/wp-content/themes/staradvertiser/css/bootstrap-ie9.css" />
+    <![endif]-->
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="https://staradvertiser.wpenginepowered.com/wp-content/themes/staradvertiser/css/bootstrap-ie8.css" />
+    <![endif]-->
+
+
+    <!-- Stylesheets -->
+        <link rel="stylesheet" type="text/css" href="https://staradvertiser.wpenginepowered.com/wp-content/themes/staradvertiser/css/sa-style-2018.css?version=1.91" />
+    <link rel="stylesheet" href="https://use.typekit.net/wsl8gsu.css" />
+    
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous" />
+    
+
+    <!-- JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <!--[if lt IE 9]>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <![endif]-->
+
+
+    <!-- HTML5 shiv and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Required for Facebook Instant Articles -->
+    <meta property="fb:pages" content="112299605447935" />
+
+    
+    <!-- Google Analytics -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-16272709-1', 'auto');
+
+      
+      ga('send', 'pageview');
+    </script>
+
+    <!-- Adblocker Detector -->
+    <script src="https://staradvertiser.wpenginepowered.com/wp-content/themes/staradvertiser/js/adblockerdetector/adblockDetector.js?v="1666851805></script>
+    <script src="https://staradvertiser.wpenginepowered.com/wp-content/themes/staradvertiser/js/adblockerdetector/adblockerTrigger.js?v="1666851805></script>
+    
+    
+    <!-- AAM Site Certifier starts plowing -->
+    <script type="text/javascript">
+        ;(function(p,l,o,w,i,n,g){if(!p[i]){p.GlobalAamNamespace=p.GlobalAamNamespace||[];
+        p.GlobalAamNamespace.push(i);p[i]=function(){(p[i].q=p[i].q||[]).push(arguments)
+        };p[i].q=p[i].q||[];n=l.createElement(o);g=l.getElementsByTagName(o)[0];n.async=1;
+        n.src=w;g.parentNode.insertBefore(n,g)}}(window,document,"script","//aamcftag.aamsitecertifier.com/aam.js","aamsitecertifier"));
+        window.aamsitecertifier('newTracker', 'cf', 'aamcf.aamsitecertifier.com', {
+            idWeb: '206'
+        });
+        window.aamsitecertifier('trackPageView');
+    </script>
+
+
+    <!-- Chartbeat tracking code -->
+    <script type="text/javascript">
+        var _sf_async_config = _sf_async_config || {};
+        /** CONFIGURATION START **/
+        _sf_async_config.uid = 48334; // ACCOUNT NUMBER
+        _sf_async_config.domain = 'staradvertiser.com'; // DOMAIN
+        _sf_async_config.flickerControl = false;
+        _sf_async_config.useCanonical = true;
+        /** CONFIGURATION END **/
+        var _sf_startpt = (new Date()).getTime();
+    </script>
+    <script async src="//static.chartbeat.com/js/chartbeat_mab.js"></script>
+
+
+        <!-- JWPlayer DBN videos -->
+    <script src="//content.jwplatform.com/libraries/ZoPFXSjg.js"></script>
+    <script type="text/javascript" src="https://staradvertiser.wpenginepowered.com/wp-content/themes/staradvertiser/js/hsa-jwplayer.cmd-hsa-minified.1601588720.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://staradvertiser.wpenginepowered.com/wp-content/themes/staradvertiser/css/sa-jwplayer.css?version=1.0" />
+
+
+    <!-- Nativo -->
+    <script type="text/javascript" src="//s.ntv.io/serve/load.js" async></script>
+
+
+    <!-- Insticator -->
+    <script data-cfasync='false' type='text/javascript'>/*<![CDATA[*/(function (a, c, s, u){'Insticator'in a || (a.Insticator={ad:{loadAd: function (b){Insticator.ad.q.push(b)}, q: []}, helper:{}, embed:{}, version: "3.0", q: [], load: function (t, o){Insticator.q.push({t: t, o: o})}}); var b=c.createElement(s); b.src=u; b.async=!0; var d=c.getElementsByTagName(s)[0]; d.parentNode.insertBefore(b, d)})(window, document, 'script', '//d2na2p72vtqyok.cloudfront.net/client-embed/134cd2a0-7eab-4f89-ad56-f416cc5743c6.js');/*]]>*/</script>
+    
+
+        <!-- Taboola -->
+    <script type="text/javascript">
+        window._taboola = window._taboola || [];
+        _taboola.push({article:'auto'});
+        !function (e, f, u, i) {
+            if (!document.getElementById(i)){
+                e.async = 1;
+                e.src = u;
+                e.id = i;
+                f.parentNode.insertBefore(e, f);
+            }
+        }(document.createElement('script'),
+        document.getElementsByTagName('script')[0],
+        '//cdn.taboola.com/libtrc/oahu-staradvertiser/loader.js',
+        'tb_loader_script');
+        if(window.performance && typeof window.performance.mark == 'function')
+        {window.performance.mark('tbl_ic');}
+    </script>
+    
+    
+    <!-- Google Optimize -->
+    <script src="https://www.googleoptimize.com/optimize.js?id=OPT-KLPLN2M"></script>
+        
+    
+    <!-- Begin comScore Tag -->
+    <script>
+      var _comscore = _comscore || [];
+      _comscore.push({ c1: "2", c2: "6035032" });
+      (function() {
+        var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true;
+        s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";
+        el.parentNode.insertBefore(s, el);
+      })();
+    </script>
+    <noscript>
+      <img src="https://sb.scorecardresearch.com/p?c1=2&c2=6035032&cv=2.0&cj=1" alt="comscore" />
+    </noscript>
+    <!-- End comScore Tag -->
+
+    
+    <!-- DNSMPI Javascript-->
+    <script type="module" src="https://staradvertiser.wpenginepowered.com/wp-content/themes/staradvertiser/iab_ccpa/src/usprivacy-string.js">
+      import UsprivacyString from '/usprivacy-string';
+    </script>
+
+    <script type="text/javascript" src="https://staradvertiser.wpenginepowered.com/wp-content/themes/staradvertiser/iab_ccpa/src/uspapi.js" ></script>
+    <script type="text/javascript" src="https://staradvertiser.wpenginepowered.com/wp-content/themes/staradvertiser/iab_ccpa/src/uspapi_call.js" ></script>
+    
+    
+    <!-- FlexOffers Affiliate -->
+    <meta name="fo-verify" content="c32137c7-d88e-4e05-b8ac-7c5541e3680a" />
+    
+    
+        <!-- NextMillennium PowerAds Mobile Box Ad -->
+    <script async src="https://powerad.ai/script.js"></script>
+        
+    <!-- Madison -->
+    <!-- Global site tag (gtag.js) - Google Ads: 712386318 -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-WTV5NMZ');</script>
+    
+    
+    <!-- Microsoft Clarity -->
+	<script type="text/javascript">
+		(function(c,l,a,r,i,t,y){
+			c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+			t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+			y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+		})(window, document, "clarity", "script", "c13p8ejhds");
+	</script>
+    
+    <!-- Mather Subscribe Click Event Listener -->
+    <script type="text/javascript">
+        function matherSubcribeClickEvent() {
+            (window._matherq = window._matherq || []).push(['paywallEvent', {type: 'subscription', category: 'payment', action: 'subscription_started'}, false]);
+        }
+    </script>
+    <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+	<!-- This site is optimized with the Yoast SEO plugin v16.7 - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>Paper money being shunned for fear of coronavirus spread | Honolulu Star-Advertiser</title>
+	<link rel="canonical" href="https://www.staradvertiser.com/2020/03/19/breaking-news/paper-money-being-shunned-for-fear-of-coronavirus-spread/" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="Paper money being shunned for fear of coronavirus spread" />
+	<meta property="og:description" content="NEW YORK &gt;&gt; In a world suffering a pandemic, cash is no longer king." />
+	<meta property="og:url" content="https://www.staradvertiser.com/2020/03/19/breaking-news/paper-money-being-shunned-for-fear-of-coronavirus-spread/" />
+	<meta property="og:site_name" content="Honolulu Star-Advertiser" />
+	<meta property="article:publisher" content="https://www.facebook.com/staradvertiser/" />
+	<meta property="article:published_time" content="2020-03-20T04:50:00+00:00" />
+	<meta property="og:image" content="https://www.staradvertiser.com/wp-content/uploads/2020/03/web1_AP20079673462215.jpg" />
+	<meta property="og:image:width" content="760" />
+	<meta property="og:image:height" content="509" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:creator" content="@staradvertiser" />
+	<meta name="twitter:site" content="@staradvertiser" />
+	<meta name="twitter:label1" content="Written by" />
+	<meta name="twitter:data1" content="Associated Press" />
+	<meta name="twitter:label2" content="Est. reading time" />
+	<meta name="twitter:data2" content="3 minutes" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://www.staradvertiser.com/#website","url":"https://www.staradvertiser.com/","name":"Honolulu Star-Advertiser","description":"Hawaii News, Sports, Weather and Entertainment","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://www.staradvertiser.com/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"ImageObject","@id":"https://www.staradvertiser.com/2020/03/19/breaking-news/paper-money-being-shunned-for-fear-of-coronavirus-spread/#primaryimage","inLanguage":"en-US","url":"https://www.staradvertiser.com/wp-content/uploads/2020/03/web1_AP20079673462215.jpg","contentUrl":"https://www.staradvertiser.com/wp-content/uploads/2020/03/web1_AP20079673462215.jpg","width":760,"height":509,"caption":"ASSOCIATED PRESS / 2019 A growing number of businesses and individuals worldwide have stopped using banknotes in fear that physical currency, handled by tens of thousands of people over their useful life, could be a vector for the spreading coronavirus."},{"@type":"WebPage","@id":"https://www.staradvertiser.com/2020/03/19/breaking-news/paper-money-being-shunned-for-fear-of-coronavirus-spread/#webpage","url":"https://www.staradvertiser.com/2020/03/19/breaking-news/paper-money-being-shunned-for-fear-of-coronavirus-spread/","name":"Paper money being shunned for fear of coronavirus spread | Honolulu Star-Advertiser","isPartOf":{"@id":"https://www.staradvertiser.com/#website"},"primaryImageOfPage":{"@id":"https://www.staradvertiser.com/2020/03/19/breaking-news/paper-money-being-shunned-for-fear-of-coronavirus-spread/#primaryimage"},"datePublished":"2020-03-20T04:50:00+00:00","dateModified":"2020-03-20T04:50:00+00:00","author":{"@id":"https://www.staradvertiser.com/#/schema/person/7403093d88307b5e7c5482c0cb924450"},"breadcrumb":{"@id":"https://www.staradvertiser.com/2020/03/19/breaking-news/paper-money-being-shunned-for-fear-of-coronavirus-spread/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://www.staradvertiser.com/2020/03/19/breaking-news/paper-money-being-shunned-for-fear-of-coronavirus-spread/"]}]},{"@type":"BreadcrumbList","@id":"https://www.staradvertiser.com/2020/03/19/breaking-news/paper-money-being-shunned-for-fear-of-coronavirus-spread/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.staradvertiser.com/"},{"@type":"ListItem","position":2,"name":"Paper money being shunned for fear of coronavirus spread"}]},{"@type":"Person","@id":"https://www.staradvertiser.com/#/schema/person/7403093d88307b5e7c5482c0cb924450","name":"Associated Press","image":{"@type":"ImageObject","@id":"https://www.staradvertiser.com/#personlogo","inLanguage":"en-US","url":"https://secure.gravatar.com/avatar/e182e9788e60226bb5b90e9544fbe275?s=96&d=blank&r=g","contentUrl":"https://secure.gravatar.com/avatar/e182e9788e60226bb5b90e9544fbe275?s=96&d=blank&r=g","caption":"Associated Press"},"url":"https://www.staradvertiser.com/author/associated-press/"}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel="amphtml" href="https://www.staradvertiser.com/2020/03/19/breaking-news/paper-money-being-shunned-for-fear-of-coronavirus-spread/amp/" /><meta name="generator" content="AMP for WP 1.0.77.14"/><script src="https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver"></script><script>/*! lozad.js - v1.9.0 - 2019-02-09
+* https://github.com/ApoorvSaxena/lozad.js
+* Copyright (c) 2019 Apoorv Saxena; Licensed MIT */
+!function(t,e){"object"==typeof exports&&"undefined"!=typeof module?module.exports=e():"function"==typeof define&&define.amd?define(e):t.lozad=e()}(this,function(){"use strict";var g=Object.assign||function(t){for(var e=1;e<arguments.length;e++){var r=arguments[e];for(var o in r)Object.prototype.hasOwnProperty.call(r,o)&&(t[o]=r[o])}return t},n="undefined"!=typeof document&&document.documentMode,l={rootMargin:"0px",threshold:0,load:function(t){if("picture"===t.nodeName.toLowerCase()){var e=document.createElement("img");n&&t.getAttribute("data-iesrc")&&(e.src=t.getAttribute("data-iesrc")),t.getAttribute("data-alt")&&(e.alt=t.getAttribute("data-alt")),t.appendChild(e)}if("video"===t.nodeName.toLowerCase()&&!t.getAttribute("data-src")&&t.children){for(var r=t.children,o=void 0,a=0;a<=r.length-1;a++)(o=r[a].getAttribute("data-src"))&&(r[a].src=o);t.load()}t.getAttribute("data-src")&&(t.src=t.getAttribute("data-src")),t.getAttribute("data-srcset")&&t.setAttribute("srcset",t.getAttribute("data-srcset")),t.getAttribute("data-background-image")&&(t.style.backgroundImage="url('"+t.getAttribute("data-background-image")+"')"),t.getAttribute("data-toggle-class")&&t.classList.toggle(t.getAttribute("data-toggle-class"))},loaded:function(){}};
+/**
+   * Detect IE browser
+   * @const {boolean}
+   * @private
+   */function f(t){t.setAttribute("data-loaded",!0)}var b=function(t){return"true"===t.getAttribute("data-loaded")};return function(){var r,o,a=0<arguments.length&&void 0!==arguments[0]?arguments[0]:".lozad",t=1<arguments.length&&void 0!==arguments[1]?arguments[1]:{},e=g({},l,t),n=e.root,i=e.rootMargin,d=e.threshold,c=e.load,u=e.loaded,s=void 0;return window.IntersectionObserver&&(s=new IntersectionObserver((r=c,o=u,function(t,e){t.forEach(function(t){(0<t.intersectionRatio||t.isIntersecting)&&(e.unobserve(t.target),b(t.target)||(r(t.target),f(t.target),o(t.target)))})}),{root:n,rootMargin:i,threshold:d})),{observe:function(){for(var t=function(t){var e=1<arguments.length&&void 0!==arguments[1]?arguments[1]:document;return t instanceof Element?[t]:t instanceof NodeList?t:e.querySelectorAll(t)}(a,n),e=0;e<t.length;e++)b(t[e])||(s?s.observe(t[e]):(c(t[e]),f(t[e]),u(t[e])))},triggerLoad:function(t){b(t)||(c(t),f(t),u(t))},observer:s}}});
+var HSA_OBSERVE = {};
+
+HSA_OBSERVE._instance = lozad('.lozad', {
+    rootMargin: '10px 0px', // syntax similar to that of CSS Margin
+    threshold: 0.1 // ratio of element convergence
+});
+
+HSA_OBSERVE.do_observe = function () {
+    HSA_OBSERVE._instance.observe();
+};
+
+
+window.addEventListener( 'load', HSA_OBSERVE.do_observe, false );
+window.addEventListener( 'DOMContentLoaded', HSA_OBSERVE.do_observe, false );
+</script><link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Honolulu Star-Advertiser &raquo; Feed" href="https://www.staradvertiser.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Honolulu Star-Advertiser &raquo; Comments Feed" href="https://www.staradvertiser.com/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Honolulu Star-Advertiser &raquo; Paper money being shunned for fear of coronavirus spread Comments Feed" href="https://www.staradvertiser.com/2020/03/19/breaking-news/paper-money-being-shunned-for-fear-of-coronavirus-spread/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/www.staradvertiser.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.8.5"}};
+			!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode;p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([10084,65039,8205,55357,56613],[10084,65039,8203,55357,56613])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='hsa_polls_css-css'  href='https://staradvertiser.wpenginepowered.com/wp-content/plugins/hsa-polls/css/common.cmd-hsa-minified.1569273721.css?ver=5.8.5' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-block-library-css'  href='https://staradvertiser.wpenginepowered.com/wp-includes/css/dist/block-library/style.min.css?ver=5.8.5' type='text/css' media='all' />
+<link rel='stylesheet' id='vfb-pro-css'  href='https://staradvertiser.wpenginepowered.com/wp-content/plugins/vfb-pro/public/assets/css/vfb-style.min.css?ver=2019.05.10' type='text/css' media='all' />
+<link rel='stylesheet' id='twentythirteen-fonts-css'  href='//fonts.googleapis.com/css?family=Source+Sans+Pro%3A300%2C400%2C700%2C300italic%2C400italic%2C700italic%7CBitter%3A400%2C700&#038;subset=latin%2Clatin-ext' type='text/css' media='all' />
+<link rel='stylesheet' id='genericons-css'  href='https://staradvertiser.wpenginepowered.com/wp-content/themes/staradvertiser/genericons/genericons.css?ver=3.03' type='text/css' media='all' />
+<link rel='stylesheet' id='twentythirteen-style-css'  href='https://staradvertiser.wpenginepowered.com/wp-content/themes/staradvertiser/style.css?ver=2015-12-08' type='text/css' media='all' />
+<!--[if lt IE 9]>
+<link rel='stylesheet' id='twentythirteen-ie-css'  href='https://staradvertiser.wpenginepowered.com/wp-content/themes/staradvertiser/css/ie.css?ver=2015-12-08' type='text/css' media='all' />
+<![endif]-->
+<link rel='stylesheet' id='elasticpress-facets-css'  href='https://staradvertiser.wpenginepowered.com/wp-content/plugins/elasticpress/features/facets/assets/css/facets.min.css?ver=2.5.2' type='text/css' media='all' />
+<script type='text/javascript' src='https://staradvertiser.wpenginepowered.com/wp-includes/js/jquery/jquery.min.js?ver=3.6.0' id='jquery-core-js'></script>
+<script type='text/javascript' src='https://staradvertiser.wpenginepowered.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2' id='jquery-migrate-js'></script>
+<script type='text/javascript' src='https://staradvertiser.wpenginepowered.com/wp-content/plugins/hsa-polls/js/common.cmd-hsa-minified.1569273721.js?ver=5.8.5' id='hsa_polls_js-js'></script>
+<script type='text/javascript' id='custom-ad-js-js-extra'>
+/* <![CDATA[ */
+var ad_vars = {"tags":[{"no":"9","ad_tag":"<!-- \/5136785\/SA_InContentAd_Archives -->\r\n<div id=\"div-gpt-ad-1562987750167-0\">\r\n  <script>\r\n    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1562987750167-0'); });\r\n  <\/script>\r\n<\/div>"},{"no":"11","ad_tag":"<div style=\"margin: 20px 0;\" class=\"breaking-news-signup blue p-4 mb-4\">\r\n<img class=\"logo\" src=\"https:\/\/staradvertiser.com\/wp-content\/themes\/staradvertiser\/images\/sa-logo-white-large.png\" alt=\"Honolulu Star-Advertiser\" \/>\r\n                                <div class=\"row\">\r\n                                    <div class=\"col-12 col-md-6\">\r\n                                        <h5 class=\"mb-3\">Get the latest news by email<\/h5>\r\n                                        <small class=\"d-block\">By clicking submit, you agree to Star-Advertiser's <a href=\"https:\/\/www.staradvertiser.com\/about\/terms-of-service\/\" target=\"_blank\">Terms of Service<\/a> and <a href=\"https:\/\/www.staradvertiser.com\/about\/privacy-policy\/\" target=\"_blank\">Privacy Policy<\/a>. This site is protected by reCAPTCHA and the Google <a href=\"https:\/\/policies.google.com\/privacy\" target=\"_blank\">Privacy Policy<\/a> and <a href=\"https:\/\/policies.google.com\/terms\" target=\"_blank\">Terms of Service<\/a> apply.<\/small>\r\n                                    <\/div><!-- \/col -->\r\n                                    <div class=\"mt-4 mt-md-0 col-12 col-md-6\">\r\n                                        <form method=\"POST\" onsubmit=\"return joinNewsletter(this)\" action=\"\/resources\/newsletter\/email_list_signup.php\" class=\"email\" target=\"_blank\">\r\n                                            <label class=\"mb-2 font-weight-bold\" for=\"email\">Email:<\/label>\r\n                                            <div class=\"input-group\">\r\n                                                <input type=\"email\" name=\"joinEmail\" class=\"form-control\" id=\"email\" placeholder=\"Enter your email address\" \/>\r\n                                                <div class=\"input-group-append\">\r\n                                                    <input type=\"hidden\" name=\"joinList\" value=\"28141\" \/>\r\n                                                    <button onclick=\"ga('send', 'event', 'Breaking News Sign-up', 'click', 'Breaking News Sign-up Form Widget');\" type=\"submit\" class=\"font-weight-bold btn btn-primary\">Sign Up<\/button>\r\n                                                <\/div><!-- \/input-group-append -->\r\n                                            <\/div><!-- \/input-group -->\r\n                                            \r\n                                            <div id=\"bn-signup-msg\" class=\"validationMsg alert alert-success p-2 mb-0 mt-2 text-center\" style=\"display: none;\">\r\n                                            <\/div><!-- \/validationMsg -->\r\n                                        <\/form>\r\n                                    <\/div><!-- \/col -->\r\n                                <\/div><!-- \/row -->\r\n                            <\/div><!-- \/breaking-news-signup-blue -->\r\n<script src=\"https:\/\/www.google.com\/recaptcha\/api.js?render=6LdAlLwUAAAAABkgsamHb8lqNqVqvZQKWYXKl57b\"><\/script>\r\n                <script src=\"\/resources\/newsletter\/newsletter-signup.js\"><\/script>"}],"type":"top_news_breaking"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://staradvertiser.wpenginepowered.com/wp-content/plugins/cmd-hsa-ad-tags/js/custom_ad.js?ver=5.8.5' id='custom-ad-js-js'></script>
+<link rel="https://api.w.org/" href="https://www.staradvertiser.com/wp-api/" /><link rel="alternate" type="application/json" href="https://www.staradvertiser.com/wp-api/wp/v2/posts/940710" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.staradvertiser.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.staradvertiser.com/wp-includes/wlwmanifest.xml" /> 
+<link rel='shortlink' href='https://www.staradvertiser.com/?p=940710' />
+<link rel="alternate" type="application/json+oembed" href="https://www.staradvertiser.com/wp-api/oembed/1.0/embed?url=https%3A%2F%2Fwww.staradvertiser.com%2F2020%2F03%2F19%2Fbreaking-news%2Fpaper-money-being-shunned-for-fear-of-coronavirus-spread%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://www.staradvertiser.com/wp-api/oembed/1.0/embed?url=https%3A%2F%2Fwww.staradvertiser.com%2F2020%2F03%2F19%2Fbreaking-news%2Fpaper-money-being-shunned-for-fear-of-coronavirus-spread%2F&#038;format=xml" />
+<meta name="keywords" content="Coronavirus Outbreak, Coronavirus Outbreak National"><script type="application/ld+json">{"@context":"https:\/\/schema.org","@type":"NewsArticle","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/www.staradvertiser.com\/2020\/03\/19\/breaking-news\/paper-money-being-shunned-for-fear-of-coronavirus-spread\/"},"headline":"Paper money being shunned for fear of coronavirus spread","image":["https:\/\/www.staradvertiser.com\/wp-content\/uploads\/2020\/03\/web1_AP20079673462215.jpg"],"datePublished":"2020-03-19T00:00:00-10:00","dateModified":"2020-03-19T18:50:00-10:00","author":{"@type":"Person","name":"Associated Press"},"publisher":{"@type":"Organization","name":"Honolulu Star-Advertiser","logo":{"@type":"ImageObject","url":"https:\/\/www.staradvertiser.com\/wp-content\/themes\/staradvertiser\/images\/sa-logo-large.png"}},"description":"NEW YORK >> In a world suffering a pandemic, cash is no longer king.","isAccessibleForFree":"True","hasPart":{"@type":"WebPageElement","isAccessibleForFree":"True","cssSelector":".hsa-paywall"}}</script>	<style type="text/css" id="twentythirteen-header-css">
+			.site-header {
+			background: url(https://staradvertiser.wpenginepowered.com/wp-content/themes/staradvertiser/images/headers/circle.png) no-repeat scroll top;
+			background-size: 1600px auto;
+		}
+		@media (max-width: 767px) {
+			.site-header {
+				background-size: 768px auto;
+			}
+		}
+		@media (max-width: 359px) {
+			.site-header {
+				background-size: 360px auto;
+			}
+		}
+		</style>
+	<style type="text/css">.story .custom_byline a{list-style-type:none;color:#888}.story .custom_byline a:hover{color:#3c3c3c}</style></head>
+    
+    
+<body class="post-template-default single single-post postid-940710 single-format-standard">
+
+        
+        <!-- /5136785/SA_INT_Gateway-Sponsor -->
+    <div id="div-gpt-ad-1587519919614-0">
+        <script>
+            googletag.cmd.push(function() { googletag.display('div-gpt-ad-1587519919614-0'); });
+        </script>
+    </div>
+        
+    <!-- Interstitial -->
+    <div style="position:fixed; top:0; left:0; z-index:9999999999;">
+        <!-- /5136785/SA_INT_TopNews -->
+														<div id="div-gpt-ad-1444028495459-9">
+														<script type="text/javascript">
+														googletag.cmd.push(function() { googletag.display("div-gpt-ad-1444028495459-9"); });
+														</script>
+														</div>    </div>
+
+
+    <!-- /5136785/SA_x15_TopNews -->
+																<div id="div-gpt-ad-1444028495459-24" class="ad-unit sliding text-center w-100 clear">
+																<script type="text/javascript">
+																googletag.cmd.push(function() { googletag.display("div-gpt-ad-1444028495459-24"); });
+																</script>
+																</div>    
+
+    <header class="masthead container-fluid my-4">
+        <!--[if IE]>
+        <div class="ie-alert">
+            <i class="fas fa-exclamation-triangle"></i> You are using an <strong>outdated</strong> web browser. <a href="http://outdatedbrowser.com/en" target="_blank">Switch to the latest version</a> for an improved browsing experience.
+        </div>
+        <![endif]-->
+
+
+        <nav class="topnav">
+            <div class="container-fluid clear">
+                <div class="row">
+                    <!-- Desktop Navigation Bar -->
+                    <ul class="primary-menu col-md-6 col-lg-7 col-xl-8"><li class="ml-0"><a onClick="ga('send', 'event', 'nav', 'click', 'burger-icon'); return false" href="javascript:void(0)" class="hamburger-slide"><i class="fas fa-bars fa-sm"></i> Sections</a></li><li id="menu-item-762365" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-762365"><a target="_blank" rel="noopener" href="https://printreplica.staradvertiser.com/overview/">Print Replica</a></li>
+<li id="menu-item-762354" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-762354"><a href="https://www.staradvertiser.com/category/breaking-news/">Top News</a></li>
+<li id="menu-item-762358" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-762358"><a href="https://www.staradvertiser.com/news/">Hawaii News</a></li>
+<li id="menu-item-762360" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-762360"><a href="https://www.staradvertiser.com/sports/">Sports</a></li>
+<li id="menu-item-1087998" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1087998"><a target="_blank" rel="noopener" href="https://statelegals.staradvertiser.com/">Legal Ads</a></li>
+<li id="menu-item-762364" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-762364"><a target="_blank" rel="noopener" href="https://obits.staradvertiser.com">Obituaries</a></li>
+<li id="menu-item-973317" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-973317"><a href="https://www.staradvertiser.com/video/">Video</a></li>
+<li id="menu-item-762366" class="topnav-search menu-item menu-item-type-custom menu-item-object-custom menu-item-762366"><a href="https://www.staradvertiser.com/search">Search</a></li>
+</ul>
+
+                    <ul class="user-menu col-md-6 col-lg-5 col-xl-4">
+                                                                        <li class="float-right mr-0"><a onClick="ga('send', 'event', 'nav', 'click', 'Top Login');" href="https://www.staradvertiser.com//user-access/?redirect_to=https%3A%2F%2Fwww.staradvertiser.com%2F2020%2F03%2F19%2Fbreaking-news%2Fpaper-money-being-shunned-for-fear-of-coronavirus-spread%2F"><i class="fas fa-user fa-sm"></i> Log In</a></li>
+                        <li class="float-right"><a style="color: #a0ff7a;" onClick="ga('send', 'event', 'nav', 'click', 'Top Activate');" href="https://gateway.staradvertiser.com/account_lookup.php" target="_blank">Activate</a></li>
+                        <li class="float-right"><a class="subscribe" href="https://gateway.staradvertiser.com/index.html?flow_type=subscribe" target="_blank" onclick="matherSubcribeClickEvent(); ga('send', 'event', 'nav', 'click', 'Top Subscribe');">Subscribe</a></li>
+                                                <li class="float-right"><a onclick="ga('send', 'event', 'tile', 'click', 'Longs');" class="longs-bug-topnav" href="http://longs.staradvertiser.com" target="_blank">Longs Drugs</a></li>
+                    </ul><!-- /user-menu -->
+                </div><!-- /row -->
+
+
+                <!-- Mobile Navigation Bar -->
+                <div class="row mobile-menu">
+                    <a onClick="ga('send', 'event', 'nav', 'click', 'burger-icon'); return false" class="hamburger-slide col-4 col-sm-3 pr-0 pt-2" href="javascript:void(0)"><i class="fas fa-bars fa-sm"></i> Sections</a>
+                    <a class="col-5 col-sm-6 text-center pl-0 pr-0" href="https://www.staradvertiser.com"><img class="logo" src="https://staradvertiser.wpenginepowered.com/wp-content/themes/staradvertiser/images/sa-logo-white-small.png" alt="Honolulu Star-Advertiser logo" border="0" /></a>
+                    <a onClick="ga('send', 'event', 'nav', 'click', 'user-icon'); return false" class="user-slide col-3 float-right text-right pl-0 pt-2" href="javascript:void(0)"><i class="fas fa-user"></i></a>
+                </div><!-- /row -->
+            </div><!-- /container-fluid -->
+        </nav><!-- /topnav -->
+
+
+        <!-- Slide-in Menu -->
+        <div id="slide-menu" class="container-fluid hidden">
+            <div class="100w mb-2 text-right">
+                <a href="javascript:void(0)" class="hamburger-slide menu-close"><i class="fas fa-arrow-left"></i> Close</a>
+            </div>
+
+            <div id="div-gpt-ad-1445920181141-0" class="ad-unit m-auto" style="width: 300px; height: 100px;">
+                <script type='text/javascript'>
+                    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1445920181141-0'); });
+                </script>
+            </div><!-- /ad-unit -->
+
+            <div class="longs-bug-menu text-center">
+                <a onclick="ga('send', 'event', 'tile', 'click', 'Longs');" href="http://longs.staradvertiser.com" target="_blank"><em>Make Longs a part of your day <img class="align-middle ml-1" src="https://staradvertiser.wpenginepowered.com/wp-content/themes/staradvertiser/images/longs-drugs-logo-v2.png" alt="Longs Drugs logo" border="0" /></em></a>
+            </div><!-- /longs-bug-menu -->
+
+
+            <hr />
+
+
+                        <div class="row">
+                <div class="col-6">
+                    <a class="blue sa-btn block" href="https://gateway.staradvertiser.com/index.html?flow_type=subscribe" target="_blank" onclick="matherSubcribeClickEvent(); ga('send', 'event', 'nav', 'click', 'Hamburger Menu Subscribe');">Subscribe</a>
+                </div>
+                <div class="col-6">
+                    <a onClick="ga('send', 'event', 'nav', 'click', 'Top Activate');" class="green sa-btn block" href="https://gateway.staradvertiser.com/account_lookup.php" target="_blank">Activate</a>
+                </div>
+            </div><!-- /row -->
+            
+
+            <ul id="menu-slider-nav-desktop" class="nav my-3"><li id="menu-item-762403" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-762403"><a href="https://www.staradvertiser.com/">Home</a></li>
+<li id="menu-item-789667" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-789667"><a target="_blank" href="https://printreplica.staradvertiser.com/overview/">Print Replica</a></li>
+<li id="menu-item-939334" class="yellow menu-item menu-item-type-post_type menu-item-object-page menu-item-939334"><a href="https://www.staradvertiser.com/coronavirus/">Coronavirus Coverage</a></li>
+<li id="menu-item-944712" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-944712"><a href="https://www.staradvertiser.com/tag/coronavirus-outbreak-resources/">Coronavirus Resources</a></li>
+<li id="menu-item-731509" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-731509"><a href="https://www.staradvertiser.com/category/breaking-news/">Top News</a></li>
+<li id="menu-item-1138416" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1138416"><a href="https://www.staradvertiser.com/election/">Election 2022</a><a href="#" class="toggle-custom collapsed" id="btn-1" data-toggle="collapse" data-target="#sub-menu-1138416" aria-expanded="true"><i class="fas fa-chevron-down"></i></a>
+<ul class="sub-menu nav collapse" id="sub-menu-1138416">
+	<li id="menu-item-1138414" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1138414"><a href="https://www.staradvertiser.com/election-candidates/">General Election 2022: Candidates Q&#038;A</a></li>
+</ul>
+</li>
+<li id="menu-item-963527" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-963527"><a href="https://www.staradvertiser.com/tag/america-in-turmoil/">America in Turmoil</a></li>
+<li id="menu-item-1120271" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1120271"><a href="https://www.staradvertiser.com/tag/russia-attacks-ukraine/">Russia Attacks Ukraine</a></li>
+<li id="menu-item-1120272" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1120272"><a href="https://www.staradvertiser.com/tag/red-hill-water-crisis/">Red Hill Water Crisis</a></li>
+<li id="menu-item-762404" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-762404"><a href="https://www.staradvertiser.com/traffic/">Traffic Map</a></li>
+<li id="menu-item-801379" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-801379"><a href="https://www.staradvertiser.com/hawaii-weather/">Weather</a></li>
+<li id="menu-item-1120282" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1120282"><a href="https://www.staradvertiser.com/tag/crime/">Crime</a></li>
+<li id="menu-item-973470" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-973470"><a href="https://www.staradvertiser.com/video/">Video</a></li>
+<li id="menu-item-762447" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-762447"><a href="https://www.staradvertiser.com/photo-galleries/">Photo Galleries</a></li>
+<li id="menu-item-762405" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-762405"><a href="https://www.staradvertiser.com/news/">Hawaii News</a><a href="#" class="toggle-custom collapsed" id="btn-1" data-toggle="collapse" data-target="#sub-menu-762405" aria-expanded="true"><i class="fas fa-chevron-down"></i></a>
+<ul class="sub-menu nav collapse" id="sub-menu-762405">
+	<li id="menu-item-762411" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-762411"><a href="https://www.staradvertiser.com/homeless-in-hawaii/">Homeless in Hawaii</a></li>
+	<li id="menu-item-762412" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-762412"><a href="https://www.staradvertiser.com/category/hawaii-news/911-report/">911 Report</a></li>
+	<li id="menu-item-762413" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-762413"><a href="https://www.staradvertiser.com/category/hawaii-news/volcanic-ash/">Volcanic Ash</a></li>
+</ul>
+</li>
+<li id="menu-item-944716" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-944716"><a href="https://www.staradvertiser.com/category/hawaii-news/kokua-line/">Kokua Line</a></li>
+<li id="menu-item-762427" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-762427"><a href="https://www.staradvertiser.com/crave/">Crave</a><a href="#" class="toggle-custom collapsed" id="btn-1" data-toggle="collapse" data-target="#sub-menu-762427" aria-expanded="true"><i class="fas fa-chevron-down"></i></a>
+<ul class="sub-menu nav collapse" id="sub-menu-762427">
+	<li id="menu-item-944717" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-944717"><a href="https://www.staradvertiser.com/tag/recipes/">Recipes</a></li>
+</ul>
+</li>
+<li id="menu-item-762414" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-762414"><a href="https://www.staradvertiser.com/tag/politics/">Politics</a></li>
+<li id="menu-item-762415" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-762415"><a href="https://www.staradvertiser.com/sports/">Sports</a><a href="#" class="toggle-custom collapsed" id="btn-1" data-toggle="collapse" data-target="#sub-menu-762415" aria-expanded="true"><i class="fas fa-chevron-down"></i></a>
+<ul class="sub-menu nav collapse" id="sub-menu-762415">
+	<li id="menu-item-762418" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-762418"><a href="https://www.staradvertiser.com/category/sports/sports-breaking/">Latest Sports News</a></li>
+	<li id="menu-item-762419" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-762419"><a href="https://www.staradvertiser.com/category/sports/scoreboard/">Scoreboard</a></li>
+	<li id="menu-item-762420" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-762420"><a href="https://www.staradvertiser.com/category/sports/tv-radio/">TV &amp; Radio</a></li>
+	<li id="menu-item-762421" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-762421"><a href="https://www.staradvertiser.com/blogs/">Sports Blogs</a></li>
+	<li id="menu-item-762422" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-762422"><a href="https://www.staradvertiser.com/hawaii-prep-world/">Hawaii Prep World</a></li>
+	<li id="menu-item-762423" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-762423"><a target="_blank" href="https://www.hawaiiwarriorworld.com">Hawaii Warrior World</a></li>
+</ul>
+</li>
+<li id="menu-item-762424" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-762424"><a target="_blank" href="https://obits.staradvertiser.com/">Obituaries</a></li>
+<li id="menu-item-762425" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-762425"><a href="https://www.staradvertiser.com/business/">Business</a></li>
+<li id="menu-item-762428" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-762428"><a href="https://www.staradvertiser.com/editorial/">Editorial</a><a href="#" class="toggle-custom collapsed" id="btn-1" data-toggle="collapse" data-target="#sub-menu-762428" aria-expanded="true"><i class="fas fa-chevron-down"></i></a>
+<ul class="sub-menu nav collapse" id="sub-menu-762428">
+	<li id="menu-item-770291" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-770291"><a href="https://www.staradvertiser.com/category/editorial/letters/">Letters to the Editor</a></li>
+	<li id="menu-item-762431" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-762431"><a href="https://www.staradvertiser.com/editorial/submit-letter/">Submit a Letter to the Editor</a></li>
+</ul>
+</li>
+<li id="menu-item-762429" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-762429"><a href="https://www.staradvertiser.com/features/">Features</a></li>
+<li id="menu-item-797647" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-797647"><a href="https://www.staradvertiser.com/calendar/">Calendar</a></li>
+<li id="menu-item-762438" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-762438"><a href="https://www.staradvertiser.com/travel/">Travel</a><a href="#" class="toggle-custom collapsed" id="btn-1" data-toggle="collapse" data-target="#sub-menu-762438" aria-expanded="true"><i class="fas fa-chevron-down"></i></a>
+<ul class="sub-menu nav collapse" id="sub-menu-762438">
+	<li id="menu-item-1120435" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1120435"><a href="https://www.staradvertiser.com/tag/entertainment/">Arts &amp; Entertainment</a></li>
+</ul>
+</li>
+<li id="menu-item-769680" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-769680"><a href="https://www.staradvertiser.com/tag/column/">Columnists</a></li>
+<li id="menu-item-963492" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-963492"><a href="https://www.staradvertiser.com/category/live-well/">Live Well</a></li>
+<li id="menu-item-918904" class="yellow menu-item menu-item-type-custom menu-item-object-custom menu-item-918904"><a target="_blank" href="http://statelegals.staradvertiser.com/">State Legals</a></li>
+<li id="menu-item-762442" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-762442"><a target="_blank" href="https://www.hawaiiislandhomes.com">Homes</a></li>
+<li id="menu-item-762443" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-762443"><a target="_blank" href="http://www.hawaiicars.com">Cars</a></li>
+<li id="menu-item-762444" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-762444"><a target="_blank" href="https://hawaiijobs.staradvertiser.com/?src=HSA">Jobs</a></li>
+<li id="menu-item-762445" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-762445"><a target="_blank" href="http://www.hawaiisclassifieds.com/">Classifieds</a></li>
+<li id="menu-item-762446" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-762446"><a href="https://www.staradvertiser.com/category/star-channels/">Star Channels</a></li>
+<li id="menu-item-1008336" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1008336"><a target="_blank" href="https://dining.staradvertiser.com/">Dining Out</a></li>
+<li id="menu-item-536889" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-536889"><a target="_blank" href="https://hawaiirenovation.staradvertiser.com/">Hawaii Renovation</a></li>
+<li id="menu-item-972333" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-972333"><a target="_blank" href="https://store.staradvertiser.com/">Store</a></li>
+<li id="menu-item-770289" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-770289"><a href="https://www.staradvertiser.com/news-alerts-signup/">Email Newsletters</a></li>
+<li id="menu-item-762452" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-762452"><a href="https://www.staradvertiser.com/back-issues/">Archives</a></li>
+<li id="menu-item-810898" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-810898"><a href="https://www.staradvertiser.com/staradvertiser-poll/">The Big Q</a></li>
+<li id="menu-item-762450" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-762450"><a href="https://www.staradvertiser.com/category/corrections/">Corrections</a></li>
+<li id="menu-item-762456" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-762456"><a href="https://www.staradvertiser.com/category/special-sections/">Special Sections</a></li>
+<li id="menu-item-1085137" class="menu-item menu-item-type-post_type_archive menu-item-object-partner-content menu-item-1085137"><a href="https://www.staradvertiser.com/partner-content/">Partner Content</a></li>
+<li id="menu-item-729189" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-729189"><a href="https://www.staradvertiser.com/partner-videos/">Partner Videos</a></li>
+</ul>
+            
+                        <hr class="mt-0" />
+
+                        <ul id="menu-slider-nav-desktop-below-divider" class="nav my-3"><li id="menu-item-762630" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-762630"><a href="https://www.staradvertiser.com/search">Search</a></li>
+<li id="menu-item-762631" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-762631"><a href="https://www.staradvertiser.com/about/">About Us</a></li>
+<li id="menu-item-767426" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-767426"><a href="https://www.staradvertiser.com/about/star-advertiser-contact-information/">Contact Us</a></li>
+<li id="menu-item-963832" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-963832"><a href="https://www.staradvertiser.com/web-notifications/">Web Push Notifications</a></li>
+<li id="menu-item-762633" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-762633"><a target="_blank" href="https://www.staradvertiser.com/download/">Mobile Apps</a></li>
+<li id="menu-item-762635" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-762635"><a target="_blank" href="http://www.oahupublications.com/">Advertise</a></li>
+<li id="menu-item-762636" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-privacy-policy menu-item-762636"><a href="https://www.staradvertiser.com/about/privacy-policy/">Privacy Policy</a></li>
+<li id="menu-item-762637" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-762637"><a href="https://www.staradvertiser.com/about/terms-of-service/">Terms of Service</a></li>
+</ul>
+            <hr class="mt-0" />
+
+            <div id="div-gpt-ad-1444965704525-0" class="ad-unit m-auto" style="width: 300px; height: auto;">
+                <script type='text/javascript'>
+                    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1444965704525-0'); });
+                </script>
+            </div><!-- /ad-unit -->
+        </div><!-- /slide-menu -->
+
+
+        <!-- User Slide-in Menu -->
+        <div id="slide-user-menu" class="container-fluid hidden">
+            <div class="100w mb-3 text-right">
+                <a href="javascript:void(0)" class="user-slide menu-close"><i class="fas fa-arrow-right"></i> Close</a>
+            </div>
+
+                        <a class="blue sa-btn block mb-3" href="https://gateway.staradvertiser.com/index.html?flow_type=subscribe" target="_blank" onclick="matherSubcribeClickEvent(); ga('send', 'event', 'nav', 'click', 'User Menu Subscribe');">Subscribe</a>
+            <a class="grey sa-btn block" onClick="ga('send', 'event', 'nav', 'click', 'Top Login');" href="https://www.staradvertiser.com//user-access/?redirect_to=https%3A%2F%2Fwww.staradvertiser.com%2F2020%2F03%2F19%2Fbreaking-news%2Fpaper-money-being-shunned-for-fear-of-coronavirus-spread%2F">Log In</a>
+            
+            <ul class="nav mt-4">
+                                <li><a href="https://gateway.staradvertiser.com/account_lookup.php" target="_blank">Activate Digital Account</a></li>
+                                <li><a href="https://www.staradvertiser.com/reset-password/">Forgot Password</a></li>
+                <li><a href="https://www.staradvertiser.com/news-alerts-signup/">Email Newsletters</a></li>
+                <li><a href="https://printreplica.staradvertiser.com/overview/" target="_blank">Print Replica</a></li>
+                <li><a href="https://gateway.staradvertiser.com/customer-service/" target="_blank">Customer Service</a></li>
+                <li><a href="https://gateway.staradvertiser.com/faq.php" target="_blank">FAQs</a></li>
+            </ul>
+        </div><!-- /slide-user-menu -->
+
+
+        <a name="#top"></a>
+
+
+                <!-- Masthead -->
+        <div class="row">
+            <div class="col-sm col-lg-3 d-none d-lg-block text-center">
+                                <!-- /5136785/SA_Tile2_TopNews -->
+													<div id="div-gpt-ad-1449255182659-9" class="ad-unit" style="width: 300px; height: 100px;">
+													<script type="text/javascript">
+													googletag.cmd.push(function() { googletag.display("div-gpt-ad-1449255182659-9"); });
+													</script>
+													</div>                            </div><!-- /col -->
+
+            <div class="col-6 col-sm-6 col-lg-6 d-none d-md-block text-lg-center">
+                                <a href="https://www.staradvertiser.com"><img class="logo" src="https://staradvertiser.wpenginepowered.com/wp-content/themes/staradvertiser/images/sa-logo-large.png" alt="Honolulu Star-Advertiser logo" border="0" /></a>
+                
+
+                
+                <ul class="masthead-blurb">
+                    <li>Wednesday, October 26, 2022</li>
+                    <li><i class="far fa-newspaper"></i> <a onclick="ga('send', 'event', 'Todays Paper Masthead', 'click', 'Print Replica Link');" href="https://printreplica.staradvertiser.com/" target="_blank">Today's Paper</a></li>
+                    <li><a href="//www.staradvertiser.com/hawaii-weather" class="weather-icon"><img alt="Intervals of clouds and sunshine with a passing shower; breezy" src="https://staradvertiser.wpenginepowered.com/wp-content/themes/staradvertiser/images/small-icons/partly_cloudy_rain.png" width="20" style="vertical-align: middle;" />78</a><sup>&deg;</sup></li>
+                </ul><!-- /masthead-blurb -->
+            </div><!-- /col -->
+
+            <div class="col-sm col-sm-12 col-md-6 col-lg-3 pl-0 pr-0 pl-sm-3 pr-sm-3 text-center clear">
+                                <!-- /5136785/SA_Tile1_TopNews -->
+													<div id="div-gpt-ad-1443757323385-10" class="ad-unit float-sm-none float-md-right" style="width: 300px; height: 100px; margin: auto;">
+													<script type="text/javascript">
+													googletag.cmd.push(function() { googletag.display("div-gpt-ad-1443757323385-10"); });
+													</script>
+													</div>                            </div><!-- /col -->
+        </div><!-- /row -->
+            </header><!-- /masthead -->
+
+        
+        <div class="container-fluid">
+        <div class="row">
+            <!-- /5136785/SA_Top_TopNews -->
+															<div id="div-gpt-ad-1444028495459-39" class="ad-unit leader super text-center w-100 mx-3 mt-3 mb-4">
+															<script type="text/javascript">
+															googletag.cmd.push(function() { googletag.display("div-gpt-ad-1444028495459-39"); });
+															</script>
+															</div>        </div><!-- /row -->
+    </div><!-- /container-fluid -->
+        
+        
+        <!--BREAKING ALERT BAR-->
+<style>
+
+
+/*breaking-news*/
+.breaking-news-widget{	width: 100%;	margin: 0 auto;}
+.breaking-news-widget .breaking-news-story-container .arrow-right {    display:none;}
+.breaking-news-widget .breaking-news-title-container{	width:100%;	background-color: #080808;}
+.breaking-news-widget .breaking-news-story-container {	padding: 0;	background-color: #6b0000;	position:relative;}
+.breaking-news-widget .breaking-news-title{	color : white;	text-align: center;	overflow:hidden;}
+.breaking-news-widget .breaking-news-title h4{	font-weight: bold;	font-size: 18px;	color: #fff;	margin:10px 0;}
+.breaking-news-widget .breaking-news-story-container{	width:100%;	margin-right: 0;	padding:0;}
+.breaking-news-widget .breaking-news-story{    color : white;	text-align: center;	padding:0 30px;	overflow:hidden;}
+.breaking-news-widget .breaking-news-story a,.breaking-news-widget .breaking-news-story h4{	color : white;	font-weight: bold;	font-size: 18px;	margin:10px 0;}
+.breaking-news-widget .breaking-news-story a:hover, .breaking-news-widget .breaking-news-story h4:hover {  color: yellow;  text-decoration: none;	cursor: pointer;}
+.breaking-news-widget{	display:flex;    flex-wrap:wrap;    flex-direction:row;    justify-content:flex-start;    align-items:stretch;	display:-webkit-flex;	-webkit-flex-wrap:wrap;	-webkit-flex-direction: row;	-webkit-justify-content:flex-start;-webkit-align-items:stretch;}
+.breaking-news-widget .breaking-news-title h4,.breaking-news-widget .breaking-news-story a, .breaking-news-widget .breaking-news-story h4,div#beneath-story h3,div#beneath-story h4{font-family:'Open Sans', sans-serif !important}
+div#beneath-story{background:#2e2e2e;box-shadow:inset 0 0 1px 1px #3b3b3b;border-top:none;display:flex;flex-wrap:wrap;display:-webkit-flex;-webkit-flex-wrap: wrap;margin:auto;text-align:left;;}
+div#beneath-story a{text-decoration:none;}
+div#beneath-story div#main-story{width:60%;}
+div#beneath-story div#main-story div.content{padding:15px 15px 15px 15px;display:flex;flex-wrap:nowrap;display:-webkit-flex;-webkit-flex-wrap: nowrap;height:85%;}
+div#beneath-story div#main-story div.content div.image{padding-top:5px;overflow:hidden;flex-basis:0;flex-grow:3;-webkit-flex-basis:0;-webkit-flex-grow:3;}
+div#beneath-story div#main-story div.content div.image a{background-size:0;}
+div#beneath-story div#main-story div.content div.image img{width:100%;height:100%;object-fit:cover;-webkit-object-fit:cover;}
+div#beneath-story div#main-story div.content div.detail{position:relative;border-right:1px solid #3b3b3b;flex-basis:0;flex-grow:8;-webkit-flex-basis:0;-webkit-flex-grow:8;}
+div#beneath-story div#main-story div.content div.detail > div{padding:0 15px 0px 15px;margin-bottom:15px;}
+div#beneath-story div#main-story div.content div.detail > div.title a h3{color:#cccccc;transition: all 300ms linear 0s;font-size:18px;}
+div#beneath-story div#main-story div.content div.detail > div.title a:hover h3{color:#fff;}
+div#beneath-story div#main-story div.content div.detail > div.title p{font-size:12px;margin:0;color:#cccccc;}
+div#beneath-story div#main-story div.content div.detail > div.title p a{color:#008fd3;}
+div#beneath-story div#main-story div.content div.detail > div.title p i{color:#b90000;}
+div#beneath-story div#main-story div.content div.detail > div.title p span{color:#8fc6e0;font-style:italic;}
+div#beneath-story div#main-story div.content div.detail > div.leadtext{font-size:14px;color:#cccccc;}
+/*div#beneath-story div#main-story div.content div.detail > div.related.bottom{position:absolute;bottom:0;margin-bottom:5px;}*/
+div#beneath-story div.related a{font-size:14px;font-weight:bold;color:#cccccc;transition: all 300ms linear 0s;}
+div#beneath-story div.related a:hover{color:#fff;}
+div#beneath-story div.related i{color:#cccccc;margin-right:5px;}
+div#beneath-story div#developing-story{width:40%;position:relative;}
+div#beneath-story div#developing-story div.content{padding:15px 15px 0 0;display:flex;flex-wrap:wrap;display:-webkit-flex;-webkit-flex-wrap: wrap;}
+div#beneath-story div#developing-story div.content > div{padding:0 0 10px;}
+div#beneath-story div#developing-story div.content div.head h4{color:#8fc6e0;font-size:16px;}
+div#beneath-story div#developing-story div.content ul{color:#808080;list-style:disc;width:100%;margin:0 0 5px 5px;padding:0 0 0 8px;}
+/*div#beneath-story div#developing-story div.content ul li::before{position:relative;top:-3px;padding-right:5px;font-size:5px;content:"\f111";color:#808080;display:inline-block;}*/
+div#beneath-story div#developing-story div.content ul li{margin-bottom:6px;margin-left:4px;}
+div#beneath-story div#developing-story div.content ul li.fa,div#beneath-story div#developing-story div.content ul li.fas{position:relative;left:-12px;margin-left:0;}
+div#beneath-story div#developing-story div.content ul li.fa::before,div#beneath-story div#developing-story div.content ul li.fas::before{padding-right:5px;font-size:16px;}
+div#beneath-story div#developing-story div.content ul li.fa a,div#beneath-story div#developing-story div.content ul li.fas a{font-family:'Open Sans', sans-serif;}
+div#beneath-story div#developing-story div.content ul li a{color:#cccccc;font-size:16px;font-weight:bold;}
+div#beneath-story div#developing-story div.content ul li a:hover{color:#fff;}
+/*div#beneath-story div#developing-story div.content div.more.bottom{position:absolute;bottom:0;margin-bottom:15px;}*/
+div#beneath-story div#developing-story div.content div.more{width:auto;}
+div#beneath-story div#developing-story div.content div.more i{color:#cccccc;}
+div#beneath-story div#developing-story div.content div.more a{font-size:14px;font-weight:bold;color:#cccccc;}
+div#beneath-story div#developing-story div.content div.more a:hover{color:#fff;}
+/*#related-stories{width:100%;}
+#related-stories div.col{width:100%;}
+.related-stories li.has-thumb{display:block;clear:both;overflow:hidden;}
+.related-stories li .num{background:none !important;padding:0 !important;margin-top:-5px;}
+.related-stories li.has-thumb div.image{width:30%;float:left;margin-right:10px;}
+.related-stories li.has-thumb div.image a{background-size:0;display:block;}
+.related-stories li.has-thumb div.image img{width:100%;height:auto;object-fit:cover;-webkit-object-fit:cover;}
+.related-stories li.has-thumb .title{}*/
+/* IE9 */
+@media all and (min-width:0\0) and (min-resolution: .001dpcm)
+{
+   div#beneath-story{display:block;}
+   div#beneath-story div#main-story{float:left;}
+   div#beneath-story div#main-story div.content{display:blcok;}
+   div#beneath-story div#main-story div.content div.image img{height:auto;display:none;}
+   div#beneath-story div#main-story div.content div.image{position:relative;display:table;width:35%;height:100%;}
+   div#beneath-story div#main-story div.content div.image a{display:block;position: absolute;top: 0;left: 0;bottom: 0;right: 0;background-size: cover;background-repeat: no-repeat;background-position: 50% 50%;}
+   div#beneath-story div#main-story div.content div.detail{float:left;}
+   div#beneath-story div#developing-story div.content{display:block;}
+   div#beneath-story div#developing-story{float:left;}
+   div#beneath-story div#developing-story div.content ul li{font-size:24px;line-height:16px;}
+   div#beneath-story div#developing-story div.content div.more.bottom{position:relative;margin-bottom:0;}
+   .breaking-news-widget{display:block;overflow:hidden;}
+   .breaking-news-widget > div{overflow:hidden;}
+   .breaking-news-widget > .breaking-news-title-container{width:100%;}
+   .breaking-news-widget > .breaking-news-story-container{width:100%;}
+   .breaking-news-widget .breaking-news-story{text-align:center !important;}
+   .breaking-news-widget .breaking-news-story-container .arrow-right{display:none;}
+   div#beneath-story div#main-story div.content div.image img{height:auto;}
+   div#beneath-story div#developing-story div.content ul li{font-size:24px;line-height:14px;margin-top:2px;}
+   div#beneath-story div#developing-story div.content ul li.fa,div#beneath-story div#developing-story div.content ul li.fas{margin-top:0;}
+   div#beneath-story div#developing-story div.content ul li a{position:relative;top:-3px;}
+   div#beneath-story div#developing-story div.content ul li.fa a,div#beneath-story div#developing-story div.content ul li.fas a{top:0;}
+
+}
+/* IE10+ */
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+   div#beneath-story div#developing-story div.content ul li{font-size:24px;line-height:14px;margin-top:2px;}
+   div#beneath-story div#developing-story div.content ul li.fa,div#beneath-story div#developing-story div.content ul li.fas{margin-top:0;}
+   div#beneath-story div#developing-story div.content ul li a{position:relative;top:-3px;}
+   div#beneath-story div#developing-story div.content ul li.fa a,div#beneath-story div#developing-story div.content ul li.fas a{top:0;}
+   div#beneath-story div#main-story div.content div.image img{height:auto;display:none;}
+   div#beneath-story div#main-story div.content div.image{position:relative;display:table;width:35%;height:100%;max-height:130px;}
+   div#beneath-story div#main-story div.content div.image a{display:block;position: absolute;top: 0;left: 0;bottom: 0;right: 0;background-size: cover;background-repeat: no-repeat;background-position: 50% 50%;}
+}
+@media screen and (min-width:769px) {
+	/*.related-stories li.has-thumb div.image img{max-height:65px;}
+	#breaking-alert {
+		margin:15px auto 0;
+	}*/
+   .breaking-news-widget {
+       flex-wrap:nowrap;
+	   -webkit-flex-wrap:nowrap;
+	   overflow:hidden;
+   }
+
+    .breaking-news-widget > .breaking-news-title-container {
+        flex-basis:170px;
+		-webkit-flex-basis:170px;
+        order:1;
+		-webkit-order:1;
+		padding:0 10px;
+    }
+    .breaking-news-widget > .breaking-news-story-container {
+        flex-basis:1;
+		-webkit-flex-basis:1;
+        order:2;
+		-webkit-order:2;
+		margin-left:0;
+		background:#711c1a;
+		width:100%;
+		flex:1;
+		-webkit:flex:1;
+    }
+    .breaking-news-widget > .breaking-news-story-right {
+        flex-basis:200px;
+		-webkit-flex-basis:200px;
+        order:3;
+		-webkit-order:3;
+    }
+	.breaking-news-widget .breaking-news-story{
+		padding-left:40px;
+		text-align: left;
+	}
+	.breaking-news-widget .breaking-news-story-container .arrow-right {
+		display:block;
+		width: 0px;
+		height: 0px;
+		border-top: 23px solid transparent;
+		border-bottom: 23px solid transparent;
+		border-left: 23px solid #080808;
+		position: absolute;
+		left: 0px;
+	}
+}
+@media screen and (max-width:768px) {
+	/*div#alert-box{margin:20px 20px 0 20px;}*/
+	div#beneath-story{width:100%;min-width:0;max-width:none;}
+	div#beneath-story div#main-story{width:100%;}
+	div#beneath-story div#developing-story{width:100%;}
+	div#beneath-story div#main-story div.content{/*display:block;*/padding-bottom:0;}
+	div#beneath-story div#main-story div.content div.image{width:35%;float:left;}
+	div#beneath-story div#main-story div.content div.detail{width:64%;border:none;float:left;}
+	div#beneath-story div#main-story div.content div.detail > div{padding-right:0;}
+	div#beneath-story div#main-story div.content div.detail > div.related.bottom,div#beneath-story div#developing-story div.content div.more.bottom{position:relative !important;}
+	div#beneath-story div#developing-story{clear:both;}
+	div#beneath-story div#developing-story div.content{padding:15px;}
+	div#beneath-story div#main-story div.content div.detail > div.related,div#beneath-story div#developing-story div.content div.more{margin-bottom:0 !important;padding-bottom:0;margin-top:0;}
+	div#beneath-story div#developing-story div.content ul{margin-bottom:10px}
+	.breaking-news-widget .breaking-news-title h4{display:inline-block;background:#000;padding:0 10px 2px;}
+	.breaking-news-widget .breaking-news-title-container{background:#6b0000;}
+}
+@media screen and (max-width:460px) {
+	div#beneath-story div#main-story div.content div.detail > div.leadtext{display:none;}
+	/*div#alert-box{margin:20px 10px 0 10px;}*/
+	div#beneath-story div#main-story div.content{display:block;padding:5px 10px;}
+	div#beneath-story div#developing-story div.content{padding:10px;}
+	div#beneath-story div#main-story div.content div.image{float:none;width:100%;height:auto;max-width:none;max-height:none;margin-left:auto;margin-right:auto;}
+	div#beneath-story div#main-story div.content div.image img{max-width:100%;height:auto;width:100%;max-height:none;}
+	div#beneath-story div#main-story div.content div.detail{float:none;width:100%;}
+	div#beneath-story div#main-story div.content div.detail > div{padding-left:0;}
+	/*div.top-leader{margin-left:10px !important;margin-right:10px !important;}*/
+}
+#breaking-alert,div#beneath-story{width:100%;}
+</style>
+        
+        <div id="story-section" class="container-fluid narrow mb-4 pb-4">
+            <div class="row">
+
+                <div class="col-12 col-sm-12 col-lg-8 mr-lg-4 pr-lg-4 border-right">
+                    
+                    <!-- Story Starts Here -->
+                    <article id="article-container">
+                        <h5 class="category-heading mb-3"><a href="https://www.staradvertiser.com/category/breaking-news/" rel="category tag">Top News</a></h5>
+
+                        <h1 class="post-title mb-3">Paper money being shunned for fear of coronavirus spread</h1>
+
+                        <div class="sticky-top byline mb-4 px-0 pb-0 text-center text-sm-left clear">
+                            <ul class="float-sm-left mb-2">
+                                                                                                            <li class="custom_byline">By Associated Press</li>
+                                                                                                        <li class="postdate ">
+                                    March 19, 2020                                </li>
+                                                            </ul><!-- /float-left -->
+                            
+                            <ul class="social float-sm-right mt-2 mt-sm-0">
+                                <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://www.staradvertiser.com/2020/03/19/breaking-news/paper-money-being-shunned-for-fear-of-coronavirus-spread/" target="_blank" title="Share on Facebook"><i class="fb fab fa-facebook"></i></a></li>
+                                <li class="d-none d-md-inline-block"><a href="https://reddit.com/submit?url=https://www.staradvertiser.com/2020/03/19/breaking-news/paper-money-being-shunned-for-fear-of-coronavirus-spread/&title=Paper money being shunned for fear of coronavirus spread" target="_blank"><i class="rdt fab fa-reddit-square"></i></a></li>
+                                <li><a href="https://twitter.com/share?url=https://www.staradvertiser.com/2020/03/19/breaking-news/paper-money-being-shunned-for-fear-of-coronavirus-spread/&text=Paper money being shunned for fear of coronavirus spread via @staradvertiser" target="_blank" title="Share on Twitter"><i class="tw fab fa-twitter-square"></i></a></li>
+                                <li><a href="https://www.linkedin.com/shareArticle?url=https://www.staradvertiser.com/2020/03/19/breaking-news/paper-money-being-shunned-for-fear-of-coronavirus-spread/" target="_blank" title="Share on LinkedIn"><i class="lki fab fa-linkedin"></i></a></li>
+                                <li class="sep"><a href="#" onclick="javascript:window.location='mailto:?subject=Here%20is%20a%20Honolulu%20Star-Advertiser%20article%20you%20might%20like&body=I saw this article in the Honolulu Star-Advertiser and thought you might find it interesting: ' + window.location; return false" title="Email a Friend"><i class="env fas fa-envelope"></i></a></li>
+                                <li><a href="#section-before-comments" title="See Comments"><i class="com fas fa-comment-dots" aria-hidden="true"></i></a></li>
+                                <li><a href="javascript:window.print()"><i class="pri fas fa-print"></i></a></li>
+                                <li><a onclick="ga('send', 'event', 'Web Push Notifications', 'click', 'Subscribe Button on Article');" href="/web-notifications" style="color: #e8ae00;" title="Get alerted when the next breaking story hits."><i class="fas fa-bell"></i></a></li>
+                            </ul><!-- /social -->
+                            
+                                                    </div><!-- /byline -->
+                        
+                        <div id="article-content" class="clearfix">
+                                                                        <div class="carousel-story mb-4 mb-xl-5">
+                                                <ul class="bxslider">
+                                                    <li><div class="carousel-story-image"><img width="760" height="509" src="https://staradvertiser.wpenginepowered.com/wp-content/uploads/2020/03/web1_AP20079673462215.jpg" class="attachment-full size-full" alt="ASSOCIATED PRESS / 2019
+                                A growing number of businesses and individuals worldwide have stopped using banknotes in fear that physical currency, handled by tens of thousands of people over their useful life, could be a vector for the spreading coronavirus." loading="lazy" srcset="https://staradvertiser.wpenginepowered.com/wp-content/uploads/2020/03/web1_AP20079673462215.jpg 760w, https://staradvertiser.wpenginepowered.com/wp-content/uploads/2020/03/web1_AP20079673462215-300x201.jpg 300w, https://staradvertiser.wpenginepowered.com/wp-content/uploads/2020/03/web1_AP20079673462215-597x400.jpg 597w" sizes="(max-width: 760px) 100vw, 760px" /></div><!-- /carousel-story-image --><div class="caption"><p>ASSOCIATED PRESS / 2019</p>
+                                <p>A growing number of businesses and individuals worldwide have stopped using banknotes in fear that physical currency, handled by tens of thousands of people over their useful life, could be a vector for the spreading coronavirus.</p></div><!-- /caption --></li>                                                </ul><!-- /bxslider -->
+                                            </div><!-- /carousel-story -->
+                                        <div class="mb-4 mr-4 float-md-left"><!-- /5136785/SA_Box1_TopNews -->
+													<div id="div-gpt-ad-1444028495459-56" class="ad-unit" style="width: 300px; height: auto; margin:0 auto;">
+													<script type="text/javascript">
+													googletag.cmd.push(function() { googletag.display("div-gpt-ad-1444028495459-56"); });
+													</script>
+													</div></div><div  class="hsa-paywall"><p>NEW YORK >> In a world suffering a pandemic, cash is no longer king.</p>
+<p>A growing number of businesses and individuals worldwide have stopped using banknotes in fear that physical currency, handled by tens of thousands of people over their useful life, could be a vector for the spreading coronavirus.</p>
+<p>Public officials and health experts have said that the risk of transferring the virus person-to-person through the use of banknotes is small. But that has not stopped businesses from refusing to accept currency and some countries from urging their citizens to stop using banknotes altogether.</p>
+<p>Open Books, a non-profit bookstore in Chicago, sent an email to customers last week asking individuals not to use cash. A chain of diners in Washington State has also stopped accepting cash. And delivery services like Grubhub, Door Dash, and others have instituted &ldquo;no contact&rdquo; deliveries, and have either stopped offering cash as a payment option or are actively discouraging it.</p>
+<p>Experts say cash does carry a risk of transmitting the virus, but the risk from cash so far is small compared with other transmission routes. A scientific paper published early in the outbreak found the virus can live on cardboard for up to 24 hours and up to three days on plastic and stainless steel. The researchers, however, did not test whether it can live on banknote paper.</p>
+<p>The presence of live virus particles on banknotes does not mean they are a health hazard, public health experts said. Virus particles are unlikely to return to the air, or aerosolize, once on a surface.</p>
+<p>&ldquo;It&rsquo;s not impossible that there might be traces of virus on dollar bills but if you wash your hands it should provide adequate protections, you shouldn&rsquo;t need anything else,&rdquo; said Julie Fischer, a professor at the Center for Global Health Science and Society at Georgetown University, on C-SPAN.</p>
+<p>Other devices used to pay for items are just as likely to be vectors for disease transfer. Credit and debit cards are made of plastic and metal. ATMs are touched by hundreds of human hands a day. And there have been studies that show smartphones are heavily contaminated with bacteria because of their constant use.</p>
+<p>Even the Federal Reserve has taken efforts to make sure the money supply is not contaminated. Banknotes that circulated in Europe and Asia are being quarantined for seven to 10 days as a &ldquo;precautionary measure,&rdquo; according to a Federal Reserve spokesperson.</p>
+<p>While businesses are discouraging cash usage, there have been reports of customers making large withdrawals from ATMs in several parts of the country. Some banks have had to order additional cash from the Fed or keep ATMs stocked at higher levels to allow larger customer withdrawals.</p>
+<p>Banknote avoidance is not just happening in the U.S. In South Korea, which has been more successful in stemming the outbreak, the country&rsquo;s central bank took all banknotes out of circulation for two weeks or, in some cases, burned paper money.</p>
+<p>Iran is suffering the worst outbreak of the virus in the Middle East. Using cash there is common, but in recent weeks many people have avoided it and banks have announced that they will not accept cash from customers. Iranians often have multiple debit cards but cash is widely used in small-scale transactions, like buying bread in bakeries or leaving a tip. Many people have started even being careful in how they hand over debit cards, as contactless payment methods haven&rsquo;t caught on there.</p>
+</div><!-- /hsa-paywall -->                            
+                            
+                                                        
+                            
+                                                    </div><!-- /article-content -->
+                        
+                                                                        
+                        <!-- Comments -->
+                        <span id="section-before-comments"></span>
+                        <div class="comments-wrapper my-4 clear">
+                                		<div id="comments-tab" class="comment-toggle blue sa-btn" onClick="ga('send', 'event', 'Click', 'Nav', 'Comments');">
+        		<div id="comment-arrow" class="rotate float-right">
+                    <i class="fas fa-chevron-down"></i>
+                </div><!-- /comments-arrow -->
+        		<div id="comments-count">
+        			<i class="fas fa-comment-dots"></i>
+        			Comments (10)
+        		</div><!-- /comments-count -->
+    		</div><!-- /comments-tab -->
+			<div id="comments" class="comments-area p-3">
+				<div id="comments-rules-container" class="mb-3 p-3">
+					<p class="mb-3">By participating in online discussions you acknowledge that you have agreed to the <a href="//www.staradvertiser.com/about/terms-of-service/">Terms of Service</a>. An insightful discussion of ideas and viewpoints is encouraged, but comments must be civil and in good taste, with no personal attacks. If your comments are inappropriate, you may be banned from posting. Report comments if you believe they do not follow our <a href="//www.staradvertiser.com/comment-guidelines/">guidelines</a>.</p>
+                    <p>Having trouble with comments? <a href="//www.staradvertiser.com/comment-faqs/">Learn more here</a>.</p>
+				</div><!-- /comments-rules-container -->
+				<div id="comments-container" class="p-3">
+									<style type="text/css">
+					.satalk-login-link a {
+					    padding: 2%;
+					    text-align: center;
+					    background: #0083de;
+					    display: block;
+		                font-size: 14px;
+		                font-weight:bold;
+				        color: #FFF !important;
+				        cursor: pointer;
+		                text-decoration:none;
+					}
+
+					.satalk-login-link a:hover {
+		                background-color: #114465;
+		            }
+				</style>
+				<div class="satalk-login-link">
+					<a href="/user-access/?redirect_to=https%3A%2F%2Fwww.staradvertiser.com%2F2020%2F03%2F19%2Fbreaking-news%2Fpaper-money-being-shunned-for-fear-of-coronavirus-spread%2F">Please log in to comment.</a>
+				</div>
+						<script type="text/javascript">
+				var isCommentsLoaded = false;
+				function loadCommentsScript()
+				{
+					var s,
+						r,
+						t;
+					r = false;
+					s = document.createElement('script');
+					s.type = 'text/javascript';
+					s.src = "https://satalk.staradvertiser.com/static/embed.js";
+					s.onload = s.onreadystatechange = function() {
+						//console.log( this.readyState ); //uncomment this line to see which ready states are called.
+						if ( !r && (!this.readyState || this.readyState == 'complete') )
+						{
+							r = true;
+							Coral.talkStream = Coral.Talk.render(document.getElementById('coral_talk_558461156'), 		{
+								talk: 'https://satalk.staradvertiser.com',
+								asset_url: 'https://www.staradvertiser.com/2020/03/19/breaking-news/paper-money-being-shunned-for-fear-of-coronavirus-spread/',								auth_token: ''
+							});
+							isCommentsLoaded = true;
+						}
+					};
+					t = document.getElementsByTagName('script')[0];
+					t.parentNode.insertBefore(s, t);
+				}
+
+				$(document).ready(function(){
+					$('.comment-toggle').click(function() {
+						if( !isCommentsLoaded )
+						{
+							loadCommentsScript();
+						}
+					});
+									});
+			</script>
+			<div id="coral_talk_558461156"></div>
+						</div><!-- /comments-container -->
+			</div><!-- /comments -->
+			
+		                        </div><!-- /comments-wrapper -->
+                        
+
+                        <!-- Taboola Under Article Widget -->
+<div id="taboola-below-article-thumbnails" class="d-block"></div>
+<script type="text/javascript">
+    window._taboola = window._taboola || [];
+    _taboola.push({
+        mode: 'thumbnails-a',
+        container: 'taboola-below-article-thumbnails',
+        placement: 'Below Article Thumbnails',
+        target_type: 'mix'
+    });
+</script>
+                        
+                        
+                        <div class="taboola-inset">
+                            <!-- Post Navigation -->
+                            <div class="single-navigation mb-4 mb-xl-5 row">
+                                                                                                <div class="nav-left col-12 col-sm-6 mb-4 mb-sm-0">
+                                    <a class="category-heading" href="https://www.staradvertiser.com/2020/03/19/breaking-news/olympic-flame-arrives-in-japan-as-doubts-grow-over-tokyo-games-due-to-coronavirus-pandemic/"><i class="fas fa-chevron-left"></i> Previous Story</a>
+                                    <h6 class="post-nav-title"><a href="https://www.staradvertiser.com/2020/03/19/breaking-news/olympic-flame-arrives-in-japan-as-doubts-grow-over-tokyo-games-due-to-coronavirus-pandemic/">Olympic flame arrives in Japan as doubts grow over Tokyo Games due to coronavirus pandemic</a></h6>
+                                </div><!-- /col-6 -->
+                                                                                                <div class="nav-right text-sm-right col-12 col-sm-6 mb-4 mb-sm-0">
+                                    <a class="category-heading" href="https://www.staradvertiser.com/2020/03/19/breaking-news/what-you-need-to-know-today-about-the-virus-outbreak/">Next Story <i class="fas fa-chevron-right"></i></a>
+                                    <h6 class="post-nav-title"><a href="https://www.staradvertiser.com/2020/03/19/breaking-news/what-you-need-to-know-today-about-the-virus-outbreak/">What you need to know today about the coronavirus outbreak</a></h6>
+                                </div><!-- /col-6 -->
+                                                            </div><!-- /row -->
+                            
+                            
+                            <!-- Coronavirus Sign-up Link -->
+                            <div class="text-center my-4 py-3 font-italic" style="border-top: 1px solid #b43232; border-bottom: 1px solid #b43232; color: #b43232;">
+                                <p><a href="/coronavirus">Click here</a> to see our full coverage of the coronavirus outbreak. <a href="https://forms.gle/q4bHTvBLmMqY2XQE8" target="_blank">Submit</a> your coronavirus news tip.</p>
+                            </div>
+
+
+                            <!-- Web Push Notifications -->
+                            <div class="web-push-container row my-4 mb-xl-5 p-0 no-gutters alert alert-info">
+                                <div class="d-none d-md-block col-2 p-3 text-center">
+                                    <img class="d-block mx-auto w-100" alt="" src="https://staradvertiser.wpenginepowered.com/wp-content/themes/staradvertiser/images/web-push-bell.gif" />
+                                </div><!-- /col -->
+                                <div class="col-12 col-md-10 p-3 text-center text-md-left">
+                                    <h6 class="mb-2"><i class="d-md-none fas fa-bell mr-2" style="color: #e8ae00;"></i> Be the first to know</h6>
+                                    Get <a onclick="ga('send', 'event', 'Web Push Notifications', 'click', 'Subscribe Button on Article');" href="/web-notifications">web push notifications</a> from <em>Star-Advertiser</em> when the next breaking story happens &mdash; it's FREE! You just need a supported web browser.<br />
+                                    <a onclick="ga('send', 'event', 'Web Push Notifications', 'click', 'Subscribe Button on Article');" href="/web-notifications" class="d-inline-block mt-2 badge badge-primary" style="font-size: 1em; text-decoration: none;">Subscribe for this feature</a>
+                                </div><!-- /col -->
+                            </div><!-- /web-push-container -->
+                        </div><!-- /taboola-inset -->
+                    </article><!-- /article-container -->
+
+                </div><!-- /col -->
+                
+                
+                <!-- Right Rail -->
+                <div class="right-rail col-12 col-sm-12 col-lg-4 pt-4 pt-lg-0 px-lg-0">
+                                        
+                    
+                            <div class="ad-code-home-widget">
+           <div class="row mb-4 mb-lg-5">
+                <!-- /5136785/SA_Box2_TopNews -->
+												<div id="div-gpt-ad-1444028495459-70" class="ad-unit" style="height:auto; width:300px; margin:0 auto;">
+												<script type="text/javascript">
+												googletag.cmd.push(function() { googletag.display("div-gpt-ad-1444028495459-70"); });
+												</script>
+												</div>            </div>
+            <!-- <p>top_news_breaking</p> -->
+        </div>
+
+
+        		<!--Most Read-->
+		<aside class="most-read mb-4 mb-xl-5">
+			<h5 class="category-heading">Subscriber Favorites</h5>
+			  <ol>
+			                  <li class="story">
+				  <span class="num">1</span>
+				  <h6>
+				  				  <a class="premium" href="#" data-toggle="tooltip" title="" data-original-title="Blue stars next to story headlines indicate subscriber content. Please log in to view this story.">
+				    <i class="fas fa-star blue"></i>
+				  </a> 
+				  				  <a href="https://www.staradvertiser.com/2022/10/26/hawaii-news/hawaii-semisub-owners-charged-with-fraud/">Hawaii Semisub owners charged with fraud</a>
+				  </h6>
+				</li>
+				                 <li class="story">
+				  <span class="num">2</span>
+				  <h6>
+				  				  <a class="premium" href="#" data-toggle="tooltip" title="" data-original-title="Blue stars next to story headlines indicate subscriber content. Please log in to view this story.">
+				    <i class="fas fa-star blue"></i>
+				  </a> 
+				  				  <a href="https://www.staradvertiser.com/2022/10/26/hawaii-news/hawaiian-airlines-loses-9-3m-amid-japan-visitor-lag/">Hawaiian Airlines loses $9.3 million amid Japan visitor lag</a>
+				  </h6>
+				</li>
+				                 <li class="story">
+				  <span class="num">3</span>
+				  <h6>
+				  				  <a class="premium" href="#" data-toggle="tooltip" title="" data-original-title="Blue stars next to story headlines indicate subscriber content. Please log in to view this story.">
+				    <i class="fas fa-star blue"></i>
+				  </a> 
+				  				  <a href="https://www.staradvertiser.com/2022/10/26/sports/hawaii-prep-world/vince-nihipali-steps-down-as-moanalua-football-coach-2/">Vince Nihipali steps down as Moanalua football coach</a>
+				  </h6>
+				</li>
+				                 <li class="story">
+				  <span class="num">4</span>
+				  <h6>
+				  				  <a href="https://www.staradvertiser.com/2022/10/26/breaking-news/herschel-walker-faces-abortion-allegation-from-2nd-accuser/">Herschel Walker faces abortion allegation from 2nd accuser</a>
+				  </h6>
+				</li>
+				                 <li class="story">
+				  <span class="num">5</span>
+				  <h6>
+				  				  <a class="premium" href="#" data-toggle="tooltip" title="" data-original-title="Blue stars next to story headlines indicate subscriber content. Please log in to view this story.">
+				    <i class="fas fa-star blue"></i>
+				  </a> 
+				  				  <a href="https://www.staradvertiser.com/2022/10/26/sports/dave-reardon-the-transfer-portal-hurt-uh-but-it-helped-the-current-roster-grow/">Dave Reardon: The transfer portal ‘hurt’ UH but it helped the current roster grow</a>
+				  </h6>
+				</li>
+				               </ol>
+        </aside>
+        <div style="clear: both;"></div>
+		<!--Most Read-->
+
+
+        					<!-- Newsletter Sign-up Widget -->
+                    <div class="breaking-news-signup text-center p-2 py-sm-3 py-md-4 py-lg-2 mb-4 mb-xl-5 clear">
+                        <span class="title"><i class="fa fa-envelope" aria-hidden="true"></i> <strong>Get the latest news by email</strong></span>
+                        <a href="https://www.staradvertiser.com/news-alerts-signup/" target="_blank" class="sa-btn blue inlineblock">Sign Up</a>
+                    </div><!-- /breaking-news-signup -->
+                    
+		<aside id="text-70" class="widget widget_text">			<div class="textwidget"><p><script id="origami-ad-widget" src="https://origami.secure.ownlocal.com/origami-widget.js" async data-ad-size="300x250" data-ad-container-ids="origami-ad-container-7-days,origami-ad-container-30-days">
+</script></p>
+<div id="origami-ad-container-7-days" class="mb-4 mb-xl-5" data-partner-id="11d8bf01-4a0d-42f1-9c82-39f1b7726234"></div>
+</div>
+		</aside><aside id="text-65" class="widget widget_text">			<div class="textwidget"><p><!-- CitySpark Calendar Widget --></p>
+<div class="citysparkWidget mb-4 mb-xl-5" data-cswidget="9865"> </div>
+<p><script type="text/javascript" async defer src="//cdn.cityspark.com/wid/get.js"> </script></p>
+</div>
+		</aside>        <aside id="related-stories" class="related-stories most-read mb-4 mb-xl-5">
+            <h5 class="category-heading">More Coronavirus Outbreak</h5>
+            <ol>
+                                                        <li class="story has-thumb clear">
+                        <div class="row">
+                            <div class="image col-12 col-md-4">
+                                <a href="https://www.staradvertiser.com/2022/10/26/breaking-news/hawaii-health-officials-report-1327-new-covid-19-infections-2-coronavirus-related-deaths/"><img width="300" height="200" src="https://staradvertiser.wpenginepowered.com/wp-content/plugins/cmd-hsa-lazy-load/assets/img/loader-sa.jpg" data-src="https://staradvertiser.wpenginepowered.com/wp-content/uploads/2022/10/web1_20221026-web-covid-test-300x200.jpg" class="lozad lozad-hidden w-100 wp-post-image" alt="CRAIG T. KOJIMA / AUG. 10
+                                Rubon Jorlanin, intake specialist, works on COVID-19 test samples at Daniel K. Inouye Airport." loading="lazy" data-srcset="https://staradvertiser.wpenginepowered.com/wp-content/uploads/2022/10/web1_20221026-web-covid-test-300x200.jpg 300w, https://staradvertiser.wpenginepowered.com/wp-content/uploads/2022/10/web1_20221026-web-covid-test-600x400.jpg 600w, https://staradvertiser.wpenginepowered.com/wp-content/uploads/2022/10/web1_20221026-web-covid-test.jpg 760w" data-sizes="(max-width: 300px) 100vw, 300px" /><noscript><img width="300" height="200" src="https://staradvertiser.wpenginepowered.com/wp-content/uploads/2022/10/web1_20221026-web-covid-test-300x200.jpg" class="w-100 wp-post-image" alt="CRAIG T. KOJIMA / AUG. 10
+                                Rubon Jorlanin, intake specialist, works on COVID-19 test samples at Daniel K. Inouye Airport." loading="lazy" srcset="https://staradvertiser.wpenginepowered.com/wp-content/uploads/2022/10/web1_20221026-web-covid-test-300x200.jpg 300w, https://staradvertiser.wpenginepowered.com/wp-content/uploads/2022/10/web1_20221026-web-covid-test-600x400.jpg 600w, https://staradvertiser.wpenginepowered.com/wp-content/uploads/2022/10/web1_20221026-web-covid-test.jpg 760w" sizes="(max-width: 300px) 100vw, 300px" /></noscript></a>
+                            </div><!-- /col -->
+                            <div class="title col-12 col-md-8 pl-md-0">
+                                <h6>
+                                                                <a href="https://www.staradvertiser.com/2022/10/26/breaking-news/hawaii-health-officials-report-1327-new-covid-19-infections-2-coronavirus-related-deaths/">Hawaii Health officials report 1,327 new COVID-19 infections, 2 coronavirus-related deaths</a>
+                                </h6>
+                            </div><!-- /col -->
+                        </div><!-- /row -->
+                    </li><!-- /story -->
+                    
+                                                            <li class="story has-thumb clear">
+                        <div class="row">
+                            <div class="image col-12 col-md-4">
+                                <a href="https://www.staradvertiser.com/2022/10/26/breaking-news/china-using-inhalable-covid-19-vaccine/"><img width="300" height="200" src="https://staradvertiser.wpenginepowered.com/wp-content/plugins/cmd-hsa-lazy-load/assets/img/loader-sa.jpg" data-src="https://staradvertiser.wpenginepowered.com/wp-content/uploads/2022/10/web1_13098201-9a64edbac42443a492a43ebcfca40fb5-300x200.jpg" class="lozad lozad-hidden w-100 wp-post-image" alt="SHANGHAI MEDIA GROUP VIA ASSOCIATED PRESS
+                                A medical worker hands over aerosolised COVID vaccine developed by Chinese biopharmaceutical company CanSino Biologics Inc. in Shanghai on Wednesday. The Chinese city of Shanghai started administering the inhalable COVID-19 vaccine on Wednesday in what appears to be a world first." loading="lazy" data-srcset="https://staradvertiser.wpenginepowered.com/wp-content/uploads/2022/10/web1_13098201-9a64edbac42443a492a43ebcfca40fb5-300x200.jpg 300w, https://staradvertiser.wpenginepowered.com/wp-content/uploads/2022/10/web1_13098201-9a64edbac42443a492a43ebcfca40fb5-600x400.jpg 600w, https://staradvertiser.wpenginepowered.com/wp-content/uploads/2022/10/web1_13098201-9a64edbac42443a492a43ebcfca40fb5.jpg 760w" data-sizes="(max-width: 300px) 100vw, 300px" /><noscript><img width="300" height="200" src="https://staradvertiser.wpenginepowered.com/wp-content/uploads/2022/10/web1_13098201-9a64edbac42443a492a43ebcfca40fb5-300x200.jpg" class="w-100 wp-post-image" alt="SHANGHAI MEDIA GROUP VIA ASSOCIATED PRESS
+                                A medical worker hands over aerosolised COVID vaccine developed by Chinese biopharmaceutical company CanSino Biologics Inc. in Shanghai on Wednesday. The Chinese city of Shanghai started administering the inhalable COVID-19 vaccine on Wednesday in what appears to be a world first." loading="lazy" srcset="https://staradvertiser.wpenginepowered.com/wp-content/uploads/2022/10/web1_13098201-9a64edbac42443a492a43ebcfca40fb5-300x200.jpg 300w, https://staradvertiser.wpenginepowered.com/wp-content/uploads/2022/10/web1_13098201-9a64edbac42443a492a43ebcfca40fb5-600x400.jpg 600w, https://staradvertiser.wpenginepowered.com/wp-content/uploads/2022/10/web1_13098201-9a64edbac42443a492a43ebcfca40fb5.jpg 760w" sizes="(max-width: 300px) 100vw, 300px" /></noscript></a>
+                            </div><!-- /col -->
+                            <div class="title col-12 col-md-8 pl-md-0">
+                                <h6>
+                                                                <a href="https://www.staradvertiser.com/2022/10/26/breaking-news/china-using-inhalable-covid-19-vaccine/">China using inhalable COVID-19 vaccine</a>
+                                </h6>
+                            </div><!-- /col -->
+                        </div><!-- /row -->
+                    </li><!-- /story -->
+                    
+                                                            <li class="story has-thumb clear">
+                        <div class="row">
+                            <div class="image col-12 col-md-4">
+                                <a href="https://www.staradvertiser.com/2022/10/25/breaking-news/omicron-variants-bq-1-bq-1-1-and-xbb-1-detected-in-hawaii/"><img width="300" height="200" src="https://staradvertiser.wpenginepowered.com/wp-content/plugins/cmd-hsa-lazy-load/assets/img/loader-sa.jpg" data-src="https://staradvertiser.wpenginepowered.com/wp-content/uploads/2022/10/web1_20221025-web-vax-300x200.jpg" class="lozad lozad-hidden w-100 wp-post-image" alt="CRAIG T. KOJIMA / SEPT. 11
+                                A syringe is filled at a drive-thru flu and COVID-19 vaccination clinic at The Queen&#146;s Medical Center &#8211; West O&#145;ahu." loading="lazy" data-srcset="https://staradvertiser.wpenginepowered.com/wp-content/uploads/2022/10/web1_20221025-web-vax-300x200.jpg 300w, https://staradvertiser.wpenginepowered.com/wp-content/uploads/2022/10/web1_20221025-web-vax-600x400.jpg 600w, https://staradvertiser.wpenginepowered.com/wp-content/uploads/2022/10/web1_20221025-web-vax.jpg 760w" data-sizes="(max-width: 300px) 100vw, 300px" /><noscript><img width="300" height="200" src="https://staradvertiser.wpenginepowered.com/wp-content/uploads/2022/10/web1_20221025-web-vax-300x200.jpg" class="w-100 wp-post-image" alt="CRAIG T. KOJIMA / SEPT. 11
+                                A syringe is filled at a drive-thru flu and COVID-19 vaccination clinic at The Queen&#146;s Medical Center &#8211; West O&#145;ahu." loading="lazy" srcset="https://staradvertiser.wpenginepowered.com/wp-content/uploads/2022/10/web1_20221025-web-vax-300x200.jpg 300w, https://staradvertiser.wpenginepowered.com/wp-content/uploads/2022/10/web1_20221025-web-vax-600x400.jpg 600w, https://staradvertiser.wpenginepowered.com/wp-content/uploads/2022/10/web1_20221025-web-vax.jpg 760w" sizes="(max-width: 300px) 100vw, 300px" /></noscript></a>
+                            </div><!-- /col -->
+                            <div class="title col-12 col-md-8 pl-md-0">
+                                <h6>
+                                                                <a class="premium" href="#" data-toggle="tooltip" title="Blue stars next to story headlines indicate subscriber content. Please log in to view this story."><i class="fas fa-star blue"></i></a> 
+                                                                <a href="https://www.staradvertiser.com/2022/10/25/breaking-news/omicron-variants-bq-1-bq-1-1-and-xbb-1-detected-in-hawaii/">Omicron variants BQ.1, BQ.1.1 and XBB.1 detected in Hawaii</a>
+                                </h6>
+                            </div><!-- /col -->
+                        </div><!-- /row -->
+                    </li><!-- /story -->
+                    
+                                                            <li class="story has-thumb clear">
+                        <div class="row">
+                            <div class="image col-12 col-md-4">
+                                <a href="https://www.staradvertiser.com/2022/10/25/breaking-news/biden-to-get-updated-covid-19-booster-shot-promote-vaccine/"><img width="300" height="200" src="https://staradvertiser.wpenginepowered.com/wp-content/plugins/cmd-hsa-lazy-load/assets/img/loader-sa.jpg" data-src="https://staradvertiser.wpenginepowered.com/wp-content/uploads/2022/10/web1_13094522-fb4db186c3b84e968c25ef255f7ecf3b-300x200.jpg" class="lozad lozad-hidden w-100 wp-post-image" alt="ASSOCIATED PRESS
+                                President Joe Biden speaks during an event to celebrate Diwali, in the East Room of the White House, Monday, in Washington." loading="lazy" data-srcset="https://staradvertiser.wpenginepowered.com/wp-content/uploads/2022/10/web1_13094522-fb4db186c3b84e968c25ef255f7ecf3b-300x200.jpg 300w, https://staradvertiser.wpenginepowered.com/wp-content/uploads/2022/10/web1_13094522-fb4db186c3b84e968c25ef255f7ecf3b-600x400.jpg 600w, https://staradvertiser.wpenginepowered.com/wp-content/uploads/2022/10/web1_13094522-fb4db186c3b84e968c25ef255f7ecf3b.jpg 760w" data-sizes="(max-width: 300px) 100vw, 300px" /><noscript><img width="300" height="200" src="https://staradvertiser.wpenginepowered.com/wp-content/uploads/2022/10/web1_13094522-fb4db186c3b84e968c25ef255f7ecf3b-300x200.jpg" class="w-100 wp-post-image" alt="ASSOCIATED PRESS
+                                President Joe Biden speaks during an event to celebrate Diwali, in the East Room of the White House, Monday, in Washington." loading="lazy" srcset="https://staradvertiser.wpenginepowered.com/wp-content/uploads/2022/10/web1_13094522-fb4db186c3b84e968c25ef255f7ecf3b-300x200.jpg 300w, https://staradvertiser.wpenginepowered.com/wp-content/uploads/2022/10/web1_13094522-fb4db186c3b84e968c25ef255f7ecf3b-600x400.jpg 600w, https://staradvertiser.wpenginepowered.com/wp-content/uploads/2022/10/web1_13094522-fb4db186c3b84e968c25ef255f7ecf3b.jpg 760w" sizes="(max-width: 300px) 100vw, 300px" /></noscript></a>
+                            </div><!-- /col -->
+                            <div class="title col-12 col-md-8 pl-md-0">
+                                <h6>
+                                                                <a href="https://www.staradvertiser.com/2022/10/25/breaking-news/biden-to-get-updated-covid-19-booster-shot-promote-vaccine/">Biden to get updated COVID-19 booster shot, promote vaccine</a>
+                                </h6>
+                            </div><!-- /col -->
+                        </div><!-- /row -->
+                    </li><!-- /story -->
+                    
+                                                            <li class="story has-thumb clear">
+                        <div class="row">
+                            <div class="image col-12 col-md-4">
+                                <a href="https://www.staradvertiser.com/2022/10/25/hawaii-news/hawaii-health-officials-urge-kupuna-to-get-bivalent-boosters-as-soon-as-possible/"><img width="300" height="200" src="https://staradvertiser.wpenginepowered.com/wp-content/plugins/cmd-hsa-lazy-load/assets/img/loader-sa.jpg" data-src="https://staradvertiser.wpenginepowered.com/wp-content/uploads/2022/10/web1_CTY-VAX-SHOTS--275-300x200.jpg" class="lozad lozad-hidden w-100 wp-post-image" alt="CRAIG T. KOJIMA/CKOJIMA@STARADVERTISER.COM
+                                Kanani Souza gets a booster shot from Dr. Glenn Young." loading="lazy" data-srcset="https://staradvertiser.wpenginepowered.com/wp-content/uploads/2022/10/web1_CTY-VAX-SHOTS--275-300x200.jpg 300w, https://staradvertiser.wpenginepowered.com/wp-content/uploads/2022/10/web1_CTY-VAX-SHOTS--275-600x400.jpg 600w, https://staradvertiser.wpenginepowered.com/wp-content/uploads/2022/10/web1_CTY-VAX-SHOTS--275.jpg 760w" data-sizes="(max-width: 300px) 100vw, 300px" /><noscript><img width="300" height="200" src="https://staradvertiser.wpenginepowered.com/wp-content/uploads/2022/10/web1_CTY-VAX-SHOTS--275-300x200.jpg" class="w-100 wp-post-image" alt="CRAIG T. KOJIMA/CKOJIMA@STARADVERTISER.COM
+                                Kanani Souza gets a booster shot from Dr. Glenn Young." loading="lazy" srcset="https://staradvertiser.wpenginepowered.com/wp-content/uploads/2022/10/web1_CTY-VAX-SHOTS--275-300x200.jpg 300w, https://staradvertiser.wpenginepowered.com/wp-content/uploads/2022/10/web1_CTY-VAX-SHOTS--275-600x400.jpg 600w, https://staradvertiser.wpenginepowered.com/wp-content/uploads/2022/10/web1_CTY-VAX-SHOTS--275.jpg 760w" sizes="(max-width: 300px) 100vw, 300px" /></noscript></a>
+                            </div><!-- /col -->
+                            <div class="title col-12 col-md-8 pl-md-0">
+                                <h6>
+                                                                <a class="premium" href="#" data-toggle="tooltip" title="Blue stars next to story headlines indicate subscriber content. Please log in to view this story."><i class="fas fa-star blue"></i></a> 
+                                                                <a href="https://www.staradvertiser.com/2022/10/25/hawaii-news/hawaii-health-officials-urge-kupuna-to-get-bivalent-boosters-as-soon-as-possible/">Hawaii health officials urge kupuna to get bivalent boosters as soon as possible</a>
+                                </h6>
+                            </div><!-- /col -->
+                        </div><!-- /row -->
+                    </li><!-- /story -->
+                    
+                    
+                            </ol>
+        </aside><!-- /most-read -->
+        <div style="clear: both;"></div>
+
+
+        <aside id="text-71" class="widget widget_text">			<div class="textwidget"><div id="origami-ad-container-30-days" class="mb-4 mb-xl-5" data-partner-id="c46cf15d-1622-4157-8f3f-18b9a61946de"></div>
+</div>
+		</aside><aside id="text-88" class="widget widget_text">			<div class="textwidget"><p><iframe src="https://travel.payvibe.com/affiliate/hotdealshawaii" class="mb-4 mb-xl-5" width="300px" frameBorder="0" scrolling="no" height="250px" loading="lazy"></iframe></p>
+</div>
+		</aside><aside id="text-47" class="widget widget_text">			<div class="textwidget"><div class="textwidget">
+<!-- Insticator API Fire Widget -->
+<div id="insticator-container" class="mb-4 mb-xl-5" style="width: 300px; margin: 0 auto;"><div id="div-insticator-ad-1" style="height: 280px"></div><div id="insticator-embed"></div><div id="div-insticator-ad-2" style="height: 280px"></div><script data-cfasync='false' type="text/javascript">/*<![CDATA[*/Insticator.ad.loadAd("div-insticator-ad-1");Insticator.ad.loadAd("div-insticator-ad-2");Insticator.load("em",{id : "e5666664-52a2-4b8b-bca2-c3f0a6d328e9"})/*]]>*/</script></div>
+<!-- End Insticator API Fire Widget --></div></div>
+		</aside>        <div class="ad-code-home-widget">
+           <div class="row mb-4 mb-lg-5">
+                <!-- /5136785/SA_300x100-1_TopNews -->
+													<div id="div-gpt-ad-1509425861841-8" class="ad-unit" style="height:auto; width:300px; margin:0 auto;">
+													<script type="text/javascript">
+													googletag.cmd.push(function() { googletag.display("div-gpt-ad-1509425861841-8"); });
+													</script>
+													</div>            </div>
+            <!-- <p>top_news_breaking</p> -->
+        </div>
+
+
+                    <div class="news-archive-right mb-4 mb-xl-5">
+                <h5 class="category-heading"><a href="//www.staradvertiser.com/back-issues/">Looking Back <i class="fas fa-chevron-right"></i></a></h5>
+                <article class="feature story">
+                    <div class="thumbnail">
+                        <a href="https://www.newspapers.com/clip/111571550/nov-2-2010-champion-surfer-andy-irons/" target="_blank"><img src="https://staradvertiser.wpenginepowered.com/wp-content/uploads/2022/10/20221018_WEB_HSA-Nov.-3-2010-D1.jpg" alt="" border="0" /></a>
+                    </div><!-- /thumbnail -->
+
+                    <h6><a href="https://www.newspapers.com/clip/111571550/nov-2-2010-champion-surfer-andy-irons/" target="_blank">Nov. 2, 2010: Champion surfer Andy Irons dies at 32</a></h6>
+                </article>
+            </div><!-- /news-archive-right -->
+        <aside id="text-72" class="widget widget_text">			<div class="textwidget"><p><!-- Local Business Guide Single Sidebar --><br />
+<a class="w-100" href="https://local.staradvertiser.com/" target="_blank" rel="noopener"><img class="w-100 mb-4 mb-xl-5" src="https://sa-media.s3.amazonaws.com/sa_ads/localbusinessguide/SA-LocalBusinessGuide-RightRail.gif" alt="Honolulu Local Business Guide" /></a></p>
+</div>
+		</aside>                    
+                    
+                    <!-- Taboola Sidebar Widget -->
+                    <div id="taboola-right-rail-thumbnails" class="related-stories most-read mb-4 mb-xl-5"></div>
+                    <script type="text/javascript">
+                        window._taboola = window._taboola || [];
+                        _taboola.push({
+                            mode: 'thumbnails-rr',
+                            container: 'taboola-right-rail-thumbnails',
+                            placement: 'Right Rail Thumbnails',
+                            target_type: 'mix'
+                        });
+                    </script>
+                    
+                    
+                    <div id="single-bottom-ads" class="fixed-ads">
+                        <!-- /5136785/SA_Box3_TopNews -->
+												<div id="div-gpt-ad-1509158663350-7" class="ad-unit mb-4 mb-xl-5" style="height:auto; width:300px; margin:0 auto;">
+												<script type="text/javascript">
+												googletag.cmd.push(function() { googletag.display("div-gpt-ad-1509158663350-7"); });
+												</script>
+												</div>                        
+                        <!-- Insticator API Fire Widget Ads Code -->
+                        <div id="div-insticator-ad-3" style="height: 280px" class="ad-unit"></div>
+                        <script data-cfasync='false' type="text/javascript">
+                        /*<![CDATA[*/Insticator.ad.loadAd("div-insticator-ad-3");/*]]>*/
+                        </script>
+                        <!-- End Insticator API Fire Widget Ads Code -->
+                    </div><!-- /single-bottom-ads -->
+                </div><!-- /right-rail -->
+
+            </div><!-- /row -->
+        </div><!-- /container-fluid -->
+
+
+<div class="container-fluid mb-4 pb-4">
+    <div class="row footer-ad">
+        <!-- /5136785/SA_Bottom_TopNews -->
+																<div id="div-gpt-ad-1444028495459-85" class="ad-unit leader text-center w-100 mx-3 mt-5">
+																<script type="text/javascript">
+																googletag.cmd.push(function() { googletag.display("div-gpt-ad-1444028495459-85"); });
+																</script>
+																</div>    </div><!-- /row -->
+</div><!-- /container-fluid -->
+
+
+<!-- Footer -->
+<footer class="footer clear">
+    <div class="container-fluid my-4 my-lg-5">
+        <div class="row">
+            <div class="col-12 col-md-4 text-center text-md-left">
+                <a href="https://www.staradvertiser.com"><img class="mb-4" src="https://staradvertiser.wpenginepowered.com/wp-content/themes/staradvertiser/images/sa-logo-white-small.png" alt="Honolulu Star-Advertiser logo" border="0" /></a>
+
+                <p class="mb-4">Copyright &copy; 2022 <a href="https://www.staradvertiser.com">StarAdvertiser.com</a>.<br />
+                    All rights reserved.</p>
+
+                <p class="mb-4">500 Ala Moana Blvd. #7-500<br />
+                    Honolulu, HI 96813<br />
+                    Telephone: 808-529-4747</p>
+
+                <ul class="social">
+                    <li class="fb"><a href="https://www.facebook.com/staradvertiser" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a></li>
+                    <li class="tw"><a href="https://twitter.com/staradvertiser" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a></li>
+                    <li class="ig"><a href="https://instagram.com/staradvertiser/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a></li>
+                    <li class="yt"><a href="https://www.youtube.com/user/StarAdvertiser" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a></li>
+                    <li class="li"><a href="https://www.linkedin.com/company/honolulu-star-advertiser" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a></li>
+                </ul>
+            </div><!-- /col -->
+            <div class="col-2 d-none d-md-block">
+                &nbsp;
+            </div><!-- /col -->
+
+
+            
+                                    <div class="col-2 d-none d-md-block">
+                        <ul>
+                        
+                                                          <li><a  href="https://www.staradvertiser.com/about/">About Us</a></li>
+                            
+                        
+                                                          <li><a target='_blank' href="https://www.oahupublications.com">Advertise</a></li>
+                            
+                        
+                                                          <li><a target='_blank' href="https://www.oahupublications.com/products-rates/">Media Kit</a></li>
+                            
+                        
+                                                          <li><a  href="https://www.staradvertiser.com/about/privacy-policy/">Privacy Policy</a></li>
+                            
+                        
+                                                          <li><a  href="https://www.staradvertiser.com/about/terms-of-service/">Terms of Service</a></li>
+                            
+                        
+                                                          <li><a  href="https://www.staradvertiser.com/do-not-sell-my-personal-information/">Do Not Sell My Personal Information</a></li>
+                            
+                        
+                            
+                                                </ul>
+                    </div><!-- /col -->
+                                    <div class="col-2 d-none d-md-block">
+                        <ul>
+                        
+                                                          <li><a  href="https://gateway.staradvertiser.com/myaccount/login.php">My Account</a></li>
+                            
+                        
+                                                          <li><a  href="https://gateway.staradvertiser.com/account_lookup.php">Activate Digital Account</a></li>
+                            
+                        
+                                                          <li><a  href="https://gateway.staradvertiser.com/">New Subscription</a></li>
+                            
+                        
+                                                          <li><a target='_blank' href="https://printreplica.staradvertiser.com/overview/">Print Replica</a></li>
+                            
+                        
+                                                          <li><a  href="https://www.staradvertiser.com/news-alerts-signup/">Email Newsletters</a></li>
+                            
+                        
+                                                          <li><a  href="https://www.staradvertiser.com/web-notifications/">Web Push Notifications</a></li>
+                            
+                                                </ul>
+                    </div><!-- /col -->
+                                    <div class="col-2 d-none d-md-block">
+                        <ul>
+                        
+                                                          <li><a target='_blank' href="https://www.staradvertiser.com/download/">Mobile Apps</a></li>
+                            
+                        
+                                                          <li><a target='_blank' href="https://gateway.staradvertiser.com/faq.php">FAQs</a></li>
+                            
+                        
+                                                          <li><a target='_blank' href="https://gateway.staradvertiser.com/customer-service/">Customer Service</a></li>
+                            
+                        
+                                                          <li><a  href="https://www.staradvertiser.com/about/star-advertiser-contact-information/">Contact Us</a></li>
+                            
+                        
+                                                          <li><a  href="https://www.staradvertiser.com/search/">Search</a></li>
+                            
+                        
+                                                          <li><a  href="https://www.staradvertiser.com/back-issues/">Archives</a></li>
+                            
+                                                </ul>
+                    </div><!-- /col -->
+                                    </div><!-- /row -->
+
+            <div class="row">
+                                <div class="col-12 text-center">
+                    <!-- Insticator API Fire Widget Ads Code -->
+                    <div id="div-insticator-ad-4" style="height: 90px; margin: 2% auto;"></div>
+                    <script data-cfasync='false' type="text/javascript">
+                    /*<![CDATA[*/Insticator.ad.loadAd("div-insticator-ad-4");/*]]>*/
+                    </script>
+                    <!-- End Insticator API Fire Widget Ads Code -->
+                </div><!-- /col -->
+                                
+                
+                            </div><!-- /row -->
+
+    </div><!-- /container-fluid -->
+</footer>
+    
+    <!-- Privacy Policy and Terms of Service Notice -->
+    <div id="ToSPPAlert" class="alert alert-info text-center alert-dismissible fixed-bottom mb-0 py-md-4 fade show rounded-0" style="display: none;" role="alert">
+        <i class="fas fa-exclamation-circle"></i> Our Privacy Policy has been updated. By continuing to use our site, you are acknowledging and agreeing to our updated <a href="http://www.oahupublications.com/terms-of-service/">Privacy Policy</a> and our <a href="http://www.oahupublications.com/terms-of-service">Terms of Service</a>. 
+        <a href="#" class="sa-btn blue py-1 d-inline-block" data-dismiss="alert" aria-label="Close" onclick="setToSPPCookie();">I Agree</a>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">×</span>
+        </button>
+    </div><!-- /ToSPPAlert -->
+    <script type="text/javascript">
+        jQuery( document ).ready(function() {
+            isToSPPAccepted();
+        });
+        function isToSPPAccepted() {
+            var TOSPPAcceptedCookie = getTOSPPCookie("TOSPPAccepted");
+            if( TOSPPAcceptedCookie )
+            {
+                var lastTOSPPUpdate = new Date( "2019-12-20" );
+                var TOSPPAcceptDate = new Date( TOSPPAcceptedCookie ); 
+                if( lastTOSPPUpdate <= TOSPPAcceptDate ) {
+                    jQuery("#ToSPPAlert").hide();
+                } else {
+                    jQuery("#ToSPPAlert").show();
+                }
+            } else {
+                jQuery("#ToSPPAlert").show();
+            }
+        }
+
+        function setToSPPCookie() {
+            var today = new Date();
+            var dd = today.getDate();
+            var mm = today.getMonth()+1; 
+            var yyyy = today.getFullYear();
+
+            if( dd<10 ) {
+                dd='0'+dd;
+            } 
+
+            if( mm < 10 ) {
+                mm='0'+mm;
+            } 
+            today = yyyy + '-' + mm + '-' + dd;
+            createTOSPPCookie( "TOSPPAccepted", today, 365);
+            ga('send', 'event', 'PPToS Button', 'Click', 'PPToS - I Agree');
+        }
+
+        if (typeof getTOSPPCookie == 'undefined') { 
+            getTOSPPCookie = function(cname) {
+                var name = cname + '=';
+                var decodedCookie = decodeURIComponent(document.cookie);
+                var ca = decodedCookie.split(';');
+                for(var i = 0; i < ca.length; i++) {
+                    var c = ca[i];
+                    while (c.charAt(0) == ' ') {
+                        c = c.substring(1);
+                    }
+                    if (c.indexOf(name) == 0) {
+                        return c.substring(name.length, c.length);
+                    }
+                } //end for
+                return false;
+            } //end function
+        } //end if
+
+        if (typeof createTOSPPCookie == 'undefined') { 
+            createTOSPPCookie = function(cname, cvalue, exdays) {
+                var d = new Date();
+                d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+                var expires = "expires="+d.toUTCString();
+                document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+            }
+        } //end if
+    </script>
+
+    			<script type="text/javascript">
+				// Star Advertiser / Star Advertiser
+				(function(cid,mkt,config,domain) {
+					var ml = document.createElement('script');
+					var s = document.getElementsByTagName('script')[0] || document.head;
+					var cb;
+
+					try {
+						if (!(cb = localStorage._matherVer)) {
+							throw false;
+						}
+					} catch (e) {
+						cb = Math.round(new Date() / 1.0368e9);
+					}
+
+					ml.type = 'text/javascript'; ml.async = true; ml.defer = true; ml.id = '_mljs';
+					ml.src = ('https:' == window.location.protocol ? 'https' : 'http') + '://' + (domain || 'js.matheranalytics.com/s') + '/' + cid + '/' + mkt + '/' + (config ? config + '/' : '') + 'ml.js?cb=' + cb;
+					s.parentNode.insertBefore(ml, s);
+				})('ma15446','988352900','');
+			</script>
+					<script type="text/javascript">
+				window.dataLayer = window.dataLayer || [];
+				window.dataLayer.push({
+				    'mather': {"articleId":940710,"articlePublishTime":"2020-03-19T18:50:00-10:00","articleUpdateTime":"2020-03-19T18:50:00-10:00","author":"Associated Press","hierarchy":"Top News","pageType":"Article","section":"Top News","premium":0}				});
+							</script>
+		<script type='text/javascript' id='avc_frontend-js-extra'>
+/* <![CDATA[ */
+var AdRefreshControl = {"advertiserIds":[],"lineItemIds":[],"sizesToExclude":"","slotIdsToExclude":{"div-gpt-ad-1444028495459-0":1,"div-gpt-ad-1444028495459-1":1,"div-gpt-ad-1444028495459-4":1,"div-gpt-ad-1444028495459-5":1,"div-gpt-ad-1448410169742-0":1,"div-gpt-ad-1444028495459-6":1,"div-gpt-ad-1444028495459-11":1,"div-gpt-ad-1444028495459-13":1,"div-gpt-ad-1444028495459-12":1,"div-gpt-ad-1444028495459-10":1,"div-gpt-ad-1444028495459-14":1,"div-gpt-ad-1444028495459-8":1,"div-gpt-ad-1444028495459-9":1,"div-gpt-ad-1444028495459-7":1,"div-gpt-ad-1444028495459-2":1},"viewabilityThreshold":"70","refreshInterval":"30","maximumRefreshes":"10","refreshCallback":""};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://staradvertiser.wpenginepowered.com/wp-content/plugins/ad-refresh-control/dist/js/frontend.js?ver=1.0.5' id='avc_frontend-js'></script>
+<script type='text/javascript' src='https://staradvertiser.wpenginepowered.com/wp-includes/js/comment-reply.min.js?ver=5.8.5' id='comment-reply-js'></script>
+<script type='text/javascript' src='https://staradvertiser.wpenginepowered.com/wp-content/themes/staradvertiser/js/functions.js?ver=20200320' id='twentythirteen-script-js'></script>
+<script type='text/javascript' src='https://staradvertiser.wpenginepowered.com/wp-includes/js/underscore.min.js?ver=1.13.1' id='underscore-js'></script>
+<script type='text/javascript' src='https://staradvertiser.wpenginepowered.com/wp-content/plugins/elasticpress/features/facets/assets/js/facets.min.js?ver=2.5.2' id='elasticpress-facets-js'></script>
+<script type='text/javascript' src='https://staradvertiser.wpenginepowered.com/wp-includes/js/wp-embed.min.js?ver=5.8.5' id='wp-embed-js'></script>
+<script>if(typeof(HSA_OBSERVE) !== "undefined")   HSA_OBSERVE.do_observe();</script>
+    <!-- Back to top anchor link -->
+<div id="top-anchor" class="clear">
+    <a href="#top" class="top">
+        <i class="fas fa-angle-up"></i>
+        <p>Scroll Up</p>
+    </a>
+</div><!-- /top-anchor -->
+
+
+
+
+<!-- Scripts for website functions -->
+<script src="https://staradvertiser.wpenginepowered.com/wp-content/themes/staradvertiser/js/bxslider/jquery.bxslider.min.v4.2.12.js"></script>
+<script src="https://staradvertiser.wpenginepowered.com/wp-content/themes/staradvertiser/js/bxslider/plugins/jquery.fitvids.v1.1.js"></script>
+<script type="text/javascript">
+    jQuery(document).ready(function(){
+                // Slide-in menus
+        jQuery('.hamburger-slide').click(function(){
+            var hidden = jQuery('#slide-menu');
+            if (hidden.hasClass('visible')){
+                hidden.animate({"left":"-1000px"}, "fast").removeClass('visible');
+            } else {
+                hidden.animate({"left":"0px"}, "fast").addClass('visible');
+                jQuery('#slide-user-menu').animate({"right":"-1000px"}, "fast").removeClass('visible');
+            }
+        });
+        jQuery('.user-slide').click(function(){
+            var hidden = jQuery('#slide-user-menu');
+            if (hidden.hasClass('visible')){
+                hidden.animate({"right":"-1000px"}, "fast").removeClass('visible');
+            } else {
+                hidden.animate({"right":"0px"}, "fast").addClass('visible');
+                jQuery('#slide-menu').animate({"left":"-1000px"}, "fast").removeClass('visible');
+            }
+        });
+
+        // Popper.js for premium story tooltips
+        jQuery(function() {
+            jQuery('[data-toggle="tooltip"]').tooltip({
+                trigger: 'hover'
+            });
+        });
+                // Smooth scrolling
+        // Select all links with hashes
+        jQuery('a[href*="#"]')
+        // Remove links that don't actually link to anything
+        .not('[href="#"]')
+        .not('[href="#0"]')
+        // Remove carousel navigation links
+        .not('[href="#photo-gallery-widget"]')
+        .not('[href="#tgif-photos-widget"]')
+        .click(function(event) {
+            // On-page links
+            if (
+                location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
+                && 
+                location.hostname == this.hostname
+            ) {
+                // Figure out element to scroll to
+                var target = jQuery(this.hash);
+                target = target.length ? target : jQuery('[name=' + this.hash.slice(1) + ']');
+                // Does a scroll target exist?
+                if (target.length) {
+                    // Only prevent default if animation is actually gonna happen
+                    event.preventDefault();
+                    jQuery('html, body').animate({
+                        scrollTop: target.offset().top
+                    }, 1000, function() {
+                        // Callback after animation
+                        // Must change focus!
+                        var $target = jQuery(target);
+                        $target.focus();
+                        if ($target.is(":focus")) { // Checking if the target was focused
+                            return false;
+                        } else {
+                            $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
+                            $target.focus(); // Set focus again
+                        };
+                    });
+                }
+            }
+        });
+
+        // Back to top anchor link and section front sidebar
+        jQuery(window).scroll(function() {
+            var sidebar_height = jQuery('#section-front-sidebar').height();
+            var div_foot = jQuery('footer').offset().top - sidebar_height;
+            //console.log(div_foot+"--"+jQuery(this).scrollTop());
+            if (jQuery(this).scrollTop() < 100 || jQuery(this).scrollTop() > div_foot-150) {
+            //if (jQuery(this).scrollTop() > 1000) {
+                jQuery('#top-anchor').fadeOut();
+                jQuery('#top-anchor-new').fadeOut();
+                jQuery('#section-front-sidebar').fadeOut();
+            } else {
+                jQuery('#top-anchor').fadeIn();
+                jQuery('#top-anchor-new').fadeIn();
+                jQuery('#section-front-sidebar').fadeIn();
+            }
+        });
+        jQuery('#top-anchor').click(function() {
+            jQuery('html, body').animate({
+                scrollTop: '0px'
+            }, 1000);
+            return false;
+        });
+        jQuery('#top-anchor-new').click(function() {
+            jQuery('html, body').animate({
+                scrollTop: '0px'
+            }, 1000);
+            return false;
+        });
+        
+                
+        
+                // Comment toggle
+        jQuery('.comment-toggle').click(function() {
+            jQuery('#comments').slideToggle(1000);
+            jQuery('#comment-arrow').toggleClass('rotate');
+        });
+
+        
+                // bxSlider image carousel
+        jQuery('.bxslider').bxSlider({
+            auto: false,
+            autoStart: false,
+            infiniteLoop: false,
+            hideControlOnEnd: true,
+            adaptiveHeight: true,
+            video: true,
+            pause: 6000,
+            speed: 500,
+            pagerType: 'short',
+            useCSS: false,
+            touchEnabled: false,            auto: (jQuery(".bxslider li").length > 1) ? true : false,
+            pager: (jQuery(".bxslider li").length > 1) ? true : false,
+            onSliderLoad: function(){
+                jQuery(".carousel-story").css("visibility", "visible");
+                jQuery(".carousel-story").css("height", "auto");
+            }
+        });
+            });
+</script>
+<script src="https://staradvertiser.wpenginepowered.com/wp-content/themes/staradvertiser/js/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+
+<script type="text/javascript">
+setTimeout(function(){
+                jQuery(".carousel-story").css("visibility", "visible");
+                jQuery(".carousel-story").css("height", "auto");
+            }, 1000);
+</script>
+    
+    
+
+<!-- Hawaiian characters fix -->
+<script type="text/javascript" src="https://staradvertiser.wpenginepowered.com/wp-content/themes/staradvertiser/js/hawaiian-text.js?v3"></script>
+
+
+<!-- Custom author links in bylines -->
+<script type="text/javascript" src="https://staradvertiser.wpenginepowered.com/wp-content/themes/staradvertiser/js/custom-author.cmd-hsa-minified.1659488333.js"></script>
+
+
+<!-- Facebook Conversion Pixel for Online Subscription Checkouts -->
+<!--<script>
+    (function() {
+        var _fbq = window._fbq || (window._fbq = []);
+        if (!_fbq.loaded) {
+            var fbds = document.createElement('script');
+            fbds.async = true;
+            fbds.src = '//connect.facebook.net/en_US/fbds.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(fbds, s);
+            _fbq.loaded = true;
+        }
+    })();
+    window._fbq = window._fbq || [];
+    window._fbq.push(['track', '6023141238775', {'value':'0.00','currency':'USD'}]);
+</script>
+<noscript>
+    <img height="1" width="1" alt="" style="display: none;" src="https://www.facebook.com/tr?ev=6023141238775&amp;cd[value]=0.00&amp;cd[currency]=USD&amp;noscript=1" />
+</noscript>-->
+
+
+<!-- Ad Block tracker -->
+<script>
+    window.onload = function() {
+        // Delay to allow the async Google Ads to load
+        setTimeout(function() {
+
+          // Get the first AdSense ad unit on the page
+          var ad = document.querySelector("ins.adsbygoogle");
+
+          // If the ads are not loaded, track the event
+          if (ad && ad.innerHTML.replace(/\s/g, "").length == 0) {
+
+            if (typeof ga !== 'undefined') {
+
+                // Log an event in Universal Analytics
+                // but without affecting overall bounce rate
+                ga('send', 'event', 'Adblock', 'Yes', {'nonInteraction': 1});
+
+            } else if (typeof _gaq !== 'undefined') {
+
+                // Log a non-interactive event in old Google Analytics
+                _gaq.push(['_trackEvent', 'Adblock', 'Yes', undefined, undefined, true]);
+
+            }
+          }
+        }, 2000); // Run ad block detection 2 seconds after page load
+    };
+    jQuery("a[target=_blank]").each(function () {
+            let href = $(this).attr("href"); // retrive href foreach <a/>
+            // let name = $(this).html(); // retrive href foreach <a/>
+            
+            
+            if( "https://printreplica.staradvertiser.com/overview/" === href ){
+                jQuery(this).attr("href", `https://www.staradvertiser.com/redirect/?redirect_to=${href}&disable_back_button=true` )
+                // jQuery(this).removeAttr('target');
+            }else{
+                href = encodeURIComponent( href );
+                jQuery(this).attr("href", `https://www.staradvertiser.com/redirect/?redirect_to=${href}` )
+                jQuery(this).removeAttr('target');
+            }
+            
+    });
+</script>
+
+
+<!-- Teads -->
+<script type="text/javascript" class="teads" async="true" src="//a.teads.tv/page/57606/tag?v=1.1"></script>
+<script>
+  window.teads_analytics = window.teads_analytics || {};
+  window.teads_analytics.analytics_tag_id = "PUB_12522";
+  window.teads_analytics.share = window.teads_analytics.share || function() {
+    ;(window.teads_analytics.shared_data = window.teads_analytics.shared_data || []).push(arguments)
+  };
+</script>
+<script async src="https://a.teads.tv/analytics/tag.js"></script>
+
+
+<!-- Chartbeat footer tag -->
+<script type='text/javascript'>
+     (function () {
+        /** CONFIGURATION START **/
+        var _sf_async_config = window._sf_async_config = (window._sf_async_config || {});
+        var _cbq = window._cbq = (window._cbq || []);
+
+        _sf_async_config.uid = 48334;
+        _sf_async_config.domain = 'staradvertiser.com';
+        _sf_async_config.useCanonical = true;
+        _sf_async_config.useCanonicalDomain = true;
+        _sf_async_config.sections = 'Top News';
+        _sf_async_config.authors = 'Associated Press';
+        _cbq.push( ["_acct","anon"] );
+        
+        /** CONFIGURATION END **/
+        function loadChartbeat() {
+            var e = document.createElement('script');
+            var n = document.getElementsByTagName('script')[0];
+            e.type = 'text/javascript';
+            e.async = true;
+            e.src = '//static.chartbeat.com/js/chartbeat.js';
+            n.parentNode.insertBefore(e, n);
+        }
+        loadChartbeat();
+     })();
+</script>
+    
+<!-- FirstImpression Tag -->
+<script data-cfasync='false' type='text/javascript'>
+    ;(function(o) {
+        var w=window.top,a='apdAdmin',ft=w.document.getElementsByTagName('head')[0],
+        l=w.location.href,d=w.document;w.apd_options=o;
+        if(l.indexOf('disable_fi')!=-1) { console.error("disable_fi has been detected in URL. FI functionality is disabled for this page view."); return; }
+        var fiab=d.createElement('script'); fiab.type = 'text/javascript';
+        fiab.src=o.scheme+'ecdn.analysis.fi/static/js/fab.js';fiab.id='fi-'+o.websiteId;
+        ft.appendChild(fiab, ft); if(l.indexOf(a)!=-1) w.localStorage[a]=1; 
+        var aM = w.localStorage[a]==1, fi=d.createElement('script'); 
+        fi.type='text/javascript'; fi.async=true; if(aM) fi['data-cfasync']='false';
+        fi.src=o.scheme+(aM?'cdn':'ecdn') + '.firstimpression.io/' + (aM ? 'fi.js?id='+o.websiteId : 'fi_client.js');
+        ft.appendChild(fi);
+    })({ 
+        'websiteId': 7470, 
+        'scheme':    '//'
+    });
+</script>
+
+
+    
+    
+<!-- Taboola -->
+<script type="text/javascript">
+    window._taboola = window._taboola || [];
+    _taboola.push({flush: true});
+</script>
+
+
+<!-- Lead Match Javascript Conversion Pixel; Goal Name: hsa_formers_jan-2021 -->
+<script type="text/javascript">var ordnumber = Math.random() * 10000000000000;var sscUrl = ("https:" == document.location.protocol ? "https://" : "http://") + "trkn.us/pixel/conv/ppt=10159;g=hsa_formers_jan-2021;gid=31282;ord="+ordnumber+";v=120";var x = document.createElement("img");x.setAttribute("src", sscUrl);x.setAttribute("width", "1");x.setAttribute("height", "1");document.body.appendChild(x);</script>
+
+<!-- LiveRamp ATS -->
+<script type="text/javascript">
+    var atsScript = document.createElement('script');
+    atsScript.onload = function() {
+        window.ats.start({
+            "placementID": 1273,
+            "storageType": "localStorage",
+            "detectionType": "scrapeAndUrl",
+            "urlParameter": "env",
+            "cssSelectors": [
+                "input[type=text]",
+                "input[type=email]"
+            ],
+            "logging": "error"
+        });
+    };
+    atsScript.src = 'https://ats.rlcdn.com/ats.js';
+    document.body.appendChild(atsScript);
+</script>
+  </body>
+</html>

@@ -1,0 +1,1667 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-15" />
+	<meta name="format-detection" content="address=no,email=no,telephone:no">
+	<meta http-equiv="Content-Language" content="it" />
+	<title>DiariodelWeb.it - Notizie dall'Italia e dal mondo</title>
+	<meta name="lang" content="it" />
+	<meta name="description" content="Notizie dell'ultima ora sull'attualità nazionale, internazionale, politica, economia, innovazione, sport e molto altro. Video, foto, blog e commenti degli utenti con il DiariodelWeb.it" />
+	<meta property="article:publisher" content="https://www.facebook.com/diariodelweb.it" />
+	<!-- facebook -->
+	<meta property="fb:pages" content="321818054687989" />
+	<meta property="og:site_name" content="DiariodelWeb.it"/>
+	<meta property="og:url" content="https://www.diariodelweb.it/"/>
+	<meta property="og:type" content="website"/>
+	<meta property="og:locale" content="it_IT"/>
+	<meta property="og:title" content="DiariodelWeb.it - Notizie dall'Italia e dal mondo"/>
+	<meta property="og:image" content="http://static.diariodelweb.it/icone/promo/promo_og_home.jpg"/>
+	<meta property="og:image:width" content="1000"/>
+	<meta property="og:image:height" content="500"/>
+	<meta property="og:description" content="Notizie dell'ultima ora sull'attualità nazionale, internazionale, politica, economia, innovazione, sport e molto altro. Video, foto, blog e commenti degli utenti con il DiariodelWeb.it"/>
+	<!-- facebook -->
+	<link rel="alternate" type="application/rss+xml" title="RSS DiariodelWeb.it" href="https://www.diariodelweb.it/rss/" />
+	<link rel="canonical" href="https://www.diariodelweb.it/" />
+	<link rel="shortcut icon" href="/favicon.ico">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<!-- Quantcast Choice. Consent Manager Tag v2.0 (for TCF 2.0) -->
+<script type="text/javascript" async=true>
+(function() {
+  var host = window.location.hostname;
+  var element = document.createElement('script');
+  var firstScript = document.getElementsByTagName('script')[0];
+  var url = 'https://quantcast.mgr.consensu.org'
+    .concat('/choice/', 'tmwwjW_yfh8Cx', '/', host, '/choice.js')
+  var uspTries = 0;
+  var uspTriesLimit = 3;
+  element.async = true;
+  element.type = 'text/javascript';
+  element.src = url;
+
+  firstScript.parentNode.insertBefore(element, firstScript);
+
+  function makeStub() {
+    var TCF_LOCATOR_NAME = '__tcfapiLocator';
+    var queue = [];
+    var win = window;
+    var cmpFrame;
+
+    function addFrame() {
+      var doc = win.document;
+      var otherCMP = !!(win.frames[TCF_LOCATOR_NAME]);
+
+      if (!otherCMP) {
+        if (doc.body) {
+          var iframe = doc.createElement('iframe');
+
+          iframe.style.cssText = 'display:none';
+          iframe.name = TCF_LOCATOR_NAME;
+          doc.body.appendChild(iframe);
+        } else {
+          setTimeout(addFrame, 5);
+        }
+      }
+      return !otherCMP;
+    }
+
+    function tcfAPIHandler() {
+      var gdprApplies;
+      var args = arguments;
+
+      if (!args.length) {
+        return queue;
+      } else if (args[0] === 'setGdprApplies') {
+        if (
+          args.length > 3 &&
+          args[2] === 2 &&
+          typeof args[3] === 'boolean'
+        ) {
+          gdprApplies = args[3];
+          if (typeof args[2] === 'function') {
+            args[2]('set', true);
+          }
+        }
+      } else if (args[0] === 'ping') {
+        var retr = {
+          gdprApplies: gdprApplies,
+          cmpLoaded: false,
+          cmpStatus: 'stub'
+        };
+
+        if (typeof args[2] === 'function') {
+          args[2](retr);
+        }
+      } else {
+        queue.push(args);
+      }
+    }
+
+    function postMessageEventHandler(event) {
+      var msgIsString = typeof event.data === 'string';
+      var json = {};
+
+      try {
+        if (msgIsString) {
+          json = JSON.parse(event.data);
+        } else {
+          json = event.data;
+        }
+      } catch (ignore) {}
+
+      var payload = json.__tcfapiCall;
+
+      if (payload) {
+        window.__tcfapi(
+          payload.command,
+          payload.version,
+          function(retValue, success) {
+            var returnMsg = {
+              __tcfapiReturn: {
+                returnValue: retValue,
+                success: success,
+                callId: payload.callId
+              }
+            };
+            if (msgIsString) {
+              returnMsg = JSON.stringify(returnMsg);
+            }
+            event.source.postMessage(returnMsg, '*');
+          },
+          payload.parameter
+        );
+      }
+    }
+
+    while (win) {
+      try {
+        if (win.frames[TCF_LOCATOR_NAME]) {
+          cmpFrame = win;
+          break;
+        }
+      } catch (ignore) {}
+
+      if (win === window.top) {
+        break;
+      }
+      win = win.parent;
+    }
+    if (!cmpFrame) {
+      addFrame();
+      win.__tcfapi = tcfAPIHandler;
+      win.addEventListener('message', postMessageEventHandler, false);
+    }
+  };
+
+  makeStub();
+
+  var uspStubFunction = function() {
+    var arg = arguments;
+    if (typeof window.__uspapi !== uspStubFunction) {
+      setTimeout(function() {
+        if (typeof window.__uspapi !== 'undefined') {
+          window.__uspapi.apply(window.__uspapi, arg);
+        }
+      }, 500);
+    }
+  };
+
+  var checkIfUspIsReady = function() {
+    uspTries++;
+    if (window.__uspapi === uspStubFunction && uspTries < uspTriesLimit) {
+      console.warn('USP is not accessible');
+    } else {
+      clearInterval(uspInterval);
+    }
+  };
+
+  if (typeof window.__uspapi === 'undefined') {
+    window.__uspapi = uspStubFunction;
+    var uspInterval = setInterval(checkIfUspIsReady, 6000);
+  }
+})();
+</script>
+<!-- End Quantcast Choice. Consent Manager Tag v2.0 (for TCF 2.0) --><link rel="preload" href="https://www.diariodelwebsrl.it/_adv/prebid/v4/prebid.js" as="script">
+<link rel="preload" href="https://c.amazon-adsystem.com/aax2/apstag.js" as="script">
+<link rel="preload" href="https://securepubads.g.doubleclick.net/tag/js/gpt.js" as="script">
+
+<link rel="preconnect" href="https://www.googletagservices.com" crossorigin="use-credentials">
+<link rel="preconnect" href="https://securepubads.g.doubleclick.net" crossorigin="use-credentials">
+<link rel="preconnect" href="https://static.criteo.net" crossorigin="use-credentials">
+<link rel="preconnect" href="https://c.amazon-adsystem.com" crossorigin="use-credentials">
+<link rel="preconnect" href="https://acdn.adnxs.com" crossorigin="use-credentials">
+<link rel="preconnect" href="https://adservice.google.com" crossorigin="use-credentials">
+<link rel="preconnect" href="https://ib.adnxs.com" crossorigin="use-credentials">
+<link rel="preconnect" href="https://bidder.criteo.com" crossorigin="use-credentials">
+<link rel="preconnect" href="https://googleads.g.doubleclick.net" crossorigin="use-credentials">
+<link rel="preconnect" href="https://tpc.googlesyndication.com" crossorigin="use-credentials">
+<link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin="use-credentials">
+<link rel="preconnect" href="https://rb.adnxs.com" crossorigin="use-credentials">
+<link rel="preconnect" href="https://fastlane.rubiconproject.com" crossorigin="use-credentials">
+<link rel="preconnect" href="https://a.teads.tv" crossorigin="use-credentials">
+<link rel="preconnect" href="https://prg.smartadserver.com" crossorigin="use-credentials">
+
+<!-- Load Prebid library -->
+<script async src="https://www.diariodelwebsrl.it/_adv/prebid/v4/prebid.js"></script>
+<script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+<script>
+	function sbloccajs() {
+		var scripts = document.getElementsByClassName("cmp-script"),
+		sbloccaJsN = scripts.length,
+		documentFragment = document.createDocumentFragment(),
+		sbloccaJsI, sbloccaJsY, sbloccaJsS, attrib;
+
+		for (sbloccaJsI = 0; sbloccaJsI < sbloccaJsN; sbloccaJsI++){
+
+               sbloccaJsS = document.createElement('script');
+               sbloccaJsS.type = 'text/javascript';
+                 for (sbloccaJsY = 0; sbloccaJsY < scripts[sbloccaJsI].attributes.length; sbloccaJsY++) {
+                     attrib = scripts[sbloccaJsI].attributes[sbloccaJsY];
+                     if (attrib.specified) {
+                         if ((attrib.name != 'type') && (attrib.name != 'class')){
+                             sbloccaJsS.setAttribute(attrib.name, attrib.value);
+                         }
+                     }
+                 }
+                 sbloccaJsS.innerHTML = scripts[sbloccaJsI].innerHTML;
+                 documentFragment.appendChild(sbloccaJsS);
+                  
+		}//for each adv
+		document.body.appendChild(documentFragment);
+	}
+
+	var FAILSAFE_TIMEOUT = 2600;
+	var BIDDER_TIMEOUT = 2500;
+	
+	var ads_loaded = false;
+
+	const customConfigObject = {
+	  "buckets" : [
+	  		{"precision": 2, "max" : 3, "increment" : 0.01},
+		  	{"precision": 2, "max" : 8, "increment" : 0.05},
+		  	{"precision": 2, "max" : 20, "increment" : 0.50},
+		  	{"precision": 2, "max" : 40, "increment" : 1.00}
+	    ]
+	};
+
+	var sChainConfig = {
+      validation: 'strict',
+      config: {
+         ver:'1.0',
+         complete:1,
+         nodes:[
+            {
+               asi:'diariodelwebsrl.it',
+               sid:'3',
+               hp:1,
+            }
+         ],
+      }
+   };
+   
+	var userSyncConfig = {
+	  userIds: [{
+      	name: "criteo",
+      }],
+      filterSettings:{
+         iframe:{
+            bidders:'*',
+            filter:'include'
+         }
+      }
+	};
+
+	var iabConfig = {
+      gdpr:{
+         cmpApi: 'iab',
+         timeout: 5000,
+         defaultGdprScope: true
+      }
+	};
+</script><!-- Start googletag code-->
+<script>
+	var adSky1Sizes     = [[120, 600]];
+	var adSkinSizes     = [[1,1],[728, 90],[970, 90],[970, 250]];
+	var adLdb1Sizes     = [[728, 90],[970, 90]];
+	var adFloorAdSizes  = [[728, 90]];
+	var adMpu1Sizes     = [[300, 250],[300, 600]];
+	var adMpu2Sizes     = [[300, 250],[300, 600]];
+	var adMpu3Sizes     = [[300, 250]];
+
+	window.googletag = window.googletag || {cmd: []};
+
+	googletag.cmd.push(function() {
+		//googletag.defineSlot('/4435307/diariodelweb_web_inter', [1, 1], 'div-gpt-INTER').addService(googletag.pubads());
+		googletag.defineSlot('/4435307/diariodelweb_web_skin', adSkinSizes, 'div-gpt-SKIN').addService(googletag.pubads());
+		googletag.defineSlot('/4435307/diariodelweb_web_ldb1', adLdb1Sizes, 'div-gpt-LDB1').addService(googletag.pubads());
+		googletag.defineSlot('/4435307/diariodelweb_web_floorad', adFloorAdSizes, 'div-gpt-FLOORAD').addService(googletag.pubads());
+		googletag.defineSlot('/4435307/diariodelweb_web_mpu1', adMpu1Sizes, 'div-gpt-MPU1').addService(googletag.pubads());
+		googletag.defineSlot('/4435307/diariodelweb_web_mpu2', adMpu2Sizes, 'div-gpt-MPU2').addService(googletag.pubads());
+		googletag.defineSlot('/4435307/diariodelweb_web_mpu3', adMpu3Sizes, 'div-gpt-MPU3').addService(googletag.pubads());
+		
+		googletag.defineSlot('/4435307/diariodelweb_web_sky1', adSky1Sizes, 'div-gpt-SKY1').addService(googletag.pubads());
+	
+		googletag.pubads().enableSingleRequest();
+        googletag.pubads().disableInitialLoad();
+		googletag.pubads().setCentering(true);
+		googletag.pubads().collapseEmptyDivs(true,true);
+		googletag.enableServices();
+	});
+</script>
+<!-- Load Amazon library -->
+<script>
+	!function(a9,a,p,s,t,A,g){if(a[a9])return;function q(c,r){a[a9]._Q.push([c,r])}a[a9]={init:function(){q("i",arguments)},fetchBids:function(){q("f",arguments)},setDisplayBids:function(){},targetingKeys:function(){return[]},_Q:[]};A=p.createElement(s);A.async=!0;A.src=t;g=p.getElementsByTagName(s)[0];g.parentNode.insertBefore(A,g)}("apstag",window,document,"script","https://c.amazon-adsystem.com/aax2/apstag.js");
+
+	apstag.init({
+	     pubID: '75583922-8fd7-4286-91dd-dabe74d6b823',
+	     adServer: 'googletag',
+         timeout: 2000
+	});
+</script>
+<!-- Start Header Bidding Code -->
+<script>
+	//Define pbjs object and the que array
+	var pbjs = pbjs || {};
+	pbjs.que = pbjs.que || [];
+
+		    var adUnits = [
+		    {
+		        code: "div-gpt-SKIN",
+		        mediaTypes: {banner: {sizes: adSkinSizes}},
+		        bids: [
+		            {bidder: "appnexus", params: {placementId: 20311040, supplyType: 'web', position: 'above'}},
+		            {bidder: "rubicon", params: {accountId: '11382', siteId: '124580', zoneId: '588760', position: 'atf'}},
+		            {bidder: "criteo", params: {networkId: 7453}}
+		        ]
+			},{
+		        code: "div-gpt-LDB1",
+		        mediaTypes: {banner: {sizes: adLdb1Sizes}},
+		        bids: [
+		            {bidder: "appnexus", params: {placementId: 12811244, supplyType: 'web', position: 'above'}},
+		            {bidder: "rubicon", params: {accountId: '11382', siteId: '124580', zoneId: '588760', position: 'atf'}},
+					{bidder: "smartadserver", params: {domain: "https://prg.smartadserver.com", siteId: 309438, pageId: 1119585, formatId: 53046}},
+		            {bidder: "criteo", params: {networkId: 7453}}
+		        ]
+			},{
+		        code: "div-gpt-FLOORAD",
+		        mediaTypes: {banner: {sizes: adFloorAdSizes}},
+		        bids: [
+		            {bidder: "appnexus", params: {placementId: 18926102, supplyType: 'web', position: 'above'}},
+		            {bidder: "rubicon", params: {accountId: '11382', siteId: '124580', zoneId: '588760', position: 'atf'}},
+					{bidder: "smartadserver", params: {domain: "https://prg.smartadserver.com", siteId: 309438, pageId: 1119585, formatId: 90421}},
+		            {bidder: "criteo", params: {networkId: 7453}}
+		        ]
+			},{
+		        code: "div-gpt-MPU1",
+		        mediaTypes: {banner: {sizes: adMpu1Sizes}},
+		        bids: [
+			
+		            {bidder: "appnexus", params: {placementId: 12527619, supplyType: 'web', position: 'above'}},
+		            {bidder: "rubicon", params: {accountId: '11382', siteId: '124580', zoneId: '588760', position: 'atf'}},
+					{bidder: "smartadserver", params: {domain: "https://prg.smartadserver.com", siteId: 309438, pageId: 1119585, formatId: 53050}},
+		            {bidder: "criteo", params: {networkId: 7453}}
+		        ]
+			},{
+		        code: "div-gpt-MPU2",
+		        mediaTypes: {banner: {sizes: adMpu2Sizes}},
+		        bids: [
+		            {bidder: "appnexus", params: {placementId: 12917147, supplyType: 'web', position: 'below'}},
+		            {bidder: "rubicon", params: {accountId: '11382', siteId: '124580', zoneId: '588760', position: 'btf'}},
+					{bidder: "smartadserver", params: {domain: "https://prg.smartadserver.com", siteId: 309438, pageId: 1119585, formatId: 53049}},
+		            {bidder: "criteo", params: {networkId: 7453}}
+		        ]
+			},{
+		        code: "div-gpt-MPU3",
+		        mediaTypes: {banner: {sizes: adMpu3Sizes}},
+		        bids: [
+		            {bidder: "appnexus", params: {placementId: 12917148, position: "below"}},
+		            {bidder: "rubicon", params: {accountId: "11382", siteId: "124580", zoneId: "588760", position: "btf"}},
+					{bidder: "smartadserver", params: {domain: "https://prg.smartadserver.com", siteId: 309438, pageId: 1119585, formatId: 51101}},
+		            {bidder: "criteo", params: {zoneId: 1419344}}
+		        ]
+			}];
+        
+	pbjs.que.push(function() {
+  		pbjs.setConfig({
+			debug: true,
+		    enableSendAllBids: true,
+			useBidCache: true,
+			bidderTimeout: BIDDER_TIMEOUT,
+            timeoutBuffer: 400,  // default setting is 300
+			priceGranularity: customConfigObject,
+	        currency: {adServerCurrency: 'EUR'},
+	        rubicon: {singleRequest: true, netRevenue: true},
+			consentManagement: iabConfig,
+	        schain: sChainConfig,
+			userSync: userSyncConfig
+		});
+		pbjs.addAdUnits(adUnits);
+	});
+</script>
+<script>
+	/** Executes a parallel auction with prebid **/
+	function executeParallelAuctionAlongsidePrebid() {
+            
+		var requestManager = {
+			adserverRequestSent: false,
+			aps: false,
+			prebid: false
+		};
+            
+		// when both APS and Prebid have returned, initiate ad request
+		function biddersBack() {
+			if (requestManager.aps && requestManager.prebid) {
+				sendAdserverRequest();
+			} 
+			return;
+		}
+            
+		// sends adserver request
+		function sendAdserverRequest() {
+			if (requestManager.adserverRequestSent === true) {
+				return;
+			}
+			googletag.cmd.push(function() {
+				googletag.pubads().refresh();
+			});
+			requestManager.adserverRequestSent = true;
+			//sblocca gli altri formati
+			sbloccajs();
+		}
+            
+		// sends bid request to APS and Prebid
+		function requestHeaderBids() {
+            
+			// APS request
+			apstag.fetchBids({
+					slots: [
+						     {slotID: 'div-gpt-SKIN', slotName: '/4435307/diariodelweb_web_skin', sizes: adSkinSizes},
+						     {slotID: 'div-gpt-LDB1', slotName: '/4435307/diariodelweb_web_ldb1', sizes: adLdb1Sizes},
+						     {slotID: 'div-gpt-FLOORAD', slotName: '/4435307/diariodelweb_web_floorad', sizes: adFloorAdSizes},
+						     {slotID: 'div-gpt-MPU1', slotName: '/4435307/diariodelweb_web_mpu1', sizes: adMpu1Sizes},
+						     {slotID: 'div-gpt-MPU2', slotName: '/4435307/diariodelweb_web_mpu2', sizes: adMpu2Sizes},
+						     {slotID: 'div-gpt-MPU3', slotName: '/4435307/diariodelweb_web_mpu3', sizes: adMpu3Sizes}
+					]
+			    },function(bids) {
+					googletag.cmd.push(function() {
+						apstag.setDisplayBids();
+						requestManager.aps = true; // signals that APS request has completed
+						biddersBack(); // checks whether both APS and Prebid have returned
+					});
+				}
+			);
+            
+			// put prebid request here
+			pbjs.que.push(function() {
+				pbjs.requestBids({
+					bidsBackHandler: function() {
+						googletag.cmd.push(function() {
+							pbjs.setTargetingForGPTAsync();
+							requestManager.prebid = true; // signals that Prebid request has completed
+							biddersBack(); // checks whether both APS and Prebid have returned
+						})
+					}
+				});
+			});
+		}
+            
+		// initiate bid request
+		requestHeaderBids();
+            
+		// set failsafe timeout
+		window.setTimeout(function() {
+			sendAdserverRequest();
+		}, FAILSAFE_TIMEOUT);
+	};
+
+	window.__tcfapi('addEventListener', 2, function(tcData, success) {
+	    if(success && tcData.eventStatus !== "cmpuishown") {
+		 	if (ads_loaded != true){
+				executeParallelAuctionAlongsidePrebid();
+                ads_loaded = true;
+            }
+			// Inizio ShinyStat
+			var sspag = encodeURIComponent(window.location.href);
+			var ssco = document.createElement('script');
+			ssco.type = 'text/javascript';
+			ssco.async = true;
+			ssco.src = 'https://codicebusiness.shinystat.com/cgi-bin/getcod.cgi?USER=diariodelweb&NODW=yes&PAG=' + sspag;
+			var sstat = document.getElementsByTagName('script')[0];
+			sstat.parentNode.insertBefore(ssco, sstat);
+			// Fine ShinyStat
+		};
+	});
+</script>
+<!-- Initiate header bidding -->
+		<link href="https://www.diariodelweb.it/stili/d/comuni.css" rel="stylesheet">
+		<link href="https://www.diariodelweb.it/stili/d/copertina.css" rel="stylesheet">
+	
+</head>
+<body id="copertina">
+<div id="fb-root"></div>
+<section id='div-gpt-SKIN'>
+	<script type='text/javascript'>
+	googletag.cmd.push(function() { googletag.display('div-gpt-SKIN'); });
+	</script>
+</section>
+<div class="contenitore_barra_superiore stirare">
+	<div class="contenitore_sinistra">
+		<div class="data">8&nbsp;novembre&nbsp;2020</div>
+		<div class="aggiornato">Aggiornato <strong>19:00</strong></div>
+	</div>
+	<div class="contenitore_centro">
+		<ul class="edizioni" itemscope="" itemtype="http://www.schema.org/SiteNavigationElement" >
+			<li itemprop="name" class="selezionata">
+				<a itemprop="url" href="https://www.diariodelweb.it/" title="DiariodelWeb.it">Italia</a>
+			</li>
+			<li itemprop="name"><a itemprop="url" href="https://torino.diariodelweb.it/" title="Diario di Torino">Torino</a></li>
+			<li itemprop="name"><a itemprop="url" target="_blank" href="https://diariofvg.diariodelweb.it/" title="Diario FVG">Diario FVG</a></li>
+		</ul>
+	</div>
+</div>
+
+
+<header class="header" id="header">
+	<div class="diariodelweb" id="organization" itemprop="publisher" itemscope="" itemtype="https://schema.org/Organization">
+		<meta itemprop="url" content="https://www.diariodelweb.it/">
+		<meta itemprop="name" content="DiariodelWeb.it">
+		<div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+			<meta itemprop="url" content="https://www.diariodelweb.it/icone/loghi/v2/testata_diariodelweb_237x24.jpg">
+			<meta itemprop="width" content="237">
+			<meta itemprop="height" content="24">
+		</div>
+		<div class="logo">
+			<a href="https://www.diariodelweb.it/" title="DiariodelWeb.it">DiariodelWeb.it</a>
+		</div>
+	</div>
+	<div class="contenitore_destra">
+		<ul class="social">
+			<li><a itemprop="sameAs" rel="nofollow" target="_blank" href="https://www.facebook.com/diariodelweb.it" title="Facebook" class="facebook">Facebook</a></li>
+			<li><a itemprop="sameAs" rel="nofollow" target="_blank" href="https://twitter.com/Diariodelweb" title="Twitter" class="twitter">Twitter</a></li>
+			<li><a itemprop="sameAs" rel="nofollow" target="_blank" href="https://www.diariodelweb.it/rss/" title="RSS" class="rss">RSS</a></li>
+		</ul>
+	</div>
+
+	<div class="pulire"></div>
+	<div id="submenu" class="submenu stirare">
+		<ul class="nav" itemscope="" itemtype="https://www.schema.org/SiteNavigationElement">
+			<li itemprop="name"><a itemprop="url" href="https://www.diariodelweb.it/">Home</a></li>	
+			<li itemprop="name"><a itemprop="url" href="https://www.diariodelweb.it/politica/">Politica</a></li>	
+			<li itemprop="name"><a itemprop="url" href="https://www.diariodelweb.it/economia/">Economia</a></li>	
+			<li itemprop="name"><a itemprop="url" href="https://www.diariodelweb.it/esteri/">Esteri</a></li>	
+			<li itemprop="name"><a itemprop="url" href="https://www.diariodelweb.it/innovazione/">Innovazione</a></li>	
+			<li itemprop="name"><a itemprop="url" href="https://www.diariodelweb.it/italia/">Italia</a></li>	
+			<li itemprop="name"><a itemprop="url" href="https://www.diariodelweb.it/sport/">Sport</a></li>	
+			<li itemprop="name"><a itemprop="url" href="https://www.diariodelweb.it/trend/">Trend</a></li>	
+			<li itemprop="name"><a itemprop="url" target="_blank" href="https://primochef.it/">Primo Chef</a></li>	
+			<li itemprop="name"><a itemprop="url" href="https://www.diariodelweb.it/tuttosu/">Tutto su</a></li>	
+		</ul>
+	</div>
+</header>
+<section id='div-gpt-LDB1'>
+	<script type='text/javascript'>
+		googletag.cmd.push(function() { googletag.display('div-gpt-LDB1'); });
+	</script>
+</section>
+<div class="contenitore_principale">
+	<div class="contenuto_principale stirare">
+		<div class="colonne_principale_e_secondaria">
+			<div class="inprimopiano">
+	<div class="fila stirare">
+	
+		<div class="article ">
+			<div class="miniatura">
+				<div class="foto figure">
+					<a title="Marco Rizzo: «Vogliono far fare all'Italia (e a tutta Europa) la fine della Grecia»" href="https://www.diariodelweb.it/politica/articolo/?nid=20201105-547447">
+						<img src="https://archivi.diariodelweb.it/img/140/547/547447-995x525.jpg" width="140" height="100" title="Marco Rizzo: «Vogliono far fare all'Italia (e a tutta Europa) la fine della Grecia»" alt="Negozio chiuso per ordinanza coronavirus">
+					</a>
+				</div>
+			</div>
+			<h2><a href="https://www.diariodelweb.it/politica/articolo/?nid=20201105-547447" title="Marco Rizzo: «Vogliono far fare all'Italia (e a tutta Europa) la fine della Grecia»">Marco Rizzo: «Vogliono far fare all'Italia (e a tutta Europa) la fine della Grecia»</a></h2>
+		</div>
+		<div class="article ">
+			<div class="miniatura">
+				<div class="foto figure">
+					<a title="Minelli: «Le nuove misure del governo non servono a contenere i contagi»" href="https://www.diariodelweb.it/italia/articolo/?nid=20201103-547421">
+						<img src="https://archivi.diariodelweb.it/img/140/547/547421-995x498.jpg" width="140" height="100" title="Minelli: «Le nuove misure del governo non servono a contenere i contagi»" alt="Minelli: «Le nuove misure del governo non servono a contenere i contagi»">
+					</a>
+				</div>
+			</div>
+			<h2><a href="https://www.diariodelweb.it/italia/articolo/?nid=20201103-547421" title="Minelli: «Le nuove misure del governo non servono a contenere i contagi»">Minelli: «Le nuove misure del governo non servono a contenere i contagi»</a></h2>
+		</div>
+		<div class="article ">
+			<div class="miniatura">
+				<div class="foto figure">
+					<a title="Mattei: «Le manifestazioni di piazza sono giuste, il popolo protesta quando è vessato»" href="https://www.diariodelweb.it/italia/articolo/?nid=20201102-547415">
+						<img src="https://archivi.diariodelweb.it/img/140/547/547415-995x525.jpg" width="140" height="100" title="Mattei: «Le manifestazioni di piazza sono giuste, il popolo protesta quando è vessato»" alt="Mattei: «Le manifestazioni di piazza sono giuste, il popolo protesta quando è vessato»">
+					</a>
+				</div>
+			</div>
+			<h2><a href="https://www.diariodelweb.it/italia/articolo/?nid=20201102-547415" title="Mattei: «Le manifestazioni di piazza sono giuste, il popolo protesta quando è vessato»">Mattei: «Le manifestazioni di piazza sono giuste, il popolo protesta quando è vessato»</a></h2>
+		</div>
+		<div class="article ">
+			<div class="miniatura">
+				<div class="foto figure">
+					<a title="Ippolito: «Perché questo governo rischia di portarci verso un fascismo peggiore»" href="https://www.diariodelweb.it/politica/articolo/?nid=20201030-547414">
+						<img src="https://archivi.diariodelweb.it/img/140/547/547414-995x498.jpg" width="140" height="100" title="Ippolito: «Perché questo governo rischia di portarci verso un fascismo peggiore»" alt="Giuseppe Conte con Beppe Grillo e Luigi Di Maio">
+					</a>
+				</div>
+			</div>
+			<h2><a href="https://www.diariodelweb.it/politica/articolo/?nid=20201030-547414" title="Ippolito: «Perché questo governo rischia di portarci verso un fascismo peggiore»">Ippolito: «Perché questo governo rischia di portarci verso un fascismo peggiore»</a></h2>
+		</div>
+		<div class="article ">
+			<div class="miniatura">
+				<div class="foto figure">
+					<a title="Trabucco: «Lo stato di emergenza è pericoloso, dà troppo potere al Presidente del Consiglio»" href="https://www.diariodelweb.it/politica/articolo/?nid=20201026-547401">
+						<img src="https://archivi.diariodelweb.it/img/140/547/547401-995x498.jpg" width="140" height="100" title="Trabucco: «Lo stato di emergenza è pericoloso, dà troppo potere al Presidente del Consiglio»" alt="Il Presidente del Consiglio, Giuseppe Conte">
+					</a>
+				</div>
+			</div>
+			<h2><a href="https://www.diariodelweb.it/politica/articolo/?nid=20201026-547401" title="Trabucco: «Lo stato di emergenza è pericoloso, dà troppo potere al Presidente del Consiglio»">Trabucco: «Lo stato di emergenza è pericoloso, dà troppo potere al Presidente del Consiglio»</a></h2>
+		</div>
+	</div>
+</div>
+			<div class="colonna_principale">
+				
+<div class="article evidenziata stirare">
+	<div class="occhiello"><span class="contenuto apertura">Presidenziali USA 2020</span></div>
+	<h2 class="evidenziata"><a href="https://www.diariodelweb.it/esteri/articolo/?nid=20201108-547457">Joe Biden, primo discorso da Presidente: «I rivali non sono nemici, sono americani, proprio come noi»</a></h2>
+	<div class="grande">
+		<div class="foto figure">
+			<div class="image-box">
+				<a href="https://www.diariodelweb.it/esteri/articolo/?nid=20201108-547457">
+					<img class="b-lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="https://archivi.diariodelweb.it/img/560/547/547457-995x524.jpg" width="418" title="Joe Biden, primo discorso da Presidente: «I rivali non sono nemici, sono americani, proprio come noi»" alt="Joe Biden">
+				</a>
+			</div>
+			<p class="figcaption stirare">Joe Biden</p>
+		</div>
+	</div>
+	<div class="firma_commenti">
+		<span class="firma">
+			<span class="autore"><strong>Stati Uniti</strong></span>
+			<span class="data">08/11/2020 - 08:10</span>
+		</span>
+	</div>
+	<p>L'ex vicepresidente di Obama ha mandato un messaggio di unità al paese: non vedo un'America «rossa o blu», siamo tutti americani e questo è il momento di mettere da parte le divisioni</p>
+</div>
+
+		<div class="article stirare">
+			<div class="occhiello"><span class="contenuto">Presidenziali USA 2020</span></div>
+			<h2><a href="https://www.diariodelweb.it/esteri/articolo/?nid=20201108-547458" title="Romney: «Non aspettatevi che Trump se ne stia zitto e buono»">Romney: «Non aspettatevi che Trump se ne stia zitto e buono»</a></h2>
+			<div class="miniatura">
+				<div class="foto figure image-box">
+					<a href="https://www.diariodelweb.it/esteri/articolo/?nid=20201108-547458">
+						<img class="b-lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="https://archivi.diariodelweb.it/img/140/547/547458-995x524.jpg" width="140" height="100" title="Romney: «Non aspettatevi che Trump se ne stia zitto e buono»" alt="Il Presidente americano uscente, Donald Trump">
+					</a>
+				</div>
+			</div>
+			<div class="firma_commenti">
+				<span class="firma">
+					<span class="autore"><strong>Stati Uniti</strong></span>
+					<span class="data">08/11/2020 - 18:18</span>
+				</span>
+			</div>
+			<p>Secondo il Senatore Trump «continuerà a combattere fino alla fine» sui risultati elettorali, dopo che ieri i grand network hanno annunciato la vittoria di Joe Biden, ormai per (quasi) tutti il presidente eletto</p>
+	
+		</div>
+		<div class="article correlata stirare">
+			<h3><a href="https://www.diariodelweb.it/esteri/articolo/?nid=20201108-547456" title="Kamala Harris la prima vicepresidente donna: «Ora sorge una nuova alba per l'America»">Kamala Harris la prima vicepresidente donna: «Ora sorge una nuova alba per l'America»</a></h3>
+			<p>Ex procuratrice generale della California. Nel gennaio 2017 ha prestato giuramento al Senato di Washington, l'unica donna nera a sedere in Senato e la seconda ad esservi mai stata eletta</p>
+			<div class="sostegni stirare">
+				<ul>
+				
+					<li><a href="https://www.diariodelweb.it/esteri/articolo/?nid=20201108-547455"><strong>Jill Biden, First Lady di origini italiane che adora insegnare</strong></a></li>
+					<li><a href="https://www.diariodelweb.it/esteri/articolo/?nid=20201108-547454"><strong>I media americani proclamano Joe Biden nuovo presidente USA. Trump: «Non è finita qui»</strong></a></li>
+					<li><a href="https://www.diariodelweb.it/esteri/articolo/?nid=20201105-547440"><strong>Biden verso la Casa Bianca, Trump passa alle vie legali</strong></a></li>
+				</ul>
+			</div>
+		
+		</div>
+
+		<div class="article stirare">
+			<div class="occhiello"><span class="contenuto">Politiche europee</span></div>
+			<h2><a href="https://www.diariodelweb.it/economia/articolo/?nid=20201106-547449" title="Patto di stabilità sospeso fino al 2022?">Patto di stabilità sospeso fino al 2022?</a></h2>
+			<div class="miniatura">
+				<div class="foto figure image-box">
+					<a href="https://www.diariodelweb.it/economia/articolo/?nid=20201106-547449">
+						<img class="b-lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="https://archivi.diariodelweb.it/img/140/547/547449-995x497.jpg" width="140" height="100" title="Patto di stabilità sospeso fino al 2022?" alt="Il commissario europeo all'Economia, Paolo Gentiloni">
+					</a>
+				</div>
+			</div>
+			<div class="firma_commenti">
+				<span class="firma">
+					<span class="autore"><strong>Europa</strong></span>
+					<span class="data">06/11/2020 - 09:12</span>
+				</span>
+			</div>
+			<p>E' una delle constatazioni più importanti, per le conseguenze che può implicare, fra i tanti dati che il commissario europeo all'Economia, Paolo Gentiloni, ha presentato a Bruxelles</p>
+		
+		</div>
+
+		<div class="article stirare">
+			<div class="occhiello"><span class="contenuto">L'intervista</span></div>
+			<h2><a href="https://www.diariodelweb.it/politica/articolo/?nid=20201105-547447" title="Marco Rizzo: «Vogliono far fare all'Italia (e a tutta Europa) la fine della Grecia»">Marco Rizzo: «Vogliono far fare all'Italia (e a tutta Europa) la fine della Grecia»</a></h2>
+			<div class="miniatura">
+				<div class="foto figure image-box">
+					<a href="https://www.diariodelweb.it/politica/articolo/?nid=20201105-547447">
+						<img class="b-lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="https://archivi.diariodelweb.it/img/140/547/547447-995x525.jpg" width="140" height="100" title="Marco Rizzo: «Vogliono far fare all'Italia (e a tutta Europa) la fine della Grecia»" alt="Negozio chiuso per ordinanza coronavirus">
+					</a>
+				</div>
+			</div>
+			<div class="firma_commenti">
+				<span class="firma">
+					<span class="autore"><strong>Italia</strong></span>
+					<span class="data">05/11/2020 - 16:31</span>
+				</span>
+			</div>
+			<p>Il segretario del Partito Comunista spiega al DiariodelWeb.it il disegno economico che si nasconde dietro la crisi coronavirus: «Pagheranno i deboli, si arricchiranno i forti»</p>
+	
+		</div>
+		<div class="article correlata stirare">
+			<h3><a href="https://www.diariodelweb.it/politica/articolo/?nid=20201019-547377" title="Pasquinelli: «Ora il potere ha paura, per questo gonfia i numeri del coronavirus»">Pasquinelli: «Ora il potere ha paura, per questo gonfia i numeri del coronavirus»</a></h3>
+			<p>Moreno Pasquinelli, tra gli organizzatori della Marcia della liberazione, illustra al DiariodelWeb.it il tentativo di creare un «Comitato di liberazione nazionale»</p>	
+		</div>
+
+		<div class="article stirare">
+			<div class="occhiello"><span class="contenuto">MoVimento 5 Stelle</span></div>
+			<h2><a href="https://www.diariodelweb.it/politica/articolo/?nid=20201104-547434" title="M5S, il gruppo della Camera riscrive lo statuto: più autonomia, sparisce Rousseau">M5S, il gruppo della Camera riscrive lo statuto: più autonomia, sparisce Rousseau</a></h2>
+			<div class="miniatura">
+				<div class="foto figure image-box">
+					<a href="https://www.diariodelweb.it/politica/articolo/?nid=20201104-547434">
+						<img class="b-lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="https://archivi.diariodelweb.it/img/140/547/547434-995x524.jpg" width="140" height="100" title="M5S, il gruppo della Camera riscrive lo statuto: più autonomia, sparisce Rousseau" alt="Beppe Grillo con Davide Casaleggio">
+					</a>
+				</div>
+			</div>
+			<div class="firma_commenti">
+				<span class="firma">
+					<span class="autore"><strong>Italia</strong></span>
+					<span class="data">04/11/2020 - 12:07</span>
+				</span>
+			</div>
+			<p>Le nuove regole rappresenteranno una vera e propria rivoluzione che non tutti i 5 Stelle sembrano approvare e su cui si potranno esprimere, con voto online, da oggi a giovedì 5 novembre</p>
+	
+		</div>
+		<div class="article correlata stirare">
+			<h3><a href="https://www.diariodelweb.it/politica/articolo/?nid=20201024-547396" title="Al via Stati generali M5s, Casaleggio e Di Battista attaccano: «Se salta limite mandati lasciamo»">Al via Stati generali M5s, Casaleggio e Di Battista attaccano: «Se salta limite mandati lasciamo»</a></h3>
+			<p>Vito Crimi ha messo in piedi un vero e proprio congresso: incontri locali, poi regionali il prossimo weekend e kermesse nazionale il 14 e 15 novembre: «Ci stiamo impegnando al massimo»</p>	
+		</div>
+
+		<div class="article stirare">
+			<div class="occhiello"><span class="contenuto">Smart working</span></div>
+			<h2><a href="https://www.diariodelweb.it/economia/articolo/?nid=20201104-547432" title="Nel lockdown 6,58 mln smart worker d'emergenza, nel «New Normal» 5,35 mln lavoratori agili">Nel lockdown 6,58 mln smart worker d'emergenza, nel «New Normal» 5,35 mln lavoratori agili</a></h2>
+			<div class="miniatura">
+				<div class="foto figure image-box">
+					<a href="https://www.diariodelweb.it/economia/articolo/?nid=20201104-547432">
+						<img class="b-lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="https://archivi.diariodelweb.it/img/140/547/547432-995x524.jpg" width="140" height="100" title="Nel lockdown 6,58 mln smart worker d'emergenza, nel «New Normal» 5,35 mln lavoratori agili" alt="Smart working">
+					</a>
+				</div>
+			</div>
+			<div class="firma_commenti">
+				<span class="firma">
+					<span class="autore"><strong></strong></span>
+					<span class="data">04/11/2020 - 10:40</span>
+				</span>
+			</div>
+			<p>Problemi tecnologici, di work-life balance e gestione del carico di lavoro, ma lo smart working d&#8217;emergenza ha fatto superare pregiudizi, migliorare competenze digitali, ripensare i processi</p>
+		
+		</div>
+
+		<div class="article stirare">
+			<div class="occhiello"><span class="contenuto">L'intervista</span></div>
+			<h2><a href="https://www.diariodelweb.it/italia/articolo/?nid=20201103-547421" title="Minelli: «Le nuove misure del governo non servono a contenere i contagi»">Minelli: «Le nuove misure del governo non servono a contenere i contagi»</a></h2>
+			<div class="miniatura">
+				<div class="foto figure image-box">
+					<a href="https://www.diariodelweb.it/italia/articolo/?nid=20201103-547421">
+						<img class="b-lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="https://archivi.diariodelweb.it/img/140/547/547421-995x498.jpg" width="140" height="100" title="Minelli: «Le nuove misure del governo non servono a contenere i contagi»" alt="Minelli: «Le nuove misure del governo non servono a contenere i contagi»">
+					</a>
+				</div>
+			</div>
+			<div class="firma_commenti">
+				<span class="firma">
+					<span class="autore"><strong>Italia</strong></span>
+					<span class="data">03/11/2020 - 16:44</span>
+				</span>
+			</div>
+			<p>Il DiariodelWeb.it analizza le ultime misure restrittive del governo e le cifre sulla pandemia del coronavirus con lo specialista in immunologia clinica Mauro Minelli</p>
+	
+		</div>
+		<div class="article correlata stirare">
+			<h3><a href="https://www.diariodelweb.it/italia/articolo/?nid=20201102-547415" title="Mattei: «Le manifestazioni di piazza sono giuste, il popolo protesta quando è vessato»">Mattei: «Le manifestazioni di piazza sono giuste, il popolo protesta quando è vessato»</a></h3>
+			<p>Il giurista Ugo Mattei commenta al DiariodelWeb.it l'illegittimità costituzionale delle misure del governo e le conseguenti proteste di piazza dei cittadini italiani</p>	
+		</div>
+
+		<div class="article stirare">
+			<div class="occhiello"><span class="contenuto">L'intervista</span></div>
+			<h2><a href="https://www.diariodelweb.it/politica/articolo/?nid=20201030-547414" title="Ippolito: «Perché questo governo rischia di portarci verso un fascismo peggiore»">Ippolito: «Perché questo governo rischia di portarci verso un fascismo peggiore»</a></h2>
+			<div class="miniatura">
+				<div class="foto figure image-box">
+					<a href="https://www.diariodelweb.it/politica/articolo/?nid=20201030-547414">
+						<img class="b-lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="https://archivi.diariodelweb.it/img/140/547/547414-995x498.jpg" width="140" height="100" title="Ippolito: «Perché questo governo rischia di portarci verso un fascismo peggiore»" alt="Giuseppe Conte con Beppe Grillo e Luigi Di Maio">
+					</a>
+				</div>
+			</div>
+			<div class="firma_commenti">
+				<span class="firma">
+					<span class="autore"><strong>Italia</strong></span>
+					<span class="data">30/10/2020 - 19:15</span>
+				</span>
+			</div>
+			<p>L'avvocato e blogger Carmine Ippolito spiega al DiariodelWeb.it perché dietro alla lotta contro il coronavirus si nasconde un rischio di sospensione della democrazia</p>
+	
+		</div>
+		<div class="article correlata stirare">
+			<h3><a href="https://www.diariodelweb.it/politica/articolo/?nid=20201029-547411" title="Marcucci chiede il rimpasto, il PD «smentisce» ma il Ministro Azzolina è sotto attacco">Marcucci chiede il rimpasto, il PD «smentisce» ma il Ministro Azzolina è sotto attacco</a></h3>
+			<p>A sorpresa, nel dibattito sull'emergenza coronavirus e sul Dpcm, rispunta fuori il tema del rimpasto di governo, che appariva ormai archiviato, almeno temporaneamente
+</p>
+			<div class="sostegni stirare">
+				<ul>
+				
+					<li><a href="https://www.diariodelweb.it/politica/articolo/?nid=20201026-547401"><strong>Trabucco: «Lo stato di emergenza è pericoloso, dà troppo potere al Presidente del Consiglio»</strong></a></li>
+				</ul>
+			</div>
+		
+		</div>
+
+		<div class="article stirare">
+			<div class="occhiello"><span class="contenuto">Politica monetaria</span></div>
+			<h2><a href="https://www.diariodelweb.it/economia/articolo/?nid=20201030-547413" title="«La BCE c'è stata nella prima ondata e ci sarà nella seconda»">«La BCE c'è stata nella prima ondata e ci sarà nella seconda»</a></h2>
+			<div class="miniatura">
+				<div class="foto figure image-box">
+					<a href="https://www.diariodelweb.it/economia/articolo/?nid=20201030-547413">
+						<img class="b-lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="https://archivi.diariodelweb.it/img/140/547/547413-995x497.jpg" width="140" height="100" title="«La BCE c'è stata nella prima ondata e ci sarà nella seconda»" alt="La Presidente della BCE, Christine Lagarde">
+					</a>
+				</div>
+			</div>
+			<div class="firma_commenti">
+				<span class="firma">
+					<span class="autore"><strong>Europa</strong></span>
+					<span class="data">30/10/2020 - 15:01</span>
+				</span>
+			</div>
+			<p>Con questa promessa, la presidente della Banca Centrale Europea, Christine Lagarde, ha dato appuntamento a tra sei settimane, alla riunione del Consiglio direttivo il 10 dicembre</p>
+	
+		</div>
+		<div class="article correlata stirare">
+			<h3><a href="https://www.diariodelweb.it/economia/articolo/?nid=20201022-547388" title="Christine Lagarde: «La BCE è al servizio dei cittadini e dobbiamo assicurare che quello che facciamo sia capito»">Christine Lagarde: «La BCE è al servizio dei cittadini e dobbiamo assicurare che quello che facciamo sia capito»</a></h3>
+			<p>La Presidente della BCE: «Abbiamo un obiettivo primario fissato dai trattati, che è molto chiaro e che non proponiamo di cambiare. Tuttavia il come assicuriamo la stabilità dei prezzi è meno definito»</p>	
+		</div>
+
+		<div class="article stirare">
+			<div class="occhiello"><span class="contenuto">L'intervista</span></div>
+			<h2><a href="https://www.diariodelweb.it/economia/articolo/?nid=20201022-547387" title="Filograna: «Le cartelle esattoriali ammazzeranno le partite Iva, ma la soluzione c'è»">Filograna: «Le cartelle esattoriali ammazzeranno le partite Iva, ma la soluzione c'è»</a></h2>
+			<div class="miniatura">
+				<div class="foto figure image-box">
+					<a href="https://www.diariodelweb.it/economia/articolo/?nid=20201022-547387">
+						<img class="b-lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="https://archivi.diariodelweb.it/img/140/547/547387-995x498.jpg" width="140" height="100" title="Filograna: «Le cartelle esattoriali ammazzeranno le partite Iva, ma la soluzione c'è»" alt="Il Premier Giuseppe Conte, con il Ministro dell'Economia, Roberto Gualtieri">
+					</a>
+				</div>
+			</div>
+			<div class="firma_commenti">
+				<span class="firma">
+					<span class="autore"><strong>Italia</strong></span>
+					<span class="data">22/10/2020 - 08:53</span>
+				</span>
+			</div>
+			<p>Eugenio Filograna, presidente del movimento Autonomi e Partite Iva, parla al DiariodelWeb.it dopo l'annuncio dello stop alle cartelle esattoriali fino a fine anno</p>
+		
+		</div>
+
+		<div class="article stirare">
+			<div class="occhiello"><span class="contenuto">Economia</span></div>
+			<h2><a href="https://www.diariodelweb.it/economia/articolo/?nid=20201021-547386" title="Gualtieri: «Se conterremo il covid, Pil migliore delle stime»">Gualtieri: «Se conterremo il covid, Pil migliore delle stime»</a></h2>
+			<div class="miniatura">
+				<div class="foto figure image-box">
+					<a href="https://www.diariodelweb.it/economia/articolo/?nid=20201021-547386">
+						<img class="b-lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="https://archivi.diariodelweb.it/img/140/547/547386-995x498.jpg" width="140" height="100" title="Gualtieri: «Se conterremo il covid, Pil migliore delle stime»" alt="Il Ministro dell'Economia, Roberto Gualtieri">
+					</a>
+				</div>
+			</div>
+			<div class="firma_commenti">
+				<span class="firma">
+					<span class="autore"><strong>Italia</strong></span>
+					<span class="data">21/10/2020 - 09:10</span>
+				</span>
+			</div>
+			<p>In un&#8217;intervista sul Sole 24 Ore di oggi, il ministro dell&#8217;Economia Roberto Gualtieri difende le stime di crescita su cui il governo ha deciso di appoggiare il programma della manovra</p>
+	
+		</div>
+		<div class="article correlata stirare">
+			<h3><a href="https://www.diariodelweb.it/economia/articolo/?nid=20201020-547380" title="«L'invio delle cartelle esattoriali non è un processo che si può bloccare all'infinito»">«L'invio delle cartelle esattoriali non è un processo che si può bloccare all'infinito»</a></h3>
+			<p>Il viceministro dell'Economia, Antonio Misiani: «Il condono non mi sembra una soluzione giusta, perché chi le tasse le paga regolarmente fa la figura del fesso. Nuovo lockdown? Sarebbe mortale per l'economia»</p>	
+		</div>
+
+		<div class="article stirare">
+			<div class="occhiello"><span class="contenuto">Storia tragicomica</span></div>
+			<h2><a href="https://www.diariodelweb.it/politica/articolo/?nid=20201020-547378" title="La «tregua» sul MES è saltata">La «tregua» sul MES è saltata</a></h2>
+			<div class="miniatura">
+				<div class="foto figure image-box">
+					<a href="https://www.diariodelweb.it/politica/articolo/?nid=20201020-547378">
+						<img class="b-lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="https://archivi.diariodelweb.it/img/140/547/547378-995x525.jpg" width="140" height="100" title="La «tregua» sul MES è saltata" alt="Nicola Zingaretti e Giuseppe Conte">
+					</a>
+				</div>
+			</div>
+			<div class="firma_commenti">
+				<span class="firma">
+					<span class="autore"><strong>Italia</strong></span>
+					<span class="data">20/10/2020 - 07:06</span>
+				</span>
+			</div>
+			<p>Per l'ennesima volta il Presidente del Consiglio, Giuseppe Conte, calcia il barattolo più in là: se ne parla dopo gli Stati Generali M5s. E fissa un fumoso «patto di legislatura» con Zingaretti e gli altri</p>
+		
+		</div>
+
+		<div class="article stirare">
+			<div class="occhiello"><span class="contenuto">Storia tragicomica</span></div>
+			<h2><a href="https://www.diariodelweb.it/politica/articolo/?nid=20201020-547378" title="La «tregua» sul MES è saltata">La «tregua» sul MES è saltata</a></h2>
+			<div class="miniatura">
+				<div class="foto figure image-box">
+					<a href="https://www.diariodelweb.it/politica/articolo/?nid=20201020-547378">
+						<img class="b-lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="https://archivi.diariodelweb.it/img/140/547/547378-995x525.jpg" width="140" height="100" title="La «tregua» sul MES è saltata" alt="Nicola Zingaretti e Giuseppe Conte">
+					</a>
+				</div>
+			</div>
+			<div class="firma_commenti">
+				<span class="firma">
+					<span class="autore"><strong>Italia</strong></span>
+					<span class="data">20/10/2020 - 07:06</span>
+				</span>
+			</div>
+			<p>Per l'ennesima volta il Presidente del Consiglio, Giuseppe Conte, calcia il barattolo più in là: se ne parla dopo gli Stati Generali M5s. E fissa un fumoso «patto di legislatura» con Zingaretti e gli altri</p>
+		
+		</div>
+
+		<div class="article stirare">
+			<div class="occhiello"><span class="contenuto">Storia tragicomica</span></div>
+			<h2><a href="https://www.diariodelweb.it/politica/articolo/?nid=20201020-547378" title="La «tregua» sul MES è saltata">La «tregua» sul MES è saltata</a></h2>
+			<div class="miniatura">
+				<div class="foto figure image-box">
+					<a href="https://www.diariodelweb.it/politica/articolo/?nid=20201020-547378">
+						<img class="b-lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="https://archivi.diariodelweb.it/img/140/547/547378-995x525.jpg" width="140" height="100" title="La «tregua» sul MES è saltata" alt="Nicola Zingaretti e Giuseppe Conte">
+					</a>
+				</div>
+			</div>
+			<div class="firma_commenti">
+				<span class="firma">
+					<span class="autore"><strong>Italia</strong></span>
+					<span class="data">20/10/2020 - 07:06</span>
+				</span>
+			</div>
+			<p>Per l'ennesima volta il Presidente del Consiglio, Giuseppe Conte, calcia il barattolo più in là: se ne parla dopo gli Stati Generali M5s. E fissa un fumoso «patto di legislatura» con Zingaretti e gli altri</p>
+		
+		</div>
+
+		<div class="article stirare">
+			<div class="occhiello"><span class="contenuto">Storia tragicomica</span></div>
+			<h2><a href="https://www.diariodelweb.it/politica/articolo/?nid=20201020-547378" title="La «tregua» sul MES è saltata">La «tregua» sul MES è saltata</a></h2>
+			<div class="miniatura">
+				<div class="foto figure image-box">
+					<a href="https://www.diariodelweb.it/politica/articolo/?nid=20201020-547378">
+						<img class="b-lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="https://archivi.diariodelweb.it/img/140/547/547378-995x525.jpg" width="140" height="100" title="La «tregua» sul MES è saltata" alt="Nicola Zingaretti e Giuseppe Conte">
+					</a>
+				</div>
+			</div>
+			<div class="firma_commenti">
+				<span class="firma">
+					<span class="autore"><strong>Italia</strong></span>
+					<span class="data">20/10/2020 - 07:06</span>
+				</span>
+			</div>
+			<p>Per l'ennesima volta il Presidente del Consiglio, Giuseppe Conte, calcia il barattolo più in là: se ne parla dopo gli Stati Generali M5s. E fissa un fumoso «patto di legislatura» con Zingaretti e gli altri</p>
+		
+		</div>
+
+		<div class="article stirare">
+			<div class="occhiello"><span class="contenuto">Storia tragicomica</span></div>
+			<h2><a href="https://www.diariodelweb.it/politica/articolo/?nid=20201020-547378" title="La «tregua» sul MES è saltata">La «tregua» sul MES è saltata</a></h2>
+			<div class="miniatura">
+				<div class="foto figure image-box">
+					<a href="https://www.diariodelweb.it/politica/articolo/?nid=20201020-547378">
+						<img class="b-lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="https://archivi.diariodelweb.it/img/140/547/547378-995x525.jpg" width="140" height="100" title="La «tregua» sul MES è saltata" alt="Nicola Zingaretti e Giuseppe Conte">
+					</a>
+				</div>
+			</div>
+			<div class="firma_commenti">
+				<span class="firma">
+					<span class="autore"><strong>Italia</strong></span>
+					<span class="data">20/10/2020 - 07:06</span>
+				</span>
+			</div>
+			<p>Per l'ennesima volta il Presidente del Consiglio, Giuseppe Conte, calcia il barattolo più in là: se ne parla dopo gli Stati Generali M5s. E fissa un fumoso «patto di legislatura» con Zingaretti e gli altri</p>
+		
+		</div>
+
+		<div class="article stirare">
+			<div class="occhiello"><span class="contenuto">Storia tragicomica</span></div>
+			<h2><a href="https://www.diariodelweb.it/politica/articolo/?nid=20201020-547378" title="La «tregua» sul MES è saltata">La «tregua» sul MES è saltata</a></h2>
+			<div class="miniatura">
+				<div class="foto figure image-box">
+					<a href="https://www.diariodelweb.it/politica/articolo/?nid=20201020-547378">
+						<img class="b-lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="https://archivi.diariodelweb.it/img/140/547/547378-995x525.jpg" width="140" height="100" title="La «tregua» sul MES è saltata" alt="Nicola Zingaretti e Giuseppe Conte">
+					</a>
+				</div>
+			</div>
+			<div class="firma_commenti">
+				<span class="firma">
+					<span class="autore"><strong>Italia</strong></span>
+					<span class="data">20/10/2020 - 07:06</span>
+				</span>
+			</div>
+			<p>Per l'ennesima volta il Presidente del Consiglio, Giuseppe Conte, calcia il barattolo più in là: se ne parla dopo gli Stati Generali M5s. E fissa un fumoso «patto di legislatura» con Zingaretti e gli altri</p>
+		
+		</div>
+
+			</div>
+			<div class="colonna_secondaria">
+				
+<div class="cassa blocco_video stirare">
+	<h3><a href="https://www.diariodelweb.it/video/"><strong>VIDEO</strong></a></h3>
+	<div class="contenitore_evidenziata">
+		<div class="evidenziata">
+			<div class="article stirare">
+				<div class="grande">
+					<div class="foto figure image-box">
+						<a href="https://www.diariodelweb.it/politica/video/?nid=20201102-547416" class="posizionatore">
+							<span class="pulsante_video"></span>
+							<img src="https://archivi.diariodelweb.it/img/560/547/547416-995x498.jpg" width="418" height="235" title="Conte: «Non può esserci dilemma tra salute ed economia»" alt="Il Presidente del Consiglio, Giuseppe Conte">
+						</a>
+					</div>
+				</div>
+				<div class="contenuto">
+					<h4><a href="https://www.diariodelweb.it/politica/video/?nid=20201102-547416">Conte: «Non può esserci dilemma tra salute ed economia»</a></h4>
+					<p>Lo ha detto il presidente del Consiglio, Giuseppe Conte, nel corso delle sue comunicazioni sull'emergenza Covid nell'aula della Camera</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="article stirare">
+		<div class="miniatura">
+			<div class="foto figura">
+				<a href="https://www.diariodelweb.it/italia/video/?nid=20201016-547374" class="posizionatore">
+					<img class="b-lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="https://archivi.diariodelweb.it/img/140/547/547374-995x524.jpg" width="140" height="100" title="De Luca: «Da Halloween coprifuoco alle 22, stop a festa monumento all'imbecillità»" alt="">
+				</a>
+			</div>
+		</div>
+		<h4><a href="https://www.diariodelweb.it/italia/video/?nid=20201016-547374">De Luca: «Da Halloween coprifuoco alle 22, stop a festa monumento all'imbecillità»</a></h4>
+		<div class="data">Il Presidente della Regione Campania, Vincenzo De Luca</div>
+	</div>
+	<div class="article stirare">
+		<div class="miniatura">
+			<div class="foto figura">
+				<a href="https://www.diariodelweb.it/politica/video/?nid=20201001-547329" class="posizionatore">
+					<img class="b-lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="https://archivi.diariodelweb.it/img/140/547/547329-995x525.jpg" width="140" height="100" title="Matteo Salvini durissimo con Zingaretti: «Si deve vergognare, ha insultato i morti lombardi. Non ha la mia stima»" alt="">
+				</a>
+			</div>
+		</div>
+		<h4><a href="https://www.diariodelweb.it/politica/video/?nid=20201001-547329">Matteo Salvini durissimo con Zingaretti: «Si deve vergognare, ha insultato i morti lombardi. Non ha la mia stima»</a></h4>
+		<div class="data">Il leader della Lega, Matteo Salvini</div>
+	</div>
+	<div class="article stirare">
+		<div class="miniatura">
+			<div class="foto figura">
+				<a href="https://www.diariodelweb.it/politica/video/?nid=20200927-547301" class="posizionatore">
+					<img class="b-lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="https://archivi.diariodelweb.it/img/140/547/547301-995x498.jpg" width="140" height="100" title="Matteo Salvini a un evento «febbricitante» ma precisa: tampone negativo" alt="">
+				</a>
+			</div>
+		</div>
+		<h4><a href="https://www.diariodelweb.it/politica/video/?nid=20200927-547301">Matteo Salvini a un evento «febbricitante» ma precisa: tampone negativo</a></h4>
+		<div class="data">Il leader della Lega, Matteo Salvini</div>
+	</div>
+	<div class="article stirare">
+		<div class="miniatura">
+			<div class="foto figura">
+				<a href="https://www.diariodelweb.it/politica/video/?nid=20200924-547273" class="posizionatore">
+					<img class="b-lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="https://archivi.diariodelweb.it/img/140/547/547273-995x525.jpg" width="140" height="100" title="Beppe Grillo: «Non credo nel Parlamento ma nella Democrazia diretta»" alt="">
+				</a>
+			</div>
+		</div>
+		<h4><a href="https://www.diariodelweb.it/politica/video/?nid=20200924-547273">Beppe Grillo: «Non credo nel Parlamento ma nella Democrazia diretta»</a></h4>
+		<div class="data">Beppe Grillo, garante del MoVimento 5 Stelle</div>
+	</div>
+</div><section id='div-gpt-MPU1'>
+	<script type='text/javascript'>
+	googletag.cmd.push(function() { googletag.display('div-gpt-MPU1'); });
+	</script>
+</section>
+<div class="cassa cassa_ultime_notizie">
+	<h3><a href="/innovazione/">Innovazione</a></h3>	
+
+	<div class="article stirare">
+		<div class="miniatura">
+			<div class="foto figure">
+				<a href="https://www.diariodelweb.it/innovazione/articolo/?nid=20201106-547451">
+					<img class="b-lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="https://archivi.diariodelweb.it/img/140/547/547451-995x519.jpg" width="140" height="100" title="Farmaci da banco: cresce l'interesse per l'acquisto online" alt="Compresse farmaci da banco">
+				</a>
+			</div>
+		</div>
+		<h4><a href="https://www.diariodelweb.it/innovazione/articolo/?nid=20201106-547451">Farmaci da banco: cresce l'interesse per l'acquisto online</a></h4>
+		<p>Si fanno scorte di rimedi per il benessere fisico in generale e per mantenersi in salute: boom di prodotti per smettere di fumare. Crescono anche i prodotti analgesici, antidolorifici e contro la febbre 
+</p>
+	</div>
+
+	<div class="article stirare">
+		<div class="miniatura">
+			<div class="foto figure">
+				<a href="https://www.diariodelweb.it/innovazione/articolo/?nid=20201105-547448">
+					<img class="b-lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="https://archivi.diariodelweb.it/img/140/547/547448-995x539.jpg" width="140" height="100" title="Facebook presenta GetDigital, per un'educazione digitale consapevole" alt="Benessere digitale">
+				</a>
+			</div>
+		</div>
+		<h4><a href="https://www.diariodelweb.it/innovazione/articolo/?nid=20201105-547448">Facebook presenta GetDigital, per un'educazione digitale consapevole</a></h4>
+		<p>Guide complete, risorse e un ciclo di workshop gratuiti organizzati dalla Onlus Fondazione Carolina per sviluppare le competenze necessarie a formare cittadini digitali consapevoli</p>
+	</div>
+
+	<div class="article stirare">
+		<div class="miniatura">
+			<div class="foto figure">
+				<a href="https://www.diariodelweb.it/innovazione/articolo/?nid=20201105-547446">
+					<img class="b-lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="https://archivi.diariodelweb.it/img/140/547/547446-995x497.jpg" width="140" height="100" title="Alleanza per la Sostenibilità: il nuovo progetto di Microsoft Italia" alt="Una delle sedi di Microsoft">
+				</a>
+			</div>
+		</div>
+		<h4><a href="https://www.diariodelweb.it/innovazione/articolo/?nid=20201105-547446">Alleanza per la Sostenibilità: il nuovo progetto di Microsoft Italia</a></h4>
+		<p>L&#8217;iniziativa si traduce in una collaborazione strategica con aziende, mondo accademico e startup per sviluppare insieme, attraverso modalità di open innovation, nuove progettualità</p>
+	</div>
+
+	<div class="article stirare">
+		<div class="miniatura">
+			<div class="foto figure">
+				<a href="https://www.diariodelweb.it/innovazione/articolo/?nid=20201105-547444">
+					<img class="b-lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="https://archivi.diariodelweb.it/img/140/547/547444-995x498.jpg" width="140" height="100" title="Come attrarre, valorizzare e trattenere i talenti tech in azienda" alt="Chiara Russo,  CEO e Co-Founder di Codemotion">
+				</a>
+			</div>
+		</div>
+		<h4><a href="https://www.diariodelweb.it/innovazione/articolo/?nid=20201105-547444">Come attrarre, valorizzare e trattenere i talenti tech in azienda</a></h4>
+		<p>Le soluzioni da attuare per risolvere la problematica dell&#8217;hiring di figure tech; le maggiori difficoltà per gli HR quando devono assumere uno sviluppatore; come valorizzare le eccellenze tech in azienda</p>
+	</div>
+
+</div>
+<div class="cassa cassa_ultime_notizie">
+	<h3><a href="/trend/">Trend</a></h3>	
+
+	<div class="article stirare">
+		<div class="miniatura">
+			<div class="foto figure image-box">
+				<a href="https://www.diariodelweb.it/trend/articolo/?nid=20201105-547445">
+					<img class="b-lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="https://archivi.diariodelweb.it/img/140/547/547445-995x497.jpg" width="140" height="100" title="Le sneakers più attese delle festività natalizie" alt="Sneakers Jordan">
+				</a>
+			</div>
+		</div>
+		<h4><a href="https://www.diariodelweb.it/trend/articolo/?nid=20201105-547445">Le sneakers più attese delle festività natalizie</a></h4>
+		<p>Tra modelli celebrativi e grandi ritorni, StockX presenta i modelli da non lasciarsi scappare questo mese</p>
+	</div>
+
+	<div class="article stirare">
+		<div class="miniatura">
+			<div class="foto figure image-box">
+				<a href="https://www.diariodelweb.it/trend/articolo/?nid=20201104-547430">
+					<img class="b-lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="https://archivi.diariodelweb.it/img/140/547/547430-995x468.jpg" width="140" height="100" title="Ops, mi è caduto lo smartphone" alt="Caduta smartphone">
+				</a>
+			</div>
+		</div>
+		<h4><a href="https://www.diariodelweb.it/trend/articolo/?nid=20201104-547430">Ops, mi è caduto lo smartphone</a></h4>
+		<p>Secondo un sondaggio sulle cadute dei telefoni, solo il 52% ha portato alla rottura dello smartphone</p>
+	</div>
+
+	<div class="article stirare">
+		<div class="miniatura">
+			<div class="foto figure image-box">
+				<a href="https://www.diariodelweb.it/trend/articolo/?nid=20201103-547427">
+					<img class="b-lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="https://archivi.diariodelweb.it/img/140/547/547427-995x451.jpg" width="140" height="100" title="ll MAUTO celebra i 60 anni della sede di Corso Unità d&#8217;Italia a Torino" alt="ll MAUTO, Museo Nazionale dell'Automobile, celebra i 60 anni della sede di Corso Unità d&#8217;Italia a Torino">
+				</a>
+			</div>
+		</div>
+		<h4><a href="https://www.diariodelweb.it/trend/articolo/?nid=20201103-547427">ll MAUTO celebra i 60 anni della sede di Corso Unità d&#8217;Italia a Torino</a></h4>
+		<p>Per le celebrazioni, il Museo Nazionale dell&#8217;Automobile lancia un contest fotografico alla ricerca di immagini del museo dal 1960 al 2007, che diventerà una mostra</p>
+	</div>
+
+	<div class="article stirare">
+		<div class="miniatura">
+			<div class="foto figure image-box">
+				<a href="https://www.diariodelweb.it/trend/articolo/?nid=20201103-547424">
+					<img class="b-lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="https://archivi.diariodelweb.it/img/140/547/547424-995x527.jpg" width="140" height="100" title="Pinterest lancia nuovi strumenti per fare shopping" alt="Logo pinterest">
+				</a>
+			</div>
+		</div>
+		<h4><a href="https://www.diariodelweb.it/trend/articolo/?nid=20201103-547424">Pinterest lancia nuovi strumenti per fare shopping</a></h4>
+		<p>Per Pinterest, è l'ispirazione a fare la differenza. Uno shopping online davvero ispirato prende il meglio dell'esperienza di acquisto e la rende fruibile ovunque</p>
+	</div>
+
+</div><section id='div-gpt-MPU2'>
+	<script type='text/javascript'>
+	googletag.cmd.push(function() { googletag.display('div-gpt-MPU2'); });
+	</script>
+</section><div class="fb-page" data-href="https://www.facebook.com/diariodelweb.it" data-width="400" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+	<blockquote cite="https://www.facebook.com/diariodelweb.it" class="fb-xfbml-parse-ignore">
+		<a rel="nofollow" href="https://www.facebook.com/diariodelweb.it"></a>
+	</blockquote>
+</div>
+<div class="cassa cassa_ultime_notizie">
+	<h3><a href="/">In primo piano</a></h3>	
+
+	<div class="article stirare">
+		<div class="miniatura">
+			<div class="foto figure image-box">
+				<a href="https://www.diariodelweb.it/economia/articolo/?nid=20201103-547422">
+					<img class="b-lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="https://archivi.diariodelweb.it/img/140/547/547422-995x497.jpg" width="140" height="100" title="Immatricolazioni auto: a Ottobre si ritorna in rosso (-0,2%)" alt="Auto BMW">
+				</a>
+			</div>
+		</div>
+		<h4><a href="https://www.diariodelweb.it/economia/articolo/?nid=20201103-547422">Immatricolazioni auto: a Ottobre si ritorna in rosso (-0,2%)</a></h4>
+		<p>Esaurito l'effetto degli incentivi si ritorna al segno meno. La ripresa dei contagi mostra già i suoi effetti  e si prevede un ultimo trimestre 2020 in pesante flessione
+</p>
+	</div>
+
+	<div class="article stirare">
+		<div class="miniatura">
+			<div class="foto figure image-box">
+				<a href="https://www.diariodelweb.it/esteri/articolo/?nid=20200928-547314">
+					<img class="b-lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="https://archivi.diariodelweb.it/img/140/547/547314-995x498.jpg" width="140" height="100" title="Putin: «La Russia continuerà a sviluppare il potenziale della sua industria nucleare»" alt="Il Presidente russo, Vladimir Putin">
+				</a>
+			</div>
+		</div>
+		<h4><a href="https://www.diariodelweb.it/esteri/articolo/?nid=20200928-547314">Putin: «La Russia continuerà a sviluppare il potenziale della sua industria nucleare»</a></h4>
+		<p>Il programma russo mira a garantire la sicurezza energetica della Russia ed è stato sviluppato dall'agenzia nucleare statale russa Rosatom</p>
+	</div>
+
+	<div class="article stirare">
+		<div class="miniatura">
+			<div class="foto figure image-box">
+				<a href="https://www.diariodelweb.it/economia/articolo/?nid=20200928-547313">
+					<img class="b-lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="https://archivi.diariodelweb.it/img/140/547/547313-995x498.jpg" width="140" height="100" title="Massimo Gianolli de «La Collina dei Ciliegi»: In 3 anni vogliamo riservare il 75% del nostro Amarone Cru Ciliegio" alt="Massimo Gianolli alla guida de «La Collina dei Ciliegi»">
+				</a>
+			</div>
+		</div>
+		<h4><a href="https://www.diariodelweb.it/economia/articolo/?nid=20200928-547313">Massimo Gianolli de «La Collina dei Ciliegi»: In 3 anni vogliamo riservare il 75% del nostro Amarone Cru Ciliegio</a></h4>
+		<p>Sale il grado di attenzione di un nuovo modo di intendere il vino - un mix tra investimento e passione - alla seconda Festa dell'en primeur de La Collina dei Ciliegi che si è svolta sabato 26 settembre</p>
+	</div>
+
+	<div class="article stirare">
+		<div class="miniatura">
+			<div class="foto figure image-box">
+				<a href="https://www.diariodelweb.it/italia/articolo/?nid=20200705-547027">
+					<img class="b-lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="https://archivi.diariodelweb.it/img/140/547/547027-995x525.jpg" width="140" height="100" title="Tav, agguato ai mezzi di polizia con chiodi in autostrada: per ES Polizia è «terrorismo di piazza»" alt="Tav, agguato ai mezzi di polizia con chiodi in autostrada: per ES Polizia è «terrorismo di piazza»">
+				</a>
+			</div>
+		</div>
+		<h4><a href="https://www.diariodelweb.it/italia/articolo/?nid=20200705-547027">Tav, agguato ai mezzi di polizia con chiodi in autostrada: per ES Polizia è «terrorismo di piazza»</a></h4>
+		<p>Agguato la scorsa notte alla colonna di mezzi del Reparto Mobile della polizia di Stato diretta al cantiere della Tav di Chiomonte, in Valle di Susa</p>
+	</div>
+
+	<div class="article stirare">
+		<div class="miniatura">
+			<div class="foto figure image-box">
+				<a href="https://www.diariodelweb.it/economia/articolo/?nid=20200623-546954">
+					<img class="b-lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="https://archivi.diariodelweb.it/img/140/546/546954-995x497.jpg" width="140" height="100" title="E-commerce: il Covid spinge il settore dedicato agli animali" alt="Mamma e figlio con un cucciolo di cane">
+				</a>
+			</div>
+		</div>
+		<h4><a href="https://www.diariodelweb.it/economia/articolo/?nid=20200623-546954">E-commerce: il Covid spinge il settore dedicato agli animali</a></h4>
+		<p>Il comparto di vendita di prodotti dedicati agli animali da compagnia in Italia non conosce crisi, ma segna numeri positivi e in crescita anno dopo anno, anche durante il lockdown</p>
+	</div>
+
+	<div class="article stirare">
+		<div class="miniatura">
+			<div class="foto figure image-box">
+				<a href="https://www.diariodelweb.it/economia/articolo/?nid=20200623-546949">
+					<img class="b-lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="https://archivi.diariodelweb.it/img/140/546/546949-995x497.jpg" width="140" height="100" title="Nell'era del COVID-19 il 57% dei consumatori preferisce l'internet banking" alt="Nell'era del COVID-19 il 57% dei consumatori preferisce l'internet banking">
+				</a>
+			</div>
+		</div>
+		<h4><a href="https://www.diariodelweb.it/economia/articolo/?nid=20200623-546949">Nell'era del COVID-19 il 57% dei consumatori preferisce l'internet banking</a></h4>
+		<p>Il report evidenzia come il settore finanziario mondiale sia nel mezzo di una trasformazione storica poiché i nuovi player grazie all' approccio agile e digitale continuano a migliorare l'esperienza dei clienti</p>
+	</div>
+
+	<div class="article stirare">
+		<div class="miniatura">
+			<div class="foto figure image-box">
+				<a href="https://www.diariodelweb.it/economia/articolo/?nid=20200623-546948">
+					<img class="b-lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="https://archivi.diariodelweb.it/img/140/546/546948-995x497.jpg" width="140" height="100" title="Bollette della luce: come tenere sotto controllo i consumi, nonostante il condizionatore" alt="Una ragazza al computer">
+				</a>
+			</div>
+		</div>
+		<h4><a href="https://www.diariodelweb.it/economia/articolo/?nid=20200623-546948">Bollette della luce: come tenere sotto controllo i consumi, nonostante il condizionatore</a></h4>
+		<p>L' uso del climatizzatore durante i mesi caldi potrebbe accrescere i consumi di luce, causando un aumento delle bollette. Ecco alcuni consigli pratici per risparmiare energia elettrica e ottimizzare</p>
+	</div>
+
+</div><section id='div-gpt-MPU3'>
+	<script type='text/javascript'>
+	googletag.cmd.push(function() { googletag.display('div-gpt-MPU3'); });
+	</script>
+</section><div class="cassa sport">
+	<h3><a href="/sport/"><strong>Sport</strong></a></h3>
+<div class="evidenziata">
+	<div class="article stirare">
+		<div class="grande">
+			<div class="foto figura">
+				<div class="image-box">
+					<a href="https://www.diariodelweb.it/sport/articolo/?nid=20201103-547423">
+						<img class="b-lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="https://archivi.diariodelweb.it/img/560/547/547423-995x498.jpg" width="418" title="Tour de France 2021, svelato il percorso: c'è il Ventoux, finale sui Pirenei" alt="Una tappa del Tour de France 2019">
+					</a>
+				</div>
+				<p class="figcaption stirare">Una tappa del Tour de France 2019</p>
+			</div>
+		</div>
+		<h4><a href="https://www.diariodelweb.it/sport/articolo/?nid=20201103-547423" title="Tour de France 2021, svelato il percorso: c'è il Ventoux, finale sui Pirenei">Tour de France 2021, svelato il percorso: c'è il Ventoux, finale sui Pirenei</a></h4>
+		<p>Partenza da Brest il 26 giugno e arrivo a Parigi tre settimane più tardi per evitare la concomitanza con le olimpiadi. Due le cronometro previste, alla quinta e alla ventesima tappa</p>
+		<div class="sostegni stirare">
+			<ul>
+		
+				<li><a href="https://www.diariodelweb.it/sport/articolo/?nid=20200927-547296"><strong>Filippo Ganna campione del mondo a cronometro</strong></a></li>
+			</ul>
+		</div>
+	</div>
+</div><div class="article stirare">
+	<div class="miniatura">
+		<div class="foto figure image-box">
+			<a href="https://www.diariodelweb.it/sport/articolo/?nid=20201102-547417">
+				<img class="b-lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="https://archivi.diariodelweb.it/img/140/547/547417-995x497.jpg" width="140" height="100" title="F1, GP Imola 2020: Hamilton vince a Imola, titolo Costruttori alla Mercedes. Leclerc 5°" alt="La squadra campione del mondo Mercedes">
+			</a>
+		</div>
+	</div>
+	<h4><a href="https://www.diariodelweb.it/sport/articolo/?nid=20201102-547417" title="F1, GP Imola 2020: Hamilton vince a Imola, titolo Costruttori alla Mercedes. Leclerc 5°">F1, GP Imola 2020: Hamilton vince a Imola, titolo Costruttori alla Mercedes. Leclerc 5°</a></h4>
+	<p>La scuderia tedesca si prende il gradino più alto del podio con Lewis ...</p>
+	<div class="pulire"></div>
+	<div class="sostegni stirare">
+		<ul>
+		
+			<li><a href="https://www.diariodelweb.it/sport/articolo/?nid=20201029-547412"><strong>Leclerc: «Weekend interessante». Vettel: «Mai corso a Imola, sono curioso»</strong></a></li>
+			<li><a href="https://www.diariodelweb.it/sport/articolo/?nid=20201002-547337"><strong>Honda lascerà la Formula 1 a partire dalla fine del 2021</strong></a></li>
+		</ul>
+	</div>
+</div><div class="article stirare">
+	<div class="miniatura">
+		<div class="foto figure image-box">
+			<a href="https://www.diariodelweb.it/sport/articolo/?nid=20201016-547373">
+				<img class="b-lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="https://archivi.diariodelweb.it/img/140/547/547373-995x497.jpg" width="140" height="100" title="Valentino Rossi dalla quarantena: «Il nervoso non mi è passato»" alt="Valentino Rossi">
+			</a>
+		</div>
+	</div>
+	<h4><a href="https://www.diariodelweb.it/sport/articolo/?nid=20201016-547373" title="Valentino Rossi dalla quarantena: «Il nervoso non mi è passato»">Valentino Rossi dalla quarantena: «Il nervoso non mi è passato»</a></h4>
+	<p>Anche la Pellegrini ha comunicato di essere positiva subito dopo Rossi...</p>
+	<div class="pulire"></div>
+	<div class="sostegni stirare">
+		<ul>
+		
+			<li><a href="https://www.diariodelweb.it/sport/articolo/?nid=20201007-547360"><strong>Valentino Rossi: «In Francia per lottare per il podio»</strong></a></li>
+			<li><a href="https://www.diariodelweb.it/sport/articolo/?nid=20200927-547295"><strong>A Barcellona capolavoro di Morbidelli, che si gode la prima pole della carriera in top-class</strong></a></li>
+		</ul>
+	</div>
+</div>
+</div>
+<section class="cassa i_piu_visti">
+	<h3><span class="senza_link">I più visti</span></h3>
+	<div class="contenuto">
+		<ol>
+		
+			<li class="stirare">
+				<span class="numero">1</span>
+				<a href="https://www.diariodelweb.it/esteri/articolo/?nid=20201104-547428">Donald Trump suona la carica: «Per me abbiamo già vinto»</a>
+			</li>
+			<li class="stirare">
+				<span class="numero">2</span>
+				<a href="https://www.diariodelweb.it/politica/articolo/?nid=20201105-547447">Marco Rizzo: «Vogliono far fare all'Italia (e a tutta Europa) la fine della Grecia»</a>
+			</li>
+			<li class="stirare">
+				<span class="numero">3</span>
+				<a href="https://www.diariodelweb.it/italia/articolo/?nid=20201103-547421">Minelli: «Le nuove misure del governo non servono a contenere i contagi»</a>
+			</li>
+			<li class="stirare">
+				<span class="numero">4</span>
+				<a href="https://www.diariodelweb.it/italia/articolo/?nid=20201102-547415">Mattei: «Le manifestazioni di piazza sono giuste, il popolo protesta quando è vessato»</a>
+			</li>
+			<li class="stirare">
+				<span class="numero">5</span>
+				<a href="https://www.diariodelweb.it/economia/articolo/?nid=20201106-547449">Patto di stabilità sospeso fino al 2022?</a>
+			</li>
+			<li class="stirare">
+				<span class="numero">6</span>
+				<a href="https://www.diariodelweb.it/esteri/articolo/?nid=20201108-547458">Romney: «Non aspettatevi che Trump se ne stia zitto e buono»</a>
+			</li>
+			<li class="stirare">
+				<span class="numero">7</span>
+				<a href="https://www.diariodelweb.it/politica/video/?nid=20201102-547416"><span class="video">Video</span>Conte: «Non può esserci dilemma tra salute ed economia»</a>
+			</li>
+			<li class="stirare">
+				<span class="numero">8</span>
+				<a href="https://www.diariodelweb.it/esteri/articolo/?nid=20201108-547457">Joe Biden, primo discorso da Presidente: «I rivali non sono nemici, sono americani, proprio come noi»</a>
+			</li>
+			<li class="stirare">
+				<span class="numero">9</span>
+				<a href="https://www.diariodelweb.it/politica/articolo/?nid=20201104-547434">M5S, il gruppo della Camera riscrive lo statuto: più autonomia, sparisce Rousseau</a>
+			</li>
+			<li class="stirare">
+				<span class="numero">10</span>
+				<a href="https://www.diariodelweb.it/trend/articolo/?nid=20201103-547427">ll MAUTO celebra i 60 anni della sede di Corso Unità d&#8217;Italia a Torino</a>
+			</li>
+		</ol>
+	</div>
+</section>
+
+
+			</div>
+		</div>
+		<div class="subMenu">
+		
+<section class="contenitore_barra_tuttosu stirare">
+	<header>
+		<button class="testata">Temi del giorno</button>
+	</header>
+	<nav class="contenuto">
+		<ul itemtype="https://www.schema.org/SiteNavigationElement" itemscope="" class="nav">
+			
+				<li itemprop="name"><a itemprop="url" href="https://www.diariodelweb.it/tuttosu/tag/?q=20234">Coronavirus</a></li>
+			
+				<li itemprop="name"><a itemprop="url" href="https://www.diariodelweb.it/tuttosu/tag/?q=242318">Presidenziali USA 2020</a></li>
+			
+				<li itemprop="name"><a itemprop="url" href="https://www.diariodelweb.it/tuttosu/tag/?q=241489">Governo Conte</a></li>
+			
+				<li itemprop="name"><a itemprop="url" href="https://www.diariodelweb.it/tuttosu/tag/?q=18604">E-Commerce</a></li>
+			
+				<li itemprop="name"><a itemprop="url" href="https://www.diariodelweb.it/tuttosu/tag/?q=233030">Politica monetaria</a></li>
+			
+				<li itemprop="name"><a itemprop="url" href="https://www.diariodelweb.it/tuttosu/tag/?q=21016">Social network</a></li>
+			
+				<li itemprop="name"><a itemprop="url" href="https://www.diariodelweb.it/tuttosu/tag/?q=237074">Benessere</a></li>
+			
+				<li itemprop="name"><a itemprop="url" href="https://www.diariodelweb.it/tuttosu/tag/?q=234524">F1 GP Imola</a></li>
+			
+				<li itemprop="name"><a itemprop="url" href="https://www.diariodelweb.it/tuttosu/tag/?q=18042">Movimento 5 Stelle</a></li>
+			
+				<li itemprop="name"><a itemprop="url" href="https://www.diariodelweb.it/tuttosu/tag/?q=236533">Open innovation</a></li>
+			
+				<li itemprop="name"><a itemprop="url" href="https://www.diariodelweb.it/tuttosu/tag/?q=237424">Shopping</a></li>
+			
+				<li itemprop="name"><a itemprop="url" href="https://www.diariodelweb.it/tuttosu/tag/?q=18495">Sicurezza informatica</a></li>
+			
+				<li itemprop="name"><a itemprop="url" href="https://www.diariodelweb.it/tuttosu/tag/?q=233189">Smart working</a></li>
+			
+				<li itemprop="name"><a itemprop="url" href="https://www.diariodelweb.it/tuttosu/tag/?q=18497">Smartphone</a></li>
+			
+				<li itemprop="name"><a itemprop="url" href="https://www.diariodelweb.it/tuttosu/tag/?q=14011">Formazione</a></li>
+			
+				<li itemprop="name"><a itemprop="url" href="https://www.diariodelweb.it/tuttosu/tag/?q=230761">Ford Mustang</a></li>
+		
+		</ul>
+	</nav>
+	<div class="piuargomenti"><a href="https://www.diariodelweb.it/tuttosu/" title="Indice dei temi">Più temi &raquo;</a></div>
+</section>
+<nav id="menu_laterale" class="menu_laterale">
+	<ul itemtype="https://www.schema.org/SiteNavigationElement" itemscope="" class="nav">
+	
+			<li itemprop="name"><a itemprop="url" href="https://www.diariodelweb.it/esteri/" class="categoria">Esteri</span></a></li>
+	<ul class="subcategorie"><li><a href="https://www.diariodelweb.it/tuttosu/tag/?q=4650" class="subcategoria">Europa</a></li><li><a href="https://www.diariodelweb.it/tuttosu/tag/?q=4750" class="subcategoria">Stati Uniti</a></li><li><a href="https://www.diariodelweb.it/tuttosu/tag/?q=4700" class="subcategoria">Medio Oriente</a></li><li><a href="https://www.diariodelweb.it/tuttosu/tag/?q=4734" class="subcategoria">Russia</a></li><li><a href="https://www.diariodelweb.it/tuttosu/tag/?q=4632" class="subcategoria">Cina</a></li><li><a href="https://www.diariodelweb.it/tuttosu/tag/?q=235765" class="subcategoria">Asia</a></li><li><a href="https://www.diariodelweb.it/tuttosu/tag/?q=4596" class="subcategoria">Africa</a></li></ul>
+			<li itemprop="name"><a itemprop="url" href="https://www.diariodelweb.it/italia/" class="categoria">Italia</span></a></li>
+	
+			<li itemprop="name"><a itemprop="url" href="https://www.diariodelweb.it/politica/" class="categoria">Politica</span></a></li>
+	<ul class="subcategorie"><li><a href="https://www.diariodelweb.it/tuttosu/tag/?q=5685" class="subcategoria">Istituzioni</a></li><li><a href="https://www.diariodelweb.it/tuttosu/tag/?q=11567" class="subcategoria">Governo</a></li><li><a href="https://www.diariodelweb.it/tuttosu/tag/?q=6669" class="subcategoria">Lega</a></li><li><a href="https://www.diariodelweb.it/tuttosu/tag/?q=18040" class="subcategoria">MoVimento 5 Stelle</a></li><li><a href="https://www.diariodelweb.it/tuttosu/tag/?q=19228" class="subcategoria">Fratelli d'Italia</a></li><li><a href="https://www.diariodelweb.it/tuttosu/tag/?q=12752" class="subcategoria">Forza Italia</a></li><li><a href="https://www.diariodelweb.it/tuttosu/tag/?q=6699" class="subcategoria">Partito Democratico</a></li><li><a href="https://www.diariodelweb.it/tuttosu/tag/?q=242533" class="subcategoria">Italia Viva</a></li><li><a href="https://www.diariodelweb.it/tuttosu/tag/?q=241086" class="subcategoria">Liberi e Uguali</a></li><li><a href="https://www.diariodelweb.it/tuttosu/tag/?q=242374" class="subcategoria">+Europa</a></li></ul>
+			<li itemprop="name"><a itemprop="url" href="https://www.diariodelweb.it/economia/" class="categoria">Economia</span></a></li>
+	
+			<li itemprop="name"><a itemprop="url" href="https://www.diariodelweb.it/sport/" class="categoria">Sport</span></a></li>
+	<ul class="subcategorie"><li><a href="https://www.diariodelweb.it/tuttosu/tag/?q=5255" class="subcategoria">Calcio</a></li><li><a href="https://www.diariodelweb.it/tuttosu/tag/?q=5561" class="subcategoria">Formula 1</a></li><li><a href="https://www.diariodelweb.it/tuttosu/tag/?q=5795" class="subcategoria">Motociclismo</a></li><li><a href="https://www.diariodelweb.it/tuttosu/tag/?q=5320" class="subcategoria">Ciclismo</a></li><li><a href="https://www.diariodelweb.it/tuttosu/tag/?q=6163" class="subcategoria">Tennis</a></li><li><a href="https://www.diariodelweb.it/tuttosu/tag/?q=5218" class="subcategoria">Basket</a></li><li><a href="https://www.diariodelweb.it/tuttosu/tag/?q=5200" class="subcategoria">Atletica</a></li></ul>
+			<li itemprop="name"><a itemprop="url" href="https://www.diariodelweb.it/salute/" class="categoria">Salute</span></a></li>
+	
+			<li itemprop="name"><a itemprop="url" href="https://www.diariodelweb.it/trend/" class="categoria">Trend</span></a></li>
+	<ul class="subcategorie"><li><a href="https://www.diariodelweb.it/tuttosu/tag/?q=5323" class="subcategoria">Cinema</a></li><li><a href="https://www.diariodelweb.it/tuttosu/tag/?q=5805" class="subcategoria">Musica</a></li><li><a href="https://www.diariodelweb.it/tuttosu/tag/?q=5606" class="subcategoria">Gossip</a></li><li><a href="https://www.diariodelweb.it/tuttosu/tag/?q=229617" class="subcategoria">Viaggi</a></li><li><a href="https://www.diariodelweb.it/tuttosu/tag/?q=242567" class="subcategoria">Gusto</a></li><li><a href="https://www.diariodelweb.it/tuttosu/tag/?q=234684" class="subcategoria">Casa</a></li><li><a href="https://www.diariodelweb.it/tuttosu/tag/?q=5780" class="subcategoria">Moda</a></li></ul>
+			<li itemprop="name"><a itemprop="url" href="https://www.diariodelweb.it/innovazione/" class="categoria">Innovazione</span></a></li>
+	
+		<li itemprop="name" class="sottolivello"><a itemprop="url" href="https://www.diariodelweb.it/video/">Video</a></li>
+	</ul>
+</nav>
+<nav class="contenitore_barra_tuttosu stirare">
+	<header>
+		<button class="testata">Edizioni</button>
+	</header>
+	<ul itemtype="https://www.schema.org/SiteNavigationElement" itemscope="" class="nav">
+		<li itemprop="name"><a itemprop="url" href="https://torino.diariodelweb.it/" title="Diario di Torino">Torino</a></li>
+		<li itemprop="name"><a itemprop="url" href="https://diariofvg.diariodelweb.it/" title="Diario FVG">Diario FVG</a></li>
+	</ul>
+</nav>
+<nav class="contenitore_barra_tuttosu stirare">
+	<header>
+		<button class="testata">Blog</button>
+	</header>
+	<ul itemtype="https://www.schema.org/SiteNavigationElement" itemscope="" class="nav">
+		<li itemprop="name"><a itemprop="url" target="_blank" href="https://diariorossonero.diariodelweb.it/" class="categoria">Diario Rossonero</span></a></li>
+	</ul>
+</nav>
+<section class="contenitore_barra_tuttosu stirare">
+	<header>
+		<button class="testata">Personaggi</button>
+	</header>
+	<nav class="contenuto">
+		<ul itemtype="https://www.schema.org/SiteNavigationElement" itemscope="" class="nav">
+			
+				<li itemprop="name"><a itemprop="url" href="https://www.diariodelweb.it/tuttosu/tag/?q=4817">Joe Biden</a></li>
+			
+				<li itemprop="name"><a itemprop="url" href="https://www.diariodelweb.it/tuttosu/tag/?q=9216">Donald Trump</a></li>
+			
+				<li itemprop="name"><a itemprop="url" href="https://www.diariodelweb.it/tuttosu/tag/?q=241488">Giuseppe Conte</a></li>
+			
+				<li itemprop="name"><a itemprop="url" href="https://www.diariodelweb.it/tuttosu/tag/?q=235719">Davide Casaleggio</a></li>
+			
+				<li itemprop="name"><a itemprop="url" href="https://www.diariodelweb.it/tuttosu/tag/?q=8189">Christine Lagarde</a></li>
+			
+				<li itemprop="name"><a itemprop="url" href="https://www.diariodelweb.it/tuttosu/tag/?q=236594">Charles Leclerc</a></li>
+			
+				<li itemprop="name"><a itemprop="url" href="https://www.diariodelweb.it/tuttosu/tag/?q=21731">Alessandro Di Battista</a></li>
+			
+				<li itemprop="name"><a itemprop="url" href="https://www.diariodelweb.it/tuttosu/tag/?q=5123">Sebastian Vettel</a></li>
+			
+				<li itemprop="name"><a itemprop="url" href="https://www.diariodelweb.it/tuttosu/tag/?q=13620">Gigi Proietti</a></li>
+			
+				<li itemprop="name"><a itemprop="url" href="https://www.diariodelweb.it/tuttosu/tag/?q=242648">Marco Rizzo</a></li>
+			
+				<li itemprop="name"><a itemprop="url" href="https://www.diariodelweb.it/tuttosu/tag/?q=21266">Luigi Di Maio</a></li>
+			
+				<li itemprop="name"><a itemprop="url" href="https://www.diariodelweb.it/tuttosu/tag/?q=242055">Lucia Azzolina</a></li>
+			
+				<li itemprop="name"><a itemprop="url" href="https://www.diariodelweb.it/tuttosu/tag/?q=242647">Lorenzo D'Onofrio</a></li>
+			
+				<li itemprop="name"><a itemprop="url" href="https://www.diariodelweb.it/tuttosu/tag/?q=4937">Lewis Hamilton</a></li>
+			
+				<li itemprop="name"><a itemprop="url" href="https://www.diariodelweb.it/tuttosu/tag/?q=242650">Kamala Harris</a></li>
+			
+				<li itemprop="name"><a itemprop="url" href="https://www.diariodelweb.it/tuttosu/tag/?q=4936">Beppe Grillo</a></li>
+		
+		</ul>
+	</nav>
+	<div class="piuargomenti"><a href="https://www.diariodelweb.it/tuttosu/" title="Indice dei personaggi">Più personaggi &raquo;</a></div>
+</section>
+<nav class="contenitore_barra_tuttosu stirare">
+	<header>
+		<button class="testata">Network</button>
+	</header>
+	<ul itemtype="https://www.schema.org/SiteNavigationElement" itemscope="" class="nav">
+		<li itemprop="name"><a itemprop="url" target="_blank" href="https://www.torinofan.it/" title="Torino Fan">Torino Fan</a></li>
+		<li itemprop="name"><a itemprop="url" target="_blank" href="https://www.genovafan.it/" title="Genova Fan">Genova Fan</a></li>
+		<li itemprop="name"><a itemprop="url" target="_blank" href="https://www.salutenetwork.it/" class="categoria">Salute Network</span></a></li>
+		<li itemprop="name"><a itemprop="url" target="_blank" href="https://scenarieconomici.it/" class="categoria">Scenari Economici</span></a></li>
+		<li itemprop="name"><a itemprop="url" target="_blank" href="https://ofcs.report/" class="categoria">ofcs.report</span></a></li>
+		<li itemprop="name"><a itemprop="url" target="_blank" href="https://www.donnaglamour.it/" class="categoria">Donna Glamour</span></a></li>
+		<li itemprop="name"><a itemprop="url" target="_blank" href="https://primochef.it/" class="categoria">Primo Chef</span></a></li>
+	</ul>
+</nav>
+<nav class="piu_strumenti">
+	<h5>Strumenti</h5>
+	<ul itemtype="https://www.schema.org/SiteNavigationElement" itemscope="">
+		<li itemprop="name"><a itemprop="url" href="https://www.diariodelweb.it/meteo/" class="meteo">Meteo </a></li>
+		<li itemprop="name"><a itemprop="url" href="https://www.diariodelweb.it/giochi/" class="giochi">Giochi </a></li>
+		<li itemprop="name"><a itemprop="url" href="https://www.diariodelweb.it/rss/" class="rss">RSS </a></li>
+	</ul>
+</nav>
+
+<section class="publi120_diariodelweb">
+	<section id='div-gpt-SKY1'>
+		<script type='text/javascript'>
+		googletag.cmd.push(function() { googletag.display('div-gpt-SKY1'); });
+		</script>
+	</section>
+</section>
+		</div>
+	</div>
+	<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/it_IT/sdk.js#xfbml=1&version=v8.0&appId=174211839259672&autoLogAppEvents=1" nonce="RRRSkl8r"></script>
+		<!-- BLazy -->
+		<script src="https://www.diariodelweb.it/js/comuni/blazy/blazy.min.js"></script>
+		<script>
+		    // Initialize
+		    var bLazy = new Blazy({ 
+		     offset: 200
+			});
+		</script>
+</div>
+<section id='div-gpt-FLOORAD' style="position: -webkit-sticky;position: sticky;bottom:0;z-index:1000;background-color: rgba(60, 60, 60, 0.5);">
+	<script type='text/javascript'>
+	googletag.cmd.push(function() { googletag.display('div-gpt-FLOORAD'); });
+	</script>
+</section>
+<footer class="footer">
+	<div class="chi_siamo_contenitore">
+		<div class="chi_siamo">
+			<div class="section_footer_chi_siamo_indirizzo" itemscope itemtype="https://schema.org/WebPage" itemtype="http://schema.org/CreativeWork" itemscope="">
+			
+				<span class="copyrightHolder" itemprop="copyrightHolder">Diario Editore S.r.l.</span>
+			
+				<p>
+					<span class="copyright">© Copyright 2020 Tutti i diritti riservati.</span>
+				
+					<span class="p-iva">CF, Partita I.V.A. n. 02627740026.</span>
+				
+				</p>
+			</div>
+			<div class="section_footer_chi_siamo_link" itemtype="http://schema.org/ItemList" itemscope>
+				<meta content="Footer Links" itemprop="name">
+				<meta content="Unordered" itemprop="itemListOrder">
+				<span class="copyrightWho">Chi siamo</span>
+				<ul>
+					<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+						<a itemprop="url" rel="nofollow" href="https://www.diariodelweb.it/contatti/">
+							<span itemprop="name">Contatti</span>
+						</a>
+					</li>
+					<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+						<a itemprop="url" rel="nofollow" href="https://www.diariodelweb.it/pubblicita/">
+							<span itemprop="name">Pubblicità</span>
+						</a>
+					</li>
+					<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+						<a itemprop="url" rel="nofollow" href="https://www.diariodelweb.it/avviso_legale/">
+							<span itemprop="name">Condizioni d'uso</span>
+						</a>
+					</li>
+					<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+						<a itemprop="url" rel="nofollow" href="https://www.diariodelweb.it/privacy_policy/">
+							<span itemprop="name">Privacy</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="pulire"></div>
+		
+		</div>
+	</div>
+	<!-- Quantcast Tag -->
+<script type="text/javascript">
+var _qevents = _qevents || [];
+
+(function() {
+	var elem = document.createElement('script');
+	elem.src = (document.location.protocol == "https:" ? "https://secure" : "http://edge") + ".quantserve.com/quant.js";
+	elem.async = true;
+	elem.type = "text/javascript";
+	var scpt = document.getElementsByTagName('script')[0];
+	scpt.parentNode.insertBefore(elem, scpt);
+})();
+
+_qevents.push({
+qacct:"p-tmwwjW_yfh8Cx"
+});
+</script>
+<noscript>
+<div style="display:none;">
+	<img src="https://pixel.quantserve.com/pixel/p-tmwwjW_yfh8Cx.gif" border="0" height="1" width="1" alt="Quantcast"/>
+</div>
+</noscript>
+<!-- End Quantcast tag -->
+</footer>
+
+<script type="text/plain" class="cmp-script" data-wid="auto" src="https://ads.viralize.tv/display/?zid=AAC_jSHSUQ6G5n40&schain=1.0,1!diariodelweb.it,3,1,,,"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-4940658-1"></script>
+<script type="text/plain" class="cmp-script">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-4940658-1');
+</script>
+<script type="text/plain" class="cmp-script" src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+<script>
+  var OneSignal = window.OneSignal || [];
+  OneSignal.push(function() {
+    OneSignal.init({
+      appId: "98062f42-8ef8-4ca6-931d-93ca5690c5d0",
+    });
+  });
+</script>
+</body>
+</html>

