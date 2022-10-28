@@ -168,7 +168,7 @@ def get_bert(model, doc1, doc2):
 
 def apply_bert(df, df_test, len_pipeline, model, model_name, fine_tune = False):
 
-    train_batch_size = 1
+    train_batch_size = 128
     num_epochs = 2
     model_save_path = 'output/fine_tune_bert-'+model_name
 
@@ -209,8 +209,8 @@ def apply_bert(df, df_test, len_pipeline, model, model_name, fine_tune = False):
             model.fit(train_objectives=[(train_dataloader, train_loss)],
                     evaluator=evaluator,
                     epochs=num_epochs,
-                    evaluation_steps=1000,
-                    #warmup_steps=warmup_steps, 100?
+                    #evaluation_steps=1000,
+                    #warmup_steps = 100,
                     output_path=model_save_path
                     )
 
