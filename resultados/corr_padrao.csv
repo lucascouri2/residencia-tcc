@@ -1,0 +1,17 @@
+,Overall
+Overall,1.0
+bert_all-mpnet-base-v20,-0.7236932887238797
+bert_multi-qa-mpnet-base-dot-v10,-0.7196420848133045
+bert_all-distilroberta-v10,-0.70454761465207
+bert_all-MiniLM-L12-v20,-0.7111835444499433
+bert_multi-qa-distilbert-cos-v10,-0.7049852432916038
+bert_all-MiniLM-L6-v20,-0.7172536376122515
+bert_multi-qa-MiniLM-L6-cos-v10,-0.7034373850129048
+bert_paraphrase-multilingual-mpnet-base-v20,-0.7131179088350615
+bert_paraphrase-albert-small-v20,-0.6742585983069069
+bert_paraphrase-multilingual-MiniLM-L12-v20,-0.6860776040754464
+bert_paraphrase-MiniLM-L3-v20,-0.6895338419155077
+bert_distiluse-base-multilingual-cased-v10,-0.6939021326514273
+bert_distiluse-base-multilingual-cased-v20,-0.6936481620661832
+tf_idf0,-0.6976954777236543
+USE,-0.6791547579268828

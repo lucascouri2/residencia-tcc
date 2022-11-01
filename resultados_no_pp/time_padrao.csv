@@ -1,0 +1,16 @@
+,0,1
+0,bert_all-mpnet-base-v20,275.6906039714813
+0,bert_multi-qa-mpnet-base-dot-v10,375.74949955940247
+0,bert_all-distilroberta-v10,187.0783920288086
+0,bert_all-MiniLM-L12-v20,34.11393213272095
+0,bert_multi-qa-distilbert-cos-v10,162.71521282196045
+0,bert_all-MiniLM-L6-v20,29.864078998565677
+0,bert_multi-qa-MiniLM-L6-cos-v10,79.84200048446655
+0,bert_paraphrase-multilingual-mpnet-base-v20,73.31466746330261
+0,bert_paraphrase-albert-small-v20,29.70896792411804
+0,bert_paraphrase-multilingual-MiniLM-L12-v20,30.79396104812622
+0,bert_paraphrase-MiniLM-L3-v20,9.614001512527466
+0,bert_distiluse-base-multilingual-cased-v10,39.6635491847992
+0,bert_distiluse-base-multilingual-cased-v20,39.46100926399231
+0,tf_idf0,0.3623495101928711
+0,USE,2.6379544734954834

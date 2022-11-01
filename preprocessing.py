@@ -52,7 +52,7 @@ def pre_process(doc, no_url = False, basic_processing = False, tokenization = Fa
     if basic_processing == True:
         
         final_doc = remove_punctuation(final_doc)
-        final_doc = final_doc.lower()
+        #final_doc = final_doc.lower()
 
 
     if tokenization == True:
