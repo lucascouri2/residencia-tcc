@@ -214,7 +214,6 @@ def apply_bert(df, df_test, len_pipeline, model, model_name, fine_tune = False):
                     output_path=model_save_path
                     )
 
-        ## ALTERAR: Avaliar no dataset de test
         df_bert[f'bert_{model_name}{index}'] = df_test.apply(lambda row: get_bert(model, " ".join(row[f'doc1_pipeline{index}']), " ".join(row[f'doc2_pipeline{index}'])), axis=1)
         time_list.append((f'bert_{model_name}{index}', time.time()-start_time))
 
